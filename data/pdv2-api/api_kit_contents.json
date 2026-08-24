@@ -1,0 +1,4794 @@
+{
+ "Hu_Neuro_Expansion_IMC_Panel_3_Antibodies": {
+  "meta": {
+   "id": 213459,
+   "name": "Hu_Neuro_Expansion_IMC_Panel_3_Antibodies",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2024-12-13 12:17:55",
+   "auto": "true",
+   "user_id": 3692,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-12-13 12:16:51",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 9100012,
+   "kit_instrument_avail": "[\"5\",\"6\",\"7\"]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 3
+  },
+  "nodes": [
+   {
+    "id": 840092,
+    "product_id": 0,
+    "experiment_id": 213459,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "89Y",
+    "abundance_factor": 66,
+    "target": "Tubulin Beta3",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "TuJ1",
+    "updated_at": "2024-12-13T12:17:55.000000Z",
+    "kit_id": null,
+    "groups": [
+     46860
+    ]
+   },
+   {
+    "id": 840091,
+    "product_id": 0,
+    "experiment_id": 213459,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "151Eu",
+    "abundance_factor": 66,
+    "target": "Synaptophysin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D8F6H",
+    "updated_at": "2024-12-13T12:17:55.000000Z",
+    "kit_id": null,
+    "groups": [
+     46860
+    ]
+   },
+   {
+    "id": 840093,
+    "product_id": 0,
+    "experiment_id": 213459,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "171Yb",
+    "abundance_factor": 66,
+    "target": "TMEM119",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "E3E4T",
+    "updated_at": "2024-12-13T12:17:55.000000Z",
+    "kit_id": null,
+    "groups": [
+     46860
+    ]
+   }
+  ]
+ },
+ "Glioblastoma_IMC_Panel_5_Antibodies": {
+  "meta": {
+   "id": 213458,
+   "name": "Glioblastoma_IMC_Panel_5_Antibodies",
+   "reactivity": "[1,2]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2024-12-13 12:14:48",
+   "auto": "true",
+   "user_id": 3692,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-12-13 12:13:04",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 9100011,
+   "kit_instrument_avail": "[\"5\",\"6\",\"7\"]",
+   "imported_exp": "",
+   "kit_reactivity": "[1,2]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 5
+  },
+  "nodes": [
+   {
+    "id": 840087,
+    "product_id": 0,
+    "experiment_id": 213458,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "141Pr",
+    "abundance_factor": 66,
+    "target": "Nestin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR27207-53",
+    "updated_at": "2024-12-13T12:14:48.000000Z",
+    "kit_id": null,
+    "groups": [
+     46859
+    ]
+   },
+   {
+    "id": 840090,
+    "product_id": 0,
+    "experiment_id": 213458,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "149Sm",
+    "abundance_factor": 66,
+    "target": "Vimentin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D21H3",
+    "updated_at": "2024-12-13T12:14:48.000000Z",
+    "kit_id": null,
+    "groups": [
+     46859
+    ]
+   },
+   {
+    "id": 840088,
+    "product_id": 0,
+    "experiment_id": 213458,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "158Gd",
+    "abundance_factor": 66,
+    "target": "MMP9",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "RM1020",
+    "updated_at": "2024-12-13T12:14:48.000000Z",
+    "kit_id": null,
+    "groups": [
+     46859
+    ]
+   },
+   {
+    "id": 840089,
+    "product_id": 0,
+    "experiment_id": 213458,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "169Tm",
+    "abundance_factor": 66,
+    "target": "SOX2",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR3131",
+    "updated_at": "2024-12-13T12:14:48.000000Z",
+    "kit_id": null,
+    "groups": [
+     46859
+    ]
+   },
+   {
+    "id": 840086,
+    "product_id": 0,
+    "experiment_id": 213458,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "172Yb",
+    "abundance_factor": 66,
+    "target": "EGFR",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D38B1",
+    "updated_at": "2024-12-13T12:14:48.000000Z",
+    "kit_id": null,
+    "groups": [
+     46859
+    ]
+   }
+  ]
+ },
+ "SynTau_Mixed_Pathology_IMC_Panel_4_Antibodies": {
+  "meta": {
+   "id": 212180,
+   "name": "SynTau_Mixed_Pathology_IMC_Panel_4_Antibodies",
+   "reactivity": "[1,2]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2024-06-13 14:16:20",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-05-17 18:09:00",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 9100010,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1,2]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 4
+  },
+  "nodes": [
+   {
+    "id": 801648,
+    "product_id": 91,
+    "experiment_id": 212180,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "149Sm",
+    "abundance_factor": 66,
+    "target": "Tau",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D1M9X",
+    "updated_at": "2024-06-13T14:16:19.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45431
+    ]
+   },
+   {
+    "id": 801646,
+    "product_id": 91,
+    "experiment_id": 212180,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "158Gd",
+    "abundance_factor": 66,
+    "target": "AlphaSyn",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "E4U2F",
+    "updated_at": "2024-06-13T14:16:19.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45431
+    ]
+   },
+   {
+    "id": 801647,
+    "product_id": 91,
+    "experiment_id": 212180,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "169Tm",
+    "abundance_factor": 66,
+    "target": "p-AlphaSyn [S129]",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EP1536Y",
+    "updated_at": "2024-06-13T14:16:19.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45431
+    ]
+   },
+   {
+    "id": 801649,
+    "product_id": 91,
+    "experiment_id": 212180,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "172Yb",
+    "abundance_factor": 66,
+    "target": "pTau [S202/T205]",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "AT8",
+    "updated_at": "2024-06-13T14:16:19.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45431
+    ]
+   }
+  ]
+ },
+ "Proteinopathies_IMC_Panel_5_Antibodies": {
+  "meta": {
+   "id": 212182,
+   "name": "Proteinopathies_IMC_Panel_5_Antibodies",
+   "reactivity": "[1,2]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2024-06-13 14:16:48",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-05-17 18:06:36",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 9100009,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1,2]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 5
+  },
+  "nodes": [
+   {
+    "id": 801658,
+    "product_id": 91,
+    "experiment_id": 212182,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "141Pr",
+    "abundance_factor": 66,
+    "target": "APP",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "4G8",
+    "updated_at": "2024-06-13T14:16:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45433
+    ]
+   },
+   {
+    "id": 801656,
+    "product_id": 91,
+    "experiment_id": 212182,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "149Sm",
+    "abundance_factor": 66,
+    "target": "Tau",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D1M9X",
+    "updated_at": "2024-06-13T14:16:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45433
+    ]
+   },
+   {
+    "id": 801654,
+    "product_id": 91,
+    "experiment_id": 212182,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "158Gd",
+    "abundance_factor": 66,
+    "target": "AlphaSyn",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "E4U2F",
+    "updated_at": "2024-06-13T14:16:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45433
+    ]
+   },
+   {
+    "id": 801655,
+    "product_id": 91,
+    "experiment_id": 212182,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "169Tm",
+    "abundance_factor": 66,
+    "target": "p-AlphaSyn [S129]",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EP1536Y",
+    "updated_at": "2024-06-13T14:16:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45433
+    ]
+   },
+   {
+    "id": 801657,
+    "product_id": 91,
+    "experiment_id": 212182,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "172Yb",
+    "abundance_factor": 66,
+    "target": "pTau [S202/T205]",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "AT8",
+    "updated_at": "2024-06-13T14:16:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45433
+    ]
+   }
+  ]
+ },
+ "Multiple_Sclerosis_IMC_Panel_3_Antibodies": {
+  "meta": {
+   "id": 212183,
+   "name": "Multiple_Sclerosis_IMC_Panel_3_Antibodies",
+   "reactivity": "[1,2]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2024-06-13 14:17:29",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-05-17 18:04:49",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 9100008,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1,2]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 3
+  },
+  "nodes": [
+   {
+    "id": 801659,
+    "product_id": 91,
+    "experiment_id": 212183,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "141Pr",
+    "abundance_factor": 66,
+    "target": "Neurofilament",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "SMI 312",
+    "updated_at": "2024-06-13T14:17:29.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45434
+    ]
+   },
+   {
+    "id": 801660,
+    "product_id": 91,
+    "experiment_id": 212183,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "149Sm",
+    "abundance_factor": 66,
+    "target": "MBP",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "MBP101",
+    "updated_at": "2024-06-13T14:17:29.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45434
+    ]
+   },
+   {
+    "id": 801661,
+    "product_id": 91,
+    "experiment_id": 212183,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "158Gd",
+    "abundance_factor": 66,
+    "target": "MOG",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EP4281",
+    "updated_at": "2024-06-13T14:17:29.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45434
+    ]
+   }
+  ]
+ },
+ "Alzheimer's_Disease_IMC_Panel_3_Antibodies": {
+  "meta": {
+   "id": 212184,
+   "name": "Alzheimer's_Disease_IMC_Panel_3_Antibodies",
+   "reactivity": "[1,2]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2024-06-13 14:17:49",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-05-17 18:02:10",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 9100007,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1,2]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 3
+  },
+  "nodes": [
+   {
+    "id": 801662,
+    "product_id": 91,
+    "experiment_id": 212184,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "141Pr",
+    "abundance_factor": 66,
+    "target": "APP",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "4G8",
+    "updated_at": "2024-06-13T14:17:49.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45435
+    ]
+   },
+   {
+    "id": 801663,
+    "product_id": 91,
+    "experiment_id": 212184,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "149Sm",
+    "abundance_factor": 66,
+    "target": "Tau",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D1M9X",
+    "updated_at": "2024-06-13T14:17:49.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45435
+    ]
+   },
+   {
+    "id": 801664,
+    "product_id": 91,
+    "experiment_id": 212184,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "172Yb",
+    "abundance_factor": 66,
+    "target": "pTau [S202/T205]",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "AT8",
+    "updated_at": "2024-06-13T14:17:49.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45435
+    ]
+   }
+  ]
+ },
+ "Parkinson's_Disease_IMC_Panel_3_Antibodies": {
+  "meta": {
+   "id": 212185,
+   "name": "Parkinson's_Disease_IMC_Panel_3_Antibodies",
+   "reactivity": "[1,2]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2024-06-13 14:18:09",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-05-17 17:57:19",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 9100006,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1,2]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 3
+  },
+  "nodes": [
+   {
+    "id": 801665,
+    "product_id": 91,
+    "experiment_id": 212185,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "141Pr",
+    "abundance_factor": 66,
+    "target": "AlphaSyn",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "E4U2F",
+    "updated_at": "2024-06-13T14:18:09.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45436
+    ]
+   },
+   {
+    "id": 801666,
+    "product_id": 91,
+    "experiment_id": 212185,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "169Tm",
+    "abundance_factor": 66,
+    "target": "p-AlphaSyn [S129]",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EP1536Y",
+    "updated_at": "2024-06-13T14:18:09.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45436
+    ]
+   },
+   {
+    "id": 801667,
+    "product_id": 91,
+    "experiment_id": 212185,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "172Yb",
+    "abundance_factor": 66,
+    "target": "Tyrosine Hydroxylase",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "E2L6M",
+    "updated_at": "2024-06-13T14:18:09.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45436
+    ]
+   }
+  ]
+ },
+ "Hu_Cell_Signaling_IMC_Panel_7_Antibodies": {
+  "meta": {
+   "id": 214453,
+   "name": "Hu_Cell_Signaling_IMC_Panel_7_Antibodies",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2025-05-29 18:05:58",
+   "auto": "true",
+   "user_id": 3692,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2025-05-29 16:34:15",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 201522,
+   "kit_instrument_avail": "[\"5\",\"6\",\"7\"]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 7
+  },
+  "nodes": [
+   {
+    "id": 868149,
+    "product_id": 0,
+    "experiment_id": 214453,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "142Nd",
+    "abundance_factor": 66,
+    "target": "EGFR",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D38B1",
+    "updated_at": "2025-05-29T18:05:58.000000Z",
+    "kit_id": null,
+    "groups": [
+     47989
+    ]
+   },
+   {
+    "id": 868150,
+    "product_id": 0,
+    "experiment_id": 214453,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "143Nd",
+    "abundance_factor": 66,
+    "target": "PTEN",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR22636-122",
+    "updated_at": "2025-05-29T18:05:58.000000Z",
+    "kit_id": null,
+    "groups": [
+     47989
+    ]
+   },
+   {
+    "id": 868151,
+    "product_id": 0,
+    "experiment_id": 214453,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "145Nd",
+    "abundance_factor": 66,
+    "target": "GSK3 beta",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "Y174",
+    "updated_at": "2025-05-29T18:05:58.000000Z",
+    "kit_id": null,
+    "groups": [
+     47989
+    ]
+   },
+   {
+    "id": 868152,
+    "product_id": 0,
+    "experiment_id": 214453,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "146Nd",
+    "abundance_factor": 66,
+    "target": "pTYR",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "TYR-100",
+    "updated_at": "2025-05-29T18:05:58.000000Z",
+    "kit_id": null,
+    "groups": [
+     47989
+    ]
+   },
+   {
+    "id": 868153,
+    "product_id": 0,
+    "experiment_id": 214453,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "148Nd",
+    "abundance_factor": 66,
+    "target": "YAP1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR19812",
+    "updated_at": "2025-05-29T18:05:58.000000Z",
+    "kit_id": null,
+    "groups": [
+     47989
+    ]
+   },
+   {
+    "id": 868134,
+    "product_id": 0,
+    "experiment_id": 214453,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "167Er",
+    "abundance_factor": 66,
+    "target": "pERK1/2 [T202/Y204]",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D13.14.4E",
+    "updated_at": "2025-05-29T18:05:58.000000Z",
+    "kit_id": null,
+    "groups": [
+     47989
+    ]
+   },
+   {
+    "id": 868135,
+    "product_id": 0,
+    "experiment_id": 214453,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "168Er",
+    "abundance_factor": 66,
+    "target": "pSMAD",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EP823Y",
+    "updated_at": "2025-05-29T18:05:58.000000Z",
+    "kit_id": null,
+    "groups": [
+     47989
+    ]
+   }
+  ]
+ },
+ "Hu_Cell_Metabolism_IMC_Panel_7_Antibodies": {
+  "meta": {
+   "id": 214454,
+   "name": "Hu_Cell_Metabolism_IMC_Panel_7_Antibodies",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2025-05-29 18:10:00",
+   "auto": "true",
+   "user_id": 3692,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2025-05-29 18:08:25",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 201521,
+   "kit_instrument_avail": "[\"5\",\"6\",\"7\"]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 7
+  },
+  "nodes": [
+   {
+    "id": 868154,
+    "product_id": 0,
+    "experiment_id": 214454,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "142Nd",
+    "abundance_factor": 66,
+    "target": "Glut-1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR3915",
+    "updated_at": "2025-05-29T18:10:00.000000Z",
+    "kit_id": null,
+    "groups": [
+     47990
+    ]
+   },
+   {
+    "id": 868155,
+    "product_id": 0,
+    "experiment_id": 214454,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "143Nd",
+    "abundance_factor": 66,
+    "target": "Citrate Synthase",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR8067",
+    "updated_at": "2025-05-29T18:10:00.000000Z",
+    "kit_id": null,
+    "groups": [
+     47990
+    ]
+   },
+   {
+    "id": 868156,
+    "product_id": 0,
+    "experiment_id": 214454,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "145Nd",
+    "abundance_factor": 66,
+    "target": "ATP5A",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR13030(B)",
+    "updated_at": "2025-05-29T18:10:00.000000Z",
+    "kit_id": null,
+    "groups": [
+     47990
+    ]
+   },
+   {
+    "id": 868157,
+    "product_id": 0,
+    "experiment_id": 214454,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "146Nd",
+    "abundance_factor": 66,
+    "target": "CPT1A",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR21843-71-1C",
+    "updated_at": "2025-05-29T18:10:00.000000Z",
+    "kit_id": null,
+    "groups": [
+     47990
+    ]
+   },
+   {
+    "id": 868158,
+    "product_id": 0,
+    "experiment_id": 214454,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "148Nd",
+    "abundance_factor": 66,
+    "target": "LDHA",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EP1563Y",
+    "updated_at": "2025-05-29T18:10:00.000000Z",
+    "kit_id": null,
+    "groups": [
+     47990
+    ]
+   },
+   {
+    "id": 868159,
+    "product_id": 0,
+    "experiment_id": 214454,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "167Er",
+    "abundance_factor": 66,
+    "target": "p4E-BP1 [T37/T46]",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "236B4",
+    "updated_at": "2025-05-29T18:10:00.000000Z",
+    "kit_id": null,
+    "groups": [
+     47990
+    ]
+   },
+   {
+    "id": 868160,
+    "product_id": 0,
+    "experiment_id": 214454,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "168Er",
+    "abundance_factor": 66,
+    "target": "pS6 [S235/S236]",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "N7-548",
+    "updated_at": "2025-05-29T18:10:00.000000Z",
+    "kit_id": null,
+    "groups": [
+     47990
+    ]
+   }
+  ]
+ },
+ "Hu_T_Cell_Exhaustion_IMC_Panel_5_Andibodies": {
+  "meta": {
+   "id": 213456,
+   "name": "Hu_T_Cell_Exhaustion_IMC_Panel_5_Andibodies",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2024-12-12 21:42:50",
+   "auto": "true",
+   "user_id": 3692,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-12-12 21:41:17",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 201519,
+   "kit_instrument_avail": "[\"5\",\"6\",\"7\"]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 5
+  },
+  "nodes": [
+   {
+    "id": 840081,
+    "product_id": 0,
+    "experiment_id": 213456,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "142Nd",
+    "abundance_factor": 66,
+    "target": "CD366/TIM-3",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D5D5R",
+    "updated_at": "2024-12-12T21:42:50.000000Z",
+    "kit_id": null,
+    "groups": [
+     46857
+    ]
+   },
+   {
+    "id": 840082,
+    "product_id": 0,
+    "experiment_id": 213456,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "145Nd",
+    "abundance_factor": 66,
+    "target": "IDO",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "BLR031F",
+    "updated_at": "2024-12-12T21:42:50.000000Z",
+    "kit_id": null,
+    "groups": [
+     46857
+    ]
+   },
+   {
+    "id": 840083,
+    "product_id": 0,
+    "experiment_id": 213456,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "148Nd",
+    "abundance_factor": 66,
+    "target": "CD223/LAG-3",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "BLR027F",
+    "updated_at": "2024-12-12T21:42:50.000000Z",
+    "kit_id": null,
+    "groups": [
+     46857
+    ]
+   },
+   {
+    "id": 840084,
+    "product_id": 0,
+    "experiment_id": 213456,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "167Er",
+    "abundance_factor": 66,
+    "target": "CD134/OX40",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "ACT35",
+    "updated_at": "2024-12-12T21:42:50.000000Z",
+    "kit_id": null,
+    "groups": [
+     46857
+    ]
+   },
+   {
+    "id": 840085,
+    "product_id": 0,
+    "experiment_id": 213456,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "168Er",
+    "abundance_factor": 66,
+    "target": "CD152/CTLA-4",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "BLR257L",
+    "updated_at": "2024-12-12T21:42:50.000000Z",
+    "kit_id": null,
+    "groups": [
+     46857
+    ]
+   }
+  ]
+ },
+ "Hu_Basic_Immune_IMC_Panel_4_Antibodies": {
+  "meta": {
+   "id": 212193,
+   "name": "Hu_Basic_Immune_IMC_Panel_4_Antibodies",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2024-06-13 14:36:09",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-05-17 15:30:11",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 201518,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 4
+  },
+  "nodes": [
+   {
+    "id": 801729,
+    "product_id": 91,
+    "experiment_id": 212193,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "115In",
+    "abundance_factor": 66,
+    "target": "CD20",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "H1",
+    "updated_at": "2024-06-13T14:36:09.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45444
+    ]
+   },
+   {
+    "id": 801730,
+    "product_id": 3152018,
+    "experiment_id": 212193,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "152Sm",
+    "abundance_factor": 66,
+    "target": "CD45",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D9M8I",
+    "updated_at": "2024-06-13T14:36:09.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45444
+    ]
+   },
+   {
+    "id": 801731,
+    "product_id": 3159035,
+    "experiment_id": 212193,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "159Tb",
+    "abundance_factor": 66,
+    "target": "CD68",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "KP1",
+    "updated_at": "2024-06-13T14:36:09.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45444
+    ]
+   },
+   {
+    "id": 801728,
+    "product_id": 91,
+    "experiment_id": 212193,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "170Er",
+    "abundance_factor": 66,
+    "target": "CD3 epsilon",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D7A6E",
+    "updated_at": "2024-06-13T14:36:09.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45444
+    ]
+   }
+  ]
+ },
+ "Hu_Basic_Tissue_Architecture_IMC_Panel_3_Antibodies": {
+  "meta": {
+   "id": 212186,
+   "name": "Hu_Basic_Tissue_Architecture_IMC_Panel_3_Antibodies",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2024-06-13 14:37:04",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-05-17 17:52:33",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 201517,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 3
+  },
+  "nodes": [
+   {
+    "id": 801668,
+    "product_id": 3089006,
+    "experiment_id": 212186,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "89Y",
+    "abundance_factor": 66,
+    "target": "Collagen I",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "Polyclonal",
+    "updated_at": "2024-06-13T14:37:04.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45437
+    ]
+   },
+   {
+    "id": 801670,
+    "product_id": 3151025,
+    "experiment_id": 212186,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "151Eu",
+    "abundance_factor": 66,
+    "target": "CD31/PECAM1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR3094",
+    "updated_at": "2024-06-13T14:37:04.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45437
+    ]
+   },
+   {
+    "id": 801669,
+    "product_id": 91,
+    "experiment_id": 212186,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "171Yb",
+    "abundance_factor": 66,
+    "target": "Fibronectin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR23110-46",
+    "updated_at": "2024-06-13T14:37:04.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45437
+    ]
+   }
+  ]
+ },
+ "Hu_Immune_Cell_Expansion_IMC_Panel_7_Antibodies": {
+  "meta": {
+   "id": 212187,
+   "name": "Hu_Immune_Cell_Expansion_IMC_Panel_7_Antibodies",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2024-06-13 14:37:44",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-05-17 17:18:10",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 201516,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 7
+  },
+  "nodes": [
+   {
+    "id": 801675,
+    "product_id": 3142022,
+    "experiment_id": 212187,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "142Nd",
+    "abundance_factor": 66,
+    "target": "CD38",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "E7Z8C",
+    "updated_at": "2024-06-13T14:37:44.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45438
+    ]
+   },
+   {
+    "id": 801671,
+    "product_id": 3143032,
+    "experiment_id": 212187,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "143Nd",
+    "abundance_factor": 66,
+    "target": "CD7",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR4242",
+    "updated_at": "2024-06-13T14:37:44.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45438
+    ]
+   },
+   {
+    "id": 801672,
+    "product_id": 3145021,
+    "experiment_id": 212187,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "145Nd",
+    "abundance_factor": 66,
+    "target": "CD15/SSEA-1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "W6D3",
+    "updated_at": "2024-06-13T14:37:44.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45438
+    ]
+   },
+   {
+    "id": 801673,
+    "product_id": 3146020,
+    "experiment_id": 212187,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "146Nd",
+    "abundance_factor": 66,
+    "target": "CD16",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR16784",
+    "updated_at": "2024-06-13T14:37:44.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45438
+    ]
+   },
+   {
+    "id": 801677,
+    "product_id": 3148024,
+    "experiment_id": 212187,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "148Nd",
+    "abundance_factor": 66,
+    "target": "MPO",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR20257",
+    "updated_at": "2024-06-13T14:37:44.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45438
+    ]
+   },
+   {
+    "id": 801676,
+    "product_id": 3167026,
+    "experiment_id": 212187,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "167Er",
+    "abundance_factor": 66,
+    "target": "CD206/MMR",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "5C11",
+    "updated_at": "2024-06-13T14:37:44.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45438
+    ]
+   },
+   {
+    "id": 801674,
+    "product_id": 91,
+    "experiment_id": 212187,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "168Er",
+    "abundance_factor": 66,
+    "target": "iNOS",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "SP126",
+    "updated_at": "2024-06-13T14:37:44.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45438
+    ]
+   }
+  ]
+ },
+ "Hu_Epithelial_and_Mesenchymal_IMC_Panel_4_Antibodies": {
+  "meta": {
+   "id": 212189,
+   "name": "Hu_Epithelial_and_Mesenchymal_IMC_Panel_4_Antibodies",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2024-06-13 14:39:06",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-05-17 16:31:51",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 201515,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 4
+  },
+  "nodes": [
+   {
+    "id": 801712,
+    "product_id": 3149032,
+    "experiment_id": 212189,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "149Sm",
+    "abundance_factor": 66,
+    "target": "Vimentin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D21H3",
+    "updated_at": "2024-06-13T14:39:06.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45440
+    ]
+   },
+   {
+    "id": 801710,
+    "product_id": 3158029,
+    "experiment_id": 212189,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "158Gd",
+    "abundance_factor": 66,
+    "target": "E-Cadherin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "24E10",
+    "updated_at": "2024-06-13T14:39:06.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45440
+    ]
+   },
+   {
+    "id": 801709,
+    "product_id": 91,
+    "experiment_id": 212189,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "169Tm",
+    "abundance_factor": 66,
+    "target": "Beta-Catenin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "5H10",
+    "updated_at": "2024-06-13T14:39:06.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45440
+    ]
+   },
+   {
+    "id": 801711,
+    "product_id": 3172034,
+    "experiment_id": 212189,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "172Yb",
+    "abundance_factor": 66,
+    "target": "EpCAM",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR20532-222",
+    "updated_at": "2024-06-13T14:39:06.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45440
+    ]
+   }
+  ]
+ },
+ "Hu_Cell_Functional_State_IMC_Panel_5_Antibodies": {
+  "meta": {
+   "id": 212190,
+   "name": "Hu_Cell_Functional_State_IMC_Panel_5_Antibodies",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2024-06-13 14:58:11",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-05-17 15:40:07",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 201514,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 5
+  },
+  "nodes": [
+   {
+    "id": 801717,
+    "product_id": 91,
+    "experiment_id": 212190,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "150Nd",
+    "abundance_factor": 66,
+    "target": "Ki-67",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "B56",
+    "updated_at": "2024-06-13T14:58:10.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45441
+    ]
+   },
+   {
+    "id": 801715,
+    "product_id": 3155018,
+    "experiment_id": 212190,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "155Gd",
+    "abundance_factor": 66,
+    "target": "FoxP3",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "PCH101",
+    "updated_at": "2024-06-13T14:58:10.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45441
+    ]
+   },
+   {
+    "id": 801714,
+    "product_id": 3165045,
+    "experiment_id": 212190,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "165Ho",
+    "abundance_factor": 66,
+    "target": "CD279/PD-1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D4W2J",
+    "updated_at": "2024-06-13T14:58:11.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45441
+    ]
+   },
+   {
+    "id": 801713,
+    "product_id": 91,
+    "experiment_id": 212190,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "166Er",
+    "abundance_factor": 66,
+    "target": "CD274/PD-L1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "73-10",
+    "updated_at": "2024-06-13T14:58:10.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45441
+    ]
+   },
+   {
+    "id": 801716,
+    "product_id": 91,
+    "experiment_id": 212190,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "176Yb",
+    "abundance_factor": 66,
+    "target": "Granzyme B",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR20129-217",
+    "updated_at": "2024-06-13T14:58:11.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45441
+    ]
+   }
+  ]
+ },
+ "Hu_Myeloid_IMC_Panel_6_Antibodies": {
+  "meta": {
+   "id": 212191,
+   "name": "Hu_Myeloid_IMC_Panel_6_Antibodies",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2024-06-13 14:45:52",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-05-17 15:37:25",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 201513,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 6
+  },
+  "nodes": [
+   {
+    "id": 801718,
+    "product_id": 3144030,
+    "experiment_id": 212191,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "144Nd",
+    "abundance_factor": 33,
+    "target": "CD11b",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR1344",
+    "updated_at": "2024-06-13T14:45:52.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45442
+    ]
+   },
+   {
+    "id": 801722,
+    "product_id": 3147021,
+    "experiment_id": 212191,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "147Sm",
+    "abundance_factor": 66,
+    "target": "CD163",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EDHu-1",
+    "updated_at": "2024-06-13T14:45:24.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45442
+    ]
+   },
+   {
+    "id": 801719,
+    "product_id": 3154027,
+    "experiment_id": 212191,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "154Sm",
+    "abundance_factor": 66,
+    "target": "CD11c",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D3V1E",
+    "updated_at": "2024-06-13T14:45:24.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45442
+    ]
+   },
+   {
+    "id": 801721,
+    "product_id": 91,
+    "experiment_id": 212191,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "160Gd",
+    "abundance_factor": 66,
+    "target": "CD66b",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "BLR111H",
+    "updated_at": "2024-06-13T14:45:24.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45442
+    ]
+   },
+   {
+    "id": 801723,
+    "product_id": 3174025,
+    "experiment_id": 212191,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "174Yb",
+    "abundance_factor": 66,
+    "target": "HLA-DR",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "LN3",
+    "updated_at": "2024-06-13T14:45:24.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45442
+    ]
+   },
+   {
+    "id": 801720,
+    "product_id": 91,
+    "experiment_id": 212191,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "175Lu",
+    "abundance_factor": 66,
+    "target": "CD14",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR3653",
+    "updated_at": "2024-06-13T14:45:24.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45442
+    ]
+   }
+  ]
+ },
+ "Hu_Lymphoid_IMC_Panel_4_Antibodies": {
+  "meta": {
+   "id": 212192,
+   "name": "Hu_Lymphoid_IMC_Panel_4_Antibodies",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2024-06-13 14:45:07",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-05-17 15:32:50",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 201512,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 4
+  },
+  "nodes": [
+   {
+    "id": 801724,
+    "product_id": 3156033,
+    "experiment_id": 212192,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "156Gd",
+    "abundance_factor": 66,
+    "target": "CD4",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR6855",
+    "updated_at": "2024-06-13T14:45:07.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45443
+    ]
+   },
+   {
+    "id": 801725,
+    "product_id": 3162034,
+    "experiment_id": 212192,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "162Dy",
+    "abundance_factor": 33,
+    "target": "CD8A",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "C8/144B",
+    "updated_at": "2024-06-13T14:45:07.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45443
+    ]
+   },
+   {
+    "id": 801727,
+    "product_id": 3163033,
+    "experiment_id": 212192,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "163Dy",
+    "abundance_factor": 66,
+    "target": "CD57",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "NK/804",
+    "updated_at": "2024-06-13T14:45:07.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45443
+    ]
+   },
+   {
+    "id": 801726,
+    "product_id": 3173016,
+    "experiment_id": 212192,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "173Yb",
+    "abundance_factor": 66,
+    "target": "CD45RO",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "UCHL1",
+    "updated_at": "2024-06-13T14:45:07.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45443
+    ]
+   }
+  ]
+ },
+ "Hu_Stromal_Cell_IMC_Panel_4_Antibodies": {
+  "meta": {
+   "id": 212194,
+   "name": "Hu_Stromal_Cell_IMC_Panel_4_Antibodies",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "",
+   "timestamp": "2024-06-13 14:45:58",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-05-17 15:26:15",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 201511,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 4
+  },
+  "nodes": [
+   {
+    "id": 801733,
+    "product_id": 3153029,
+    "experiment_id": 212194,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "153Eu",
+    "abundance_factor": 66,
+    "target": "CD44",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "IM7",
+    "updated_at": "2024-06-13T14:45:58.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45445
+    ]
+   },
+   {
+    "id": 801734,
+    "product_id": 3161035,
+    "experiment_id": 212194,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "161Dy",
+    "abundance_factor": 66,
+    "target": "FAP",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "E1V9V",
+    "updated_at": "2024-06-13T14:45:58.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45445
+    ]
+   },
+   {
+    "id": 801735,
+    "product_id": 3164032,
+    "experiment_id": 212194,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "164Dy",
+    "abundance_factor": 66,
+    "target": "Podoplanin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D2-40",
+    "updated_at": "2024-06-13T14:45:58.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45445
+    ]
+   },
+   {
+    "id": 801732,
+    "product_id": 3209017,
+    "experiment_id": 212194,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "209Bi",
+    "abundance_factor": 66,
+    "target": "Alpha-Smooth Muscle Actin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "1A4",
+    "updated_at": "2024-06-13T14:45:58.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45445
+    ]
+   }
+  ]
+ },
+ "Hu_Immuno-Oncology_IMC_Panel_31_Antibodies": {
+  "meta": {
+   "id": 212188,
+   "name": "Hu_Immuno-Oncology_IMC_Panel_31_Antibodies",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "undefined",
+   "timestamp": "2024-06-13 14:57:32",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2024-05-17 16:33:46",
+   "locked": 0,
+   "channel_min": 75,
+   "channel_max": 209,
+   "kit_id": 201509,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 31
+  },
+  "nodes": [
+   {
+    "id": 801679,
+    "product_id": 3089006,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "89Y",
+    "abundance_factor": 66,
+    "target": "Collagen I",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "Polyclonal",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801687,
+    "product_id": 91,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "115In",
+    "abundance_factor": 66,
+    "target": "CD20",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "H1",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801681,
+    "product_id": 3141021,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "141Pr",
+    "abundance_factor": 66,
+    "target": "Pan-CytoKeratin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "AE-1/AE-3",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801694,
+    "product_id": 3144030,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "144Nd",
+    "abundance_factor": 33,
+    "target": "CD11b",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR1344",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801697,
+    "product_id": 3147021,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "147Sm",
+    "abundance_factor": 66,
+    "target": "CD163",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EDHu-1",
+    "updated_at": "2024-06-13T14:56:49.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801707,
+    "product_id": 3149032,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "149Sm",
+    "abundance_factor": 66,
+    "target": "Vimentin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D21H3",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801703,
+    "product_id": 91,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "150Nd",
+    "abundance_factor": 66,
+    "target": "Ki-67",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "B56",
+    "updated_at": "2024-06-13T14:56:49.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801678,
+    "product_id": 3151025,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "151Eu",
+    "abundance_factor": 66,
+    "target": "CD31/PECAM1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR3094",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801688,
+    "product_id": 3152018,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "152Sm",
+    "abundance_factor": 66,
+    "target": "CD45",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D9M8I",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801683,
+    "product_id": 3153029,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "153Eu",
+    "abundance_factor": 66,
+    "target": "CD44",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "IM7",
+    "updated_at": "2024-06-13T14:56:50.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801695,
+    "product_id": 3154027,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "154Sm",
+    "abundance_factor": 66,
+    "target": "CD11c",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D3V1E",
+    "updated_at": "2024-06-13T14:56:50.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801701,
+    "product_id": 3155018,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "155Gd",
+    "abundance_factor": 66,
+    "target": "FoxP3",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "PCH101",
+    "updated_at": "2024-06-13T14:56:50.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801690,
+    "product_id": 3156033,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "156Gd",
+    "abundance_factor": 66,
+    "target": "CD4",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR6855",
+    "updated_at": "2024-06-13T14:56:50.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801705,
+    "product_id": 3158029,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "158Gd",
+    "abundance_factor": 66,
+    "target": "E-Cadherin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "24E10",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801689,
+    "product_id": 3159035,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "159Tb",
+    "abundance_factor": 66,
+    "target": "CD68",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "KP1",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801696,
+    "product_id": 91,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "160Gd",
+    "abundance_factor": 66,
+    "target": "CD66b",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "BLR111H",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801684,
+    "product_id": 3161035,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "161Dy",
+    "abundance_factor": 66,
+    "target": "FAP",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "E1V9V",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801691,
+    "product_id": 3162034,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "162Dy",
+    "abundance_factor": 33,
+    "target": "CD8A",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "C8/144B",
+    "updated_at": "2024-06-13T14:56:51.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801693,
+    "product_id": 3163033,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "163Dy",
+    "abundance_factor": 33,
+    "target": "CD57",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "NK/804",
+    "updated_at": "2024-06-13T14:57:19.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801685,
+    "product_id": 3164032,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "164Dy",
+    "abundance_factor": 66,
+    "target": "Podoplanin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D2-40",
+    "updated_at": "2024-06-13T14:57:32.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801700,
+    "product_id": 3165045,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "165Ho",
+    "abundance_factor": 66,
+    "target": "CD279/PD-1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D4W2J",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801699,
+    "product_id": 91,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "166Er",
+    "abundance_factor": 66,
+    "target": "CD274/PD-L1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "73-10",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801704,
+    "product_id": 91,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "169Tm",
+    "abundance_factor": 66,
+    "target": "Beta-Catenin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "5H10",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801686,
+    "product_id": 91,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "170Er",
+    "abundance_factor": 66,
+    "target": "CD3 epsilon",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D7A6E",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801680,
+    "product_id": 91,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "171Yb",
+    "abundance_factor": 66,
+    "target": "Fibronectin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR23110-46",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801706,
+    "product_id": 3172034,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "172Yb",
+    "abundance_factor": 66,
+    "target": "EpCAM",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR20532-222",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801692,
+    "product_id": 3173016,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "173Yb",
+    "abundance_factor": 66,
+    "target": "CD45RO",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "UCHL1",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801698,
+    "product_id": 3174025,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "174Yb",
+    "abundance_factor": 66,
+    "target": "HLA-DR",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "LN3",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801708,
+    "product_id": 91,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "175Lu",
+    "abundance_factor": 66,
+    "target": "CD14",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR3653",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801702,
+    "product_id": 91,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "176Yb",
+    "abundance_factor": 66,
+    "target": "Granzyme B",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR20129-217",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   },
+   {
+    "id": 801682,
+    "product_id": 3209017,
+    "experiment_id": 212188,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "209Bi",
+    "abundance_factor": 66,
+    "target": "Alpha-Smooth Muscle Actin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "1A4",
+    "updated_at": "2024-06-13T14:56:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     45439
+    ]
+   }
+  ]
+ },
+ "Hu_Maxpar_Immuno-Oncology_IMC_Panel (kit)": {
+  "meta": {
+   "id": 211041,
+   "name": "Hu_Maxpar_Immuno-Oncology_IMC_Panel (kit)",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "",
+   "timestamp": "2024-05-13 19:47:05",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2023-10-11 14:56:00",
+   "locked": 0,
+   "channel_min": 89,
+   "channel_max": 209,
+   "kit_id": 201508,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "[0]",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 16
+  },
+  "nodes": [
+   {
+    "id": 769694,
+    "product_id": 3141017,
+    "experiment_id": 211041,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "141Pr",
+    "abundance_factor": 66,
+    "target": "aSMA/ACTA2",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "1A4",
+    "updated_at": "2024-05-13T19:47:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43947
+    ]
+   },
+   {
+    "id": 769696,
+    "product_id": 3143027,
+    "experiment_id": 211041,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "143Nd",
+    "abundance_factor": 66,
+    "target": "Vimentin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D21H3",
+    "updated_at": "2024-05-13T19:47:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43947
+    ]
+   },
+   {
+    "id": 769699,
+    "product_id": 3148020,
+    "experiment_id": 211041,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "148Nd",
+    "abundance_factor": 66,
+    "target": "Pan-Keratin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "C11",
+    "updated_at": "2024-05-13T19:47:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43947
+    ]
+   },
+   {
+    "id": 769700,
+    "product_id": 3150033,
+    "experiment_id": 211041,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "150Nd",
+    "abundance_factor": 66,
+    "target": "CD274/PD-L1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "SP142",
+    "updated_at": "2024-05-13T19:47:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43947
+    ]
+   },
+   {
+    "id": 769710,
+    "product_id": 0,
+    "experiment_id": 211041,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "155Gd",
+    "abundance_factor": 66,
+    "target": "FoxP3",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "PCH101",
+    "updated_at": "2024-05-13T19:47:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43947
+    ]
+   },
+   {
+    "id": 769697,
+    "product_id": 3156033,
+    "experiment_id": 211041,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "156Gd",
+    "abundance_factor": 66,
+    "target": "CD4",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR6855",
+    "updated_at": "2024-05-13T19:47:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43947
+    ]
+   },
+   {
+    "id": 769695,
+    "product_id": 3158029,
+    "experiment_id": 211041,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "158Gd",
+    "abundance_factor": 66,
+    "target": "E-Cadherin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "24E10",
+    "updated_at": "2024-05-13T19:47:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43947
+    ]
+   },
+   {
+    "id": 769698,
+    "product_id": 3159035,
+    "experiment_id": 211041,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "159Tb",
+    "abundance_factor": 66,
+    "target": "CD68",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "KP1",
+    "updated_at": "2024-05-13T19:47:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43947
+    ]
+   },
+   {
+    "id": 769703,
+    "product_id": 3161029,
+    "experiment_id": 211041,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "161Dy",
+    "abundance_factor": 66,
+    "target": "CD20",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "H1",
+    "updated_at": "2024-05-13T19:47:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43947
+    ]
+   },
+   {
+    "id": 769706,
+    "product_id": 3162034,
+    "experiment_id": 211041,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "162Dy",
+    "abundance_factor": 66,
+    "target": "CD8A",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "C8/144B",
+    "updated_at": "2024-05-13T19:47:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43947
+    ]
+   },
+   {
+    "id": 769707,
+    "product_id": 3167021,
+    "experiment_id": 211041,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "167Er",
+    "abundance_factor": 66,
+    "target": "Granzyme B",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR20129-217",
+    "updated_at": "2024-05-13T19:47:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43947
+    ]
+   },
+   {
+    "id": 769708,
+    "product_id": 3168007,
+    "experiment_id": 211041,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "168Er",
+    "abundance_factor": 66,
+    "target": "Ki-67",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "B56",
+    "updated_at": "2024-05-13T19:47:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43947
+    ]
+   },
+   {
+    "id": 769701,
+    "product_id": 3169023,
+    "experiment_id": 211041,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "169Tm",
+    "abundance_factor": 66,
+    "target": "Collagen type I",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "Polyclonal",
+    "updated_at": "2024-05-13T19:47:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43947
+    ]
+   },
+   {
+    "id": 769704,
+    "product_id": 3170019,
+    "experiment_id": 211041,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "170Er",
+    "abundance_factor": 66,
+    "target": "CD3",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "Polyclonal, C-Terminal",
+    "updated_at": "2024-05-13T19:47:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43947
+    ]
+   },
+   {
+    "id": 769705,
+    "product_id": 3173016,
+    "experiment_id": 211041,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "173Yb",
+    "abundance_factor": 66,
+    "target": "CD45RO",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "UCHL1",
+    "updated_at": "2024-05-13T19:47:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43947
+    ]
+   },
+   {
+    "id": 769702,
+    "product_id": 3176023,
+    "experiment_id": 211041,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "176Yb",
+    "abundance_factor": 66,
+    "target": "Histone H3",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D1H2",
+    "updated_at": "2024-05-13T19:47:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43947
+    ]
+   }
+  ]
+ },
+ "Hu_Maxpar_Neuro-Oncology_IMC_Bundle": {
+  "meta": {
+   "id": 211040,
+   "name": "Hu_Maxpar_Neuro-Oncology_IMC_Bundle",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "",
+   "timestamp": "2024-05-13 19:50:05",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2023-11-21 13:32:00",
+   "locked": 0,
+   "channel_min": 89,
+   "channel_max": 209,
+   "kit_id": 201508,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 24
+  },
+  "nodes": [
+   {
+    "id": 769670,
+    "product_id": 3141017,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "141Pr",
+    "abundance_factor": 66,
+    "target": "aSMA/ACTA2",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "1A4",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769687,
+    "product_id": 3142020,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "142Nd",
+    "abundance_factor": 66,
+    "target": "Iba1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR16588",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769674,
+    "product_id": 3143027,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "143Nd",
+    "abundance_factor": 66,
+    "target": "Vimentin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D21H3",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769682,
+    "product_id": 3148020,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "148Nd",
+    "abundance_factor": 66,
+    "target": "Pan-Keratin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "C11",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769686,
+    "product_id": 3150033,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "150Nd",
+    "abundance_factor": 66,
+    "target": "CD274/PD-L1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "SP142",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769692,
+    "product_id": 0,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "151Eu",
+    "abundance_factor": 66,
+    "target": "CD34",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EP373Y",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769681,
+    "product_id": 0,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "155Gd",
+    "abundance_factor": 66,
+    "target": "FoxP3",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "PCH101",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769677,
+    "product_id": 3156033,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "156Gd",
+    "abundance_factor": 66,
+    "target": "CD4",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR6855",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769672,
+    "product_id": 3158029,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "158Gd",
+    "abundance_factor": 66,
+    "target": "E-Cadherin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "24E10",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769679,
+    "product_id": 3159035,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "159Tb",
+    "abundance_factor": 66,
+    "target": "CD68",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "KP1",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769689,
+    "product_id": 3160028,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "160Gd",
+    "abundance_factor": 66,
+    "target": "NeuN",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR12763",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769675,
+    "product_id": 3161029,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "161Dy",
+    "abundance_factor": 66,
+    "target": "CD20",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "H1",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769680,
+    "product_id": 3162034,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "162Dy",
+    "abundance_factor": 66,
+    "target": "CD8A",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "C8/144B",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769688,
+    "product_id": 3163031,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "163Dy",
+    "abundance_factor": 66,
+    "target": "GFAP",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "GA5",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769690,
+    "product_id": 3164031,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "164Dy",
+    "abundance_factor": 66,
+    "target": "S100beta",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EP1576Y",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769685,
+    "product_id": 3165039,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "165Ho",
+    "abundance_factor": 66,
+    "target": "CD279/PD-1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR4877(2)",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769683,
+    "product_id": 3167021,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "167Er",
+    "abundance_factor": 66,
+    "target": "Granzyme B",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR20129-217",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769684,
+    "product_id": 3168007,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "168Er",
+    "abundance_factor": 66,
+    "target": "Ki-67",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "B56",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769671,
+    "product_id": 3169023,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "169Tm",
+    "abundance_factor": 66,
+    "target": "Collagen type I",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "Polyclonal",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769676,
+    "product_id": 3170019,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "170Er",
+    "abundance_factor": 66,
+    "target": "CD3",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "Polyclonal, C-Terminal",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769693,
+    "product_id": 3172033,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "172Yb",
+    "abundance_factor": 66,
+    "target": "Olig2",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR2673",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769678,
+    "product_id": 3173016,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "173Yb",
+    "abundance_factor": 66,
+    "target": "CD45RO",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "UCHL1",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769691,
+    "product_id": 3175040,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "175Lu",
+    "abundance_factor": 66,
+    "target": "MAP2",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR19691",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   },
+   {
+    "id": 769673,
+    "product_id": 3176023,
+    "experiment_id": 211040,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "176Yb",
+    "abundance_factor": 66,
+    "target": "Histone H3",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D1H2",
+    "updated_at": "2024-05-13T19:50:05.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43946
+    ]
+   }
+  ]
+ },
+ "Hu_Maxpar_Tissue_Architecture_IMC_Panel (kit)": {
+  "meta": {
+   "id": 211042,
+   "name": "Hu_Maxpar_Tissue_Architecture_IMC_Panel (kit)",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "",
+   "timestamp": "2024-05-13 19:47:25",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2023-10-11 14:44:00",
+   "locked": 0,
+   "channel_min": 89,
+   "channel_max": 209,
+   "kit_id": 201507,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 5
+  },
+  "nodes": [
+   {
+    "id": 769711,
+    "product_id": 3141017,
+    "experiment_id": 211042,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "141Pr",
+    "abundance_factor": 66,
+    "target": "aSMA/ACTA2",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "1A4",
+    "updated_at": "2024-05-13T19:47:25.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43948
+    ]
+   },
+   {
+    "id": 769713,
+    "product_id": 3143027,
+    "experiment_id": 211042,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "143Nd",
+    "abundance_factor": 66,
+    "target": "Vimentin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D21H3",
+    "updated_at": "2024-05-13T19:47:25.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43948
+    ]
+   },
+   {
+    "id": 769712,
+    "product_id": 3158029,
+    "experiment_id": 211042,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "158Gd",
+    "abundance_factor": 66,
+    "target": "E-Cadherin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "24E10",
+    "updated_at": "2024-05-13T19:47:25.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43948
+    ]
+   },
+   {
+    "id": 769714,
+    "product_id": 3169023,
+    "experiment_id": 211042,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "169Tm",
+    "abundance_factor": 66,
+    "target": "Collagen type I",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "Polyclonal",
+    "updated_at": "2024-05-13T19:47:25.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43948
+    ]
+   },
+   {
+    "id": 769715,
+    "product_id": 3176023,
+    "experiment_id": 211042,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "176Yb",
+    "abundance_factor": 66,
+    "target": "Histone H3",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "D1H2",
+    "updated_at": "2024-05-13T19:47:25.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43948
+    ]
+   }
+  ]
+ },
+ "Hu_Maxpar_Tumor_Infiltrating_Lymphocytes_IMC_Panel (kit)": {
+  "meta": {
+   "id": 211043,
+   "name": "Hu_Maxpar_Tumor_Infiltrating_Lymphocytes_IMC_Panel (kit)",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "",
+   "timestamp": "2024-05-13 19:47:48",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2023-10-11 14:48:00",
+   "locked": 0,
+   "channel_min": 89,
+   "channel_max": 209,
+   "kit_id": 201506,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 8
+  },
+  "nodes": [
+   {
+    "id": 769718,
+    "product_id": 3148020,
+    "experiment_id": 211043,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "148Nd",
+    "abundance_factor": 66,
+    "target": "Pan-Keratin",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "C11",
+    "updated_at": "2024-05-13T19:47:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43949
+    ]
+   },
+   {
+    "id": 769723,
+    "product_id": 0,
+    "experiment_id": 211043,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "155Gd",
+    "abundance_factor": 66,
+    "target": "FoxP3",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "PCH101",
+    "updated_at": "2024-05-13T19:47:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43949
+    ]
+   },
+   {
+    "id": 769716,
+    "product_id": 3156033,
+    "experiment_id": 211043,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "156Gd",
+    "abundance_factor": 66,
+    "target": "CD4",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR6855",
+    "updated_at": "2024-05-13T19:47:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43949
+    ]
+   },
+   {
+    "id": 769717,
+    "product_id": 3159035,
+    "experiment_id": 211043,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "159Tb",
+    "abundance_factor": 66,
+    "target": "CD68",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "KP1",
+    "updated_at": "2024-05-13T19:47:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43949
+    ]
+   },
+   {
+    "id": 769719,
+    "product_id": 3161029,
+    "experiment_id": 211043,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "161Dy",
+    "abundance_factor": 66,
+    "target": "CD20",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "H1",
+    "updated_at": "2024-05-13T19:47:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43949
+    ]
+   },
+   {
+    "id": 769722,
+    "product_id": 3162034,
+    "experiment_id": 211043,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "162Dy",
+    "abundance_factor": 66,
+    "target": "CD8A",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "C8/144B",
+    "updated_at": "2024-05-13T19:47:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43949
+    ]
+   },
+   {
+    "id": 769720,
+    "product_id": 3170019,
+    "experiment_id": 211043,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "170Er",
+    "abundance_factor": 66,
+    "target": "CD3",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "Polyclonal, C-Terminal",
+    "updated_at": "2024-05-13T19:47:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43949
+    ]
+   },
+   {
+    "id": 769721,
+    "product_id": 3173016,
+    "experiment_id": 211043,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "173Yb",
+    "abundance_factor": 66,
+    "target": "CD45RO",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "UCHL1",
+    "updated_at": "2024-05-13T19:47:48.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43949
+    ]
+   }
+  ]
+ },
+ "Hu_Maxpar_Immune_Activation_IMC_Panel (kit)": {
+  "meta": {
+   "id": 211044,
+   "name": "Hu_Maxpar_Immune_Activation_IMC_Panel (kit)",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "",
+   "timestamp": "2024-05-13 19:49:51",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2023-10-11 14:53:00",
+   "locked": 0,
+   "channel_min": 89,
+   "channel_max": 209,
+   "kit_id": 201503,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 4
+  },
+  "nodes": [
+   {
+    "id": 769724,
+    "product_id": 3150033,
+    "experiment_id": 211044,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "150Nd",
+    "abundance_factor": 66,
+    "target": "CD274/PD-L1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "SP142",
+    "updated_at": "2024-05-13T19:49:51.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43950
+    ]
+   },
+   {
+    "id": 769727,
+    "product_id": 3165039,
+    "experiment_id": 211044,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "165Ho",
+    "abundance_factor": 66,
+    "target": "CD279/PD-1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR4877(2)",
+    "updated_at": "2024-05-13T19:49:51.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43950
+    ]
+   },
+   {
+    "id": 769725,
+    "product_id": 3167021,
+    "experiment_id": 211044,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "167Er",
+    "abundance_factor": 66,
+    "target": "Granzyme B",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR20129-217",
+    "updated_at": "2024-05-13T19:49:51.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43950
+    ]
+   },
+   {
+    "id": 769726,
+    "product_id": 3168007,
+    "experiment_id": 211044,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "168Er",
+    "abundance_factor": 66,
+    "target": "Ki-67",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "B56",
+    "updated_at": "2024-05-13T19:49:51.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43950
+    ]
+   }
+  ]
+ },
+ "Maxpar_IMC_Cell-Segmentation_Kit": {
+  "meta": {
+   "id": 211045,
+   "name": "Maxpar_IMC_Cell-Segmentation_Kit",
+   "reactivity": "[1,2]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "",
+   "timestamp": "2024-06-13 14:58:59",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2023-11-21 11:53:00",
+   "locked": 0,
+   "channel_min": 89,
+   "channel_max": 209,
+   "kit_id": 201500,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1,2]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 3
+  },
+  "nodes": [
+   {
+    "id": 769728,
+    "product_id": 0,
+    "experiment_id": 211045,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 1,
+    "label": "195Pt",
+    "abundance_factor": 66,
+    "target": "ICSK-1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 0,
+    "clone": "",
+    "updated_at": "2024-06-13T14:58:59.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43951
+    ]
+   },
+   {
+    "id": 769729,
+    "product_id": 0,
+    "experiment_id": 211045,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 1,
+    "label": "196Pt",
+    "abundance_factor": 66,
+    "target": "ICSK-2",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 0,
+    "clone": "",
+    "updated_at": "2024-06-13T14:58:59.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43951
+    ]
+   },
+   {
+    "id": 769730,
+    "product_id": 0,
+    "experiment_id": 211045,
+    "reactivity": [
+     1,
+     2
+    ],
+    "active": 1,
+    "custom": 1,
+    "label": "198Pt",
+    "abundance_factor": 66,
+    "target": "ICSK-3",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 0,
+    "clone": "",
+    "updated_at": "2024-06-13T14:58:59.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43951
+    ]
+   }
+  ]
+ },
+ "Maxpar_NeuroPhenotyping_IMC_Panel (kit)": {
+  "meta": {
+   "id": 211049,
+   "name": "Maxpar_NeuroPhenotyping_IMC_Panel (kit)",
+   "reactivity": "[1]",
+   "hide_inactive": 0,
+   "num_zones": 0,
+   "order": "",
+   "timestamp": "2024-06-13 14:59:11",
+   "auto": "true",
+   "user_id": 3346,
+   "instrument_type": 5,
+   "tol_include": "false",
+   "created": "2023-10-18 14:48:00",
+   "locked": 0,
+   "channel_min": 89,
+   "channel_max": 209,
+   "kit_id": 201337,
+   "kit_instrument_avail": "[5,6,7]",
+   "imported_exp": "",
+   "kit_reactivity": "[1,2]",
+   "updated_at": null,
+   "kit_active": 1,
+   "experiment_meta": null,
+   "panel_type": 1,
+   "description": null,
+   "marker_count": 7
+  },
+  "nodes": [
+   {
+    "id": 769752,
+    "product_id": 3142020,
+    "experiment_id": 211049,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "142Nd",
+    "abundance_factor": 66,
+    "target": "Iba1",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR16588",
+    "updated_at": "2024-06-13T14:59:11.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43955
+    ]
+   },
+   {
+    "id": 769753,
+    "product_id": 3143030,
+    "experiment_id": 211049,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "143Nd",
+    "abundance_factor": 66,
+    "target": "GFAP",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "GA5",
+    "updated_at": "2024-06-13T14:59:11.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43955
+    ]
+   },
+   {
+    "id": 769754,
+    "product_id": 3145019,
+    "experiment_id": 211049,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "145Nd",
+    "abundance_factor": 66,
+    "target": "NeuN",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR12763",
+    "updated_at": "2024-06-13T14:59:11.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43955
+    ]
+   },
+   {
+    "id": 769755,
+    "product_id": 3146021,
+    "experiment_id": 211049,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "146Nd",
+    "abundance_factor": 66,
+    "target": "S100beta",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EP1576Y",
+    "updated_at": "2024-06-13T14:59:11.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43955
+    ]
+   },
+   {
+    "id": 769756,
+    "product_id": 3148023,
+    "experiment_id": 211049,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "148Nd",
+    "abundance_factor": 66,
+    "target": "MAP2",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR19691",
+    "updated_at": "2024-06-13T14:59:11.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43955
+    ]
+   },
+   {
+    "id": 769757,
+    "product_id": 0,
+    "experiment_id": 211049,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "167Er",
+    "abundance_factor": 66,
+    "target": "CD34",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EP373Y",
+    "updated_at": "2024-06-13T14:59:11.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43955
+    ]
+   },
+   {
+    "id": 769758,
+    "product_id": 3168028,
+    "experiment_id": 211049,
+    "reactivity": [
+     1
+    ],
+    "active": 1,
+    "custom": 0,
+    "label": "168Er",
+    "abundance_factor": 66,
+    "target": "Olig2",
+    "important": 0,
+    "label_product_id": 0,
+    "catalog_id": 1,
+    "clone": "EPR2673",
+    "updated_at": "2024-06-13T14:59:11.000000Z",
+    "kit_id": 0,
+    "groups": [
+     43955
+    ]
+   }
+  ]
+ }
+}

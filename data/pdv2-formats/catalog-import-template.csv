@@ -1,0 +1,3 @@
+"catalog","target","species","clone","tag","signal_di","tolerance_di","product","cat_number","panel_type"
+"ABC","Test","Human","Test","141Pr","100","10","Test","12345A","Flow"
+"DEF","Test","Human","Test","141Pr","-","-","Test","12345A","Imaging"

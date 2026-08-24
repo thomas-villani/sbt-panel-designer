@@ -1,0 +1,934 @@
+panel_type,pdv2_id,product,species,category,target,size,clone,tag,cat_number,test_species
+IMC,1794,Anti-APP (4G8)-141Pr—15 ug,"Human, Mouse",FFPE,APP,15 ug,4G8,141Pr,91H055141,"Human, Mouse"
+IMC,1795,Anti-APP (4G8)-158Gd—15 ug,"Human, Mouse",FFPE,APP,15 ug,4G8,158Gd,91H055158,"Human, Mouse"
+IMC,1796,Anti-APP (4G8)-172Yb—15 ug,"Human, Mouse",FFPE,APP,15 ug,4G8,172Yb,91H055172,"Human, Mouse"
+IMC,1347,Anti-Arginase-1 (D4E3M)-164Dy—25 µg,"Cross,Human",FFPE,ARGINASE-1,25 µg,D4E3M,164Dy,3164027D,"Cross,Human"
+IMC,1913,Anti-ATP5A (EPR13030(B))-145Nd—25 ug,"Human, mouse, rat",FFPE,ATP5A,25 µg,EPR13030(B),145Nd,3145023D,"Human, mouse, rat"
+IMC,1764,Anti-Human Alpha-Smooth Muscle Actin (1A4)-209Bi—25 ug,Human,FFPE,Alpha-Smooth Muscle Actin,25 ug,1A4,209Bi,91H001209,Human
+IMC,1785,Anti-AlphaSyn (E4U2F)-141Pr—15 ug,"Human, Mouse",FFPE,AlphaSyn,15 ug,E4U2F,141Pr,91H052141,"Human, Mouse"
+IMC,1786,Anti-AlphaSyn (E4U2F)-149Sm—15 ug,"Human, Mouse",FFPE,AlphaSyn,15 ug,E4U2F,149Sm,91H052149,"Human, Mouse"
+IMC,1787,Anti-AlphaSyn (E4U2F)-158Gd—15 ug,"Human, Mouse",FFPE,AlphaSyn,15 ug,E4U2F,158Gd,91H052158,"Human, Mouse"
+IMC,1348,Anti-Human B7-H4 (H74)-166Er—25 µg,Human,FFPE,B7-H4,25 µg,H74,166Er,3166030D,Human
+IMC,1349,Anti-BCL-2 (EPR17509)-146Nd,"Human,Mouse",FFPE,BCL-2,25 µg,EPR17509,146Nd,3146019D,"Human,Mouse"
+IMC,1360,Anti-BRCA1 (MS110)-172Yb,"Human,Mouse",FFPE,BRCA1,25 µg,MS110,172Yb,3172030D,"Human,Mouse"
+IMC,1350,Anti-Human/Mouse BCL-6 (K112-91)-147Sm—25 µg,"Human,Mouse",FFPE,Bcl-6,25 µg,K112-91,147Sm,3147020D,"Human,Mouse"
+IMC,1776,Anti-Human Beta-Catenin (5H10)-169Tm—25 ug,Human,FFPE,Beta-Catenin,25 ug,5H10,169Tm,3169031D,Human
+IMC,1362,Anti-Human CD107a/LAMP1 (H4A3)-151Eu—25 µg,Human,FFPE,CD107a/LAMP1,25 µg,H4A3,151Eu,3151021D,Human
+IMC,1363,Anti-CD11b (EPR1344)-146Nd—15 µg,"Human,Mouse",FFPE,CD11b,15 µg,EPR1344,146Nd,91H007146,"Human,Mouse"
+IMC,1364,Anti-CD11b (EPR1344)-149Sm,"Human,Mouse",FFPE,CD11b,25 µg,EPR1344,149Sm,3149028D,"Human,Mouse"
+IMC,1365,Anti-CD11b (EPR1344)-163Dy—15 µg,"Human,Mouse",FFPE,CD11b,15 µg,EPR1344,163Dy,91H007163,"Human,Mouse"
+IMC,1366,Anti-CD11b (EPR1344)-165Ho—15 µg,"Human,Mouse",FFPE,CD11b,15 µg,EPR1344,165Ho,91H007165,"Human,Mouse"
+IMC,1770,Anti-Human CD11b (EPR1344)-144Nd—25 ug,Human,FFPE,CD11b,25 ug,EPR1344,144Nd,3144030D,Human
+IMC,1367,Anti-CD11c (3.9)-154Sm—25 µg,"Cross,Human",Frozen,CD11c,25 µg,3.9,154Sm,3154026D,"Cross,Human"
+IMC,1368,Anti-Human CD11c (Polyclonal)-154Sm—25 µg,Human,FFPE,CD11c,25 µg,Polyclonal,154Sm,3154025D,Human
+IMC,1369,Anti-CD11c (EP1347Y)-145Nd-15 ug,Human,FFPE,CD11c,15 µg,EP1347Y,145Nd,91H041145,Human
+IMC,1370,Anti-CD11c (EP1347Y)-151Eu-15 ug,Human,FFPE,CD11c,15 µg,EP1347Y,151Eu,91H041151,Human
+IMC,1372,Anti-CD11c (EP1347Y)-160Gd-15 ug,Human,FFPE,CD11c,15 µg,EP1347Y,160Gd,91H041160,Human
+IMC,1373,Anti-CD127/IL-7Rα [EPR2955(2)]-168Er,"Cross,Human,Mouse",FFPE,CD127/IL7R,25 µg,EPR2955(2),168Er,3168026D,"Cross,Human,Mouse"
+IMC,1374,Anti-CD134/OX40 (Polyclonal)-151Eu,"Human,Mouse",FFPE,CD134/OX40,25 µg,Polyclonal,151Eu,3151024D,"Human,Mouse"
+IMC,1887,Anti-Human CD134/OX40 (ACT35)-167Er—25ug,Human,FFPE,CD134/OX40,25 µg,ACT35,167Er,3167027D,Human
+IMC,1375,Anti-CD14 (EPR3653)-144Nd,"Human,Mouse",FFPE,CD14,25 µg,EPR3653,144Nd,3144025D,"Human,Mouse"
+IMC,1376,Anti-CD14 (EPR3653)-148Nd—15 µg,"Human,Mouse",FFPE,CD14,15 µg,EPR3653,148Nd,91H003148,"Human,Mouse"
+IMC,1377,Anti-CD14 (EPR3653)-151Eu—15 µg,"Human,Mouse",FFPE,CD14,15 µg,EPR3653,151Eu,91H003151,"Human,Mouse"
+IMC,1378,Anti-CD14 (EPR3653)-163Dy—15 µg,"Human,Mouse",FFPE,CD14,15 µg,EPR3653,163Dy,91H003163,"Human,Mouse"
+IMC,1379,Anti-CD14 (EPR3653)-153Eu-15 ug,Human,FFPE,CD14,15 µg,EPR3653,153Eu,91H003153,Human
+IMC,1380,Anti-CD14 (EPR3653)-160Gd-15 ug,Human,FFPE,CD14,15 µg,EPR3653,160Gd,91H003160,Human
+IMC,1381,Anti-CD14 (EPR3653)-175Lu-15 ug,Human,FFPE,CD14,15 µg,EPR3653,175Lu,3175041D,Human
+IMC,1382,Anti-Human CD15 (W6D3)-149Sm—25 µg,Human,"FFPE,Frozen",CD15,25 µg,W6D3,149Sm,3149026D,Human
+IMC,1780,Anti-Human CD15/SSEA-1 (W6D3)-145Nd—25 ug,Human,FFPE,CD15/SSEA-1,25 ug,W6D3,145Nd,3145021D,Human
+IMC,1888,Anti-Human CD152/CTLA-4 (BLR257L)-168Er—25ug,Human,FFPE,CD152/CTLA-4,25 µg,BLR257L,168Er,3168030D,Human
+IMC,1383,Anti-Human CD16 (EPR16784)-146Nd—25 µg,Human,"FFPE,Frozen",CD16,25 µg,EPR16784,146Nd,3146020D,Human
+IMC,1384,Anti-CD16 (EPR16784 )148Nd—15 µg,"Human, Rat","FFPE,Frozen",CD16,15 µg,EPR16784,148Nd,91H004148,"Human, Rat"
+IMC,1385,Anti-CD16 (EPR16784 )149Sm—15 µg,"Human, Rat","FFPE,Frozen",CD16,15 µg,EPR16784,149Sm,91H004149,"Human, Rat"
+IMC,1386,Anti-CD16 (EPR16784 )153Eu—15 µg,"Human, Rat","FFPE,Frozen",CD16,15 µg,EPR16784,153Eu,91H004153,"Human, Rat"
+IMC,1387,Anti-Human CD163 (EDHu-1)-147Sm—25 µg,Human,"FFPE,Frozen",CD163,25 µg,EDHu-1,147Sm,3147021D,Human
+IMC,1388,Anti-CD163 (EDHu-1 )148Nd—15 µg,Human,"FFPE,Frozen",CD163,15 µg,EDHu-1,148Nd,91H005148,Human
+IMC,1389,Anti-CD163 (EDHu-1 )151Eu—15 µg,Human,"FFPE,Frozen",CD163,15 µg,EDHu-1,151Eu,91H005151,Human
+IMC,1390,Anti-CD163 (EDHu-1 )152Sm—15 µg,Human,"FFPE,Frozen",CD163,15 µg,EDHu-1,152Sm,91H005152,Human
+IMC,1391,Anti-CD19 (6OMP31)-142Nd—25 µg,"Cross,Human",FFPE,CD19,25 µg,6OMP31,142Nd,3142014D,"Cross,Human"
+IMC,1392,Anti-CD19 (HIB19)-142Nd—25 µg,"Cross,Human",Frozen,CD19,25 µg,HIB19,142Nd,3142016D,"Cross,Human"
+IMC,1393,Anti-Human CD194/CCR4 (L291H4)-149Sm—25 µg,Human,FFPE,CD194/CCR4,25 µg,L291H4,149Sm,3149030D,Human
+IMC,1394,Anti-CD196/CCR6 (G034E3)-163Dy—25 µg,"Cross,Human",Frozen,CD196/CCR6,25 µg,G034E3,163Dy,3163030D,"Cross,Human"
+IMC,1643,Anti-CD20 (H1) -115In - 15 µg,Human,FFPE,CD20,15 µg,H1,115In,3115001D,Human
+IMC,1395,Anti-CD20 (2H7)-161Dy—25 µg,"Cross,Human",Frozen,CD20,25 µg,2H7,161Dy,3161032D,"Cross,Human"
+IMC,1397,Anti-CD20 (H1 )145Nd—15 µg,Human,FFPE,CD20,15 µg,H1,145Nd,91H013145,Human
+IMC,1398,Anti-CD20 (H1 )147Sm—15 µg,Human,FFPE,CD20,15 µg,H1,147Sm,91H013147,Human
+IMC,1399,Anti-CD20 (H1 )164Dy—15 µg,Human,FFPE,CD20,15 µg,H1,164Dy,91H013164,Human
+IMC,1400,Anti-CD206/MMR (5C11)-153Eu-15 ug,Human,FFPE,CD206,15 µg,5C11,153Eu,91H042153,Human
+IMC,1401,Anti-CD206/MMR (5C11)-163Dy-15 ug,Human,FFPE,CD206,15 µg,5C11,163Dy,91H042163,Human
+IMC,1402,Anti-CD206/MMR (5C11)-167Er-15 ug,Human,FFPE,CD206,15 µg,5C11,167Er,91H042167,Human
+IMC,1783,Anti-Human CD206/MMR (5C11)-167Er—25 ug,Human,FFPE,CD206/MMR,25 ug,5C11,167Er,3167026D,Human
+IMC,1886,Anti-Human CD223/LAG-3 (BLR027F)-148Nd—25ug,Human,FFPE,CD223/LAG-3,25 µg,BLR027F,148Nd,3148026D,Human
+IMC,1403,Anti-Human CD223/LAG-3 (D2G40)-153Eu—25 µg,Human,FFPE,CD223/LAG3,25 µg,D2G40,153Eu,3153028D,Human
+IMC,1404,Anti-Human CD227/Mucin 1 (SM3)-150Nd—25 µg,Human,FFPE,CD227/MUC1,25 µg,SM3,150Nd,3150032D,Human
+IMC,1405,Anti-Human CD235ab (HIR2)-175Lu—25 µg,Human,FFPE,CD235ab,25 µg,HIR2,175Lu,3175029D,Human
+IMC,1910,Anti-CD25 (2A3) - 169Tm - 15ug,Human,FFPE,CD25,15 µg,2A3,169Tm,3169003B,Human
+IMC,1406,Anti-Human CD25 (2A3)-175Lu—25 µg,Human,Frozen,CD25,25 µg,2A3,175Lu,3175037D,Human
+IMC,1408,Anti-CD27 (LG.3A10)-171Yb—25 µg,Human,Frozen,CD27,25 µg,LG.3A10,171Yb,3171025D,Human
+IMC,1409,Anti-Human CD27 (EPR8569)-171Yb—25 µg,Human,FFPE,CD27,25 µg,EPR8569,171Yb,3171024D,Human
+IMC,1609,Anti-CD274/PD-L1 (E1L3N)-150Nd—25 µg,Human,FFPE,CD274/PD-L1,25 µg,E1L3N,150Nd,3150031D,Human
+IMC,1410,Anti-Human CD274/PD-L1 (SP142)-150Nd—25 µg,Human,"FFPE,Frozen",CD274/PD-L1,25 µg,SP142,150Nd,3150033D,Human
+IMC,1412,Anti-CD274/PD-L1 (73-10)-151Eu-15 ug,Human,FFPE,CD274/PD-L1,15 µg,73-10,151Eu,91H046151,Human
+IMC,1413,Anti-CD274/PD-L1 (73-10)-164Dy-15 ug,Human,FFPE,CD274/PD-L1,15 µg,73-10,164Dy,91H046164,Human
+IMC,1414,Anti-CD274/PD-L1 (73-10)-166Er-15 ug,Human,FFPE,CD274/PD-L1,15 µg,73-10,166Er,3166032D,Human
+IMC,1415,Anti-CD274/PD-L1 (73-10)-174Yb-15 ug,Human,FFPE,CD274/PD-L1,15 µg,73-10,174Yb,91H046174,Human
+IMC,1416,Anti-Human CD276/B7-H3 (Polyclonal)-173Yb—25 µg,Human,FFPE,CD276/B7-H3,25 µg,Polyclonal,173Yb,3173014D,Human
+IMC,1417,Anti-Human CD278/ICOS (D1K2T)-148Nd—25 µg,Human,FFPE,CD278/ICOS,25 µg,D1K2T,148Nd,3148021D,Human
+IMC,1418,Anti-CD278/ICOS (D1K2T)-164Dy-15 ug,Human,FFPE,CD278/ICOS,15 µg,D1K2T,164Dy,91H043164,Human
+IMC,1419,Anti-CD278/ICOS (D1K2T)-174Yb-15 ug,Human,FFPE,CD278/ICOS,15 µg,D1K2T,174Yb,91H043174,Human
+IMC,1420,Anti-CD278/ICOS (D1K2T)-175Lu-15 ug,Human,FFPE,CD278/ICOS,15 µg,D1K2T,175Lu,91H043175,Human
+IMC,1608,Anti-Human CD279 (PD-1) (EPR4877(2))-165Ho—25 µg,Human,FFPE,CD279/PD-1,25 µg,EPR4877(2),165Ho,3165039D,Human
+IMC,1646,Anti-CD279/PD-1 (D4W2J)-165Ho—15 µg,Human,FFPE,CD279/PD-1,15 µg,D4W2J,165Ho,3165045D,Human
+IMC,1422,Anti-Human CD28 (YTH913.12)-160Gd—25 µg,Human,Frozen,CD28,25 µg,YTH913.12,160Gd,3160026D,Human
+IMC,1423,"Anti-CD3 (Polyclonal, C-Terminal)-170Er","Human,Mouse",FFPE,CD3,25 µg,"Polyclonal, C-Terminal",170Er,3170019D,"Human,Mouse"
+IMC,1424,Anti-CD3 (UCHT1)-170Er—25 µg,Human,Frozen,CD3,25 µg,UCHT1,170Er,3170022D,Human
+IMC,1645,Anti-CD3epsilon (D7A6E)-170Er—15 uL,Human,"FFPE,",CD3 epsilon,15 uL,D7A6E,170Er,3170023D,Human
+IMC,1425,Anti-Human CD31 (EPR3094)-151Eu—25 µg,Human,FFPE,CD31/PECAM1,25 µg,EPR3094,151Eu,3151025D,Human
+IMC,1426,Anti-CD31 (EPR17259)-151Eu—15 µg,"Human, Mouse, Rat",FFPE,CD31/PECAM1,15 µg,EPR17259,151Eu,91H027151,"Human, Mouse, Rat"
+IMC,1427,Anti-CD31 (EPR17259)-165Ho—15 µg,"Human, Mouse, Rat",FFPE,CD31/PECAM1,15 µg,EPR17259,165Ho,91H027165,"Human, Mouse, Rat"
+IMC,1428,Anti-CD31 (EPR17259)-171Yb—15 µg,"Human, Mouse, Rat",FFPE,CD31/PECAM1,15 µg,EPR17259,171Yb,91H027171,"Human, Mouse, Rat"
+IMC,1429,Anti-CD31 (EPR17259)-172Yb—15 µg,"Human, Mouse, Rat",FFPE,CD31/PECAM1,15 µg,EPR17259,172Yb,91H027172,"Human, Mouse, Rat"
+IMC,1430,Anti-CD31 (EPR17259)-175Lu—15 µg,"Human, Mouse, Rat",FFPE,CD31/PECAM1,15 µg,EPR17259,175Lu,91H027175,"Human, Mouse, Rat"
+IMC,1432,Anti-CD31 (EPR3094 )144Nd—15 µg,Human,FFPE,CD31/PECAM1,15 µg,EPR3094,144Nd,91H008144,Human
+IMC,1433,Anti-CD31 (EPR3094 )145Nd—15 µg,Human,FFPE,CD31/PECAM1,15 µg,EPR3094,145Nd,91H008145,Human
+IMC,1434,Anti-CD31 (EPR3094 )146Nd—15 µg,Human,FFPE,CD31/PECAM1,15 µg,EPR3094,146Nd,91H008146,Human
+IMC,1435,Anti-Human CD326/EpCAM (9C4)-144Nd—25 µg,Human,"FFPE,Frozen",CD326/EPCAM,25 µg,9C4,144Nd,3144026D,Human
+IMC,1436,Anti-Human/Mouse CD34 (EP373Y)-151Eu,"Human, Mouse, Rat",FFPE,CD34,25 µg,EP373Y,151Eu,3151028D,"Human, Mouse, Rat"
+IMC,1437,Anti-Human/Mouse CD34 (EP373Y)-167Er,"Human, Mouse, Rat",FFPE,CD34,25 µg,EP373Y,167Er,3167025D,"Human, Mouse, Rat"
+IMC,1884,Anti-Human CD366/TIM-3 (D5D5R)-142Nd—25ug,Human,FFPE,CD366/TIM-3,25 µg,D5D5R,142Nd,3142023D,Human
+IMC,1438,Anti-CD366/Tim-3 (D5D5R)-154Sm,"Human,Mouse",FFPE,CD366/TIM3,25 µg,D5D5R,154Sm,3154024D,"Human,Mouse"
+IMC,1439,Anti-CD38 (HIT2)-141Pr—25 µg,"Cross,Human",Frozen,CD38,25 µg,HIT2,141Pr,3141020D,"Cross,Human"
+IMC,1440,Anti-Human CD38 (EPR4106)-141Pr—25 µg,Human,FFPE,CD38,25 µg,EPR4106,141Pr,3141018D,Human
+IMC,1782,Anti-Human CD38 (E7Z8C)-142Nd—25 ug,Human,FFPE,CD38,25 ug,E7Z8C,142Nd,3142022D,Human
+IMC,1765,Anti-Human CD3epsilon (D7A6E)-170Er—25 ug,Human,FFPE,CD3epsilon,25 ug,D7A6E,170Er,3170023D,Human
+IMC,1441,Anti-CD4 (RPA-T4)-156Gd—25 µg,Human,Frozen,CD4,25 µg,RPA-T4,156Gd,3156036D,"Cross,Human"
+IMC,1442,Anti-Human CD4 (EPR6855),Human,FFPE,CD4,25 µg,EPR6855,156Gd,3156033D,Human
+IMC,1447,Anti-CD4 (EPR6855 )163Dy—15 µg,Human,FFPE,CD4,15 µg,EPR6855,163Dy,91H010163,Human
+IMC,1448,Anti-CD4 (EPR6855 )169Tm—15 µg,Human,FFPE,CD4,15 µg,EPR6855,169Tm,91H010169,Human
+IMC,1449,Anti-CD4 (EPR6855 )171Yb—15 µg,Human,FFPE,CD4,15 µg,EPR6855,171Yb,91H010171,Human
+IMC,1450,Anti-CD44 (IM7)-153Eu,"Human,Mouse","FFPE,Frozen",CD44,25 µg,IM7,153Eu,3153029D,"Human,Mouse"
+IMC,1451,Anti-Human CD45 (D9M8I)-152Sm—25 µg,Human,"FFPE,Frozen",CD45,25 µg,D9M8I,152Sm,3152018D,Human
+IMC,1457,Anti-CD45 (D9M8I )145Nd—15 µg,Human,"FFPE,Frozen",CD45,15 µg,D9M8I,145Nd,91H009145,Human
+IMC,1458,Anti-CD45 (D9M8I )163Dy—15 µg,Human,"FFPE,Frozen",CD45,15 µg,D9M8I,163Dy,91H009163,Human
+IMC,1459,Anti-CD45R/B220 (RA3-6B2)-148Nd—15 µg,"Human, Mouse",FFPE,CD45R/B220,15 µg,RA3-6B2,148Nd,91H036148,"Human, Mouse"
+IMC,1460,Anti-CD45R/B220 (RA3-6B2)-154Sm—15 µg,"Human, Mouse",FFPE,CD45R/B220,15 µg,RA3-6B2,154Sm,91H036154,"Human, Mouse"
+IMC,1461,Anti-CD45R/B220 (RA3-6B2)-168Er—15 µg,"Human, Mouse",FFPE,CD45R/B220,15 µg,RA3-6B2,168Er,91H036168,"Human, Mouse"
+IMC,1462,Anti-CD45R/B220 (RA3-6B2)-176Yb—15 µg,"Human, Mouse",FFPE,CD45R/B220,15 µg,RA3-6B2,176Yb,91H036176,"Human, Mouse"
+IMC,1909,Anti-CD45RA (HI100) - 155Gd - 15ug,Human,FFPE,CD45RA,15 µg,HI100,155Gd,3155011B,Human
+IMC,1463,Anti-CD45RA (HI100)-166Er—25 µg,"Cross,Human","FFPE,Frozen",CD45RA,25 µg,HI100,166Er,3166031D,"Cross,Human"
+IMC,1464,Anti-Human CD45RO (UCHL1)-173Yb—25 µg,"Cross,Human","FFPE,Frozen",CD45RO,25 µg,UCHL1,173Yb,3173016D,"Cross,Human"
+IMC,1465,Anti-CD45RO (UCHL1 )149Sm—15 µg,"Human, Monkey, Rhesus, Chimpanzee","FFPE,Frozen",CD45RO,15 µg,UCHL1,149Sm,91H020149,"Human, Monkey, Rhesus, Chimpanzee"
+IMC,1466,Anti-CD45RO (UCHL1 )165Ho—15 µg,"Human, Monkey, Rhesus, Chimpanzee","FFPE,Frozen",CD45RO,15 µg,UCHL1,165Ho,91H020165,"Human, Monkey, Rhesus, Chimpanzee"
+IMC,1467,Anti-CD45RO (UCHL1 )166Er—15 µg,"Human, Monkey, Rhesus, Chimpanzee","FFPE,Frozen",CD45RO,15 µg,UCHL1,166Er,91H020166,"Human, Monkey, Rhesus, Chimpanzee"
+IMC,1468,Anti-CD57 (NK/804)-145Nd—15 µg,Human,FFPE,CD57,15 µg,NK/804,145Nd,91H035145,Human
+IMC,1469,Anti-CD57 (NK/804)-151Eu—15 µg,Human,FFPE,CD57,15 µg,NK/804,151Eu,91H035151,Human
+IMC,1470,Anti-CD57 (NK/804)-152Sm—15 µg,Human,FFPE,CD57,15 µg,NK/804,152Sm,91H035152,Human
+IMC,1471,Anti-CD57 (NK/804)-153Eu—15 µg,Human,FFPE,CD57,15 µg,NK/804,153Eu,91H035153,Human
+IMC,1472,Anti-CD57 (NK/804)-160Gd—15 µg,Human,FFPE,CD57,15 µg,NK/804,160Gd,91H035160,Human
+IMC,1767,Anti-Human CD57 (NK/804)-163Dy—25 ug,Human,FFPE,CD57,25 ug,NK/804,163Dy,3163033D,Human
+IMC,1473,Anti-Human CD63 (H5C6)-150Nd—25 µg,Human,FFPE,CD63,25 µg,H5C6,150Nd,3150029D,Human
+IMC,1475,Anti-CD66b (BLR111H)-152Sm—15 µg,Human,FFPE,CD66b,15 µg,BLR111H,152Sm,91H033152,Human
+IMC,1476,Anti-CD66b (BLR111H)-153Eu—15 µg,Human,FFPE,CD66b,15 µg,BLR111H,153Eu,91H033153,Human
+IMC,1477,Anti-CD66b (BLR111H)-154Sm—15 µg,Human,FFPE,CD66b,15 µg,BLR111H,154Sm,91H033154,Human
+IMC,1478,Anti-CD66b (BLR111H)-160Gdr—15 µg,Human,FFPE,CD66b,15 µg,BLR111H,160Gd,3160030D,Human
+IMC,1479,Anti-CD66b (BLR111H)-166Er—15 µg,Human,FFPE,CD66b,15 µg,BLR111H,166Er,91H033166,Human
+IMC,1480,Anti-Human CD68 (KP1)-159Tb—25 µg,Human,"FFPE,Frozen",CD68,25 µg,KP1,159Tb,3159035D,Human
+IMC,1481,Anti-CD68 (KP1 )141Pr—15 µg,Human,"FFPE,Frozen",CD68,15 µg,KP1,141Pr,91H012141,Human
+IMC,1482,Anti-CD68 (KP1 )144Nd—15 µg,Human,"FFPE,Frozen",CD68,15 µg,KP1,144Nd,91H012144,Human
+IMC,1483,Anti-CD68 (KP1 )146Nd—15 µg,Human,"FFPE,Frozen",CD68,15 µg,KP1,146Nd,91H012146,Human
+IMC,1484,Anti-CD7 (EPR4242)-145Nd-15 ug,"Human, Mouse, Rat",FFPE,CD7,15 µg,EPR4242,145Nd,91H040145,"Human, Mouse, Rat"
+IMC,1485,Anti-CD7 (EPR4242)-153Eu-15 ug,"Human, Mouse, Rat",FFPE,CD7,15 µg,EPR4242,153Eu,91H040153,"Human, Mouse, Rat"
+IMC,1486,Anti-CD7 (EPR4242)-174Yb-15 ug,"Human, Mouse, Rat",FFPE,CD7,15 µg,EPR4242,174Yb,91H040174,"Human, Mouse, Rat"
+IMC,1487,Anti-CD7 (EPR4242)-175Lu-15 ug,"Human, Mouse, Rat",FFPE,CD7,15 µg,EPR4242,175Lu,91H040175,"Human, Mouse, Rat"
+IMC,1779,Anti-Human CD7 (EPR4242)-143Nd—25 ug,Human,FFPE,CD7,25 ug,EPR4242,143Nd,3143032D,Human
+IMC,1488,Anti-Human CD73 (EPR6115)-158Gd—25 µg,Human,FFPE,CD73,25 µg,EPR6115,158Gd,3158031D,Human
+IMC,1489,Anti-CD74 (LN2)-166Er,"Human,Mouse",FFPE,CD74,25 µg,LN2,166Er,3166025D,"Human,Mouse"
+IMC,1494,Anti-CD86 (IT2.2)-156Gd—25 µg,"Cross,Human",Frozen,CD86,25 µg,IT2.2,156Gd,3156035D,"Cross,Human"
+IMC,1495,Anti-CD8A (RPA-T8)-162Dy—25 µg,"Cross,Human",Frozen,CD8a,25 µg,RPA-T8,162Dy,3162036D,"Cross,Human"
+IMC,1496,Anti-Human CD8a (C8/144B)-162Dy—25 µg,Human,FFPE,CD8a,25 µg,C8/144B,162Dy,3162034D,Human
+IMC,1498,Anti-CD8a (C8/144B )146Nd—15 µg,Human,FFPE,CD8a,15 µg,C8/144B,146Nd,91H015146,Human
+IMC,1499,Anti-CD8a (C8/144B )165Ho—15 µg,Human,FFPE,CD8a,15 µg,C8/144B,165Ho,91H015165,Human
+IMC,1500,Anti-CD8a (C8/144B )167Er—15 µg,Human,FFPE,CD8a,15 µg,C8/144B,167Er,91H015167,Human
+IMC,1501,Anti-CD98 (Polyclonal)-173Yb,Human,FFPE,CD98,25 µg,Polyclonal,173Yb,3173018D,Human
+IMC,1914,Anti-Human CPT1A​ (EPR21843-71-1C)-146Nd—25 ug,Human,FFPE,CPT1A,25 µg,EPR21843-71-1C,146Nd,3146023D,Human
+IMC,1903,Anti-Calbindin 1 (EP3478)-141Pr-15ug,"Human, Mouse, Rat",FFPE,Calbindin 1,15 µg,EP3478,141Pr,91H068141,"Human, Mouse, Rat"
+IMC,1904,Anti-Calbindin 1 (EP3478)-160Gd-15ug,"Human, Mouse, Rat",FFPE,Calbindin 1,15 µg,EP3478,160Gd,91H068160,"Human, Mouse, Rat"
+IMC,1905,Anti-Calbindin 1 (EP3478)-161Dy-15ug,"Human, Mouse, Rat",FFPE,Calbindin 1,15 µg,EP3478,161Dy,91H068161,"Human, Mouse, Rat"
+IMC,1361,Anti-Cleaved Caspase 3 (5A1E)-172Yb—25 µg,"Cross,Human",FFPE,Caspase-3 cleaved,25 µg,5A1E,172Yb,3172027D,"Cross,Human"
+IMC,1912,Anti-Citrate Synthase​ (EPR8067)-143Nd—25 ug,"Human, mouse, rat",FFPE,Citrate Synthase,25 µg,EPR8067,143Nd,3143035D,"Human, mouse, rat"
+IMC,1941,Anti-Collagen I (Polyclonal)-89Y—15 ug,"Human, Bovine","FFPE,Frozen",Collagen I,15 µg,Polyclonal,89Y,3089006D,"Human, Bovine"
+IMC,1503,Anti-Collagen I (Polyclonal)-141Pr—15 µg,"Human,Mouse","FFPE,Frozen",Collagen I,15 µg,Polyclonal,141Pr,91H018141,"Human,Mouse"
+IMC,1504,Anti-Collagen I (Polyclonal)-142Nd—15 µg,"Human,Mouse","FFPE,Frozen",Collagen I,15 µg,Polyclonal,142Nd,91H018142,"Human,Mouse"
+IMC,1505,Anti-Collagen I (Polyclonal)-144Nd—15 µg,"Human,Mouse","FFPE,Frozen",Collagen I,15 µg,Polyclonal,144Nd,91H018144,"Human,Mouse"
+IMC,1506,Anti-Collagen I (Polyclonal)-173Yb—15ug,"Human, Bovine,Mouse","FFPE,Frozen",Collagen I,15 µg,Polyclonal,173Yb,91H018173,"Human, Bovine,Mouse"
+IMC,1507,Anti-Collagen I (Polyclonal)-169Tm—25 µg,"Human,Mouse","FFPE,Frozen",Collagen I,25 µg,Polyclonal,169Tm,3169023D,"Human,Mouse"
+IMC,1508,Anti-Cytokeratin 7 (RCK105)-164Dy,"Cross,Human,Mouse",FFPE,Cytokeratin 7,25 µg,RCK105,164Dy,3164028D,"Cross,Human,Mouse"
+IMC,1509,Anti-E-Cadherin (24E10)-158Gd,"Cross,Human,Mouse","FFPE,Frozen",E-Cadherin,25 µg,24E10,158Gd,3158029D,"Cross,Human,Mouse"
+IMC,1510,Anti-E-Cadherin (24E10 )172Yb—15 µg,"Human, Mouse, Bovine, Cross","FFPE,Frozen",E-Cadherin,15 µg,24E10,172Yb,91H011172,"Human, Mouse, Bovine, Cross"
+IMC,1511,Anti-E-Cadherin (24E10 )173Yb—15 µg,"Human, Mouse, Bovine, Cross","FFPE,Frozen",E-Cadherin,15 µg,24E10,173Yb,91H011173,"Human, Mouse, Bovine, Cross"
+IMC,1512,Anti-E-Cadherin (24E10 )174Yb—15 µg,"Human, Mouse, Bovine, Cross","FFPE,Frozen",E-Cadherin,15 µg,24E10,174Yb,91H011174,"Human, Mouse, Bovine, Cross"
+IMC,1890,Anti-EGFR (D38B1)-172Yb-15ug,"Human, Mouse",FFPE,EGFR,15 µg,D38B1,172Yb,91H061172,"Human, Mouse"
+IMC,1513,Anti-EGFR (D38B1)-142Nd—25 µg,"Cross,Human",FFPE,EGFR,25 µg,D38B1,142Nd,3142013D,"Cross,Human"
+IMC,1514,Anti-EpCAM (EPR20532-222)-144Nd—15 µg,"Human, Mouse, Rat",FFPE,EpCAM,15 µg,EPR20532-222,144Nd,91H024144,"Human, Mouse, Rat"
+IMC,1515,Anti-EpCAM (EPR20532-222)-147Sm—15 µg,"Human, Mouse, Rat",FFPE,EpCAM,15 µg,EPR20532-222,147Sm,91H024147,"Human, Mouse, Rat"
+IMC,1516,Anti-EpCAM (EPR20532-222)-141Pr—15 µg,"Human, Mouse, Rat",FFPE,EpCAM,15 µg,EPR20532-222,141Pr,91H024141,"Human, Mouse, Rat"
+IMC,1517,Anti-EpCAM (EPR20532-222)-151Eu—15 µg,"Human, Mouse, Rat",FFPE,EpCAM,15 µg,EPR20532-222,151Eu,91H024151,"Human, Mouse, Rat"
+IMC,1518,Anti-EpCAM (EPR20532-222)-154Sm—15 µg,"Human, Mouse, Rat",FFPE,EpCAM,15 µg,EPR20532-222,154Sm,91H024154,"Human, Mouse, Rat"
+IMC,1519,Anti-EpCAM (EPR20532-222)-175Lu—15 µg,"Human, Mouse, Rat",FFPE,EpCAM,15 µg,EPR20532-222,175Lu,91H024175,"Human, Mouse, Rat"
+IMC,1777,Anti-Human EpCAM (EPR20532-222)-172Yb—25 ug,Human,FFPE,EpCAM,25 ug,EPR20532-222,172Yb,3172034D,Human
+IMC,1762,Anti-Human FAP (E1V9V)-161Dy—25 ug,Human,FFPE,FAP,25 ug,E1V9V,161Dy,3161035D,Human
+IMC,1761,Anti-Human Fibronectin (EPR23110-46)-171Yb—25 ug,Human,FFPE,Fibronectin,25 ug,EPR23110-46,171Yb,3171027D,Human
+IMC,1524,Anti-Fibronectin (EPR23110-46)-151Eu—15 µg,"Human, Mouse, Rat",FFPE,Fibronectin,15 µg,EPR23110-46,151Eu,91H034151,"Human, Mouse, Rat"
+IMC,1525,Anti-Fibronectin (EPR23110-46)-154Sm—15 µg,"Human, Mouse, Rat",FFPE,Fibronectin,15 µg,EPR23110-46,154Sm,91H034154,"Human, Mouse, Rat"
+IMC,1527,Anti-Fibronectin (EPR23110-46)-174Yb—15 µg,"Human, Mouse, Rat",FFPE,Fibronectin,15 µg,EPR23110-46,174Yb,91H034174,"Human, Mouse, Rat"
+IMC,1528,Anti-Fibronectin (EPR23110-46)-175Lu—15 µg,"Human, Mouse, Rat",FFPE,Fibronectin,15 µg,EPR23110-46,175Lu,91H034175,"Human, Mouse, Rat"
+IMC,1529,Anti-Fibronectin (EPR19241-46)-142Nd—15 µg,"Human, Mouse, Rat",FFPE,Fibronectin,15 µg,EPR19241-46,142Nd,91H028142,"Human, Mouse, Rat"
+IMC,1530,Anti-Fibronectin (EPR19241-46)-152Sm—15 µg,"Human, Mouse, Rat",FFPE,Fibronectin,15 µg,EPR19241-46,152Sm,91H028152,"Human, Mouse, Rat"
+IMC,1531,Anti-Fibronectin (EPR19241-46)-156Gd—15 µg,"Human, Mouse, Rat",FFPE,Fibronectin,15 µg,EPR19241-46,156Gd,91H028156,"Human, Mouse, Rat"
+IMC,1669,Anti-Human FoxP3 (PCH101)-155Gd—25 µg,Human,FFPE,FoxP3,25 µg,PCH101,155Gd,3155018D,Human
+IMC,1538,Anti-GATA3 (EPR16651)-151Eu-15 ug,"Human, Mouse",FFPE,GATA3,15 µg,EPR16651,151Eu,91H044151,"Human, Mouse"
+IMC,1539,Anti-GATA3 (EPR16651)-154Sm-15 ug,"Human, Mouse",FFPE,GATA3,15 µg,EPR16651,154Sm,91H044154,"Human, Mouse"
+IMC,1540,Anti-GATA3 (EPR16651)-163Dy-15 ug,"Human, Mouse",FFPE,GATA3,15 µg,EPR16651,163Dy,91H044163,"Human, Mouse"
+IMC,1541,Anti-GATA3 (EPR16651)-175Lu-15 ug,"Human, Mouse",FFPE,GATA3,15 µg,EPR16651,175Lu,91H044175,"Human, Mouse"
+IMC,1542,Anti-Human/Mouse GFAP (GA5)-143Nd,"Human, Mouse, Rat, Chicken, Pig, Rabbit",FFPE,GFAP,25 µg,GA5,143Nd,3143030D,"Human, Mouse, Rat, Chicken, Pig, Rabbit"
+IMC,1543,Anti-Human/Mouse GFAP (GA5)-163Dy,"Human, Mouse, Rat, Chicken, Pig, Rabbit",FFPE,GFAP,25 µg,GA5,163Dy,3163031D,"Human, Mouse, Rat, Chicken, Pig, Rabbit"
+IMC,1919,Anti-Human GSK3 beta (Y174)-145Nd—25 ug,Human,FFPE,GSK3 beta,25 µg,Y174,145Nd,3145024D,Human
+IMC,1911,Anti-Human Glut-1 (EPR3915)-142Nd—25 ug,Human,FFPE,Glut-1,25 µg,EPR3915,142Nd,3142024D,Human
+IMC,1544,Anti-Granzyme B (GB11)-167Er—25 µg,"Cross,Human",Frozen,Granzyme B,25 µg,GB11,167Er,3167023D,"Cross,Human"
+IMC,1545,Anti-Human Granzyme B (EPR20129-217)-167Er—25 µg,Human,FFPE,Granzyme B,25 µg,EPR20129-217,167Er,3167021D,Human
+IMC,1546,Anti-Granzyme B (EPR22645-206)-155Gd—15 µg,"Human, Mouse, Rat",FFPE,Granzyme B,15 µg,EPR22645-206,155Gd,91H026155,"Human, Mouse, Rat"
+IMC,1547,Anti-Granzyme B (EPR22645-206)-166Er—15 µg,"Human, Mouse, Rat",FFPE,Granzyme B,15 µg,EPR22645-206,166Er,91H026166,"Human, Mouse, Rat"
+IMC,1549,Anti-Granzyme B (EPR22645-206)-171Yb—15 µg,"Human, Mouse, Rat",FFPE,Granzyme B,15 µg,EPR22645-206,171Yb,91H026171,"Human, Mouse, Rat"
+IMC,1550,Anti-Granzyme B (EPR20129-217 )174Yb—15 µg,Human,FFPE,Granzyme B,15 µg,EPR20129-217,174Yb,91H016174,Human
+IMC,1551,Anti-Granzyme B (EPR20129-217 )175Lu—15 µg,Human,FFPE,Granzyme B,15 µg,EPR20129-217,175Lu,91H016175,Human
+IMC,1552,Anti-Granzyme B (EPR20129-217 )176Yb—15 µg,Human,FFPE,Granzyme B,15 µg,EPR20129-217,176Yb,3176028D,Human
+IMC,1559,Anti-HLA-ABC (W6/32)-144Nd—25 µg,"Cross,Human",Frozen,HLA-ABC,25 µg,W6/32,144Nd,3144027D,"Cross,Human"
+IMC,1560,Anti-HLA-DR (LN3)-174Yb—25 µg,"Cross,Human","FFPE,Frozen",HLA-DR,25 µg,LN3,174Yb,3174025D,"Cross,Human"
+IMC,1561,Anti-HLA-DR (LN3 )151Eu—15 µg,"Human, Rhesus","FFPE,Frozen",HLA-DR,15 µg,LN3,151Eu,91H021151,"Human, Rhesus"
+IMC,1562,Anti-HLA-DR (LN3 )154Sm—15 µg,"Human, Rhesus","FFPE,Frozen",HLA-DR,15 µg,LN3,154Sm,91H021154,"Human, Rhesus"
+IMC,1553,Anti-Histone H3 (D1H2)-142Nd—15 µg,"Cross,Human,Mouse",FFPE,Histone H3,15 µg,D1H2,142Nd,91H019142,"Cross,Human,Mouse"
+IMC,1554,Anti-Histone H3 (D1H2)-146Nd—15 µg,"Cross,Human,Mouse",FFPE,Histone H3,15 µg,D1H2,146Nd,91H019146,"Cross,Human,Mouse"
+IMC,1555,Anti-Histone H3 (D1H2)-171Yb—25 µg,"Cross,Human",FFPE,Histone H3,25 µg,D1H2,171Yb,3171022D,"Cross,Human"
+IMC,1556,Anti-Histone H3 (D1H2)-176Yb,"Cross,Human,Mouse",FFPE,Histone H3,25 µg,D1H2,176Yb,3176023D,"Cross,Human,Mouse"
+IMC,1565,Anti-Human IDO (D5J4E)-155Gd—25 µg,Human,FFPE,IDO,25 µg,D5J4E,155Gd,3155017D,Human
+IMC,1885,Anti-Human IDO (BLR031F)-145Nd—25ug,Human,FFPE,IDO,25 µg,BLR031F,145Nd,3145022D,Human
+IMC,1563,Anti-Human/Mouse Iba1 (EPR16588)-142Nd,"Human, Mouse, Rat",FFPE,Iba1,25 µg,EPR16588,142Nd,3142020D,"Human, Mouse, Rat"
+IMC,1564,Anti-Human/Mouse Iba1 (EPR16588)-168Er,"Human, Mouse, Rat",FFPE,Iba1,25 µg,EPR16588,168Er,3168027D,"Human, Mouse, Rat"
+IMC,1566,Anti-IgM (MHM-88)-151Eu—25 µg,"Cross,Human",Frozen,IgM,25 µg,MHM-88,151Eu,3151026D,"Cross,Human"
+IMC,1573,Anti-Human Keratin 8/18 (C51)-174Yb—25 µg,Human,FFPE,Keratin 8/18,25 µg,C51,174Yb,3174022D,Human
+IMC,1574,Anti-Ki-67 (B56)-150Nd—15 µg,"Cross,Human,Mouse","FFPE,Frozen",Ki-67,15 µg,B56,150Nd,3150035D,"Cross,Human,Mouse"
+IMC,1575,Anti-Ki-67 (B56)-168Er—25 µg,"Cross,Human,Mouse","FFPE,Frozen",Ki-67,25 µg,B56,168Er,3168022D,"Cross,Human,Mouse"
+IMC,1576,Anti-Ki-67 (B56)-172Yb—15 µg,"Cross,Human,Mouse","FFPE,Frozen",Ki-67,15 µg,B56,172Yb,91H017172,"Cross,Human,Mouse"
+IMC,1577,Anti-Ki-67 (B56)-173Yb—15 µg,"Cross,Human,Mouse","FFPE,Frozen",Ki-67,15 µg,B56,173Yb,91H017173,"Cross,Human,Mouse"
+IMC,1915,Anti-Human LDHA (EP1563Y)-148Nd—25 ug,Human,FFPE,LDHA,25 µg,EP1563Y,148Nd,3148027D,Human
+IMC,1582,Anti-Human/Mouse MAP2 (EPR19691)-148Nd,"Human, Mouse, Rat",FFPE,MAP2,25 µg,EPR19691,148Nd,3148023D,"Human, Mouse, Rat"
+IMC,1583,Anti-Human/Mouse MAP2 (EPR19691)-175Lu,"Human, Mouse, Rat",FFPE,MAP2,25 µg,EPR19691,175Lu,3175040D,"Human, Mouse, Rat"
+IMC,1803,Anti-MBP (MBP101)-141Pr—15 ug,"Human, Mouse",FFPE,MBP,15 ug,MBP101,141Pr,91H058141,"Human, Mouse"
+IMC,1804,Anti-MBP (MBP101)-149Sm—15 ug,"Human, Mouse",FFPE,MBP,15 ug,MBP101,149Sm,91H058149,"Human, Mouse"
+IMC,1805,Anti-MBP (MBP101)-158Gd—15 ug,"Human, Mouse",FFPE,MBP,15 ug,MBP101,158Gd,91H058158,"Human, Mouse"
+IMC,1806,Anti-MBP (MBP101)-169Tm—15 ug,"Human, Mouse",FFPE,MBP,15 ug,MBP101,169Tm,91H058169,"Human, Mouse"
+IMC,1807,Anti-MBP (MBP101)-172Yb—15 ug,"Human, Mouse",FFPE,MBP,15 ug,MBP101,172Yb,91H058172,"Human, Mouse"
+IMC,1589,Anti-MHC Class II (HLA-DRB/1067)-151Eu-15 ug,Human,FFPE,MHC Class II,15 µg,HLA-DRB/1067,151Eu,91H045151,Human
+IMC,1590,Anti-MHC Class II (HLA-DRB/1067)-171Yb-15 ug,Human,FFPE,MHC Class II,15 µg,HLA-DRB/1067,171Yb,91H045171,Human
+IMC,1591,Anti-MHC Class II (HLA-DRB/1067)-175Lu-15 ug,Human,FFPE,MHC Class II,15 µg,HLA-DRB/1067,175Lu,91H045175,Human
+IMC,1892,Anti-MMP9 (RM1020)-158Gd-15ug,"Human, Mouse, Rat",FFPE,MMP9,15 µg,RM1020,158Gd,91H063158,"Human, Mouse, Rat"
+IMC,1808,Anti-MOG (EP4281)-141Pr—15 ug,"Human, Mouse",FFPE,MOG,15 ug,EP4281,141Pr,91H059141,"Human, Mouse"
+IMC,1809,Anti-MOG (EP4281)-149Sm—15 ug,"Human, Mouse",FFPE,MOG,15 ug,EP4281,149Sm,91H059149,"Human, Mouse"
+IMC,1810,Anti-MOG (EP4281)-158Gd—15 ug,"Human, Mouse",FFPE,MOG,15 ug,EP4281,158Gd,91H059158,"Human, Mouse"
+IMC,1784,Anti-Human MPO (EPR20257)-148Nd—25 ug,Human,FFPE,MPO,25 ug,EPR20257,148Nd,3148024D,Human
+IMC,1584,Anti-Met (D1C2)-167Er,"Human,Mouse",FFPE,Met,25 µg,D1C2,167Er,3167020D,"Human,Mouse"
+IMC,1891,Anti-Nestin (EPR27207-53)-141Pr-15ug,"Human, Mouse, Rat",FFPE,Nestin,15 µg,EPR27207-53,141Pr,91H062141,"Human, Mouse, Rat"
+IMC,1592,Anti-Human/Mouse NeuN (EPR12763)-171Yb,"Human, Mouse, Rat, Sheep, Goat, Cat, Dog, Zebrafish, Common Marmoset",FFPE,NeuN,25 µg,EPR12763,171Yb,3171026D,"Human, Mouse, Rat, Sheep, Goat, Cat, Dog, Zebrafish, Common Marmoset"
+IMC,1593,Anti-Human/Mouse NeuN (EPR12763)-160Gd,"Human, Mouse, Rat, Sheep, Goat, Cat, Dog, Zebrafish, Common Marmoset",FFPE,NeuN,25 µg,EPR12763,160Gd,3160028D,"Human, Mouse, Rat, Sheep, Goat, Cat, Dog, Zebrafish, Common Marmoset"
+IMC,1594,Anti-Human/Mouse NeuN (EPR12763)-145Nd,"Human, Mouse, Rat, Sheep, Goat, Cat, Dog, Zebrafish, Common Marmoset",FFPE,NeuN,25 µg,EPR12763,145Nd,3145019D,"Human, Mouse, Rat, Sheep, Goat, Cat, Dog, Zebrafish, Common Marmoset"
+IMC,1811,Anti-Neurofilament (SMI 312)-141Pr—15 ug,"Human, Mouse",FFPE,Neurofilament,15 ug,SMI 312,141Pr,91H060141,"Human, Mouse"
+IMC,1812,Anti-Neurofilament (SMI 312)-158Gd—15 ug,"Human, Mouse",FFPE,Neurofilament,15 ug,SMI 312,158Gd,91H060158,"Human, Mouse"
+IMC,1813,Anti-Neurofilament (SMI 312)-169Tm—15 ug,"Human, Mouse",FFPE,Neurofilament,15 ug,SMI 312,169Tm,91H060169,"Human, Mouse"
+IMC,1595,Anti-Human/Mouse Olig2 (EPR2673)-172Yb,"Human, Mouse, Rat",FFPE,Olig2,25 µg,EPR2673,172Yb,3172033D,"Human, Mouse, Rat"
+IMC,1596,Anti-Human/Mouse Olig2 (EPR2673)-168Er,"Human, Mouse, Rat",FFPE,Olig2,25 µg,EPR2673,168Er,3168028D,"Human, Mouse, Rat"
+IMC,1906,Anti-P2RY12 (EPR26298-93)-164Dy-15ug,"Human, Mouse, Rat",FFPE,P2RY12,15 µg,EPR26298-93,164Dy,91H069164,"Human, Mouse, Rat"
+IMC,1907,Anti-P2RY12 (EPR26298-93)-169Tm-15ug,"Human, Mouse, Rat",FFPE,P2RY12,15 µg,EPR26298-93,169Tm,91H069169,"Human, Mouse, Rat"
+IMC,1908,Anti-P2RY12 (EPR26298-93)-175Lu-15ug,"Human, Mouse, Rat",FFPE,P2RY12,15 µg,EPR26298-93,175Lu,91H069175,"Human, Mouse, Rat"
+IMC,1610,Anti-Human PD-L2 (D7U8C)-172Yb—25 µg,Human,FFPE,PD-L2,25 µg,D7U8C,172Yb,3172031D,Human
+IMC,1918,Anti-PTEN (EPR22636-122)-143Nd—25 ug,"Human, mouse, rat",FFPE,PTEN,25 µg,EPR22636-122,143Nd,3143036D,"Human, mouse, rat"
+IMC,1598,Anti-Pan-Actin (D18C11)-175Lu,"Human,Mouse",FFPE,Pan-Actin,25 µg,D18C11,175Lu,3175032D,"Human,Mouse"
+IMC,1599,Anti-Pan-CytoKeratin (AE-1/AE-3)-142Nd—15 µg,"Cross,Human,Mouse","FFPE,Frozen",Pan-CytoKeratin,15 µg,AE-1/AE-3,142Nd,91H006142,"Cross,Human,Mouse"
+IMC,1600,Anti-Pan-CytoKeratin (AE-1/AE-3)-155Gd—15 µg,"Cross,Human,Mouse","FFPE,Frozen",Pan-CytoKeratin,15 µg,AE-1/AE-3,155Gd,91H006155,"Cross,Human,Mouse"
+IMC,1601,Anti-Pan-CytoKeratin (AE-1/AE-3)-174Yb—15 µg,"Cross,Human,Mouse","FFPE,Frozen",Pan-CytoKeratin,15 µg,AE-1/AE-3,174Yb,91H006174,"Cross,Human,Mouse"
+IMC,1602,Anti-Pan-Cytokeratin (AE1/AE3)-148Nd,"Cross,Human,Mouse","FFPE,Frozen",Pan-CytoKeratin,25 µg,AE-1/AE-3,148Nd,3148022D,"Cross,Human,Mouse"
+IMC,1759,Anti-Human Pan-CytoKeratin (AE-1/AE-3)-141Pr—25 ug,Human,FFPE,Pan-CytoKeratin,25 ug,AE-1/AE-3,141Pr,3141021D,Human
+IMC,1603,Anti-Human Pan-Keratin (C11)-162Dy—25 µg,Human,FFPE,Pan-Keratin,25 µg,C11,162Dy,3162033D,Human
+IMC,1604,Anti-Pan-Keratin (C11)-142Nd—15 µg,"Human,Mouse","FFPE,Frozen",Pan-Keratin,15 µg,C11,142Nd,91H014142,"Human,Mouse"
+IMC,1605,Anti-Pan-Keratin (C11)-148Nd,"Human,Mouse","FFPE,Frozen",Pan-Keratin,25 µg,C11,148Nd,3148020D,"Human,Mouse"
+IMC,1606,Anti-Pan-Keratin (C11)-155Gd—15 µg,"Human,Mouse","FFPE,Frozen",Pan-Keratin,15 µg,C11,155Gd,91H014155,"Human,Mouse"
+IMC,1607,Anti-Pan-Keratin (C11)-174Yb—15 µg,"Human,Mouse","FFPE,Frozen",Pan-Keratin,15 µg,C11,174Yb,91H014174,"Human,Mouse"
+IMC,1611,Anti-Perforin (dG9)-176Yb—25 µg,"Cross,Human",Frozen,Perforin,25 µg,dG9,176Yb,3176026D,"Cross,Human"
+IMC,1617,Anti-p4E-BP1 [T37/T46] (236B4)-149Sm,"Cross,Human,Mouse",FFPE,Phospho-4EBP1,25 µg,236B4,149Sm,3149023D,"Cross,Human,Mouse"
+IMC,1618,Anti-pCREB [S133] (87G3)-165Ho,"Cross,Human,Mouse",FFPE,Phospho-CREB [Ser133],25 µg,87G3,165Ho,3165034D,"Cross,Human,Mouse"
+IMC,1620,Anti-pStat3 [Y705] (4/P-STAT3)-158Gd,Human,FFPE,Phospho-Stat3,25 µg,4/P-STAT3,158Gd,3158030D,Human
+IMC,1621,Anti-pTyrosine (P-Tyr-100)-144Nd,"Cross,Human,Mouse",FFPE,Phospho-Tyrosine,25 µg,P-Tyr-100,144Nd,3144024D,"Cross,Human,Mouse"
+IMC,1763,Anti-Human Podoplanin (D2-40)-164Dy—25 ug,Human,FFPE,Podoplanin,25 ug,D2-40,164Dy,3164032D,Human
+IMC,1624,Anti-Human/Mouse S100β (EP1576Y)-164Dy,"Human, Mouse, Rat",FFPE,S100beta,25 µg,EP1576Y,164Dy,3164031D,"Human, Mouse, Rat"
+IMC,1625,Anti-Human/Mouse S100β (EP1576Y)-146Nd,"Human, Mouse, Rat",FFPE,S100beta,25 µg,EP1576Y,146Nd,3146021D,"Human, Mouse, Rat"
+IMC,1626,Anti-SNAIL + SLUG (CL3700)-171Yb-15 ug,Human,FFPE,SNAIL + SLUG,15 µg,CL3700,171Yb,91H047171,Human
+IMC,1627,Anti-SNAIL + SLUG (CL3700)-174Yb-15 ug,Human,FFPE,SNAIL + SLUG,15 µg,CL3700,174Yb,91H047174,Human
+IMC,1628,Anti-SNAIL + SLUG (CL3700)-175Lu-15 ug,Human,FFPE,SNAIL + SLUG,15 µg,CL3700,175Lu,91H047175,Human
+IMC,1629,Anti-SOX9 (EPR14335)-147Sm,"Cross,Human,Mouse",FFPE,SOX-9,25 µg,EPR14335,147Sm,3147022D,"Cross,Human,Mouse"
+IMC,1893,Anti-SOX2 (EPR3131)-169Tm-15ug,"Human, Mouse, Rat",FFPE,SOX2,15 µg,EPR3131,169Tm,91H064169,"Human, Mouse, Rat"
+IMC,1630,Anti-Human Syk (4D10.2)-149Sm—25 µg,Human,FFPE,Syk,25 µg,4D10.2,149Sm,3149024D,Human
+IMC,1894,Anti-Synaptophysin (D8F6H)-151Eu-15ug,"Human, Mouse, Rat",FFPE,Synaptophysin,15 µg,D8F6H,151Eu,91H065151,"Human, Mouse, Rat"
+IMC,1895,Anti-Synaptophysin (D8F6H)-158Gd-15ug,"Human, Mouse, Rat",FFPE,Synaptophysin,15 µg,D8F6H,158Gd,91H065158,"Human, Mouse, Rat"
+IMC,1896,Anti-Synaptophysin (D8F6H)-161Dy-15ug,"Human, Mouse, Rat",FFPE,Synaptophysin,15 µg,D8F6H,161Dy,91H065161,"Human, Mouse, Rat"
+IMC,1900,Anti-TMEM119 (E3E4T)-171Yb-15ug,Human,FFPE,TMEM119,15 µg,E3E4T,171Yb,91H067171,Human
+IMC,1901,Anti-TMEM119 (E3E4T)-164Dy-15ug,Human,FFPE,TMEM119,15 µg,E3E4T,164Dy,91H067164,Human
+IMC,1902,Anti-TMEM119 (E3E4T)-172Yb-15ug,Human,FFPE,TMEM119,15 µg,E3E4T,172Yb,91H067172,Human
+IMC,1632,Anti-TWIST1 (10E4E6)-160Gd-15 ug,"Human, Mouse",FFPE,TWIST1,15 µg,10E4E6,160Gd,91H048160,"Human, Mouse"
+IMC,1633,Anti-TWIST1 (10E4E6)-163Dy-15 ug,"Human, Mouse",FFPE,TWIST1,15 µg,10E4E6,163Dy,91H048163,"Human, Mouse"
+IMC,1634,Anti-TWIST1 (10E4E6)-166Er-15 ug,"Human, Mouse",FFPE,TWIST1,15 µg,10E4E6,166Er,91H048166,"Human, Mouse"
+IMC,1797,Anti-Tau (D1M9X)-141Pr—15 ug,"Human, Mouse",FFPE,Tau,15 ug,D1M9X,141Pr,91H056141,"Human, Mouse"
+IMC,1798,Anti-Tau (D1M9X)-149Sm—15 ug,"Human, Mouse",FFPE,Tau,15 ug,D1M9X,149Sm,91H056149,"Human, Mouse"
+IMC,1799,Anti-Tau (D1M9X)-169Tm—15 ug,"Human, Mouse",FFPE,Tau,15 ug,D1M9X,169Tm,91H056169,"Human, Mouse"
+IMC,1897,Anti-Tubulin Beta3 (TuJ1)-89Y-15ug,"Human, Mouse, Rat",FFPE,Tubulin Beta3,15 µg,TuJ1,89Y,91H066089,"Human, Mouse, Rat"
+IMC,1898,Anti-Tubulin Beta3 (TuJ1)-149Sm-15ug,"Human, Mouse, Rat",FFPE,Tubulin Beta3,15 µg,TuJ1,149Sm,91H066149,"Human, Mouse, Rat"
+IMC,1899,Anti-Tubulin Beta3 (TuJ1)-153Eu-15ug,"Human, Mouse, Rat",FFPE,Tubulin Beta3,15 µg,TuJ1,153Eu,91H066153,"Human, Mouse, Rat"
+IMC,1792,Anti-Tyrosine Hydroxylase (E2L6M)-169Tm—15 ug,"Human, Mouse",FFPE,Tyrosine Hydroxylase,15 ug,E2L6M,169Tm,91H054169,"Human, Mouse"
+IMC,1793,Anti-Tyrosine Hydroxylase (E2L6M)-172Yb—15 ug,"Human, Mouse",FFPE,Tyrosine Hydroxylase,15 ug,E2L6M,172Yb,91H054172,"Human, Mouse"
+IMC,1791,Anti-Tyrosine Hydroxylase (E2L6M)-141Pr—15 ug,"Human, Mouse",FFPE,Tyrosine Hydroxylase,15 ug,E2L6M,141Pr,91H054141,"Human, Mouse"
+IMC,1635,Anti-Human VEGF (G153-694)-163Dy—25 µg,Human,FFPE,VEGF,25 µg,G153-694,163Dy,3163028D,Human
+IMC,1889,Anti-Human VISTA (BLR035F)-143Nd—25ug,Human,FFPE,VISTA,25 µg,BLR035F,143Nd,3143034D,Human
+IMC,1636,Anti-Vimentin (D21H3)-143Nd,"Cross,Human,Mouse",FFPE,Vimentin,25 µg,D21H3,143Nd,3143027D,"Cross,Human,Mouse"
+IMC,1637,Anti-Vimentin (RV202)-143Nd—25 µg,"Cross,Human","FFPE,Frozen",Vimentin,25 µg,RV202,143Nd,3143029D,"Cross,Human"
+IMC,1638,Anti-Vimentin (RV202 )149Sm—15 µg,"Human, Mouse, Rat, Rabbit, Bovine, Canine, Hamster, Monkey, Cross","FFPE,Frozen",Vimentin,15 µg,D21H3,149Sm,3149032D,"Human, Mouse, Rat, Rabbit, Bovine, Canine, Hamster, Monkey, Cross"
+IMC,1639,Anti-Vimentin (RV202 )151Eu—15 µg,"Human, Mouse, Rat, Rabbit, Bovine, Canine, Hamster, Monkey, Cross","FFPE,Frozen",Vimentin,15 µg,RV202,151Eu,91H002151,"Human, Mouse, Rat, Rabbit, Bovine, Canine, Hamster, Monkey, Cross"
+IMC,1640,Anti-Vimentin (RV202 )154Sm—15 µg,"Human, Mouse, Rat, Rabbit, Bovine, Canine, Hamster, Monkey, Cross","FFPE,Frozen",Vimentin,15 µg,RV202,154Sm,91H002154,"Human, Mouse, Rat, Rabbit, Bovine, Canine, Hamster, Monkey, Cross"
+IMC,1641,Anti-Human Vista (D1L2G)-160Gd—25 µg,Human,FFPE,Vista,25 µg,D1L2G,160Gd,3160025D,Human
+IMC,1921,Anti-YAP1 (EPR19812)-148Nd—25 ug,"Human, mouse",FFPE,YAP1,25 µg,EPR19812,148Nd,3148028D,"Human, mouse"
+IMC,1344,Anti-Alpha-Smooth Muscle Actin (1A4 )142Nd—15 µg,"Human, Mouse","FFPE,Frozen",aSMA/ACTA2,15 µg,1A4,142Nd,91H001142,"Human, Mouse"
+IMC,1345,Anti-Alpha-Smooth Muscle Actin (1A4 )153Eu—15 µg,"Human, Mouse","FFPE,Frozen",aSMA/ACTA2,15 µg,1A4,153Eu,91H001153,"Human, Mouse"
+IMC,1346,Anti-Alpha-Smooth Muscle Actin (1A4)-141Pr—25 µg,"Human,Mouse","FFPE,Frozen",aSMA/ACTA2,25 µg,1A4,141Pr,3141017D,"Human,Mouse"
+IMC,1642,Anti-Alpha-Smooth Muscle Actin (1A4) - 209Bi — 15 µg,"Human, Mouse","FFPE,Frozen",aSMA/ACTA2,15 µg,1A4,209Bi,91H001209,"Human, Mouse"
+IMC,1351,Anti-Beta-Actin (2F1-1)-154Sm—25 µg,"Cross,Human,Mouse",FFPE,beta-Actin,25 µg,2F1-1,154Sm,3154021D,"Cross,Human,Mouse"
+IMC,1353,Anti-Beta-Catenin (D10A8)-165Ho—25 µg,"Cross,Human",Frozen,beta-Catenin,25 µg,D10A8,165Ho,3165040D,"Cross,Human"
+IMC,1355,Anti-Beta-Catenin (5H10)-147Sm—15 µg,"Human, Mouse, Rat",FFPE,beta-Catenin,15 µg,5H10,147Sm,91H022147,"Human, Mouse, Rat"
+IMC,1356,Anti-Beta-Catenin (5H10)-151Eu—15 µg,"Human, Mouse, Rat",FFPE,beta-Catenin,15 µg,5H10,151Eu,91H022151,"Human, Mouse, Rat"
+IMC,1358,Anti-Beta-Catenin (5H10)-172Yb—15 µg,"Human, Mouse, Rat",FFPE,beta-Catenin,15 µg,5H10,172Yb,91H022172,"Human, Mouse, Rat"
+IMC,1359,Anti-Beta Tubulin (BT7R)-159Tb,"Cross,Human,Mouse",FFPE,beta-Tubulin,25 µg,BT7R,159Tb,3159036D,"Cross,Human,Mouse"
+IMC,1502,Anti-c-Myc p67 (9E10)-164Dy,Human,FFPE,c-Myc,25 µg,9E10,164Dy,3164025D,Human
+IMC,1567,Anti- iNOS (SP126) -153Eu—15 µg,"Human, Mouse",FFPE,iNOS,15 µg,SP126,153Eu,91H025153,"Human, Mouse"
+IMC,1568,Anti-iNOS (SP126) -152Sm—15 µg,"Human, Mouse",FFPE,iNOS,15 µg,SP126,152Sm,91H025152,"Human, Mouse"
+IMC,1569,Anti-iNOS (SP126)-158Gd—15 µg,"Human, Mouse",FFPE,iNOS,15 µg,SP126,158Gd,91H025158,"Human, Mouse"
+IMC,1570,Anti-iNOS (SP126)-160Gd—15 µg,"Human, Mouse",FFPE,iNOS,15 µg,SP126,160Gd,91H025160,"Human, Mouse"
+IMC,1571,Anti-iNOS (SP126)-164Dy—15 µg,"Human, Mouse",FFPE,iNOS,15 µg,SP126,164Dy,91H025164,"Human, Mouse"
+IMC,1572,Anti-iNOS (SP126)-168Er—15 µg,"Human, Mouse",FFPE,iNOS,15 µg,SP126,168Er,91H025168,"Human, Mouse"
+IMC,1788,Anti-p-AlphaSyn [S129] (EP1536Y)-149Sm—15 ug,Human,FFPE,p-AlphaSyn [S129],15 ug,EP1536Y,149Sm,91H053149,Human
+IMC,1789,Anti-p-AlphaSyn [S129] (EP1536Y)-169Tm—15 ug,Human,FFPE,p-AlphaSyn [S129],15 ug,EP1536Y,169Tm,91H053169,Human
+IMC,1790,Anti-p-AlphaSyn [S129] (EP1536Y)-172Yb—15 ug,Human,FFPE,p-AlphaSyn [S129],15 ug,EP1536Y,172Yb,91H053172,Human
+IMC,1622,Anti-pNFkBp65 [S529] (K10x)-166Er,"Human,Mouse",FFPE,p-NF-kBp65,25 µg,K10-895.12.50,166Er,3166026D,"Human,Mouse"
+IMC,1916,Anti-p4E-BP1 [T37/T46] (236B4)-167Er—25 ug,"Human, mouse, rat",FFPE,p4E-BP1 [T37/T46],25 µg,236B4,167Er,3167028D,"Human, mouse, rat"
+IMC,1597,Anti-Human p53 (DO-7)-143Nd—25 µg,Human,FFPE,p53,25 µg,DO-7,143Nd,3143026D,Human
+IMC,1612,Anti-pERK1/2 [T202/Y204] (D13.14.4E)-159Tb—15 µg,"Human, Mouse, Rat",FFPE,pERK1/2 [T202/Y204],15 µg,D13.14.4E,159Tb,91H039159,"Human, Mouse, Rat"
+IMC,1613,Anti-pERK1/2 [T202/Y204] (D13.14.4E)-161Dy—15 µg,"Human, Mouse, Rat",FFPE,pERK1/2 [T202/Y204],15 µg,D13.14.4E,161Dy,91H039161,"Human, Mouse, Rat"
+IMC,1614,Anti-pERK1/2 [T202/Y204] (D13.14.4E)-164Dy—15 µg,"Human, Mouse, Rat",FFPE,pERK1/2 [T202/Y204],15 µg,D13.14.4E,164Dy,91H039164,"Human, Mouse, Rat"
+IMC,1619,Anti-pERK1/2 [T202/Y204] (D13.14.4E)-171Yb—25 µg,"Human,Mouse",FFPE,pERK1/2 [T202/Y204],25 µg,D13.14.4E,171Yb,3171021D,"Human,Mouse"
+IMC,1922,Anti-pERK1/2 [T202/Y204] (D13.14.4E)-167Er—25 ug,"Human, mouse, rat",FFPE,pERK1/2 [T202/Y204],25 µg,D13.14.4E,167Er,3167029D,"Human, mouse, rat"
+IMC,1615,Anti-pH2AX [S139] (N1-431)-165Ho,"Human,Mouse",FFPE,pH2AX [S139],25 µg,N1-431,165Ho,3165036D,"Human,Mouse"
+IMC,1616,Anti-pHistone H3 [Ser28] (HTA28)-176Yb—25 µg,"Cross,Human",FFPE,pHistone H3 [Ser28],25 µg,HTA28,176Yb,3176024D,"Cross,Human"
+IMC,1623,Anti-pS6 [S235/S236] (N7-548)-175Lu—25 µg,"Human,Mouse",FFPE,pS6 [S235/S236],25 µg,N7-548,175Lu,3175031D,"Human,Mouse"
+IMC,1917,Anti-pS6 [S235/S236] (N7-548)-168Er—25 ug,"Human, mouse, rat",FFPE,pS6 [S235/S236],25 µg,N7-548,168Er,3168031D,"Human, mouse, rat"
+IMC,1923,Anti-pSMAD (EP823Y)-168Er—25 ug,"Human, mouse",FFPE,pSMAD,25 µg,EP823Y,168Er,3168032D,"Human, mouse"
+IMC,1920,Anti-pTYR (TYR-100)-146Nd—25 ug,"Human, mouse, rat",FFPE,pTYR,25 µg,TYR-100,146Nd,3146024D,"Human, mouse, rat"
+IMC,1800,Anti-pTau [S202/T205] (AT8)-149Sm—15 ug,Human,FFPE,pTau [S202/T205],15 ug,AT8,149Sm,91H057149,Human
+IMC,1801,Anti-pTau [S202/T205] (AT8)-158Gd—15 ug,Human,FFPE,pTau [S202/T205],15 ug,AT8,158Gd,91H057158,Human
+IMC,1802,Anti-pTau [S202/T205] (AT8)-172Yb—15 ug,Human,FFPE,pTau [S202/T205],15 ug,AT8,172Yb,91H057172,Human
+Flow,931,Anti-Human ALDH (44/ALDH)-147Sm,Human,Enzyme,ALDH,100 Test,44/ALDH,147Sm,3147015B,Human
+Flow,556,Anti-APC (APC003) -163Dy,Cross,Secondaries,APC,100 test,APC003,163Dy,3163001B,
+Flow,308,Anti-APC (APC003) -162Dy,Cross,Secondaries,APC,100 test,APC003,162Dy,3162006B,na
+Flow,471,Anti-APC (APC003) -176Yb,Cross,Secondaries,APC,100 test,APC003,176Yb,3176007B,na
+Flow,932,Anti-Human Androgen receptor (G122-434)-154Sm,Human,Signaling and Transcription,Androgen Receptor,100 Test,G122-434,154Sm,3154018B,Human
+Flow,1134,Anti-Human Arginase I (14D2C43)-164Dy,Human,Enzyme,Arginase-1,100 Test,14D2C43,164Dy,3164030B,Human
+Flow,825,Anti-Human B2-microglobulin (2M2)-170Er,Human,CD and Surface Markers,B2-microglobulin,100 Test,2M2,170Er,3170016B,human
+Flow,842,Anti-Human/Mouse BCL-6 (K112-91)-163Dy,Human/Mouse,Signaling and Transcription,BCL-6,100 Test,K112-91,163Dy,3163012B,human
+Flow,365,Anti-Biotin (1D4-C5) -143Nd,Cross,Secondaries,Biotin,100 test,1D4-C5,143Nd,3143008B,na
+Flow,388,Anti-Biotin (1D4-C5) -165Ho,Cross,Secondaries,Biotin,100 test,1D4-C5,165Ho,3165012B,na
+Flow,389,Anti-Biotin (1D4-C5) -170Er,Cross,Secondaries,Biotin,100 test,1D4-C5,170Er,3170003B,na
+Flow,423,Anti-Biotin (1D4-C5) -150Nd,Cross,Secondaries,Biotin,100 test,1D4-C5,150Nd,3150008B,na
+Flow,24,Anti-Human CD10 (HI10a) -156Gd,Human,CD and Surface Markers,CD10,100 test,HI10a,156Gd,3156001B,human
+Flow,548,Anti-Human CD10 (HI10a) -158Gd,Human,CD and Surface Markers,CD10,100 test,HI10a,158Gd,3158011B,Human
+Flow,824,Anti-Human CD100 (A8)-156Gd,Human,CD and Surface Markers,CD100,100 Test,A8,156Gd,3156021B,human
+Flow,896,Anti-Human CD101 (BB27)-165Ho,Human,CD and Surface Markers,CD101,100 Test,BB27,165Ho,3165029B,Human
+Flow,760,Anti-Human CD101 (BB27) -158Gd,Human,CD and Surface Markers,CD101,100 Test,BB27,158Gd,3158020B,Human
+Flow,756,Anti-Human CD102 (CBR-IC2/2) -151Eu,Human,CD and Surface Markers,CD102/ICAM-2,100 Test,CBR-IC2/2,151Eu,3151015B,Human
+Flow,628,Anti-Human CD103 (Ber-ACT8) -151Eu,Human,CD and Surface Markers,CD103,100 test,Ber-ACT8,151Eu,3151011B,Human
+Flow,787,Anti-Human CD104 (58XB4) -173Yb,Human,CD and Surface Markers,CD104,100 Test,58XB4,173Yb,3173008B,Human
+Flow,693,Anti-Human CD105/Endoglin (43A3)-163Dy,Human,CD and Surface Markers,CD105/Endoglin,100 Test,43A3,163Dy,3163005B,Human
+Flow,283,Anti-Human CD107a (H4A3) -151Eu,Human,CD and Surface Markers,CD107a/LAMP1,100 test,H4A3,151Eu,3151002B,human
+Flow,1948,Anti-Human CD107a (H4A3) - 106Cd,Human,CD and Surface Markers,CD107a/LAMP1,100 Test,H4A3,106Cd,3106002B,Human
+Flow,788,Anti-Human CD107b (H4B4) -161Dy,Human,CD and Surface Markers,CD107b/LAMP2,100 Test,H4B4,161Dy,3161017B,Human
+Flow,972,Anti-Human CD111/Nectin-1 (R1.302)-172Yb,Human,CD and Surface Markers,CD111/Nectin-1,100 Test,R1.302,172Yb,3172026B,Human
+Flow,44,Anti-Human CD117 [ckit] (104D2) -143Nd,Human,CD and Surface Markers,CD117,100 test,104D2,143Nd,3143001B,human
+Flow,367,Anti-Human CD11a (HI111) -142Nd,Human,CD and Surface Markers,CD11a,100 test,HI111,142Nd,3142006B,human
+Flow,1302,Anti-CD11b (ICRF44)-114Cd—25 uL,Human,CD and Surface Markers,CD11b/Mac-1,25 uL,ICRF44,114Cd,92J037114,Human
+Flow,25,Anti-Human CD11b (ICRF44) -144Nd,Human,CD and Surface Markers,CD11b/Mac-1,100 test,ICRF44,144Nd,3144001B,human
+Flow,682,Anti-Human CD11b/Mac-1(ICRF44)-167Er,Human,CD and Surface Markers,CD11b/Mac-1,100 Test,ICRF44,167Er,3167011B,Human
+Flow,691,Anti-Human CD11b (ICRF44) -209Bi,Human,CD and Surface Markers,CD11b/Mac-1,100 Test,ICRF44,209Bi,3209003B,Human
+Flow,1303,Anti-CD11c (3.9)-147Sm—25 uL,Human,CD and Surface Markers,CD11c,25 uL,3.9,147Sm,92J038147,Human
+Flow,26,Anti-Human CD11c (Bu15) -159Tb,Human,CD and Surface Markers,CD11c,100 test,Bu15,159Tb,3159001B,human
+Flow,551,Anti-Human CD11c (Bu15) -147Sm,Human,CD and Surface Markers,CD11c,100 test,Bu15,147Sm,3147008B,Human
+Flow,301,Anti-Human CD11c (Bu15) -162Dy,Human,CD and Surface Markers,CD11c,100 test,Bu15,162Dy,3162005B,human
+Flow,736,Anti-Human CD11c (3.9) -146Nd,Human,CD and Surface Markers,CD11c,100 Test,3.9,146Nd,3146014B,Human
+Flow,977,Anti-Human CD121B (MNC2)-163Dy,Human,CD and Surface Markers,CD121B,100 Test,MNC2,163Dy,3163025B,Human
+Flow,422,Anti-Human CD122 (Tu27) -170Er,Human,CD and Surface Markers,CD122,100 test,Tu27,170Er,3170004B,human
+Flow,38,Human CD123 (6H6)-143Nd,Human,CD and Surface Markers,CD123,100 test,6H6,143Nd,201325,
+Flow,549,Anti-Human CD123 (6H6) -143Nd,Human,CD and Surface Markers,CD123/IL-3R,100 test,6H6,143Nd,3143014B,Human
+Flow,45,Anti-Human CD123 (6H6) -151Eu,Human,CD and Surface Markers,CD123/IL-3R,100 test,6H6,151Eu,3151001B,human
+Flow,557,Anti-Human CD127 (A019D5) -149Sm,Human,CD and Surface Markers,CD127/IL-7R alpha,100 test,A019D5,149Sm,3149011B,Human
+Flow,329,Anti-Human CD127 (A019D5) -165Ho,Human,CD and Surface Markers,CD127/IL-7R alpha,100 test,A019D5,165Ho,3165008B,human
+Flow,863,Anti-Human CD127 (A019D5)-168Er,Human,CD and Surface Markers,CD127/IL-7R alpha,100 Test,A019D5,168Er,3168017B,Human
+Flow,253,Anti-Human CD127 (A019D5) -176Yb,Human,CD and Surface Markers,CD127/IL-7R alpha,100 test,A019D5,176Yb,3176004B,human
+Flow,510,Anti-Human CD127 (A019D5) -143Nd,Human,CD and Surface Markers,CD127/IL-7R alpha,100 test,A019D5,143Nd,3143012B,Human
+Flow,923,Anti-Human CD13 (WM15)-147Sm,Human,CD and Surface Markers,CD13,100 Test,WM15,147Sm,3147014B,Human
+Flow,678,Anti-Human CD13 (WM15)-160Gd,Human,CD and Surface Markers,CD13,100 Test,WM15,160Gd,3160014B,Human
+Flow,244,Anti-Human CD13 (WM15)-152Sm,Human,CD and Surface Markers,CD13,100 test,WM15,152Sm,3152003B,human
+Flow,778,Anti-Human CD130 (2E1B02) -168Er,Human,CD and Surface Markers,CD130,100 Test,2E1B02,168Er,3168016B,Human
+Flow,834,Anti-Human CD130 (2E1B02)-160Gd,Human,CD and Surface Markers,CD130,100 Test,2E1B02,160Gd,3160017B,Human
+Flow,797,Anti-Human CD132 (TUGh4) -148Nd,Human,CD and Surface Markers,CD132,100 Test,TUGh4,148Nd,3148014B,Human
+Flow,553,Anti-Human CD134 [OX40] (ACT35) -158Gd,Human,CD and Surface Markers,CD134/OX40,100 test,ACT35,158Gd,3158012B,Human
+Flow,862,Anti-Human CD134/OX40 (ACT35)-150Nd,Human,CD and Surface Markers,CD134/OX40,100 Test,ACT35,150Nd,3150023B,Human
+Flow,1157,Anti-Human CD134/OX40 (ACT35) - 142Nd - 100 Tests,Human,IO,CD134/OX40,100 Test,ACT35,142Nd,3142018B,
+Flow,720,Anti-Human CD135/Flt3 (BV10A4H2) -158Gd,Human,CD and Surface Markers,CD135/FLT3,100 test,BV10A4H2,158Gd,3158019B,Human
+Flow,592,Anti-Human CD137/4-1BB (4B4-1) -158Gd,Human,CD and Surface Markers,CD137/4-1BB,100 test,4B4-1,158Gd,3158013B,Human
+Flow,1154,Anti-Human CD137/4-1BB (4B4-1) - 209Bi - 100 Tests,Human,IO,CD137/4-1BB,100 Test,4B4-1,209Bi,3209015B,
+Flow,998,Anti-Human CD137/4-1BB (4B4-1)-173Yb,Human,CD & Surface Marker Antibodies,CD137/4-1BB,100 Test,4B4-1,173Yb,3173015B,Human
+Flow,789,Anti-Human CD137 Ligand (5F4) -158Gd,Human,CD and Surface Markers,CD137L,100 Test,5F4,158Gd,3158022B,Human
+Flow,413,Anti-Human CD138 (DL-101) -145Nd,Human,CD and Surface Markers,CD138,100 test,DL-101,145Nd,3145003B,human
+Flow,498,Anti-Human CD138 (DL-101) -168Er,Human,CD and Surface Markers,CD138,100 test,DL-101,168Er,3168009B,Human
+Flow,511,Anti-Human CD138 (DL-101) -150Nd,Human,CD and Surface Markers,CD138,100 test,DL-101,150Nd,3150012B,Human
+Flow,1304,Anti-CD14 (63D3)-195Pt—25 uL,Human,CD and Surface Markers,CD14,25 uL,63D3,195Pt,92J039195,Human
+Flow,1305,Anti-CD14 (63D3)-151Eu—25 uL,Human,CD and Surface Markers,CD14,25 uL,63D3,151Eu,92J039151,Human
+Flow,1306,Anti-CD14 (M5E2)-195Pt—25 uL,Human,CD and Surface Markers,CD14,25 uL,M5E2,195Pt,92J040195,Human
+Flow,27,Anti-Human CD14 (M5E2) -160Gd,Human,CD and Surface Markers,CD14,100 test,M5E2,160Gd,3160001B,human
+Flow,547,Anti-Human CD14 (M5E2) -175Lu,Human,CD and Surface Markers,CD14,100 test,M5E2,175Lu,3175015B,Human
+Flow,1648,Anti-Human CD14 (M5E2)-146Nd—100 Tests,Human,CD and Surface Makers,CD14,100 Test,M5E2,146Nd,3146022B,Human
+Flow,667,Anti-Human CD14 (HCD14)-156Gd,Human,CD and Surface Markers,CD14,100 Test,HCD14,156Gd,3156019B,Human
+Flow,1203,"Human CD14 (63D3)-168Er- MDIPA Kit, not sold separately",Human,,CD14 (Kit Only),,63D3,168Er,201325,
+Flow,742,Anti-Human CD140b/PDGFRb (18A2) -156Gd,Human,CD and Surface Markers,CD140b (PDGFRb),50 Test,18A2,156Gd,3156018A,Human
+Flow,597,Anti-Human CD141 (1A4) -173Yb,Human,CD and Surface Markers,CD141,100 test,1A4,173Yb,3173002B,Human
+Flow,767,Anti-Human CD141 (M80) -166Er,Human,CD and Surface Markers,CD141,100 Test,M80,166Er,3166017B,Human
+Flow,810,Anti-Human CD146 (P1H12) -155Gd,Human,CD and Surface Markers,CD146,100 Test,P1H12,155Gd,3155006B,human
+Flow,775,Anti-Human CD147 (HIM6) -156Gd,Human,CD and Surface Markers,CD147,100 Test,HIM6,156Gd,3156022B,Human
+Flow,28,Anti-Human CD15 (W6D3) -164Dy,Human,CD and Surface Markers,CD15/SSEA-1,100 test,W6D3,164Dy,3164001B,Human
+Flow,636,Anti-Human CD15 (W6D3) -144Nd,Human,CD and Surface Markers,CD15/SSEA-1,100 test,W6D3,144Nd,3144019B,Human
+Flow,679,Anti-Human CD15/SSEA-1 (W6D3)-172Yb,Human,CD and Surface Markers,CD15/SSEA-1,100 Test,W6D3,172Yb,3172021B,Human
+Flow,969,Anti-Human CD151/PETA-3,Human,CD and Surface Markers,CD151/PETA-3,100 Test,Jun-50,142Nd,3142011B,Human
+Flow,1322,Anti-Human CTLA-4 (14D3) - 142Nd,Human,CD and Surface Markers,CD152/CTLA-4,100 Test,14D3,142Nd,3142019,Human
+Flow,1323,Anti-Human CTLA-4 (14D3) - 162Dy,Human,CD and Surface Markers,CD152/CTLA-4,100 Test,14D3,162Dy,3162039,Human
+Flow,585,Anti-Human CD152/CTLA-4 (14D3) -161Dy,Human,CD and Surface Markers,CD152/CTLA-4,100 test,14D3,161Dy,3161004B,Human
+Flow,458,Anti-Human CD152 [CTLA-4] (14D3) -170Er,Human,CD and Surface Markers,CD152/CTLA-4,100 test,14D3,170Er,3170005B,human
+Flow,1858,Anti-CD154/CD40L (24-31) - 143Nd,Human,Cytokines,CD154/CD40L,100 test,24-31,143Nd,3143033B,Human
+Flow,408,Anti-Human CD154 [CD40L] (24-31) -168Er,Human,CD and Surface Markers,CD154/CD40L,100 test,24-31,168Er,3168006B,human
+Flow,780,Anti-Human CD158b (DX27) -173Yb,Human,CD and Surface Markers,CD158b/KIR2DL2/DL3/NKAT2,100 Test,DX27,173Yb,3173010B,Human
+Flow,809,Anti-Human NKB1 (DX9) -167Er,Human,CD and Surface Markers,CD158e1/KIR3DL1/NKB1,100 Test,DX9,167Er,3167013B,human
+Flow,29,Anti-Human CD16 (3G8) -165Ho,Human,CD and Surface Markers,CD16,100 test,3G8,165Ho,3165001B,human
+Flow,637,Anti-Human CD16 (3G8) -145Nd,Human,CD and Surface Markers,CD16,100 test,3G8,145Nd,3145008B,Human
+Flow,690,Anti-Human CD16 (3G8) -209Bi,Human,CD and Surface Markers,CD16,100 Test,3G8,209Bi,3209002B,Human
+Flow,246,Anti-Human CD16 (3G8) - 148Nd,Human,CD and Surface Markers,CD16,100 test,3G8,148Nd,3148004B,human
+Flow,296,Anti-Human CD161 (HP-3G10) -159Tb,Human,CD and Surface Markers,CD161,100 test,HP-3G10,159Tb,3159004B,human
+Flow,1650,Anti-Human CD161 (HP-3G10)-151Eu—100 Tests,Human,CD and Surface Makers,CD161,100 Test,HP-3G10,151Eu,3151029B,Human
+Flow,405,Anti-Human CD161 (HP-3G10) -164Dy,Human,CD and Surface Markers,CD161,100 test,HP-3G10,164Dy,3164009B,human
+Flow,1330,"Anti-Human CD161 (HP-3G10) - 151Eu- MDIPA Kit, not sold separately",Human,CD and Surface Markers,CD161 (Kit Only),100 Test,HP-3G10,151Eu,201325,Human
+Flow,777,Anti-Human CD162 (KPL-1) -167Er,Human,CD and Surface Markers,CD162,100 Test,KPL-1,167Er,3167014B,Human
+Flow,993,Anti-Human CD162 (KPL-1)-161Dy,Human,CD and Surface Markers,CD162,100 Test,KPL-1,161Dy,3161026B,Human
+Flow,575,Anti-Human CD163 (GHI/61) -165Ho,Human,CD and Surface Markers,CD163,100 test,GHI/61,165Ho,3165017B,Human
+Flow,581,Anti-Human CD163 (GHI/61) -154Sm,Human,CD and Surface Markers,CD163,100 test,GHI/61,154Sm,3154007B,Human
+Flow,716,Anti-Human CD163 (GHI/61) -145ND,Human,CD and Surface Markers,CD163,100 test,GHI/61,145Nd,3145010B,Human
+Flow,906,Anti-Human CD166 (3A6)-164Dy,Human,CD and Surface Markers,CD166,100 Test,3A6,164Dy,3164022B,Human
+Flow,975,Anti-Human CD169 (7-239)-158Gd,Human,CD and Surface Markers,CD169,100 Test,7-239,158Gd,3158027B,Human
+Flow,897,Anti-Human CD172a/b (SE5A5)-163Dy,Human,CD and Surface Markers,CD172 alpha beta/SIRP alpha beta,100 Test,SE5A5,163Dy,3163017B,Human
+Flow,766,Anti-Human CD172a/b (SE5A5) -175Lu,Human,CD and Surface Markers,CD172 alpha beta/SIRP alpha beta,100 Test,SE5A5,175Lu,3175024B,Human
+Flow,755,Anti-Human CD172b (B4B6) -149Sm,Human,CD and Surface Markers,CD172 beta/SIRP beta,100 Test,B4B6,149Sm,3149015B,Human
+Flow,613,Anti-Human CD179a (HSL96) -149Sm,Human,CD and Surface Markers,CD179a,100 test,HSL96,149Sm,3149012B,Human
+Flow,614,Anti-Human CD179b (HSL11) -158Gd,Human,CD and Surface Markers,CD179b,100 test,HSL11,158Gd,3158016B,Human
+Flow,814,Anti-Human CD181 (8F1/CXCR1)-142Nd,Human,CD and Surface Markers,CD181,100 Test,8F1/CXCR1,142Nd,3142009B,human
+Flow,813,Anti-Human CD182 (5E8/CXCR2)-147Sm,Human,CD and Surface Markers,CD182/CXCR2,100 Test,5E8/CXCR2,147Sm,3147010B,human
+Flow,290,Anti-Human CD183 [CXCR3](G025H7) -156Gd,Human,CD and Surface Markers,CD183/CXCR3,100 test,G025H7,156Gd,3156004B,
+Flow,587,Anti-Human CD183/CXCR3 (G025H7) -163Dy,Human,CD and Surface Markers,CD183/CXCR3,100 test,G025H7,163Dy,3163004B,Human
+Flow,586,Anti-Human CD184/CXCR4 (12G5) -173Yb,Human,CD and Surface Markers,CD184/CXCR4,100 test,12G5,173Yb,3173001B,Human
+Flow,927,Anti-Human CD184/CXCR4 (12G5)-156Gd,Human,CD and Surface Markers,CD184/CXCR4,100 Test,12G5,156Gd,3156029B,Human
+Flow,193,Anti-Human CD184 [CXCR4] (12G5) -175Lu,Human,CD and Surface Markers,CD184/CXCR4,100 test,12G5,175Lu,3175001B,
+Flow,298,Anti-Human CD185/CXCR5 (51505) -171Yb,Human,CD and Surface Markers,CD185/CXCR5,100 test,51505,171Yb,3171006B,
+Flow,1133,Anti-Human CD185/CXCR5 (RF8B2)-164Dy,Human,CD & Surface Marker,CD185/CXCR5,100 Test,RF8B2,164Dy,3164029B,Human
+Flow,683,Anti-Human CD185/CXCR5 (RF8B2) -171Yb,Human,CD and Surface Markers,CD185/CXCR5,100 Test,RF8B2,171Yb,3171014B,Human
+Flow,737,Anti-Human CD185/CXCR5 (RF8B2) -153Eu,Human,CD and Surface Markers,CD185/CXCR5,100 Test,RF8B2,153Eu,3153020B,Human
+Flow,1331,"Anti-Human CD185/CXCR5 (J252D4) - 158Gd- MDIPA Kit, not sold separately",Human,CD and Surface Markers,CD185/CXCR5 (Kit Only),100 Test,J252D4,158Gd,201325,Human
+Flow,1307,Anti-CD19 (HIB19)-198Pt—25 uL,Human,CD and Surface Markers,CD19,25 uL,HIB19,198Pt,92J041198,Human
+Flow,1308,Anti-CD19 (HIB19)-149Sm—25 uL,Human,CD and Surface Markers,CD19,25 uL,HIB19,149Sm,92J041149,Human
+Flow,30,Anti-Human CD19 (HIB19) -142Nd,Human,CD and Surface Markers,CD19,100 test,HIB19,142Nd,3142001B,
+Flow,1647,Anti-Human CD19 (HIB19)-145Nd—100 Tests,Human,CD and Surface Makers,CD19,100 Test,HIB19,145Nd,3145020B,Human
+Flow,642,Anti-Human CD19 (HIB19) -165Ho,Human,CD and Surface Markers,CD19,100 test,HIB19,165Ho,3165025B,Human
+Flow,472,Anti-Human CD19 (HIB19) -169Tm,Human,CD and Surface Markers,CD19,100 test,HIB19,169Tm,3169011B,
+Flow,1332,"Anti-Human CD19 (HIB19) - 144Nd- MDIPA Kit, not sold separately",Human,CD and Surface Markers,CD19 (Kit Only),100 Test,HIB19,144Nd,201325,Human
+Flow,922,Anti-Human CD192/CCR2 (K036C2)-153Eu,Human,CD and Surface Markers,CD192/CCR2,100 Test,K036C2,153Eu,3153023B,Human
+Flow,818,Anti-Human CD193/CCR3 (5E8)-175Lu,Human,CD and Surface Markers,CD193/CCR3,100 Test,5E8,175Lu,3175025B,human
+Flow,1129,Anti-Human CD194/CCR4 (L291H4)-149Sm,Human,CD & Surface Marker,CD194/CCR4,50 Test,L291H4,149Sm,3149029A,Human
+Flow,1130,Anti-Human CD194/CCR4 (L291H4)-175Lu,Human,CD & Surface Marker,CD194/CCR4,50 Test,L291H4,175Lu,3175035A,Human
+Flow,1131,Anti-Human CD194/CCR4 (L291H4)-153Eu,Human,CD & Surface Marker,CD194/CCR4,50 Test,L291H4,153Eu,3153030A,Human
+Flow,1132,Anti-Human CD194/CCR4 (L291H4)-158Gd,Human,CD & Surface Marker,CD194/CCR4,50 Test,L291H4,158Gd,3158032A,Human
+Flow,1333,"Anti-Human CD194/CCR4 (L291H4) - 152Sm- MDIPA Kit, not sold separately",Human,CD and Surface Markers,CD194/CCR4 (Kit Only),100 Test,L291H4,152Sm,201325,Human
+Flow,608,Anti-Human CCR5 [CD195] (NP -6G4) -156Gd,Human,CD and Surface Markers,CD195/CCR5,50 test,NP-6G4,156Gd,3156015A,Human
+Flow,360,Anti-Human CD195/CCR5 (NP-6G4) -144Nd,Human,CD and Surface Markers,CD195/CCR5,50 test,NP-6G4,144Nd,3144007A,
+Flow,918,Anti-Human CD195/CCR5 (NP-6G4)-171Yb,Human,CD and Surface Markers,CD195/CCR5,50 Test,NP-6G4,171Yb,3171017A,Human
+Flow,289,Anti-Human CD196 [CCR6](G034E3) -141Pr,Human,CD and Surface Markers,CD196/CCR6,50 test,G034E3,141Pr,3141003A,
+Flow,978,Anti-Human CD196/CCR6 (G034E3)-176Yb,Human,CD and Surface Markers,CD196/CCR6,50 Test,G034E3,176Yb,3176022A,Human
+Flow,739,Anti-Human CCR6 (11A9) -141Pr,Human,CD and Surface Markers,CD196/CCR6,50 Test,11A9,141Pr,3141014A,Human
+Flow,589,Anti-Human CD197/CCR7 (G043H7) -167Er,Human,CD and Surface Markers,CD197/CCR7,50 test,G043H7,167Er,3167009A,Human
+Flow,252,Anti-Human CD197 [CCR7] (G043H7) -159Tb,Human,CD and Surface Markers,CD197/CCR7,50 test,G043H7,159Tb,3159003A,
+Flow,609,Anti-Human CCR9 (CD199) (L053E8) -168Er,Human,CD and Surface Markers,CD199/CCR9,50 test,L053E8,168Er,3168011A,Human
+Flow,784,Anti-Human CD1a (HI149) -167Er,Human,CD and Surface Markers,CD1a,100 Test,HI149,167Er,3167012B,Human
+Flow,785,Anti-Human CD1b (SN13) -155Gd,Human,CD and Surface Markers,CD1b,100 Test,SN13,155Gd,3155007B,Human
+Flow,768,Anti-Human CD1d (51.1) -162Dy,Human,CD and Surface Markers,CD1d,100 Test,51.1,162Dy,3162025B,Human
+Flow,302,Anti-Human CD2 (TS1/8) -151Eu,Human,CD and Surface Markers,CD2,100 test,TS1/8,151Eu,3151003B,
+Flow,31,Anti-Human CD20 (2H7) -147Sm,Human,CD and Surface Markers,CD20,100 test,2H7,147Sm,3147001B,
+Flow,602,Anti-Human CD20 (2H7) -171Yb,Human,CD and Surface Markers,CD20,100 test,2H7,171Yb,3171012B,Human
+Flow,1652,Anti-Human CD20 (2H7)-156Gd—100 Tests,Human,CD and Surface Makers,CD20,100 Test,2H7,156Gd,3156037B,Human
+Flow,748,Anti-Human CD20 (H1) -147Sm,Human,CD and Surface Markers,CD20,100 Test,H1,147Sm,3147007B,Human
+Flow,364,Anti-Human CD200 (OX-104) -149Sm,Human,CD and Surface Markers,CD200,100 test,OX-104,149Sm,3149007B,
+Flow,848,Anti-Human SR-AI/MSR (351615)-156Gd,Human,CD and Surface Markers,CD204/SR-AI/MSR,100 Test,351615,156Gd,3156025B,human
+Flow,481,Anti-Human CD206/MMR (15-2) -168Er,Human,CD and Surface Markers,CD206/MMR,100 test,15-2,168Er,3168008B,
+Flow,576,Anti-Human CD207 (4C7) -175Lu,Human/Mouse,CD and Surface Markers,CD207,100 test,4C7,175Lu,3175016B,Human
+Flow,303,Anti-Human CD22 (HIB22) -159Tb,Human,CD and Surface Markers,CD22,100 test,HIB22,159Tb,3159005B,
+Flow,1860,Anti-CD223/LAG-3 (11C3C65) - 172Yb,Human,CD and Surface Makers,CD223/LAG-3,100 test,11C3C65,172Yb,3172035B,Human
+Flow,1000,Anti- CD223/LAG-3 (11C3C65)-175Lu,Human,CD & Surface Marker Antibodies,CD223/LAG-3,100 Test,11C3C65,175Lu,3175033B,Human
+Flow,1020,Anti-Human CD223/LAG-3 (11C3C65)-165Ho,Human,CD & Surface Marker Antibodies,CD223/LAG-3,100 Test,11C3C65,165Ho,3165037B,Human
+Flow,1021,Anti-Human CD223/LAG-3 (11C3C65)-150Nd,Human,CD & Surface Marker Antibodies,CD223/LAG-3,100 Test,11C3C65,150Nd,3150030B,Human
+Flow,666,Anti-Human CD226 (DX11)-171Yb,Human,CD and Surface Markers,CD226,100 Test,DX11,171Yb,3171013B,Human
+Flow,807,Anti-Human CD229 (HLy9.1.25) -174Yb,Human,CD and Surface Markers,CD229/Ly-9,100 Test,HLy9.1.25,174Yb,3174017B,human
+Flow,769,Anti-Human CD23 (EBVCS-5) -164Dy,Human,CD and Surface Markers,CD23,100 Test,EBVCS-5,164Dy,3164018B,Human
+Flow,921,Anti-Human CD23 (EBVCS-5)-160Gd,Human,CD and Surface Markers,CD23,100 Test,EBVCS-5,160Gd,3160020B,Human
+Flow,790,Anti-Human CD231 (SN1a(M3-3D9)) -163Dy,Human,CD and Surface Markers,CD231/TALLA,100 Test,SN1a[M3-3D9],163Dy,3163016B,Human
+Flow,855,Anti-Human CD235 (HIR2)-175Lu,Human,CD and Surface Markers,CD235ab/Glycophorin ab,100 Test,HIR2,175Lu,3175027B,Human
+Flow,641,Anti-Human CD235ab (HIR2) -163Dy,Human,CD and Surface Markers,CD235ab/Glycophorin ab,100 test,HIR2,163Dy,3163008B,Human
+Flow,194,Anti-Human CD235ab (HIR2) -141Pr,Human,CD and Surface Markers,CD235ab/Glycophorin ab,100 test,HIR2,141Pr,3141001B,
+Flow,295,Anti-Human CD24 (ML5) -169Tm,Human,CD and Surface Markers,CD24,100 test,ML5,169Tm,3169004B,
+Flow,330,Anti-Human CD24 (ML5) -166Er,Human,CD and Surface Markers,CD24,100 test,ML5,166Er,3166007B,
+Flow,1862,Anti-CD244/2B4 (PP35) - 165Ho,Human,CD and Surface Makers,CD244/2B4,100 test,PP35,165Ho,3165046B,Human
+Flow,1854,Anti-CD25 (BC96) - 153Pr,Human,CD and Surface Makers,CD25,100 test,BC96,153Eu,3153032B,Human
+Flow,1197,"Human CD25 (BC96)DM10-153Eu- MDIPA Kit, not sold separately",Human,,CD25 (Kit Only),,BC96,153Eu,201325,
+Flow,403,Anti-Human CD25 (2A3) -149Sm,Human,CD and Surface Markers,CD25/IL-2R,100 test,2A3,149Sm,3149010B,Human
+Flow,1205,Anti-Human CD25 (2A3) -169Tm-100 Tests,Human,CD and Surface Markers,CD25/IL-2R,100 test,2A3,169Tm,3169003B,Human
+Flow,819,Anti-Human CD257 (T7-241)-163Dy,Human,CD and Surface Markers,CD257/BAFF/BLYS,100 Test,T7-241,163Dy,3163013B,human
+Flow,771,Anti-Human CD26 (BA5b) -161Dy,Human,CD and Surface Markers,CD26,100 Test,BA5b,161Dy,3161015B,Human
+Flow,796,Anti-Human CD268 (11C1) -155Gd,Human,CD and Surface Markers,CD268/BAFF-R,100 Test,11C1,155Gd,3155005B,Human
+Flow,514,Anti-Human CD27 (L128) -158Gd,Human,CD and Surface Markers,CD27,100 test,L128,158Gd,3158010B,Human
+Flow,32,Anti-Human CD27 (O323) -167Er,Human,CD and Surface Markers,CD27,100 test,O323,167Er,3167002B,
+Flow,546,Anti-Human CD27 (L128) -155Gd,Human,CD and Surface Markers,CD27,100 test,L128,155Gd,3155001B,Human
+Flow,610,Anti-Human/Mouse CD27 (LG.3A10) -150Nd,Human/Mouse,CD and Surface Markers,CD27,100 test,LG.3A10,150Nd,3150017B,Human
+Flow,387,Anti-Human CD27 (L128) -162Dy,Human,CD and Surface Markers,CD27,100 test,L128,162Dy,3162009B,
+Flow,1334,"Anti-Human CD27 (O323) - 154Sm- MDIPA Kit, not sold separately",Human,CD and Surface Markers,CD27 (Kit Only),100 Test,O323,154Sm,201325,Human
+Flow,895,Anti-Human CD270/HVEM (122)-144Nd,Human,CD and Surface Markers,CD270/HVEM/TR2,100 Test,122,144Nd,3144022B,Human
+Flow,831,Anti-Human CD271 (C40- 1457)-149Sm,Human,CD and Surface Markers,CD271,100 Test,C40-1457,149Sm,3149017B,Human
+Flow,1864,Anti-CD272/BTLA (MIH26) - 175Lu,Human,CD and Surface Makers,CD272/BTLA,100 test,MIH26,175Lu,3175042B,Human
+Flow,669,Anti-Human CD272/BTLA (MIH26)-163Dy,Human,CD and Surface Markers,CD272/BTLA,100 Test,MIH26,163Dy,3163009B,Human
+Flow,583,Anti-Human CD273/PDL2 (24F.10C12) -172Yb,Human,CD and Surface Markers,CD273/PD-L2,100 test,24F.10C12,172Yb,3172014B,Human
+Flow,584,Anti-Human CD274 (PD-L1) (29E.2A3) -175Lu,Human,CD and Surface Markers,CD274/PD-L1,100 test,29E.2A3,175Lu,3175017B,Human
+Flow,1866,Anti-CD274/PD-L1 (MIH1) - 174Yb,Human,CD and Surface Makers,CD274/PD-L1,100 test,MIH1,174Yb,3174027B,Human
+Flow,857,Anti-Human CD274 (PD-L1) (29E.2A3)-156Gd,Human,CD and Surface Markers,CD274/PD-L1,100 Test,29E.2A3,156Gd,3156026B,Human
+Flow,894,Anti-Human CD274 (PD-L1) (29E.2A3)-148Nd,Human,CD and Surface Markers,CD274/PD-L1,100 Test,29E.2A3,148Nd,3148017B,Human
+Flow,1159,Anti-Human CD274 (PD-L1) (MIH1) - 169Tm - 100 Tests,Human,IO,CD274/PD-L1,100 Test,MIH1,169Tm,3169029B,
+Flow,1160,Anti-Human CD274 (PD-L1) (MIH1) - 209Bi - 100 Tests,Human,IO,CD274/PD-L1,100 Test,MIH1,209Bi,3209014B,
+Flow,919,Anti-Human CD274 (PD-L1) (29E.2A3)-159Tb,Human,CD and Surface Markers,CD274/PD-L1,100 Test,29E.2A3,159Tb,3159029B,Human
+Flow,1155,Anti-Human CD278/ICOS (C398.4A) - 175Lu - 100 Tests,Human,IO,CD278/ICOS,100 Test,C398.4A,175Lu,3175039B,
+Flow,1156,Anti-Human CD278/ICOS (C398.4A) - 169Tm - 100 Tests,Human,IO,CD278/ICOS,100 Test,C398.4A,169Tm,3169030B,
+Flow,979,Anti- CD278/ICOS (C398.4A)-148Nd,Cross,CD and Surface Markers,CD278/ICOS,100 Test,C398.4A,148Nd,3148019B,Human
+Flow,995,Anti- CD278/ICOS (C398.4A)-151Eu,Cross,CD and Surface Markers,CD278/ICOS,100 Test,C398.4A,151Eu,3151020B,Human
+Flow,996,Anti-CD278/ICOS (C398.4A)-143Nd,Cross,CD and Surface Markers,CD278/ICOS,100 Test,C398.4A,143Nd,3143025B,Human
+Flow,999,Anti-CD278/ICOS (C398.4A)-168Er,Cross,CD & Surface Marker Antibodies,CD278/ICOS,100 Test,C398.4A,168Er,3168024B,Human
+Flow,1868,Anti-CD279/PD-1 (EH12.2H7) - 156Gd,Human,CD and Surface Makers,CD279/PD-1,100 test,EH12.2H7,156Gd,3156038B,Human
+Flow,858,Anti-Human CD279 (PD-1) (EH12.2H7)-155Gd,Human,CD and Surface Markers,CD279/PD-1,100 Test,EH12.2H7,155Gd,3155009B,Human
+Flow,1149,Anti-Human CD279 (PD-1) (EH12.2H7) - 165Ho - 100 T,Human,IO,CD279/PD-1,100 Test,EH12.2H7,165Ho,3165042B,
+Flow,928,Anti-Human CD279 (PD-1) (EH12.2H7)-174Yb,Human,CD and Surface Markers,CD279/PD-1,100 Test,EH12.2H7,174Yb,3174020B,Human
+Flow,418,Anti-Human CD279 (PD-1)(EH12.2H7) -175Lu,Human,CD and Surface Markers,CD279/PD-1,100 test,EH12.2H7,175Lu,3175008B,
+Flow,254,Anti-Human CD28 (CD28.2) -160Gd,Human,CD and Surface Markers,CD28,100 test,CD28.2,160Gd,3160003B,
+Flow,990,Anti-Human/Mouse CD282 (T2.5)-149Sm,Human/Mouse,CD and Surface Markers,CD282,100 Test,T2.5,149Sm,3149022B,Mouse
+Flow,774,Anti-Human CD282 (TL2.1) -154Sm,Human,CD and Surface Markers,CD282/TLR2,100 Test,TL2.1,154Sm,3154015B,Human
+Flow,914,Anti-Human CD282/TLR2 (TL2.1)-176Yb,Human,CD and Surface Markers,CD282/TLR2,100 Test,TL2.1,176Yb,3176021B,Human
+Flow,915,Anti-Human CD284/TLR4 (HTA125)-158Gd,Human,CD and Surface Markers,CD284/TLR4,100 Test,HTA125,158Gd,3158024B,Human
+Flow,315,Anti-Human CD29 (TS2/16) -156Gd,Human,CD and Surface Markers,CD29,100 test,TS2/16,156Gd,3156007B,
+Flow,590,Anti-Human CD294/CRTH2 (BM16 ) -163Dy,Human,CD and Surface Markers,CD294/CRTH2,100 test,BM16,163Dy,3163003B,Human
+Flow,1335,"Anti-Human CD294/CRTH2 (BM16) - 166Er- MDIPA Kit, not sold separately",Human,CD and Surface Markers,CD294/CRTH2 (Kit Only),100 Test,BM16,166Er,,Human
+Flow,21,Anti-Human CD3 (UCHT1) -170Er,Human,CD and Surface Markers,CD3,100 test,UCHT1,170Er,3170001B,Human
+Flow,1136,Anti-Human CD3 (UCHT1)-141Pr,Human,CD & Surface Marker,CD3,100 Test,UCHT1,141Pr,3141019B,Human
+Flow,384,Anti-Human CD3 (UCHT1) -154Sm,Human,CD and Surface Markers,CD3,100 test,UCHT1,154Sm,3154003B,
+Flow,480,Anti-Human CD3e (SP34-2) -170Er,Human,CD and Surface Markers,CD3,100 test,SP34-2,170Er,3170007B,Human
+Flow,1291,Anti-CD3epsilon (SK7)-196Pt—25 uL,Human,CD and Surface Markers,CD3 epsilon,25 uL,SK7,196Pt,92J030196,Human
+Flow,1292,Anti-CD3epsilon (SK7)-141Pr—25 uL,Human,CD and Surface Markers,CD3 epsilon,25 uL,SK7,141Pr,92J030141,Human
+Flow,1293,Anti-CD3epsilon (HIT3a)-196Pt—25 uL,Human,CD and Surface Markers,CD3 epsilon,25 uL,HIT3a,196Pt,92J031196,Human
+Flow,847,Anti-Human CD301/CLEC10a (H037G3)-167Er,Human,CD and Surface Markers,CD301/CLEC10A,100 Test,H037G3,167Er,3167015B,human
+Flow,574,Anti-Human CD303/BDCA2 (201A) -147Sm,Human,CD and Surface Markers,CD303/BDCA2,100 test,201A,147Sm,3147009B,Human
+Flow,456,Anti-Human CD303/BDCA2 (201A) -153Eu,Human,CD and Surface Markers,CD303/BDCA2,100 test,201A,153Eu,3153007B,
+Flow,779,Anti-Human CD304 / Neuro(12C2) -169Tm,Human,CD and Surface Markers,CD304/Neuropilin-1,100 Test,12C2,169Tm,3169018B,Human
+Flow,660,Anti-Human CD309/KDR (7D4-6) -154Sm,Human,CD and Surface Markers,CD309/KDR,100 test,7D4-6,154Sm,3154009B,Human
+Flow,311,Anti-Human CD31/PECAM-1 (WM59) -145Nd,Human,CD and Surface Markers,CD31/PECAM-1,100 test,WM59,145Nd,3145004B,
+Flow,1015,Anti-Human CD31/PECAM-1 (WM59)-144Nd,Human,CD & Surface Marker Antibodies,CD31/PECAM-1,100 Test,WM59,144Nd,3144023B,Human
+Flow,916,Anti-Human CD32 (FUN-2)-169Tm,Human,CD and Surface Markers,CD32,100 Test,FUN-2,169Tm,3169020B,Human
+Flow,757,Anti-Human CD32 (FUN-2) -153Eu,Human,CD and Surface Markers,CD32,100 Test,FUN-2,153Eu,3153018B,Human
+Flow,727,Anti- CD324/E-Cadherin (24E10) -158Gd,Cross,CD and Surface Markers,CD324/E-Cadherin,50 Test,24E10,158Gd,3158021A,Human
+Flow,743,Anti-Human/Mouse CD324/E-Cadherin (DECMA-1) -158Gd,Human/Mouse,CD and Surface Markers,CD324/E-Cadherin,100 Test,DECMA-1,158Gd,3158018B,Human
+Flow,835,Anti-Human CD325/N-Cadherin (8C11)-143Nd,Human,CD and Surface Markers,CD325/N-Cadherin,100 Test,8C11,143Nd,3143016B,human
+Flow,320,Anti-Human CD326 [EpCAM] (9C4) -141Pr,Human,CD and Surface Markers,CD326/EpCAM,100 test,9C4,141Pr,3141006B,
+Flow,793,Anti-Human CD328 (6-434) -166Er,Human,CD and Surface Markers,CD328/Siglec-7,100 Test,6-434,166Er,3166019B,Human
+Flow,1309,Anti-CD33 (WM53)-111Cd—25 uL,Human,CD and Surface Markers,CD33,25 uL,WM53,111Cd,92J042111,Human
+Flow,33,Anti-Human CD33 (WM53) -158Gd,Human,CD and Surface Markers,CD33,100 test,WM53,158Gd,3158001B,
+Flow,925,Anti-Human CD33 (WM53)-163Dy,Human,CD and Surface Markers,CD33,100 Test,WM53,163Dy,3163023B,Human
+Flow,445,Anti-Human CD33 (WM53) -169Tm,Human,CD and Surface Markers,CD33,100 test,WM53,169Tm,3169010B,
+Flow,513,Anti-Human CD34 (581) - 166Er,Human,CD and Surface Markers,CD34,100 test,581,166Er,3166012B,Human
+Flow,34,Anti-Human CD34 (581) -148Nd,Human,CD and Surface Markers,CD34,100 test,581,148Nd,3148001B,
+Flow,680,Anti-Human CD34 (581)-149Sm,Human,CD and Surface Markers,CD34,100 Test,581,149Sm,3149013B,Human
+Flow,718,Anti-Human CD34 (581) -163Dy,Human,CD and Surface Markers,CD34,100 test,581,163Dy,3163014B,Human
+Flow,808,Anti-Human CD352 (NT-7) -143Nd,Human,CD and Surface Markers,CD352/NTB-A,100 Test,NT-7,143Nd,3143017B,human
+Flow,763,Anti-Human CD354 (TREM-26) -172Yb,Human,CD and Surface Markers,CD354/TREM-1,100 Test,TREM-26,172Yb,3172022B,Human
+Flow,791,Anti-Human CD357 (621) -159Tb,Human,CD and Surface Markers,CD357/GITR,100 Test,621,159Tb,3159020B,Human
+Flow,1870,Anti-CD357/GITR (108-17) - 164Dy,Human,CD and Surface Makers,CD357/GITR,100 test,108-17,164Dy,3164034B,Human
+Flow,319,Anti-Human CD36 (5-271) -152Sm,Human,CD and Surface Markers,CD36,100 test,5-271,152Sm,3152007B,
+Flow,920,Anti-Human CD36 (5-271)-155Gd,Human,CD and Surface Markers,CD36,100 Test,5-271,155Gd,3155012B,Human
+Flow,1150,Anti-Human CD366/Tim-3 (F38-2E2) - 159Tb - 100 Tests,Human,IO,CD366/Tim-3,100 Test,F38-2E2,159Tb,3159037B,
+Flow,1151,Anti-Human CD366/Tim-3 (F38-2E2) - 169Tm - 100 Tests,Human,IO,CD366/Tim-3,100 Test,F38-2E2,169Tm,3169028B,
+Flow,672,Anti-Human CD366/TIM-3 (F38-2E2)-154Sm,Human,CD and Surface Markers,CD366/Tim-3,100 Test,F38-2E2,154Sm,3154010B,Human
+Flow,482,Anti-Human CD366/Tim-3 (F38-2E2) -153Eu,Human,CD and Surface Markers,CD366/Tim-3,100 test,F38-2E2,153Eu,3153008B,
+Flow,811,Anti-Human CD370/CLEC9a (8F9) -161Dy,Human,CD and Surface Markers,CD370/CLEC9A/DNGR1,100 Test,8F9,161Dy,3161018B,human
+Flow,764,Anti-Human CD371/CLEC12A (50C1) -173Yb,Human,CD and Surface Markers,CD371/CLEC12A,100 Test,50C1,173Yb,3173007B,Human
+Flow,285,Anti-Human CD38 (HIT2) -172Yb,Human,CD and Surface Markers,CD38,100 test,HIT2,172Yb,3172007B,
+Flow,35,Anti-Human CD38 (HIT2) -167Er,Human,CD and Surface Markers,CD38,100 test,HIT2,167Er,3167001B,
+Flow,550,Anti-Human CD38 (HIT2) -144Nd,Human,CD and Surface Markers,CD38,100 test,HIT2,144Nd,3144014B,Human
+Flow,1653,Anti-Human CD38 (HB-7)-161Dy—100 Tests,Human,CD and Surface Makers,CD38,100 Test,HB-7,161Dy,3161034B,Human
+Flow,1202,"Human CD38 (HB-7)-161Dy- MDIPA Kit, not sold separately",Human,,CD38 (Kit Only),,HB-7,161Dy,201325,
+Flow,287,Anti-Human CD39 (A1) -160Gd,Human,CD and Surface Markers,CD39,100 test,A1,160Gd,3160004B,
+Flow,1297,Anti-CD4 (SK3)-145Nd—25 uL,Human,CD and Surface Markers,CD4,25 uL,SK3,145Nd,92J033145,Human
+Flow,1298,Anti-CD4 (OKT4)-145Nd—25 uL,Human,CD and Surface Markers,CD4,25 uL,OKT4,145Nd,92J034145,Human
+Flow,22,Anti-Human CD4 (RPA-T4) -145Nd,Human,CD and Surface Markers,CD4,100 test,RPA-T4,145Nd,3145001B,Human
+Flow,601,Anti-Human CD4 (RPA-T4) -176Yb,Human,CD and Surface Markers,CD4,100 test,RPA-T4,176Yb,3176010B,Human
+Flow,1657,Anti-Human CD4 (SK3)-144Nd—100 Tests,Human,CD and Surface Makers,CD4,100 Test,SK3,144Nd,3144029B,Human
+Flow,248,Anti-Human CD4 (SK3) -174Yb,Human,CD and Surface Markers,CD4,100 test,SK3,174Yb,3174004B,
+Flow,312,Anti-Human CD40 (5C3) -165Ho,Human,CD and Surface Markers,CD40,100 test,5C3,165Ho,3165005B,
+Flow,924,Anti-Human CD40 (5C3)-142Nd,Human,CD and Surface Markers,CD40,100 Test,5C3,142Nd,3142010B,Human
+Flow,801,Anti-Human CD41 (HIP8) -89Y,Human,CD and Surface Markers,CD41,100 Test,HIP8,89Y,3089004B,human
+Flow,802,Anti-Human CD42b (HIP1) -144Nd,Human,CD and Surface Markers,CD42b,100 Test,HIP1,144Nd,3144020B,human
+Flow,313,Anti-Human CD43 (84-3C1) -150Nd,Human,CD and Surface Markers,CD43,100 test,84-3C1,150Nd,3150006B,
+Flow,8,Anti-Human/Mouse CD44 (IM7) -171Yb,Human/Mouse,CD and Surface Markers,CD44,100 test,IM7,171Yb,3171003B,
+Flow,36,Anti-Human CD44 (BJ18) -166Er,Human,CD and Surface Markers,CD44,100 test,BJ18,166Er,3166001B,
+Flow,607,Anti-Human/Mouse CD44 (IM7) -150Nd,Human/Mouse,CD and Surface Markers,CD44,100 test,IM7,150Nd,3150018B,Mouse
+Flow,1016,Anti-Human/Mouse CD44 (IM7)-162Dy,Human/Mouse,CD & Surface Marker Antibodies,CD44,100 Test,IM7,162Dy,3162030B,Mouse
+Flow,828,Anti-Human CD44s Pan Specific (691534)-153Eu,Human,CD and surface markers,CD44s Pan Specific,100 Test,691534,153Eu,3153021B,Human
+Flow,542,Anti-Human CD45 (HI30) -141Pr,Human,CD and Surface Markers,CD45,100 test,HI30,141Pr,3141009B,Human
+Flow,1310,Anti-CD45 (2D1)-89Y—25 uL,Human,CD and Surface Markers,CD45,25 uL,2D1,89Y,92J043089,Human
+Flow,37,Anti-Human CD45 (HI30) -154Sm,Human,CD and Surface Markers,CD45,100 test,HI30,154Sm,3154001B,
+Flow,385,Anti-Human CD45 (HI30) -156Gd,Human,CD and Surface Markers,CD45,100 test,HI30,156Gd,3156010B,
+Flow,1206,Anti-Human CD45 (HI30)-106Cd,Human,CD and Surface Markers,CD45,100 test,HI30,106Cd,3106001B,Human
+Flow,1207,Anti-Human CD45 (HI30)-110Cd,Human,CD and Surface Markers,CD45,100 test,HI30,110Cd,3110001B,Human
+Flow,1208,Anti-Human CD45 (HI30)-111Cd,Human,CD and Surface Markers,CD45,100 test,HI30,111Cd,3111001B,Human
+Flow,1209,Anti-Human CD45 (HI30)-112Cd,Human,CD and Surface Markers,CD45,100 test,HI30,112Cd,3112001B,Human
+Flow,1210,Anti-Human CD45 (HI30)-113Cd,Human,CD and Surface Markers,CD45,100 test,HI30,113Cd,3113001B,Human
+Flow,1211,Anti-Human CD45 (HI30)-114Cd,Human,CD and Surface Markers,CD45,100 test,HI30,114Cd,3114001B,Human
+Flow,1212,Anti-Human CD45 (HI30)-116Cd,Human,CD and Surface Markers,CD45,100 test,HI30,116Cd,3116001B,Human
+Flow,1219,Anti-Human CD45 (HI30)-194Pt,Human,CD and Surface Markers,CD45,100 test,HI30,194Pt,3194001B,Human
+Flow,1220,Anti-Human CD45 (HI30)-195Pt,Human,CD and Surface Markers,CD45,100 test,HI30,195Pt,3195001B,Human
+Flow,1221,Anti-Human CD45 (HI30)-196Pt,Human,CD and Surface Markers,CD45,100 test,HI30,196Pt,3196001B,Human
+Flow,1222,Anti-Human CD45 (HI30)-198Pt,Human,CD and Surface Markers,CD45,100 test,HI30,198Pt,3198001B,Human
+Flow,562,Anti-Human/Mouse CD45R/B220 (RA3-6B2) -159Tb,Human/Mouse,CD and Surface Markers,CD45R/B220,100 test,RA3-6B2,159Tb,3159015B,Mouse
+Flow,338,Anti-Human/Mouse CD45R [B220] (RA3-6B2) -176Yb,Human/Mouse,CD and Surface Markers,CD45R/B220,100 test,RA3-6B2,176Yb,3176002B,
+Flow,643,Anti-Mouse CD45R/B220 (RA3-6B2) -160Gd,Human/Mouse,CD and Surface Markers,CD45R/B220,100 test,RA3-6B2,160Gd,3160012B,Mouse
+Flow,439,Anti- Mouse CD45R/B220(RA3-6B2) -144Nd,Human/Mouse,CD and Surface Markers,CD45R/B220,100 test,RA3-6B2,144Nd,3144011B,
+Flow,324,Anti-Human CD45RA (HI100) -143Nd,Human,CD and Surface Markers,CD45RA,100 test,HI100,143Nd,3143006B,
+Flow,345,Anti-Human CD45RA (HI100) -169Tm,Human,CD and Surface Markers,CD45RA,100 test,HI100,169Tm,3169008B,
+Flow,1649,Anti-Human CD45RA (HI100)-150Nd—100 Tests,Human,CD and Surface Makers,CD45RA,100 Test,HI100,150Nd,3150034B,Human
+Flow,1187,Anti-Human CD45RA (HI100)-153Eu,Human,CD and Surface Markers,CD45RA,100 Test,HI100,153Eu,3153001B,Human
+Flow,684,Anti-Human CD45RA (HI100)-170Er,Human,CD and Surface Markers,CD45RA,100 Test,HI100,170Er,3170010B,Human
+Flow,1336,"Anti-Human CD45RA (HI100) - 150Nd- MDIPA Kit, not sold separately",Human,CD and Surface Markers,CD45RA (Kit Only),100 Test,HI100,150Nd,201325,Human
+Flow,754,Anti-Human CD45RB (MEM-55) -145Nd,Human,CD and Surface Markers,CD45RB,100 Test,MEM-55,145Nd,3145009B,Human
+Flow,1311,Anti-CD45RO (UCHL1)-194Pt—25 uL,Human,CD and Surface Markers,CD45RO,25 uL,UCHL1,194Pt,92J044194,Human
+Flow,1312,Anti-CD45RO (UCHL1)-150Nd—25 uL,Human,CD and Surface Markers,CD45RO,25 uL,UCHL1,150Nd,92J044150,Human
+Flow,328,Anti-Human CD45RO (UCHL1) -164Dy,Human,CD and Surface Markers,CD45RO,100 test,UCHL1,164Dy,3164007B,
+Flow,358,Anti-Human CD45RO (UCHL1) -165Ho,Human,CD and Surface Markers,CD45RO,100 test,UCHL1,165Ho,3165011B,
+Flow,1654,Anti-Human CD45RO (UCHL1)-163Dy—100 Tests,Human,CD and Surface Makers,CD45RO,100 Test,UCHL1,163Dy,3163032B,Human
+Flow,249,Anti-Human CD45RO (UCHL1)-149Sm,Human,CD and Surface Markers,CD45RO,100 test,UCHL1,149Sm,3149001B,
+Flow,930,Anti-Human CD47 (CC2C6)-209Bi,Human,CD and Surface Markers,CD47,100 Test,CC2C6,209Bi,3209004B,human
+Flow,321,Anti-Human/Mouse CD49F (GoH3) -164Dy,Human/Mouse,CD and Surface Markers,CD49F,100 test,G0H3,164Dy,3164006B,
+Flow,822,Anti-Human CD49a (TS2/7)-163Dy,Human,CD and Surface Markers,CD49a,100 Test,TS2/7,163Dy,3163015B,human
+Flow,803,Anti-Human CD49b (P1E6-C5) -161Dy,Human,CD and Surface Markers,CD49b,100 Test,P1E6-C5,161Dy,3161012B,human
+Flow,823,Anti-Human CD49c (ASC-1)-161Dy,Human,CD and Surface Markers,CD49c/integrin alpha-3,100 Test,ASC-1,161Dy,3161016B,human
+Flow,812,Anti-Human CD49D (9F10) -174Yb,Human,CD and Surface Markers,CD49d,100 Test,9F10,174Yb,3174018B,human
+Flow,304,Anti-Human CD49D (9F10) -141Pr,Human,CD and Surface Markers,CD49d,100 test,9F10,141Pr,3141004B,
+Flow,761,Anti-Human CD49e (NKI-SAM-1) -160Gd,Human,CD and Surface Markers,CD49e,100 Test,NKI-SAM-1,160Gd,3160015B,Human
+Flow,325,Anti-Human CD5 (UCHT2) -143Nd,Human,CD and Surface Markers,CD5,100 test,UCHT2,143Nd,3143007B,
+Flow,971,Anti-Human CD51/61 (23C6)-150Nd,Human,CD and Surface Markers,CD51/61,100 Test,23C6,150Nd,3150026B,Human
+Flow,799,Anti-Human CD52 (HI186) -146Nd,Human,CD and Surface Markers,CD52,100 Test,HI186,146Nd,3146013B,Human
+Flow,833,Anti-Human CD54 (HA58)-170Er,Human,CD and Surface Markers,CD54/ICAM-1,100 Test,HA58,170Er,3170014B,Human
+Flow,773,Anti-Human CD55 (JS11) -148Nd,Human,CD and Surface Markers,CD55,100 Test,JS11,148Nd,3148015B,Human
+Flow,40,Anti-Human CD56 (HCD56) -176Yb,Human,CD and Surface Markers,CD56/NCAM,100 test,HCD56,176Yb,3176001B,
+Flow,621,Anti-Human CD56 (NCAM16.2) -163Dy,Human,CD and Surface Markers,CD56/NCAM,100 test,NCAM16.2,163Dy,3163007B,Human
+Flow,668,Anti-Human CD56 (R19-760)-176Yb,Human,CD and Surface Markers,CD56/NCAM,100 Test,R19-760,176Yb,3176013B,Human
+Flow,929,Anti-Human CD56/NCAM (NCAM16.2)-149Sm,Human,CD and Surface Markers,CD56/NCAM,100 Test,NCAM16.2,149Sm,3149021B,Human
+Flow,719,Anti-Human CD56 (B159) -155Gd,Human,CD and Surface Markers,CD56/NCAM,100 test,B159,155Gd,3155008B,Human
+Flow,305,Anti-Human CD57 (HCD57) -172Yb,Human,CD and Surface Markers,CD57,100 test,HCD57,172Yb,3172009B,
+Flow,910,Anti-Human CD57 (HCD57)-163Dy,Human,CD and Surface Markers,CD57,100 Test,HCD57,163Dy,3163022B,Human
+Flow,713,Anti-Human CD57 (HCD57) -142Nd,Human,CD and Surface Markers,CD57,100 test,HCD57,142Nd,3142007B,Human
+Flow,1328,"Anti-Human CD57 (HNK-1) - 155Gd - MDIPA Kit, not sold separately",Human,CD and Surface Markers,CD57 (Kit Only),100 Test,HNK-1,155Gd,201325,Human
+Flow,781,Anti-Human CD58 (TS2/9) -176Yb,Human,CD and Surface Markers,CD58/LFA-3,100 Test,TS2/9,176Yb,3176017B,Human
+Flow,783,Anti-Human CD59 (p282 (H19)) -173Yb,Human,CD and Surface Markers,CD59,100 Test,p282 [H19],173Yb,3173009B,Human
+Flow,800,Anti-Human CD6 (BL-CD6) -148Nd,Human,CD and Surface Markers,CD6,100 Test,BL-CD6,148Nd,3148013B,human
+Flow,41,Anti-Human CD61 (VI-PL2) -150Nd,Human,CD and Surface Markers,CD61,100 test,VI-PL2,150Nd,3150001B,
+Flow,346,Anti-Human CD61 (VI-PL2) -165Ho,Human,CD and Surface Markers,CD61,100 test,VI-PL2,165Ho,3165010B,
+Flow,638,Anti-Human CD61 (VI-PL2) -146Nd,Human,CD and Surface Markers,CD61,100 test,VI-PL2,146Nd,3146011B,Human
+Flow,692,Anti-Human CD61 (VI-PL2) -209Bi,Human,CD and Surface Markers,CD61,100 Test,VI-PL2,209Bi,3209001B,Human
+Flow,294,Anti-Human CD62L (DREG-56) -153Eu,Human,CD and Surface Markers,CD62L/L-selectin,100 test,DREG-56,153Eu,3153004B,
+Flow,804,Anti-Human CD63 (H5C6) -150Nd,Human,CD and Surface Markers,CD63,100 Test,H5C6,150Nd,3150021B,human
+Flow,306,Anti-Human CD64 (10.1) -146Nd,Human,CD and Surface Markers,CD64,100 test,10.1,146Nd,3146006B,
+Flow,786,Anti-Human CD66a/c/e (ASL-32) -149Sm,Human,CD and Surface Markers,CD66a/CEACAM1,100 Test,ASL-32,149Sm,3149018B,Human
+Flow,907,Anti-Human CD66a/CEACAM-1 (283340)-168Er,Human,CD and Surface Markers,CD66a/CEACAM1,100 Test,283340,168Er,3168020B,Human
+Flow,1651,Anti-Human CD66b (G10F5)-152Sm—100 Tests,Human,CD and Surface Makers,CD66b,100 Test,G10F5,152Sm,3152019B,Human
+Flow,1200,"Human CD66b (G10F5)-172Yb- MDIPA Kit, not sold separately",Human,,CD66b (Kit Only),,G10F5,172Yb,201325,
+Flow,582,Anti-Human CD68 (Y1/82A) -171Yb,Human,CD and Surface Markers,CD68,100 test,Y1/82A,171Yb,3171011B,Human
+Flow,1319,Anti-Human CD69 (FN50) - 113Cd,Human,CD and Surface Markers,CD69,100 Test,FN50,113Cd,3113002,Human
+Flow,43,Anti-Human CD69 (FN50) -162Dy,Human,CD and Surface Markers,CD69,100 test,FN50,162Dy,3162001B,
+Flow,618,Anti-Human CD69 (FN50) -144Nd,Human,CD and Surface Markers,CD69,100 test,FN50,144Nd,3144018B,Human
+Flow,297,Anti-Human CD7 (CD7-6B7) -147Sm,Human,CD and Surface Markers,CD7,100 test,CD7-6B7,147Sm,3147006B,
+Flow,603,Anti-Human CD7 (CD7-6B7) -153Eu,Human,CD and Surface Markers,CD7,100 test,CD7-6B7,153Eu,3153014B,Human
+Flow,912,Anti-Human CD7 (CD7-6B7)-145Nd,Human,CD and Surface Markers,CD7,100 Test,CD7-6B7,145Nd,3145013B,Human
+Flow,1019,Anti-Human CD7 (M-T701)-166Er,Human,CD & Surface Marker Antibodies,CD7,100 Test,M-T701,166Er,.php.&&,Human
+Flow,449,Anti-Human CD71 (OKT-9) -175Lu,Human,CD and Surface Markers,CD71,100 test,OKT-9,175Lu,3175011B,
+Flow,715,Anti-Human CD71 (OKT-9) -168Er,Human,CD and Surface Markers,CD71/Transferrin Receptor,100 test,OKT-9,168Er,3168014B,Human
+Flow,344,Anti-Human CD72 (3F3) -144Nd,Human,CD and Surface Markers,CD72,100 test,3F3,144Nd,3144005B,
+Flow,770,Anti-Human CD73 (AD2) -168Er,Human,CD and Surface Markers,CD73/Ecto-5-nucleotidase,100 Test,AD2,168Er,3168015B,Human
+Flow,798,Anti-Human CD74 (LN2) -166Er,Human,CD and Surface Markers,CD74,100 Test,LN2,166Er,3166018B,Human
+Flow,926,Anti-Human CD80/B7-1 (2D10.4)-161Dy,Human,CD and Surface Markers,CD80/B7-1,100 Test,2D10.4,161Dy,3161023B,Human
+Flow,415,Anti-Human CD80 [B7.1] (2D10.4) -162Dy,Human,CD and Surface Markers,CD80/B7-1,100 test,2D10.4,162Dy,3162010B,
+Flow,612,Anti-Human CD81 (5A6) -145Nd,Human,CD and Surface Markers,CD81,100 test,5A6,145Nd,3145007B,Human
+Flow,968,Anti-Human CD82 (ASL-24)-158Gd,Human,CD and Surface Markers,CD82,100 Test,ASL-24,158Gd,3158025B,Human
+Flow,758,Anti-Human CD84 (CD84.1.21) -154Sm,Human,CD and Surface Markers,CD84,100 Test,CD84.1.21,154Sm,3154013B,Human
+Flow,899,Anti-Human CD85/ILT4 (42D1)-161Dy,Human,CD and Surface Markers,CD85d/ILT4,100 Test,42D1,161Dy,3161019B,Human
+Flow,772,Anti-Human CD85j (GHI/75) -156Gd,Human,CD and Surface Markers,CD85j/ILT2,100 Test,GHI/75,156Gd,3156020B,Human
+Flow,898,Anti-Human CD85j/ILT2 (GHI/75)-166Er,Human,CD and Surface Markers,CD85j/ILT2,100 Test,GHI/75,166Er,3166020B,Human
+Flow,362,Anti-Human CD86 [B7.2] (IT2.2) -156Gd,Human,CD and Surface Markers,CD86,100 test,IT2.2,156Gd,3156008B,
+Flow,681,Anti-Human CD86 (IT2.2)-150Nd,Human,CD and Surface Markers,CD86,100 Test,IT2.2,150Nd,3150020B,Human
+Flow,765,Anti-Human CD89 (A59) -174Yb,Human,CD and Surface Markers,CD89,100 Test,A59,174Yb,3174012B,Human
+Flow,1299,Anti-CD8a (SK1)-112Cd—25 uL,Human,CD and Surface Markers,CD8a,25 uL,SK1,112Cd,92J035112,Human
+Flow,1300,Anti-CD8a (SK1)-146Nd—25 uL,Human,CD and Surface Markers,CD8a,25 uL,SK1,146Nd,92J035146,Human
+Flow,23,Anti-Human CD8a (RPA-T8) -146Nd,Human,CD and Surface Markers,CD8a,100 test,RPA-T8,146Nd,3146001B,Human
+Flow,544,Anti-Human CD8a (RPA-T8) -162Dy,Human,CD and Surface Markers,CD8a,100 test,RPA-T8,162Dy,3162015B,Human
+Flow,1656,Anti-Human CD8a (SK1)-142Nd—100 Tests,Human,CD and Surface Makers,CD8a,100 Test,SK1,142Nd,3142021B,Human
+Flow,247,Anti-Human CD8a (SK1) - 168Er,Human,CD and Surface Markers,CD8a,100 test,SK1,168Er,3168002B,Human
+Flow,327,Anti-Human CD90 (5E10) -159Tb,Human,CD and Surface Markers,CD90,100 test,5E10,159Tb,3159007B,
+Flow,639,Anti-Human CD90 (5E10) -161Dy,Human,CD and Surface Markers,CD90,100 test,5E10,161Dy,3161009B,Human
+Flow,1017,Anti-Human CD90 (5E10)-173Yb,Human,CD & Surface Marker Antibodies,CD90,100 Test,5E10,173Yb,3173011B,Human
+Flow,832,Anti-Human CD94 (HP-3D9)-174Yb,Human,CD and Surface Markers,CD94,100 Test,HP-3D9,174Yb,3174015B,Human
+Flow,1872,Anti-CD95/Fas (DX2) - 176Yb,Human,CD and Surface Makers,CD95/Fas,100 test,DX2,176Yb,3176029B,Human
+Flow,361,Anti-Human CD95/Fas (DX2) -164Dy,Human,CD and Surface Markers,CD95/Fas,100 test,DX2,164Dy,3164008B,
+Flow,1158,Anti-Human CD95/Fas (DX2) - 162Dy - 100 Tests,Human,IO,CD95/Fas,100 Test,DX2,162Dy,3162038B,
+Flow,997,Anti-Human CD95/Fas (DX2)-152Sm,Human,CD & Surface Marker Antibodies,CD95/Fas,100 Test,DX2,152Sm,3152017B,Human
+Flow,805,Anti-Human CD97 (VIM3b) -171Yb,Human,CD and Surface Markers,CD97,100 Test,VIM3b,171Yb,3171015B,human
+Flow,776,Anti-Human CD98 (UM7F8) -159Tb,Human,CD and Surface Markers,CD98,100 Test,UM7F8,159Tb,3159022B,Human
+Flow,762,Anti-Human CD99 (HCD99) -170Er,Human,CD and Surface Markers,CD99,100 Test,HCD99,170Er,3170012B,Human
+Flow,782,Anti-Human/Mouse CLA (HECA-452) -176Yb,Human/Mouse,CD and Surface Markers,CLA,100 Test,HECA-452,176Yb,3176018B,Human
+Flow,1314,Anti-CX3CR1 (K0124E1)-172Yb—25 uL,Human,CD and Surface Markers,CX3CR1,25 uL,K0124E1,172Yb,92J046172,Human
+Flow,1315,Anti-CX3CR1 (K0124E1)-162Dy—25 uL,Human,CD and Surface Markers,CX3CR1,25 uL,K0124E1,162Dy,92J046162,Human
+Flow,600,Anti-Human CX3CR1 (2A9-1) -172Yb,Human,CD and Surface Markers,CX3CR1,100 test,2A9-1,172Yb,3172017B,Human
+Flow,806,Anti-Human CXCR6 (CD186) (K041E5) -160Gd,Human,CD and Surface Markers,CXCR6/CD186,100 Test,K041E5,160Gd,3160016B,human
+Flow,357,Anti-Cleaved Caspase 3 (D3E9) -142Nd,Cross,Cell Death and Apoptosis,Cleaved Caspase-3,50 test,D3E9,142Nd,3142004A,human
+Flow,729,Anti-Cleaved Caspase3 (5A1E) -172Yb,Cross,Cell death and Apoptosis,Cleaved Caspase-3,50 Test,5A1E,172Yb,3172023A,Human
+Flow,694,Anti-Human Cleaved Caspase 7 (D6H1)-152Sm,Human,Cell Death and Apoptosis,Cleaved Caspase-7,50 Test,D6H1,152Sm,3152014A,Human
+Flow,450,Anti-Human Cleaved PARP (F21-852) -143Nd,Human,Cell Death and Apoptosis,Cleaved-PARP,50 test,F21-852,143Nd,3143011A,
+Flow,475,Anti-Human CyclinA (BF683) -158Gd,Human,Cell Cycle and Proliferation,CyclinA,50 Test,BF683,158Gd,3158008A,
+Flow,566,Anti-Human CyclinB1 (GNS-1) -153Eu,Cross,Cell Cycle and Proliferation,CyclinB1,50 test,GNS-1,153Eu,3153009A,Human
+Flow,476,Anti-CyclinB1 (GNS-1) -164Dy,Cross,Cell Cycle and Proliferation,CyclinB1,50 Test,GNS-1,164Dy,3164010A,
+Flow,734,Anti-Cyotkeratin 7 (RCK105) -164Dy,Cross,Structure and Cytoskeleton,Cytokeratin7/CK7,50 Test,RCK105,164Dy,3164020A,Human
+Flow,567,IdU,Cross,DNA Synthesis,DNA,100 uL,N/A,127I,201127,
+Flow,846,Anti-Human DNMT3B (832121)-164Dy,Human,Signaling and Transcription,DNMT3B,100 Test,832121,164Dy,3164021B,human
+Flow,723,Anti-Human DR3 (JD3)-161Dy,Human,CD and Surface Markers,DR3,100 test,JD3,161Dy,3161003B,Human
+Flow,695,Anti-Human EGFR (AY13)-170Er,Human,CD and Surface Markers,EGFR,100 Test,AY13,170Er,3170009B,Human
+Flow,728,Anti-Cross EGFR (D38B1) -169Tm,Cross,CD and Surface Markers,EGFR,50 Test,D38B1,169Tm,3169017A,Human
+Flow,934,Anti-Human ErbB2 (42/c-erbB-2)-174Yb,Human,CD and Surface Markers,ErbB2,100 Test,42/c-erbB-2,174Yb,3174021B,Human
+Flow,935,Anti-Human Estrogen receptor a (D8H8)-163Dy,Human,Signaling and Transcription,Estrogen Receptor a,50 Test,D8H8,163Dy,3163024A,Human
+Flow,326,Anti-FITC (FIT-22) -144Nd,Cross,Secondaries,FITC,100 test,FIT-22,144Nd,3144006B,
+Flow,455,Anti-FITC (FIT-22) -160Gd,Cross,Secondaries,FITC,100 test,FIT-22,160Gd,3160011B,
+Flow,470,Anti-FITC (FIT-22) -174Yb,Cross,Secondaries,FITC,100 test,FIT-22,174Yb,3174006B,
+Flow,973,Anti-Human FceRI (AER-37 (CRA-1))-150Nd,Human,CD and Surface Markers,FceRI,100 Test,AER-37 [CRA-1],150Nd,3150027B,Human
+Flow,1343,Anti-Human FoxP3 (PCH101) - 159Tb,Human,Signaling and Transcription,FoxP3,50 test,PCH101,159Tb,3159039A,Human
+Flow,416,Anti-Human FoxP3 (PCH101) -162Dy,Human,Signaling and Transcription,FoxP3,50 test,PCH101,162Dy,3162011A,
+Flow,372,Anti-Human GM-CSF (BVD2-21C11) -159Tb,Human,Cytokines,GM-CSF,100 test,BVD2-21C11,159Tb,3159008B,
+Flow,827,Anti-Human Galanin (581403)-148Nd,Human,Signaling and Transcription,Galanin/GAL,100 Test,581403,148Nd,3148016B,Human
+Flow,703,Anti-Human Galectin-9 (9M1-3) -163Dy,Human,CD and Surface Markers,Galectin-9,100 test,9M1-3,163Dy,3163002B,Human
+Flow,427,Anti-Human/Mouse Gata3 (TWAJ) -167Er,Human/Mouse,Signaling and Transcription,Gata3,50 test,TWAJ,167Er,3167007A,
+Flow,706,Anti-Human Gata6 (D61E4) -161Dy,Human,Signaling and Transcription,Gata6,50 test,D61E4,161Dy,3161005A,Human
+Flow,936,Anti-GFAP (GA5)-143Nd,Cross,Structure and Cytoskeleton,Glial Fibrillary Acidic Protein/GFAP,100 Test,GA5,143Nd,3143022B,Human
+Flow,256,Anti-Human/Mouse Granzyme B (GB11) -171Yb,Human/Mouse,Cell Death and Apoptosis,Granzyme B,100 test,GB11,171Yb,3171002B,
+Flow,1949,Anti-Human Granzyme B (GB11) - 198Pt,Human,Cell Death and Apoptosis,Granzyme B,25 Test,GB11,198Pt,3198002C,Human
+Flow,711,Anti-Human/Mouse Granzyme B (GB11) -173Yb,Human/Mouse,Cell Death and Apoptosis,Granzyme B,100 test,GB11,173Yb,3173006B,Human
+Flow,741,Anti-Human HER2/ErbB2/EGFR2 (29D8) -148Nd,Human,CD and Surface Markers,HER2/ErbB2/EGFR2,50 Test,29D8,148Nd,3148011A,Human
+Flow,578,"Anti-Human HLA-A,B,C (W6/32) -141Pr",Human,CD and Surface Markers,"HLA-A,B,C",100 test,W6/32,141Pr,3141010B,Human
+Flow,625,"Anti-Human HLA-A,B,C (W6/32) -144Nd",Human,CD and Surface Markers,"HLA-A,B,C",100 test,W6/32,144Nd,3144017B,Human
+Flow,545,Anti-Human HLA-DR (L243) -143Nd,Human,CD and Surface Markers,HLA-DR,100 test,L243,143Nd,3143013B,Human
+Flow,46,Anti-Human HLA-DR (L243) -174Yb,Human,CD and Surface Markers,HLA-DR,100 test,L243,174Yb,3174001B,
+Flow,1655,Anti-Human HLA-DR (L243)-176Yb—100 Tests,Human,CD and Surface Makers,HLA-DR,100 Test,L243,176Yb,3176027B,Human
+Flow,670,Anti-Human HLA-DR (L243)-173Yb,Human,CD and Surface Markers,HLA-DR,100 Test,L243,173Yb,3173005B,Human
+Flow,714,Anti-Human HLA-DR (L243) -170Er,Human,CD and Surface Markers,HLA-DR,100 test,L243,170Er,3170013B,PBMC
+Flow,1018,Anti-Human HLA-DR (G46-6)-151Eu,Human,CD & Surface Marker Antibodies,HLA-DR,100 Test,G46-6,151Eu,3151023B,Human
+Flow,1201,"Human HLA-DR (LN3)-173Yb- MDIPA Kit, not sold separately",Human,,HLA-DR (Kit Only),,LN3,173Yb,201325,
+Flow,976,"Anti-Human HLA-DR, DP (Tu36)-150Nd",Human,CD and Surface Markers,"HLA-DR, DP",100 Test,Tu36,150Nd,3150028B,Human
+Flow,731,Anti- Histone 3 (D1H2) -176Yb,Cross,Signaling and Transcription,Histone3,50 Test,D1H2,176Yb,3176016A,Human
+Flow,47,Anti-Human IFNgamma (B27) -165Ho,Human,Cytokines,IFN gamma,100 test,B27,165Ho,3165002B,
+Flow,619,Anti-Human IFNg (B27) -158Gd,Human,Cytokines,IFN gamma,100 test,B27,158Gd,3158017B,Human
+Flow,1950,Anti-Human IFNγ (B27) - 116Cd,Human,Cytokines,IFN gamma,25 Test,B27,116Cd,3116002C,Human
+Flow,417,Anti-Human IFNgamma (B27) -168Er,Human,Cytokines,IFN gamma,100 test,B27,168Er,3168005B,
+Flow,1013,Anti-Human IKZF1 (16B5C71)-143Nd,Human,Signaling & Transcription Antibodies,IKZF1/IKAROS,100 Test,16B5C71,143Nd,3143024B,Human
+Flow,1014,Anti-Human IKZF3 (914821)-162Dy,Human,Signaling & Transcription Antibodies,IKZF3/AIOLOS,100 Test,914821,162Dy,3162032B,Human
+Flow,1324,Anti-Human IL-10 (JES3-9D7) - 165Ho,Human,Cytokines,IL-10,100 Test,JES3-9D7,165Ho,3165044,Human
+Flow,1880,Anti-IL-10 (JES3-9D7) - 148Nd,Human,Cytokines,IL-10,100 test,JES3-9D7,148Nd,3148025B,Human
+Flow,419,Anti-Human IL-10 (JES3-9D7) -166Er,Human,Cytokines,IL-10,100 test,JES3-9D7,166Er,3166008B,
+Flow,865,Anti-Human IL-13 (JES10-5A2)-169Tm,Human,Cytokines,IL-13,100 Test,JES10-5A2,169Tm,3169016B,human
+Flow,52,Anti-Human IL-17A (N49-653)-164Dy,Human,Cytokines,IL-17A,100 test,N49-653,164Dy,3164002B,
+Flow,1882,Anti-IL-17A (BL168) - 195Pt,Human,Cytokines,IL-17A,100 test,BL168,195Pt,3195002B,Human
+Flow,622,Anti-Human IL-17A (BL168) -161Dy,Human,Cytokines,IL-17A,100 test,BL168,161Dy,3161008B,Human
+Flow,370,Anti-Human IL-17A (BL168) -169Tm,Human,Cytokines,IL-17A,100 test,BL168,169Tm,3169006B,
+Flow,371,Anti-Human IL-17A (BL168) -148Nd,Human,Cytokines,IL-17A,100 test,BL168,148Nd,3148008B,
+Flow,675,Anti-Human IL-17A (BL168)-172Yb,Human,Cytokines,IL-17A,100 Test,BL168,172Yb,3172020B,Human
+Flow,674,Anti-Human IL-17F (SHLR17)-172Yb,Human,Cytokines,IL-17F,100 Test,SHLR17,172Yb,3172019B,Human
+Flow,451,Anti-Human IL-17F (SHLR17) -166Er,Human,Cytokines,IL-17F,100 test,SHLR17,166Er,3166010B,
+Flow,1327,Anti-Human IL-1b (CRM56) - 209Bi,Human,Cytokines,IL-1b,100 Test,CRM56,209Bi,3209016,Human
+Flow,48,Anti-Human IL-2 (MQ1-17H12) -166Er,Human,Cytokines,IL-2,100 test,MQ1-17H12,166Er,3166002B,
+Flow,859,Anti-Human IL-2 (MQ1-17H12)-144Nd,Human,Cytokines,IL-2,100 Test,MQ1-17H12,144Nd,3144021B,Human
+Flow,1951,Anti-Human IL-2 (MQ1-17H12) - 112Cd,Human,Cytokines,IL-2,25 Test,MQ1-17H12,112Cd,3112002C,Human
+Flow,426,Anti-Human IL-2 (MQ1-17H12) -158Gd,Human,Cytokines,IL-2,100 test,MQ1-17H12,158Gd,3158007B,
+Flow,369,Anti-Human Il-21 (3A3-N2) -172Yb,Human,Cytokines,IL-21,100 test,3A3-N2,172Yb,3172011B,
+Flow,368,Anti-Human IL-22 (22URTI) -150Nd,Human,Cytokines,IL-22,100 test,22URTI,150Nd,3150007B,
+Flow,710,Anti-Human IL-23 p19 (23dcdp) -161Dy,Human,Cytokines,IL-23 p19,100 test,23dcdp,161Dy,3161010B,Human
+Flow,49,Anti-Human IL-4 (MP4-25D2) -142Nd,Human,Cytokines,IL-4,100 test,MP4-25D2,142Nd,3142002B,
+Flow,1876,Anti-IL-4 (MP4-25D2) - 171Yb,Human,Cytokines,IL-4,100 test,MP4-25D2,171Yb,3171028B,Human
+Flow,406,Anti-Human IL-4 (MP4-25D2) -144Nd,Human,Cytokines,IL-4,100 test,MP4-25D2,144Nd,3144010B,
+Flow,685,Anti-Human IL-4 (MP4-25D2)-163Dy,Human,Cytokines,IL-4,100 Test,MP4-25D2,163Dy,3163011B,Human
+Flow,16,Anti-Human/Mouse IL-5 (TRFK5) -143Nd,Human/Mouse,Cytokines,IL-5,100 test,TRFK5,143Nd,3143003B,
+Flow,1878,Anti-IL-5 (TRFK5) - 147Sm,Human,Cytokines,IL-5,100 test,TRFK5,147Sm,3147023B,Human
+Flow,673,Anti-Human/Mouse IL-5 (TRFK5)-151Eu,Human/Mouse,Cytokines,IL-5,100 Test,TRFK5,151Eu,3151014B,Human
+Flow,1317,Anti-Human IL-6 (MQ2-13A5) - 106Cd,Human,Cytokines,IL-6,100 Test,MQ2-13A5,106Cd,3106003,Human
+Flow,51,Anti-Human IL-6 (MQ2-13A5) -147Sm,Human,Cytokines,IL-6,100 test,MQ2-13A5,147Sm,3147002B,
+Flow,407,Anti-Human IL-6 (MQ2-13A5) -156Gd,Human,Cytokines,IL-6,100 test,MQ2-13A5,156Gd,3156011B,
+Flow,712,Anti-Human IL-6 (MQ2-13A5) -154Sm,Human,Cytokines,IL-6,100 test,MQ2-13A5,154Sm,3154011B,Human
+Flow,299,Anti-Human Ig kappa (MHK-49) -160Gd,Human,CD and Surface Markers,Ig kappa,100 test,MHK-49,160Gd,3160005B,
+Flow,300,Anti-Human Ig lambda (MHL-38) -151Eu,Human,CD and Surface Markers,Ig lambda,100 test,MHL-38,151Eu,3151004B,
+Flow,286,Anti-Human IgD (IA6-2) -146Nd,Human,CD and Surface Markers,IgD,100 test,IA6-2,146Nd,3146005B,
+Flow,1338,Anti-Human IgD (IA6-2) - 174Yb,Human,CD and Surface Markers,IgD,100 Test,IA6-2,174Yb,,Human
+Flow,245,Anti-Human IgM (MHM-88) -172Yb,Human,CD and Surface Markers,IgM,100 test,MHM-88,172Yb,3172004B,
+Flow,228,Anti-IkBa (Amino-terminal Antigen) (L35A5) -164Dy,Cross,Signaling and Transcription,IkBa,50 test,L35A5,164Dy,3164004A,
+Flow,820,Anti-Human Integrin (Y9A2)-168Er,Human,CD and Surface Markers,Integrin a9b1,100 Test,Y9A2,168Er,3168013B,human
+Flow,794,Anti-Human/Mouse Integrin b7 (FIB504) -162Dy,Human/Mouse,CD and Surface Markers,Integrin b7,100 Test,FIB504,162Dy,3162026B,Human
+Flow,707,Anti-Human KLF4 (Poly) -162Dy,Human,Signaling and Transcription,KLF4,50 test,D1F2,162Dy,3162022A,Human
+Flow,730,Anti-Human Keratin CK8/18 (C51) -174Yb,Human,Structure and Cytoskeleton,Keratin (CK8/18),50 Test,C51,174Yb,3174014A,Human
+Flow,54,Anti-Human Ki-67 (Ki67) -168Er,Human,Cell Cycle and Proliferation,Ki-67,100 test,Ki-67,168Er,3168001B,Human
+Flow,626,Anti-Human Ki-67 (B56) -161Dy,Cross,Cell Cycle and Proliferation,Ki-67,100 test,B56,161Dy,3161007B,Human
+Flow,1946,Anti-Ki-67 (B56) -168Er,Cross,Cell Cycle and Proliferation,Ki-67,25 test,B56,168Er,3168007C,Human
+Flow,467,Anti-Human Ki-67 (B56) -162Dy,Cross,Cell Cycle and Proliferation,Ki-67,100 test,B56,162Dy,3162012B,Human
+Flow,740,Anti-Human Ki-67 (B56) -172Yb,Cross,Cell Cycle and Proliferation,Ki-67,100 Test,B56,172Yb,3172024B,Human
+Flow,837,Anti-Human LCK (LCK-01)-153Eu,Human,Signaling and Transcription,LCK,100 test,LCK-01,153Eu,3153017B,human
+Flow,937,Anti-Human LGR5 (4D11F8)-161Dy,Human,CD and Surface Markers,Lgr5/Central LRR,100 Test,4D11F8,161Dy,3161025B,Human
+Flow,696,Anti-Human MCL-1 (Poly)-163Dy,Human,Signaling and Transcription,MCL-1,50 Test,Polyclonal,163Dy,3163006A,Human
+Flow,792,Anti-Human MIC A/B (6D4) -174Yb,Human,CD and Surface Markers,MICA/MICB,100 Test,6D4,174Yb,3174016B,Human
+Flow,259,Anti-Human MIP1beta (D21-1351) -150Nd,Human,Cytokines,MIP1beta,100 test,D21-1351,150Nd,3150004B,
+Flow,676,Anti-Human/Mouse MIP1beta (D21-1351)-160Gd,Human/Mouse,Cytokines,MIP1beta,100 Test,D21-1351,160Gd,3160013B,Human
+Flow,987,Anti-Human/Mouse Mac-2/Galectin-3 (M3/38)-153Eu,Human/Mouse,Cell Cycle and Proliferation,Mac-2/Galectin-3,100 Test,M3/38,153Eu,3153026B,Mouse
+Flow,933,Anti-Human Met (D1C2)-167Er,Human,CD and Surface Markers,Met,50 Test,D1C2,167Er,3167017A,Human
+Flow,938,Anti-Human Musashi-1 (14H1)-155Gd,Human,Signaling and Transcription,Musashi-1/MSI1,100 Test,14H1,155Gd,3155013B,Human
+Flow,970,Anti-Human NFAT1 (D43B1)-143Nd,Human,Signaling and Transcription,NFAT1,50 Test,D43B1,143Nd,3143023A,Human
+Flow,903,Anti-Human NPY1R (556153)-159Tb,Human,Signaling and Transcription,NPY1R,100 Test,556153,159Tb,3159025B,Human
+Flow,908,Anti-Human NRG1-alpha/HRG1-alpha EGF (goat poly) -160Gd,Human,Signaling and transcription,NRG1-alpha/HRG1-alpha EGF,100 Test,goat polyclonal,160Gd,3160019B,Human
+Flow,657,Anti-Human Nanog (N31-355) -169Tm,Human,Signaling and Transcription,Nanog,50 test,N31-355,169Tm,3169014A,Human
+Flow,708,Anti-Human Nestin (25/Nestin) -151Eu,Human,Structure and Cytoskeleton,Nestin,50 test,25/Nestin,151Eu,3151013A,Human
+Flow,721,Anti-Human Notch2 (MHN2-25) -165Ho,Human,CD and Surface Markers,Notch2,100 test,MHN2-25,165Ho,3165026B,Human
+Flow,323,Anti-Human Notch3 (MHN3-21) -165Ho,Human,CD and Surface Markers,Notch3,100 test,MHN3-21,165Ho,3165006B,
+Flow,489,Intercalator-Ir,Cross,NA Intercalator,Nucleic Acid,500 uM,N/A,natIr,201192B,
+Flow,491,Intercalator-103Rh,Cross,NA Intercalator,Nucleic Acid,2000 uM,N/A,103Rh,201103B,
+Flow,744,Anti-Human OTX2 (246826) -175Lu,Human,Signaling and Transcription,OTX2,100 Test,246826,175Lu,3175022B,Human
+Flow,656,Anti-Human/Mouse Oct-3/4 (40/Oct-3) -165Ho,Human/Mouse,Signaling and Transcription,Oct-3/4,50 test,40/Oct-3,165Ho,3165023A,Human
+Flow,411,Anti-Human PDGF Receptor a (D13C6) -160Gd,Human,CD and Surface Markers,PDGFRa,50 test,D13C6,160Gd,3160007A,
+Flow,309,Anti-PE (PE001) -156Gd,Cross,Secondaries,PE,100 test,PE001,156Gd,3156005B,
+Flow,454,Anti-PE (PE001) -165Ho,Cross,Secondaries,PE,100 test,PE001,165Ho,3165015B,
+Flow,469,Anti-PE (PE001) -145Nd,Cross,Secondaries,PE,100 test,PE001,145Nd,3145006B,
+Flow,815,Anti-Cross,Cross,Structure and Cytoskeleton,Pan-Actin,50 Test,D18C11,175Lu,3175026A,human
+Flow,733,Anti-Human Pan Keratin (C11) - 162Dy,Human,Structure and Cytoskeleton,Pan-Keratin,50 Test,C11,162Dy,3162027A,Human
+Flow,1952,Anti-Human Perforin (B-D48) - 196Pt,Human,Cell Death and Apoptosis,Perforin,25 Test,B-D48,196Pt,3196002C,Human
+Flow,255,Anti-Human Perforin (B-D48) -175Lu,Human,Cell Death and Apoptosis,Perforin,100 test,B-D48,175Lu,3175004B,
+Flow,816,Anti-Human Progesterone Receptor (D8Q2J)-145Nd,Human,Signaling and Transcription,Progesterone Receptor A/B,50 Test,D8Q2J,145Nd,3145011A,human
+Flow,493,Cisplatin,Cross,Covalent Protein Binder,Protein,100 uL,N/A,natPt,201064,
+Flow,752,20-Plex Pd Barcoding,Cross,Protein Binder,Protein,1 kit,N/A,Pd,201060,
+Flow,830,Anti-Human Semaphorin 6A (169203)-163Dy,Human,CD and Surface Markers,Semaphorin 6A,100 Test,169203,163Dy,3163018B,Human
+Flow,866,Anti-Human Siglec 8 (7C9)-164Dy,Human,CD and Surface Markers,Siglec-8,100 Test,7C9,164Dy,3164017B,human
+Flow,759,Anti-Human Siglec 9 (K8) -155Gd,Human,CD and Surface Markers,Siglec-9,100 Test,K8,155Gd,3155004B,Human
+Flow,658,Anti-Human Sox2 (O30-678) -150Nd,Human,Signaling and Transcription,Sox2,100 test,O30-678,150Nd,3150019B,Human
+Flow,836,Anti-Human Stat3 (124H6)-173Yb,Human,Signaling and Transcription,Stat3,50 Test,124H6,173Yb,3173003A,human
+Flow,904,Anti-Human Syk (4D10.2)-149Sm,Human,Signaling and Transcription,SyK,100 Test,4D10.2,149Sm,3149020B,Human
+Flow,821,Anti-Human Invariant NK T (6B11)-170Er,Human,CD and Surface Markers,TCR Va24-Ja18,100 Test,6B11,170Er,3170015B,human
+Flow,967,Anti-Human TCR Va7.2,Human,CD and Surface Markers,TCR Va7.2,100 Test,3C10,153Eu,3153024B,Human
+Flow,795,Anti-Human TCRa/b (IP26) -176Yb,Human,CD and Surface Markers,TCR alpha beta,100 Test,IP26,176Yb,3176015B,Human
+Flow,337,Anti-Human TCRgd (11F2) -152Sm,Human,CD and Surface Markers,TCR gamma delta,100 test,11F2,152Sm,3152008B,
+Flow,1199,"Human TCRgd (B1)-164Dy- MDIPA Kit, not sold separately",Human,,TCR gamma delta (Kit Only),,B1,164Dy,201325,
+Flow,1852,Anti-TCRab (T10B9.1A-31) - 141Pr,Human,CD and Surface Makers,TCRab,100 test,T10B9.1A-31,141Pr,3141022B,Human
+Flow,1856,Anti-TGF-Beta1/LAP (S20006A) - 164Dy,Human,CD and Surface Makers,TGF-Beta1/LAP,100 test,S20006A,164Dy,3164033B,Human
+Flow,750,Anti-Human TGFbeta (TW4-6H10) -163Dy,Human,Cytokines,TGFbeta,100 Test,TW4-6H10,163Dy,3163010B,Human
+Flow,1874,Anti-TIGIT (MBSA43) - 166Er,Human,CD and Surface Makers,TIGIT,100 test,MBSA43,166Er,3166033B,Human
+Flow,864,Anti-Human TIGIT (MBSA43)-154Sm,Human,CD and Surface Markers,TIGIT,100 Test,MBSA43,154Sm,3154016B,Human
+Flow,1152,Anti-Human TIGIT (MBSA43) - 209Bi - 100 Tests,Human,IO,TIGIT,100 Test,MBSA43,209Bi,3209013B,
+Flow,1153,Anti-Human TIGIT (MBSA43) - 159Tb - 100 Tests,Human,IO,TIGIT,100 Test,MBSA43,159Tb,3159038B,
+Flow,686,Anti-Human TIGIT (MBSA43) -153Eu,Human,CD and Surface Markers,TIGIT,100 Test,MBSA43,153Eu,3153019B,Human
+Flow,53,Anti-Human TNFalpha (Mab11) -152Sm,Human,Cytokines,TNF alpha,100 test,Mab11,152Sm,3152002B,
+Flow,579,Anti-Human TNFalpha (Mab11) -146Nd,Human,Cytokines,TNF alpha,100 test,Mab11,146Nd,3146010B,Human
+Flow,1953,Anti-Human TNFα (Mab11) - 114Cd,Human,Cytokines,TNF alpha,25 Test,Mab11,114Cd,3114002C,Human
+Flow,677,Anti-Human TNFa (Mab11)-175Lu,Human,Cytokines,TNF alpha,100 Test,Mab11,175Lu,3175023B,Human
+Flow,659,Anti-Human TRA-1-60 (TRA-1-60) -148Nd,Human,CD and Surface Markers,TRA-1-60,100 test,TRA-1-60,148Nd,3148012B,Human
+Flow,974,Anti-Human TSLP-R (1B4)-158Gd,Human,CD and Surface Markers,TSLP-R,100 Test,1B4,158Gd,3158026B,Human
+Flow,1339,Anti-Human Tbet/TBX21 (D6N8B) -160Gd,Human,CD and Surface Markers,Tbet,100 Test,D6N8B,160Gd,3160027C,Human
+Flow,1341,Anti-Human Tbet/TBX21 (D6N8B) -161Dy,Human,CD and Surface Markers,Tbet,100 Test,D6N8B,161Dy,3161033C,Human
+Flow,654,Anti-Human TdT (E17-1519) -164Dy,Human,Signaling and Transcription,TdT,100 test,E17-1519,164Dy,3164015B,Human
+Flow,940,Anti-Human Thioredoxin (2G11/TRX)-146Nd,Human,Signaling and Transcription,Thioredoxin,100 Test,2G11/TRX,146Nd,3146016B,Human
+Flow,905,Anti-Human Tim-4 (9F4)-161Dy,Human,CD and Surface Markers,Tim-4,100 Test,9F4,161Dy,3161021B,Human
+Flow,829,Anti-Human TrkA (165131)-149Sm,Human,CD and Surface Markers,TrkA,100 Test,165131,149Sm,3149019B,Human
+Flow,961,Anti-Human VE-cadherin (D87F2)-155Gd,Human,CD and surface markers,VE-cadherin,50 Test,D87F2,155Gd,3155010A,Human
+Flow,817,Anti- Vimentin (RV202)-156Gd,Cross,Structure and Cytoskeleton,Vimentin,50 Test,RV202,156Gd,3156023A,human
+Flow,725,Anti-Cross Vimentin (D21H3) -154Sm,Cross,Structure and Cytoskeleton,Vimentin,50 Test,D21H3,154Sm,3154014A,Human
+Flow,965,Anti-Human a-Fetoprotein/AFP (189506)-150Nd,Human,Cell Cycle and Proliferation,alpha-Fetoprotein/AFP,100 Test,189506,150Nd,3150025B,Human
+Flow,726,Anti- beta-catenin (D13A1) -165Ho,Cross,Signaling and Transcription,beta-Catenin,50 Test,D13A1,165Ho,3165027A,Human
+Flow,227,Anti-B-Catenin (D10A8) -147Sm,Cross,Signaling and Transcription,beta-Catenin,50 test,D10A8,147Sm,3147005A,human
+Flow,724,Anti-Human c-Myc (9E10) -176Yb,Human,Signaling and Transcription,c-Myc,100 test,9E10,176Yb,3176012B,Human
+Flow,241,Anti-p38 [pT180/pY182] (D3F9) -156Gd,Cross,Signaling and Transcription,p-p38 [T180/Y182],50 test,D3F9,156Gd,3156002A,Human
+Flow,845,Anti-Human p21 Waf1/Cip1 (12D1)-159Tb,Human,Cell Cycle and Proliferation,p21 Waf1/Cip1,50 Test,12D1,159Tb,3159026A,human
+Flow,339,Anti- p4E-BP1 [Thr37/46](236B4) -149Sm,Cross,Signaling and Transcription,p4E-BP1,50 test,236B4,149Sm,3149005A,
+Flow,939,Anti-Human p53 (DO-7)-150Nd,Human,Cell Cycle and Proliferation,p53,50 Test,DO-7,150Nd,3150024A,Human
+Flow,732,Anti-Human p53 (7F5) -143Nd,Human,Signaling and Transcription,p53,50 Test,7F5,143Nd,3143018A,Human
+Flow,242,Anti-pAkt [pS473] (D9E) -152Sm,Cross,Signaling and Transcription,pAkt [S473],50 test,D9E,152Sm,3152005A,
+Flow,709,Anti-Human pBad (40A9) -161Dy,Cross,Cell Death and Apoptosis,pBad,50 test,40A9,161Dy,3161006A,Human
+Flow,342,Anti-pCREB [S133] (87G3) -176Yb,Cross,Signaling and Transcription,pCREB [S133],50 test,87G3,176Yb,3176005A,Human
+Flow,343,Anti-pCREB [S133] (87G3) -165Ho,Cross,Signaling and Transcription,pCREB [S133],50 test,87G3,165Ho,3165009A,Human
+Flow,359,Anti-pEGFR [Y1068] (D7A5) -146Nd,Cross,Signaling and Transcription,pEGFR [Y1068],50 test,D7A5,146Nd,3146007A,Human
+Flow,420,Anti-pErk12(202/204)(D13.14.4E) -171Yb,Cross,Signaling and Transcription,pERK 1/2 [T202/Y204],50 test,D13.14.4E,171Yb,3171010A,Human
+Flow,239,Anti-pERK1/2 [T202/Y204] (D13.14.4E) -167Er,Cross,Signaling and Transcription,pERK1/2 [T202/Y204],50 test,D13.14.4E,167Er,3167005A,
+Flow,941,Anti-Human pHistone H2A.X [Ser139] (JBW301)-147Sm,Human,Cell Cycle and Proliferation,pHistone H2A.X [Ser139],50 Test,JBW301,147Sm,3147016A,Human
+Flow,473,Anti-pHistoneH3 [S28] (HTA28) -175Lu,Cross,Cell Cycle and Proliferation,pHistone H3 [S28],50 Test,HTA28,175Lu,3175012A,Human
+Flow,258,Anti-pLck[pT505] (4/LCK-Y505) -162Dy,Cross,Signaling and Transcription,pLck [T505],50 test,4/LCK-Y505,162Dy,3162004A,
+Flow,414,Anti-pMAPKAPK2 [T334] (27B7) -159Tb,Cross,Signaling and Transcription,pMAPKAPK2 [T334],50 test,27B7,159Tb,3159010A,
+Flow,307,Anti-Human pNF-kB p65 [pS529] (K10-895.12.50) -166Er,Human,Signaling and Transcription,pNF-kB p65 [S529],50 test,K10-895.12.50,166Er,3166006A,
+Flow,629,Anti-p-PLCg2 [pY759] (K86-689.37) -144Nd,Cross,Signaling and Transcription,pPLCg2 [pY759],50 test,K86-689.37,144Nd,3144015A,Human
+Flow,630,Anti-p-PLCg2 [pY759] (K86-689.37) -162Dy,Cross,Signaling and Transcription,pPLCg2 [pY759],50 test,K86-689.37,162Dy,3162018A,Human
+Flow,565,Anti-pRb [S807/811] (J112-906) -150Nd,Cross,Cell Cycle and Proliferation,pRb [S807/811],50 test,J112-906,150Nd,3150013A,Human
+Flow,474,Anti-pRb [S807/811] (J112-906) -166Er,Cross,Cell Cycle and Proliferation,pRb [S807/811],50 Test,J112-906,166Er,3166011A,
+Flow,291,Anti-pS6 [S235/S236](N7-548) -172Yb,Cross,Signaling and Transcription,pS6 [S235/S236],50 test,N7-548,172Yb,3172008A,
+Flow,421,Anti-pS6 (pS235/236) (N7-548) -175Lu,Cross,Signaling and Transcription,pS6 [S235/S236],50 test,N7-548,175Lu,3175009A,
+Flow,243,Anti-pSHP2 [pY580] (D66F10) -141Pr,Cross,Signaling and Transcription,pSHP2 [Y580],50 test,D66F10,141Pr,3141002A,
+Flow,257,Anti-pSLP-76[pY128] (J141-668.36.58) -156Gd,Cross,Signaling and Transcription,pSLP-76 [Y128],50 test,J141-668.36.58,156Gd,3156003A,
+Flow,689,Anti-pStat1 [pY701] (4a) -153Eu,Cross,Signaling and Transcription,pStat1 [Y701],50 Test,4a,153Eu,3153005A,Human
+Flow,251,Anti-pStat1 [pY701] (58D6) - 153Eu,Cross,Signaling and Transcription,pStat1 [Y701],50 test,58D6,153Eu,3153003A,human
+Flow,293,Anti- Human/Mouse pStat3[Y705](4/P-STAT3) -158Gd,Human/Mouse,Signaling and Transcription,pStat3 [Y705],50 test,4/P-Stat3,158Gd,3158005A,Human
+Flow,334,Anti-pStat4 [Y693] (38/p-Stat4) -174Yb,Cross,Signaling and Transcription,pStat4 [Y693],50 test,38,174Yb,3174005A,human
+Flow,688,Anti-pStat4 [Y693](38/p-Stat4) -148Nd,Cross,Signaling and Transcription,pStat4 [Y693],50 Test,38,148Nd,3148006A,Human
+Flow,310,Anti-pStat5 [Y694] (47) -150Nd,Human/Mouse/Rat,Signaling and Transcription,pStat5 [Y694],50 test,47,150Nd,3150005A,Human
+Flow,735,Anti- pStat5 [Y694] (47) -147Sm,Human/Mouse/Rat,Signaling and Transcription,pStat5 [Y694],50 test,47,147Sm,3147012A,Human
+Flow,335,Anti-Human pStat6 [Y641] (18/P-Stat6) -175Lu,Human,Signaling and Transcription,pStat6 [Y641],50 test,18,175Lu,3175005A,human
+Flow,687,Anti-Human pStat6 [Y641](18) -168Er,Human,Signaling and Transcription,pStat6 [Y641],50 Test,18,168Er,3168012A,Human
+Flow,722,Anti-Human pStat6 (18/pStat6) -149Sm,Human,Signaling and Transcription,pStat6 [Y641],50 test,18,149Sm,3149004A,Human
+Flow,240,Anti-pTyrosine [Y100] -144Nd,Cross,Signaling and Transcription,pTyrosine [Y100],50 test,P-Tyr-100,144Nd,3144003A,human
+Flow,250,Anti-pZAP70[pY319]/Syk[pY352] (17a) -171Yb,Cross,Signaling and Transcription,pZAP70 [Y319]/Syk [Y352],50 test,17a,171Yb,3171005A,human

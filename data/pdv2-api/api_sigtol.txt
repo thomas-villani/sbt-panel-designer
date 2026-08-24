@@ -1,0 +1,1 @@
+200 {"signal":58,"tolerance":12}

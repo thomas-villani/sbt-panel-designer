@@ -1,0 +1,126 @@
+# Instrument definitions. Physics lives in data, not code (SPEC §11).
+# po_matrix: pdv2 instrument id whose captured spillover file is used (data/pdv2-api/api_spillover_{id}.txt).
+# sensitivity_curve: pdv2 panel_type whose massbias file is used (0 = suspension, 1 = IMC).
+# reserved: channel roles that consume channels when the corresponding scaffolding option is on.
+version: 2026-08-24.1
+sources:
+  po_matrices: "pdv2.standardbio.com /spillover/get_customer/{instrument}, captured 2026-08-24"
+  sensitivity_curves: "pdv2.standardbio.com /massbias/get/{panel_type}, captured 2026-08-24 (coarse, 1 dp)"
+  notes: "Helios(1) == CyTOF XT(4); Hyperion 5/6/7 share one matrix; CyTOF(2)/CyTOF2(3) are legacy larger-overlap sets."
+
+instruments:
+  - id: cytof_xt
+    name: CyTOF XT
+    modality: suspension
+    pdv2_id: 4
+    po_matrix: 4
+    sensitivity_curve: 0
+    current: true
+    default_for_modality: true
+  - id: helios
+    name: Helios
+    modality: suspension
+    pdv2_id: 1
+    po_matrix: 1
+    sensitivity_curve: 0
+    current: true
+  - id: cytof2
+    name: CyTOF 2
+    modality: suspension
+    pdv2_id: 3
+    po_matrix: 3
+    sensitivity_curve: 0
+    current: false
+  - id: cytof1
+    name: CyTOF
+    modality: suspension
+    pdv2_id: 2
+    po_matrix: 2
+    sensitivity_curve: 0
+    current: false
+  - id: hyperion_xti
+    name: Hyperion XTi
+    modality: imaging
+    pdv2_id: 7
+    po_matrix: 7
+    sensitivity_curve: 1
+    current: true
+    default_for_modality: true
+  - id: hyperion_plus
+    name: Hyperion+
+    modality: imaging
+    pdv2_id: 6
+    po_matrix: 6
+    sensitivity_curve: 1
+    current: true
+  - id: hyperion
+    name: Hyperion
+    modality: imaging
+    pdv2_id: 5
+    po_matrix: 5
+    sensitivity_curve: 1
+    current: false
+
+# Channel roles per modality. `default: true` roles are reserved unless the user turns the option off.
+reserved:
+  suspension:
+    - role: dna_intercalator
+      label: DNA intercalator (Ir)
+      masses: [191, 193]
+      default: true
+      hard: true
+    - role: viability_cisplatin
+      label: Viability (cisplatin)
+      masses: [194, 195, 198]
+      default: true
+      hard: false
+      note: "Any one Pt channel is enough; 195Pt is the usual choice. Alternative: Rh103."
+    - role: viability_rhodium
+      label: Viability (Rh103)
+      masses: [103]
+      default: false
+      hard: false
+    - role: barcoding_pd
+      label: Cell barcoding (Pd)
+      masses: [102, 104, 105, 106, 108, 110]
+      default: false
+      hard: true
+    - role: eq_beads
+      label: EQ normalisation beads
+      masses: [140, 151, 153, 165, 175]
+      default: false
+      hard: false
+      note: "Flag, do not forbid: antibodies can share bead channels if beads are gated out."
+  imaging:
+    - role: dna_intercalator
+      label: DNA intercalator (Ir)
+      masses: [191, 193]
+      default: true
+      hard: true
+    - role: segmentation_kit
+      label: Cell segmentation kit (Pt)
+      masses: [195, 196, 198]
+      default: true
+      hard: true
+    - role: ruthenium_counterstain
+      label: Ruthenium counterstain
+      masses: [96, 98, 99, 100, 101, 102, 104]
+      default: false
+      hard: true
+
+# Human-readable channel range classes so the UI can say "low-sensitivity channel" without listing masses.
+range_classes:
+  - id: bright_only
+    label: Low-sensitivity channel (bright markers only)
+    masses_below: 142
+    note: "89Y, Cd 106-116, In 113/115, 141Pr: classic bright-marker channels. Cd exists on suspension instruments only."
+  - id: mid
+    label: Mid-sensitivity channel
+    masses: [142, 152]
+  - id: sweet_spot
+    label: High-sensitivity channel (153-176)
+    masses: [153, 176]
+  - id: heavy
+    label: Reduced-sensitivity heavy channel
+    masses_above: 176
+    note: "Pt 194-198, Bi 209: ~0.7 relative sensitivity."
