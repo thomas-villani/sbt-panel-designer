@@ -5,6 +5,8 @@ Describe species, sample, instrument and biology; get back a metal-balanced, ord
 
 Full specification: [`docs/SPEC.md`](docs/SPEC.md).
 
+See [docs/TECHNICAL.md](docs/TECHNICAL.md) for the engineering reference (data pipeline, bundle formats, engine maths, validation).
+
 ## Layout
 
 | Path | What |
