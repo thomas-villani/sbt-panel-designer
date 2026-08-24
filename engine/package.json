@@ -1,0 +1,19 @@
+{
+  "name": "@pd3/engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Maxpar Panel Designer v3 - metal assignment engine (PO model, optimiser, explanations)",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "validate": "tsx scripts/validate-kits.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^3.0.0"
+  }
+}

@@ -25,3 +25,17 @@ uv run pd3-etl catalog          # store CSV + pdv2 S/T harvest -> targets/clones
 uv run pd3-etl modules          # 62 SBT kits + curated modules, resolved against the catalogue
 uv run pytest
 ```
+
+### Engine (TypeScript, `engine/`)
+
+```
+cd engine
+npm install
+npm test                        # vitest: PO math, group exclusivity, locks/reserved, matching, determinism, prior
+npm run typecheck
+npm run validate                # SPEC 5.6: re-run all SBT kits unlocked -> docs/review/kit-validation.md
+```
+
+Public API (`engine/src/index.ts`): `buildProblem(bundle, {instrumentId, rows, ...})` then `balance(problem)` or
+`evaluate(problem, assignment)` returns a `Result` with per-row explanations, warnings and one-click fixes.
+Pure functions, no I/O, so it runs unchanged in a Web Worker. Abundance prior v0 lives in `engine/src/prior.ts`.
