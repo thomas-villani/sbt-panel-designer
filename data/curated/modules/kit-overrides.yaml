@@ -1,0 +1,244 @@
+# Display metadata for SBT panel kits captured from pdv2 (keyed by the raw pdv2 kit name).
+# Anything not listed gets an auto-generated name and category "uncategorised".
+# category values: lineage | functional | tissue | disease | scaffolding | assay
+version: 2026-08-24.1
+kits:
+  # ---------------- IMC ----------------
+  Hu_Basic_Immune_IMC_Panel_4_Antibodies:
+    name: Basic immune
+    category: lineage
+    featured: true
+    blurb: The four markers that separate B cells, T cells, macrophages and all leukocytes in tissue.
+  Hu_Lymphoid_IMC_Panel_4_Antibodies:
+    name: Lymphoid
+    category: lineage
+    featured: true
+    blurb: CD4 and CD8 T-cell subsets, B cells and NK cells.
+  Hu_Myeloid_IMC_Panel_6_Antibodies:
+    name: Myeloid / macrophages
+    category: lineage
+    featured: true
+    blurb: Macrophage, monocyte, dendritic-cell and granulocyte markers, including M2-like CD163.
+  Hu_T_Cell_Exhaustion_IMC_Panel_5_Andibodies:
+    name: T-cell exhaustion
+    category: functional
+    featured: true
+    blurb: Checkpoint and exhaustion markers (TIM-3, LAG-3, OX40, CTLA-4, IDO) for immuno-oncology.
+  Hu_Cell_Functional_State_IMC_Panel_5_Antibodies:
+    name: Functional state
+    category: functional
+    featured: true
+    blurb: Proliferation, Tregs, PD-1 / PD-L1 and cytotoxic activity (Ki-67, FoxP3, PD-1, PD-L1, Granzyme B).
+  Hu_Cell_Signaling_IMC_Panel_7_Antibodies:
+    name: Cell signalling
+    category: functional
+    blurb: Phospho-epitopes and pathway readouts in tissue.
+  Hu_Cell_Metabolism_IMC_Panel_7_Antibodies:
+    name: Cell metabolism
+    category: functional
+    blurb: Glycolysis, fatty-acid oxidation and mitochondrial markers.
+  Hu_Epithelial_and_Mesenchymal_IMC_Panel_4_Antibodies:
+    name: Epithelial / mesenchymal
+    category: tissue
+    featured: true
+    blurb: Tumour epithelium and EMT markers.
+  Hu_Stromal_Cell_IMC_Panel_4_Antibodies:
+    name: Stromal
+    category: tissue
+    featured: true
+    blurb: Fibroblasts, smooth muscle and extracellular matrix.
+  Hu_Basic_Tissue_Architecture_IMC_Panel_3_Antibodies:
+    name: Tissue architecture
+    category: tissue
+    featured: true
+    blurb: Vessels, epithelium and mesenchyme so every cell has an address.
+  Hu_Immune_Cell_Expansion_IMC_Panel_7_Antibodies:
+    name: Immune cell expansion
+    category: lineage
+    blurb: Extra immune subset markers to add on top of Basic immune.
+  Hu_Immuno-Oncology_IMC_Panel_31_Antibodies:
+    name: Immuno-oncology (31-marker master panel)
+    category: assay
+    featured: true
+    blurb: SBT's complete validated IO tissue panel. A good starting point to trim rather than build up.
+  "Hu_Maxpar_Immuno-Oncology_IMC_Panel (kit)":
+    name: Immuno-oncology kit (16)
+    category: assay
+    blurb: The purchasable Maxpar IO IMC kit.
+  Hu_Maxpar_Neuro-Oncology_IMC_Bundle:
+    name: Neuro-oncology bundle
+    category: disease
+    blurb: Glioma / brain-tumour microenvironment bundle.
+  "Hu_Maxpar_Tissue_Architecture_IMC_Panel (kit)":
+    name: Tissue architecture kit (5)
+    category: tissue
+    blurb: The purchasable tissue-architecture kit.
+  "Hu_Maxpar_Tumor_Infiltrating_Lymphocytes_IMC_Panel (kit)":
+    name: Tumour-infiltrating lymphocytes kit
+    category: lineage
+    blurb: TIL phenotyping kit.
+  "Hu_Maxpar_Immune_Activation_IMC_Panel (kit)":
+    name: Immune activation kit
+    category: functional
+    blurb: Activation-state markers kit.
+  Maxpar_IMC_Cell-Segmentation_Kit:
+    name: Cell segmentation kit
+    category: scaffolding
+    blurb: Membrane / cytoplasm / nucleus stains on Pt 195, 196, 198 for automated cell segmentation.
+  "Maxpar_NeuroPhenotyping_IMC_Panel (kit)":
+    name: Neurophenotyping kit
+    category: disease
+    blurb: Neurons, astrocytes, microglia, oligodendrocytes.
+  Hu_Neuro_Expansion_IMC_Panel_3_Antibodies:
+    name: Neuro expansion
+    category: disease
+  Glioblastoma_IMC_Panel_5_Antibodies:
+    name: Glioblastoma
+    category: disease
+  SynTau_Mixed_Pathology_IMC_Panel_4_Antibodies:
+    name: Synuclein / tau mixed pathology
+    category: disease
+  Proteinopathies_IMC_Panel_5_Antibodies:
+    name: Proteinopathies
+    category: disease
+  Multiple_Sclerosis_IMC_Panel_3_Antibodies:
+    name: Multiple sclerosis
+    category: disease
+  "Alzheimer's_Disease_IMC_Panel_3_Antibodies":
+    name: Alzheimer's disease
+    category: disease
+  "Parkinson's_Disease_IMC_Panel_3_Antibodies":
+    name: Parkinson's disease
+    category: disease
+
+  # ---------------- Suspension ----------------
+  "Hu_Maxpar_Direct_Profiling_Assay (current)":
+    name: Direct Immune Profiling Assay (MDIPA)
+    category: assay
+    featured: true
+    blurb: The 30-marker dry-format immune profiling assay. 37 immune populations from whole blood or PBMC in one tube.
+  Hu_Maxpar_Direct_Profiling_Assay:
+    name: Direct Immune Profiling Assay (legacy)
+    category: assay
+    hidden: true
+  Maxpar Direct Basic Activation Expansion Panel:
+    name: MDIPA expansion - basic activation
+    category: functional
+    blurb: Adds activation markers to MDIPA.
+  Hu_Maxpar_Direct_Assay_T_Cell_Expansion_2:
+    name: MDIPA expansion - T cell 2
+    category: lineage
+  Hu_Maxpar_Direct_Assay_T_Cell_Expansion_3:
+    name: MDIPA expansion - T cell 3
+    category: lineage
+  Hu_Maxpar_Direct_Assay_Mye_B_Cell_Expansion_1:
+    name: MDIPA expansion - myeloid / B cell 1
+    category: lineage
+  Hu_Maxpar_Direct_Assay_Mye_B_Cell_Expansion_2:
+    name: MDIPA expansion - myeloid / B cell 2
+    category: lineage
+  Hu_TBMNK_G CyTOF Panel:
+    name: TBMNK + granulocytes
+    category: lineage
+    featured: true
+    blurb: The minimal backbone - T, B, monocytes, NK and granulocytes - in nine markers.
+  Hu_Broad Immune Profiling CyTOF Panel:
+    name: Broad immune profiling
+    category: lineage
+    featured: true
+    blurb: Twenty-marker backbone covering every major immune lineage and T-cell memory subsets.
+  Hu_T cell Profiling_CyTOF Panel:
+    name: T-cell profiling
+    category: lineage
+    featured: true
+    blurb: Naive / memory / effector differentiation and helper subsets.
+  Hu_Immune Checkpoint Core_CyTOF Panel:
+    name: Immune checkpoint core
+    category: functional
+    featured: true
+    blurb: PD-1, TIM-3, LAG-3, TIGIT, CTLA-4 and their ligands.
+  Hu_Immune Checkpoint Expansion 1_CyTOF Panel:
+    name: Immune checkpoint expansion 1
+    category: functional
+  Hu_Immune Checkpoint Expansion 2_CyTOF Panel:
+    name: Immune checkpoint expansion 2
+    category: functional
+  Hu_Cytokine Core_CyTOF Panel:
+    name: Cytokine core
+    category: functional
+    featured: true
+    blurb: Intracellular IFN-γ, TNF, IL-2, IL-17A and IL-4 after stimulation.
+  Hu_Cytokine Expansion_CyTOF Panel:
+    name: Cytokine expansion
+    category: functional
+  Hu_Cytotoxic Mediators_CyTOF Panel:
+    name: Cytotoxic mediators
+    category: functional
+    blurb: Granzyme B, perforin and degranulation.
+  Hu_T cell Immune Checkpoint & Cytokine_CyTOF Panel:
+    name: T-cell checkpoint and cytokine (40-marker)
+    category: assay
+    blurb: SBT's full validated T-cell functional panel.
+  Hu_Broad Immune Checkpoint_CyTOF Panel:
+    name: Broad immune checkpoint (34-marker)
+    category: assay
+  Hu_T-Cell_Basic_IO:
+    name: T-cell basic IO
+    category: assay
+  Hu_T-Cell_Complete_IO:
+    name: T-cell complete IO
+    category: assay
+  Hu_T-Cell_Expansion_IO:
+    name: T-cell IO expansion
+    category: functional
+  Hu_Regulatory_T:
+    name: Regulatory T cells
+    category: lineage
+    featured: true
+    blurb: Treg identification and function (CD25, CD127, FoxP3, CTLA-4, Helios).
+  Hu_THelper_Phenotyping:
+    name: T helper phenotyping
+    category: lineage
+    blurb: Th1 / Th2 / Th17 / Tfh by chemokine receptors.
+  Hu_Mono/Mac_Phenotyping:
+    name: Monocyte / macrophage phenotyping
+    category: lineage
+  Hu_AML_Phenotyping:
+    name: AML phenotyping
+    category: disease
+  Hu_B_Cell_Phenotyping:
+    name: B-cell phenotyping
+    category: lineage
+    blurb: Naive, memory, transitional and plasmablast B cells.
+  Hu_HSPC_Phenotyping_Ex:
+    name: HSPC phenotyping
+    category: lineage
+  Hu_PB_Basic:
+    name: Peripheral blood basic
+    category: lineage
+  Hu_PB_Basic_II:
+    name: Peripheral blood basic II
+    category: lineage
+  Hu_PB_Phenotyping:
+    name: Peripheral blood phenotyping
+    category: lineage
+  Hu_T_Cell_Phenotyping:
+    name: T-cell phenotyping
+    category: lineage
+  Hu_T_Cell_Phenotyping_Ex:
+    name: T-cell phenotyping expansion
+    category: lineage
+  Hu_ES/iPS:
+    name: ES / iPS pluripotency
+    category: functional
+  Hu/Mouse_CellCycle:
+    name: Cell cycle
+    category: functional
+    blurb: IdU, cyclin B1, pHistone H3 and pRb for cell-cycle phase.
+  Hum/Mouse_Signaling_I:
+    name: Signalling I
+    category: functional
+    blurb: Phospho-flow core (pSTAT, pERK, pS6, pAKT).
+  Hu_Cytokine_I:
+    name: Cytokine I
+    category: functional

@@ -90,8 +90,8 @@
    "id": "arginasei",
    "name": "Arginase I",
    "aliases": [
-    "Arginase-1",
-    "ARGINASE-1"
+    "ARGINASE-1",
+    "Arginase-1"
    ],
    "sources": [
     "pdv2",
@@ -3805,8 +3805,8 @@
    "aliases": [
     "Caspase-3 cleaved",
     "cCasp3",
-    "Cleaved Caspase-3",
-    "cleaved caspase-3"
+    "cleaved caspase-3",
+    "Cleaved Caspase-3"
    ],
    "sources": [
     "curated",
@@ -4145,8 +4145,8 @@
    "id": "foxp3",
    "name": "FoxP3",
    "aliases": [
-    "FOXP3",
-    "Foxp3"
+    "Foxp3",
+    "FOXP3"
    ],
    "sources": [
     "curated",
@@ -4332,8 +4332,8 @@
    "id": "granzymeb",
    "name": "Granzyme B",
    "aliases": [
-    "GZMB",
-    "GzmB"
+    "GzmB",
+    "GZMB"
    ],
    "sources": [
     "curated",
@@ -4606,6 +4606,27 @@
    "n_conjugates": 3,
    "applications": [
     "imaging",
+    "suspension"
+   ],
+   "kinds": [
+    "antibody"
+   ]
+  },
+  {
+   "id": "ikba",
+   "name": "IkBa",
+   "aliases": [
+    "IkappaBalpha",
+    "IκBα",
+    "Iκβα"
+   ],
+   "sources": [
+    "curated",
+    "pdv2",
+    "store"
+   ],
+   "n_conjugates": 1,
+   "applications": [
     "suspension"
    ],
    "kinds": [
@@ -4912,24 +4933,6 @@
    ]
   },
   {
-   "id": "ikba",
-   "name": "Iκβα",
-   "aliases": [
-    "IkBa"
-   ],
-   "sources": [
-    "pdv2",
-    "store"
-   ],
-   "n_conjugates": 1,
-   "applications": [
-    "suspension"
-   ],
-   "kinds": [
-    "antibody"
-   ]
-  },
-  {
    "id": "keratin818",
    "name": "Keratin 8/18",
    "aliases": [
@@ -5063,8 +5066,11 @@
   {
    "id": "ly6c",
    "name": "Ly-6C",
-   "aliases": [],
+   "aliases": [
+    "Ly6C"
+   ],
    "sources": [
+    "curated",
     "store"
    ],
    "n_conjugates": 3,
@@ -5078,8 +5084,11 @@
   {
    "id": "ly6g",
    "name": "Ly-6G",
-   "aliases": [],
+   "aliases": [
+    "Ly6G"
+   ],
    "sources": [
+    "curated",
     "store"
    ],
    "n_conjugates": 8,
@@ -5643,8 +5652,8 @@
    "aliases": [
     "Cytokeratin",
     "Pan-CK",
-    "Pan-CytoKeratin",
     "pan-cytokeratin",
+    "Pan-CytoKeratin",
     "Pan-Keratin",
     "PanCK"
    ],
@@ -6919,9 +6928,14 @@
    "id": "b2microglobulin",
    "name": "β2-microglobulin",
    "aliases": [
-    "B2-microglobulin"
+    "B2-microglobulin",
+    "B2M",
+    "beta-2 microglobulin",
+    "Beta-2-Microglobulin",
+    "β2M"
    ],
    "sources": [
+    "curated",
     "pdv2",
     "store"
    ],
@@ -36678,6 +36692,35 @@
    "status": "active"
   },
   {
+   "id": "ikba|L35A5|164Dy|s",
+   "target_id": "ikba",
+   "target_name": "IkBa",
+   "clone": "L35A5",
+   "metal": "164Dy",
+   "mass": 164,
+   "application": "suspension",
+   "assay_type": "maxpar",
+   "kind": "antibody",
+   "reactivity": [
+    "human",
+    "hamster"
+   ],
+   "sample_types": [],
+   "skus": [
+    "3164004A",
+    "3164004C"
+   ],
+   "tds_url": "https://fluidigm.my.salesforce.com/sfc/p/700000009DAw/a/4u0000019iJ7/QO3al0925Rb5gNEieVgouBeRcLSRnF2pFAboeUXHsEY",
+   "signal": 111.0,
+   "tolerance": 6.0,
+   "st_source": "titrated",
+   "st_context": {
+    "cell": "Jurkat",
+    "stim": "PVO4, 15 min"
+   },
+   "status": "active"
+  },
+  {
    "id": "ikzf1ikaros|16B5C71|143Nd|s",
    "target_id": "ikzf1ikaros",
    "target_name": "IKZF1/Ikaros",
@@ -38079,35 +38122,6 @@
    "tolerance": null,
    "st_source": "default",
    "st_context": null,
-   "status": "active"
-  },
-  {
-   "id": "ikba|L35A5|164Dy|s",
-   "target_id": "ikba",
-   "target_name": "Iκβα",
-   "clone": "L35A5",
-   "metal": "164Dy",
-   "mass": 164,
-   "application": "suspension",
-   "assay_type": "maxpar",
-   "kind": "antibody",
-   "reactivity": [
-    "human",
-    "hamster"
-   ],
-   "sample_types": [],
-   "skus": [
-    "3164004A",
-    "3164004C"
-   ],
-   "tds_url": "https://fluidigm.my.salesforce.com/sfc/p/700000009DAw/a/4u0000019iJ7/QO3al0925Rb5gNEieVgouBeRcLSRnF2pFAboeUXHsEY",
-   "signal": 111.0,
-   "tolerance": 6.0,
-   "st_source": "titrated",
-   "st_context": {
-    "cell": "Jurkat",
-    "stim": "PVO4, 15 min"
-   },
    "status": "active"
   },
   {

@@ -1,0 +1,35 @@
+module,application,target,clone,kit_metal,reason,catalogue_metals_for_clone
+MDIPA expansion - T cell 2,suspension,CD184/CXCR4,12G5,175Lu,metal not sold for this clone,156Gd|173Yb
+Direct Immune Profiling Assay (MDIPA),suspension,CD19,HIB19,144Nd,metal not sold for this clone,142Nd|145Nd|149Sm|165Ho|169Tm|198Pt
+Direct Immune Profiling Assay (MDIPA),suspension,CD194/CCR4,L291H4,152Sm,metal not sold for this clone,149Sm|153Eu|158Gd|175Lu
+Direct Immune Profiling Assay (MDIPA),suspension,CD27,O323,154Sm,metal not sold for this clone,167Er
+Direct Immune Profiling Assay (MDIPA),suspension,CD57,HNK-1,155Gd,clone/metal not sold,
+Direct Immune Profiling Assay (MDIPA),suspension,CD185/CXCR5,J252D4,158Gd,clone/metal not sold,
+Direct Immune Profiling Assay (MDIPA),suspension,TCRγδ,B1,164Dy,clone/metal not sold,
+Direct Immune Profiling Assay (MDIPA),suspension,CD294/CRTH2,BM16,166Er,metal not sold for this clone,163Dy
+Direct Immune Profiling Assay (MDIPA),suspension,CD14,63D3,168Er,metal not sold for this clone,151Eu|195Pt
+Direct Immune Profiling Assay (MDIPA),suspension,CD66b,G10F5,172Yb,metal not sold for this clone,152Sm
+Direct Immune Profiling Assay (MDIPA),suspension,HLA-DR,LN3,173Yb,clone/metal not sold,
+Direct Immune Profiling Assay (MDIPA),suspension,IgD,IA6-2,174Yb,metal not sold for this clone,146Nd
+Direct Immune Profiling Assay (legacy),suspension,CD194/CCR4,L291H4,any,metal not sold for this clone,149Sm|153Eu|158Gd|175Lu
+Direct Immune Profiling Assay (legacy),suspension,CD294/CRTH2,BM16,any,metal not sold for this clone,163Dy
+Direct Immune Profiling Assay (legacy),suspension,CD27,O323,any,metal not sold for this clone,167Er
+Direct Immune Profiling Assay (legacy),suspension,CD57,HCD57,any,metal not sold for this clone,163Dy|172Yb
+Direct Immune Profiling Assay (legacy),suspension,CD19,HIB19,any,metal not sold for this clone,142Nd|145Nd|149Sm|165Ho|169Tm|198Pt
+Direct Immune Profiling Assay (legacy),suspension,CD185/CXCR5,,any,clone/metal not sold,
+Direct Immune Profiling Assay (legacy),suspension,TCRγδ,B1,164Dy,clone/metal not sold,
+Direct Immune Profiling Assay (legacy),suspension,CD14,63D3,168Er,metal not sold for this clone,151Eu|195Pt
+Direct Immune Profiling Assay (legacy),suspension,CD66b,G10F5,172Yb,metal not sold for this clone,152Sm
+Direct Immune Profiling Assay (legacy),suspension,HLA-DR,LN3,173Yb,clone/metal not sold,
+Direct Immune Profiling Assay (legacy),suspension,IgD,IA6-2,174Yb,metal not sold for this clone,146Nd
+T-cell complete IO,suspension,CD9,SN4 C3-3A2,171Yb,clone/metal not sold,
+Monocyte / macrophage phenotyping,suspension,CD66a/CEACAM1,CD66a-B1.1,149Sm,clone/metal not sold,
+AML phenotyping,suspension,CD184/CXCR4,12G5,175Lu,metal not sold for this clone,156Gd|173Yb
+B-cell phenotyping,suspension,IgA,Polyclonal,148Nd,target not in store,
+B-cell phenotyping,suspension,CD21/CD35,BL13,152Sm,clone/metal not sold,
+B-cell phenotyping,suspension,CD79B,CB3-1,162Dy,target not in store,
+HSPC phenotyping,suspension,CD49F,G0H3,164Dy,clone/metal not sold,
+HSPC phenotyping,suspension,CD184/CXCR4,12G5,175Lu,metal not sold for this clone,156Gd|173Yb
+T-cell phenotyping expansion,suspension,CD9,SN4 C3-3A2,171Yb,clone/metal not sold,
+Peripheral blood phenotyping,suspension,CD235ab,HIR2,141Pr,clone/metal not sold,
+Peripheral blood phenotyping,suspension,CD66a/CEACAM1,CD66a-B1.1,149Sm,clone/metal not sold,

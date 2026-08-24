@@ -1,0 +1,264 @@
+# Curated functional modules (SPEC §3.4). These fill gaps the SBT kits leave: mouse, human PBMC backbone as a
+# concept (not a kit), and modules that cut across kits. Markers reference catalogue target names or aliases.
+# role: required | recommended | optional. abundance: low | medium | high | very_high (curated prior, see SPEC §3.3).
+version: 2026-08-24.1
+modules:
+  - id: human-pbmc-lineage
+    name: Immune lineage backbone (human)
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood]
+    category: lineage
+    featured: true
+    blurb: Every major leukocyte lineage. Start here for any human blood panel.
+    markers:
+      - {target: CD45, abundance: very_high}
+      - {target: CD3ε, abundance: very_high}
+      - {target: CD4, abundance: high}
+      - {target: CD8a, abundance: high}
+      - {target: CD19, abundance: high}
+      - {target: CD20, abundance: high, role: recommended}
+      - {target: CD14, abundance: high}
+      - {target: CD16, abundance: high}
+      - {target: CD56, abundance: medium}
+      - {target: CD11c, abundance: medium}
+      - {target: HLA-DR, abundance: very_high}
+      - {target: CD123, abundance: medium, role: recommended}
+      - {target: CD66b, abundance: high, role: optional, note: whole blood only}
+
+  - id: human-t-differentiation
+    name: T-cell differentiation
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood]
+    category: lineage
+    featured: true
+    blurb: Naive, central memory, effector memory and TEMRA; senescence and IL-7 responsiveness.
+    markers:
+      - {target: CD45RA, abundance: high}
+      - {target: CD45RO, abundance: high}
+      - {target: CD197/CCR7, abundance: low}
+      - {target: CD27, abundance: high}
+      - {target: CD28, abundance: medium}
+      - {target: CD127/IL-7Rα, abundance: medium}
+      - {target: CD25, abundance: low}
+      - {target: CD57, abundance: medium, role: recommended}
+      - {target: CD95/Fas, abundance: medium, role: optional}
+
+  - id: human-t-activation-exhaustion
+    name: T-cell activation and exhaustion
+    application: both
+    species: [human]
+    sample_types: [pbmc, whole_blood, dissociated_tumour, ffpe]
+    category: functional
+    featured: true
+    blurb: Recent activation plus the checkpoint receptors that define exhausted and tumour-reactive T cells.
+    markers:
+      - {target: CD69, abundance: medium}
+      - {target: CD38, abundance: high}
+      - {target: HLA-DR, abundance: very_high}
+      - {target: CD279/PD-1, abundance: low}
+      - {target: CD366/TIM-3, abundance: low}
+      - {target: CD223/LAG-3, abundance: low}
+      - {target: TIGIT, abundance: low}
+      - {target: CD152/CTLA-4, abundance: low}
+      - {target: CD278/ICOS, abundance: low, role: recommended}
+      - {target: CD39, abundance: medium, role: recommended}
+      - {target: TOX, abundance: low, role: optional}
+      - {target: Ki-67, abundance: high, role: recommended}
+
+  - id: human-treg
+    name: Regulatory T cells
+    application: both
+    species: [human]
+    sample_types: [pbmc, whole_blood, ffpe]
+    category: lineage
+    blurb: Tregs by CD25 / CD127 / FoxP3, with suppressive-function markers.
+    markers:
+      - {target: CD25, abundance: low}
+      - {target: CD127/IL-7Rα, abundance: medium}
+      - {target: FoxP3, abundance: low}
+      - {target: CD152/CTLA-4, abundance: low}
+      - {target: Helios, abundance: low, role: recommended}
+      - {target: CD39, abundance: medium, role: optional}
+
+  - id: human-nk
+    name: NK cells
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood]
+    category: lineage
+    blurb: CD56 bright / dim NK subsets, receptors and cytotoxic machinery.
+    markers:
+      - {target: CD56, abundance: medium}
+      - {target: CD16, abundance: high}
+      - {target: CD159a/NKG2A, abundance: low, role: recommended}
+      - {target: CD314/NKG2D, abundance: medium, role: recommended}
+      - {target: CD57, abundance: medium}
+      - {target: Granzyme B, abundance: high}
+      - {target: Perforin, abundance: high, role: recommended}
+
+  - id: human-b-plasma
+    name: B cells and plasma cells
+    application: both
+    species: [human]
+    sample_types: [pbmc, whole_blood, ffpe]
+    category: lineage
+    blurb: Naive, memory, transitional B cells and plasmablasts.
+    markers:
+      - {target: CD19, abundance: high}
+      - {target: CD20, abundance: high}
+      - {target: CD27, abundance: high}
+      - {target: IgD, abundance: high}
+      - {target: CD38, abundance: high}
+      - {target: CD138/Syndecan-1, abundance: medium, role: recommended}
+      - {target: CD24, abundance: medium, role: optional}
+
+  - id: human-cytokines
+    name: Intracellular cytokines
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood]
+    category: functional
+    blurb: Effector cytokines after PMA / ionomycin or antigen stimulation. Bright when induced; plan for high signal.
+    markers:
+      - {target: IFNγ, abundance: high}
+      - {target: TNFα, abundance: high}
+      - {target: IL-2, abundance: medium}
+      - {target: IL-17A, abundance: low}
+      - {target: IL-4, abundance: low, role: recommended}
+      - {target: IL-10, abundance: low, role: recommended}
+      - {target: GM-CSF, abundance: medium, role: optional}
+      - {target: Granzyme B, abundance: high, role: optional}
+
+  - id: human-phospho-signalling
+    name: Phospho-signalling
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood]
+    category: functional
+    blurb: JAK/STAT, MAPK, PI3K and NF-κB readouts for stimulation assays.
+    markers:
+      - {target: "pStat1 [Y701]", abundance: medium}
+      - {target: "pStat3 [Y705]", abundance: medium}
+      - {target: "pStat5 [Y694]", abundance: medium}
+      - {target: "pS6 [S235/S236]", abundance: high}
+      - {target: "pERK1/2 [T202/Y204]", abundance: medium}
+      - {target: "pAKT [S473]", abundance: low, role: recommended}
+      - {target: "pNFkBp65 [S529]", abundance: low, role: recommended}
+      - {target: "pp38 [T180/Y182]", abundance: medium, role: optional}
+      - {target: IkBa, abundance: medium, role: optional}
+
+  - id: proliferation-death
+    name: Proliferation and cell death
+    application: both
+    species: [human, mouse]
+    sample_types: [pbmc, whole_blood, dissociated_tumour, ffpe, frozen]
+    category: functional
+    blurb: Cycling, mitotic and apoptotic cells.
+    markers:
+      - {target: Ki-67, abundance: high}
+      - {target: "pHistone H3 [S28]", abundance: very_high, role: recommended}
+      - {target: Cleaved Caspase 3, abundance: medium, role: recommended}
+      - {target: Cleaved PARP, abundance: medium, role: optional}
+
+  - id: tumour-stroma-structural
+    name: Tumour and stroma structure (IMC)
+    application: imaging
+    species: [human]
+    sample_types: [ffpe, frozen]
+    category: tissue
+    featured: true
+    blurb: Epithelium, mesenchyme, matrix and vessels - the map every tissue panel needs.
+    markers:
+      - {target: Pan-Cytokeratin, abundance: very_high}
+      - {target: E-Cadherin, abundance: high}
+      - {target: CD326/EpCAM, abundance: high, role: recommended}
+      - {target: Vimentin, abundance: very_high}
+      - {target: α-Smooth Muscle Actin, abundance: very_high}
+      - {target: Collagen Type I, abundance: very_high}
+      - {target: Fibronectin, abundance: high, role: recommended}
+      - {target: CD31/PECAM-1, abundance: medium}
+      - {target: Podoplanin, abundance: medium, role: optional}
+      - {target: β-Catenin, abundance: high, role: optional}
+
+  - id: checkpoint-io-tissue
+    name: Checkpoint / immuno-oncology (IMC)
+    application: imaging
+    species: [human]
+    sample_types: [ffpe]
+    category: functional
+    featured: true
+    blurb: PD-L1 axis, antigen presentation and the cells that respond.
+    markers:
+      - {target: CD274/PD-L1, abundance: low}
+      - {target: CD279/PD-1, abundance: low}
+      - {target: CD276/B7-H3, abundance: medium, role: recommended}
+      - {target: IDO, abundance: low, role: recommended}
+      - {target: HLA-ABC, abundance: very_high, role: recommended}
+      - {target: β2M, abundance: very_high, role: optional}
+      - {target: Ki-67, abundance: high}
+      - {target: CD8a, abundance: high}
+      - {target: FoxP3, abundance: low}
+
+  - id: mouse-immune-backbone
+    name: Immune lineage backbone (mouse)
+    application: suspension
+    species: [mouse]
+    sample_types: [spleen, blood, bone_marrow, dissociated_tumour]
+    category: lineage
+    featured: true
+    blurb: Every major murine leukocyte lineage.
+    markers:
+      - {target: CD45, abundance: very_high}
+      - {target: CD3ε, abundance: high}
+      - {target: CD4, abundance: high}
+      - {target: CD8a, abundance: high}
+      - {target: CD19, abundance: high}
+      - {target: CD45R/B220, abundance: very_high}
+      - {target: CD11b/Mac-1, abundance: high}
+      - {target: CD11c, abundance: medium}
+      - {target: F4/80, abundance: medium}
+      - {target: Ly-6G, abundance: very_high}
+      - {target: Ly-6C, abundance: high}
+      - {target: NK1.1, abundance: medium}
+      - {target: MHC Class II, abundance: very_high}
+      - {target: TCRβ, abundance: high, role: recommended}
+
+  - id: mouse-io-tissue
+    name: Mouse tumour immunology (IMC)
+    application: imaging
+    species: [mouse]
+    sample_types: [ffpe, frozen]
+    category: functional
+    blurb: Murine tumour microenvironment - T cells, macrophages, checkpoint and structure.
+    markers:
+      - {target: CD45, abundance: very_high}
+      - {target: CD3ε, abundance: high}
+      - {target: CD4, abundance: high}
+      - {target: CD8a, abundance: high}
+      - {target: F4/80, abundance: medium}
+      - {target: CD68, abundance: high, role: recommended}
+      - {target: CD206/MMR, abundance: medium, role: recommended}
+      - {target: Arginase-1, abundance: medium, role: recommended}
+      - {target: CD274/PD-L1, abundance: low}
+      - {target: FoxP3, abundance: low}
+      - {target: Ki-67, abundance: high}
+      - {target: Pan-Cytokeratin, abundance: very_high}
+      - {target: α-Smooth Muscle Actin, abundance: very_high}
+      - {target: CD31/PECAM-1, abundance: medium}
+
+  - id: metabolism
+    name: Metabolism
+    application: both
+    species: [human]
+    sample_types: [pbmc, ffpe]
+    category: functional
+    blurb: Glycolysis, fatty-acid oxidation, amino-acid transport and mitochondrial mass.
+    markers:
+      - {target: GLUT1, abundance: medium}
+      - {target: CPT1A, abundance: medium}
+      - {target: HK2, abundance: medium, role: recommended}
+      - {target: CD98, abundance: medium, role: recommended}
+      - {target: ATP5A, abundance: high}
+      - {target: Citrate Synthase, abundance: medium, role: optional}
