@@ -3748,6 +3748,8 @@
      "element": "Y",
      "label": "89Y",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3755,6 +3757,8 @@
      "element": "Pd",
      "label": "102Pd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3762,6 +3766,8 @@
      "element": "Rh",
      "label": "103Rh",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3769,6 +3775,8 @@
      "element": "Pd",
      "label": "104Pd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3776,6 +3784,8 @@
      "element": "Pd",
      "label": "105Pd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3783,6 +3793,8 @@
      "element": "Cd",
      "label": "106Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3790,6 +3802,8 @@
      "element": "Cd",
      "label": "108Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3797,6 +3811,8 @@
      "element": "Cd",
      "label": "110Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3804,6 +3820,8 @@
      "element": "Cd",
      "label": "111Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3811,6 +3829,8 @@
      "element": "Cd",
      "label": "112Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3818,6 +3838,8 @@
      "element": "In",
      "label": "113In",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3825,6 +3847,8 @@
      "element": "Cd",
      "label": "114Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3832,6 +3856,8 @@
      "element": "In",
      "label": "115In",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3839,6 +3865,8 @@
      "element": "Cd",
      "label": "116Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3846,6 +3874,8 @@
      "element": "Sb",
      "label": "122Sb",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3853,6 +3883,8 @@
      "element": "Sb",
      "label": "123Sb",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3860,6 +3892,8 @@
      "element": "Te",
      "label": "124Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3867,6 +3901,8 @@
      "element": "Te",
      "label": "125Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3874,6 +3910,8 @@
      "element": "Te",
      "label": "126Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3881,6 +3919,8 @@
      "element": "Te",
      "label": "128Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3888,6 +3928,8 @@
      "element": "Te",
      "label": "130Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3895,6 +3937,8 @@
      "element": "Ba",
      "label": "138Ba",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3902,6 +3946,8 @@
      "element": "La",
      "label": "139La",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3909,6 +3955,8 @@
      "element": "Ce",
      "label": "140Ce",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3916,6 +3964,8 @@
      "element": "Pr",
      "label": "141Pr",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -3923,6 +3973,8 @@
      "element": "Nd",
      "label": "142Nd",
      "rel_sensitivity": 0.4,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -3930,6 +3982,8 @@
      "element": "Nd",
      "label": "143Nd",
      "rel_sensitivity": 0.4,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -3937,6 +3991,8 @@
      "element": "Nd",
      "label": "144Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -3944,6 +4000,8 @@
      "element": "Nd",
      "label": "145Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -3951,6 +4009,8 @@
      "element": "Nd",
      "label": "146Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -3958,6 +4018,8 @@
      "element": "Sm",
      "label": "147Sm",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -3965,6 +4027,8 @@
      "element": "Nd",
      "label": "148Nd",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -3972,6 +4036,8 @@
      "element": "Sm",
      "label": "149Sm",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -3979,6 +4045,8 @@
      "element": "Nd",
      "label": "150Nd",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -3986,6 +4054,8 @@
      "element": "Eu",
      "label": "151Eu",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -3993,6 +4063,8 @@
      "element": "Sm",
      "label": "152Sm",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4000,6 +4072,8 @@
      "element": "Eu",
      "label": "153Eu",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4007,6 +4081,8 @@
      "element": "Sm",
      "label": "154Sm",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4014,6 +4090,8 @@
      "element": "Gd",
      "label": "155Gd",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4021,6 +4099,8 @@
      "element": "Gd",
      "label": "156Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4028,6 +4108,8 @@
      "element": "Gd",
      "label": "157Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4035,6 +4117,8 @@
      "element": "Gd",
      "label": "158Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4042,6 +4126,8 @@
      "element": "Tb",
      "label": "159Tb",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4049,6 +4135,8 @@
      "element": "Gd",
      "label": "160Gd",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4056,6 +4144,8 @@
      "element": "Dy",
      "label": "161Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4063,6 +4153,8 @@
      "element": "Dy",
      "label": "162Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4070,6 +4162,8 @@
      "element": "Dy",
      "label": "163Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4077,6 +4171,8 @@
      "element": "Dy",
      "label": "164Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4084,6 +4180,8 @@
      "element": "Ho",
      "label": "165Ho",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4091,6 +4189,8 @@
      "element": "Er",
      "label": "166Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4098,6 +4198,8 @@
      "element": "Er",
      "label": "167Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4105,6 +4207,8 @@
      "element": "Er",
      "label": "168Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4112,6 +4216,8 @@
      "element": "Tm",
      "label": "169Tm",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4119,6 +4225,8 @@
      "element": "Er",
      "label": "170Er",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4126,6 +4234,8 @@
      "element": "Yb",
      "label": "171Yb",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4133,6 +4243,8 @@
      "element": "Yb",
      "label": "172Yb",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4140,6 +4252,8 @@
      "element": "Yb",
      "label": "173Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4147,6 +4261,8 @@
      "element": "Yb",
      "label": "174Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4154,6 +4270,8 @@
      "element": "Lu",
      "label": "175Lu",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4161,13 +4279,26 @@
      "element": "Yb",
      "label": "176Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
+    },
+    {
+     "mass": 191,
+     "element": "Ir",
+     "label": "191Ir",
+     "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": false,
+     "range_class": "heavy"
     },
     {
      "mass": 193,
      "element": "Ir",
      "label": "193Ir",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -4175,6 +4306,8 @@
      "element": "Pt",
      "label": "194Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -4182,6 +4315,8 @@
      "element": "Pt",
      "label": "195Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -4189,6 +4324,8 @@
      "element": "Pt",
      "label": "196Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -4196,6 +4333,8 @@
      "element": "Au",
      "label": "197Au",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -4203,6 +4342,8 @@
      "element": "Pt",
      "label": "198Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -4210,6 +4351,8 @@
      "element": "Bi",
      "label": "209Bi",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     }
    ]
@@ -4228,6 +4371,8 @@
      "element": "Y",
      "label": "89Y",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4235,6 +4380,8 @@
      "element": "Pd",
      "label": "102Pd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4242,6 +4389,8 @@
      "element": "Rh",
      "label": "103Rh",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4249,6 +4398,8 @@
      "element": "Pd",
      "label": "104Pd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4256,6 +4407,8 @@
      "element": "Pd",
      "label": "105Pd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4263,6 +4416,8 @@
      "element": "Cd",
      "label": "106Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4270,6 +4425,8 @@
      "element": "Cd",
      "label": "108Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4277,6 +4434,8 @@
      "element": "Cd",
      "label": "110Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4284,6 +4443,8 @@
      "element": "Cd",
      "label": "111Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4291,6 +4452,8 @@
      "element": "Cd",
      "label": "112Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4298,6 +4461,8 @@
      "element": "In",
      "label": "113In",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4305,6 +4470,8 @@
      "element": "Cd",
      "label": "114Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4312,6 +4479,8 @@
      "element": "In",
      "label": "115In",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4319,6 +4488,8 @@
      "element": "Cd",
      "label": "116Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4326,6 +4497,8 @@
      "element": "Sb",
      "label": "122Sb",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4333,6 +4506,8 @@
      "element": "Sb",
      "label": "123Sb",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4340,6 +4515,8 @@
      "element": "Te",
      "label": "124Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4347,6 +4524,8 @@
      "element": "Te",
      "label": "125Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4354,6 +4533,8 @@
      "element": "Te",
      "label": "126Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4361,6 +4542,8 @@
      "element": "Te",
      "label": "128Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4368,6 +4551,8 @@
      "element": "Te",
      "label": "130Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4375,6 +4560,8 @@
      "element": "Ba",
      "label": "138Ba",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4382,6 +4569,8 @@
      "element": "La",
      "label": "139La",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4389,6 +4578,8 @@
      "element": "Ce",
      "label": "140Ce",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4396,6 +4587,8 @@
      "element": "Pr",
      "label": "141Pr",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4403,6 +4596,8 @@
      "element": "Nd",
      "label": "142Nd",
      "rel_sensitivity": 0.4,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4410,6 +4605,8 @@
      "element": "Nd",
      "label": "143Nd",
      "rel_sensitivity": 0.4,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4417,6 +4614,8 @@
      "element": "Nd",
      "label": "144Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4424,6 +4623,8 @@
      "element": "Nd",
      "label": "145Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4431,6 +4632,8 @@
      "element": "Nd",
      "label": "146Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4438,6 +4641,8 @@
      "element": "Sm",
      "label": "147Sm",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4445,6 +4650,8 @@
      "element": "Nd",
      "label": "148Nd",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4452,6 +4659,8 @@
      "element": "Sm",
      "label": "149Sm",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4459,6 +4668,8 @@
      "element": "Nd",
      "label": "150Nd",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4466,6 +4677,8 @@
      "element": "Eu",
      "label": "151Eu",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4473,6 +4686,8 @@
      "element": "Sm",
      "label": "152Sm",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4480,6 +4695,8 @@
      "element": "Eu",
      "label": "153Eu",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4487,6 +4704,8 @@
      "element": "Sm",
      "label": "154Sm",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4494,6 +4713,8 @@
      "element": "Gd",
      "label": "155Gd",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4501,6 +4722,8 @@
      "element": "Gd",
      "label": "156Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4508,6 +4731,8 @@
      "element": "Gd",
      "label": "157Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4515,6 +4740,8 @@
      "element": "Gd",
      "label": "158Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4522,6 +4749,8 @@
      "element": "Tb",
      "label": "159Tb",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4529,6 +4758,8 @@
      "element": "Gd",
      "label": "160Gd",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4536,6 +4767,8 @@
      "element": "Dy",
      "label": "161Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4543,6 +4776,8 @@
      "element": "Dy",
      "label": "162Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4550,6 +4785,8 @@
      "element": "Dy",
      "label": "163Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4557,6 +4794,8 @@
      "element": "Dy",
      "label": "164Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4564,6 +4803,8 @@
      "element": "Ho",
      "label": "165Ho",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4571,6 +4812,8 @@
      "element": "Er",
      "label": "166Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4578,6 +4821,8 @@
      "element": "Er",
      "label": "167Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4585,6 +4830,8 @@
      "element": "Er",
      "label": "168Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4592,6 +4839,8 @@
      "element": "Tm",
      "label": "169Tm",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4599,6 +4848,8 @@
      "element": "Er",
      "label": "170Er",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4606,6 +4857,8 @@
      "element": "Yb",
      "label": "171Yb",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4613,6 +4866,8 @@
      "element": "Yb",
      "label": "172Yb",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4620,6 +4875,8 @@
      "element": "Yb",
      "label": "173Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4627,6 +4884,8 @@
      "element": "Yb",
      "label": "174Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4634,6 +4893,8 @@
      "element": "Lu",
      "label": "175Lu",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4641,13 +4902,26 @@
      "element": "Yb",
      "label": "176Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
+    },
+    {
+     "mass": 191,
+     "element": "Ir",
+     "label": "191Ir",
+     "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": false,
+     "range_class": "heavy"
     },
     {
      "mass": 193,
      "element": "Ir",
      "label": "193Ir",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -4655,6 +4929,8 @@
      "element": "Pt",
      "label": "194Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -4662,6 +4938,8 @@
      "element": "Pt",
      "label": "195Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -4669,6 +4947,8 @@
      "element": "Pt",
      "label": "196Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -4676,6 +4956,8 @@
      "element": "Au",
      "label": "197Au",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -4683,6 +4965,8 @@
      "element": "Pt",
      "label": "198Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -4690,6 +4974,8 @@
      "element": "Bi",
      "label": "209Bi",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     }
    ]
@@ -4708,6 +4994,8 @@
      "element": "Y",
      "label": "89Y",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4715,6 +5003,8 @@
      "element": "Pd",
      "label": "102Pd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4722,6 +5012,8 @@
      "element": "Rh",
      "label": "103Rh",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4729,6 +5021,8 @@
      "element": "Pd",
      "label": "104Pd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4736,6 +5030,8 @@
      "element": "Pd",
      "label": "105Pd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4743,6 +5039,8 @@
      "element": "Cd",
      "label": "106Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4750,6 +5048,8 @@
      "element": "Cd",
      "label": "108Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4757,6 +5057,8 @@
      "element": "Cd",
      "label": "110Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4764,6 +5066,8 @@
      "element": "Cd",
      "label": "111Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4771,6 +5075,8 @@
      "element": "Cd",
      "label": "112Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4778,6 +5084,8 @@
      "element": "In",
      "label": "113In",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4785,6 +5093,8 @@
      "element": "Cd",
      "label": "114Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4792,6 +5102,8 @@
      "element": "In",
      "label": "115In",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4799,6 +5111,8 @@
      "element": "Cd",
      "label": "116Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4806,6 +5120,8 @@
      "element": "Sb",
      "label": "122Sb",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4813,6 +5129,8 @@
      "element": "Sb",
      "label": "123Sb",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4820,6 +5138,8 @@
      "element": "Te",
      "label": "124Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4827,6 +5147,8 @@
      "element": "Te",
      "label": "125Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4834,6 +5156,8 @@
      "element": "Te",
      "label": "126Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4841,6 +5165,8 @@
      "element": "Te",
      "label": "128Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4848,6 +5174,8 @@
      "element": "Te",
      "label": "130Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4855,6 +5183,8 @@
      "element": "Xe",
      "label": "131Xe",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4862,6 +5192,8 @@
      "element": "Ba",
      "label": "138Ba",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4869,6 +5201,8 @@
      "element": "La",
      "label": "139La",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4876,6 +5210,8 @@
      "element": "Ce",
      "label": "140Ce",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4883,6 +5219,8 @@
      "element": "Pr",
      "label": "141Pr",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -4890,6 +5228,8 @@
      "element": "Nd",
      "label": "142Nd",
      "rel_sensitivity": 0.4,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4897,6 +5237,8 @@
      "element": "Nd",
      "label": "143Nd",
      "rel_sensitivity": 0.4,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4904,6 +5246,8 @@
      "element": "Nd",
      "label": "144Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4911,6 +5255,8 @@
      "element": "Nd",
      "label": "145Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4918,6 +5264,8 @@
      "element": "Nd",
      "label": "146Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4925,6 +5273,8 @@
      "element": "Sm",
      "label": "147Sm",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4932,6 +5282,8 @@
      "element": "Nd",
      "label": "148Nd",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4939,6 +5291,8 @@
      "element": "Sm",
      "label": "149Sm",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4946,6 +5300,8 @@
      "element": "Nd",
      "label": "150Nd",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4953,6 +5309,8 @@
      "element": "Eu",
      "label": "151Eu",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4960,6 +5318,8 @@
      "element": "Sm",
      "label": "152Sm",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -4967,6 +5327,8 @@
      "element": "Eu",
      "label": "153Eu",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4974,6 +5336,8 @@
      "element": "Sm",
      "label": "154Sm",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4981,6 +5345,8 @@
      "element": "Gd",
      "label": "155Gd",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4988,6 +5354,8 @@
      "element": "Gd",
      "label": "156Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -4995,6 +5363,8 @@
      "element": "Gd",
      "label": "157Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5002,6 +5372,8 @@
      "element": "Gd",
      "label": "158Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5009,6 +5381,8 @@
      "element": "Tb",
      "label": "159Tb",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5016,6 +5390,8 @@
      "element": "Gd",
      "label": "160Gd",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5023,6 +5399,8 @@
      "element": "Dy",
      "label": "161Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5030,6 +5408,8 @@
      "element": "Dy",
      "label": "162Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5037,6 +5417,8 @@
      "element": "Dy",
      "label": "163Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5044,6 +5426,8 @@
      "element": "Dy",
      "label": "164Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5051,6 +5435,8 @@
      "element": "Ho",
      "label": "165Ho",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5058,6 +5444,8 @@
      "element": "Er",
      "label": "166Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5065,6 +5453,8 @@
      "element": "Er",
      "label": "167Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5072,6 +5462,8 @@
      "element": "Er",
      "label": "168Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5079,6 +5471,8 @@
      "element": "Tm",
      "label": "169Tm",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5086,6 +5480,8 @@
      "element": "Er",
      "label": "170Er",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5093,6 +5489,8 @@
      "element": "Yb",
      "label": "171Yb",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5100,6 +5498,8 @@
      "element": "Yb",
      "label": "172Yb",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5107,6 +5507,8 @@
      "element": "Yb",
      "label": "173Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5114,6 +5516,8 @@
      "element": "Yb",
      "label": "174Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5121,6 +5525,8 @@
      "element": "Lu",
      "label": "175Lu",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5128,13 +5534,26 @@
      "element": "Yb",
      "label": "176Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
+    },
+    {
+     "mass": 191,
+     "element": "Ir",
+     "label": "191Ir",
+     "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": false,
+     "range_class": "heavy"
     },
     {
      "mass": 193,
      "element": "Ir",
      "label": "193Ir",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -5142,6 +5561,8 @@
      "element": "Pt",
      "label": "194Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -5149,6 +5570,8 @@
      "element": "Pt",
      "label": "195Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -5156,6 +5579,8 @@
      "element": "Pt",
      "label": "196Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -5163,6 +5588,8 @@
      "element": "Au",
      "label": "197Au",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -5170,6 +5597,8 @@
      "element": "Pt",
      "label": "198Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -5177,6 +5606,8 @@
      "element": "Bi",
      "label": "209Bi",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     }
    ]
@@ -5195,6 +5626,8 @@
      "element": "Y",
      "label": "89Y",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5202,6 +5635,8 @@
      "element": "Pd",
      "label": "102Pd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5209,6 +5644,8 @@
      "element": "Rh",
      "label": "103Rh",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5216,6 +5653,8 @@
      "element": "Pd",
      "label": "104Pd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5223,6 +5662,8 @@
      "element": "Pd",
      "label": "105Pd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5230,6 +5671,8 @@
      "element": "Cd",
      "label": "106Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5237,6 +5680,8 @@
      "element": "Cd",
      "label": "108Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5244,6 +5689,8 @@
      "element": "Cd",
      "label": "110Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5251,6 +5698,8 @@
      "element": "Cd",
      "label": "111Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5258,6 +5707,8 @@
      "element": "Cd",
      "label": "112Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5265,6 +5716,8 @@
      "element": "In",
      "label": "113In",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5272,6 +5725,8 @@
      "element": "Cd",
      "label": "114Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5279,6 +5734,8 @@
      "element": "In",
      "label": "115In",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5286,6 +5743,8 @@
      "element": "Cd",
      "label": "116Cd",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5293,6 +5752,8 @@
      "element": "Sb",
      "label": "122Sb",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5300,6 +5761,8 @@
      "element": "Sb",
      "label": "123Sb",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5307,6 +5770,8 @@
      "element": "Te",
      "label": "124Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5314,6 +5779,8 @@
      "element": "Te",
      "label": "125Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5321,6 +5788,8 @@
      "element": "Te",
      "label": "126Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5328,6 +5797,8 @@
      "element": "Te",
      "label": "128Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5335,6 +5806,8 @@
      "element": "Te",
      "label": "130Te",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5342,6 +5815,8 @@
      "element": "Xe",
      "label": "131Xe",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5349,6 +5824,8 @@
      "element": "Ba",
      "label": "138Ba",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5356,6 +5833,8 @@
      "element": "La",
      "label": "139La",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5363,6 +5842,8 @@
      "element": "Ce",
      "label": "140Ce",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5370,6 +5851,8 @@
      "element": "Pr",
      "label": "141Pr",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5377,6 +5860,8 @@
      "element": "Nd",
      "label": "142Nd",
      "rel_sensitivity": 0.4,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5384,6 +5869,8 @@
      "element": "Nd",
      "label": "143Nd",
      "rel_sensitivity": 0.4,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5391,6 +5878,8 @@
      "element": "Nd",
      "label": "144Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5398,6 +5887,8 @@
      "element": "Nd",
      "label": "145Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5405,6 +5896,8 @@
      "element": "Nd",
      "label": "146Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5412,6 +5905,8 @@
      "element": "Sm",
      "label": "147Sm",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5419,6 +5914,8 @@
      "element": "Nd",
      "label": "148Nd",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5426,6 +5923,8 @@
      "element": "Sm",
      "label": "149Sm",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5433,6 +5932,8 @@
      "element": "Nd",
      "label": "150Nd",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5440,6 +5941,8 @@
      "element": "Eu",
      "label": "151Eu",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5447,6 +5950,8 @@
      "element": "Sm",
      "label": "152Sm",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5454,6 +5959,8 @@
      "element": "Eu",
      "label": "153Eu",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5461,6 +5968,8 @@
      "element": "Sm",
      "label": "154Sm",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5468,6 +5977,8 @@
      "element": "Gd",
      "label": "155Gd",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5475,6 +5986,8 @@
      "element": "Gd",
      "label": "156Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5482,6 +5995,8 @@
      "element": "Gd",
      "label": "157Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5489,6 +6004,8 @@
      "element": "Gd",
      "label": "158Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5496,6 +6013,8 @@
      "element": "Tb",
      "label": "159Tb",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5503,6 +6022,8 @@
      "element": "Gd",
      "label": "160Gd",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5510,6 +6031,8 @@
      "element": "Dy",
      "label": "161Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5517,6 +6040,8 @@
      "element": "Dy",
      "label": "162Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5524,6 +6049,8 @@
      "element": "Dy",
      "label": "163Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5531,6 +6058,8 @@
      "element": "Dy",
      "label": "164Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5538,6 +6067,8 @@
      "element": "Ho",
      "label": "165Ho",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5545,6 +6076,8 @@
      "element": "Er",
      "label": "166Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5552,6 +6085,8 @@
      "element": "Er",
      "label": "167Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5559,6 +6094,8 @@
      "element": "Er",
      "label": "168Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5566,6 +6103,8 @@
      "element": "Tm",
      "label": "169Tm",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5573,6 +6112,8 @@
      "element": "Er",
      "label": "170Er",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5580,6 +6121,8 @@
      "element": "Yb",
      "label": "171Yb",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5587,6 +6130,8 @@
      "element": "Yb",
      "label": "172Yb",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5594,6 +6139,8 @@
      "element": "Yb",
      "label": "173Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5601,6 +6148,8 @@
      "element": "Yb",
      "label": "174Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5608,6 +6157,8 @@
      "element": "Lu",
      "label": "175Lu",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5615,13 +6166,26 @@
      "element": "Yb",
      "label": "176Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
+    },
+    {
+     "mass": 191,
+     "element": "Ir",
+     "label": "191Ir",
+     "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": false,
+     "range_class": "heavy"
     },
     {
      "mass": 193,
      "element": "Ir",
      "label": "193Ir",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -5629,6 +6193,8 @@
      "element": "Pt",
      "label": "194Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -5636,6 +6202,8 @@
      "element": "Pt",
      "label": "195Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -5643,6 +6211,8 @@
      "element": "Pt",
      "label": "196Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -5650,6 +6220,8 @@
      "element": "Au",
      "label": "197Au",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -5657,6 +6229,8 @@
      "element": "Pt",
      "label": "198Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -5664,6 +6238,8 @@
      "element": "Bi",
      "label": "209Bi",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     }
    ]
@@ -5683,6 +6259,53 @@
      "element": "Y",
      "label": "89Y",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
+     "range_class": "bright_only"
+    },
+    {
+     "mass": 96,
+     "element": "Ru",
+     "label": "96Ru",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
+     "range_class": "bright_only"
+    },
+    {
+     "mass": 98,
+     "element": "Ru",
+     "label": "98Ru",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
+     "range_class": "bright_only"
+    },
+    {
+     "mass": 99,
+     "element": "Ru",
+     "label": "99Ru",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
+     "range_class": "bright_only"
+    },
+    {
+     "mass": 100,
+     "element": "Ru",
+     "label": "100Ru",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
+     "range_class": "bright_only"
+    },
+    {
+     "mass": 101,
+     "element": "Ru",
+     "label": "101Ru",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
      "range_class": "bright_only"
     },
     {
@@ -5690,6 +6313,8 @@
      "element": "Pd",
      "label": "102Pd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5697,6 +6322,8 @@
      "element": "Rh",
      "label": "103Rh",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5704,6 +6331,8 @@
      "element": "Pd",
      "label": "104Pd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5711,6 +6340,8 @@
      "element": "Pd",
      "label": "105Pd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5718,6 +6349,8 @@
      "element": "Cd",
      "label": "106Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5725,6 +6358,8 @@
      "element": "Cd",
      "label": "108Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5732,6 +6367,8 @@
      "element": "Cd",
      "label": "110Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5739,6 +6376,8 @@
      "element": "Cd",
      "label": "111Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5746,6 +6385,8 @@
      "element": "Cd",
      "label": "112Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5753,6 +6394,8 @@
      "element": "In",
      "label": "113In",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5760,6 +6403,8 @@
      "element": "Cd",
      "label": "114Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5767,6 +6412,8 @@
      "element": "In",
      "label": "115In",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5774,6 +6421,8 @@
      "element": "Cd",
      "label": "116Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5781,6 +6430,8 @@
      "element": "Ba",
      "label": "138Ba",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5788,6 +6439,8 @@
      "element": "La",
      "label": "139La",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5795,6 +6448,8 @@
      "element": "Ce",
      "label": "140Ce",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5802,6 +6457,8 @@
      "element": "Pr",
      "label": "141Pr",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -5809,6 +6466,8 @@
      "element": "Nd",
      "label": "142Nd",
      "rel_sensitivity": 0.4,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5816,6 +6475,8 @@
      "element": "Nd",
      "label": "143Nd",
      "rel_sensitivity": 0.4,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5823,6 +6484,8 @@
      "element": "Nd",
      "label": "144Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5830,6 +6493,8 @@
      "element": "Nd",
      "label": "145Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5837,6 +6502,8 @@
      "element": "Nd",
      "label": "146Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5844,6 +6511,8 @@
      "element": "Sm",
      "label": "147Sm",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5851,6 +6520,8 @@
      "element": "Nd",
      "label": "148Nd",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5858,6 +6529,8 @@
      "element": "Sm",
      "label": "149Sm",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5865,6 +6538,8 @@
      "element": "Nd",
      "label": "150Nd",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5872,6 +6547,8 @@
      "element": "Eu",
      "label": "151Eu",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5879,6 +6556,8 @@
      "element": "Sm",
      "label": "152Sm",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -5886,6 +6565,8 @@
      "element": "Eu",
      "label": "153Eu",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5893,6 +6574,8 @@
      "element": "Sm",
      "label": "154Sm",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5900,6 +6583,8 @@
      "element": "Gd",
      "label": "155Gd",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5907,6 +6592,8 @@
      "element": "Gd",
      "label": "156Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5914,6 +6601,8 @@
      "element": "Gd",
      "label": "157Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5921,6 +6610,8 @@
      "element": "Gd",
      "label": "158Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5928,6 +6619,8 @@
      "element": "Tb",
      "label": "159Tb",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5935,6 +6628,8 @@
      "element": "Gd",
      "label": "160Gd",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5942,6 +6637,8 @@
      "element": "Dy",
      "label": "161Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5949,6 +6646,8 @@
      "element": "Dy",
      "label": "162Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5956,6 +6655,8 @@
      "element": "Dy",
      "label": "163Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5963,6 +6664,8 @@
      "element": "Dy",
      "label": "164Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5970,6 +6673,8 @@
      "element": "Ho",
      "label": "165Ho",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5977,6 +6682,8 @@
      "element": "Er",
      "label": "166Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5984,6 +6691,8 @@
      "element": "Er",
      "label": "167Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5991,6 +6700,8 @@
      "element": "Er",
      "label": "168Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -5998,6 +6709,8 @@
      "element": "Tm",
      "label": "169Tm",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6005,6 +6718,8 @@
      "element": "Er",
      "label": "170Er",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6012,6 +6727,8 @@
      "element": "Yb",
      "label": "171Yb",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6019,6 +6736,8 @@
      "element": "Yb",
      "label": "172Yb",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6026,6 +6745,8 @@
      "element": "Yb",
      "label": "173Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6033,6 +6754,8 @@
      "element": "Yb",
      "label": "174Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6040,6 +6763,8 @@
      "element": "Lu",
      "label": "175Lu",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6047,13 +6772,26 @@
      "element": "Yb",
      "label": "176Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
+    },
+    {
+     "mass": 191,
+     "element": "Ir",
+     "label": "191Ir",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
+     "range_class": "heavy"
     },
     {
      "mass": 193,
      "element": "Ir",
      "label": "193Ir",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6061,6 +6799,8 @@
      "element": "Pt",
      "label": "194Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6068,6 +6808,8 @@
      "element": "Pt",
      "label": "195Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6075,6 +6817,8 @@
      "element": "Pt",
      "label": "196Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6082,6 +6826,8 @@
      "element": "Au",
      "label": "197Au",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6089,6 +6835,8 @@
      "element": "Pt",
      "label": "198Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6096,6 +6844,8 @@
      "element": "Bi",
      "label": "209Bi",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     }
    ]
@@ -6114,6 +6864,53 @@
      "element": "Y",
      "label": "89Y",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
+     "range_class": "bright_only"
+    },
+    {
+     "mass": 96,
+     "element": "Ru",
+     "label": "96Ru",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
+     "range_class": "bright_only"
+    },
+    {
+     "mass": 98,
+     "element": "Ru",
+     "label": "98Ru",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
+     "range_class": "bright_only"
+    },
+    {
+     "mass": 99,
+     "element": "Ru",
+     "label": "99Ru",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
+     "range_class": "bright_only"
+    },
+    {
+     "mass": 100,
+     "element": "Ru",
+     "label": "100Ru",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
+     "range_class": "bright_only"
+    },
+    {
+     "mass": 101,
+     "element": "Ru",
+     "label": "101Ru",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
      "range_class": "bright_only"
     },
     {
@@ -6121,6 +6918,8 @@
      "element": "Pd",
      "label": "102Pd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6128,6 +6927,8 @@
      "element": "Rh",
      "label": "103Rh",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6135,6 +6936,8 @@
      "element": "Pd",
      "label": "104Pd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6142,6 +6945,8 @@
      "element": "Pd",
      "label": "105Pd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6149,6 +6954,8 @@
      "element": "Cd",
      "label": "106Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6156,6 +6963,8 @@
      "element": "Cd",
      "label": "108Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6163,6 +6972,8 @@
      "element": "Cd",
      "label": "110Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6170,6 +6981,8 @@
      "element": "Cd",
      "label": "111Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6177,6 +6990,8 @@
      "element": "Cd",
      "label": "112Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6184,6 +6999,8 @@
      "element": "In",
      "label": "113In",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6191,6 +7008,8 @@
      "element": "Cd",
      "label": "114Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6198,6 +7017,8 @@
      "element": "In",
      "label": "115In",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6205,6 +7026,8 @@
      "element": "Cd",
      "label": "116Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6212,6 +7035,8 @@
      "element": "Ba",
      "label": "138Ba",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6219,6 +7044,8 @@
      "element": "La",
      "label": "139La",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6226,6 +7053,8 @@
      "element": "Ce",
      "label": "140Ce",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6233,6 +7062,8 @@
      "element": "Pr",
      "label": "141Pr",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6240,6 +7071,8 @@
      "element": "Nd",
      "label": "142Nd",
      "rel_sensitivity": 0.4,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6247,6 +7080,8 @@
      "element": "Nd",
      "label": "143Nd",
      "rel_sensitivity": 0.4,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6254,6 +7089,8 @@
      "element": "Nd",
      "label": "144Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6261,6 +7098,8 @@
      "element": "Nd",
      "label": "145Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6268,6 +7107,8 @@
      "element": "Nd",
      "label": "146Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6275,6 +7116,8 @@
      "element": "Sm",
      "label": "147Sm",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6282,6 +7125,8 @@
      "element": "Nd",
      "label": "148Nd",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6289,6 +7134,8 @@
      "element": "Sm",
      "label": "149Sm",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6296,6 +7143,8 @@
      "element": "Nd",
      "label": "150Nd",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6303,6 +7152,8 @@
      "element": "Eu",
      "label": "151Eu",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6310,6 +7161,8 @@
      "element": "Sm",
      "label": "152Sm",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6317,6 +7170,8 @@
      "element": "Eu",
      "label": "153Eu",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6324,6 +7179,8 @@
      "element": "Sm",
      "label": "154Sm",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6331,6 +7188,8 @@
      "element": "Gd",
      "label": "155Gd",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6338,6 +7197,8 @@
      "element": "Gd",
      "label": "156Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6345,6 +7206,8 @@
      "element": "Gd",
      "label": "157Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6352,6 +7215,8 @@
      "element": "Gd",
      "label": "158Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6359,6 +7224,8 @@
      "element": "Tb",
      "label": "159Tb",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6366,6 +7233,8 @@
      "element": "Gd",
      "label": "160Gd",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6373,6 +7242,8 @@
      "element": "Dy",
      "label": "161Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6380,6 +7251,8 @@
      "element": "Dy",
      "label": "162Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6387,6 +7260,8 @@
      "element": "Dy",
      "label": "163Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6394,6 +7269,8 @@
      "element": "Dy",
      "label": "164Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6401,6 +7278,8 @@
      "element": "Ho",
      "label": "165Ho",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6408,6 +7287,8 @@
      "element": "Er",
      "label": "166Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6415,6 +7296,8 @@
      "element": "Er",
      "label": "167Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6422,6 +7305,8 @@
      "element": "Er",
      "label": "168Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6429,6 +7314,8 @@
      "element": "Tm",
      "label": "169Tm",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6436,6 +7323,8 @@
      "element": "Er",
      "label": "170Er",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6443,6 +7332,8 @@
      "element": "Yb",
      "label": "171Yb",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6450,6 +7341,8 @@
      "element": "Yb",
      "label": "172Yb",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6457,6 +7350,8 @@
      "element": "Yb",
      "label": "173Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6464,6 +7359,8 @@
      "element": "Yb",
      "label": "174Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6471,6 +7368,8 @@
      "element": "Lu",
      "label": "175Lu",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6478,13 +7377,26 @@
      "element": "Yb",
      "label": "176Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
+    },
+    {
+     "mass": 191,
+     "element": "Ir",
+     "label": "191Ir",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
+     "range_class": "heavy"
     },
     {
      "mass": 193,
      "element": "Ir",
      "label": "193Ir",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6492,6 +7404,8 @@
      "element": "Pt",
      "label": "194Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6499,6 +7413,8 @@
      "element": "Pt",
      "label": "195Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6506,6 +7422,8 @@
      "element": "Pt",
      "label": "196Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6513,6 +7431,8 @@
      "element": "Au",
      "label": "197Au",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6520,6 +7440,8 @@
      "element": "Pt",
      "label": "198Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6527,6 +7449,8 @@
      "element": "Bi",
      "label": "209Bi",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     }
    ]
@@ -6545,6 +7469,53 @@
      "element": "Y",
      "label": "89Y",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
+     "range_class": "bright_only"
+    },
+    {
+     "mass": 96,
+     "element": "Ru",
+     "label": "96Ru",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
+     "range_class": "bright_only"
+    },
+    {
+     "mass": 98,
+     "element": "Ru",
+     "label": "98Ru",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
+     "range_class": "bright_only"
+    },
+    {
+     "mass": 99,
+     "element": "Ru",
+     "label": "99Ru",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
+     "range_class": "bright_only"
+    },
+    {
+     "mass": 100,
+     "element": "Ru",
+     "label": "100Ru",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
+     "range_class": "bright_only"
+    },
+    {
+     "mass": 101,
+     "element": "Ru",
+     "label": "101Ru",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
      "range_class": "bright_only"
     },
     {
@@ -6552,6 +7523,8 @@
      "element": "Pd",
      "label": "102Pd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6559,6 +7532,8 @@
      "element": "Rh",
      "label": "103Rh",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6566,6 +7541,8 @@
      "element": "Pd",
      "label": "104Pd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6573,6 +7550,8 @@
      "element": "Pd",
      "label": "105Pd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6580,6 +7559,8 @@
      "element": "Cd",
      "label": "106Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6587,6 +7568,8 @@
      "element": "Cd",
      "label": "108Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6594,6 +7577,8 @@
      "element": "Cd",
      "label": "110Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6601,6 +7586,8 @@
      "element": "Cd",
      "label": "111Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6608,6 +7595,8 @@
      "element": "Cd",
      "label": "112Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6615,6 +7604,8 @@
      "element": "In",
      "label": "113In",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6622,6 +7613,8 @@
      "element": "Cd",
      "label": "114Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6629,6 +7622,8 @@
      "element": "In",
      "label": "115In",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6636,6 +7631,8 @@
      "element": "Cd",
      "label": "116Cd",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6643,6 +7640,8 @@
      "element": "Ba",
      "label": "138Ba",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6650,6 +7649,8 @@
      "element": "La",
      "label": "139La",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6657,6 +7658,8 @@
      "element": "Ce",
      "label": "140Ce",
      "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6664,6 +7667,8 @@
      "element": "Pr",
      "label": "141Pr",
      "rel_sensitivity": 0.3,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "bright_only"
     },
     {
@@ -6671,6 +7676,8 @@
      "element": "Nd",
      "label": "142Nd",
      "rel_sensitivity": 0.4,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6678,6 +7685,8 @@
      "element": "Nd",
      "label": "143Nd",
      "rel_sensitivity": 0.4,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6685,6 +7694,8 @@
      "element": "Nd",
      "label": "144Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6692,6 +7703,8 @@
      "element": "Nd",
      "label": "145Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6699,6 +7712,8 @@
      "element": "Nd",
      "label": "146Nd",
      "rel_sensitivity": 0.5,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6706,6 +7721,8 @@
      "element": "Sm",
      "label": "147Sm",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6713,6 +7730,8 @@
      "element": "Nd",
      "label": "148Nd",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6720,6 +7739,8 @@
      "element": "Sm",
      "label": "149Sm",
      "rel_sensitivity": 0.6,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6727,6 +7748,8 @@
      "element": "Nd",
      "label": "150Nd",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6734,6 +7757,8 @@
      "element": "Eu",
      "label": "151Eu",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6741,6 +7766,8 @@
      "element": "Sm",
      "label": "152Sm",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "mid"
     },
     {
@@ -6748,6 +7775,8 @@
      "element": "Eu",
      "label": "153Eu",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6755,6 +7784,8 @@
      "element": "Sm",
      "label": "154Sm",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6762,6 +7793,8 @@
      "element": "Gd",
      "label": "155Gd",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6769,6 +7802,8 @@
      "element": "Gd",
      "label": "156Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6776,6 +7811,8 @@
      "element": "Gd",
      "label": "157Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6783,6 +7820,8 @@
      "element": "Gd",
      "label": "158Gd",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6790,6 +7829,8 @@
      "element": "Tb",
      "label": "159Tb",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6797,6 +7838,8 @@
      "element": "Gd",
      "label": "160Gd",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6804,6 +7847,8 @@
      "element": "Dy",
      "label": "161Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6811,6 +7856,8 @@
      "element": "Dy",
      "label": "162Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6818,6 +7865,8 @@
      "element": "Dy",
      "label": "163Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6825,6 +7874,8 @@
      "element": "Dy",
      "label": "164Dy",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6832,6 +7883,8 @@
      "element": "Ho",
      "label": "165Ho",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6839,6 +7892,8 @@
      "element": "Er",
      "label": "166Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6846,6 +7901,8 @@
      "element": "Er",
      "label": "167Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6853,6 +7910,8 @@
      "element": "Er",
      "label": "168Er",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6860,6 +7919,8 @@
      "element": "Tm",
      "label": "169Tm",
      "rel_sensitivity": 1.0,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6867,6 +7928,8 @@
      "element": "Er",
      "label": "170Er",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6874,6 +7937,8 @@
      "element": "Yb",
      "label": "171Yb",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6881,6 +7946,8 @@
      "element": "Yb",
      "label": "172Yb",
      "rel_sensitivity": 0.9,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6888,6 +7955,8 @@
      "element": "Yb",
      "label": "173Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6895,6 +7964,8 @@
      "element": "Yb",
      "label": "174Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6902,6 +7973,8 @@
      "element": "Lu",
      "label": "175Lu",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
     },
     {
@@ -6909,13 +7982,26 @@
      "element": "Yb",
      "label": "176Yb",
      "rel_sensitivity": 0.8,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "sweet_spot"
+    },
+    {
+     "mass": 191,
+     "element": "Ir",
+     "label": "191Ir",
+     "rel_sensitivity": null,
+     "usable": false,
+     "in_po_matrix": false,
+     "range_class": "heavy"
     },
     {
      "mass": 193,
      "element": "Ir",
      "label": "193Ir",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6923,6 +8009,8 @@
      "element": "Pt",
      "label": "194Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6930,6 +8018,8 @@
      "element": "Pt",
      "label": "195Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6937,6 +8027,8 @@
      "element": "Pt",
      "label": "196Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6944,6 +8036,8 @@
      "element": "Au",
      "label": "197Au",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6951,6 +8045,8 @@
      "element": "Pt",
      "label": "198Pt",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     },
     {
@@ -6958,6 +8054,8 @@
      "element": "Bi",
      "label": "209Bi",
      "rel_sensitivity": 0.7,
+     "usable": true,
+     "in_po_matrix": true,
      "range_class": "heavy"
     }
    ]

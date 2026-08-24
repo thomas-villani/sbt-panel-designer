@@ -72,8 +72,9 @@ def build() -> dict:
     for inst in cfg["instruments"]:
         po = po_matrices[str(inst["po_matrix"])]
         curve = curves[str(inst["sensitivity_curve"])]
+        reserved_masses = {m for role in cfg["reserved"][inst["modality"]] for m in role["masses"]}
         channels = []
-        for mass in po["recipients"]:
+        for mass in sorted(set(po["recipients"]) | reserved_masses):
             element = isotopes.get(str(mass))
             if element is None:
                 raise KeyError(f"no element for mass {mass}; add it to isotopes.yaml")
@@ -81,7 +82,10 @@ def build() -> dict:
                 "mass": mass,
                 "element": element,
                 "label": f"{mass}{element}",
-                "rel_sensitivity": curve.get(str(mass)),  # None => curve does not define it (IMC below 141)
+                # The pdv2 sensitivity curve doubles as the "usable channel" list: the IMC curve omits Cd/Te/Xe.
+                "rel_sensitivity": curve.get(str(mass)),
+                "usable": str(mass) in curve,
+                "in_po_matrix": mass in po["recipients"],
                 "range_class": classify_mass(mass, cfg["range_classes"]),
             })
         instruments.append({**inst, "channels": channels})
