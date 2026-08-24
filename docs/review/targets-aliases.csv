@@ -1,0 +1,385 @@
+display_name,n_conjugates,applications,kinds,aliases,sources
+ALDH,1,suspension,antibody,,pdv2|store
+Androgen Receptor,2,suspension,antibody,Androgen receptor,pdv2|store
+APC,3,suspension,antibody,,pdv2|store
+APP,3,imaging,antibody,,pdv2|store
+Arginase I,2,imaging|suspension,antibody,Arginase-1; ARGINASE-1,pdv2|store
+ATP5A,1,imaging,antibody,,pdv2|store
+B7-H4,1,imaging,antibody,,pdv2|store
+BATF,1,suspension,antibody,,store
+BCL-2,1,imaging,antibody,,pdv2|store
+BCL-6,2,imaging|suspension,antibody,Bcl-6,pdv2|store
+Biotin,4,suspension,secondary,,pdv2|store
+BRCA1,1,imaging,antibody,,pdv2|store
+c-Myc,2,imaging|suspension,antibody,c-Myc p67,pdv2|store
+Calbindin 1,3,imaging,antibody,,pdv2|store
+CD10,2,suspension,antibody,,pdv2|store
+CD100,1,suspension,antibody,,pdv2|store
+CD101,2,suspension,antibody,,pdv2|store
+CD102,1,suspension,antibody,CD102/ICAM-2,pdv2|store
+CD103,1,suspension,antibody,,pdv2|store
+CD104,1,suspension,antibody,,pdv2|store
+CD105/Endoglin,1,suspension,antibody,CD105; Endoglin,pdv2|store|store:cd|store:part
+CD107a/LAMP1,3,imaging|suspension,antibody,CD107a; CD107a/LAMP-1; LAMP-1; LAMP1,pdv2|store|store:cd|store:part
+CD107b,1,suspension,antibody,CD107b/LAMP2,pdv2|store
+CD111/Nectin-1,1,suspension,antibody,CD111; Nectin-1,pdv2|store|store:cd|store:part
+CD115,1,suspension,antibody,,store
+CD117/c-kit,3,suspension,antibody,c-kit; CD117,pdv2|store|store:cd|store:part
+CD11a,1,suspension,antibody,,pdv2|store
+CD11b/Mac-1,16,imaging|suspension,antibody,CD11b; Mac-1,pdv2|store|store:cd|store:part
+CD11c,16,imaging|suspension,antibody,,pdv2|store
+CD121b,1,suspension,antibody,CD121B,pdv2|store
+CD122/IL-2Rβ,1,suspension,antibody,CD122; IL-2Rβ,pdv2|store|store:cd|store:part
+CD123/IL-3R,2,suspension,antibody,CD123; IL-3R,pdv2|store|store:cd|store:part
+CD127/IL7Rα,10,imaging|suspension,antibody,CD127; CD127/IL-7R alpha; CD127/IL-7Rα; CD127/IL7R; IL-7Rα; IL7Rα,pdv2|store|store:cd|store:part
+CD13,3,suspension,antibody,,pdv2|store
+CD130,2,suspension,antibody,,pdv2|store
+CD132,1,suspension,antibody,,pdv2|store
+CD134/OX40,5,imaging|suspension,antibody,CD134; OX40,pdv2|store|store:cd|store:part
+CD135/Flt3,1,suspension,antibody,CD135; CD135/FLT3; Flt3,pdv2|store|store:cd|store:part
+CD137 Ligand,1,suspension,antibody,CD137L,pdv2|store
+CD137/4-1BB,3,suspension,antibody,4-1BB; CD137,pdv2|store|store:cd|store:part
+CD138/SDC1,5,suspension,antibody,CD138; CD138/Syndecan-1; SDC1; Syndecan-1,pdv2|store|store:cd|store:part
+CD14,16,imaging|suspension,antibody,,pdv2|store
+CD140a,1,suspension,antibody,,store
+CD140b/PDGFRβ,2,suspension,antibody,CD140b; CD140b (PDGFRb); PDGFRβ,pdv2|store|store:cd|store:part
+CD141,2,suspension,antibody,,pdv2|store
+CD146,2,suspension,antibody,,pdv2|store
+CD147,1,suspension,antibody,,pdv2|store
+CD15/SSEA-1,5,imaging|suspension,antibody,CD15; SSEA-1,pdv2|store|store:cd|store:part
+CD150 [SLAM],1,suspension,antibody,,store
+CD151/PETA-3,1,suspension,antibody,CD151; PETA-3,pdv2|store|store:cd|store:part
+CD152/CTLA-4,6,imaging|suspension,antibody,CD152; CTLA-4; CTLA4,curated|pdv2|store|store:cd|store:part
+CD154/CD40L,3,suspension,antibody,CD154; CD154/CD40Ligand; CD40L; CD40Ligand,pdv2|store|store:cd|store:part
+CD158b,1,suspension,antibody,CD158b/KIR2DL2/DL3/NKAT2,pdv2|store
+CD16,9,imaging|suspension,antibody,,pdv2|store
+CD16/32,2,suspension,antibody,Fc block; FcγRII/III,curated|store
+CD161,3,suspension,antibody,,pdv2|store
+CD162,3,suspension,antibody,,pdv2|store
+CD163/M130,7,imaging|suspension,antibody,CD163; M130,pdv2|store|store:cd|store:part
+CD166/ALCAM,2,suspension,antibody,ALCAM; CD166,pdv2|store|store:cd|store:part
+CD169/Siglec-1,2,suspension,antibody,CD169; Siglec-1,pdv2|store|store:cd|store:part
+CD170/Siglec-F,2,suspension,antibody,CD170; Siglec-F,store|store:cd|store:part
+CD172a,2,suspension,antibody,CD172 alpha beta/SIRP alpha beta; CD172a/b,pdv2|store
+CD172b,1,suspension,antibody,CD172 beta/SIRP beta,pdv2|store
+CD179a,1,suspension,antibody,,pdv2|store
+CD179b,1,suspension,antibody,,pdv2|store
+CD180/RP105,1,suspension,antibody,CD180; RP105,store|store:cd|store:part
+CD181/CXCR1,1,suspension,antibody,CD181; CXCR1,pdv2|store|store:cd|store:part
+CD182/CXCR2,1,suspension,antibody,CD182; CXCR2,pdv2|store|store:cd|store:part
+CD183/CXCR3,2,suspension,antibody,CD183; CXCR3,pdv2|store|store:cd|store:part
+CD184/CXCR4,3,suspension,antibody,CD184; CXCR4,pdv2|store|store:cd|store:part
+CD185/CXCR5,4,suspension,antibody,CD185; CXCR5,pdv2|store|store:cd|store:part
+CD186/CXCR6,1,suspension,antibody,CD186; CXCR6; CXCR6/CD186,pdv2|store|store:cd|store:part
+CD19,11,imaging|suspension,antibody,,pdv2|store
+CD192/CCR2,1,suspension,antibody,CCR2; CD192,pdv2|store|store:cd|store:part
+CD193/CCR3,1,suspension,antibody,CCR3; CD193,pdv2|store|store:cd|store:part
+CD194/CCR4,5,imaging|suspension,antibody,CCR4; CD194,pdv2|store|store:cd|store:part
+CD195/CCR5,3,suspension,antibody,CCR5; CD195,pdv2|store|store:cd|store:part
+CD196/CCR6,5,imaging|suspension,antibody,CCR6; CD196,pdv2|store|store:cd|store:part
+CD197/CCR7,6,suspension,antibody,CCR7; CD197; Human CCR7 (CD197),pdv2|store|store:cd|store:part
+CD199/CCR9,1,suspension,antibody,CCR9; CD199,pdv2|store|store:cd|store:part
+CD1a,1,suspension,antibody,,pdv2|store
+CD1b,1,suspension,antibody,,pdv2|store
+CD1d,2,suspension,antibody,,pdv2|store
+CD2,1,suspension,antibody,,pdv2|store
+CD20,10,imaging|suspension,antibody,,pdv2|store
+CD200,1,suspension,antibody,,pdv2|store
+CD206/MMR,5,imaging|suspension,antibody,CD206; Mannose receptor; MMR; MRC1,curated|pdv2|store|store:cd|store:part
+CD207,1,suspension,antibody,,pdv2|store
+CD21/CD35,2,suspension,antibody,CD21; CD35,store|store:cd
+CD22,1,suspension,antibody,,pdv2|store
+CD223/LAG-3,7,imaging|suspension,antibody,CD223; CD223/LAG3; LAG-3; LAG3,curated|pdv2|store|store:cd|store:part
+CD226,1,suspension,antibody,,pdv2|store
+CD227/Mucin 1,1,imaging,antibody,CD227; CD227/MUC1; Mucin 1,pdv2|store|store:cd|store:part
+CD229,2,suspension,antibody,CD229/Ly-9,pdv2|store
+CD23,3,suspension,antibody,,pdv2|store
+CD231,1,suspension,antibody,CD231/TALLA,pdv2|store
+CD235ab,4,imaging|suspension,antibody,CD235ab/Glycophorin ab,pdv2|store
+CD24,4,suspension,antibody,,pdv2|store
+CD244.2,1,suspension,antibody,,store
+CD244/2B4,1,suspension,antibody,2B4; CD244,pdv2|store|store:cd|store:part
+CD25/IL2Rα,7,imaging|suspension,antibody,CD25; CD25/IL-2R; IL2Rα,pdv2|store|store:cd|store:part
+CD257,1,suspension,antibody,CD257/BAFF/BLYS,pdv2|store
+CD26,2,suspension,antibody,,pdv2|store
+CD268,1,suspension,antibody,CD268/BAFF-R,pdv2|store
+CD27,8,imaging|suspension,antibody,,pdv2|store
+CD270/HVEM,1,suspension,antibody,CD270; CD270/HVEM/TR2; HVEM,pdv2|store|store:cd|store:part
+CD271,1,suspension,antibody,,pdv2|store
+CD272/BTLA,3,suspension,antibody,BTLA; CD272,pdv2|store|store:cd|store:part
+CD273/PD-L2,3,imaging|suspension,antibody,CD273; PD-L2,pdv2|store|store:cd|store:part
+CD274/PD-L1,16,imaging|suspension,antibody,B7-H1; CD274; PD-L1; PDL1,curated|pdv2|store|store:cd|store:part
+CD276/B7-H3,1,imaging,antibody,B7-H3; CD276,pdv2|store|store:cd|store:part
+CD278/ICOS,11,imaging|suspension,antibody,CD278; ICOS,pdv2|store|store:cd|store:part
+CD279/PD-1,11,imaging|suspension,antibody,CD279; PD-1; PD1; PDCD1,curated|pdv2|store|store:cd|store:part
+CD28,3,imaging|suspension,antibody,,pdv2|store
+CD282/TLR2,3,suspension,antibody,CD282; TLR2,pdv2|store|store:cd|store:part
+CD284/TLR4,1,suspension,antibody,CD284; TLR4,pdv2|store|store:cd|store:part
+CD29,1,suspension,antibody,,pdv2|store
+CD294/CRTH2,1,suspension,antibody,CD294; CRTH2,pdv2|store|store:cd|store:part
+CD301/CLEC10A,1,suspension,antibody,CD301; CLEC10A,pdv2|store|store:cd|store:part
+CD303/BDCA2,2,suspension,antibody,BDCA2; CD303,pdv2|store|store:cd|store:part
+CD304/Neuropilin-1,1,suspension,antibody,CD304; Neuropilin-1,pdv2|store|store:cd|store:part
+CD309/KDR,1,suspension,antibody,CD309; KDR,pdv2|store|store:cd|store:part
+CD31/PECAM-1,14,imaging|suspension,antibody,CD31; CD31/PECAM1; PECAM-1; PECAM1,curated|pdv2|store|store:cd|store:part
+CD32,2,suspension,antibody,,pdv2|store
+CD325/N-Cadherin,1,suspension,antibody,CD325; N-Cadherin,pdv2|store|store:cd|store:part
+CD326/EpCAM,10,imaging|suspension,antibody,CD326; EpCAM,curated|pdv2|store|store:cd|store:part
+CD328/Siglec-7,1,suspension,antibody,CD328; Siglec-7,pdv2|store|store:cd|store:part
+CD33,4,suspension,antibody,,pdv2|store
+CD335/NKp46,2,suspension,antibody,CD335; CD335/Nkp46; Nkp46; NKp46,store|store:cd|store:part
+CD34,6,imaging|suspension,antibody,,pdv2|store
+CD352,1,suspension,antibody,CD352/NTB-A,pdv2|store
+CD354,1,suspension,antibody,CD354/TREM-1,pdv2|store
+CD357/GITR,2,suspension,antibody,CD357; GITR,pdv2|store|store:cd|store:part
+CD36,4,suspension,antibody,,pdv2|store
+CD366/TIM-3,7,imaging|suspension,antibody,CD366; CD366/Tim-3; CD366/TIM3; HAVCR2; TIM-3; Tim-3; TIM3,curated|pdv2|store|store:cd|store:part
+CD370/CLEC9A,1,suspension,antibody,CD370; CD370/CLEC9A/DNGR1; CLEC9A,pdv2|store|store:cd|store:part
+CD371/CLEC12A,1,suspension,antibody,CD371; CLEC12A,pdv2|store|store:cd|store:part
+CD38,9,imaging|suspension,antibody,,pdv2|store
+CD39,2,suspension,antibody,,pdv2|store
+CD3ε,17,imaging|suspension,antibody,CD3; CD3 epsilon; CD3e; CD3epsilon,curated|pdv2|store
+CD4,18,imaging|suspension,antibody,,pdv2|store
+CD40,3,suspension,antibody,,pdv2|store
+CD41,2,suspension,antibody,,pdv2|store
+CD42b,1,suspension,antibody,,pdv2|store
+CD43,2,suspension,antibody,,pdv2|store
+CD44,9,imaging|suspension,antibody,,pdv2|store
+CD45,37,imaging|suspension,antibody,,pdv2|store
+CD45.1,1,suspension,antibody,,store
+CD45.2,1,suspension,antibody,,store
+CD45R/B220,10,imaging|suspension,antibody,B220; CD45R,curated|pdv2|store|store:cd|store:part
+CD45RA,7,imaging|suspension,antibody,,pdv2|store
+CD45RB,2,suspension,antibody,,pdv2|store
+CD45RO,10,imaging|suspension,antibody,,pdv2|store
+CD47,1,suspension,antibody,,pdv2|store
+CD48,2,suspension,antibody,,store
+CD49a,1,suspension,antibody,,pdv2|store
+CD49b,6,suspension,antibody,,pdv2|store
+CD49c,1,suspension,antibody,CD49c/integrin alpha-3,pdv2|store
+CD49D,3,suspension,antibody,CD49d,pdv2|store
+CD49e,1,suspension,antibody,,pdv2|store
+CD49F,1,suspension,antibody,,pdv2|store
+CD5,3,suspension,antibody,,pdv2|store
+CD51/61,1,suspension,antibody,,pdv2|store
+CD52,1,suspension,antibody,,pdv2|store
+CD54,1,suspension,antibody,CD54/ICAM-1,pdv2|store
+CD55,1,suspension,antibody,,pdv2|store
+CD56/NCAM,5,suspension,antibody,CD56; NCAM,pdv2|store|store:cd|store:part
+CD57,8,imaging|suspension,antibody,,pdv2|store
+CD58,1,suspension,antibody,CD58/LFA-3,pdv2|store
+CD59,1,suspension,antibody,,pdv2|store
+CD6,1,suspension,antibody,,pdv2|store
+CD61,4,suspension,antibody,,pdv2|store
+CD62L,5,suspension,antibody,CD62L/L-selectin,pdv2|store
+CD63,2,imaging|suspension,antibody,,pdv2|store
+CD64,2,suspension,antibody,,pdv2|store
+CD66a/CEACAM1,2,suspension,antibody,CD66a; CD66a/c/e; CEACAM1,pdv2|store|store:cd|store:part
+CD66b,6,imaging|suspension,antibody,,pdv2|store
+CD68,5,imaging|suspension,antibody,KP1 antigen,curated|pdv2|store
+CD69,5,suspension,antibody,,pdv2|store
+CD7,9,imaging|suspension,antibody,,pdv2|store
+CD71,2,suspension,antibody,CD71/Transferrin Receptor,pdv2|store
+CD72,1,suspension,antibody,,pdv2|store
+CD73,2,suspension,antibody,CD73/Ecto-5-nucleotidase,pdv2|store
+CD74,2,imaging|suspension,antibody,,pdv2|store
+CD80/B7-1,5,suspension,antibody,B7-1; B7.1; CD80; CD80/B7.1,pdv2|store|store:cd|store:part
+CD81,1,suspension,antibody,,pdv2|store
+CD82,1,suspension,antibody,,pdv2|store
+CD83,1,suspension,antibody,,store
+CD84,1,suspension,antibody,,pdv2|store
+CD85d/ILT4,1,suspension,antibody,CD85d; ILT4,pdv2|store|store:cd|store:part
+CD85j/ILT2,2,suspension,antibody,CD85j; ILT2,pdv2|store|store:cd|store:part
+CD86/B7.2,8,imaging|suspension,antibody,B7.2; CD86,pdv2|store|store:cd|store:part
+CD89,1,suspension,antibody,,pdv2|store
+CD8a,23,imaging|suspension,antibody,CD8; CD8 alpha; CD8α,curated|pdv2|store
+CD9,1,suspension,antibody,,store
+CD90,3,suspension,antibody,,pdv2|store
+CD90.2/Thy-1.2,1,suspension,antibody,CD90.2; Thy-1.2,store|store:part
+CD94,1,suspension,antibody,,pdv2|store
+CD95/Fas,4,suspension,antibody,CD95; Fas,pdv2|store|store:cd|store:part
+CD97,1,suspension,antibody,,pdv2|store
+CD98,2,imaging|suspension,antibody,,pdv2|store
+CD99,1,suspension,antibody,,pdv2|store
+Citrate Synthase​,1,imaging,antibody,Citrate Synthase,pdv2|store
+CLA,2,suspension,antibody,,pdv2|store
+Cleaved Caspase 3,3,imaging|suspension,antibody,Caspase-3 cleaved; cCasp3; Cleaved Caspase-3; cleaved caspase-3,curated|pdv2|store
+cleaved Caspase 7,1,suspension,antibody,Cleaved Caspase-7,pdv2|store
+cleaved PARP,1,suspension,antibody,Cleaved-PARP,pdv2|store
+Collagen Type I,6,imaging,antibody,COL1A1; Collagen 1; Collagen I,curated|pdv2|store
+CPT1A​,1,imaging,antibody,CPT1A,pdv2|store
+CX3CR1,5,suspension,antibody,,pdv2|store
+CyclinA,1,suspension,antibody,,pdv2|store
+CyclinB1,2,suspension,antibody,Cyclin B1,pdv2|store
+Cytokeratin 7,2,imaging|suspension,antibody,Cytokeratin7/CK7,pdv2|store
+DR3,1,suspension,antibody,,pdv2|store
+E-Cadherin,6,imaging|suspension,antibody,CD324; CD324/E-Cadherin; CDH1; E-cad,curated|pdv2|store|store:cd|store:part
+EGFR,4,imaging|suspension,antibody,,pdv2|store
+Estrogen receptor α,1,suspension,antibody,Estrogen Receptor a,pdv2|store
+F4/80,9,imaging|suspension,antibody,ADGRE1; EMR1,curated|store
+FAP,1,imaging,antibody,,pdv2|store
+FceR1a,1,suspension,antibody,,store
+FceRI,1,suspension,antibody,,pdv2|store
+Fibronectin,9,imaging,antibody,,pdv2|store
+FITC,3,suspension,secondary,,pdv2|store
+FoxP3,9,imaging|suspension,antibody,FOXP3; Foxp3,curated|pdv2|store
+Galectin-9,1,suspension,antibody,,pdv2|store
+GATA3,5,imaging|suspension,antibody,Gata3,pdv2|store
+Gata6,1,suspension,antibody,,pdv2|store
+GFAP,3,imaging|suspension,antibody,Glial Fibrillary Acidic Protein/GFAP,pdv2|store
+Glut-1,1,imaging,antibody,,pdv2|store
+GM-CSF,1,suspension,antibody,,pdv2|store
+Goat Anti-Mouse IgG,1,suspension,secondary,,store
+Goat Anti-Rabbit IgG,1,suspension,secondary,,store
+Goat Anti-Rat IgG,1,suspension,secondary,,store
+Gr-1 / Ly-6G/C,2,suspension,antibody,Gr-1; Ly-6G/Ly-6C,curated|store
+Granzyme B,12,imaging|suspension,antibody,GZMB; GzmB,curated|pdv2|store
+GSK3 β,1,imaging,antibody,GSK3 beta,pdv2|store
+HER2/ErbB2,2,suspension,antibody,ErbB2; HER2; HER2/ErbB2/EGFR2,pdv2|store|store:part
+Histone 3,1,suspension,antibody,Histone3,pdv2|store
+Histone H3,4,imaging,antibody,,pdv2|store
+"HLA-A,B,C",3,imaging|suspension,antibody,HLA-ABC,pdv2|store
+HLA-DR,9,imaging|suspension,antibody,,pdv2|store
+"HLA-DR, DP",1,suspension,antibody,,pdv2|store
+I-Ad,1,suspension,antibody,,store
+Iba1,2,imaging,antibody,,pdv2|store
+IDO,2,imaging,antibody,,pdv2|store
+IFNγ,5,suspension,antibody,IFN gamma; IFN-gamma; IFN-γ; IFNg,curated|pdv2|store
+IgD,3,suspension,antibody,,pdv2|store
+IgGκ,1,suspension,antibody,Ig kappa,pdv2|store
+IgGλ,1,suspension,antibody,Ig lambda,pdv2|store
+IgM,3,imaging|suspension,antibody,,pdv2|store
+IKZF1/Ikaros,1,suspension,antibody,Ikaros; IKZF1; IKZF1/IKAROS,pdv2|store|store:part
+IL-10,4,suspension,antibody,,pdv2|store
+IL-13,1,suspension,antibody,,pdv2|store
+IL-17A,8,suspension,antibody,,pdv2|store
+IL-17F,3,suspension,antibody,,pdv2|store
+IL-1β,1,suspension,antibody,IL-1b,pdv2|store
+IL-2,5,suspension,antibody,,pdv2|store
+IL-21,1,suspension,antibody,,pdv2|store
+IL-22,1,suspension,antibody,,pdv2|store
+IL-23 p19,1,suspension,antibody,,pdv2|store
+IL-4,5,suspension,antibody,,pdv2|store
+IL-5,3,suspension,antibody,,pdv2|store
+IL-6,5,suspension,antibody,,pdv2|store
+iNOS,7,imaging|suspension,antibody,,pdv2|store
+Integrin a9b1,1,suspension,antibody,,pdv2|store
+Integrin β7,1,suspension,antibody,Integrin b7,pdv2|store
+Invariant NKT,1,suspension,antibody,TCR Va24-Ja18,pdv2|store
+IRF4,1,suspension,antibody,,store
+Iκβα,1,suspension,antibody,IkBa,pdv2|store
+Keratin 8/18,2,imaging|suspension,antibody,Keratin (CK8/18),pdv2|store
+Ki-67,9,imaging|suspension,antibody,Ki67; MKI67,curated|pdv2|store
+KLF4,1,suspension,antibody,,pdv2|store
+LAP/TGFβ,2,suspension,antibody,LAP; TGF-Beta1/LAP; TGF-β1; TGF-β1/LAP; TGFβ,pdv2|store|store:part
+Lck,1,suspension,antibody,LCK,pdv2|store
+LDHA,1,imaging,antibody,,pdv2|store
+LGR5,1,suspension,antibody,Lgr5/Central LRR,pdv2|store
+Ly-6C,3,suspension,antibody,,store
+Ly-6G,8,imaging|suspension,antibody,,store
+Mac-2/Galectin-3,1,suspension,antibody,Galectin-3; Mac-2,pdv2|store|store:part
+MAP2,2,imaging,antibody,,pdv2|store
+MBP,5,imaging,antibody,,pdv2|store
+MCL-1,1,suspension,antibody,,pdv2|store
+Met,2,imaging|suspension,antibody,,pdv2|store
+MHC Class I,1,suspension,antibody,,store
+MHC Class II,10,imaging|suspension,antibody,MHC class II,pdv2|store
+MIC A/B,1,suspension,antibody,MICA/MICB,pdv2|store
+MIP1β,2,suspension,antibody,MIP1beta,pdv2|store
+MMP9,1,imaging,antibody,,pdv2|store
+MOG,3,imaging,antibody,,pdv2|store
+Mouse/Rat Foxp3,1,suspension,antibody,Mouse; Rat Foxp3,store|store:part
+MPO,1,imaging,antibody,,pdv2|store
+Musashi-1,1,suspension,antibody,Musashi-1/MSI1,pdv2|store
+Nanog,1,suspension,antibody,,pdv2|store
+Nestin,2,imaging|suspension,antibody,,pdv2|store
+NeuN,3,imaging,antibody,,pdv2|store
+Neurofilament,3,imaging,antibody,,pdv2|store
+NK1.1,2,suspension,antibody,,store
+NKB1,1,suspension,antibody,CD158e1/KIR3DL1/NKB1,pdv2|store
+Notch2,1,suspension,antibody,,pdv2|store
+Notch3,1,suspension,antibody,,pdv2|store
+Oct3/4,1,suspension,antibody,Oct-3/4,pdv2|store
+Olig2,2,imaging,antibody,,pdv2|store
+p-αSyn [S129],3,imaging,antibody,p-AlphaSyn [S129],pdv2|store
+p21 Waf1/Cip1,1,suspension,antibody,Cip1; p21 Waf1,pdv2|store|store:part
+P2RY12,3,imaging,antibody,,pdv2|store
+p38 [T180/Y182],1,suspension,antibody,p-p38 [T180/Y182],pdv2|store
+p4E-BP1 [T37/T46],3,imaging|suspension,antibody,p4E-BP1; Phospho-4EBP1,pdv2|store
+p53,3,imaging|suspension,antibody,,pdv2|store
+pAkt [S473],1,suspension,antibody,,pdv2|store
+Pan-Actin,2,imaging|suspension,antibody,,pdv2|store
+Pan-Cytokeratin,11,imaging|suspension,antibody,Cytokeratin; Pan-CK; Pan-CytoKeratin; pan-cytokeratin; Pan-Keratin; PanCK,curated|pdv2|store
+pBad [S112],1,suspension,antibody,pBad,pdv2|store
+pCREB,3,imaging|suspension,antibody,pCREB [S133]; Phospho-CREB [Ser133],pdv2|store
+PDGFRα,1,suspension,antibody,PDGFRa,pdv2|store
+PE,3,suspension,secondary,,pdv2|store
+pEGFR [Y1068],1,suspension,antibody,,pdv2|store
+Perforin,4,imaging|suspension,antibody,,pdv2|store
+pERK1/2 [T202/Y204],7,imaging|suspension,antibody,pERK 1/2 [T202/Y204],pdv2|store
+pH2AX [S139],1,imaging,antibody,,pdv2|store
+pHistone H2A.X [S139],1,suspension,antibody,pHistone H2A.X [Ser139],pdv2|store
+pHistone H3 [S28],1,suspension,antibody,,pdv2|store
+pHistone H3 [Ser28],1,imaging,antibody,,pdv2|store
+pLck [T505],1,suspension,antibody,,pdv2|store
+pMAPKAPK2 [T334],1,suspension,antibody,,pdv2|store
+pNFkBp65 [S529],2,imaging|suspension,antibody,p-NF-kBp65; pNF-kB p65 [S529]; pNFκBp65 [S529],pdv2|store
+Podoplanin,1,imaging,antibody,,pdv2|store
+pPLCγ2 [Y759],2,suspension,antibody,pPLCg2 [pY759],pdv2|store
+pRb [S807/S811],2,suspension,antibody,pRb [S807/811],pdv2|store
+Progesterone Receptor,1,suspension,antibody,Progesterone Receptor A/B,pdv2|store
+pS6 [S235/S236],4,imaging|suspension,antibody,,pdv2|store
+pSHP2 [Y580],1,suspension,antibody,,pdv2|store
+pSLP-76 [Y128],1,suspension,antibody,,pdv2|store
+pSMAD,1,imaging,antibody,,pdv2|store
+pStat3 [Y705],2,imaging|suspension,antibody,Phospho-Stat3,pdv2|store
+pStat4 [Y693],2,suspension,antibody,,pdv2|store
+pStat5 [Y694],2,suspension,antibody,pStat5 [pY694],pdv2|store
+pStat6 [Y641],3,suspension,antibody,,pdv2|store
+pTau [S202/T205],3,imaging,antibody,,pdv2|store
+PTEN,1,imaging,antibody,,pdv2|store
+pTYR,1,imaging,antibody,,pdv2|store
+pTyrosine,2,imaging|suspension,antibody,Phospho-Tyrosine; pTyrosine [Y100],pdv2|store
+pZAP70 [Y319]/pSyk [Y352],1,suspension,antibody,pSyk; pZAP70; pZAP70 [Y319]/Syk [Y352],pdv2|store|store:part
+RORγt,1,suspension,antibody,,store
+S100β,2,imaging,antibody,S100beta,pdv2|store
+SATB1,1,suspension,antibody,,store
+Sca-1/Ly-6A/E,2,suspension,antibody,Sca-1/ Ly-6A/E,store
+Siglec 8,1,suspension,antibody,Siglec-8,pdv2|store
+Siglec 9,1,suspension,antibody,Siglec-9,pdv2|store
+SOX2,2,imaging|suspension,antibody,Sox2,pdv2|store
+SOX9,1,imaging,antibody,SOX-9,pdv2|store
+Stat1 [pY701],2,suspension,antibody,pStat1 [Y701],pdv2|store
+Stat3,1,suspension,antibody,,pdv2|store
+Syk,2,imaging|suspension,antibody,SyK,pdv2|store
+Synaptophysin,3,imaging,antibody,,pdv2|store
+T-bet/TBX21,2,suspension,antibody,T-bet; Tbet; TBX21,pdv2|store|store:part
+Tau,3,imaging,antibody,,pdv2|store
+TCR Vα7.2,1,suspension,antibody,TCR Va7.2,pdv2|store
+TCRαβ,2,suspension,antibody,TCR alpha beta; TCRab; TCRα/β,pdv2|store
+TCRβ,2,suspension,antibody,,store
+TCRγδ,4,suspension,antibody,TCR gamma delta; TCR γ/δ,pdv2|store
+TdT,1,suspension,antibody,,pdv2|store
+TER-119,2,suspension,antibody,,store
+Thioredoxin,1,suspension,antibody,,pdv2|store
+TIGIT,5,suspension,antibody,,pdv2|store
+Tim-4,1,suspension,antibody,,pdv2|store
+TMEM119,3,imaging,antibody,,pdv2|store
+TNFα,6,suspension,antibody,TNF; TNF alpha; TNF-alpha; TNF-α,curated|pdv2|store
+TRA-1-60,1,suspension,antibody,,pdv2|store
+TSLP-R,1,suspension,antibody,,pdv2|store
+TWIST1,3,imaging,antibody,,pdv2|store
+Tyrosine Hydroxylase,3,imaging,antibody,,pdv2|store
+VE-cadherin,1,suspension,antibody,,pdv2|store
+VEGF,1,imaging,antibody,,pdv2|store
+Vimentin,8,imaging|suspension,antibody,VIM,curated|pdv2|store
+VISTA,2,imaging,antibody,Vista,pdv2|store
+XCR1,2,suspension,antibody,,store
+YAP1,1,imaging,antibody,,pdv2|store
+α-Smooth Muscle Actin,4,imaging,antibody,ACTA2; alpha-SMA; Alpha-Smooth Muscle Actin; aSMA; aSMA/ACTA2; SMA,curated|pdv2|store
+αSyn,3,imaging,antibody,AlphaSyn,pdv2|store
+β III Tubulin,3,imaging,antibody,Tubulin Beta3,pdv2|store
+β-actin,1,imaging,antibody,beta-Actin,pdv2|store
+β-Catenin,9,imaging|suspension,antibody,Beta-Catenin; beta-Catenin; CTNNB1; non-phospho (active) β-Catenin,curated|pdv2|store
+β-Tubulin,1,imaging,antibody,beta-Tubulin,pdv2|store
+β2-microglobulin,1,suspension,antibody,B2-microglobulin,pdv2|store

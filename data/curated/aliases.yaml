@@ -1,0 +1,35 @@
+# Curated target aliases. Each entry: canonical display name -> list of other spellings.
+# Merging rules applied automatically by the ETL BEFORE this file:
+#   1. normalised key (lowercase, Greek folded, non-alphanumerics removed) equality
+#   2. store <-> pdv2 names joined by part number (ground truth)
+#   3. "CDnnn/Name" strings: the CD number part is the join key
+# This file handles what those rules miss. Names are matched by normalised key, so case/punctuation do not matter.
+version: 2026-08-24.1
+aliases:
+  CD3ε: [CD3, CD3 epsilon, CD3e]
+  CD8a: [CD8, CD8 alpha, CD8α]
+  CD274/PD-L1: [PD-L1, PDL1, B7-H1]
+  CD279/PD-1: [PD-1, PD1, PDCD1]
+  CD152/CTLA-4: [CTLA-4, CTLA4]
+  CD223/LAG-3: [LAG-3, LAG3]
+  CD366/TIM-3: [TIM-3, TIM3, HAVCR2]
+  CD326/EpCAM: [EpCAM]
+  CD68: [KP1 antigen]
+  Pan-Cytokeratin: [Pan-Keratin, PanCK, Pan-CK, pan-cytokeratin, Cytokeratin]
+  α-Smooth Muscle Actin: [aSMA, SMA, ACTA2, alpha-SMA, Alpha-Smooth Muscle Actin]
+  Collagen Type I: [Collagen I, Collagen 1, COL1A1]
+  β-Catenin: [beta-Catenin, CTNNB1, Beta-Catenin]
+  Granzyme B: [GzmB, GZMB]
+  FoxP3: [Foxp3, FOXP3]
+  Ki-67: [Ki67, MKI67]
+  TNFα: [TNF, TNF alpha, TNF-α, TNF-alpha]
+  IFNγ: [IFN gamma, IFN-γ, IFN-gamma, IFNg]
+  Cleaved Caspase 3: [Caspase-3 cleaved, cleaved caspase-3, cCasp3]
+  CD31/PECAM-1: [PECAM1, PECAM-1]
+  CD206/MMR: [MRC1, Mannose receptor]
+  F4/80: [EMR1, ADGRE1]
+  Gr-1 / Ly-6G/C: [Gr-1, Ly-6G/Ly-6C]
+  CD45R/B220: [B220]
+  Vimentin: [VIM]
+  E-Cadherin: [CDH1, E-cad]
+  CD16/32: [FcγRII/III, Fc block]

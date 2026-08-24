@@ -1,0 +1,31 @@
+# Reported Reactivity vocabulary -> canonical species code. Unlisted values are kept verbatim under code "other".
+version: 2026-08-24.1
+species:
+  human: [Human, Human Chimpanzee, "Human. Mouse"]
+  mouse: [Mouse, mouse]
+  rat: [Rat, rat]
+  nhp: [Baboon, Chimpanzee, Rhesus Macaque, Rhesus, African Green, African Green Monkey, Cynomolgus Macaque, Cynomolgus,
+        Common Marmoset, Pigtailed Macaque, Squirrel Monkey, Monkey, Sooty Mangabey, Capuchin Monkey, Cotton-Topped Tamarin,
+        Cotton-topped Tamarin, Non-human primate, Marmoset, Macaque, Cynamolgus, Cynomolgus Monkey, Rhesus Monkey,
+        Olive Baboon, Primate, "Cross-Reactivity: Chimpanzee"]
+  pig: [Pig, Porcine, Swine, "Swine (Pig", "Porcine)"]
+  dog: [Dog, Canine, "Dog (Canine)", Do]
+  cat: [Cat, Feline, "Cat (Feline)"]
+  cow: [Cow, Bovine, Cattle, "Cattle (Bovine", "Cow)"]
+  rabbit: [Rabbit, "Rabbit (Lapine)", "Rabbit+F1730:F1819", "Horse Rabbit"]
+  hamster: [Hamster]
+  sheep: [Sheep, "Sheep (Ovine)"]
+  horse: [Horse, Equine, "Horse (Equine)", "(Horse reactivity)"]
+  chicken: [Chicken]
+  guinea_pig: [Guinea Pig]
+  goat: [Goat]
+  zebrafish: [Zebrafish]
+  other_model: ["C. elegans", "D. melanogaster", "S. cerevisiae", S.cerevisiae, Mink, Bamboo]
+pseudo:
+  Cross: cross          # species per TDS unknown -> human+mouse, low confidence
+  All species: all
+  All: all
+  All Species Expected: all
+  Polyclonal: ignore
+  "Endogenous Human c-Myc; fusion protein with c-Myc tag (EQKLISEEDL": ignore
+  "around 1.2kD) in all species": all
