@@ -21,7 +21,7 @@ export function MassStrip({ instrument, result }: { instrument: InstrumentDef; r
 
   return (
     <div>
-      <div className="flex h-24 items-end gap-px overflow-x-auto pb-1">
+      <div className="flex h-24 items-end gap-px pb-1">
         {channels.map((c) => {
           const occ = occupant.get(c.mass);
           const res = reserved.get(c.mass);
@@ -33,7 +33,7 @@ export function MassStrip({ instrument, result }: { instrument: InstrumentDef; r
             : occ ? `${c.label}: ${occ.label} — receives ${occ.received.toFixed(1)} counts (${occ.receivedOverT.toFixed(2)} × tolerance); sensitivity ${c.rel_sensitivity.toFixed(2)}`
               : `${c.label}: free; sensitivity ${c.rel_sensitivity.toFixed(2)}`;
           return (
-            <div key={c.mass} className="flex w-[14px] shrink-0 flex-col items-center justify-end" title={title}>
+            <div key={c.mass} className="flex min-w-0 flex-1 flex-col items-center justify-end" title={title}>
               <div className={cx("w-full rounded-t-sm transition-all", tone)} style={{ height: h }} />
               <div className="mt-0.5 text-[8px] leading-none text-slate-500">{c.mass % 5 === 0 || c.mass === 89 ? c.mass : " "}</div>
             </div>

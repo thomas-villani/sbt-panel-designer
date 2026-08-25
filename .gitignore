@@ -25,3 +25,4 @@ web/out/
 web/public/data/
 web/next-env.d.ts
 web/*.tsbuildinfo
+web/scripts/shots/

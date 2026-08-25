@@ -35,7 +35,15 @@ export function BalanceStep() {
     );
   }
 
-  const warnings = result?.warnings ?? [];
+  if (!result) {
+    return (
+      <div className="space-y-6">
+        <H2>Balance</H2>
+        {engineError ? <div className="rounded-md bg-rose-50 p-3 text-sm text-rose-800">Engine error: {engineError}</div> : <div className="text-sm text-slate-500">Balancing…</div>}
+      </div>
+    );
+  }
+  const warnings = result.warnings;
   const serious = warnings.filter((w) => w.severity !== "info");
 
   return (
@@ -103,7 +111,7 @@ function HeatMap() {
       <H2 hint="rows give, columns receive; cell = fraction of the receiver's tolerance">Overlap map</H2>
       <div className="overflow-x-auto">
         <table className="text-[10px]">
-          <thead><tr><th className="p-0.5" /><th className="p-0.5" />{rows.map((r) => <th key={r.rowId} className="p-0.5 align-bottom"><div className="w-5 origin-bottom-left -rotate-90 whitespace-nowrap text-left" style={{ writingMode: "vertical-rl" }}>{r.label}</div></th>)}</tr></thead>
+          <thead><tr><th className="p-0.5" /><th className="p-0.5" />{rows.map((r) => <th key={r.rowId} className="h-28 w-5 p-0 align-bottom font-normal"><div className="mx-auto h-28 w-5 whitespace-nowrap text-left leading-5" style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}>{r.label}</div></th>)}</tr></thead>
           <tbody>
             {rows.map((g) => (
               <tr key={g.rowId}>
