@@ -18,6 +18,14 @@ See [docs/TECHNICAL.md](docs/TECHNICAL.md) for the engineering reference (data p
 | `docs/` | Spec, ADRs, validation reports |
 | `tools/` | One-off capture scripts used to harvest pdv2 (not part of the build) |
 
+## Tests
+
+```
+npm test            # etl (pytest) + engine (vitest) + web unit (vitest)
+npm run e2e         # Playwright scenario tests against next dev (first: cd web && npx playwright install chromium)
+npm run typecheck
+```
+
 ## Build the data bundle
 
 ```

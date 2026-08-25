@@ -26,3 +26,5 @@ web/public/data/
 web/next-env.d.ts
 web/*.tsbuildinfo
 web/scripts/shots/
+web/test-results/
+web/playwright-report/

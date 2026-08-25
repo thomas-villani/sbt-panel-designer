@@ -25,7 +25,7 @@ web/                       Next.js 16 static export (Tailwind, Zustand, engine i
 .github/workflows/         pages.yml: test engine, build web, deploy to GitHub Pages
 ```
 
-Tests: 26 pytest (etl), 12 vitest (engine), `web/scripts/smoke.ts` headless scenario. All work committed on `master`.
+Tests: 26 pytest (etl), 12 vitest (engine), 21 vitest + 3 Playwright (web) - see 3c. All work committed on `master`.
 
 ---
 
@@ -274,6 +274,25 @@ data fetches. Deployment: `.github/workflows/pages.yml` runs engine tests, build
 
 Not yet in the UI: exclusivity groups (engine supports them), pdv2 CSV import/export, prices/cart/quote, login/FAS mode,
 "start from" gallery of saved panels.
+
+---
+
+## 3c. Test suite
+
+| Layer | Tool | Where | Run |
+|---|---|---|---|
+| ETL | pytest (26) | `etl/tests/` | `cd etl && uv run pytest` |
+| Engine | vitest (12) | `engine/test/` | `cd engine && npm test` |
+| Web unit | vitest (21) | `web/test/` — data (search, clone defaulting, modules, rowSpec, budget), url, bom, store | `cd web && npm test` |
+| Web e2e | @playwright/test (3) | `web/e2e/designer.spec.ts` — SPEC 6.4 Priya scenario, suspension backbone, custom-conjugation search | `cd web && npm run e2e` (starts `next dev` itself) |
+| Kit reproduction | script | `engine/scripts/validate-kits.ts` | `cd engine && npm run validate` |
+
+Root `package.json` wraps them: `npm test` (etl + engine + web unit), `npm run e2e`, `npm run typecheck`, `npm run validate`,
+`npm run data` (full ETL). Web unit tests read `web/public/data` (rebuilt by `pretest`), and the store tests exercise the real
+engine on the main thread (the worker client falls back when `Worker` is undefined). CI: `.github/workflows/ci.yml` runs all
+layers incl. Playwright (Chromium) on every push/PR; `pages.yml` deploys the demo on push to master.
+
+`web/scripts/drive.mjs` is a screenshot walk-through (writes `web/scripts/shots/*.png`) for visual review; it is not part of CI.
 
 ---
 
