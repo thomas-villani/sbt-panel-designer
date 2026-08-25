@@ -61,3 +61,7 @@ npm run build                   # static export to web/out (NEXT_PUBLIC_BASE_PAT
 
 Setup → Build → Balance → Order in one page; metals appear only after Balance; every state is a shareable URL.
 `.github/workflows/pages.yml` deploys `web/out` to GitHub Pages on push (enable Pages → Source: GitHub Actions in the repo settings).
+
+## Roadmap
+
+See [ROADMAP.md](ROADMAP.md) for the backlog (antibody image gallery, publications, real IMC priors, pdv2 import/export, quote flow, FAS mode, SEO pages, Azure).

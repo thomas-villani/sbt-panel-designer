@@ -313,6 +313,8 @@ layers incl. Playwright (Chromium) on every push/PR; `pages.yml` deploys the dem
 
 ## 5. Roadmap
 
+Phase status below; the full backlog with rationale lives in [ROADMAP.md](../ROADMAP.md).
+
 | Phase | Scope | Status |
 |---|---|---|
 | 0 | Instrument tables, catalogue, modules ETL; review sheets | done |
