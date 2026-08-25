@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import type { InstrumentBundle, InstrumentDef, PoMatrix, Problem, Row } from "../src/index.js";
+import type { InstrumentBundle, InstrumentDef, PoMatrix, Problem, Row } from "../src/index";
 
 const here = dirname(fileURLToPath(import.meta.url));
 export const BUILD_DIR = resolve(here, "../../data/build");

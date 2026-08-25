@@ -5,8 +5,8 @@
  * plus unary soft terms (sensitivity, flagged channels, caller-supplied per-channel costs).
  * Everything is index-based (rows 0..n-1, channels 0..m-1) so the optimiser's deltas are cheap.
  */
-import type { Mechanism, Problem, RangeClass, Row, Weights } from "./types.js";
-import { DEFAULT_WEIGHTS } from "./types.js";
+import type { Mechanism, Problem, RangeClass, Row, Weights } from "./types";
+import { DEFAULT_WEIGHTS } from "./types";
 
 export const NONE = -1;
 

@@ -1,7 +1,7 @@
 /** Build a Problem from the instrument bundle and user-level row specs. */
-import { massOf } from "./metals.js";
-import { signalTolerance } from "./prior.js";
-import type { AbundanceLevel, InstrumentBundle, InstrumentDef, Modality, Problem, Row, Weights } from "./types.js";
+import { massOf } from "./metals";
+import { signalTolerance } from "./prior";
+import type { AbundanceLevel, InstrumentBundle, InstrumentDef, Modality, Problem, Row, Weights } from "./types";
 
 /** Maxpar X8 labelling-kit lanthanides (+89Y): what a custom conjugation can use. */
 export const X8_MASSES = [

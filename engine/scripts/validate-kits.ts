@@ -6,8 +6,8 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { DEFAULT_WEIGHTS, PDV2_WEIGHTS, balance, buildProblem, evaluate } from "../src/index.js";
-import type { InstrumentBundle, Result, RowSpec } from "../src/index.js";
+import { DEFAULT_WEIGHTS, PDV2_WEIGHTS, balance, buildProblem, evaluate } from "../src/index";
+import type { InstrumentBundle, Result, RowSpec } from "../src/index";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(here, "../..");

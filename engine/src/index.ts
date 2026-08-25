@@ -1,16 +1,16 @@
 /** PD3 engine public API. Pure functions, no I/O: safe to run in a Web Worker. */
-import { buildResult } from "./explain.js";
-import { Model, NONE } from "./po-model.js";
-import { optimize } from "./optimizer.js";
-import type { OptimizerOptions, Problem, Result } from "./types.js";
+import { buildResult } from "./explain";
+import { Model, NONE } from "./po-model";
+import { optimize } from "./optimizer";
+import type { OptimizerOptions, Problem, Result } from "./types";
 
-export * from "./types.js";
-export * from "./prior.js";
-export * from "./metals.js";
-export * from "./problem.js";
-export { Model, NONE, dimness, mechanismOf } from "./po-model.js";
-export { greedy, augment, descend, anneal, optimize, mulberry32 } from "./optimizer.js";
-export { buildResult, bestMoveFor, SPILL_WARN, SPILL_CRIT } from "./explain.js";
+export * from "./types";
+export * from "./prior";
+export * from "./metals";
+export * from "./problem";
+export { Model, NONE, dimness, mechanismOf } from "./po-model";
+export { greedy, augment, descend, anneal, optimize, mulberry32 } from "./optimizer";
+export { buildResult, bestMoveFor, SPILL_WARN, SPILL_CRIT } from "./explain";
 
 /** Assign channels to every row of the problem and explain the result. */
 export function balance(problem: Problem, opts: OptimizerOptions = {}): Result {

@@ -4,7 +4,7 @@ Engine re-ran 61 SBT kits with every row unlocked (domain = catalogue metals for
 pdv2 weights (pure sum received SO / T), default reserved channels, seed 1. `def` columns use the default soft weights (w_sens 0.2).
 
 * engine better than kit: **45**, equal: **16**, worse: **0** (none)
-* total engine time: 639 ms (10 ms per kit, 3 restarts x 20k iterations)
+* total engine time: 376 ms (6 ms per kit, 3 restarts x 20k iterations)
 
 | Kit | App | Instrument | Rows | Kit SO/T | Kit worst row | Engine SO/T | Engine worst row | Moves | Def SO/T | Def moves |
 |---|---|---|---:|---:|---|---:|---|---:|---:|---:|

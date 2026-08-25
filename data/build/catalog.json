@@ -2461,8 +2461,8 @@
    "aliases": [
     "CD335",
     "CD335/Nkp46",
-    "Nkp46",
-    "NKp46"
+    "NKp46",
+    "Nkp46"
    ],
    "sources": [
     "store",
@@ -2575,8 +2575,8 @@
     "CD366/Tim-3",
     "CD366/TIM3",
     "HAVCR2",
-    "TIM-3",
     "Tim-3",
+    "TIM-3",
     "TIM3"
    ],
    "sources": [
@@ -3805,8 +3805,8 @@
    "aliases": [
     "Caspase-3 cleaved",
     "cCasp3",
-    "cleaved caspase-3",
-    "Cleaved Caspase-3"
+    "Cleaved Caspase-3",
+    "cleaved caspase-3"
    ],
    "sources": [
     "curated",
@@ -4332,8 +4332,8 @@
    "id": "granzymeb",
    "name": "Granzyme B",
    "aliases": [
-    "GzmB",
-    "GZMB"
+    "GZMB",
+    "GzmB"
    ],
    "sources": [
     "curated",
@@ -5652,8 +5652,8 @@
    "aliases": [
     "Cytokeratin",
     "Pan-CK",
-    "pan-cytokeratin",
     "Pan-CytoKeratin",
+    "pan-cytokeratin",
     "Pan-Keratin",
     "PanCK"
    ],
@@ -6887,8 +6887,8 @@
    "id": "nonpactivebcatenin",
    "name": "β-Catenin",
    "aliases": [
-    "Beta-Catenin",
     "beta-Catenin",
+    "Beta-Catenin",
     "CTNNB1",
     "non-phospho (active) β-Catenin"
    ],
@@ -45533,7 +45533,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -45576,7 +45576,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -45622,7 +45622,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -45698,7 +45698,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -45747,7 +45747,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -45794,7 +45794,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -45841,7 +45841,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -45924,7 +45924,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -45969,7 +45969,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46012,7 +46012,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46061,7 +46061,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46163,7 +46163,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46210,7 +46210,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46260,7 +46260,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46303,7 +46303,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46346,7 +46346,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46397,7 +46397,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46456,7 +46456,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46499,7 +46499,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46544,7 +46544,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46588,7 +46588,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46635,7 +46635,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46680,7 +46680,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46724,7 +46724,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46767,7 +46767,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46817,7 +46817,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46860,7 +46860,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46904,7 +46904,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46951,7 +46951,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -46998,7 +46998,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47041,7 +47041,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47084,7 +47084,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47128,7 +47128,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47173,7 +47173,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47216,7 +47216,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47267,7 +47267,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47310,7 +47310,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47386,7 +47386,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47430,7 +47430,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47479,7 +47479,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47522,7 +47522,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47565,7 +47565,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47608,7 +47608,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47651,7 +47651,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47731,7 +47731,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47775,7 +47775,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47818,7 +47818,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47879,7 +47879,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47922,7 +47922,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -47965,7 +47965,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48008,7 +48008,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48084,7 +48084,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48132,7 +48132,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48208,7 +48208,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48251,7 +48251,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48302,7 +48302,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48347,7 +48347,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48391,7 +48391,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48434,7 +48434,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48477,7 +48477,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48520,7 +48520,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48579,7 +48579,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48622,7 +48622,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48698,7 +48698,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48741,7 +48741,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48790,7 +48790,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48899,7 +48899,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48942,7 +48942,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -48985,7 +48985,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49038,7 +49038,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49081,7 +49081,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49124,7 +49124,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49169,7 +49169,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49214,7 +49214,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49261,7 +49261,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49304,7 +49304,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49384,7 +49384,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49427,7 +49427,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49505,7 +49505,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49548,7 +49548,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49624,7 +49624,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49667,7 +49667,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49710,7 +49710,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49756,7 +49756,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49799,7 +49799,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49842,7 +49842,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49920,7 +49920,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -49967,7 +49967,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50010,7 +50010,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50056,7 +50056,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50101,7 +50101,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50148,7 +50148,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50195,7 +50195,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50278,7 +50278,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50370,7 +50370,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50450,7 +50450,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50507,7 +50507,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50552,7 +50552,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50630,7 +50630,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50689,7 +50689,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50771,7 +50771,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50814,7 +50814,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50857,7 +50857,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50904,7 +50904,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50951,7 +50951,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -50994,7 +50994,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51042,7 +51042,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51085,7 +51085,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51128,7 +51128,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51174,7 +51174,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51217,7 +51217,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51262,7 +51262,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51307,7 +51307,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51387,7 +51387,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51430,7 +51430,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51475,7 +51475,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51520,7 +51520,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51563,7 +51563,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51606,7 +51606,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51690,7 +51690,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51733,7 +51733,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51776,7 +51776,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51819,7 +51819,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51862,7 +51862,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51905,7 +51905,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51952,7 +51952,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -51999,7 +51999,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52046,7 +52046,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52089,7 +52089,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52132,7 +52132,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52183,7 +52183,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52230,7 +52230,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52277,7 +52277,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52320,7 +52320,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52370,7 +52370,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52415,7 +52415,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52478,7 +52478,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52523,7 +52523,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52571,7 +52571,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52619,7 +52619,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52733,7 +52733,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52795,7 +52795,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52838,7 +52838,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52881,7 +52881,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52924,7 +52924,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -52967,7 +52967,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53010,7 +53010,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53056,7 +53056,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53102,7 +53102,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53148,7 +53148,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53196,7 +53196,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53244,7 +53244,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53292,7 +53292,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53344,7 +53344,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53396,7 +53396,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53448,7 +53448,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53495,7 +53495,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53542,7 +53542,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53589,7 +53589,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53632,7 +53632,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53675,7 +53675,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53718,7 +53718,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53762,7 +53762,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53806,7 +53806,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53849,7 +53849,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53892,7 +53892,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53935,7 +53935,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -53981,7 +53981,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54027,7 +54027,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54073,7 +54073,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54117,7 +54117,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54161,7 +54161,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54205,7 +54205,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54248,7 +54248,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54291,7 +54291,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54334,7 +54334,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54384,7 +54384,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54434,7 +54434,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54484,7 +54484,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54527,7 +54527,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54570,7 +54570,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54613,7 +54613,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54656,7 +54656,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54699,7 +54699,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54749,7 +54749,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54799,7 +54799,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54845,7 +54845,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54891,7 +54891,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54937,7 +54937,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -54983,7 +54983,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55032,7 +55032,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55081,7 +55081,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55129,7 +55129,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55177,7 +55177,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55225,7 +55225,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55271,7 +55271,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55317,7 +55317,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55364,7 +55364,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55411,7 +55411,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55495,7 +55495,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55674,7 +55674,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55721,7 +55721,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55768,7 +55768,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55815,7 +55815,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55862,7 +55862,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55909,7 +55909,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55954,7 +55954,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -55999,7 +55999,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -56044,7 +56044,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -56089,7 +56089,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -56134,7 +56134,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -56181,7 +56181,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -56228,7 +56228,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -56312,7 +56312,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -56396,7 +56396,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -56443,7 +56443,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -56490,7 +56490,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -56537,7 +56537,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -56582,7 +56582,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -56627,7 +56627,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -56672,7 +56672,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -57394,7 +57394,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -57437,7 +57437,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -57480,7 +57480,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -57523,7 +57523,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -57570,7 +57570,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -57617,7 +57617,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -57664,7 +57664,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -57711,7 +57711,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -57754,7 +57754,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -57797,7 +57797,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -57840,7 +57840,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -57883,7 +57883,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -57926,7 +57926,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -57971,7 +57971,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -58016,7 +58016,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -58061,7 +58061,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -58106,7 +58106,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -58417,7 +58417,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -58464,7 +58464,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -58511,7 +58511,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -58558,7 +58558,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -58605,7 +58605,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -58652,7 +58652,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -58699,7 +58699,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -58742,7 +58742,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -58785,7 +58785,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -58861,7 +58861,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -58904,7 +58904,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -58947,7 +58947,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -58990,7 +58990,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59033,7 +59033,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59076,7 +59076,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59121,7 +59121,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59166,7 +59166,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59211,7 +59211,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59256,7 +59256,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59299,7 +59299,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59342,7 +59342,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59385,7 +59385,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59461,7 +59461,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59504,7 +59504,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59547,7 +59547,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59592,7 +59592,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59637,7 +59637,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59682,7 +59682,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59729,7 +59729,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59776,7 +59776,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59823,7 +59823,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59870,7 +59870,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59917,7 +59917,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -59964,7 +59964,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60011,7 +60011,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60058,7 +60058,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60105,7 +60105,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60151,7 +60151,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60197,7 +60197,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60243,7 +60243,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60290,7 +60290,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60337,7 +60337,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60384,7 +60384,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60427,7 +60427,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60470,7 +60470,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60513,7 +60513,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60568,7 +60568,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60623,7 +60623,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60678,7 +60678,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60733,7 +60733,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60788,7 +60788,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60835,7 +60835,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60882,7 +60882,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60929,7 +60929,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -60977,7 +60977,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61025,7 +61025,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61073,7 +61073,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61118,7 +61118,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61163,7 +61163,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61209,7 +61209,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61254,7 +61254,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61299,7 +61299,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61344,7 +61344,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61389,7 +61389,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61434,7 +61434,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61479,7 +61479,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61524,7 +61524,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61569,7 +61569,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61614,7 +61614,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61659,7 +61659,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61705,7 +61705,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61751,7 +61751,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61797,7 +61797,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61843,7 +61843,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61889,7 +61889,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -61935,7 +61935,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -62249,7 +62249,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -62297,7 +62297,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -62338,7 +62338,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -62379,7 +62379,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -62687,7 +62687,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -62737,7 +62737,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -62871,7 +62871,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -62919,7 +62919,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -63057,7 +63057,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -63109,7 +63109,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -63244,7 +63244,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -63293,7 +63293,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -65322,7 +65322,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -65365,7 +65365,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -65413,7 +65413,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -65461,7 +65461,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -68944,7 +68944,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -68985,7 +68985,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -70118,7 +70118,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -70161,7 +70161,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -71294,7 +71294,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -71349,7 +71349,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -77140,7 +77140,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -77183,7 +77183,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -78737,7 +78737,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -78783,7 +78783,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -79540,7 +79540,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -79583,7 +79583,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -83354,7 +83354,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -83397,7 +83397,7 @@
     "cell": null,
     "stim": null,
     "st_source": "placeholder",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -85744,7 +85744,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -85793,7 +85793,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -92624,7 +92624,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -92671,7 +92671,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -94698,7 +94698,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -94741,7 +94741,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -96430,7 +96430,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -96475,7 +96475,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -100296,7 +100296,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -100341,7 +100341,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -115316,7 +115316,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -115368,7 +115368,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -115667,7 +115667,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -115708,7 +115708,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -115839,7 +115839,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -115884,7 +115884,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -116701,7 +116701,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -116742,7 +116742,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -116783,7 +116783,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -116824,7 +116824,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -116865,7 +116865,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -116909,7 +116909,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -116950,7 +116950,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -116991,7 +116991,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117034,7 +117034,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117079,7 +117079,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117128,7 +117128,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117169,7 +117169,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117213,7 +117213,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117256,7 +117256,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117301,7 +117301,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117346,7 +117346,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117391,7 +117391,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117432,7 +117432,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117519,7 +117519,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117560,7 +117560,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117601,7 +117601,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117645,7 +117645,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117686,7 +117686,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117727,7 +117727,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117770,7 +117770,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117815,7 +117815,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117864,7 +117864,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117905,7 +117905,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117949,7 +117949,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -117992,7 +117992,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -118037,7 +118037,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -118082,7 +118082,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -118127,7 +118127,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -118168,7 +118168,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -120467,7 +120467,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -120510,7 +120510,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -120756,7 +120756,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -120878,7 +120878,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -120957,7 +120957,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -121078,7 +121078,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -121123,7 +121123,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -121166,7 +121166,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -121242,7 +121242,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -121287,7 +121287,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },
@@ -121365,7 +121365,7 @@
     "cell": null,
     "stim": null,
     "st_source": "titrated",
-    "release_date": NaN,
+    "release_date": null,
     "custom_avail": true,
     "optimize_avail": true
    },

@@ -4,7 +4,7 @@ Maxpar Panel Designer v3: a login-optional web tool for designing metal-balanced
 replacing pdv2.standardbio.com. Product spec: [`../SPEC.md`](../SPEC.md). This document is the engineering
 reference: what exists, how the data flows, and the maths the engine implements.
 
-Status (2026-08-24): Phase 0 (data) and Phase 1 (engine) complete. Phase 2 (web UI) next.
+Status (2026-08-24): Phase 0 (data), Phase 1 (engine) and Phase 2 (web UI alpha, GitHub Pages workflow) complete. Next: pdv2 CSV import/export, exclusivity groups in the UI, quote/cart integration after UI sign-off.
 
 ---
 
@@ -21,10 +21,11 @@ data/build/                generated JSON bundles consumed by the engine and the
 etl/                       Python 3.12 (uv) ETL: pd3_etl package + pytest
 engine/                    TypeScript engine (npm, vitest): PO model, optimiser, explanations, kit validation
 tools/                     one-off harvest/inspection scripts used to capture pdv2 (node .mjs, python)
-web/                       (empty) Next.js static app — Phase 2
+web/                       Next.js 16 static export (Tailwind, Zustand, engine in a Web Worker) — Phase 2
+.github/workflows/         pages.yml: test engine, build web, deploy to GitHub Pages
 ```
 
-Git: five commits on `master`, all work committed. Tests: 26 pytest (etl), 12 vitest (engine).
+Tests: 26 pytest (etl), 12 vitest (engine), `web/scripts/smoke.ts` headless scenario. All work committed on `master`.
 
 ---
 
@@ -235,6 +236,47 @@ uses are released and noted). `evaluate(kitAssignment)` vs `balance()`:
 
 ---
 
+## 3b. Web app (Phase 2) — `web/`
+
+Next.js 16 (App Router, Turbopack) static export, Tailwind 4, Zustand 5. No server: the three bundles are fetched from
+`public/data/` and the engine runs in a Web Worker. `npm run dev` / `npm run build` (both first run `scripts/build-data.mjs`,
+which slims `data/build/*.json` into `public/data/` — 87 + 609 + 281 KB). Output: `web/out/`.
+
+```
+app/            layout + page (renders <Designer/>)
+components/     Designer (stepper + sidebar layout), SetupStep, BuildStep, BalanceStep (+HeatMap), MassStrip, OrderStep,
+                PanelSidebar (rows: abundance pill, metal chip after Balance, clone/lock drawer), ui (Button/Pill/Card/Tile)
+lib/types.ts    slim bundle shapes; PanelRow {id, targetId, name, level, clone, custom, locked, moduleIds}; Setup
+lib/data.ts     loadBundles, Index (targets/conjugates/modules, normKey search, cloneOptions, modulesFor, suggestNext),
+                rowSpec (PanelRow -> engine RowSpec), reservedRoles, channelBudget, SPECIES / SAMPLE_TYPES
+lib/store.ts    Zustand store: setup, rows, step, balanced, result; every mutation re-writes the URL hash and, once the
+                user has balanced, re-runs the engine (120 ms debounce)
+lib/engine-client.ts + workers/balance.worker.ts   init(bundle) once, then balance/evaluate by request id
+lib/url.ts      state <-> base64url JSON in location.hash (shareable without an account)
+lib/bom.ts      BOM lines (SKU + format + qty from sample count), accessories from reserved roles, CSV
+scripts/smoke.ts   headless SPEC 6.4 walk-through: `../engine/node_modules/.bin/tsx scripts/smoke.ts`
+```
+
+Design rules implemented from SPEC §6.0: metals are never an input (only `locked`, a user decision, is stored); the metal
+chip appears after the first Balance; modules are the front door; clone selector only when > 1 clone; custom conjugation
+offered inline when nothing in the catalogue fits the species/application; each warning carries an Apply button that locks
+the fix and re-balances.
+
+Clone defaulting (`Index.cloneOptions`): candidates = conjugates with the setup's application, kind antibody, reactivity
+containing the species (`other` = any); sorted sample-type validated first (imaging), then most conjugates. Titrated S/T
+(median over the clone's conjugates) is used only when it agrees with the row's abundance level — a user override of the
+level wins.
+
+Build notes: `@pd3/engine` is a `file:../engine` dependency resolved from TypeScript source, so `next.config.ts` sets
+`turbopack.root` to the repo root and `transpilePackages`; the engine therefore uses extensionless relative imports (Turbopack
+does not map `./x.js` → `./x.ts`). `NEXT_PUBLIC_BASE_PATH` (set to `/<repo>` by the Pages workflow) prefixes both routes and
+data fetches. Deployment: `.github/workflows/pages.yml` runs engine tests, builds, and publishes `web/out` on push to master.
+
+Not yet in the UI: exclusivity groups (engine supports them), pdv2 CSV import/export, prices/cart/quote, login/FAS mode,
+"start from" gallery of saved panels.
+
+---
+
 ## 4. Conventions and gotchas
 
 * **Windows dev box**: `uv run` for all Python; Node 24 / npm 11. Bash heredocs with non-ASCII or heavy quoting are unreliable —
@@ -244,6 +286,8 @@ uses are released and noted). `evaluate(kitAssignment)` vs `balance()`:
 * Metal labels are normalised to `<mass><Element>` (`145ND` → `145Nd`); the engine keys everything by integer mass.
 * Conjugate ids: `targetId|clone|metal|s` (suspension) or `|i` (imaging). Kit rows link via `conjugate_id` when an exact match
   is sold, else `catalogue_metals` lists what is.
+* Bash `cd` persists between tool calls on this box — use absolute paths.
+* `write_json` in the ETL converts pandas NaN to `null` (browsers reject `NaN` in JSON).
 * Commits end with `Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>`.
 
 ---
@@ -254,7 +298,7 @@ uses are released and noted). `evaluate(kitAssignment)` vs `balance()`:
 |---|---|---|
 | 0 | Instrument tables, catalogue, modules ETL; review sheets | done |
 | 1 | Engine: PO model, optimiser, explanations, kit validation | done |
-| 2 | `web/` Next.js static export — Setup → Build → Balance → Order; engine in a Web Worker; Zustand; Tailwind/shadcn | next |
-| 2b | GitHub Actions → GitHub Pages demo for SBT stakeholders | next |
+| 2 | `web/` Next.js static export — Setup → Build → Balance → Order; engine in a Web Worker; Zustand; Tailwind | done (alpha) |
+| 2b | GitHub Actions → GitHub Pages demo for SBT stakeholders | workflow in place; needs a GitHub remote + Pages enabled |
 | 3 | pdv2 CSV import/export (SPEC §9b), BOM / quote object (MDIPA as one SKU), IMC literature prior, exclusivity groups from lineage | planned |
 | 4 | Azure production deploy; WooCommerce / purchasing / SFDC integration — only after UI sign-off | deferred |

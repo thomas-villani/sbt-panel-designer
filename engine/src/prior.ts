@@ -1,4 +1,4 @@
-import type { AbundanceLevel } from "./types.js";
+import type { AbundanceLevel } from "./types";
 
 /**
  * Abundance prior v0: signal / tolerance in dual counts per abundance level.

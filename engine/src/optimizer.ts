@@ -1,6 +1,6 @@
 /** Greedy seed (dimmest first) + augmenting-path repair + simulated annealing + local descent. */
-import { Model, NONE } from "./po-model.js";
-import type { OptimizerOptions } from "./types.js";
+import { Model, NONE } from "./po-model";
+import type { OptimizerOptions } from "./types";
 
 export function mulberry32(seed: number): () => number {
   let a = seed >>> 0;

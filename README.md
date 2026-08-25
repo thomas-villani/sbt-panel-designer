@@ -41,3 +41,15 @@ npm run validate                # SPEC 5.6: re-run all SBT kits unlocked -> docs
 Public API (`engine/src/index.ts`): `buildProblem(bundle, {instrumentId, rows, ...})` then `balance(problem)` or
 `evaluate(problem, assignment)` returns a `Result` with per-row explanations, warnings and one-click fixes.
 Pure functions, no I/O, so it runs unchanged in a Web Worker. Abundance prior v0 lives in `engine/src/prior.ts`.
+
+### Web app (Next.js, `web/`)
+
+```
+cd web
+npm install
+npm run dev                     # http://localhost:3000 (copies data/build -> public/data first)
+npm run build                   # static export to web/out (NEXT_PUBLIC_BASE_PATH=/<repo> for GitHub Pages)
+```
+
+Setup → Build → Balance → Order in one page; metals appear only after Balance; every state is a shareable URL.
+`.github/workflows/pages.yml` deploys `web/out` to GitHub Pages on push (enable Pages → Source: GitHub Actions in the repo settings).

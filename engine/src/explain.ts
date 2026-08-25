@@ -1,6 +1,6 @@
 /** Turn an assignment into per-row explanations, warnings and one-click fixes. */
-import { Model, NONE, mechanismOf } from "./po-model.js";
-import type { Contribution, Fix, RangeClass, Result, RowResult, Warning } from "./types.js";
+import { Model, NONE, mechanismOf } from "./po-model";
+import type { Contribution, Fix, RangeClass, Result, RowResult, Warning } from "./types";
 
 export const SPILL_WARN = 0.5; // received / T above this -> warning
 export const SPILL_CRIT = 1.0; // -> critical

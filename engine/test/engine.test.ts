@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
   ABUNDANCE_PRIOR, Model, PDV2_WEIGHTS, balance, buildProblem, evaluate, greedy, massOf, signalTolerance,
-} from "../src/index.js";
-import type { Row } from "../src/index.js";
-import { loadBundle, syntheticProblem } from "./util.js";
+} from "../src/index";
+import type { Row } from "../src/index";
+import { loadBundle, syntheticProblem } from "./util";
 
 const bundle = loadBundle();
 
