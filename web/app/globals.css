@@ -1,8 +1,30 @@
 @import "tailwindcss";
 
+/*
+ * Standard BioTools brand (from standardbio.com theme presets, 2025-10):
+ *   blue #28366A · electric-blue #143170 · light-blue #2E6CB3 · azure #98CDE7
+ *   red #AA3134 · stone #F0F2F2 · dust #D4D9DA · font Montserrat
+ * The app's accent classes are written as `teal-*`; the scale below rebinds
+ * that name to an SBT-blue ramp so every accent picks up the brand.
+ */
+@theme {
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  --color-teal-50: #eef3fb;
+  --color-teal-100: #d9e5f5;
+  --color-teal-200: #b8d0ec;
+  --color-teal-300: #98cde7;
+  --color-teal-400: #5f93d0;
+  --color-teal-500: #2e6cb3;
+  --color-teal-600: #23508f;
+  --color-teal-700: #28366a;
+  --color-teal-800: #1e2a55;
+  --color-teal-900: #143170;
+  --color-teal-950: #0d1a3d;
+
+  --color-sbt-red: #aa3134;
+  --color-sbt-stone: #f0f2f2;
+  --color-sbt-dust: #d4d9da;
+}
 
 :root { color-scheme: light dark; }
-
-body {
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
