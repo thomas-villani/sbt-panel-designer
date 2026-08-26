@@ -48,7 +48,7 @@ test("Priya: IMC panel from modules to BOM, shareable by URL", async ({ page }) 
   await balance(page);
   await expect(page.locator("aside")).toContainText(METAL);
   const strip = page.locator("main .flex.h-24 > div");
-  expect(await strip.count()).toBeGreaterThanOrEqual(45);
+  expect(await strip.count()).toBe(43); // 41 antibody channels + 191/193Ir
   await expect(strip.filter({ hasText: "" }).locator("div.bg-emerald-500")).toHaveCount(28);
 
   // Apply every offered fix; the panel must stay fully assigned.
@@ -93,7 +93,7 @@ test("suspension: PBMC backbone balances on the CyTOF XT with reserved channels 
   await balance(page);
   const txt = await page.locator("aside").innerText();
   for (const reserved of ["191Ir", "193Ir", "194Pt", "195Pt", "198Pt"]) expect(txt).not.toContain(reserved);
-  await expect(page.locator("main .flex.h-24 > div")).toHaveCount(68);
+  await expect(page.locator("main .flex.h-24 > div")).toHaveCount(53); // 51 antibody channels + 191/193Ir
 });
 
 test("search offers custom conjugation when nothing matches", async ({ page }) => {
