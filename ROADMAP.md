@@ -81,7 +81,7 @@ Status legend: 🟢 in progress · 🟡 needs data or a decision · ⚪ idea
 | **Azure production deploy** under standardbiotools.com (decision 7) | ⚪ | Static Web App or App Service; keep GitHub Pages as the staging demo. |
 | **Backend** (only when save/quote/FAS need it) — small API + SQLite (Postgres later if needed); keep the engine client-side | ⚪ | SQLite first: one file, easy backup/restore, enough for saved panels + quotes at this scale. |
 | Accessibility pass (keyboard nav in search, ARIA on the mass strip, colour-blind safe palette for clean/watch/spillover) | ⚪ | |
-| Mobile layout (sidebar as bottom sheet) | ⚪ | |
+| Mobile layout (sidebar as bottom sheet) | 🟢 shipped | 2026-08-25: below `lg` the panel is a fixed bottom bar (count, status, next-step button) that expands into a sheet; header collapses to numbered steps; mass strip and BOM scroll inside their own boxes; taller touch targets. Guarded by the `mobile` Playwright project (iPhone 13 size). Next: swipe-to-dismiss, PWA manifest / add-to-home-screen, test on real iOS Safari. |
 | Internationalisation (at least units/currency) | ⚪ | |
 | Shorter share URLs (server-side short links once a backend exists; ~2.9k chars today) | ⚪ | |
 | Engine: multi-start / time-budgeted optimiser for 60+ marker panels; Web Worker progress | ⚪ | Already fast (<50 ms), so low priority. |

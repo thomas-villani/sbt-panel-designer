@@ -67,7 +67,7 @@ export function PanelSidebar() {
           </div>
         </div>
       )}
-      <ul className="max-h-[60vh] divide-y divide-slate-100 overflow-y-auto text-sm dark:divide-slate-800">
+      <ul className="divide-y divide-slate-100 text-sm dark:divide-slate-800 lg:max-h-[60vh] lg:overflow-y-auto">
         {rows.length === 0 && <li className="px-3 py-6 text-center text-xs text-slate-500">Add modules or search for markers.</li>}
         {rows.map((r) => {
           const rr = byRow.get(r.id);

@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
   transpilePackages: ["@pd3/engine"],
   // @pd3/engine is linked from ../engine (TypeScript source); Turbopack needs the repo root to resolve it.
   turbopack: { root: path.join(__dirname, "..") },
+  // The dev "N" bubble overlaps the mobile bottom bar (and Playwright clicks); it never ships in the static export anyway.
+  devIndicators: false,
 };
 
 export default nextConfig;

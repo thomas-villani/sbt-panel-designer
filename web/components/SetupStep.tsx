@@ -15,7 +15,7 @@ export function SetupStep() {
     <div className="space-y-8">
       <section>
         <H2>What are you measuring?</H2>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <Tile label="Suspension cells (CyTOF)" sub="PBMC, blood, dissociated tissue" active={setup.modality === "suspension"} onClick={() => setSetup({ modality: "suspension" })} />
           <Tile label="Tissue imaging (IMC)" sub="FFPE or frozen sections on a Hyperion" active={setup.modality === "imaging"} onClick={() => setSetup({ modality: "imaging" })} />
         </div>

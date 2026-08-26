@@ -77,7 +77,7 @@ export function BuildStep() {
           <Pill tone="teal" className="ml-2">{m.category === "celltype" ? "cell type" : "module"}</Pill>
           <span className="mt-0.5 block truncate text-xs text-slate-500">{m.definition ?? m.markers.filter((k) => markerPlan(k, setup) !== "skip").map(markerLabel).join(", ")}</span>
         </span>
-        <span className="max-w-[45%] shrink-0 truncate text-xs text-slate-500">{added ? "added" : cov.missing.length === 0 ? "all in panel" : `adds ${cov.missing.map(markerLabel).join(", ")}`}</span>
+        <span className="hidden max-w-[45%] shrink-0 truncate text-xs text-slate-500 sm:block">{added ? "added" : cov.missing.length === 0 ? "all in panel" : `adds ${cov.missing.map(markerLabel).join(", ")}`}</span>
       </button>
     );
   };
@@ -102,7 +102,7 @@ export function BuildStep() {
       <section>
         <H2 hint="type a marker, an alias (PD-L1 finds CD274), a cell type (dendritic cells) or paste a comma-separated list">Add a marker or cell type</H2>
         <div className="relative">
-          <input value={q} onChange={(e) => setQ(e.target.value)} onFocus={ensurePubs} placeholder="e.g. CD8a, FoxP3, granzyme, NK cells…" autoFocus
+          <input value={q} onChange={(e) => setQ(e.target.value)} onFocus={ensurePubs} placeholder="e.g. CD8a, FoxP3, granzyme, NK cells…" autoFocus autoCapitalize="none" autoCorrect="off" spellCheck={false} enterKeyHint="done"
             onKeyDown={(e) => { if (e.key === "Enter") pickFirst(); }}
             className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-teal-500 focus:outline-none dark:border-slate-600 dark:bg-slate-900" />
           {q && (

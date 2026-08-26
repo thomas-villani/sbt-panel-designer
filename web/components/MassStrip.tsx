@@ -21,7 +21,9 @@ export function MassStrip({ instrument, result }: { instrument: InstrumentDef; r
 
   return (
     <div>
-      <div className="flex h-24 items-end gap-px pb-1">
+      {/* On phones the strip keeps a readable width and scrolls sideways inside its own box. */}
+      <div className="overflow-x-auto" data-testid="mass-strip">
+      <div className="flex h-24 min-w-[640px] items-end gap-px pb-1 sm:min-w-0">
         {channels.map((c) => {
           const occ = occupant.get(c.mass);
           const res = reserved.get(c.mass);
@@ -39,6 +41,7 @@ export function MassStrip({ instrument, result }: { instrument: InstrumentDef; r
             </div>
           );
         })}
+      </div>
       </div>
       <div className="mt-1 flex flex-wrap gap-3 text-[11px] text-slate-500">
         <span><i className="mr-1 inline-block h-2.5 w-2.5 rounded-sm bg-emerald-500" />clean (&lt; 0.5 × tolerance)</span>

@@ -62,9 +62,9 @@ export function BalanceStep() {
         </H2>
         <ul className="space-y-2">
           {warnings.map((w, i) => (
-            <li key={i} className={cx("flex items-start gap-3 rounded-lg border p-3 text-sm", w.severity === "critical" ? "border-rose-300 bg-rose-50 dark:border-rose-800 dark:bg-rose-950" : w.severity === "warning" ? "border-amber-300 bg-amber-50 dark:border-amber-800 dark:bg-amber-950" : "border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800")}>
+            <li key={i} className={cx("flex flex-wrap items-start gap-3 rounded-lg border p-3 text-sm", w.severity === "critical" ? "border-rose-300 bg-rose-50 dark:border-rose-800 dark:bg-rose-950" : w.severity === "warning" ? "border-amber-300 bg-amber-50 dark:border-amber-800 dark:bg-amber-950" : "border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800")}>
               <Pill tone={w.severity === "critical" ? "rose" : w.severity === "warning" ? "amber" : "slate"}>{w.severity}</Pill>
-              <div className="flex-1">
+              <div className="min-w-[12rem] flex-1">
                 <div>{w.message}</div>
                 {w.fix && <div className="mt-1 text-xs text-slate-600 dark:text-slate-300">{w.fix.message} (score {w.fix.delta.toFixed(2)})</div>}
               </div>

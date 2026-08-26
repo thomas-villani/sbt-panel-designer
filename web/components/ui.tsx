@@ -11,7 +11,8 @@ export function Button({ variant = "secondary", size = "md", className, ...rest 
     ghost: "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800",
     danger: "text-rose-700 hover:bg-rose-50 dark:hover:bg-rose-950",
   }[variant];
-  const s = { sm: "px-2 py-1 text-xs", md: "px-3 py-1.5 text-sm", lg: "px-5 py-2.5 text-base" }[size];
+  // Slightly taller on touch screens (min 36 px), the desktop density from `sm:` up.
+  const s = { sm: "px-2.5 py-1.5 text-xs sm:px-2 sm:py-1", md: "px-3 py-2 text-sm sm:py-1.5", lg: "px-5 py-2.5 text-base" }[size];
   return <button className={cx(base, v, s, className)} {...rest} />;
 }
 
@@ -38,16 +39,16 @@ export function Card({ children, className, onClick, active }: { children: React
 
 export function H2({ children, hint }: { children: ReactNode; hint?: ReactNode }) {
   return (
-    <div className="mb-3 flex items-baseline justify-between gap-3">
+    <div className="mb-3 flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
       <h2 className="text-lg font-semibold tracking-tight">{children}</h2>
-      {hint && <div className="text-xs text-slate-500">{hint}</div>}
+      {hint && <div className="text-xs text-slate-500 sm:text-right">{hint}</div>}
     </div>
   );
 }
 
 export function Tile({ label, sub, active, onClick }: { label: string; sub?: string; active: boolean; onClick: () => void }) {
   return (
-    <button onClick={onClick} className={cx("rounded-lg border px-4 py-3 text-left transition", active ? "border-teal-600 bg-teal-50 text-teal-900 dark:bg-teal-950 dark:text-teal-100" : "border-slate-200 hover:border-teal-400 dark:border-slate-700")}>
+    <button onClick={onClick} className={cx("min-w-0 rounded-lg border px-3 py-3 text-left transition sm:px-4", active ? "border-teal-600 bg-teal-50 text-teal-900 dark:bg-teal-950 dark:text-teal-100" : "border-slate-200 hover:border-teal-400 dark:border-slate-700")}>
       <div className="font-medium">{label}</div>
       {sub && <div className="text-xs text-slate-500">{sub}</div>}
     </button>

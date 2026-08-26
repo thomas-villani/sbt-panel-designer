@@ -55,8 +55,8 @@ export function OrderStep() {
         </div>
       )}
 
-      <section className="overflow-x-auto">
-        <table className="w-full text-sm">
+      <section className="overflow-x-auto" data-testid="bom">
+        <table className="w-full min-w-[640px] text-sm">
           <thead className="text-left text-xs uppercase text-slate-500">
             <tr><th className="py-1 pr-3">Marker</th><th className="py-1 pr-3">Clone</th><th className="py-1 pr-3">Metal</th><th className="py-1 pr-3">Part number</th><th className="py-1 pr-3">Format</th><th className="py-1 pr-3 text-right">Qty</th><th className="py-1">Notes</th></tr>
           </thead>
@@ -88,7 +88,7 @@ export function OrderStep() {
         <Button variant="primary" onClick={download}>Download CSV</Button>
         <Button onClick={share}>{copied ? "Link copied" : "Copy share link"}</Button>
         <span className="flex-1" />
-        <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@lab.edu" className="rounded border border-slate-300 px-2 py-1.5 text-sm dark:border-slate-600 dark:bg-slate-900" />
+        <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@lab.edu" inputMode="email" className="min-w-0 rounded border border-slate-300 px-2 py-1.5 text-sm dark:border-slate-600 dark:bg-slate-900" />
         <Button disabled title="Store cart / quote integration comes after UI sign-off">Request a quote</Button>
       </section>
       <p className="text-xs text-slate-500">Prices, cart and quote submission are not wired in this demo. Every state of this designer is in the URL: share it with your core facility or an application scientist.</p>

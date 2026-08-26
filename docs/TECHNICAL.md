@@ -25,7 +25,7 @@ web/                       Next.js 16 static export (Tailwind, Zustand, engine i
 .github/workflows/         pages.yml: test engine, build web, deploy to GitHub Pages
 ```
 
-Tests: 30 pytest (etl), 12 vitest (engine), 30 vitest + 4 Playwright (web) - see 3c. All work committed on `master`.
+Tests: 30 pytest (etl), 12 vitest (engine), 30 vitest + 5 Playwright (web) - see 3c. All work committed on `master`.
 
 ---
 
@@ -292,6 +292,13 @@ Build notes: `@pd3/engine` is a `file:../engine` dependency resolved from TypeSc
 does not map `./x.js` → `./x.ts`). `NEXT_PUBLIC_BASE_PATH` (set to `/<repo>` by the Pages workflow) prefixes both routes and
 data fetches. Deployment: `.github/workflows/pages.yml` runs engine tests, builds, and publishes `web/out` on push to master.
 
+Mobile (below Tailwind `lg`, 1024 px): the sidebar `<aside>` is hidden and `MobilePanelBar` (in `Designer.tsx`) renders a fixed
+bottom bar — marker count / balance status / a context-sensitive next-step button — that expands into a bottom sheet holding
+the same `PanelSidebar`. The header collapses to the logo, "Panel Designer" and numbered step buttons (labels from `sm`).
+`MassStrip` and the BOM table keep a minimum width and scroll inside `overflow-x-auto` boxes so the page never scrolls
+sideways; buttons are ~36 px tall on phones (`sm:` restores desktop density). `next.config.ts` sets `devIndicators: false`
+because the dev "N" bubble sat on top of the bar.
+
 Build step search order: a query that exactly matches a module name/alias ("NK cells", "pDC") lists cell-type modules
 first and Enter adds the module; otherwise antibodies come first ("CD4" + Enter adds CD4, not "CD4 helper T cells").
 Module cards say "3 of 4 already in panel" / "all targets already in panel" (with a *Tag as module* button) instead of
@@ -309,7 +316,7 @@ Not yet in the UI: exclusivity groups (engine supports them), pdv2 CSV import/ex
 | ETL | pytest (30) | `etl/tests/` — incl. `test_pubs.py` (term builder + in-memory SQLite build) | `cd etl && uv run pytest` |
 | Engine | vitest (12) | `engine/test/` | `cd engine && npm test` |
 | Web unit | vitest (30) | `web/test/` — data (search, clone defaulting, modules, cell types + searchModules, rowSpec, budget), url, bom, store, saved (fake window/localStorage) | `cd web && npm test` |
-| Web e2e | @playwright/test (4) | `web/e2e/designer.spec.ts` — SPEC 6.4 Priya scenario, suspension backbone, custom-conjugation search, cell-type search + overlap copy + save/draft restore + papers | `cd web && npm run e2e` (starts `next dev` itself) |
+| Web e2e | @playwright/test (4 + 1) | `web/e2e/designer.spec.ts` (project `desktop`, 1400×950) — SPEC 6.4 Priya scenario, suspension backbone, custom-conjugation search, cell-type search + overlap copy + save/draft restore + papers; `web/e2e/mobile.spec.ts` (project `mobile`, iPhone 13 size + touch, `isMobile: false` because Chromium's mobile layout-viewport emulation breaks hit-testing of fixed bars) — bottom-sheet flow through all four steps with no horizontal overflow | `cd web && npm run e2e` (starts `next dev` itself); `--project=mobile` for phones only |
 | Kit reproduction | script | `engine/scripts/validate-kits.ts` | `cd engine && npm run validate` |
 
 Root `package.json` wraps them: `npm test` (etl + engine + web unit), `npm run e2e`, `npm run typecheck`, `npm run validate`,
