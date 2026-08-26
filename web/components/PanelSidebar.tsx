@@ -77,7 +77,10 @@ export function PanelSidebar() {
           return (
             <li key={r.id} className="px-3 py-1.5">
               <div className="flex items-center gap-2">
-                <button className="min-w-0 flex-1 truncate text-left font-medium" onClick={() => { setOpen(open === r.id ? null : r.id); ensurePubs(); }} title={r.clone ? `clone ${r.clone}` : "custom conjugation"}>{r.name}</button>
+                <button className="min-w-0 flex-1 truncate text-left font-medium" onClick={() => { setOpen(open === r.id ? null : r.id); ensurePubs(); }} title={r.clone ? `clone ${r.clone}` : "custom conjugation"}>
+                  {r.name}
+                  {r.targetId && (pubs?.targets[r.targetId]?.n ?? 0) > 0 && <span className="ml-1.5 font-normal text-[10px] text-slate-400" title="CyTOF / IMC papers mentioning this marker (click for the list)">{pubs!.targets[r.targetId].n} papers</span>}
+                </button>
                 <Pill tone={LEVEL_TONE[r.level]} onClick={() => setLevel(r.id, LEVELS[(LEVELS.indexOf(r.level) + 1) % LEVELS.length])} title="abundance: click to cycle">{LEVEL_LABEL[r.level]}</Pill>
                 {showMetal && (
                   rr.mass != null

@@ -1,6 +1,6 @@
 "use client";
 import { useMemo, useState } from "react";
-import { normKey } from "@/lib/data";
+import { markerPlan, normKey } from "@/lib/data";
 import { useStore, useBudget } from "@/lib/store";
 import type { ModuleMarker, PanelModule, Target } from "@/lib/types";
 import { Button, Card, H2, Pill, cx } from "./ui";
@@ -33,6 +33,8 @@ export function BuildStep() {
   const have = useMemo(() => new Set(rows.map((r) => r.targetId)), [rows]);
   const hits = useMemo(() => idx.search(q, setup), [idx, q, setup]);
   const moduleHits = useMemo(() => (q.includes(",") ? [] : idx.searchModules(q, setup)), [idx, q, setup]);
+  // Nothing for this modality? Show what exists for the other one, disabled, so "NK cells" never dead-ends on a custom-conjugation offer.
+  const otherHits = useMemo(() => (q.includes(",") || moduleHits.length ? [] : idx.searchModules(q, setup, 3, true)), [idx, q, setup, moduleHits]);
   // A cell type typed by name ("NK cells") beats a marker; a marker typed by name ("CD4") beats the "CD4 helper T cells" module.
   const modulesFirst = !hits.length || moduleHits.some((m) => [m.name, ...m.aliases].some((a) => normKey(a) === normKey(q)));
   const suggestions = useMemo(() => idx.suggestNext(rows, setup), [idx, rows, setup]);
@@ -41,9 +43,9 @@ export function BuildStep() {
 
   const isAdded = (m: PanelModule) => rows.some((r) => r.moduleIds.includes(m.id));
   const inPanel = (k: ModuleMarker) => rows.some((r) => r.id === rowIdOf(k));
-  /** Markers the module would add (required + recommended) and how many are already in the panel from elsewhere. */
+  /** Markers the module would add under this setup and how many are already in the panel from elsewhere. */
   const coverage = (m: PanelModule) => {
-    const adds = m.markers.filter((k) => k.kind === "antibody" && k.role !== "optional");
+    const adds = m.markers.filter((k) => markerPlan(k, setup) !== "skip");
     const missing = adds.filter((k) => !inPanel(k));
     return { n: adds.length - missing.length, total: adds.length, missing };
   };
@@ -73,7 +75,7 @@ export function BuildStep() {
         <span className="min-w-0">
           <span className="font-medium">{m.name}</span>
           <Pill tone="teal" className="ml-2">{m.category === "celltype" ? "cell type" : "module"}</Pill>
-          <span className="mt-0.5 block truncate text-xs text-slate-500">{m.definition ?? m.markers.filter((k) => k.kind === "antibody" && k.role !== "optional").map(markerLabel).join(", ")}</span>
+          <span className="mt-0.5 block truncate text-xs text-slate-500">{m.definition ?? m.markers.filter((k) => markerPlan(k, setup) !== "skip").map(markerLabel).join(", ")}</span>
         </span>
         <span className="max-w-[45%] shrink-0 truncate text-xs text-slate-500">{added ? "added" : cov.missing.length === 0 ? "all in panel" : `adds ${cov.missing.map(markerLabel).join(", ")}`}</span>
       </button>
@@ -109,6 +111,13 @@ export function BuildStep() {
               {modulesFirst && moduleHits.map(moduleHit)}
               {hits.map(targetHit)}
               {!modulesFirst && moduleHits.map(moduleHit)}
+              {otherHits.map((m) => (
+                <div key={m.id} className="flex w-full items-center justify-between gap-3 border-b border-slate-100 px-3 py-2 text-left text-sm text-slate-400 dark:border-slate-800" data-testid="module-hit-other">
+                  <span className="min-w-0"><span className="font-medium">{m.name}</span><Pill tone="slate" className="ml-2">{m.application === "imaging" ? "tissue imaging only" : "suspension only"}</Pill>
+                    <span className="mt-0.5 block truncate text-xs">{m.definition}</span></span>
+                  <span className="shrink-0 text-xs">its markers are not sold for {setup.modality === "imaging" ? "IMC" : "CyTOF"}; switch modality in Setup or add them as custom conjugations</span>
+                </div>
+              ))}
               {!hits.length && !moduleHits.length && !q.includes(",") && (
                 <button onClick={() => { addCustom(q.trim()); setQ(""); }} className="block w-full px-3 py-2 text-left text-sm hover:bg-slate-50 dark:hover:bg-slate-800">
                   No catalogue antibody for “{q}” — add as a <span className="font-medium">custom conjugation</span> (you supply the antibody; Maxpar X8 labelling)
@@ -154,16 +163,26 @@ export function BuildStep() {
                 <div className="flex flex-wrap gap-1">
                   {markers.slice(0, 14).map((k) => {
                     const neg = k.polarity === "neg";
+                    const plan = markerPlan(k, setup);
+                    const unsold = k.in_catalogue && !k.applications.includes(setup.modality);
+                    const title = !k.in_catalogue ? "not in catalogue: custom conjugation"
+                      : unsold ? `not sold for ${setup.modality === "imaging" ? "IMC" : "CyTOF"}: ${plan === "custom" ? "added as a custom conjugation" : "left out"}`
+                      : neg ? `${k.role} · lineage negative: separates this cell type from its neighbours` : k.role;
                     return (
-                      <span key={rowIdOf(k)} title={!k.in_catalogue ? "not in catalogue: custom conjugation" : neg ? `${k.role} · lineage negative: separates this cell type from its neighbours` : k.role}
-                        className={cx("rounded px-1.5 py-0.5 text-[11px]", inPanel(k) ? "bg-teal-100 text-teal-900 dark:bg-teal-900 dark:text-teal-100" : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300", neg && "border border-dashed border-slate-400", k.role === "optional" && "opacity-70", !k.in_catalogue && "line-through opacity-60")}>
+                      <span key={rowIdOf(k)} title={title}
+                        className={cx("rounded px-1.5 py-0.5 text-[11px]", inPanel(k) ? "bg-teal-100 text-teal-900 dark:bg-teal-900 dark:text-teal-100" : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300", neg && "border border-dashed border-slate-400", (k.role === "optional" || plan === "skip") && "opacity-60", (!k.in_catalogue || (unsold && plan === "skip")) && "line-through")}>
                         {markerLabel(k)}
                       </span>
                     );
                   })}
                   {markers.length > 14 && <span className="text-[11px] text-slate-500">+{markers.length - 14} more</span>}
                 </div>
-                {hasNeg && <div className="text-[11px] text-slate-500">Dashed = lineage negative, added so the gate stays clean.</div>}
+                {(hasNeg || markers.some((k) => k.in_catalogue && !k.applications.includes(setup.modality))) && (
+                  <div className="text-[11px] text-slate-500">
+                    {hasNeg && "Dashed = lineage negative, added so the gate stays clean. "}
+                    {markers.some((k) => k.in_catalogue && !k.applications.includes(setup.modality)) && `Struck through = not sold for ${setup.modality === "imaging" ? "IMC" : "CyTOF"}${markers.some((k) => markerPlan(k, setup) === "custom" && k.in_catalogue) ? " (required ones go in as custom conjugations)" : ""}.`}
+                  </div>
+                )}
                 <div className="mt-auto flex items-center justify-between gap-2">
                   <span className="text-xs text-slate-500">
                     {added ? `${cov.n}/${cov.total} in panel` : cov.n === 0 ? `${cov.total} marker${cov.total === 1 ? "" : "s"}` : nMissing === 0 ? "all targets already in panel" : `${cov.n} of ${cov.total} already in panel`}

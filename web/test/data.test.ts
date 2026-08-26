@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { channelBudget, levelFromSignal, normKey, reservedRoles, rowSpec, titratedST } from "@/lib/data";
+import { channelBudget, levelFromSignal, markerPlan, normKey, reservedRoles, rowSpec, titratedST } from "@/lib/data";
 import { CYTOF, IMC, index, rowsFromModule } from "./util";
 
 const idx = index();
@@ -114,7 +114,8 @@ describe("cell-type modules and module search", () => {
     }
     const dc = ct.find((m) => m.id === "ct-human-dc")!;
     expect(dc.markers.filter((k) => k.polarity === "neg").map((k) => k.target_id)).toEqual(["cd3e", "cd19", "cd14", "cd56ncam"]);
-    expect(idx.modulesFor(IMC).some((m) => m.id === "ct-human-dc")).toBe(false); // suspension-only cell type
+    expect(idx.modulesFor(IMC).some((m) => m.id === "ct-human-pdc")).toBe(false); // suspension-only cell type
+    expect(idx.modulesFor(IMC).filter((m) => m.category === "celltype").length).toBeGreaterThanOrEqual(16);
     expect(idx.modulesFor({ ...CYTOF, species: "mouse" }).some((m) => m.id === "ct-mouse-nk")).toBe(true);
   });
   it("searchModules finds cell types by name and alias, scoped to the setup", () => {
@@ -124,8 +125,26 @@ describe("cell-type modules and module search", () => {
     expect(idx.searchModules("NK cells", CYTOF)[0].id).toBe("ct-human-nk");
     expect(idx.searchModules("treg", CYTOF).map((m) => m.id)).toContain("ct-human-treg");
     expect(idx.searchModules("macrophage", IMC)[0].id).toBe("ct-human-macrophages");
-    expect(idx.searchModules("dendritic", IMC)).toEqual([]);
+    expect(idx.searchModules("pDC", IMC)).toEqual([]);
+    expect(idx.searchModules("pDC", IMC, 3, true)[0].id).toBe("ct-human-pdc"); // fallback: exists for suspension
+    expect(idx.searchModules("nk cells", IMC)[0].id).toBe("ct-human-nk");
     expect(idx.searchModules("cd", CYTOF)).toEqual([]); // too short
     expect(idx.searchModules("exhaustion", IMC).map((m) => m.name)).toContain("T-cell exhaustion");
+  });
+  it("markerPlan: unsold recommended markers are skipped, unsold required ones become custom", () => {
+    const dc = idx.modulesById.get("ct-human-dc")!;
+    const by = (name: string) => dc.markers.find((k) => k.target_name.startsWith(name))!;
+    expect(markerPlan(by("CD123"), CYTOF)).toBe("catalogue");
+    expect(markerPlan(by("CD123"), IMC)).toBe("skip"); // recommended, suspension only
+    expect(markerPlan(by("CD141"), CYTOF)).toBe("skip"); // optional
+    const nk = idx.modulesById.get("ct-human-nk")!;
+    expect(markerPlan(nk.markers.find((k) => k.target_name.startsWith("CD56"))!, IMC)).toBe("custom"); // required, suspension only
+  });
+});
+
+describe("suggestions respect the modality", () => {
+  it("never suggests a marker that is not sold for the current application", () => {
+    const rows = rowsFromModule(idx, "ct-human-dc", IMC);
+    for (const s of idx.suggestNext(rows, IMC)) expect(idx.targetsById.get(s.targetId)!.applications).toContain("imaging");
   });
 });

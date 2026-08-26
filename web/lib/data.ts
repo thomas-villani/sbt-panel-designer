@@ -1,7 +1,7 @@
 /** Bundle loading, indexing, clone defaulting and search. Pure functions over the slim bundles. */
 import type { RowSpec } from "@pd3/engine";
 import type {
-  AbundanceLevel, Bundles, Catalog, Conjugate, InstrumentBundle, PanelModule, PanelRow, Publications, Setup, Species, Target,
+  AbundanceLevel, Bundles, Catalog, Conjugate, InstrumentBundle, ModuleMarker, PanelModule, PanelRow, Publications, Setup, Species, Target,
 } from "./types";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -93,12 +93,14 @@ export class Index {
       .slice(0, limit).map(([id]) => this.targetsById.get(id)!);
   }
 
-  /** Modules whose name or aliases match the query ("dendritic" finds Dendritic cells), best match first. */
-  searchModules(query: string, setup: Setup, limit = 4): PanelModule[] {
+  /** Modules whose name or aliases match the query ("dendritic" finds Dendritic cells), best match first.
+   *  `anyModality` searches modules for the species regardless of modality, for a "suspension only" hint when nothing fits. */
+  searchModules(query: string, setup: Setup, limit = 4, anyModality = false): PanelModule[] {
     const q = normKey(query);
     if (q.length < 3) return [];
     const scored: [PanelModule, number][] = [];
-    for (const m of this.modulesFor(setup)) {
+    const pool = anyModality ? this.modulesFor({ ...setup, modality: setup.modality === "imaging" ? "suspension" : "imaging" }).filter((m) => m.application !== "both") : this.modulesFor(setup);
+    for (const m of pool) {
       const keys = [m.name, ...m.aliases].map(normKey);
       let s = 0;
       for (const k of keys) s = Math.max(s, k === q ? 4 : k.startsWith(q) ? 3 : q.startsWith(k) && k.length >= 4 ? 2 : k.includes(q) ? 1 : 0);
@@ -125,7 +127,7 @@ export class Index {
       const overlap = ids.filter((id) => have.has(id)).length;
       if (overlap < 2) continue;
       for (const k of m.markers) {
-        if (!k.target_id || have.has(k.target_id) || !k.in_catalogue || k.kind !== "antibody") continue;
+        if (!k.target_id || have.has(k.target_id) || !k.in_catalogue || k.kind !== "antibody" || !k.applications.includes(setup.modality)) continue;
         const cur = score.get(k.target_id);
         const w = overlap / ids.length;
         if (!cur) score.set(k.target_id, { n: w, via: m.name, name: k.target_name });
@@ -135,6 +137,13 @@ export class Index {
     return [...score.entries()].sort((a, b) => b[1].n - a[1].n).slice(0, limit)
       .map(([targetId, s]) => ({ targetId, name: s.name, reason: `in ${s.via}` }));
   }
+}
+
+/** What adding this module marker does under the setup: add from the catalogue, add as a custom conjugation, or skip. */
+export function markerPlan(k: ModuleMarker, setup: Setup): "catalogue" | "custom" | "skip" {
+  if (k.kind !== "antibody" || k.role === "optional") return "skip";
+  if (k.in_catalogue && k.applications.includes(setup.modality)) return "catalogue";
+  return k.role === "required" ? "custom" : "skip"; // a recommended marker not sold for this modality is left out
 }
 
 export interface CloneOption {

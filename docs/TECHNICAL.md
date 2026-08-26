@@ -25,7 +25,7 @@ web/                       Next.js 16 static export (Tailwind, Zustand, engine i
 .github/workflows/         pages.yml: test engine, build web, deploy to GitHub Pages
 ```
 
-Tests: 30 pytest (etl), 12 vitest (engine), 27 vitest + 4 Playwright (web) - see 3c. All work committed on `master`.
+Tests: 30 pytest (etl), 12 vitest (engine), 30 vitest + 4 Playwright (web) - see 3c. All work committed on `master`.
 
 ---
 
@@ -109,9 +109,11 @@ Normalisation rules (`names.py`):
 
 ### 2.5 `modules.json` (464 KB) — `etl/pd3_etl/modules.py`
 
-116 modules: 62 SBT kits (36 suspension, 26 IMC) + 14 curated (`data/curated/modules/curated-v0.yaml`) + 40 cell-type
-modules (`data/curated/modules/cell-types.yaml`, category `celltype`: 27 human, 13 mouse; 1-4 defining markers each plus
+118 modules: 62 SBT kits (36 suspension, 26 IMC) + 14 curated (`data/curated/modules/curated-v0.yaml`) + 42 cell-type
+modules (`data/curated/modules/cell-types.yaml`, category `celltype`: 29 human of which 17 for IMC, 13 mouse; 1-4 defining markers each plus
 lineage negatives marked `negative: true` → `polarity: "neg"`, a `definition` in gating shorthand and search `aliases`).
+Every marker carries `applications` (modalities the target is sold for); the store's `markerPlan` skips recommended markers
+not sold for the current modality and adds required ones as custom conjugations, so a `both` module degrades gracefully on IMC.
 Kit rows: 640, of which 635 resolve to a catalogue target and 603 to an exact catalogue conjugate.
 The 34 non-matching rows are listed in `docs/review/kit-rows-not-in-catalogue.csv` (kit-only conjugates — MDIPA alone has ~10,
 so the BOM must treat MDIPA as a single SKU).
@@ -306,7 +308,7 @@ Not yet in the UI: exclusivity groups (engine supports them), pdv2 CSV import/ex
 |---|---|---|---|
 | ETL | pytest (30) | `etl/tests/` — incl. `test_pubs.py` (term builder + in-memory SQLite build) | `cd etl && uv run pytest` |
 | Engine | vitest (12) | `engine/test/` | `cd engine && npm test` |
-| Web unit | vitest (27) | `web/test/` — data (search, clone defaulting, modules, cell types + searchModules, rowSpec, budget), url, bom, store, saved (fake window/localStorage) | `cd web && npm test` |
+| Web unit | vitest (30) | `web/test/` — data (search, clone defaulting, modules, cell types + searchModules, rowSpec, budget), url, bom, store, saved (fake window/localStorage) | `cd web && npm test` |
 | Web e2e | @playwright/test (4) | `web/e2e/designer.spec.ts` — SPEC 6.4 Priya scenario, suspension backbone, custom-conjugation search, cell-type search + overlap copy + save/draft restore + papers | `cd web && npm run e2e` (starts `next dev` itself) |
 | Kit reproduction | script | `engine/scripts/validate-kits.ts` | `cd engine && npm run validate` |
 

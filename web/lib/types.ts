@@ -63,6 +63,7 @@ export interface ModuleMarker {
   catalogue_metals: string[];
   note: string | null;
   polarity: "pos" | "neg"; // neg: a lineage negative carried so the gate is clean (cell-type modules)
+  applications: string[]; // which modalities the target is sold for ("imaging" / "suspension"); [] when not in the catalogue
 }
 
 export interface PanelModule {

@@ -2,7 +2,7 @@
 /** Panel state. Rows hold biology (target, level, clone, lock); metals only ever live in `result`. */
 import { create } from "zustand";
 import type { Fix, Result } from "@pd3/engine";
-import { Index, channelBudget, defaultInstrument, levelFromSignal, loadPublications, reservedRoles, rowSpec, titratedST } from "./data";
+import { Index, channelBudget, defaultInstrument, levelFromSignal, loadPublications, markerPlan, reservedRoles, rowSpec, titratedST } from "./data";
 import { balanceInWorker, initEngine } from "./engine-client";
 import { clearDraft, deleteSaved, listSaved, loadSaved, readDraft, savePanel, writeDraft, type SavedPanel } from "./saved";
 import type { AbundanceLevel, Bundles, PanelModule, PanelRow, Publications, Setup } from "./types";
@@ -99,6 +99,7 @@ export const useStore = create<State>((set, get) => {
       const idx = new Index(b);
       initEngine(b.instruments);
       set({ idx, saved: listSaved() });
+      get().ensurePubs();
       const fromUrl = typeof window !== "undefined" ? decodeState(window.location.hash) : null;
       const draft = fromUrl ? null : readDraft();
       if (fromUrl) restore(fromUrl);
@@ -143,8 +144,9 @@ export const useStore = create<State>((set, get) => {
       if (!idx) return;
       let rows = get().rows;
       for (const k of m.markers) {
-        if (k.kind !== "antibody" || k.role === "optional") continue;
-        if (k.target_id && k.in_catalogue) {
+        const plan = markerPlan(k, setup);
+        if (plan === "skip") continue;
+        if (k.target_id && k.in_catalogue) { // makeRow yields a custom row when no conjugate is sold for this modality
           const row = makeRow(idx, setup, k.target_id, { moduleId: m.id, level: k.abundance_level, clone: k.clone });
           if (row) rows = upsertRow(rows, row);
         } else {

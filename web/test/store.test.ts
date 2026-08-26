@@ -68,6 +68,16 @@ describe("store", () => {
     expect(useStore.getState().rows.every((r) => r.locked == null)).toBe(true);
   });
 
+  it("addModule follows markerPlan: DC on IMC skips CD123 / CD56−, NK on IMC adds CD56 as custom", () => {
+    const s = useStore.getState();
+    s.setSetup({ modality: "imaging" });
+    s.addModule(idx.modulesById.get("ct-human-dc")!);
+    expect(useStore.getState().rows.map((r) => r.id).sort()).toEqual(["cd11c", "cd14", "cd19", "cd3e", "hladr"]);
+    s.addModule(idx.modulesById.get("ct-human-nk")!);
+    const cd56 = useStore.getState().rows.find((r) => r.id === "cd56ncam")!;
+    expect(cd56).toMatchObject({ custom: true, clone: null, moduleIds: ["ct-human-nk"] });
+  });
+
   it("level pill override and custom rows survive in the row model", () => {
     const s = useStore.getState();
     s.addCustom("TOX");

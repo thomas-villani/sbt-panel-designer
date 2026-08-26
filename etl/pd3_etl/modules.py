@@ -42,6 +42,10 @@ def abundance_from_signal(signal: float | None) -> str | None:
 class CatalogIndex:
     def __init__(self, cat: dict):
         self.targets = {t["id"]: t for t in cat["targets"]}
+        self.apps_by_target: dict[str, set] = defaultdict(set)
+        for c in cat["conjugates"]:
+            if c["kind"] == "antibody":
+                self.apps_by_target[c["target_id"]].add(c["application"])
         self.key_to_id: dict[str, str] = {}
         for t in cat["targets"]:
             self.key_to_id[t["id"]] = t["id"]
@@ -137,6 +141,7 @@ def load_kits(cat_idx: CatalogIndex) -> tuple[list[dict], list[str]]:
                     "conjugate_id": conj["id"] if conj else None,
                     "catalogue_metals": sorted(set(cat_idx.metals_by_clone.get((tid, norm_key(clone), application), [])),
                                                key=lambda m: int(re.match(r"\d+", m).group())) if tid else [],
+                    "applications": sorted(cat_idx.apps_by_target.get(tid, [])) if tid else [],
                 })
             modules.append({
                 "id": slug, "slug": slug, "name": name, "source": "sbt_kit",
@@ -186,6 +191,7 @@ def load_curated(cat_idx: CatalogIndex) -> tuple[list[dict], list[str]]:
                     "abundance_level": hint, "kit_only": False, "custom": False, "in_catalogue": tid is not None,
                     "conjugate_id": None,
                     "catalogue_metals": metals, "note": note, "polarity": "neg" if negative else "pos",
+                    "applications": sorted(cat_idx.apps_by_target.get(tid, [])) if tid else [],
                 })
             modules.append({
                 "id": m["id"], "slug": m["id"], "name": m["name"], "source": "curated", "kit": None,

@@ -54,18 +54,18 @@ modules:
 
   - id: ct-human-t-memory
     name: Naive / memory T-cell subsets
-    application: suspension
+    application: both
     species: [human]
-    sample_types: [pbmc, whole_blood]
+    sample_types: [pbmc, whole_blood, dissociated_tumour, ffpe, frozen]
     category: celltype
     aliases: [naive T cells, memory T cells, central memory, effector memory, TEMRA, Tcm, Tem]
-    definition: naive CD45RA+ CCR7+ · Tcm CD45RA- CCR7+ · Tem CD45RA- CCR7- · TEMRA CD45RA+ CCR7-
-    blurb: The two markers that split naive, central memory, effector memory and TEMRA on CD4 and CD8 T cells.
+    definition: naive CD45RA+ CCR7+ · Tcm CD45RA- CCR7+ · Tem CD45RA- CCR7- · TEMRA CD45RA+ CCR7- (tissue - CD45RO+ memory)
+    blurb: CD45RA and CCR7 split naive, central memory, effector memory and TEMRA; in tissue CD45RA / CD45RO do the naive vs memory split.
     markers:
       - {target: CD45RA, abundance: high}
-      - {target: CD197/CCR7, abundance: low}
-      - {target: CD27, abundance: high, role: recommended}
-      - {target: CD45RO, abundance: high, role: optional}
+      - {target: CD197/CCR7, abundance: low, role: recommended, note: suspension only}
+      - {target: CD45RO, abundance: high, role: recommended}
+      - {target: CD27, abundance: high, role: optional}
 
   - id: ct-human-treg
     name: Regulatory T cells (Treg)
@@ -201,9 +201,9 @@ modules:
 
   - id: ct-human-plasmablasts
     name: Plasmablasts / plasma cells
-    application: suspension
+    application: both
     species: [human]
-    sample_types: [pbmc, whole_blood, bone_marrow, dissociated_tumour]
+    sample_types: [pbmc, whole_blood, bone_marrow, dissociated_tumour, ffpe, frozen]
     category: celltype
     aliases: [plasmablasts, plasma cells, antibody-secreting cells, ASC]
     definition: CD19lo CD27hi CD38hi CD20- (CD138+ plasma cells)
@@ -217,17 +217,18 @@ modules:
 
   - id: ct-human-nk
     name: NK cells
-    application: suspension
+    application: both
     species: [human]
-    sample_types: [pbmc, whole_blood, dissociated_tumour]
+    sample_types: [pbmc, whole_blood, dissociated_tumour, ffpe, frozen]
     category: celltype
     aliases: [NK cell, natural killer cells, CD56 NK]
-    definition: CD3- CD56+ (CD56bright CD16- · CD56dim CD16+)
-    blurb: Natural killer cells and their bright / dim split. CD3 keeps NKT cells out.
+    definition: CD3- CD56+ (CD56bright CD16- · CD56dim CD16+ CD57+)
+    blurb: Natural killer cells and their bright / dim split. CD3 keeps NKT cells out. CD56 is not sold as an IMC conjugate, so in tissue it goes in as a custom conjugation.
     markers:
       - {target: CD56, abundance: medium}
       - {target: CD16, abundance: high}
       - {target: CD3ε, abundance: very_high, role: recommended, negative: true}
+      - {target: CD57, abundance: medium, role: optional}
 
   - id: ct-human-ilc
     name: Innate lymphoid cells (ILC)
@@ -265,21 +266,21 @@ modules:
 
   - id: ct-human-dc
     name: Dendritic cells
-    application: suspension
+    application: both
     species: [human]
-    sample_types: [pbmc, whole_blood, dissociated_tumour]
+    sample_types: [pbmc, whole_blood, dissociated_tumour, ffpe, frozen]
     category: celltype
     aliases: [dendritic cell, DC, DCs, myeloid dendritic cells, mDC, cDC]
     definition: Lin- (CD3- CD19- CD14- CD56-) HLA-DR+ · cDC CD11c+ · pDC CD123+ (cDC1 CD141+)
-    blurb: Dendritic cells are what is left of HLA-DR+ after the lineage negatives, split into conventional (CD11c) and plasmacytoid (CD123).
+    blurb: Dendritic cells are what is left of HLA-DR+ after the lineage negatives, split into conventional (CD11c) and plasmacytoid (CD123, suspension only).
     markers:
       - {target: HLA-DR, abundance: very_high}
       - {target: CD11c, abundance: medium}
-      - {target: CD123, abundance: medium}
+      - {target: CD123, abundance: medium, role: recommended, note: suspension only}
       - {target: CD3ε, abundance: very_high, role: recommended, negative: true}
       - {target: CD19, abundance: high, role: recommended, negative: true}
       - {target: CD14, abundance: high, role: recommended, negative: true}
-      - {target: CD56, abundance: medium, role: recommended, negative: true}
+      - {target: CD56, abundance: medium, role: recommended, negative: true, note: suspension only}
       - {target: CD141, abundance: low, role: optional}
 
   - id: ct-human-pdc
@@ -310,6 +311,34 @@ modules:
       - {target: CD68, abundance: high}
       - {target: CD163/M130, abundance: medium}
       - {target: CD206/MMR, abundance: medium, role: recommended}
+
+  - id: ct-human-cytotoxic
+    name: Cytotoxic lymphocytes (tissue)
+    application: imaging
+    species: [human]
+    sample_types: [ffpe, frozen]
+    category: celltype
+    aliases: [cytotoxic cells, granzyme B cells, NK and CD8 in tissue, killer cells]
+    definition: Granzyme B+ (CD8+ T · CD3- NK) Perforin+
+    blurb: Where NK and CD8 T cells are actively cytotoxic - the readout most IMC immuno-oncology panels want.
+    markers:
+      - {target: Granzyme B, abundance: high}
+      - {target: CD8a, abundance: high}
+      - {target: CD3ε, abundance: very_high, role: recommended}
+      - {target: Perforin, abundance: high, role: optional}
+
+  - id: ct-human-proliferating
+    name: Proliferating cells
+    application: both
+    species: [human, mouse]
+    sample_types: [pbmc, whole_blood, dissociated_tumour, ffpe, frozen]
+    category: celltype
+    aliases: [proliferating, cycling cells, Ki-67 positive, dividing cells]
+    definition: Ki-67+ (pHH3+ mitotic)
+    blurb: Cycling cells of any lineage; pair with a lineage marker to ask "which cells are dividing?".
+    markers:
+      - {target: Ki-67, abundance: high}
+      - {target: "pHistone H3 [S28]", abundance: very_high, role: optional}
 
   - id: ct-human-neutrophils
     name: Neutrophils

@@ -50,7 +50,7 @@ write("modules.json", {
       target_id: k.target_id, target_name: k.target_name, kind: k.kind, role: k.role, clone: k.clone, metal: k.metal, mass: k.mass,
       signal: k.signal, tolerance: k.tolerance, st_source: k.st_source, abundance_level: k.abundance_level,
       kit_only: k.kit_only, custom: k.custom, in_catalogue: k.in_catalogue, conjugate_id: k.conjugate_id,
-      catalogue_metals: k.catalogue_metals, note: k.note ?? null, polarity: k.polarity ?? "pos",
+      catalogue_metals: k.catalogue_metals, note: k.note ?? null, polarity: k.polarity ?? "pos", applications: k.applications ?? [],
     })),
   })),
 });

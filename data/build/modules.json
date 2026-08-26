@@ -1,9 +1,9 @@
 {
  "version": "2026-08-25.1",
  "stats": {
-  "modules": 116,
+  "modules": 118,
   "sbt_kits": 62,
-  "curated": 54,
+  "curated": 56,
   "kit_rows": 640,
   "kit_rows_resolved": 635,
   "kit_rows_with_catalogue_conjugate": 603,
@@ -73,6 +73,9 @@
       "89Y",
       "149Sm",
       "153Eu"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -96,6 +99,9 @@
       "151Eu",
       "158Gd",
       "161Dy"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -119,6 +125,9 @@
       "164Dy",
       "171Yb",
       "172Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     }
    ]
@@ -174,6 +183,10 @@
      "conjugate_id": "nestin|EPR27207-53|141Pr|i",
      "catalogue_metals": [
       "141Pr"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -196,6 +209,10 @@
      "catalogue_metals": [
       "143Nd",
       "149Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -217,6 +234,9 @@
      "conjugate_id": "mmp9|RM1020|158Gd|i",
      "catalogue_metals": [
       "158Gd"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -238,6 +258,10 @@
      "conjugate_id": "sox2|EPR3131|169Tm|i",
      "catalogue_metals": [
       "169Tm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -260,6 +284,10 @@
      "catalogue_metals": [
       "142Nd",
       "172Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -317,6 +345,9 @@
       "141Pr",
       "149Sm",
       "169Tm"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -340,6 +371,9 @@
       "141Pr",
       "149Sm",
       "158Gd"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -363,6 +397,9 @@
       "149Sm",
       "169Tm",
       "172Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -386,6 +423,9 @@
       "149Sm",
       "158Gd",
       "172Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     }
    ]
@@ -443,6 +483,9 @@
       "141Pr",
       "158Gd",
       "172Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -466,6 +509,9 @@
       "141Pr",
       "149Sm",
       "169Tm"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -489,6 +535,9 @@
       "141Pr",
       "149Sm",
       "158Gd"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -512,6 +561,9 @@
       "149Sm",
       "169Tm",
       "172Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -535,6 +587,9 @@
       "149Sm",
       "158Gd",
       "172Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     }
    ]
@@ -592,6 +647,9 @@
       "141Pr",
       "158Gd",
       "169Tm"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -617,6 +675,9 @@
       "158Gd",
       "169Tm",
       "172Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -640,6 +701,9 @@
       "141Pr",
       "149Sm",
       "158Gd"
+     ],
+     "applications": [
+      "imaging"
      ]
     }
    ]
@@ -697,6 +761,9 @@
       "141Pr",
       "158Gd",
       "172Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -720,6 +787,9 @@
       "141Pr",
       "149Sm",
       "169Tm"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -743,6 +813,9 @@
       "149Sm",
       "158Gd",
       "172Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     }
    ]
@@ -800,6 +873,9 @@
       "141Pr",
       "149Sm",
       "158Gd"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -823,6 +899,9 @@
       "149Sm",
       "169Tm",
       "172Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -846,6 +925,9 @@
       "141Pr",
       "169Tm",
       "172Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     }
    ]
@@ -901,6 +983,10 @@
      "catalogue_metals": [
       "142Nd",
       "172Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -922,6 +1008,9 @@
      "conjugate_id": "pten|EPR22636-122|143Nd|i",
      "catalogue_metals": [
       "143Nd"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -943,6 +1032,9 @@
      "conjugate_id": "gsk3b|Y174|145Nd|i",
      "catalogue_metals": [
       "145Nd"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -964,6 +1056,9 @@
      "conjugate_id": "ptyr|TYR-100|146Nd|i",
      "catalogue_metals": [
       "146Nd"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -985,6 +1080,9 @@
      "conjugate_id": "yap1|EPR19812|148Nd|i",
      "catalogue_metals": [
       "148Nd"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -1010,6 +1108,10 @@
       "164Dy",
       "167Er",
       "171Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1031,6 +1133,9 @@
      "conjugate_id": "psmad|EP823Y|168Er|i",
      "catalogue_metals": [
       "168Er"
+     ],
+     "applications": [
+      "imaging"
      ]
     }
    ]
@@ -1085,6 +1190,9 @@
      "conjugate_id": "glut1|EPR3915|142Nd|i",
      "catalogue_metals": [
       "142Nd"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -1106,6 +1214,9 @@
      "conjugate_id": "citratesynthase|EPR8067|143Nd|i",
      "catalogue_metals": [
       "143Nd"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -1127,6 +1238,9 @@
      "conjugate_id": "atp5a|EPR13030(B)|145Nd|i",
      "catalogue_metals": [
       "145Nd"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -1148,6 +1262,9 @@
      "conjugate_id": "cpt1a|EPR21843-71-1C|146Nd|i",
      "catalogue_metals": [
       "146Nd"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -1169,6 +1286,9 @@
      "conjugate_id": "ldha|EP1563Y|148Nd|i",
      "catalogue_metals": [
       "148Nd"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -1191,6 +1311,10 @@
      "catalogue_metals": [
       "149Sm",
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1213,6 +1337,10 @@
      "catalogue_metals": [
       "168Er",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -1268,6 +1396,10 @@
      "catalogue_metals": [
       "142Nd",
       "154Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1289,6 +1421,9 @@
      "conjugate_id": "ido|BLR031F|145Nd|i",
      "catalogue_metals": [
       "145Nd"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -1310,6 +1445,10 @@
      "conjugate_id": "cd223lag3|BLR027F|148Nd|i",
      "catalogue_metals": [
       "148Nd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1331,6 +1470,10 @@
      "conjugate_id": "cd134ox40|ACT35|167Er|i",
      "catalogue_metals": [
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1352,6 +1495,10 @@
      "conjugate_id": "cd152ctla4|BLR257L|168Er|i",
      "catalogue_metals": [
       "168Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -1410,6 +1557,10 @@
       "147Sm",
       "161Dy",
       "164Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1433,6 +1584,10 @@
       "145Nd",
       "152Sm",
       "163Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1457,6 +1612,10 @@
       "144Nd",
       "146Nd",
       "159Tb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1478,6 +1637,10 @@
      "conjugate_id": "cd3e|D7A6E|170Er|i",
      "catalogue_metals": [
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -1537,6 +1700,9 @@
       "144Nd",
       "169Tm",
       "173Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -1561,6 +1727,10 @@
       "145Nd",
       "146Nd",
       "151Eu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1586,6 +1756,9 @@
       "171Yb",
       "174Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging"
      ]
     }
    ]
@@ -1640,6 +1813,10 @@
      "conjugate_id": "cd38|E7Z8C|142Nd|i",
      "catalogue_metals": [
       "142Nd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1665,6 +1842,10 @@
       "153Eu",
       "174Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1687,6 +1868,10 @@
      "catalogue_metals": [
       "145Nd",
       "149Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1711,6 +1896,10 @@
       "148Nd",
       "149Sm",
       "153Eu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1732,6 +1921,9 @@
      "conjugate_id": "mpo|EPR20257|148Nd|i",
      "catalogue_metals": [
       "148Nd"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -1755,6 +1947,10 @@
       "153Eu",
       "163Dy",
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1781,6 +1977,10 @@
       "160Gd",
       "164Dy",
       "168Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -1836,6 +2036,10 @@
      "catalogue_metals": [
       "143Nd",
       "149Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1860,6 +2064,10 @@
       "172Yb",
       "173Yb",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1885,6 +2093,10 @@
       "165Ho",
       "169Tm",
       "172Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1912,6 +2124,10 @@
       "154Sm",
       "172Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -1969,6 +2185,10 @@
       "168Er",
       "172Yb",
       "173Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -1990,6 +2210,10 @@
      "conjugate_id": "foxp3|PCH101|155Gd|i",
      "catalogue_metals": [
       "155Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2011,6 +2235,10 @@
      "conjugate_id": "cd279pd1|D4W2J|165Ho|i",
      "catalogue_metals": [
       "165Ho"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2036,6 +2264,10 @@
       "164Dy",
       "166Er",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2060,6 +2292,10 @@
       "174Yb",
       "175Lu",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -2118,6 +2354,10 @@
       "149Sm",
       "163Dy",
       "165Ho"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2142,6 +2382,10 @@
       "148Nd",
       "151Eu",
       "152Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2163,6 +2407,10 @@
      "conjugate_id": "cd11c|D3V1E|154Sm|i",
      "catalogue_metals": [
       "154Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2188,6 +2436,10 @@
       "154Sm",
       "160Gd",
       "166Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2211,6 +2463,10 @@
       "151Eu",
       "154Sm",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2238,6 +2494,10 @@
       "160Gd",
       "163Dy",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -2295,6 +2555,10 @@
       "163Dy",
       "169Tm",
       "171Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2319,6 +2583,10 @@
       "162Dy",
       "165Ho",
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2345,6 +2613,10 @@
       "153Eu",
       "160Gd",
       "163Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2369,6 +2641,10 @@
       "165Ho",
       "166Er",
       "173Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -2423,6 +2699,10 @@
      "conjugate_id": "cd44|IM7|153Eu|i",
      "catalogue_metals": [
       "153Eu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2444,6 +2724,9 @@
      "conjugate_id": "fap|E1V9V|161Dy|i",
      "catalogue_metals": [
       "161Dy"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -2465,6 +2748,9 @@
      "conjugate_id": "podoplanin|D2-40|164Dy|i",
      "catalogue_metals": [
       "164Dy"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -2489,6 +2775,9 @@
       "142Nd",
       "153Eu",
       "209Bi"
+     ],
+     "applications": [
+      "imaging"
      ]
     }
    ]
@@ -2548,6 +2837,9 @@
       "144Nd",
       "169Tm",
       "173Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -2573,6 +2865,10 @@
       "147Sm",
       "161Dy",
       "164Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2598,6 +2894,10 @@
       "148Nd",
       "155Gd",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2623,6 +2923,10 @@
       "149Sm",
       "163Dy",
       "165Ho"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2647,6 +2951,10 @@
       "148Nd",
       "151Eu",
       "152Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2669,6 +2977,10 @@
      "catalogue_metals": [
       "143Nd",
       "149Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2693,6 +3005,10 @@
       "168Er",
       "172Yb",
       "173Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2717,6 +3033,10 @@
       "145Nd",
       "146Nd",
       "151Eu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2740,6 +3060,10 @@
       "145Nd",
       "152Sm",
       "163Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2761,6 +3085,10 @@
      "conjugate_id": "cd44|IM7|153Eu|i",
      "catalogue_metals": [
       "153Eu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2782,6 +3110,10 @@
      "conjugate_id": "cd11c|D3V1E|154Sm|i",
      "catalogue_metals": [
       "154Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2803,6 +3135,10 @@
      "conjugate_id": "foxp3|PCH101|155Gd|i",
      "catalogue_metals": [
       "155Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2827,6 +3163,10 @@
       "163Dy",
       "169Tm",
       "171Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2851,6 +3191,10 @@
       "172Yb",
       "173Yb",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2875,6 +3219,10 @@
       "144Nd",
       "146Nd",
       "159Tb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2900,6 +3248,10 @@
       "154Sm",
       "160Gd",
       "166Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2921,6 +3273,9 @@
      "conjugate_id": "fap|E1V9V|161Dy|i",
      "catalogue_metals": [
       "161Dy"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -2945,6 +3300,10 @@
       "162Dy",
       "165Ho",
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2971,6 +3330,10 @@
       "153Eu",
       "160Gd",
       "163Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -2992,6 +3355,9 @@
      "conjugate_id": "podoplanin|D2-40|164Dy|i",
      "catalogue_metals": [
       "164Dy"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -3013,6 +3379,10 @@
      "conjugate_id": "cd279pd1|D4W2J|165Ho|i",
      "catalogue_metals": [
       "165Ho"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3038,6 +3408,10 @@
       "164Dy",
       "166Er",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3063,6 +3437,10 @@
       "165Ho",
       "169Tm",
       "172Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3084,6 +3462,10 @@
      "conjugate_id": "cd3e|D7A6E|170Er|i",
      "catalogue_metals": [
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3109,6 +3491,9 @@
       "171Yb",
       "174Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -3136,6 +3521,10 @@
       "154Sm",
       "172Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3160,6 +3549,10 @@
       "165Ho",
       "166Er",
       "173Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3183,6 +3576,10 @@
       "151Eu",
       "154Sm",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3210,6 +3607,10 @@
       "160Gd",
       "163Dy",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3234,6 +3635,10 @@
       "174Yb",
       "175Lu",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3258,6 +3663,9 @@
       "142Nd",
       "153Eu",
       "209Bi"
+     ],
+     "applications": [
+      "imaging"
      ]
     }
    ]
@@ -3315,6 +3723,9 @@
       "142Nd",
       "153Eu",
       "209Bi"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -3337,6 +3748,10 @@
      "catalogue_metals": [
       "143Nd",
       "149Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3362,6 +3777,10 @@
       "155Gd",
       "162Dy",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3383,6 +3802,10 @@
      "conjugate_id": "cd274pdl1|SP142|150Nd|i",
      "catalogue_metals": [
       "150Nd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3404,6 +3827,10 @@
      "conjugate_id": "foxp3|PCH101|155Gd|i",
      "catalogue_metals": [
       "155Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3428,6 +3855,10 @@
       "163Dy",
       "169Tm",
       "171Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3452,6 +3883,10 @@
       "172Yb",
       "173Yb",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3476,6 +3911,10 @@
       "144Nd",
       "146Nd",
       "159Tb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3501,6 +3940,10 @@
       "147Sm",
       "161Dy",
       "164Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3525,6 +3968,10 @@
       "162Dy",
       "165Ho",
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3549,6 +3996,10 @@
       "174Yb",
       "175Lu",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3573,6 +4024,10 @@
       "168Er",
       "172Yb",
       "173Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3599,6 +4054,9 @@
       "144Nd",
       "169Tm",
       "173Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -3620,6 +4078,10 @@
      "conjugate_id": "cd3e|Polyclonal, C-Terminal|170Er|i",
      "catalogue_metals": [
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3644,6 +4106,10 @@
       "165Ho",
       "166Er",
       "173Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3668,6 +4134,9 @@
       "146Nd",
       "171Yb",
       "176Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     }
    ]
@@ -3725,6 +4194,9 @@
       "142Nd",
       "153Eu",
       "209Bi"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -3747,6 +4219,9 @@
      "catalogue_metals": [
       "142Nd",
       "168Er"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -3769,6 +4244,10 @@
      "catalogue_metals": [
       "143Nd",
       "149Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3794,6 +4273,10 @@
       "155Gd",
       "162Dy",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3815,6 +4298,10 @@
      "conjugate_id": "cd274pdl1|SP142|150Nd|i",
      "catalogue_metals": [
       "150Nd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3837,6 +4324,10 @@
      "catalogue_metals": [
       "151Eu",
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3858,6 +4349,10 @@
      "conjugate_id": "foxp3|PCH101|155Gd|i",
      "catalogue_metals": [
       "155Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3882,6 +4377,10 @@
       "163Dy",
       "169Tm",
       "171Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3906,6 +4405,10 @@
       "172Yb",
       "173Yb",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3930,6 +4433,10 @@
       "144Nd",
       "146Nd",
       "159Tb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -3953,6 +4460,9 @@
       "145Nd",
       "160Gd",
       "171Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -3978,6 +4488,10 @@
       "147Sm",
       "161Dy",
       "164Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4002,6 +4516,10 @@
       "162Dy",
       "165Ho",
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4024,6 +4542,10 @@
      "catalogue_metals": [
       "143Nd",
       "163Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4046,6 +4568,9 @@
      "catalogue_metals": [
       "146Nd",
       "164Dy"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -4067,6 +4592,10 @@
      "conjugate_id": "cd279pd1|EPR4877(2)|165Ho|i",
      "catalogue_metals": [
       "165Ho"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4091,6 +4620,10 @@
       "174Yb",
       "175Lu",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4115,6 +4648,10 @@
       "168Er",
       "172Yb",
       "173Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4141,6 +4678,9 @@
       "144Nd",
       "169Tm",
       "173Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -4162,6 +4702,10 @@
      "conjugate_id": "cd3e|Polyclonal, C-Terminal|170Er|i",
      "catalogue_metals": [
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4184,6 +4728,9 @@
      "catalogue_metals": [
       "168Er",
       "172Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -4208,6 +4755,10 @@
       "165Ho",
       "166Er",
       "173Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4230,6 +4781,9 @@
      "catalogue_metals": [
       "148Nd",
       "175Lu"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -4254,6 +4808,9 @@
       "146Nd",
       "171Yb",
       "176Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     }
    ]
@@ -4311,6 +4868,9 @@
       "142Nd",
       "153Eu",
       "209Bi"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -4333,6 +4893,10 @@
      "catalogue_metals": [
       "143Nd",
       "149Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4357,6 +4921,10 @@
       "172Yb",
       "173Yb",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4383,6 +4951,9 @@
       "144Nd",
       "169Tm",
       "173Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -4407,6 +4978,9 @@
       "146Nd",
       "171Yb",
       "176Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     }
    ]
@@ -4465,6 +5039,10 @@
       "155Gd",
       "162Dy",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4486,6 +5064,10 @@
      "conjugate_id": "foxp3|PCH101|155Gd|i",
      "catalogue_metals": [
       "155Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4510,6 +5092,10 @@
       "163Dy",
       "169Tm",
       "171Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4534,6 +5120,10 @@
       "144Nd",
       "146Nd",
       "159Tb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4559,6 +5149,10 @@
       "147Sm",
       "161Dy",
       "164Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4583,6 +5177,10 @@
       "162Dy",
       "165Ho",
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4604,6 +5202,10 @@
      "conjugate_id": "cd3e|Polyclonal, C-Terminal|170Er|i",
      "catalogue_metals": [
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4628,6 +5230,10 @@
       "165Ho",
       "166Er",
       "173Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -4682,6 +5288,10 @@
      "conjugate_id": "cd274pdl1|SP142|150Nd|i",
      "catalogue_metals": [
       "150Nd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4703,6 +5313,10 @@
      "conjugate_id": "cd279pd1|EPR4877(2)|165Ho|i",
      "catalogue_metals": [
       "165Ho"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4727,6 +5341,10 @@
       "174Yb",
       "175Lu",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4751,6 +5369,10 @@
       "168Er",
       "172Yb",
       "173Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -4804,7 +5426,8 @@
      "custom": true,
      "in_catalogue": false,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": []
     },
     {
      "target_id": null,
@@ -4823,7 +5446,8 @@
      "custom": true,
      "in_catalogue": false,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": []
     },
     {
      "target_id": null,
@@ -4842,7 +5466,8 @@
      "custom": true,
      "in_catalogue": false,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": []
     }
    ]
   },
@@ -4898,6 +5523,9 @@
      "catalogue_metals": [
       "142Nd",
       "168Er"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -4920,6 +5548,10 @@
      "catalogue_metals": [
       "143Nd",
       "163Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -4943,6 +5575,9 @@
       "145Nd",
       "160Gd",
       "171Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -4965,6 +5600,9 @@
      "catalogue_metals": [
       "146Nd",
       "164Dy"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -4987,6 +5625,9 @@
      "catalogue_metals": [
       "148Nd",
       "175Lu"
+     ],
+     "applications": [
+      "imaging"
      ]
     },
     {
@@ -5009,6 +5650,10 @@
      "catalogue_metals": [
       "151Eu",
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -5031,6 +5676,9 @@
      "catalogue_metals": [
       "168Er",
       "172Yb"
+     ],
+     "applications": [
+      "imaging"
      ]
     }
    ]
@@ -5088,6 +5736,10 @@
      "catalogue_metals": [
       "106Cd",
       "151Eu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -5112,6 +5764,9 @@
       "144Nd",
       "158Gd",
       "166Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -5136,6 +5791,9 @@
       "146Nd",
       "152Sm",
       "175Lu"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -5160,6 +5818,9 @@
       "158Gd",
       "165Ho",
       "168Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -5182,6 +5843,10 @@
      "catalogue_metals": [
       "175Lu",
       "196Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -5205,6 +5870,10 @@
       "171Yb",
       "173Yb",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -5260,6 +5929,10 @@
       "142Nd",
       "150Nd",
       "158Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -5285,6 +5958,9 @@
       "159Tb",
       "166Er",
       "209Bi"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -5308,6 +5984,9 @@
       "113Cd",
       "144Nd",
       "162Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -5333,6 +6012,10 @@
       "165Ho",
       "174Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -5357,6 +6040,10 @@
       "154Sm",
       "159Tb",
       "169Tm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -5383,6 +6070,10 @@
       "168Er",
       "169Tm",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -5406,6 +6097,9 @@
       "158Gd",
       "173Yb",
       "209Bi"
+     ],
+     "applications": [
+      "suspension"
      ]
     }
    ]
@@ -5459,6 +6153,9 @@
      "conjugate_id": "cd11a|HI111|142Nd|s",
      "catalogue_metals": [
       "142Nd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -5483,6 +6180,10 @@
       "154Sm",
       "159Tb",
       "169Tm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -5507,6 +6208,9 @@
       "162Dy",
       "164Dy",
       "176Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -5532,6 +6236,10 @@
       "165Ho",
       "174Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -5558,6 +6266,10 @@
       "168Er",
       "169Tm",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -5580,6 +6292,9 @@
      "catalogue_metals": [
       "156Gd",
       "173Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -5605,6 +6320,9 @@
       "159Tb",
       "166Er",
       "209Bi"
+     ],
+     "applications": [
+      "suspension"
      ]
     }
    ]
@@ -5659,6 +6377,9 @@
      "catalogue_metals": [
       "142Nd",
       "165Ho"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -5680,6 +6401,9 @@
      "conjugate_id": "cd22|HIB22|159Tb|s",
      "catalogue_metals": [
       "159Tb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -5702,6 +6426,9 @@
      "catalogue_metals": [
       "161Dy",
       "162Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -5725,6 +6452,10 @@
       "145Nd",
       "154Sm",
       "165Ho"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -5747,6 +6478,9 @@
      "catalogue_metals": [
       "166Er",
       "169Tm"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -5772,6 +6506,10 @@
       "165Ho",
       "174Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -5796,6 +6534,10 @@
       "144Nd",
       "167Er",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -5849,6 +6591,9 @@
      "conjugate_id": "cd181cxcr1|8F1/CXCR1|142Nd|s",
      "catalogue_metals": [
       "142Nd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -5870,6 +6615,9 @@
      "conjugate_id": "cd22|HIB22|159Tb|s",
      "catalogue_metals": [
       "159Tb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -5892,6 +6640,9 @@
      "catalogue_metals": [
       "161Dy",
       "162Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -5915,6 +6666,10 @@
       "145Nd",
       "154Sm",
       "165Ho"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -5939,6 +6694,9 @@
       "158Gd",
       "163Dy",
       "169Tm"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -5964,6 +6722,10 @@
       "165Ho",
       "174Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -5988,6 +6750,10 @@
       "144Nd",
       "167Er",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -6056,6 +6822,10 @@
       "195Pt",
       "196Pt",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6080,6 +6850,9 @@
       "147Sm",
       "154Sm",
       "156Gd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6104,6 +6877,9 @@
       "144Nd",
       "158Gd",
       "166Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6128,6 +6904,9 @@
       "146Nd",
       "152Sm",
       "175Lu"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6152,6 +6931,9 @@
       "158Gd",
       "165Ho",
       "168Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6173,6 +6955,9 @@
      "conjugate_id": "tcrab|T10B9.1A-31|141Pr|s",
      "catalogue_metals": [
       "141Pr"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6197,6 +6982,10 @@
       "142Nd",
       "146Nd",
       "168Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6219,6 +7008,9 @@
      "catalogue_metals": [
       "143Nd",
       "168Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6242,6 +7034,10 @@
       "144Nd",
       "145Nd",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6268,6 +7064,10 @@
       "165Ho",
       "169Tm",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6293,6 +7093,10 @@
       "160Gd",
       "175Lu",
       "195Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6316,6 +7120,9 @@
       "143Nd",
       "147Sm",
       "151Eu"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6339,6 +7146,9 @@
       "148Nd",
       "165Ho",
       "166Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6362,6 +7172,9 @@
       "149Sm",
       "163Dy",
       "176Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6388,6 +7201,10 @@
       "155Gd",
       "169Tm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6411,6 +7228,9 @@
       "151Eu",
       "159Tb",
       "164Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6432,6 +7252,10 @@
      "conjugate_id": "cd66b|G10F5|152Sm|s",
      "catalogue_metals": [
       "152Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6453,6 +7277,10 @@
      "conjugate_id": "cd25il2ra|BC96|153Eu|s",
      "catalogue_metals": [
       "153Eu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6477,6 +7305,10 @@
       "154Sm",
       "159Tb",
       "169Tm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6501,6 +7333,10 @@
       "158Gd",
       "162Dy",
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6526,6 +7362,10 @@
       "165Ho",
       "174Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6549,6 +7389,10 @@
       "142Nd",
       "150Nd",
       "158Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6570,6 +7414,10 @@
      "conjugate_id": "cd28|CD28.2|160Gd|s",
      "catalogue_metals": [
       "160Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6591,6 +7439,10 @@
      "conjugate_id": "cd38|HB-7|161Dy|s",
      "catalogue_metals": [
       "161Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6615,6 +7467,10 @@
       "161Dy",
       "162Dy",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6641,6 +7497,10 @@
       "164Dy",
       "165Ho",
       "194Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6662,6 +7522,9 @@
      "conjugate_id": "tgfb1lap|S20006A|164Dy|s",
      "catalogue_metals": [
       "164Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6687,6 +7550,9 @@
       "159Tb",
       "166Er",
       "209Bi"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6709,6 +7575,9 @@
      "catalogue_metals": [
       "159Tb",
       "167Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6734,6 +7603,10 @@
       "165Ho",
       "168Er",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6757,6 +7630,10 @@
       "141Pr",
       "154Sm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6781,6 +7658,9 @@
       "144Nd",
       "163Dy",
       "171Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6802,6 +7682,9 @@
      "conjugate_id": "il21|3A3-N2|172Yb|s",
      "catalogue_metals": [
       "172Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6825,6 +7708,9 @@
       "158Gd",
       "173Yb",
       "209Bi"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6848,6 +7734,10 @@
       "169Tm",
       "174Yb",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6872,6 +7762,9 @@
       "162Dy",
       "164Dy",
       "176Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6897,6 +7790,9 @@
       "169Tm",
       "172Yb",
       "195Pt"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -6919,6 +7815,10 @@
      "catalogue_metals": [
       "175Lu",
       "196Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6942,6 +7842,10 @@
       "171Yb",
       "173Yb",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -6966,6 +7870,10 @@
       "148Nd",
       "165Ho",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -7034,6 +7942,10 @@
       "195Pt",
       "196Pt",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7055,6 +7967,9 @@
      "conjugate_id": "tcrab|T10B9.1A-31|141Pr|s",
      "catalogue_metals": [
       "141Pr"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -7079,6 +7994,10 @@
       "142Nd",
       "146Nd",
       "168Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7101,6 +8020,9 @@
      "catalogue_metals": [
       "143Nd",
       "168Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -7124,6 +8046,10 @@
       "144Nd",
       "145Nd",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7150,6 +8076,10 @@
       "165Ho",
       "169Tm",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7175,6 +8105,10 @@
       "160Gd",
       "175Lu",
       "195Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7201,6 +8135,10 @@
       "168Er",
       "169Tm",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7224,6 +8162,9 @@
       "149Sm",
       "163Dy",
       "176Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -7250,6 +8191,10 @@
       "155Gd",
       "169Tm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7273,6 +8218,9 @@
       "151Eu",
       "159Tb",
       "164Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -7294,6 +8242,10 @@
      "conjugate_id": "cd66b|G10F5|152Sm|s",
      "catalogue_metals": [
       "152Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7315,6 +8267,10 @@
      "conjugate_id": "cd25il2ra|BC96|153Eu|s",
      "catalogue_metals": [
       "153Eu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7339,6 +8295,10 @@
       "154Sm",
       "159Tb",
       "169Tm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7363,6 +8323,10 @@
       "158Gd",
       "162Dy",
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7388,6 +8352,10 @@
       "165Ho",
       "174Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7411,6 +8379,10 @@
       "142Nd",
       "150Nd",
       "158Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7432,6 +8404,10 @@
      "conjugate_id": "cd28|CD28.2|160Gd|s",
      "catalogue_metals": [
       "160Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7453,6 +8429,10 @@
      "conjugate_id": "cd38|HB-7|161Dy|s",
      "catalogue_metals": [
       "161Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7477,6 +8457,10 @@
       "161Dy",
       "162Dy",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7503,6 +8487,10 @@
       "164Dy",
       "165Ho",
       "194Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7524,6 +8512,9 @@
      "conjugate_id": "cd357gitr|108-17|164Dy|s",
      "catalogue_metals": [
       "164Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -7545,6 +8536,9 @@
      "conjugate_id": "cd2442b4|PP35|165Ho|s",
      "catalogue_metals": [
       "165Ho"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -7570,6 +8564,9 @@
       "159Tb",
       "166Er",
       "209Bi"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -7592,6 +8589,9 @@
      "catalogue_metals": [
       "159Tb",
       "167Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -7617,6 +8617,10 @@
       "165Ho",
       "168Er",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7640,6 +8644,10 @@
       "141Pr",
       "154Sm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7661,6 +8669,9 @@
      "conjugate_id": "cd226|DX11|171Yb|s",
      "catalogue_metals": [
       "171Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -7685,6 +8696,10 @@
       "165Ho",
       "172Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7708,6 +8723,9 @@
       "158Gd",
       "173Yb",
       "209Bi"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -7731,6 +8749,10 @@
       "169Tm",
       "174Yb",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -7753,6 +8775,9 @@
      "catalogue_metals": [
       "163Dy",
       "175Lu"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -7777,6 +8802,9 @@
       "162Dy",
       "164Dy",
       "176Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -7801,6 +8829,10 @@
       "148Nd",
       "165Ho",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -7857,6 +8889,9 @@
       "143Nd",
       "147Sm",
       "151Eu"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -7880,6 +8915,9 @@
       "148Nd",
       "165Ho",
       "166Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -7901,6 +8939,9 @@
      "conjugate_id": "il21|3A3-N2|172Yb|s",
      "catalogue_metals": [
       "172Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     }
    ]
@@ -7958,6 +8999,9 @@
       "147Sm",
       "154Sm",
       "156Gd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -7980,6 +9024,10 @@
      "catalogue_metals": [
       "175Lu",
       "196Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -8003,6 +9051,10 @@
       "171Yb",
       "173Yb",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -8060,6 +9112,9 @@
       "144Nd",
       "158Gd",
       "166Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -8084,6 +9139,9 @@
       "146Nd",
       "152Sm",
       "175Lu"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -8108,6 +9166,9 @@
       "158Gd",
       "165Ho",
       "168Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -8132,6 +9193,9 @@
       "144Nd",
       "163Dy",
       "171Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -8157,6 +9221,9 @@
       "169Tm",
       "172Yb",
       "195Pt"
+     ],
+     "applications": [
+      "suspension"
      ]
     }
    ]
@@ -8216,6 +9283,10 @@
       "168Er",
       "169Tm",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -8237,6 +9308,9 @@
      "conjugate_id": "cd357gitr|108-17|164Dy|s",
      "catalogue_metals": [
       "164Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -8258,6 +9332,9 @@
      "conjugate_id": "cd226|DX11|171Yb|s",
      "catalogue_metals": [
       "171Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     }
    ]
@@ -8312,6 +9389,9 @@
      "conjugate_id": "cd2442b4|PP35|165Ho|s",
      "catalogue_metals": [
       "165Ho"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -8336,6 +9416,10 @@
       "165Ho",
       "172Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -8358,6 +9442,9 @@
      "catalogue_metals": [
       "163Dy",
       "175Lu"
+     ],
+     "applications": [
+      "suspension"
      ]
     }
    ]
@@ -8413,6 +9500,9 @@
      "catalogue_metals": [
       "143Nd",
       "168Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -8437,6 +9527,10 @@
       "154Sm",
       "159Tb",
       "169Tm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -8462,6 +9556,10 @@
       "165Ho",
       "174Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -8485,6 +9583,10 @@
       "142Nd",
       "150Nd",
       "158Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -8509,6 +9611,10 @@
       "161Dy",
       "162Dy",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -8534,6 +9640,9 @@
       "159Tb",
       "166Er",
       "209Bi"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -8557,6 +9666,9 @@
       "158Gd",
       "173Yb",
       "209Bi"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -8580,6 +9692,10 @@
       "169Tm",
       "174Yb",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -8604,6 +9720,9 @@
       "162Dy",
       "164Dy",
       "176Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     }
    ]
@@ -8658,6 +9777,9 @@
      "conjugate_id": "tcrab|T10B9.1A-31|141Pr|s",
      "catalogue_metals": [
       "141Pr"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -8684,6 +9806,10 @@
       "155Gd",
       "169Tm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -8707,6 +9833,9 @@
       "151Eu",
       "159Tb",
       "164Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -8728,6 +9857,10 @@
      "conjugate_id": "cd25il2ra|BC96|153Eu|s",
      "catalogue_metals": [
       "153Eu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -8752,6 +9885,10 @@
       "158Gd",
       "162Dy",
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -8773,6 +9910,10 @@
      "conjugate_id": "cd28|CD28.2|160Gd|s",
      "catalogue_metals": [
       "160Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -8794,6 +9935,10 @@
      "conjugate_id": "cd38|HB-7|161Dy|s",
      "catalogue_metals": [
       "161Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -8820,6 +9965,10 @@
       "164Dy",
       "165Ho",
       "194Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -8842,6 +9991,9 @@
      "catalogue_metals": [
       "159Tb",
       "167Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -8867,6 +10019,10 @@
       "165Ho",
       "168Er",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -8935,6 +10091,10 @@
       "195Pt",
       "196Pt",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -8957,6 +10117,9 @@
      "catalogue_metals": [
       "141Pr",
       "174Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -8981,6 +10144,10 @@
       "142Nd",
       "146Nd",
       "168Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9003,6 +10170,9 @@
      "catalogue_metals": [
       "143Nd",
       "151Eu"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -9026,6 +10196,10 @@
       "144Nd",
       "145Nd",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9052,6 +10226,10 @@
       "165Ho",
       "169Tm",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9077,6 +10255,10 @@
       "160Gd",
       "175Lu",
       "195Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9100,6 +10282,10 @@
       "147Sm",
       "159Tb",
       "162Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9123,6 +10309,9 @@
       "149Sm",
       "163Dy",
       "176Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -9149,6 +10338,10 @@
       "155Gd",
       "169Tm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9172,6 +10365,9 @@
       "151Eu",
       "159Tb",
       "164Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -9193,6 +10389,10 @@
      "conjugate_id": "cd66b|G10F5|152Sm|s",
      "catalogue_metals": [
       "152Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9217,6 +10417,10 @@
       "158Gd",
       "162Dy",
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9240,6 +10444,10 @@
       "147Sm",
       "156Gd",
       "171Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9261,6 +10469,10 @@
      "conjugate_id": "cd28|CD28.2|160Gd|s",
      "catalogue_metals": [
       "160Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9282,6 +10494,10 @@
      "conjugate_id": "cd38|HB-7|161Dy|s",
      "catalogue_metals": [
       "161Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9308,6 +10524,10 @@
       "164Dy",
       "165Ho",
       "194Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9331,6 +10551,10 @@
       "141Pr",
       "154Sm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9356,6 +10580,10 @@
       "173Yb",
       "174Yb",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9380,6 +10608,10 @@
       "148Nd",
       "165Ho",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -9448,6 +10680,10 @@
       "195Pt",
       "196Pt",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9472,6 +10708,10 @@
       "142Nd",
       "146Nd",
       "168Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9495,6 +10735,10 @@
       "144Nd",
       "145Nd",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9521,6 +10765,10 @@
       "165Ho",
       "169Tm",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9546,6 +10794,10 @@
       "160Gd",
       "175Lu",
       "195Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9569,6 +10821,9 @@
       "149Sm",
       "163Dy",
       "176Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -9590,6 +10845,10 @@
      "conjugate_id": "cd66b|G10F5|152Sm|s",
      "catalogue_metals": [
       "152Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9613,6 +10872,10 @@
       "141Pr",
       "154Sm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9637,6 +10900,10 @@
       "148Nd",
       "165Ho",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -9707,6 +10974,10 @@
       "195Pt",
       "196Pt",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9729,6 +11000,10 @@
      "catalogue_metals": [
       "141Pr",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9751,6 +11026,9 @@
      "catalogue_metals": [
       "143Nd",
       "151Eu"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -9777,6 +11055,10 @@
       "165Ho",
       "169Tm",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9799,6 +11081,10 @@
      "catalogue_metals": [
       "145Nd",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9821,6 +11107,10 @@
      "catalogue_metals": [
       "146Nd",
       "162Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9844,6 +11134,10 @@
       "147Sm",
       "159Tb",
       "162Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9868,6 +11162,10 @@
       "148Nd",
       "165Ho",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9894,6 +11192,10 @@
       "164Dy",
       "165Ho",
       "194Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9920,6 +11222,10 @@
       "155Gd",
       "169Tm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9943,6 +11249,9 @@
       "151Eu",
       "159Tb",
       "164Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -9967,6 +11276,10 @@
       "153Eu",
       "158Gd",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -9988,6 +11301,10 @@
      "conjugate_id": "cd25il2ra|BC96|153Eu|s",
      "catalogue_metals": [
       "153Eu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10009,6 +11326,10 @@
      "conjugate_id": null,
      "catalogue_metals": [
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10028,7 +11349,11 @@
      "custom": false,
      "in_catalogue": true,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd183cxcr3",
@@ -10050,6 +11375,9 @@
      "catalogue_metals": [
       "156Gd",
       "163Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -10069,7 +11397,10 @@
      "custom": false,
      "in_catalogue": true,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd28",
@@ -10090,6 +11421,10 @@
      "conjugate_id": "cd28|CD28.2|160Gd|s",
      "catalogue_metals": [
       "160Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10111,6 +11446,10 @@
      "conjugate_id": "cd38|HB-7|161Dy|s",
      "catalogue_metals": [
       "161Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10134,6 +11473,9 @@
       "149Sm",
       "163Dy",
       "176Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -10153,7 +11495,10 @@
      "custom": false,
      "in_catalogue": true,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd294crth2",
@@ -10174,6 +11519,9 @@
      "conjugate_id": null,
      "catalogue_metals": [
       "163Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -10196,6 +11544,9 @@
      "catalogue_metals": [
       "159Tb",
       "167Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -10218,6 +11569,10 @@
      "catalogue_metals": [
       "151Eu",
       "195Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10241,6 +11596,10 @@
       "141Pr",
       "154Sm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10264,6 +11623,10 @@
       "147Sm",
       "156Gd",
       "171Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10285,6 +11648,10 @@
      "conjugate_id": null,
      "catalogue_metals": [
       "152Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10304,7 +11671,11 @@
      "custom": false,
      "in_catalogue": true,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "igd",
@@ -10325,6 +11696,9 @@
      "conjugate_id": null,
      "catalogue_metals": [
       "146Nd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -10350,6 +11724,10 @@
       "165Ho",
       "168Er",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -10406,6 +11784,10 @@
       "153Eu",
       "158Gd",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10427,6 +11809,9 @@
      "conjugate_id": null,
      "catalogue_metals": [
       "163Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -10448,6 +11833,10 @@
      "conjugate_id": null,
      "catalogue_metals": [
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10470,6 +11859,10 @@
      "catalogue_metals": [
       "163Dy",
       "172Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10496,6 +11889,10 @@
       "165Ho",
       "169Tm",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10515,7 +11912,10 @@
      "custom": false,
      "in_catalogue": true,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd45",
@@ -10550,6 +11950,10 @@
       "195Pt",
       "196Pt",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10572,6 +11976,10 @@
      "catalogue_metals": [
       "141Pr",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10594,6 +12002,9 @@
      "catalogue_metals": [
       "143Nd",
       "151Eu"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -10616,6 +12027,10 @@
      "catalogue_metals": [
       "145Nd",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10638,6 +12053,10 @@
      "catalogue_metals": [
       "146Nd",
       "162Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10661,6 +12080,10 @@
       "147Sm",
       "159Tb",
       "162Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10685,6 +12108,10 @@
       "148Nd",
       "165Ho",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10711,6 +12138,10 @@
       "164Dy",
       "165Ho",
       "194Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10737,6 +12168,10 @@
       "155Gd",
       "169Tm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10760,6 +12195,9 @@
       "151Eu",
       "159Tb",
       "164Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -10781,6 +12219,10 @@
      "conjugate_id": "cd25il2ra|BC96|153Eu|s",
      "catalogue_metals": [
       "153Eu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10803,6 +12245,9 @@
      "catalogue_metals": [
       "156Gd",
       "163Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -10824,6 +12269,10 @@
      "conjugate_id": "cd28|CD28.2|160Gd|s",
      "catalogue_metals": [
       "160Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10845,6 +12294,10 @@
      "conjugate_id": "cd38|HB-7|161Dy|s",
      "catalogue_metals": [
       "161Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10868,6 +12321,9 @@
       "149Sm",
       "163Dy",
       "176Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -10887,7 +12343,10 @@
      "custom": false,
      "in_catalogue": true,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "humanccr7cd197",
@@ -10909,6 +12368,9 @@
      "catalogue_metals": [
       "159Tb",
       "167Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -10931,6 +12393,10 @@
      "catalogue_metals": [
       "151Eu",
       "195Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10954,6 +12420,10 @@
       "141Pr",
       "154Sm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10977,6 +12447,10 @@
       "147Sm",
       "156Gd",
       "171Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -10998,6 +12472,10 @@
      "conjugate_id": null,
      "catalogue_metals": [
       "152Sm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11017,7 +12495,11 @@
      "custom": false,
      "in_catalogue": true,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "igd",
@@ -11038,6 +12520,9 @@
      "conjugate_id": null,
      "catalogue_metals": [
       "146Nd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -11063,6 +12548,10 @@
       "165Ho",
       "168Er",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -11116,6 +12605,9 @@
      "conjugate_id": "cd11a|HI111|142Nd|s",
      "catalogue_metals": [
       "142Nd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -11138,6 +12630,10 @@
      "catalogue_metals": [
       "145Nd",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11160,6 +12656,10 @@
      "catalogue_metals": [
       "146Nd",
       "162Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11184,6 +12684,10 @@
       "148Nd",
       "165Ho",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11206,6 +12710,10 @@
      "catalogue_metals": [
       "149Sm",
       "169Tm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11229,6 +12737,10 @@
       "142Nd",
       "150Nd",
       "158Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11253,6 +12765,9 @@
       "162Dy",
       "164Dy",
       "176Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -11277,6 +12792,10 @@
       "154Sm",
       "159Tb",
       "169Tm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11312,6 +12831,10 @@
       "195Pt",
       "196Pt",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11337,6 +12860,10 @@
       "165Ho",
       "174Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11359,6 +12886,9 @@
      "catalogue_metals": [
       "159Tb",
       "167Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -11383,6 +12913,10 @@
       "161Dy",
       "162Dy",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11406,6 +12940,9 @@
       "113Cd",
       "144Nd",
       "162Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -11432,6 +12969,10 @@
       "164Dy",
       "165Ho",
       "194Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11453,6 +12994,10 @@
      "conjugate_id": "cd44|BJ18|166Er|s",
      "catalogue_metals": [
       "166Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11474,6 +13019,10 @@
      "conjugate_id": "cd27|O323|167Er|s",
      "catalogue_metals": [
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11500,6 +13049,10 @@
       "168Er",
       "169Tm",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11526,6 +13079,10 @@
       "155Gd",
       "169Tm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11549,6 +13106,10 @@
       "141Pr",
       "154Sm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11571,6 +13132,10 @@
      "catalogue_metals": [
       "163Dy",
       "172Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11594,6 +13159,9 @@
       "158Gd",
       "173Yb",
       "209Bi"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -11619,6 +13187,10 @@
       "173Yb",
       "174Yb",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11643,6 +13215,10 @@
       "165Ho",
       "172Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11668,6 +13244,10 @@
       "165Ho",
       "168Er",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -11722,6 +13302,9 @@
      "catalogue_metals": [
       "141Pr",
       "174Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -11743,6 +13326,9 @@
      "conjugate_id": "cd11a|HI111|142Nd|s",
      "catalogue_metals": [
       "142Nd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -11764,6 +13350,9 @@
      "conjugate_id": "cd5|UCHT2|143Nd|s",
      "catalogue_metals": [
       "143Nd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -11787,6 +13376,9 @@
       "144Nd",
       "156Gd",
       "171Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -11809,6 +13401,10 @@
      "catalogue_metals": [
       "145Nd",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11831,6 +13427,10 @@
      "catalogue_metals": [
       "146Nd",
       "162Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11854,6 +13454,10 @@
       "145Nd",
       "147Sm",
       "153Eu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11878,6 +13482,10 @@
       "148Nd",
       "165Ho",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11900,6 +13508,10 @@
      "catalogue_metals": [
       "149Sm",
       "169Tm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11923,6 +13535,10 @@
       "142Nd",
       "150Nd",
       "158Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -11944,6 +13560,9 @@
      "conjugate_id": "cd2|TS1/8|151Eu|s",
      "catalogue_metals": [
       "151Eu"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -11968,6 +13587,9 @@
       "162Dy",
       "164Dy",
       "176Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -11992,6 +13614,10 @@
       "154Sm",
       "159Tb",
       "169Tm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12027,6 +13653,10 @@
       "195Pt",
       "196Pt",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12052,6 +13682,10 @@
       "165Ho",
       "174Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12074,6 +13708,9 @@
      "catalogue_metals": [
       "156Gd",
       "163Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -12098,6 +13735,10 @@
       "153Eu",
       "158Gd",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12120,6 +13761,9 @@
      "catalogue_metals": [
       "159Tb",
       "167Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -12141,6 +13785,10 @@
      "conjugate_id": "cd28|CD28.2|160Gd|s",
      "catalogue_metals": [
       "160Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12165,6 +13813,10 @@
       "161Dy",
       "162Dy",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12188,6 +13840,9 @@
       "113Cd",
       "144Nd",
       "162Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -12211,6 +13866,9 @@
       "151Eu",
       "159Tb",
       "164Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -12237,6 +13895,10 @@
       "164Dy",
       "165Ho",
       "194Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12258,6 +13920,10 @@
      "conjugate_id": "cd44|BJ18|166Er|s",
      "catalogue_metals": [
       "166Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12279,6 +13945,10 @@
      "conjugate_id": "cd27|O323|167Er|s",
      "catalogue_metals": [
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12305,6 +13975,10 @@
       "168Er",
       "169Tm",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12331,6 +14005,10 @@
       "155Gd",
       "169Tm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12354,6 +14032,10 @@
       "141Pr",
       "154Sm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12373,7 +14055,10 @@
      "custom": false,
      "in_catalogue": true,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd57",
@@ -12395,6 +14080,10 @@
      "catalogue_metals": [
       "163Dy",
       "172Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12418,6 +14107,9 @@
       "158Gd",
       "173Yb",
       "209Bi"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -12443,6 +14135,10 @@
       "173Yb",
       "174Yb",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12467,6 +14163,10 @@
       "165Ho",
       "172Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12492,6 +14192,10 @@
       "165Ho",
       "168Er",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -12547,6 +14251,10 @@
       "142Nd",
       "150Nd",
       "158Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12571,6 +14279,9 @@
       "162Dy",
       "164Dy",
       "176Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -12595,6 +14306,10 @@
       "154Sm",
       "159Tb",
       "169Tm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12619,6 +14334,10 @@
       "161Dy",
       "162Dy",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12644,6 +14363,10 @@
       "165Ho",
       "174Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12670,6 +14393,10 @@
       "168Er",
       "169Tm",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12693,6 +14420,9 @@
       "158Gd",
       "173Yb",
       "209Bi"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -12717,6 +14447,10 @@
       "165Ho",
       "172Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -12770,6 +14504,9 @@
      "conjugate_id": "tra160|TRA-1-60|148Nd|s",
      "catalogue_metals": [
       "148Nd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -12791,6 +14528,10 @@
      "conjugate_id": "sox2|O30-678|150Nd|s",
      "catalogue_metals": [
       "150Nd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12812,6 +14553,9 @@
      "conjugate_id": "oct34|40/Oct-3|165Ho|s",
      "catalogue_metals": [
       "165Ho"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -12833,6 +14577,9 @@
      "conjugate_id": "nanog|N31-355|169Tm|s",
      "catalogue_metals": [
       "169Tm"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -12860,6 +14607,10 @@
       "162Dy",
       "171Yb",
       "194Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12881,6 +14632,10 @@
      "conjugate_id": "cmycp67|9E10|176Yb|s",
      "catalogue_metals": [
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -12935,6 +14690,9 @@
      "catalogue_metals": [
       "141Pr",
       "174Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -12957,6 +14715,10 @@
      "catalogue_metals": [
       "145Nd",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -12981,6 +14743,10 @@
       "153Eu",
       "158Gd",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13007,6 +14773,10 @@
       "155Gd",
       "169Tm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13030,6 +14800,10 @@
       "141Pr",
       "154Sm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13051,6 +14825,9 @@
      "conjugate_id": "cd39|A1|160Gd|s",
      "catalogue_metals": [
       "160Gd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -13073,6 +14850,10 @@
      "catalogue_metals": [
       "159Tb",
       "162Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13097,6 +14878,9 @@
       "162Dy",
       "164Dy",
       "176Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -13123,6 +14907,10 @@
       "164Dy",
       "165Ho",
       "194Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13145,6 +14933,10 @@
      "catalogue_metals": [
       "149Sm",
       "169Tm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13169,6 +14961,10 @@
       "161Dy",
       "162Dy",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13194,6 +14990,10 @@
       "173Yb",
       "174Yb",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13219,6 +15019,10 @@
       "165Ho",
       "168Er",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -13273,6 +15077,10 @@
      "catalogue_metals": [
       "141Pr",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13296,6 +15104,9 @@
       "144Nd",
       "156Gd",
       "171Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -13318,6 +15129,10 @@
      "catalogue_metals": [
       "146Nd",
       "162Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13344,6 +15159,10 @@
       "168Er",
       "169Tm",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13370,6 +15189,10 @@
       "155Gd",
       "169Tm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13393,6 +15216,10 @@
       "141Pr",
       "154Sm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13415,6 +15242,9 @@
      "catalogue_metals": [
       "156Gd",
       "163Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -13439,6 +15269,10 @@
       "153Eu",
       "158Gd",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13462,6 +15296,9 @@
       "151Eu",
       "159Tb",
       "164Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -13488,6 +15325,10 @@
       "164Dy",
       "165Ho",
       "194Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13510,6 +15351,10 @@
      "catalogue_metals": [
       "149Sm",
       "169Tm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13533,6 +15378,9 @@
       "153Eu",
       "164Dy",
       "171Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -13556,6 +15404,10 @@
       "144Nd",
       "145Nd",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13581,6 +15433,10 @@
       "165Ho",
       "174Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13606,6 +15462,10 @@
       "165Ho",
       "168Er",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -13664,6 +15524,10 @@
       "165Ho",
       "169Tm",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13688,6 +15552,10 @@
       "144Nd",
       "167Er",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13711,6 +15579,10 @@
       "145Nd",
       "147Sm",
       "153Eu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13730,7 +15602,10 @@
      "custom": false,
      "in_catalogue": true,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd36",
@@ -13752,6 +15627,9 @@
      "catalogue_metals": [
       "152Sm",
       "155Gd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -13775,6 +15653,10 @@
       "145Nd",
       "154Sm",
       "165Ho"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13810,6 +15692,10 @@
       "195Pt",
       "196Pt",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13833,6 +15719,10 @@
       "147Sm",
       "159Tb",
       "162Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13858,6 +15748,10 @@
       "160Gd",
       "175Lu",
       "195Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13882,6 +15776,10 @@
       "148Nd",
       "165Ho",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13905,6 +15803,10 @@
       "144Nd",
       "167Er",
       "172Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13926,6 +15828,10 @@
      "conjugate_id": "cd206mmr|15-2|168Er|s",
      "catalogue_metals": [
       "168Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13950,6 +15856,9 @@
       "158Gd",
       "163Dy",
       "169Tm"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -13973,6 +15882,10 @@
       "141Pr",
       "154Sm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -13998,6 +15911,10 @@
       "173Yb",
       "174Yb",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -14056,6 +15973,10 @@
       "165Ho",
       "169Tm",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14077,6 +15998,9 @@
      "conjugate_id": "cd117ckit|104D2|143Nd|s",
      "catalogue_metals": [
       "143Nd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -14101,6 +16025,10 @@
       "144Nd",
       "167Er",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14122,6 +16050,9 @@
      "conjugate_id": "cd64|10.1|146Nd|s",
      "catalogue_metals": [
       "146Nd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -14145,6 +16076,10 @@
       "145Nd",
       "147Sm",
       "153Eu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14167,6 +16102,9 @@
      "catalogue_metals": [
       "143Nd",
       "151Eu"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -14202,6 +16140,10 @@
       "195Pt",
       "196Pt",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14226,6 +16168,9 @@
       "158Gd",
       "163Dy",
       "169Tm"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -14249,6 +16194,10 @@
       "144Nd",
       "164Dy",
       "172Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14273,6 +16222,10 @@
       "149Sm",
       "163Dy",
       "166Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14296,6 +16249,10 @@
       "141Pr",
       "154Sm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14323,6 +16280,10 @@
       "162Dy",
       "171Yb",
       "194Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14346,6 +16307,10 @@
       "144Nd",
       "167Er",
       "172Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14371,6 +16336,10 @@
       "173Yb",
       "174Yb",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14393,6 +16362,9 @@
      "catalogue_metals": [
       "156Gd",
       "173Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     }
    ]
@@ -14447,6 +16419,10 @@
      "catalogue_metals": [
       "145Nd",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14469,6 +16445,10 @@
      "catalogue_metals": [
       "146Nd",
       "162Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14492,6 +16472,10 @@
       "147Sm",
       "156Gd",
       "171Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14516,6 +16500,10 @@
       "148Nd",
       "165Ho",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14551,6 +16539,10 @@
       "195Pt",
       "196Pt",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14576,6 +16568,10 @@
       "160Gd",
       "175Lu",
       "195Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14599,6 +16595,10 @@
       "141Pr",
       "154Sm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -14657,6 +16657,10 @@
       "165Ho",
       "169Tm",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14678,6 +16682,9 @@
      "conjugate_id": "igd|IA6-2|146Nd|s",
      "catalogue_metals": [
       "146Nd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -14701,6 +16708,10 @@
       "147Sm",
       "156Gd",
       "171Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14720,7 +16731,8 @@
      "custom": false,
      "in_catalogue": false,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": []
     },
     {
      "target_id": "cd21cd35",
@@ -14739,7 +16751,10 @@
      "custom": false,
      "in_catalogue": true,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd27",
@@ -14763,6 +16778,10 @@
       "158Gd",
       "162Dy",
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14784,6 +16803,9 @@
      "conjugate_id": "cd22|HIB22|159Tb|s",
      "catalogue_metals": [
       "159Tb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -14803,7 +16825,8 @@
      "custom": false,
      "in_catalogue": false,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": []
     },
     {
      "target_id": "cd38",
@@ -14826,6 +16849,10 @@
       "144Nd",
       "167Er",
       "172Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14848,6 +16875,9 @@
      "catalogue_metals": [
       "166Er",
       "169Tm"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -14869,6 +16899,10 @@
      "conjugate_id": "igm|MHM-88|172Yb|s",
      "catalogue_metals": [
       "172Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -14894,6 +16928,10 @@
       "173Yb",
       "174Yb",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -14949,6 +16987,9 @@
      "catalogue_metals": [
       "150Nd",
       "166Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -14971,6 +17012,9 @@
      "catalogue_metals": [
       "153Eu",
       "164Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -14995,6 +17039,10 @@
       "162Dy",
       "168Er",
       "172Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -15016,6 +17064,9 @@
      "conjugate_id": "phistoneh3s28|HTA28|175Lu|s",
      "catalogue_metals": [
       "175Lu"
+     ],
+     "applications": [
+      "suspension"
      ]
     }
    ]
@@ -15069,6 +17120,9 @@
      "conjugate_id": "cd117ckit|104D2|143Nd|s",
      "catalogue_metals": [
       "143Nd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15092,6 +17146,9 @@
       "147Sm",
       "152Sm",
       "160Gd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15114,6 +17171,9 @@
      "catalogue_metals": [
       "156Gd",
       "158Gd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15133,7 +17193,10 @@
      "custom": false,
      "in_catalogue": true,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd34",
@@ -15157,6 +17220,10 @@
       "149Sm",
       "163Dy",
       "166Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -15180,6 +17247,9 @@
       "145Nd",
       "150Nd",
       "168Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15202,6 +17272,9 @@
      "catalogue_metals": [
       "156Gd",
       "173Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     }
    ]
@@ -15259,6 +17332,9 @@
      "catalogue_metals": [
       "147Sm",
       "150Nd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15280,6 +17356,9 @@
      "conjugate_id": "stat1py701|58D6|153Eu|s",
      "catalogue_metals": [
       "153Eu"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15301,6 +17380,9 @@
      "conjugate_id": "p38t180y182|D3F9|156Gd|s",
      "catalogue_metals": [
       "156Gd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15322,6 +17404,10 @@
      "conjugate_id": "pstat3y705|4/P-STAT3|158Gd|s",
      "catalogue_metals": [
       "158Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -15343,6 +17429,9 @@
      "conjugate_id": "ikba|L35A5|164Dy|s",
      "catalogue_metals": [
       "164Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15365,6 +17454,10 @@
      "catalogue_metals": [
       "167Er",
       "171Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -15387,6 +17480,10 @@
      "catalogue_metals": [
       "172Yb",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -15442,6 +17539,9 @@
       "143Nd",
       "147Sm",
       "151Eu"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15466,6 +17566,9 @@
       "144Nd",
       "163Dy",
       "171Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15488,6 +17591,9 @@
      "catalogue_metals": [
       "150Nd",
       "160Gd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15512,6 +17618,9 @@
       "146Nd",
       "152Sm",
       "175Lu"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15536,6 +17645,9 @@
       "147Sm",
       "154Sm",
       "156Gd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15560,6 +17672,9 @@
       "144Nd",
       "158Gd",
       "166Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15581,6 +17696,9 @@
      "conjugate_id": "il17a|N49-653|164Dy|s",
      "catalogue_metals": [
       "164Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15604,6 +17722,9 @@
       "162Dy",
       "166Er",
       "172Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15628,6 +17749,9 @@
       "158Gd",
       "165Ho",
       "168Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15651,6 +17775,10 @@
       "171Yb",
       "173Yb",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -15673,6 +17801,10 @@
      "catalogue_metals": [
       "175Lu",
       "196Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -15727,6 +17859,9 @@
      "catalogue_metals": [
       "141Pr",
       "174Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15748,6 +17883,9 @@
      "conjugate_id": "cd5|UCHT2|143Nd|s",
      "catalogue_metals": [
       "143Nd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15771,6 +17909,9 @@
       "144Nd",
       "156Gd",
       "171Yb"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15794,6 +17935,10 @@
       "145Nd",
       "147Sm",
       "153Eu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -15815,6 +17960,9 @@
      "conjugate_id": "cd2|TS1/8|151Eu|s",
      "catalogue_metals": [
       "151Eu"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15837,6 +17985,9 @@
      "catalogue_metals": [
       "156Gd",
       "163Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15861,6 +18012,10 @@
       "153Eu",
       "158Gd",
       "175Lu"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -15882,6 +18037,10 @@
      "conjugate_id": "cd28|CD28.2|160Gd|s",
      "catalogue_metals": [
       "160Gd"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -15905,6 +18064,9 @@
       "151Eu",
       "159Tb",
       "164Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15924,7 +18086,10 @@
      "custom": false,
      "in_catalogue": true,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -15977,6 +18142,9 @@
      "conjugate_id": "cd11a|HI111|142Nd|s",
      "catalogue_metals": [
       "142Nd"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -15999,6 +18167,10 @@
      "catalogue_metals": [
       "145Nd",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16021,6 +18193,10 @@
      "catalogue_metals": [
       "146Nd",
       "162Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16045,6 +18221,10 @@
       "148Nd",
       "165Ho",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16067,6 +18247,10 @@
      "catalogue_metals": [
       "149Sm",
       "169Tm"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16102,6 +18286,10 @@
       "195Pt",
       "196Pt",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16124,6 +18312,9 @@
      "catalogue_metals": [
       "159Tb",
       "167Er"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -16147,6 +18338,9 @@
       "113Cd",
       "144Nd",
       "162Dy"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -16173,6 +18367,10 @@
       "164Dy",
       "165Ho",
       "194Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16194,6 +18392,10 @@
      "conjugate_id": "cd44|BJ18|166Er|s",
      "catalogue_metals": [
       "166Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16215,6 +18417,10 @@
      "conjugate_id": "cd27|O323|167Er|s",
      "catalogue_metals": [
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16241,6 +18447,10 @@
       "155Gd",
       "169Tm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16264,6 +18474,10 @@
       "141Pr",
       "154Sm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16286,6 +18500,10 @@
      "catalogue_metals": [
       "163Dy",
       "172Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16311,6 +18529,10 @@
       "173Yb",
       "174Yb",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16336,6 +18558,10 @@
       "165Ho",
       "168Er",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -16387,7 +18613,11 @@
      "custom": false,
      "in_catalogue": true,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd19",
@@ -16413,6 +18643,10 @@
       "165Ho",
       "169Tm",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16435,6 +18669,10 @@
      "catalogue_metals": [
       "145Nd",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16457,6 +18695,10 @@
      "catalogue_metals": [
       "146Nd",
       "162Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16481,6 +18723,10 @@
       "148Nd",
       "165Ho",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16500,7 +18746,10 @@
      "custom": false,
      "in_catalogue": true,
      "conjugate_id": null,
-     "catalogue_metals": []
+     "catalogue_metals": [],
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd123il3r",
@@ -16522,6 +18771,9 @@
      "catalogue_metals": [
       "143Nd",
       "151Eu"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -16557,6 +18809,10 @@
       "195Pt",
       "196Pt",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16580,6 +18836,10 @@
       "147Sm",
       "159Tb",
       "162Dy"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16605,6 +18865,10 @@
       "160Gd",
       "175Lu",
       "195Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16629,6 +18893,9 @@
       "150Nd",
       "165Ho",
       "209Bi"
+     ],
+     "applications": [
+      "suspension"
      ]
     },
     {
@@ -16650,6 +18917,10 @@
      "conjugate_id": "cd27|O323|167Er|s",
      "catalogue_metals": [
       "167Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16676,6 +18947,10 @@
       "155Gd",
       "169Tm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16699,6 +18974,10 @@
       "141Pr",
       "154Sm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16722,6 +19001,10 @@
       "144Nd",
       "167Er",
       "172Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16747,6 +19030,10 @@
       "173Yb",
       "174Yb",
       "176Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -16802,6 +19089,10 @@
       "147Sm",
       "156Gd",
       "171Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16837,6 +19128,10 @@
       "195Pt",
       "196Pt",
       "198Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16862,6 +19157,10 @@
       "160Gd",
       "175Lu",
       "195Pt"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16886,6 +19185,10 @@
       "148Nd",
       "165Ho",
       "209Bi"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16910,6 +19213,10 @@
       "142Nd",
       "146Nd",
       "168Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16933,6 +19240,10 @@
       "141Pr",
       "154Sm",
       "170Er"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     },
     {
@@ -16956,6 +19267,10 @@
       "144Nd",
       "145Nd",
       "174Yb"
+     ],
+     "applications": [
+      "imaging",
+      "suspension"
      ]
     }
    ]
@@ -17016,7 +19331,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd19",
@@ -17046,7 +19365,11 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -17107,7 +19430,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd4",
@@ -17142,7 +19469,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd8",
@@ -17177,7 +19508,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -17239,7 +19574,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd8",
@@ -17274,7 +19613,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd4",
@@ -17309,7 +19652,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -17319,17 +19666,20 @@
    "name": "Naive / memory T-cell subsets",
    "source": "curated",
    "kit": null,
-   "application": "suspension",
+   "application": "both",
    "species": [
     "human"
    ],
    "instruments": [],
    "sample_types": [
     "pbmc",
-    "whole_blood"
+    "whole_blood",
+    "dissociated_tumour",
+    "ffpe",
+    "frozen"
    ],
    "category": "celltype",
-   "blurb": "The two markers that split naive, central memory, effector memory and TEMRA on CD4 and CD8 T cells.",
+   "blurb": "CD45RA and CCR7 split naive, central memory, effector memory and TEMRA; in tissue CD45RA / CD45RO do the naive vs memory split.",
    "featured": false,
    "hidden": false,
    "aliases": [
@@ -17341,7 +19691,7 @@
     "Tcm",
     "Tem"
    ],
-   "definition": "naive CD45RA+ CCR7+ · Tcm CD45RA- CCR7+ · Tem CD45RA- CCR7- · TEMRA CD45RA+ CCR7-",
+   "definition": "naive CD45RA+ CCR7+ · Tcm CD45RA- CCR7+ · Tem CD45RA- CCR7- · TEMRA CD45RA+ CCR7- (tissue - CD45RO+ memory)",
    "markers": [
     {
      "target_id": "cd45ra",
@@ -17365,18 +19715,23 @@
       "150Nd",
       "153Eu",
       "155Gd",
+      "166Er",
       "169Tm",
       "170Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "humanccr7cd197",
      "target_name": "CD197/CCR7",
      "raw_target": "CD197/CCR7",
      "kind": "antibody",
-     "role": "required",
+     "role": "recommended",
      "clone": null,
      "metal": null,
      "mass": null,
@@ -17395,42 +19750,18 @@
       "167Er",
       "176Yb"
      ],
-     "note": null,
-     "polarity": "pos"
-    },
-    {
-     "target_id": "cd27",
-     "target_name": "CD27",
-     "raw_target": "CD27",
-     "kind": "antibody",
-     "role": "recommended",
-     "clone": null,
-     "metal": null,
-     "mass": null,
-     "signal": null,
-     "tolerance": null,
-     "st_source": "curated",
-     "abundance_level": "high",
-     "kit_only": false,
-     "custom": false,
-     "in_catalogue": true,
-     "conjugate_id": null,
-     "catalogue_metals": [
-      "150Nd",
-      "155Gd",
-      "158Gd",
-      "162Dy",
-      "167Er"
-     ],
-     "note": null,
-     "polarity": "pos"
+     "note": "suspension only",
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd45ro",
      "target_name": "CD45RO",
      "raw_target": "CD45RO",
      "kind": "antibody",
-     "role": "optional",
+     "role": "recommended",
      "clone": null,
      "metal": null,
      "mass": null,
@@ -17448,10 +19779,48 @@
       "163Dy",
       "164Dy",
       "165Ho",
+      "166Er",
+      "173Yb",
       "194Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    },
+    {
+     "target_id": "cd27",
+     "target_name": "CD27",
+     "raw_target": "CD27",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "150Nd",
+      "155Gd",
+      "158Gd",
+      "162Dy",
+      "167Er",
+      "171Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -17517,7 +19886,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd25il2ra",
@@ -17546,7 +19919,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd127il7ra",
@@ -17576,7 +19953,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "foxp3",
@@ -17604,7 +19985,11 @@
       "167Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -17662,7 +20047,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd183cxcr3",
@@ -17686,7 +20075,10 @@
       "163Dy"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd194ccr4",
@@ -17712,7 +20104,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd196ccr6",
@@ -17737,7 +20133,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd45ra",
@@ -17765,7 +20165,11 @@
       "170Er"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -17822,7 +20226,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd185cxcr5",
@@ -17848,7 +20256,10 @@
       "171Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd279pd1",
@@ -17876,7 +20287,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd45ra",
@@ -17904,7 +20319,11 @@
       "170Er"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -17963,7 +20382,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "tcrgd",
@@ -17989,7 +20412,10 @@
       "172Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -18047,7 +20473,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "tcrva72",
@@ -18070,7 +20500,10 @@
       "153Eu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd161",
@@ -18095,7 +20528,10 @@
       "164Dy"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -18153,7 +20589,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "invariantnkt",
@@ -18176,7 +20616,10 @@
       "170Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd56ncam",
@@ -18202,7 +20645,10 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -18258,7 +20704,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd69",
@@ -18285,7 +20735,10 @@
       "162Dy"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd103",
@@ -18308,7 +20761,10 @@
       "151Eu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "humanccr7cd197",
@@ -18335,7 +20791,10 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -18397,7 +20856,11 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd20",
@@ -18426,7 +20889,11 @@
       "171Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd3e",
@@ -18455,7 +20922,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -18514,7 +20985,11 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "igd",
@@ -18539,7 +21014,10 @@
       "150Nd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd27",
@@ -18566,7 +21044,11 @@
       "167Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd38",
@@ -18594,7 +21076,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd24",
@@ -18620,7 +21106,10 @@
       "169Tm"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -18630,7 +21119,7 @@
    "name": "Plasmablasts / plasma cells",
    "source": "curated",
    "kit": null,
-   "application": "suspension",
+   "application": "both",
    "species": [
     "human"
    ],
@@ -18639,7 +21128,9 @@
     "pbmc",
     "whole_blood",
     "bone_marrow",
-    "dissociated_tumour"
+    "dissociated_tumour",
+    "ffpe",
+    "frozen"
    ],
    "category": "celltype",
    "blurb": "Antibody-secreting cells by CD27 / CD38, with CD20 as the negative and CD138 for mature plasma cells.",
@@ -18681,7 +21172,11 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd27",
@@ -18705,10 +21200,15 @@
       "155Gd",
       "158Gd",
       "162Dy",
-      "167Er"
+      "167Er",
+      "171Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd38",
@@ -18728,6 +21228,8 @@
      "in_catalogue": true,
      "conjugate_id": null,
      "catalogue_metals": [
+      "141Pr",
+      "142Nd",
       "144Nd",
       "161Dy",
       "167Er",
@@ -18736,7 +21238,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd20",
@@ -18756,12 +21262,20 @@
      "in_catalogue": true,
      "conjugate_id": null,
      "catalogue_metals": [
+      "115In",
+      "145Nd",
       "147Sm",
       "156Gd",
+      "161Dy",
+      "164Dy",
       "171Yb"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd138sdc1",
@@ -18787,7 +21301,10 @@
       "168Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -18797,7 +21314,7 @@
    "name": "NK cells",
    "source": "curated",
    "kit": null,
-   "application": "suspension",
+   "application": "both",
    "species": [
     "human"
    ],
@@ -18805,10 +21322,12 @@
    "sample_types": [
     "pbmc",
     "whole_blood",
-    "dissociated_tumour"
+    "dissociated_tumour",
+    "ffpe",
+    "frozen"
    ],
    "category": "celltype",
-   "blurb": "Natural killer cells and their bright / dim split. CD3 keeps NKT cells out.",
+   "blurb": "Natural killer cells and their bright / dim split. CD3 keeps NKT cells out. CD56 is not sold as an IMC conjugate, so in tissue it goes in as a custom conjugation.",
    "featured": false,
    "hidden": false,
    "aliases": [
@@ -18816,7 +21335,7 @@
     "natural killer cells",
     "CD56 NK"
    ],
-   "definition": "CD3- CD56+ (CD56bright CD16- · CD56dim CD16+)",
+   "definition": "CD3- CD56+ (CD56bright CD16- · CD56dim CD16+ CD57+)",
    "markers": [
     {
      "target_id": "cd56ncam",
@@ -18842,7 +21361,10 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd16",
@@ -18863,12 +21385,19 @@
      "conjugate_id": null,
      "catalogue_metals": [
       "145Nd",
+      "146Nd",
       "148Nd",
+      "149Sm",
+      "153Eu",
       "165Ho",
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd3e",
@@ -18897,7 +21426,44 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    },
+    {
+     "target_id": "cd57",
+     "target_name": "CD57",
+     "raw_target": "CD57",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "145Nd",
+      "151Eu",
+      "152Sm",
+      "153Eu",
+      "160Gd",
+      "163Dy",
+      "172Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -18958,7 +21524,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd294crth2",
@@ -18981,7 +21551,10 @@
       "163Dy"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd117ckit",
@@ -19006,7 +21579,10 @@
       "173Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd3e",
@@ -19035,7 +21611,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd19",
@@ -19065,7 +21645,11 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd14",
@@ -19093,7 +21677,11 @@
       "195Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -19157,7 +21745,11 @@
       "195Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd16",
@@ -19186,7 +21778,11 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "hladr",
@@ -19215,7 +21811,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd3e",
@@ -19244,7 +21844,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd19",
@@ -19274,7 +21878,11 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -19284,7 +21892,7 @@
    "name": "Dendritic cells",
    "source": "curated",
    "kit": null,
-   "application": "suspension",
+   "application": "both",
    "species": [
     "human"
    ],
@@ -19292,10 +21900,12 @@
    "sample_types": [
     "pbmc",
     "whole_blood",
-    "dissociated_tumour"
+    "dissociated_tumour",
+    "ffpe",
+    "frozen"
    ],
    "category": "celltype",
-   "blurb": "Dendritic cells are what is left of HLA-DR+ after the lineage negatives, split into conventional (CD11c) and plasmacytoid (CD123).",
+   "blurb": "Dendritic cells are what is left of HLA-DR+ after the lineage negatives, split into conventional (CD11c) and plasmacytoid (CD123, suspension only).",
    "featured": false,
    "hidden": false,
    "aliases": [
@@ -19328,13 +21938,18 @@
      "catalogue_metals": [
       "143Nd",
       "151Eu",
+      "154Sm",
       "170Er",
       "173Yb",
       "174Yb",
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd11c",
@@ -19355,23 +21970,31 @@
      "conjugate_id": null,
      "catalogue_metals": [
       "142Nd",
+      "145Nd",
       "146Nd",
       "147Sm",
+      "151Eu",
+      "154Sm",
       "159Tb",
+      "160Gd",
       "161Dy",
       "162Dy",
       "198Pt",
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd123il3r",
      "target_name": "CD123/IL-3R",
      "raw_target": "CD123",
      "kind": "antibody",
-     "role": "required",
+     "role": "recommended",
      "clone": null,
      "metal": null,
      "mass": null,
@@ -19387,8 +22010,11 @@
       "143Nd",
       "151Eu"
      ],
-     "note": null,
-     "polarity": "pos"
+     "note": "suspension only",
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd3e",
@@ -19417,7 +22043,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd19",
@@ -19447,7 +22077,11 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd14",
@@ -19467,15 +22101,23 @@
      "in_catalogue": true,
      "conjugate_id": null,
      "catalogue_metals": [
+      "144Nd",
       "146Nd",
+      "148Nd",
       "151Eu",
+      "153Eu",
       "156Gd",
       "160Gd",
+      "163Dy",
       "175Lu",
       "195Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd56ncam",
@@ -19500,8 +22142,11 @@
       "163Dy",
       "176Yb"
      ],
-     "note": null,
-     "polarity": "neg"
+     "note": "suspension only",
+     "polarity": "neg",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd141",
@@ -19525,7 +22170,10 @@
       "173Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -19578,7 +22226,10 @@
       "151Eu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd303bdca2",
@@ -19602,7 +22253,10 @@
       "153Eu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "hladr",
@@ -19630,7 +22284,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd11c",
@@ -19660,7 +22318,11 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -19718,7 +22380,11 @@
       "171Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd163m130",
@@ -19747,7 +22413,11 @@
       "165Ho"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd206mmr",
@@ -19774,7 +22444,250 @@
       "169Tm"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ct-human-cytotoxic",
+   "slug": "ct-human-cytotoxic",
+   "name": "Cytotoxic lymphocytes (tissue)",
+   "source": "curated",
+   "kit": null,
+   "application": "imaging",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "ffpe",
+    "frozen"
+   ],
+   "category": "celltype",
+   "blurb": "Where NK and CD8 T cells are actively cytotoxic - the readout most IMC immuno-oncology panels want.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "cytotoxic cells",
+    "granzyme B cells",
+    "NK and CD8 in tissue",
+    "killer cells"
+   ],
+   "definition": "Granzyme B+ (CD8+ T · CD3- NK) Perforin+",
+   "markers": [
+    {
+     "target_id": "granzymeb",
+     "target_name": "Granzyme B",
+     "raw_target": "Granzyme B",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "155Gd",
+      "166Er",
+      "167Er",
+      "171Yb",
+      "174Yb",
+      "175Lu",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    },
+    {
+     "target_id": "cd8",
+     "target_name": "CD8a",
+     "raw_target": "CD8a",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "146Nd",
+      "152Sm",
+      "162Dy",
+      "165Ho",
+      "167Er",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    },
+    {
+     "target_id": "cd3e",
+     "target_name": "CD3ε",
+     "raw_target": "CD3ε",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "170Er"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    },
+    {
+     "target_id": "perforin",
+     "target_name": "Perforin",
+     "raw_target": "Perforin",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ct-human-proliferating",
+   "slug": "ct-human-proliferating",
+   "name": "Proliferating cells",
+   "source": "curated",
+   "kit": null,
+   "application": "both",
+   "species": [
+    "human",
+    "mouse"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood",
+    "dissociated_tumour",
+    "ffpe",
+    "frozen"
+   ],
+   "category": "celltype",
+   "blurb": "Cycling cells of any lineage; pair with a lineage marker to ask \"which cells are dividing?\".",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "proliferating",
+    "cycling cells",
+    "Ki-67 positive",
+    "dividing cells"
+   ],
+   "definition": "Ki-67+ (pHH3+ mitotic)",
+   "markers": [
+    {
+     "target_id": "ki67",
+     "target_name": "Ki-67",
+     "raw_target": "Ki-67",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "150Nd",
+      "161Dy",
+      "162Dy",
+      "168Er",
+      "172Yb",
+      "173Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    },
+    {
+     "target_id": "phistoneh3s28",
+     "target_name": "pHistone H3 [S28]",
+     "raw_target": "pHistone H3 [S28]",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -19831,7 +22744,11 @@
       "166Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd15ssea1",
@@ -19858,7 +22775,11 @@
       "172Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd16",
@@ -19887,7 +22808,11 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd14",
@@ -19919,7 +22844,11 @@
       "195Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -19968,7 +22897,11 @@
       "152Sm"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "siglec8",
@@ -19991,7 +22924,10 @@
       "164Dy"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd16",
@@ -20017,7 +22953,11 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd294crth2",
@@ -20040,7 +22980,10 @@
       "163Dy"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -20090,7 +23033,10 @@
       "150Nd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd123il3r",
@@ -20114,7 +23060,10 @@
       "151Eu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "hladr",
@@ -20142,7 +23091,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd294crth2",
@@ -20165,7 +23118,10 @@
       "163Dy"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -20217,7 +23173,10 @@
       "173Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "fceri",
@@ -20240,7 +23199,10 @@
       "150Nd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -20296,7 +23258,11 @@
       "166Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd38",
@@ -20324,7 +23290,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd117ckit",
@@ -20349,7 +23319,10 @@
       "173Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd45",
@@ -20388,7 +23361,11 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -20443,7 +23420,10 @@
       "143Nd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd235ab",
@@ -20468,7 +23448,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd61",
@@ -20494,7 +23478,10 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -20552,7 +23539,11 @@
       "174Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd324ecadherin",
@@ -20578,7 +23569,11 @@
       "174Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd326epcam",
@@ -20607,7 +23602,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -20666,7 +23665,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd34",
@@ -20690,7 +23693,11 @@
       "167Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "podoplanin",
@@ -20713,7 +23720,10 @@
       "164Dy"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
     }
    ]
   },
@@ -20769,7 +23779,11 @@
       "154Sm"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "asmoothmuscleactin",
@@ -20795,7 +23809,10 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
     },
     {
      "target_id": "fap",
@@ -20818,7 +23835,10 @@
       "161Dy"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
     },
     {
      "target_id": "pancytokeratin",
@@ -20846,7 +23866,11 @@
       "174Yb"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -20907,7 +23931,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd4",
@@ -20942,7 +23970,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd8",
@@ -20977,7 +24009,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "tcrb",
@@ -21001,7 +24037,10 @@
       "169Tm"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -21067,7 +24106,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd25il2ra",
@@ -21096,7 +24139,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "foxp3",
@@ -21124,7 +24171,11 @@
       "167Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -21183,7 +24234,11 @@
       "194Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd62l",
@@ -21210,7 +24265,10 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -21272,7 +24330,11 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd45rb220",
@@ -21303,7 +24365,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd3e",
@@ -21332,7 +24398,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -21386,7 +24456,10 @@
       "170Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd335nkp46",
@@ -21410,7 +24483,10 @@
       "167Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd3e",
@@ -21439,7 +24515,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -21502,7 +24582,11 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "ly6c",
@@ -21527,7 +24611,10 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "ly6g",
@@ -21553,7 +24640,11 @@
       "195Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd115",
@@ -21576,7 +24667,10 @@
       "144Nd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -21645,7 +24739,11 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "ly6g",
@@ -21675,7 +24773,11 @@
       "195Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -21736,7 +24838,11 @@
       "173Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd11bmac1",
@@ -21773,7 +24879,11 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd206mmr",
@@ -21800,7 +24910,11 @@
       "169Tm"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd64",
@@ -21824,7 +24938,10 @@
       "151Eu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -21884,7 +25001,11 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "mhcclassii",
@@ -21909,7 +25030,11 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "xcr1",
@@ -21933,7 +25058,10 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "f480",
@@ -21960,7 +25088,11 @@
       "173Yb"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -22022,7 +25154,11 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd170siglecf",
@@ -22046,7 +25182,10 @@
       "163Dy"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "ly6g",
@@ -22072,7 +25211,11 @@
       "195Pt"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -22124,7 +25267,10 @@
       "169Tm"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd117ckit",
@@ -22149,7 +25295,10 @@
       "173Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "ter119",
@@ -22173,7 +25322,10 @@
       "162Dy"
      ],
      "note": null,
-     "polarity": "neg"
+     "polarity": "neg",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -22236,7 +25388,11 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd3e",
@@ -22265,7 +25421,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd4",
@@ -22293,7 +25453,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd8",
@@ -22324,7 +25488,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd19",
@@ -22354,7 +25522,11 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd20",
@@ -22379,7 +25551,11 @@
       "171Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd14",
@@ -22407,7 +25583,11 @@
       "195Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd16",
@@ -22433,7 +25613,11 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd56ncam",
@@ -22459,7 +25643,10 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd11c",
@@ -22489,7 +25676,11 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "hladr",
@@ -22517,7 +25708,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd123il3r",
@@ -22541,7 +25736,10 @@
       "151Eu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd66b",
@@ -22564,7 +25762,11 @@
       "152Sm"
      ],
      "note": "whole blood only",
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -22616,7 +25818,11 @@
       "170Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd45ro",
@@ -22644,7 +25850,11 @@
       "194Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "humanccr7cd197",
@@ -22671,7 +25881,10 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd27",
@@ -22698,7 +25911,11 @@
       "167Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd28",
@@ -22722,7 +25939,11 @@
       "160Gd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd127il7ra",
@@ -22752,7 +25973,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd25il2ra",
@@ -22780,7 +26005,11 @@
       "174Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd57",
@@ -22804,7 +26033,11 @@
       "172Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd95fas",
@@ -22830,7 +26063,10 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -22883,7 +26119,10 @@
       "162Dy"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd38",
@@ -22913,7 +26152,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "hladr",
@@ -22942,7 +26185,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd279pd1",
@@ -22970,7 +26217,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd366tim3",
@@ -22998,7 +26249,11 @@
       "169Tm"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd223lag3",
@@ -23027,7 +26282,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "tigit",
@@ -23054,7 +26313,10 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd152ctla4",
@@ -23082,7 +26344,11 @@
       "170Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd278icos",
@@ -23113,7 +26379,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd39",
@@ -23137,7 +26407,10 @@
       "160Gd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": null,
@@ -23158,7 +26431,8 @@
      "conjugate_id": null,
      "catalogue_metals": [],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": []
     },
     {
      "target_id": "ki67",
@@ -23186,7 +26460,11 @@
       "173Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -23240,7 +26518,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd127il7ra",
@@ -23270,7 +26552,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "foxp3",
@@ -23298,7 +26584,11 @@
       "167Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd152ctla4",
@@ -23326,7 +26616,11 @@
       "170Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": null,
@@ -23347,7 +26641,8 @@
      "conjugate_id": null,
      "catalogue_metals": [],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": []
     },
     {
      "target_id": "cd39",
@@ -23371,7 +26666,10 @@
       "160Gd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -23421,7 +26719,10 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd16",
@@ -23447,7 +26748,11 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": null,
@@ -23468,7 +26773,8 @@
      "conjugate_id": null,
      "catalogue_metals": [],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": []
     },
     {
      "target_id": null,
@@ -23489,7 +26795,8 @@
      "conjugate_id": null,
      "catalogue_metals": [],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": []
     },
     {
      "target_id": "cd57",
@@ -23513,7 +26820,11 @@
       "172Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "granzymeb",
@@ -23538,7 +26849,11 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "perforin",
@@ -23563,7 +26878,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -23618,7 +26937,11 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd20",
@@ -23647,7 +26970,11 @@
       "171Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd27",
@@ -23675,7 +27002,11 @@
       "171Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "igd",
@@ -23700,7 +27031,10 @@
       "150Nd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd38",
@@ -23730,7 +27064,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd138sdc1",
@@ -23756,7 +27094,10 @@
       "168Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cd24",
@@ -23782,7 +27123,10 @@
       "169Tm"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -23832,7 +27176,10 @@
       "168Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "tnfa",
@@ -23860,7 +27207,10 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "il2",
@@ -23886,7 +27236,10 @@
       "166Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "il17a",
@@ -23915,7 +27268,10 @@
       "195Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "il4",
@@ -23942,7 +27298,10 @@
       "171Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "il10",
@@ -23968,7 +27327,10 @@
       "166Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "gmcsf",
@@ -23991,7 +27353,10 @@
       "159Tb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "granzymeb",
@@ -24016,7 +27381,11 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -24063,7 +27432,10 @@
       "153Eu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "pstat3y705",
@@ -24086,7 +27458,11 @@
       "158Gd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "pstat5py694",
@@ -24110,7 +27486,10 @@
       "150Nd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "ps6s235s236",
@@ -24134,7 +27513,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "perk12t202y204",
@@ -24158,7 +27541,11 @@
       "171Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "pakts473",
@@ -24181,7 +27568,10 @@
       "152Sm"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "pnfkbp65s529",
@@ -24204,7 +27594,11 @@
       "166Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "p38t180y182",
@@ -24227,7 +27621,10 @@
       "156Gd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "ikba",
@@ -24250,7 +27647,10 @@
       "164Dy"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -24306,7 +27706,11 @@
       "173Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "phistoneh3s28",
@@ -24329,7 +27733,10 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "cleavedcaspase3",
@@ -24353,7 +27760,11 @@
       "172Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cleavedparp",
@@ -24376,7 +27787,10 @@
       "143Nd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -24428,7 +27842,11 @@
       "174Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd324ecadherin",
@@ -24454,7 +27872,11 @@
       "174Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd326epcam",
@@ -24483,7 +27905,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "vimentin",
@@ -24509,7 +27935,11 @@
       "154Sm"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "asmoothmuscleactin",
@@ -24535,7 +27965,10 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
     },
     {
      "target_id": "collagentypei",
@@ -24563,7 +27996,10 @@
       "173Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
     },
     {
      "target_id": "fibronectin",
@@ -24593,7 +28029,10 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
     },
     {
      "target_id": "cd31pecam1",
@@ -24623,7 +28062,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "podoplanin",
@@ -24646,7 +28089,10 @@
       "164Dy"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
     },
     {
      "target_id": "nonpactivebcatenin",
@@ -24673,7 +28119,11 @@
       "172Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -24723,7 +28173,11 @@
       "174Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd279pd1",
@@ -24746,7 +28200,11 @@
       "165Ho"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd276b7h3",
@@ -24769,7 +28227,10 @@
       "173Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
     },
     {
      "target_id": "ido",
@@ -24793,7 +28254,10 @@
       "155Gd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
     },
     {
      "target_id": "hlaabc",
@@ -24816,7 +28280,11 @@
       "144Nd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "b2microglobulin",
@@ -24837,7 +28305,10 @@
      "conjugate_id": null,
      "catalogue_metals": [],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "ki67",
@@ -24863,7 +28334,11 @@
       "173Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd8",
@@ -24891,7 +28366,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "foxp3",
@@ -24918,7 +28397,11 @@
       "167Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -24983,7 +28466,11 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd3e",
@@ -25012,7 +28499,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd4",
@@ -25040,7 +28531,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd8",
@@ -25071,7 +28566,11 @@
       "196Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd19",
@@ -25101,7 +28600,11 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd45rb220",
@@ -25129,7 +28632,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd11bmac1",
@@ -25162,7 +28669,11 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd11c",
@@ -25192,7 +28703,11 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "f480",
@@ -25219,7 +28734,11 @@
       "173Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "ly6g",
@@ -25245,7 +28764,11 @@
       "195Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "ly6c",
@@ -25270,7 +28793,10 @@
       "198Pt"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "nk11",
@@ -25294,7 +28820,10 @@
       "170Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     },
     {
      "target_id": "mhcclassii",
@@ -25319,7 +28848,11 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "tcrb",
@@ -25343,7 +28876,10 @@
       "169Tm"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "suspension"
+     ]
     }
    ]
   },
@@ -25396,7 +28932,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd3e",
@@ -25419,7 +28959,11 @@
       "170Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd4",
@@ -25448,7 +28992,11 @@
       "171Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd8",
@@ -25476,7 +29024,11 @@
       "176Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "f480",
@@ -25502,7 +29054,11 @@
       "169Tm"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd68",
@@ -25528,7 +29084,11 @@
       "159Tb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd206mmr",
@@ -25553,7 +29113,11 @@
       "167Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "arginasei",
@@ -25576,7 +29140,11 @@
       "164Dy"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "cd274pdl1",
@@ -25603,7 +29171,11 @@
       "174Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "foxp3",
@@ -25630,7 +29202,11 @@
       "167Er"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "ki67",
@@ -25656,7 +29232,11 @@
       "173Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "pancytokeratin",
@@ -25684,7 +29264,11 @@
       "174Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "asmoothmuscleactin",
@@ -25710,7 +29294,10 @@
       "209Bi"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
     },
     {
      "target_id": "cd31pecam1",
@@ -25740,7 +29327,11 @@
       "175Lu"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     }
    ]
   },
@@ -25787,7 +29378,10 @@
       "142Nd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
     },
     {
      "target_id": "cpt1a",
@@ -25810,7 +29404,10 @@
       "146Nd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
     },
     {
      "target_id": null,
@@ -25831,7 +29428,8 @@
      "conjugate_id": null,
      "catalogue_metals": [],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": []
     },
     {
      "target_id": "cd98",
@@ -25855,7 +29453,11 @@
       "173Yb"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
     },
     {
      "target_id": "atp5a",
@@ -25878,7 +29480,10 @@
       "145Nd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
     },
     {
      "target_id": "citratesynthase",
@@ -25901,7 +29506,10 @@
       "143Nd"
      ],
      "note": null,
-     "polarity": "pos"
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
     }
    ]
   }
