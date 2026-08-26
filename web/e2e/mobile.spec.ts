@@ -28,7 +28,7 @@ test("phone: build with the bottom-sheet panel, balance, order — no horizontal
   const box = page.getByPlaceholder(/e\.g\. CD8a/);
   await box.fill("macrophage"); // a cell type whose gate holds up in tissue (dendritic cells are IMC-hidden: no CD123)
   await page.getByTestId("module-hit").first().click();
-  await expect(page.getByTestId("mobile-panel-toggle")).toContainText("Your panel · 3 of ~41");
+  await expect(page.getByTestId("mobile-panel-toggle")).toContainText("Your panel · 3 of ~38");
 
   // Open the sheet: same sidebar component, scrollable, closes on backdrop tap.
   await page.getByTestId("mobile-panel-toggle").click();

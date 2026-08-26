@@ -32,9 +32,9 @@ function BudgetCard({ onClose }: { onClose: () => void }) {
   const idx = useStore((s) => s.idx)!;
   const setup = useStore((s) => s.setup);
   const iso = (m: number) => `${m}${idx.instruments.isotopes[String(m)] ?? ""}`;
-  const rows: { n: number; label: string; masses: number[]; note: string | null }[] = [
-    ...b.lines.map((l) => ({ n: l.masses.length, label: l.label, masses: l.masses, note: l.note })),
-    ...(b.blocked.length ? [{ n: b.blocked.length, label: "Kept empty on purpose", masses: b.blocked, note: null }] : []),
+  const rows: { n: number; label: string; masses: number[] }[] = [
+    ...b.lines.map((l) => ({ n: l.masses.length, label: l.label, masses: l.masses })),
+    ...(b.blocked.length ? [{ n: b.blocked.length, label: "Kept empty on purpose", masses: b.blocked }] : []),
   ];
   return (
     <div className="absolute bottom-full right-0 z-30 mb-2 w-[22rem] max-w-[85vw] rounded-lg border border-slate-200 bg-white p-3 text-left text-xs shadow-xl dark:border-slate-600 dark:bg-slate-900" data-testid="budget-card">
@@ -46,13 +46,13 @@ function BudgetCard({ onClose }: { onClose: () => void }) {
         <tbody>
           <tr className="border-b border-slate-100 dark:border-slate-800">
             <td className="py-1 pr-2 text-right font-mono">{b.total}</td>
-            <td className="py-1">detection channels<div className="text-slate-500">masses in the instrument&apos;s sensitivity curve</div></td>
+            <td className="py-1">channels<div className="text-slate-500">{b.antibody} metals SBT offers for conjugation{b.total > b.antibody ? ` + ${b.total - b.antibody} scaffolding-only (Ir, Pd)` : ""}</div></td>
           </tr>
           {rows.map((l) => (
             <tr key={l.label} className="border-b border-slate-100 dark:border-slate-800">
               <td className="py-1 pr-2 text-right font-mono text-rose-700 dark:text-rose-300">−{l.n}</td>
               <td className="py-1">{l.label}
-                <div className="text-slate-500">{l.masses.map(iso).join(", ")}{l.note ? ` · ${l.note}` : ""}</div>
+                <div className="text-slate-500">{l.masses.map(iso).join(", ")}</div>
               </td>
             </tr>
           ))}
@@ -64,9 +64,9 @@ function BudgetCard({ onClose }: { onClose: () => void }) {
       </table>
       {setup.modality === "imaging" && (
         <p className="mt-2 border-t border-slate-100 pt-2 text-slate-500 dark:border-slate-800">
-          <b>Heard 42?</b> That is 45 − 3 for the segmentation kit, which leaves 193Ir in the pool. The Ir intercalator
-          stains DNA on 191Ir <i>and</i> 193Ir: 191Ir is not a detection channel here, so it is free, but 193Ir costs one.
-          Not running the segmentation kit? Turn it off in Setup and its three Pt channels come back.
+          <b>Why not 45?</b> A Hyperion also detects 157Gd, 194Pt and 197Au, but SBT offers no IMC conjugation metal for
+          them, and Pt on IMC performs poorly for antibodies: it is kept for the cell segmentation kit. Not running the
+          kit? Turn it off in Setup and its three Pt channels come back.
         </p>
       )}
       <p className="mt-2 text-slate-500">Scaffolding reservations: {reservedRoles(setup).length} role{reservedRoles(setup).length === 1 ? "" : "s"} · change them in Setup.</p>

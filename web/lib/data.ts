@@ -245,10 +245,17 @@ export function reservedRoles(setup: Setup): string[] {
   return roles;
 }
 
-export interface BudgetLine { label: string; masses: number[]; note: string | null }
+/** A channel the instrument detects *and* SBT sells a conjugation metal for: the only kind an antibody can occupy. */
+export function antibodyChannel(c: { usable: boolean; antibody?: boolean }): boolean {
+  return c.usable && c.antibody !== false;
+}
+
+export interface BudgetLine { label: string; masses: number[] }
 export interface Budget {
   instrument: string;
-  /** Detection channels on this instrument = masses in its sensitivity curve. */
+  /** Masses SBT offers a conjugation metal for on this modality (and the instrument detects). */
+  antibody: number;
+  /** antibody channels + the scaffolding channels (Ir DNA, Pt viability/segmentation, Pd barcodes) currently switched on. */
   total: number;
   lines: BudgetLine[]; // what each reservation takes off the total
   blocked: number[]; // channels the user is keeping empty
@@ -256,29 +263,31 @@ export interface Budget {
 }
 
 /**
- * The channel count, itemised, so "~41" can show its working.
- * Only masses that are detection channels count against the total: on a Hyperion the Ir intercalator sits on 191 and
- * 193, but 191Ir is not in the XTi sensitivity curve, so it costs the panel one channel, not two.
+ * The channel count, itemised, so "~38" can show its working the way SBT quotes it: on IMC, 41 conjugation metals plus
+ * the two Ir DNA channels make 43 channels; the Ir and the segmentation kit's three Pt leave 38 for antibodies.
+ * Channels the instrument detects but SBT sells no conjugation metal for (157Gd; 194Pt/197Au on IMC) are not counted.
  */
 export function channelBudgetDetail(idx: Index, setup: Setup): Budget {
   const inst = idx.instrument(setup.instrumentId);
-  const usable = new Set(inst.channels.filter((c) => c.usable).map((c) => c.mass));
-  const total = usable.size;
+  const pool = new Set(inst.channels.filter(antibodyChannel).map((c) => c.mass));
+  const antibody = pool.size;
+  let scaffoldOnly = 0;
   const enabled = reservedRoles(setup);
   const lines: BudgetLine[] = [];
   for (const r of idx.instruments.reserved[setup.modality]) {
     if (!enabled.includes(r.role)) continue;
-    const hit = r.masses.filter((m) => usable.has(m));
-    for (const m of hit) usable.delete(m);
-    const off = r.masses.filter((m) => !hit.includes(m));
-    if (hit.length) lines.push({ label: r.label, masses: hit, note: off.length ? `${off.map((m) => `${m}${idx.instruments.isotopes[String(m)] ?? ""}`).join(", ")} is not a detection channel here` : null });
+    for (const m of r.masses) {
+      if (pool.has(m)) pool.delete(m);
+      else scaffoldOnly++;
+    }
+    lines.push({ label: r.label, masses: r.masses });
   }
-  const blocked = (setup.blocked ?? []).filter((m) => usable.has(m));
-  for (const m of blocked) usable.delete(m);
-  return { instrument: inst.name, total, lines, blocked, available: usable.size };
+  const blocked = (setup.blocked ?? []).filter((m) => pool.has(m));
+  for (const m of blocked) pool.delete(m);
+  return { instrument: inst.name, antibody, total: antibody + scaffoldOnly, lines, blocked, available: pool.size };
 }
 
-/** Channels available for antibodies: usable minus everything reserved. */
+/** Channels available for antibodies: conjugation metals minus everything reserved. */
 export function channelBudget(idx: Index, setup: Setup): number {
   return channelBudgetDetail(idx, setup).available;
 }

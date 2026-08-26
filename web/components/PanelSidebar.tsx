@@ -1,7 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import { conjugationIssues } from "@/lib/conjugation";
-import { LEVELS, LEVEL_LABEL, type CloneOption } from "@/lib/data";
+import { LEVELS, LEVEL_LABEL, antibodyChannel, type CloneOption } from "@/lib/data";
 import { useStore } from "@/lib/store";
 import type { PanelModule, PanelRow, PubTarget } from "@/lib/types";
 import { ChannelCount } from "./ChannelBudget";
@@ -120,11 +120,11 @@ export function PanelSidebar() {
 
 function RowDetails({ row, clones, channels, rr, balanced, blocked, pubs, modules, onClone, onLock }: {
   row: PanelRow; clones: CloneOption[]; pubs: PubTarget | null; modules: PanelModule[]; blocked: number[];
-  channels: { mass: number; label: string; usable: boolean }[]; rr: { mass: number | null; reasons: string[]; contributions: { label: string; mass: number; fraction: number; mechanism: string }[] } | undefined;
+  channels: { mass: number; label: string; usable: boolean; antibody?: boolean }[]; rr: { mass: number | null; reasons: string[]; contributions: { label: string; mass: number; fraction: number; mechanism: string }[] } | undefined;
   balanced: boolean; onClone: (c: string | null) => void; onLock: (m: number | null) => void;
 }) {
   const allowed = new Set(clones.find((c) => c.clone === row.clone)?.conjugates.map((c) => c.mass) ?? []);
-  const pickable = channels.filter((c) => c.usable && !blocked.includes(c.mass) && (allowed.size === 0 || allowed.has(c.mass)));
+  const pickable = channels.filter((c) => antibodyChannel(c) && !blocked.includes(c.mass) && (allowed.size === 0 || allowed.has(c.mass)));
   return (
     <div className="mt-1 space-y-2 rounded-md bg-slate-50 p-2 text-xs dark:bg-slate-800">
       {clones.length > 1 && (

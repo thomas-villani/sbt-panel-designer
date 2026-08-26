@@ -8,7 +8,8 @@ Output shape (consumed by engine/):
                         "pct": {"141": {"140": 0.3, "142": 0.3, "157": 3.0}}}},   # off-diagonal only, percent
   "sensitivity_curves": {"0": {"89": 0.3, ...}, "1": {...}},
   "instruments": [{"id": "cytof_xt", ..., "channels": [{"mass": 141, "element": "Pr", "label": "141Pr",
-                   "rel_sensitivity": 0.3, "range_class": "bright_only"}]}],
+                   "rel_sensitivity": 0.3, "usable": true, "antibody": true, "range_class": "bright_only"}]}],
+  "conjugation": {"suspension": {"masses": [...], "note": ...}, "imaging": {...}},   # metals SBT sells for conjugation
   "reserved": {...}, "range_classes": [...]
 }
 """
@@ -73,6 +74,7 @@ def build() -> dict:
         po = po_matrices[str(inst["po_matrix"])]
         curve = curves[str(inst["sensitivity_curve"])]
         reserved_masses = {m for role in cfg["reserved"][inst["modality"]] for m in role["masses"]}
+        conjugation = set(cfg["conjugation"][inst["modality"]]["masses"])
         channels = []
         for mass in sorted(set(po["recipients"]) | reserved_masses):
             element = isotopes.get(str(mass))
@@ -85,6 +87,8 @@ def build() -> dict:
                 # The pdv2 sensitivity curve doubles as the "usable channel" list: the IMC curve omits Cd/Te/Xe.
                 "rel_sensitivity": curve.get(str(mass)),
                 "usable": str(mass) in curve,
+                # A conjugation metal SBT sells for this modality: the channel can carry an antibody.
+                "antibody": mass in conjugation and str(mass) in curve,
                 "in_po_matrix": mass in po["recipients"],
                 "range_class": classify_mass(mass, cfg["range_classes"]),
             })
@@ -97,6 +101,7 @@ def build() -> dict:
         "po_matrices": po_matrices,
         "sensitivity_curves": curves,
         "instruments": instruments,
+        "conjugation": cfg["conjugation"],
         "reserved": cfg["reserved"],
         "range_classes": cfg["range_classes"],
     }

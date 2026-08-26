@@ -1,9 +1,9 @@
 /** Build a Problem from the instrument bundle and user-level row specs. */
 import { massOf } from "./metals";
 import { signalTolerance } from "./prior";
-import type { AbundanceLevel, InstrumentBundle, InstrumentDef, Modality, Problem, Row, Weights } from "./types";
+import type { AbundanceLevel, ChannelDef, InstrumentBundle, InstrumentDef, Modality, Problem, Row, Weights } from "./types";
 
-/** Maxpar X8 labelling-kit lanthanides (+89Y): what a custom conjugation can use. */
+/** Fallback custom-conjugation metals when the bundle carries no `conjugation` lists: Maxpar X8 lanthanides (+89Y). */
 export const X8_MASSES = [
   89, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 158, 159, 160, 161, 162, 163, 164,
   165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176,
@@ -40,6 +40,11 @@ export interface BuildOptions {
   weights?: Partial<Weights>;
 }
 
+/** A channel the instrument detects and SBT sells a conjugation metal for. */
+export function canCarryAntibody(c: ChannelDef): boolean {
+  return c.usable && c.antibody !== false;
+}
+
 export function pickInstrument(bundle: InstrumentBundle, id?: string, modality?: Modality): InstrumentDef {
   if (id) {
     const inst = bundle.instruments.find((i) => i.id === id);
@@ -65,8 +70,10 @@ export function buildProblem(bundle: InstrumentBundle, opts: BuildOptions): Prob
   for (const r of enabled) for (const m of r.masses) (r.hard ? reserved : flagged).add(m);
   for (const m of release) reserved.delete(m);
 
-  const usable = new Set(instrument.channels.filter((c) => c.usable).map((c) => c.mass));
-  const customMasses = [...X8_MASSES, ...(instrument.modality === "suspension" ? MCP9_MASSES : [])].filter((m) => usable.has(m));
+  const usable = new Set(instrument.channels.filter((c) => canCarryAntibody(c)).map((c) => c.mass));
+  const custom = bundle.conjugation?.[instrument.modality]?.masses ??
+    [...X8_MASSES, ...(instrument.modality === "suspension" ? MCP9_MASSES : [])];
+  const customMasses = custom.filter((m) => usable.has(m));
 
   const rows: Row[] = opts.rows.map((spec) => {
     const st = signalTolerance({ signal: spec.signal, tolerance: spec.tolerance }, spec.level);

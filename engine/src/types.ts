@@ -9,7 +9,9 @@ export interface ChannelDef {
   element: string;
   label: string; // e.g. "162Dy"
   rel_sensitivity: number; // 0.3 .. 1.0 from the pdv2 massbias curve
-  usable: boolean; // present in the instrument's sensitivity curve
+  usable: boolean; // present in the instrument's sensitivity curve (a detection channel)
+  /** SBT sells a conjugation metal for this mass on this modality, so an antibody can sit here. Missing = same as usable. */
+  antibody?: boolean;
   in_po_matrix: boolean;
   range_class: RangeClass;
 }
@@ -50,6 +52,8 @@ export interface InstrumentBundle {
   sensitivity_curves: Record<string, Record<string, number>>;
   instruments: InstrumentDef[];
   reserved: Record<Modality, ReservedRole[]>;
+  /** Metals available for (custom) antibody conjugation per modality. Missing on older bundles: falls back to X8/MCP9 constants. */
+  conjugation?: Record<Modality, { masses: number[]; note?: string }>;
 }
 
 /** One panel row = one target that needs a channel. */

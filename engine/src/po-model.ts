@@ -58,9 +58,9 @@ export class Model {
     const chDefs = new Map(problem.instrument.channels.map((c) => [c.mass, c]));
     const lockedMasses = new Set(this.rows.map((r) => r.locked).filter((x): x is number => x != null));
 
-    // Channel universe: usable, non-reserved instrument channels, plus any mass a row is locked on.
+    // Channel universe: antibody-capable (detected + a conjugation metal exists), non-reserved channels, plus any mass a row is locked on.
     const universe = new Set<number>();
-    for (const c of problem.instrument.channels) if (c.usable && !reserved.has(c.mass)) universe.add(c.mass);
+    for (const c of problem.instrument.channels) if (c.usable && c.antibody !== false && !reserved.has(c.mass)) universe.add(c.mass);
     for (const x of lockedMasses) universe.add(x);
     const sorted = [...universe].sort((a, b) => a - b);
     this.reservedCh = new Uint8Array(sorted.length);
@@ -73,7 +73,7 @@ export class Model {
       this.relSens.push(def?.rel_sensitivity ?? 0.3);
       this.rangeClass.push(def?.range_class ?? null);
       this.massIndex.set(mass, i);
-      if (!def?.usable || reserved.has(mass)) this.reservedCh[i] = 1;
+      if (!def?.usable || def.antibody === false || reserved.has(mass)) this.reservedCh[i] = 1;
       if (flagged.has(mass)) this.flaggedCh[i] = 1;
     });
     this.m = sorted.length;

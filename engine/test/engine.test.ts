@@ -128,8 +128,10 @@ describe("problem builder and prior", () => {
     expect(p.flagged).toEqual([194, 195, 198]);
     expect(p.rows[0]).toMatchObject({ signal: ABUNDANCE_PRIOR.low.signal, tolerance: ABUNDANCE_PRIOR.low.tolerance, domain: [141, 162] });
     expect(p.rows[1].signal).toBe(ABUNDANCE_PRIOR.high.signal); // 100/1 placeholder ignored
-    expect(p.rows[1].domain).toContain(112); // MCP9 Cd on suspension
+    expect(p.rows[1].domain).toContain(112); // Cd on suspension
     expect(p.rows[1].domain).toContain(176);
+    expect(p.rows[1].domain).toContain(197); // 197Au is on SBT's CyTOF conjugation list
+    expect(p.rows[1].domain).not.toContain(157); // no conjugation metal is sold for 157Gd
     expect(p.rows[2].locked).toBe(165);
   });
 
@@ -137,7 +139,11 @@ describe("problem builder and prior", () => {
     const p = buildProblem(bundle, { modality: "imaging", rows: [{ id: "x", label: "X", allowCustom: true }] });
     expect(p.instrument.id).toBe("hyperion_xti");
     expect(p.reserved).toEqual([191, 193, 195, 196, 198]);
-    expect(p.rows[0].domain.some((m) => m >= 106 && m <= 116)).toBe(false);
+    for (const m of [106, 110, 111, 112, 113, 114, 116]) expect(p.rows[0].domain).not.toContain(m); // no Cd on IMC
+    expect(p.rows[0].domain).toContain(115); // 115In is on the IMC list
+    expect(p.rows[0].domain).toContain(209);
+    for (const m of [157, 194, 197]) expect(p.rows[0].domain).not.toContain(m); // detected, but not an IMC conjugation metal
+    expect(p.rows[0].domain).toHaveLength(41); // every IMC conjugation metal; reserved Pt is excluded by the model, not the domain
   });
 
   it("helpers", () => {

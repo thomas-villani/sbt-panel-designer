@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { SAMPLE_TYPES, SPECIES, reservedRoles } from "@/lib/data";
+import { SAMPLE_TYPES, SPECIES, antibodyChannel, reservedRoles } from "@/lib/data";
 import { useStore } from "@/lib/store";
 import { useBudgetDetail } from "./ChannelBudget";
 import { Button, H2, Tile, cx } from "./ui";
@@ -62,7 +62,7 @@ export function SetupStep() {
         </div>
         {budget && (
           <p className="mt-3 text-sm text-slate-600 dark:text-slate-300" data-testid="setup-budget">
-            <b>{budget.available}</b> of {budget.instrument}&apos;s {budget.total} detection channels are left for antibodies
+            <b>{budget.available}</b> of {budget.instrument}&apos;s {budget.total} channels are left for antibodies
             {budget.lines.length > 0 && <> ({budget.lines.map((l) => `−${l.masses.length} ${l.label}`).join(", ")}{budget.blocked.length ? `, −${budget.blocked.length} kept empty` : ""})</>}.
           </p>
         )}
@@ -85,7 +85,7 @@ function BlockedChannels() {
     if (!reservedRoles(setup).includes(r.role)) continue;
     for (const m of r.masses) reserved.set(m, r.label);
   }
-  const channels = inst.channels.filter((c) => c.usable);
+  const channels = inst.channels.filter(antibodyChannel);
   const n = setup.blocked.length;
 
   return (

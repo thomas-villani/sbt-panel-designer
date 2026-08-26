@@ -35,7 +35,7 @@ test("Priya: IMC panel from modules to BOM, shareable by URL", async ({ page }) 
 
   for (const m of ["Tissue architecture", "Basic immune", "Lymphoid", "Myeloid / macrophages", "Functional state", "T-cell exhaustion"]) await addModule(page, m);
   await expect(sidebarRows(page)).toHaveCount(27);
-  await expect(page.locator("aside")).toContainText("27 of ~41 channels · 6 modules");
+  await expect(page.locator("aside")).toContainText("27 of ~38 channels · 6 modules");
   await expect(page.locator("aside")).not.toContainText(METAL); // no metals before Balance
 
   const box = page.getByPlaceholder(/e\.g\. CD8a/);
@@ -163,30 +163,30 @@ test("cell types: 'dendritic' adds the DC gate with its negatives; overlap copy;
 });
 
 /** VP feedback round 1: the channel count must show its working and the segmentation kit must be optional. */
-test("IMC channel budget: 41 explained, segmentation kit optional, channels can be kept empty", async ({ page }) => {
+test("IMC channel budget: 38 explained, segmentation kit optional, channels can be kept empty", async ({ page }) => {
   await page.getByRole("button", { name: /Tissue imaging/ }).click();
-  await expect(page.getByTestId("setup-budget")).toContainText("41");
-  await expect(page.getByTestId("setup-budget")).toContainText("45 detection channels");
+  await expect(page.getByTestId("setup-budget")).toContainText("38");
+  await expect(page.getByTestId("setup-budget")).toContainText("43 channels");
 
   // Not running the segmentation kit gives its three Pt channels back.
   await page.getByRole("checkbox", { name: /Cell segmentation kit/ }).uncheck();
-  await expect(page.getByTestId("setup-budget")).toContainText("44");
-  await page.getByRole("checkbox", { name: /Cell segmentation kit/ }).check();
   await expect(page.getByTestId("setup-budget")).toContainText("41");
+  await page.getByRole("checkbox", { name: /Cell segmentation kit/ }).check();
+  await expect(page.getByTestId("setup-budget")).toContainText("38");
   await expect(page.getByRole("checkbox", { name: /DNA intercalator/ })).toBeDisabled();
 
   // "Blank" channels for an RPT nuclide: blocked masses come off the budget and out of the optimiser.
   await page.getByTestId("blocked-toggle").click();
   await page.getByTestId("blocked-picker").getByRole("button", { name: "175Lu", exact: true }).click();
   await page.getByTestId("blocked-picker").getByRole("button", { name: "176Yb", exact: true }).click();
-  await expect(page.getByTestId("setup-budget")).toContainText("39");
+  await expect(page.getByTestId("setup-budget")).toContainText("36");
 
   await page.getByRole("button", { name: /Choose markers/ }).click();
   await addModule(page, "Basic immune");
   await page.getByTestId("channel-count").first().click();
   const card = page.getByTestId("budget-card");
   await expect(card).toContainText("Hyperion XTi channel budget");
-  await expect(card).toContainText("Heard 42?");
+  await expect(card).toContainText("Why not 45?");
   await expect(card).toContainText("Kept empty on purpose");
 
   await balance(page);

@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import type { Result } from "@pd3/engine";
 import type { InstrumentDef } from "@pd3/engine";
-import { reservedRoles } from "@/lib/data";
+import { antibodyChannel, reservedRoles } from "@/lib/data";
 import { useStore } from "@/lib/store";
 import { cx } from "./ui";
 
@@ -18,7 +18,7 @@ export function MassStrip({ instrument, result }: { instrument: InstrumentDef; r
     return m;
   }, [idx, setup]);
   const occupant = useMemo(() => new Map(result?.rows.filter((r) => r.mass != null).map((r) => [r.mass!, r]) ?? []), [result]);
-  const channels = instrument.channels.filter((c) => c.usable || reserved.has(c.mass)).sort((a, b) => a.mass - b.mass);
+  const channels = instrument.channels.filter((c) => antibodyChannel(c) || reserved.has(c.mass)).sort((a, b) => a.mass - b.mass);
 
   return (
     <div>

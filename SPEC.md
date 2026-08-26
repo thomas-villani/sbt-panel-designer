@@ -187,7 +187,7 @@ Optimizer output per panel: assignment `row → channel`, per-channel received S
 Rows (targets with allowed conjugate set or "custom on any free kit metal"), locks, groups, instrument PO matrix, sensitivity curve, reserved channels, abundance-derived S/T, user priority (which markers are "critical", i.e. dim and important).
 
 ### 5.2 Constraints (hard)
-- One channel per row, one row per channel; channel ∈ instrument usable set minus reserved.
+- One channel per row, one row per channel; channel ∈ instrument antibody set (detected *and* a conjugation metal is sold: SBT lists 51 for CyTOF, 41 for IMC) minus reserved.
 - Locked rows keep their channel.
 - Catalogue rows may only take metals that exist as active conjugates for their clone (catalogue-first policy); an `allow_custom` flag per row relaxes this to any labelling-kit metal (custom conjugation service or Maxpar X8/MCP9 kit).
 - Same clone cannot appear twice; same target twice only if user confirms (e.g. two CD45 for barcoding).

@@ -63,7 +63,8 @@ Order matters: `modules` resolves kit rows against the catalogue. `python` is no
   po_matrices{ pdv2_id: { donors[], recipients[], pct{donorMass: {recipientMass: percent}}, anomalies[] } },
   sensitivity_curves{ "0"|"1": {mass: rel_sensitivity} },
   instruments[ { id, name, modality, pdv2_id, po_matrix, sensitivity_curve, current, default_for_modality,
-                 channels[ { mass, element, label, rel_sensitivity, usable, in_po_matrix, range_class } ] } ],
+                 channels[ { mass, element, label, rel_sensitivity, usable, antibody, in_po_matrix, range_class } ] } ],
+                 conjugation: { suspension: { masses, note }, imaging: { masses, note } },
   reserved{ suspension[]: role, imaging[]: role },   // role = {role, label, masses[], default, hard, note}
   range_classes[] }
 ```
@@ -71,8 +72,12 @@ Order matters: `modules` resolves kit rows against the catalogue. `python` is no
 * Seven instruments from `data/curated/instruments/instruments.yaml`: `cytof_xt` (default suspension), `helios`, `cytof2`, `cytof1`,
   `hyperion_xti` (default imaging), `hyperion_plus`, `hyperion`.
 * `pct` stores off-diagonal non-zero cells only. Diagonal `null` for donor 128 is treated as 100 and logged in `anomalies`.
-* Channels = PO recipients ∪ reserved masses. `usable = mass in sensitivity curve` (45 on Hyperion XTi, ≥60 on XT).
-  Cd (106–116) is usable on suspension instruments only.
+* Channels = PO recipients ∪ reserved masses. `usable = mass in sensitivity curve` (45 on Hyperion XTi, ≥60 on XT) means
+  the instrument detects it. `antibody = usable and mass in conjugation[modality].masses`: SBT's "high purity metal tags
+  available for custom conjugation" lists (2026-08-26; 51 metals for CyTOF, 41 for IMC). Only antibody channels enter the
+  optimiser universe and the channel budget: 157Gd is detected everywhere but never sold; 194Pt/197Au are CyTOF-only, and
+  Pt on IMC is kept for the segmentation kit (SBT: "limited use, ICSK only"). IMC budget = 41 + 2 Ir = 43 channels, 38
+  for antibodies. Cd (106–116, 113 is 113Cd) is suspension-only.
 * Facts verified by tests: Helios and XT matrices differ in exactly two cells; Hyperion 5/6/7 are identical; oxide Pr141→157 is
   1.5–4 %; M±1 ≤ 5 %; curve 141 = 0.3, 159–169 = 1.0, 209 = 0.7.
 * Reserved roles: suspension — DNA Ir 191/193 (default, hard), cisplatin viability 194/195/198 (default, soft), Rh103, Pd barcoding
@@ -193,7 +198,7 @@ Full score = objective (with effective PO) + unary soft terms:
 `PDV2_WEIGHTS` sets everything to 0 (pure pdv2 objective, used for validation).
 
 Hard constraints: one row per channel; channel ∈ usable ∖ hard-reserved; locked rows fixed (a lock on a reserved/unusable mass
-is honoured but produces a `reserved_lock` warning); row domain = catalogue metals for its clone, plus every X8 (89Y, 141–176)
+is honoured but produces a `reserved_lock` warning); row domain = catalogue metals for its clone, plus every conjugation metal for the modality (`bundle.conjugation`; X8/MCP9 constants are the fallback)
 and — on suspension only — MCP9 Cd metal when `allowCustom`.
 
 Group exclusivity (pdv2): rows whose `groups` are both non-empty and disjoint contribute no spillover to each other.

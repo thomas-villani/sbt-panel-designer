@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { channelBudget, levelFromSignal, markerPlan, normKey, reservedRoles, rowSpec, titratedST } from "@/lib/data";
+import { channelBudget, channelBudgetDetail, levelFromSignal, markerPlan, normKey, reservedRoles, rowSpec, titratedST } from "@/lib/data";
 import { CYTOF, IMC, index, rowsFromModule } from "./util";
 
 const idx = index();
@@ -93,16 +93,21 @@ describe("row specs, prior and budget", () => {
   it("reserved roles and channel budget follow the setup toggles", () => {
     expect(reservedRoles(IMC)).toEqual(["dna_intercalator", "segmentation_kit"]);
     expect(reservedRoles({ ...IMC, segmentation: false })).toEqual(["dna_intercalator"]);
-    expect(channelBudget(idx, { ...IMC, segmentation: false })).toBe(44);
-    expect(channelBudget(idx, { ...IMC, blocked: [175, 176] })).toBe(39);
+    expect(channelBudget(idx, { ...IMC, segmentation: false })).toBe(41);
+    expect(channelBudget(idx, { ...IMC, blocked: [175, 176] })).toBe(36);
     expect(reservedRoles(CYTOF)).toEqual(["dna_intercalator", "viability_cisplatin"]);
     expect(reservedRoles({ ...CYTOF, barcoding: true })).toContain("barcoding_pd");
-    const usable = (id: string) => new Set(idx.instrument(id).channels.filter((c) => c.usable).map((c) => c.mass));
-    const budget = (id: string, reserved: number[]) => [...usable(id)].filter((m) => !reserved.includes(m)).length;
+    const antibody = (id: string) => new Set(idx.instrument(id).channels.filter((c) => c.usable && c.antibody).map((c) => c.mass));
+    const budget = (id: string, reserved: number[]) => [...antibody(id)].filter((m) => !reserved.includes(m)).length;
     expect(channelBudget(idx, IMC)).toBe(budget("hyperion_xti", [191, 193, 195, 196, 198]));
-    expect(channelBudget(idx, IMC)).toBe(41); // 45 detection channels - 3 segmentation kit - 193Ir (191Ir is not in the XTi curve, so the intercalator costs one channel, not two)
+    // SBT's IMC arithmetic: 41 conjugation metals + 2 Ir = 43 channels; minus Ir and the segmentation kit's Pt = 38.
+    expect(channelBudgetDetail(idx, IMC)).toMatchObject({ antibody: 41, total: 43, available: 38 });
     expect(channelBudget(idx, CYTOF)).toBe(budget("cytof_xt", [191, 193, 194, 195, 198]));
+    expect(channelBudgetDetail(idx, CYTOF)).toMatchObject({ antibody: 51, total: 53, available: 48 });
     expect(channelBudget(idx, { ...CYTOF, viability: false })).toBe(budget("cytof_xt", [191, 193]));
+    // 157Gd is detected on both instruments but no conjugation metal is sold, so it is never an antibody channel.
+    expect(idx.instrument("hyperion_xti").channels.find((c) => c.mass === 157)).toMatchObject({ usable: true, antibody: false });
+    expect(idx.instrument("hyperion_xti").channels.find((c) => c.mass === 194)).toMatchObject({ usable: true, antibody: false });
   });
 });
 
