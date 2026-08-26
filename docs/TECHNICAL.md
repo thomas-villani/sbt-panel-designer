@@ -25,7 +25,7 @@ web/                       Next.js 16 static export (Tailwind, Zustand, engine i
 .github/workflows/         pages.yml: test engine, build web, deploy to GitHub Pages
 ```
 
-Tests: 30 pytest (etl), 12 vitest (engine), 30 vitest + 5 Playwright (web) - see 3c. All work committed on `master`.
+Tests: 30 pytest (etl), 12 vitest (engine), 32 vitest + 5 Playwright (web) - see 3c. All work committed on `master`.
 
 ---
 
@@ -270,7 +270,7 @@ lib/data.ts     loadBundles, loadPublications (lazy), Index (targets/conjugates/
 lib/store.ts    Zustand store: setup, rows, step, balanced, result; every mutation re-writes the URL hash and, once the
                 user has balanced, re-runs the engine (120 ms debounce)
 lib/engine-client.ts + workers/balance.worker.ts   init(bundle) once, then balance/evaluate by request id
-lib/url.ts      state <-> base64url JSON in location.hash (shareable without an account)
+lib/url.ts      state <-> location.hash: `#~` + base64url(deflate(compact JSON)); names/default clones rebuilt from the Index; v1 (plain base64url JSON) links still decode
 lib/saved.ts    localStorage: named saved panels (`pd3.savedPanels.v1`, newest first, same name replaces) and the auto-draft
                 (`pd3.draft.v1`, written on every change; restored on load when there is no share hash, with a banner)
 lib/bom.ts      BOM lines (SKU + format + qty from sample count), accessories from reserved roles, CSV

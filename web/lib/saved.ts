@@ -1,4 +1,5 @@
 /** Saved panels in localStorage: the stop-gap before accounts + a server (ROADMAP §3, "Saved panels"). */
+import type { Index } from "./data";
 import { decodeState, encodeState, type UrlState } from "./url";
 
 export interface SavedPanel { id: string; name: string; savedAt: string; state: string; nRows: number; summary: string }
@@ -45,26 +46,26 @@ export function deleteSaved(id: string): void {
   writeAll(listSaved().filter((p) => p.id !== id));
 }
 
-export function loadSaved(id: string): UrlState | null {
+export function loadSaved(id: string, idx?: Index): UrlState | null {
   const rec = listSaved().find((p) => p.id === id);
-  return rec ? decodeState(rec.state) : null;
+  return rec ? decodeState(rec.state, idx) : null;
 }
 
 /** The in-progress panel, written on every change so a closed tab is not a lost panel. */
-export function writeDraft(st: UrlState): void {
+export function writeDraft(st: UrlState, idx?: Index): void {
   const s = storage();
   if (!s) return;
   try {
-    if (st.rows.length) s.setItem(DRAFT, encodeState(st)); else s.removeItem(DRAFT);
+    if (st.rows.length) s.setItem(DRAFT, encodeState(st, idx)); else s.removeItem(DRAFT);
   } catch { /* best-effort */ }
 }
 
-export function readDraft(): UrlState | null {
+export function readDraft(idx?: Index): UrlState | null {
   const s = storage();
   if (!s) return null;
   try {
     const raw = s.getItem(DRAFT);
-    return raw ? decodeState(raw) : null;
+    return raw ? decodeState(raw, idx) : null;
   } catch { return null; }
 }
 

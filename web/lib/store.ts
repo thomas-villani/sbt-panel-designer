@@ -60,8 +60,9 @@ export const useStore = create<State>((set, get) => {
   };
   const persist = () => {
     const st = snapshot();
-    writeHash(st);
-    writeDraft(st);
+    const idx = get().idx ?? undefined;
+    writeHash(st, idx);
+    writeDraft(st, idx);
   };
   const restore = (st: UrlState, extra: Partial<State> = {}) => {
     set({ setup: st.setup, rows: st.rows, nSamples: st.nSamples, balanced: st.balanced, result: null, step: st.rows.length ? (st.balanced ? "balance" : "build") : "setup", ...extra });
@@ -100,8 +101,8 @@ export const useStore = create<State>((set, get) => {
       initEngine(b.instruments);
       set({ idx, saved: listSaved() });
       get().ensurePubs();
-      const fromUrl = typeof window !== "undefined" ? decodeState(window.location.hash) : null;
-      const draft = fromUrl ? null : readDraft();
+      const fromUrl = typeof window !== "undefined" ? decodeState(window.location.hash, idx) : null;
+      const draft = fromUrl ? null : readDraft(idx);
       if (fromUrl) restore(fromUrl);
       else if (draft && draft.rows.length) restore(draft, { restoredDraft: true });
     },
@@ -111,7 +112,7 @@ export const useStore = create<State>((set, get) => {
       set({ saved: listSaved() });
     },
     loadSavedPanel: (id) => {
-      const st = loadSaved(id);
+      const st = loadSaved(id, get().idx ?? undefined);
       if (st) restore(st, { restoredDraft: false });
     },
     deleteSavedPanel: (id) => { deleteSaved(id); set({ saved: listSaved() }); },

@@ -34,7 +34,7 @@ export function OrderStep() {
     URL.revokeObjectURL(a.href);
   };
   const share = async () => {
-    const url = shareUrl({ setup, rows, nSamples, balanced });
+    const url = shareUrl({ setup, rows, nSamples, balanced }, idx);
     try { await navigator.clipboard.writeText(url); setCopied(true); setTimeout(() => setCopied(false), 2000); } catch { window.prompt("Copy this link", url); }
   };
 
