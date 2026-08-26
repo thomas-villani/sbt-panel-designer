@@ -18,7 +18,7 @@ const { useStore } = await import("@/lib/store");
 const { index } = await import("./util");
 
 const idx = index();
-const CYTOF = { modality: "suspension" as const, species: "human" as const, sampleType: "pbmc" as const, instrumentId: "cytof_xt", viability: true, barcoding: false };
+const CYTOF = { modality: "suspension" as const, species: "human" as const, sampleType: "pbmc" as const, instrumentId: "cytof_xt", viability: true, barcoding: false, segmentation: true, blocked: [] };
 const state = (n: number) => ({
   setup: CYTOF, nSamples: 20, balanced: false,
   rows: Array.from({ length: n }, (_, i) => ({ id: `t${i}`, targetId: `t${i}`, name: `T${i}`, level: "medium" as const, clone: null, custom: true, locked: null, moduleIds: [] })),

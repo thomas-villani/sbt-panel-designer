@@ -38,6 +38,7 @@ export class Index {
   readonly targetsById = new Map<string, Target>();
   readonly conjugatesByTarget = new Map<string, Conjugate[]>();
   readonly modulesById = new Map<string, PanelModule>();
+  readonly modulesByTarget = new Map<string, PanelModule[]>();
   private readonly keys: { key: string; target: Target }[] = [];
 
   constructor(readonly bundles: Bundles) {
@@ -51,7 +52,15 @@ export class Index {
       arr.push(c);
       this.conjugatesByTarget.set(c.target_id, arr);
     }
-    for (const m of bundles.modules) this.modulesById.set(m.id, m);
+    for (const m of bundles.modules) {
+      this.modulesById.set(m.id, m);
+      for (const k of m.markers) {
+        if (!k.target_id) continue;
+        const arr = this.modulesByTarget.get(k.target_id) ?? [];
+        if (!arr.includes(m)) arr.push(m);
+        this.modulesByTarget.set(k.target_id, arr);
+      }
+    }
   }
 
   get instruments() { return this.bundles.instruments; }
@@ -93,27 +102,45 @@ export class Index {
       .slice(0, limit).map(([id]) => this.targetsById.get(id)!);
   }
 
+  /** Modules and kits that already contain this target, relevant to the setup first ("which panels is FAP already in?"). */
+  modulesWith(targetId: string, setup: Setup): PanelModule[] {
+    const fits = new Set(this.modulesFor(setup));
+    return (this.modulesByTarget.get(targetId) ?? []).filter((m) => fits.has(m))
+      .sort((a, b) => Number(b.featured) - Number(a.featured) || a.name.localeCompare(b.name));
+  }
+
+  /** Every catalogue target sold for this setup's modality, name-sorted (the "see everything" table). */
+  allTargets(setup: Setup): Target[] {
+    return this.bundles.catalog.targets.filter((t) => t.applications.includes(setup.modality) && t.kinds.includes("antibody"))
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }
+
   /** Modules whose name or aliases match the query ("dendritic" finds Dendritic cells), best match first.
    *  `anyModality` searches modules for the species regardless of modality, for a "suspension only" hint when nothing fits. */
   searchModules(query: string, setup: Setup, limit = 4, anyModality = false): PanelModule[] {
     const q = normKey(query);
-    if (q.length < 3) return [];
+    if (q.length < 2) return []; // 2 chars so "IO" finds the immuno-oncology panels
     const scored: [PanelModule, number][] = [];
-    const pool = anyModality ? this.modulesFor({ ...setup, modality: setup.modality === "imaging" ? "suspension" : "imaging" }).filter((m) => m.application !== "both") : this.modulesFor(setup);
+    const here = new Set(this.modulesFor(setup));
+    const pool = anyModality
+      ? this.bundles.modules.filter((m) => !here.has(m) && (m.species.length === 0 || setup.species === "other" || m.species.includes(setup.species)))
+      : [...here];
     for (const m of pool) {
       const keys = [m.name, ...m.aliases].map(normKey);
       let s = 0;
       for (const k of keys) s = Math.max(s, k === q ? 4 : k.startsWith(q) ? 3 : q.startsWith(k) && k.length >= 4 ? 2 : k.includes(q) ? 1 : 0);
+      if (q.length < 3 && s < 3) continue; // "IO" must match a whole alias, not any name containing i-o (neurodegeneratIOn)
       if (s) scored.push([m, s + (m.category === "celltype" ? 0.5 : 0)]);
     }
     return scored.sort((a, b) => b[1] - a[1] || a[0].name.localeCompare(b[0].name)).slice(0, limit).map(([m]) => m);
   }
 
-  /** Modules relevant to the setup, featured first. */
+  /** Modules relevant to the setup, featured first. Modules whose own definition falls apart here are left out entirely. */
   modulesFor(setup: Setup): PanelModule[] {
     return this.bundles.modules.filter((m) =>
       (m.application === "both" || m.application === setup.modality) &&
-      (m.species.length === 0 || setup.species === "other" || m.species.includes(setup.species)),
+      (m.species.length === 0 || setup.species === "other" || m.species.includes(setup.species)) &&
+      !definitionBroken(m, setup),
     ).sort((a, b) => Number(b.featured) - Number(a.featured) || a.name.localeCompare(b.name));
   }
 
@@ -137,6 +164,19 @@ export class Index {
     return [...score.entries()].sort((a, b) => b[1].n - a[1].n).slice(0, limit)
       .map(([targetId, s]) => ({ targetId, name: s.name, reason: `in ${s.via}` }));
   }
+}
+
+/**
+ * A module is misleading when a marker its own definition names cannot be added under this setup: "Dendritic cells" that
+ * cannot separate pDCs (no CD123 for IMC) is worse than no module at all, so `modulesFor` drops it rather than showing a
+ * gap. Only `recommended` markers count - `optional` ones appear in definitions in parentheses and are never auto-added,
+ * and `required` ones are always added (as a custom conjugation when nothing is sold).
+ */
+function definitionBroken(m: PanelModule, setup: Setup): boolean {
+  if (!m.definition) return false;
+  const def = normKey(m.definition);
+  return m.markers.some((k) => k.kind === "antibody" && k.role === "recommended" && markerPlan(k, setup) === "skip" &&
+    [k.target_name, ...k.target_name.split("/")].map(normKey).filter((s) => s.length > 2).some((s) => def.includes(s)));
 }
 
 /** What adding this module marker does under the setup: add from the catalogue, add as a custom conjugation, or skip. */
@@ -194,20 +234,58 @@ export function rowSpec(idx: Index, row: PanelRow, setup: Setup): RowSpec {
 
 /** Reserved role ids enabled by the setup toggles. */
 export function reservedRoles(setup: Setup): string[] {
-  if (setup.modality === "imaging") return ["dna_intercalator", "segmentation_kit"];
+  if (setup.modality === "imaging") {
+    const roles = ["dna_intercalator"];
+    if (setup.segmentation) roles.push("segmentation_kit");
+    return roles;
+  }
   const roles = ["dna_intercalator"];
   if (setup.viability) roles.push("viability_cisplatin");
   if (setup.barcoding) roles.push("barcoding_pd");
   return roles;
 }
 
-/** Channels available for antibodies: usable minus everything reserved. */
-export function channelBudget(idx: Index, setup: Setup): number {
+export interface BudgetLine { label: string; masses: number[]; note: string | null }
+export interface Budget {
+  instrument: string;
+  /** Detection channels on this instrument = masses in its sensitivity curve. */
+  total: number;
+  lines: BudgetLine[]; // what each reservation takes off the total
+  blocked: number[]; // channels the user is keeping empty
+  available: number;
+}
+
+/**
+ * The channel count, itemised, so "~41" can show its working.
+ * Only masses that are detection channels count against the total: on a Hyperion the Ir intercalator sits on 191 and
+ * 193, but 191Ir is not in the XTi sensitivity curve, so it costs the panel one channel, not two.
+ */
+export function channelBudgetDetail(idx: Index, setup: Setup): Budget {
   const inst = idx.instrument(setup.instrumentId);
   const usable = new Set(inst.channels.filter((c) => c.usable).map((c) => c.mass));
-  const roles = idx.instruments.reserved[setup.modality].filter((r) => reservedRoles(setup).includes(r.role));
-  for (const r of roles) for (const m of r.masses) usable.delete(m);
-  return usable.size;
+  const total = usable.size;
+  const enabled = reservedRoles(setup);
+  const lines: BudgetLine[] = [];
+  for (const r of idx.instruments.reserved[setup.modality]) {
+    if (!enabled.includes(r.role)) continue;
+    const hit = r.masses.filter((m) => usable.has(m));
+    for (const m of hit) usable.delete(m);
+    const off = r.masses.filter((m) => !hit.includes(m));
+    if (hit.length) lines.push({ label: r.label, masses: hit, note: off.length ? `${off.map((m) => `${m}${idx.instruments.isotopes[String(m)] ?? ""}`).join(", ")} is not a detection channel here` : null });
+  }
+  const blocked = (setup.blocked ?? []).filter((m) => usable.has(m));
+  for (const m of blocked) usable.delete(m);
+  return { instrument: inst.name, total, lines, blocked, available: usable.size };
+}
+
+/** Channels available for antibodies: usable minus everything reserved. */
+export function channelBudget(idx: Index, setup: Setup): number {
+  return channelBudgetDetail(idx, setup).available;
+}
+
+/** Channel label ("176Yb") for a mass on the current instrument. */
+export function channelLabel(idx: Index, setup: Setup, mass: number): string {
+  return idx.instrument(setup.instrumentId).channels.find((c) => c.mass === mass)?.label ?? String(mass);
 }
 
 export function defaultInstrument(idx: Index, modality: Setup["modality"]): string {

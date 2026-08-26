@@ -9,7 +9,7 @@ import { decodeState, encodeState } from "../lib/url";
 const read = (f: string) => JSON.parse(readFileSync(`public/data/${f}`, "utf8"));
 const bundles: Bundles = { instruments: read("instruments.json"), catalog: read("catalog.json"), modules: read("modules.json").modules };
 const idx = new Index(bundles);
-const setup: Setup = { modality: "imaging", species: "human", sampleType: "ffpe", instrumentId: "hyperion_xti", viability: false, barcoding: false };
+const setup: Setup = { modality: "imaging", species: "human", sampleType: "ffpe", instrumentId: "hyperion_xti", viability: false, barcoding: false, segmentation: true, blocked: [] };
 
 const mods = idx.modulesFor(setup);
 console.log(`modules for imaging/human: ${mods.length}`, mods.slice(0, 8).map((m) => m.name).join(" | "));
@@ -45,7 +45,7 @@ const dec = decodeState("#" + enc)!;
 console.log(`url state ${enc.length} chars, roundtrip ok: ${JSON.stringify(dec.rows) === JSON.stringify(rows)}`);
 
 // Suspension sanity: human PBMC lineage backbone on CyTOF XT.
-const s2: Setup = { modality: "suspension", species: "human", sampleType: "pbmc", instrumentId: "cytof_xt", viability: true, barcoding: false };
+const s2: Setup = { modality: "suspension", species: "human", sampleType: "pbmc", instrumentId: "cytof_xt", viability: true, barcoding: false, segmentation: true, blocked: [] };
 const m2 = idx.modulesFor(s2).find((m) => m.id === "human-pbmc-lineage")!;
 const r2: PanelRow[] = m2.markers.filter((k) => k.kind === "antibody" && k.target_id).map((k) => ({ id: k.target_id!, targetId: k.target_id, name: k.target_name, level: k.abundance_level ?? "medium", clone: idx.cloneOptions(k.target_id!, s2)[0]?.clone ?? null, custom: false, locked: null, moduleIds: [m2.id] }));
 const res2 = balance(buildProblem(bundles.instruments, { instrumentId: "cytof_xt", rows: r2.map((r) => rowSpec(idx, r, s2)), reservedRoles: reservedRoles(s2) }), { seed: 1 });

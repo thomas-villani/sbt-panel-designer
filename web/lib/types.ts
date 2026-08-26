@@ -114,4 +114,7 @@ export interface Setup {
   instrumentId: string;
   viability: boolean; // suspension: cisplatin
   barcoding: boolean; // suspension: Pd barcoding
+  segmentation: boolean; // imaging: Maxpar cell segmentation kit (3 Pt channels)
+  /** Masses deliberately kept empty (an RPT nuclide, a reagent the designer does not model). Hard-reserved. */
+  blocked: number[];
 }

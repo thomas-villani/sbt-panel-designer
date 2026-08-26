@@ -14,6 +14,7 @@ export function MassStrip({ instrument, result }: { instrument: InstrumentDef; r
     const roles = reservedRoles(setup);
     const m = new Map<number, string>();
     for (const r of idx.instruments.reserved[setup.modality]) if (roles.includes(r.role)) for (const mass of r.masses) m.set(mass, r.label);
+    for (const mass of setup.blocked) m.set(mass, "a channel you asked to keep empty");
     return m;
   }, [idx, setup]);
   const occupant = useMemo(() => new Map(result?.rows.filter((r) => r.mass != null).map((r) => [r.mass!, r]) ?? []), [result]);
@@ -47,7 +48,7 @@ export function MassStrip({ instrument, result }: { instrument: InstrumentDef; r
         <span><i className="mr-1 inline-block h-2.5 w-2.5 rounded-sm bg-emerald-500" />clean (&lt; 0.5 × tolerance)</span>
         <span><i className="mr-1 inline-block h-2.5 w-2.5 rounded-sm bg-amber-400" />watch (0.5–1 ×)</span>
         <span><i className="mr-1 inline-block h-2.5 w-2.5 rounded-sm bg-rose-500" />spillover exceeds tolerance</span>
-        <span><i className="mr-1 inline-block h-2.5 w-2.5 rounded-sm bg-slate-300" />reserved</span>
+        <span><i className="mr-1 inline-block h-2.5 w-2.5 rounded-sm bg-slate-300" />reserved / kept empty</span>
         <span>bar height = channel sensitivity</span>
       </div>
     </div>

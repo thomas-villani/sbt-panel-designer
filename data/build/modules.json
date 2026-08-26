@@ -49,7 +49,12 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "neuro",
+    "neuroscience",
+    "brain",
+    "CNS"
+   ],
    "definition": null,
    "markers": [
     {
@@ -161,7 +166,16 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "GBM",
+    "glioma",
+    "brain tumour",
+    "brain tumor",
+    "neuro-oncology",
+    "neuro",
+    "CNS",
+    "cancer"
+   ],
    "definition": null,
    "markers": [
     {
@@ -321,7 +335,17 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "neuro",
+    "neurodegeneration",
+    "proteinopathy",
+    "tau",
+    "synuclein",
+    "Alzheimer",
+    "Parkinson",
+    "brain",
+    "CNS"
+   ],
    "definition": null,
    "markers": [
     {
@@ -459,7 +483,15 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "neuro",
+    "neurodegeneration",
+    "proteinopathy",
+    "amyloid",
+    "tau",
+    "brain",
+    "CNS"
+   ],
    "definition": null,
    "markers": [
     {
@@ -623,7 +655,15 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "MS",
+    "demyelination",
+    "neuroinflammation",
+    "neuro",
+    "autoimmune",
+    "brain",
+    "CNS"
+   ],
    "definition": null,
    "markers": [
     {
@@ -737,7 +777,16 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "Alzheimer",
+    "amyloid",
+    "tau",
+    "dementia",
+    "neurodegeneration",
+    "neuro",
+    "brain",
+    "CNS"
+   ],
    "definition": null,
    "markers": [
     {
@@ -849,7 +898,14 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "Parkinson",
+    "synuclein",
+    "neurodegeneration",
+    "neuro",
+    "brain",
+    "CNS"
+   ],
    "definition": null,
    "markers": [
     {
@@ -960,7 +1016,13 @@
    "blurb": "Phospho-epitopes and pathway readouts in tissue.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "signalling",
+    "signaling",
+    "phospho",
+    "pathway",
+    "kinase"
+   ],
    "definition": null,
    "markers": [
     {
@@ -1168,7 +1230,13 @@
    "blurb": "Glycolysis, fatty-acid oxidation and mitochondrial markers.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "metabolism",
+    "metabolic",
+    "immunometabolism",
+    "glycolysis",
+    "OXPHOS"
+   ],
    "definition": null,
    "markers": [
     {
@@ -1373,7 +1441,13 @@
    "blurb": "Checkpoint and exhaustion markers (TIM-3, LAG-3, OX40, CTLA-4, IDO) for immuno-oncology.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "IO",
+    "immuno-oncology",
+    "immunotherapy",
+    "checkpoint",
+    "exhaustion"
+   ],
    "definition": null,
    "markers": [
     {
@@ -1531,7 +1605,11 @@
    "blurb": "The four markers that separate B cells, T cells, macrophages and all leukocytes in tissue.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "immune",
+    "immunophenotyping",
+    "leukocytes"
+   ],
    "definition": null,
    "markers": [
     {
@@ -1673,7 +1751,13 @@
    "blurb": "Vessels, epithelium and mesenchyme so every cell has an address.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "architecture",
+    "structure",
+    "vessels",
+    "TME",
+    "tumour microenvironment"
+   ],
    "definition": null,
    "markers": [
     {
@@ -1791,7 +1875,11 @@
    "blurb": "Extra immune subset markers to add on top of Basic immune.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "immune",
+    "expansion",
+    "immunophenotyping"
+   ],
    "definition": null,
    "markers": [
     {
@@ -2013,7 +2101,14 @@
    "blurb": "Tumour epithelium and EMT markers.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "EMT",
+    "epithelial",
+    "mesenchymal",
+    "tumour",
+    "tumor",
+    "cancer"
+   ],
    "definition": null,
    "markers": [
     {
@@ -2160,7 +2255,11 @@
    "blurb": "Proliferation, Tregs, PD-1 / PD-L1 and cytotoxic activity (Ki-67, FoxP3, PD-1, PD-L1, Granzyme B).",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "functional",
+    "activation",
+    "proliferation"
+   ],
    "definition": null,
    "markers": [
     {
@@ -2328,7 +2427,12 @@
    "blurb": "Macrophage, monocyte, dendritic-cell and granulocyte markers, including M2-like CD163.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "myeloid",
+    "macrophages",
+    "monocytes",
+    "granulocytes"
+   ],
    "definition": null,
    "markers": [
     {
@@ -2530,7 +2634,11 @@
    "blurb": "CD4 and CD8 T-cell subsets, B cells and NK cells.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "lymphocytes",
+    "lymphoid",
+    "immune"
+   ],
    "definition": null,
    "markers": [
     {
@@ -2677,7 +2785,16 @@
    "blurb": "Fibroblasts, smooth muscle and extracellular matrix.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "stroma",
+    "fibroblast",
+    "CAF",
+    "ECM",
+    "extracellular matrix",
+    "TME",
+    "tumour microenvironment",
+    "tumor microenvironment"
+   ],
    "definition": null,
    "markers": [
     {
@@ -2810,7 +2927,14 @@
    "blurb": "SBT's complete validated IO tissue panel. A good starting point to trim rather than build up.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "IO",
+    "immuno-oncology",
+    "immunotherapy",
+    "checkpoint",
+    "tumour microenvironment",
+    "TME"
+   ],
    "definition": null,
    "markers": [
     {
@@ -3698,7 +3822,12 @@
    "blurb": "The purchasable Maxpar IO IMC kit.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "IO",
+    "immuno-oncology",
+    "immunotherapy",
+    "checkpoint"
+   ],
    "definition": null,
    "markers": [
     {
@@ -4169,7 +4298,16 @@
    "blurb": "Glioma / brain-tumour microenvironment bundle.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "neuro",
+    "neuro-oncology",
+    "glioma",
+    "GBM",
+    "brain tumour",
+    "brain",
+    "CNS",
+    "cancer"
+   ],
    "definition": null,
    "markers": [
     {
@@ -4843,7 +4981,12 @@
    "blurb": "The purchasable tissue-architecture kit.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "architecture",
+    "structure",
+    "vessels",
+    "TME"
+   ],
    "definition": null,
    "markers": [
     {
@@ -5013,7 +5156,13 @@
    "blurb": "TIL phenotyping kit.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "TIL",
+    "IO",
+    "immuno-oncology",
+    "tumour microenvironment",
+    "TME"
+   ],
    "definition": null,
    "markers": [
     {
@@ -5266,7 +5415,11 @@
    "blurb": "Activation-state markers kit.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "activation",
+    "functional",
+    "immune"
+   ],
    "definition": null,
    "markers": [
     {
@@ -5500,7 +5653,16 @@
    "blurb": "Neurons, astrocytes, microglia, oligodendrocytes.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "neuro",
+    "neuroscience",
+    "brain",
+    "CNS",
+    "neurons",
+    "astrocytes",
+    "microglia",
+    "oligodendrocytes"
+   ],
    "definition": null,
    "markers": [
     {
@@ -5713,7 +5875,11 @@
    "blurb": "Adds activation markers to MDIPA.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "MDIPA",
+    "expansion",
+    "activation"
+   ],
    "definition": null,
    "markers": [
     {
@@ -5905,7 +6071,10 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "MDIPA",
+    "expansion"
+   ],
    "definition": null,
    "markers": [
     {
@@ -6131,7 +6300,10 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "MDIPA",
+    "expansion"
+   ],
    "definition": null,
    "markers": [
     {
@@ -6354,7 +6526,11 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "MDIPA",
+    "expansion",
+    "myeloid"
+   ],
    "definition": null,
    "markers": [
     {
@@ -6569,7 +6745,11 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "MDIPA",
+    "expansion",
+    "myeloid"
+   ],
    "definition": null,
    "markers": [
     {
@@ -6786,7 +6966,12 @@
    "blurb": "SBT's full validated T-cell functional panel.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "IO",
+    "immuno-oncology",
+    "immunotherapy",
+    "checkpoint"
+   ],
    "definition": null,
    "markers": [
     {
@@ -7906,7 +8091,12 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "IO",
+    "immuno-oncology",
+    "immunotherapy",
+    "checkpoint"
+   ],
    "definition": null,
    "markers": [
     {
@@ -8865,7 +9055,11 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "cytokines",
+    "ICS",
+    "expansion"
+   ],
    "definition": null,
    "markers": [
     {
@@ -8974,7 +9168,13 @@
    "blurb": "Granzyme B, perforin and degranulation.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "cytotoxicity",
+    "granzyme",
+    "perforin",
+    "degranulation",
+    "killing"
+   ],
    "definition": null,
    "markers": [
     {
@@ -9087,7 +9287,11 @@
    "blurb": "Intracellular IFN-γ, TNF, IL-2, IL-17A and IL-4 after stimulation.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "cytokines",
+    "ICS",
+    "intracellular cytokine staining"
+   ],
    "definition": null,
    "markers": [
     {
@@ -9256,7 +9460,11 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "IO",
+    "immuno-oncology",
+    "checkpoint"
+   ],
    "definition": null,
    "markers": [
     {
@@ -9367,7 +9575,11 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "IO",
+    "immuno-oncology",
+    "checkpoint"
+   ],
    "definition": null,
    "markers": [
     {
@@ -9477,7 +9689,12 @@
    "blurb": "PD-1, TIM-3, LAG-3, TIGIT, CTLA-4 and their ligands.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "IO",
+    "immuno-oncology",
+    "immunotherapy",
+    "checkpoint"
+   ],
    "definition": null,
    "markers": [
     {
@@ -9755,7 +9972,10 @@
    "blurb": "Naive / memory / effector differentiation and helper subsets.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "T-cell",
+    "immunophenotyping"
+   ],
    "definition": null,
    "markers": [
     {
@@ -10055,7 +10275,12 @@
    "blurb": "Twenty-marker backbone covering every major immune lineage and T-cell memory subsets.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "immune profiling",
+    "immunophenotyping",
+    "PBMC",
+    "immune"
+   ],
    "definition": null,
    "markers": [
     {
@@ -10644,7 +10869,13 @@
    "blurb": "The minimal backbone - T, B, monocytes, NK and granulocytes - in nine markers.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "TBNK",
+    "TBMNK",
+    "immunophenotyping",
+    "lymphocyte subsets",
+    "immune profiling"
+   ],
    "definition": null,
    "markers": [
     {
@@ -10938,7 +11169,13 @@
    "blurb": "The 30-marker dry-format immune profiling assay. 37 immune populations from whole blood or PBMC in one tube.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "MDIPA",
+    "immune profiling",
+    "immunophenotyping",
+    "whole blood",
+    "deep immune profiling"
+   ],
    "definition": null,
    "markers": [
     {
@@ -12583,7 +12820,11 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "IO",
+    "immuno-oncology",
+    "immunotherapy"
+   ],
    "definition": null,
    "markers": [
     {
@@ -13279,7 +13520,11 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "IO",
+    "immuno-oncology",
+    "immunotherapy"
+   ],
    "definition": null,
    "markers": [
     {
@@ -14227,7 +14472,11 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "IO",
+    "immuno-oncology",
+    "immunotherapy"
+   ],
    "definition": null,
    "markers": [
     {
@@ -14482,7 +14731,14 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "pluripotency",
+    "iPSC",
+    "iPS",
+    "ES cells",
+    "stem cells",
+    "embryonic"
+   ],
    "definition": null,
    "markers": [
     {
@@ -14667,7 +14923,11 @@
    "blurb": "Treg identification and function (CD25, CD127, FoxP3, CTLA-4, Helios).",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "Treg",
+    "Tregs",
+    "suppression"
+   ],
    "definition": null,
    "markers": [
     {
@@ -15054,7 +15314,13 @@
    "blurb": "Th1 / Th2 / Th17 / Tfh by chemokine receptors.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "T helper",
+    "Th1",
+    "Th2",
+    "Th17",
+    "Tfh"
+   ],
    "definition": null,
    "markers": [
     {
@@ -15497,7 +15763,11 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "monocytes",
+    "macrophages",
+    "myeloid"
+   ],
    "definition": null,
    "markers": [
     {
@@ -15946,7 +16216,16 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "AML",
+    "leukaemia",
+    "leukemia",
+    "blasts",
+    "myeloid malignancy",
+    "haematology",
+    "hematology",
+    "cancer"
+   ],
    "definition": null,
    "markers": [
     {
@@ -16396,7 +16675,12 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "peripheral blood",
+    "PBMC",
+    "whole blood",
+    "immunophenotyping"
+   ],
    "definition": null,
    "markers": [
     {
@@ -16630,7 +16914,11 @@
    "blurb": "Naive, memory, transitional and plasmablast B cells.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "B-cell",
+    "B cells",
+    "humoral"
+   ],
    "definition": null,
    "markers": [
     {
@@ -16964,7 +17252,11 @@
    "blurb": "IdU, cyclin B1, pHistone H3 and pRb for cell-cycle phase.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "cell cycle",
+    "proliferation",
+    "DNA"
+   ],
    "definition": null,
    "markers": [
     {
@@ -17098,7 +17390,16 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "HSPC",
+    "HSC",
+    "stem cells",
+    "progenitors",
+    "CD34",
+    "haematopoiesis",
+    "hematopoiesis",
+    "bone marrow"
+   ],
    "definition": null,
    "markers": [
     {
@@ -17309,7 +17610,13 @@
    "blurb": "Phospho-flow core (pSTAT, pERK, pS6, pAKT).",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "signalling",
+    "signaling",
+    "phospho",
+    "pathway",
+    "STAT"
+   ],
    "definition": null,
    "markers": [
     {
@@ -17515,7 +17822,11 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "cytokines",
+    "ICS",
+    "intracellular cytokine staining"
+   ],
    "definition": null,
    "markers": [
     {
@@ -17836,7 +18147,10 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "T-cell",
+    "expansion"
+   ],
    "definition": null,
    "markers": [
     {
@@ -18120,7 +18434,10 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "T-cell",
+    "immunophenotyping"
+   ],
    "definition": null,
    "markers": [
     {
@@ -18593,7 +18910,12 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "peripheral blood",
+    "PBMC",
+    "whole blood",
+    "immunophenotyping"
+   ],
    "definition": null,
    "markers": [
     {
@@ -19065,7 +19387,12 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "peripheral blood",
+    "PBMC",
+    "whole blood",
+    "immunophenotyping"
+   ],
    "definition": null,
    "markers": [
     {
@@ -25348,7 +25675,13 @@
    "blurb": "Every major leukocyte lineage. Start here for any human blood panel.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "immune profiling",
+    "immunophenotyping",
+    "backbone",
+    "PBMC",
+    "immune"
+   ],
    "definition": null,
    "markers": [
     {
@@ -25789,7 +26122,11 @@
    "blurb": "Naive, central memory, effector memory and TEMRA; senescence and IL-7 responsiveness.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "T-cell",
+    "memory",
+    "differentiation"
+   ],
    "definition": null,
    "markers": [
     {
@@ -26091,7 +26428,12 @@
    "blurb": "Recent activation plus the checkpoint receptors that define exhausted and tumour-reactive T cells.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "IO",
+    "immuno-oncology",
+    "checkpoint",
+    "exhaustion"
+   ],
    "definition": null,
    "markers": [
     {
@@ -26488,7 +26830,11 @@
    "blurb": "Tregs by CD25 / CD127 / FoxP3, with suppressive-function markers.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "Treg",
+    "Tregs",
+    "suppression"
+   ],
    "definition": null,
    "markers": [
     {
@@ -26692,7 +27038,11 @@
    "blurb": "CD56 bright / dim NK subsets, receptors and cytotoxic machinery.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "NK",
+    "natural killer",
+    "cytotoxicity"
+   ],
    "definition": null,
    "markers": [
     {
@@ -26906,7 +27256,12 @@
    "blurb": "Naive, memory, transitional B cells and plasmablasts.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "B-cell",
+    "B cells",
+    "plasma cells",
+    "humoral"
+   ],
    "definition": null,
    "markers": [
     {
@@ -27149,7 +27504,11 @@
    "blurb": "Effector cytokines after PMA / ionomycin or antigen stimulation. Bright when induced; plan for high signal.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "cytokines",
+    "ICS",
+    "intracellular cytokine staining"
+   ],
    "definition": null,
    "markers": [
     {
@@ -27408,7 +27767,14 @@
    "blurb": "JAK/STAT, MAPK, PI3K and NF-κB readouts for stimulation assays.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "signalling",
+    "signaling",
+    "phospho",
+    "pathway",
+    "STAT",
+    "MAPK"
+   ],
    "definition": null,
    "markers": [
     {
@@ -27677,7 +28043,13 @@
    "blurb": "Cycling, mitotic and apoptotic cells.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "proliferation",
+    "apoptosis",
+    "cell death",
+    "caspase",
+    "cell cycle"
+   ],
    "definition": null,
    "markers": [
     {
@@ -27813,7 +28185,17 @@
    "blurb": "Epithelium, mesenchyme, matrix and vessels - the map every tissue panel needs.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "TME",
+    "tumour microenvironment",
+    "tumor microenvironment",
+    "stroma",
+    "fibroblast",
+    "CAF",
+    "cancer",
+    "tumour",
+    "tumor"
+   ],
    "definition": null,
    "markers": [
     {
@@ -28145,7 +28527,14 @@
    "blurb": "PD-L1 axis, antigen presentation and the cells that respond.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "IO",
+    "immuno-oncology",
+    "immunotherapy",
+    "checkpoint",
+    "tumour microenvironment",
+    "TME"
+   ],
    "definition": null,
    "markers": [
     {
@@ -28426,7 +28815,13 @@
    "blurb": "Every major murine leukocyte lineage.",
    "featured": true,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "immune profiling",
+    "immunophenotyping",
+    "backbone",
+    "mouse immune",
+    "immune"
+   ],
    "definition": null,
    "markers": [
     {
@@ -28902,7 +29297,13 @@
    "blurb": "Murine tumour microenvironment - T cells, macrophages, checkpoint and structure.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "IO",
+    "immuno-oncology",
+    "immunotherapy",
+    "tumour microenvironment",
+    "TME"
+   ],
    "definition": null,
    "markers": [
     {
@@ -29354,7 +29755,13 @@
    "blurb": "Glycolysis, fatty-acid oxidation, amino-acid transport and mitochondrial mass.",
    "featured": false,
    "hidden": false,
-   "aliases": [],
+   "aliases": [
+    "metabolism",
+    "metabolic",
+    "immunometabolism",
+    "glycolysis",
+    "OXPHOS"
+   ],
    "definition": null,
    "markers": [
     {

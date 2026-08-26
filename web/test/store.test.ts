@@ -4,10 +4,10 @@ import { useStore } from "@/lib/store";
 import { index } from "./util";
 
 const idx = index();
-const modules = (app: "imaging" | "suspension") => idx.modulesFor({ modality: app, species: "human", sampleType: app === "imaging" ? "ffpe" : "pbmc", instrumentId: "", viability: true, barcoding: false });
+const modules = (app: "imaging" | "suspension") => idx.modulesFor({ modality: app, species: "human", sampleType: app === "imaging" ? "ffpe" : "pbmc", instrumentId: "", viability: true, barcoding: false, segmentation: true, blocked: [] });
 
 beforeEach(() => {
-  useStore.setState({ rows: [], result: null, balanced: false, step: "setup", setup: { modality: "suspension", species: "human", sampleType: "pbmc", instrumentId: "cytof_xt", viability: true, barcoding: false } });
+  useStore.setState({ rows: [], result: null, balanced: false, step: "setup", setup: { modality: "suspension", species: "human", sampleType: "pbmc", instrumentId: "cytof_xt", viability: true, barcoding: false, segmentation: true, blocked: [] } });
   useStore.getState().init(idx.bundles);
 });
 

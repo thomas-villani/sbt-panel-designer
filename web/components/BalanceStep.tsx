@@ -1,5 +1,6 @@
 "use client";
 import { useMemo, useState } from "react";
+import { conjugationIssues } from "@/lib/conjugation";
 import { useStore } from "@/lib/store";
 import { MassStrip } from "./MassStrip";
 import { Button, H2, Pill, cx } from "./ui";
@@ -21,6 +22,8 @@ export function BalanceStep() {
   const [showWhy, setShowWhy] = useState(false);
   const instrument = idx.instrument(setup.instrumentId);
   const locks = rows.filter((r) => r.locked != null).length;
+  // The engine cannot see the catalogue: markers that would need conjugating to order are flagged here, not in the BOM.
+  const custom = useMemo(() => (result ? conjugationIssues(idx, rows, result, setup) : []), [idx, rows, result, setup]);
 
   if (!balanced) {
     return (
@@ -44,7 +47,7 @@ export function BalanceStep() {
     );
   }
   const warnings = result.warnings;
-  const serious = warnings.filter((w) => w.severity !== "info");
+  const serious = [...warnings.filter((w) => w.severity !== "info"), ...custom];
 
   return (
     <div className="space-y-6">
@@ -61,6 +64,20 @@ export function BalanceStep() {
           {serious.length ? `${serious.length} thing${serious.length > 1 ? "s" : ""} to look at` : "Panel is balanced"}
         </H2>
         <ul className="space-y-2">
+          {custom.map((c) => (
+            <li key={`custom-${c.rowId}`} className="flex flex-wrap items-start gap-3 rounded-lg border border-violet-300 bg-violet-50 p-3 text-sm dark:border-violet-800 dark:bg-violet-950" data-testid="custom-conjugation-warning">
+              <Pill tone="violet">custom conjugation</Pill>
+              <div className="min-w-[12rem] flex-1">
+                <div>{c.message}</div>
+                {c.detail && <div className="mt-1 text-xs text-slate-600 dark:text-slate-300">{c.detail}</div>}
+                {c.fix && <div className="mt-1 text-xs text-slate-600 dark:text-slate-300">Move it to {c.fix.channel}, where the clone is sold, and re-balance around it.</div>}
+              </div>
+              <div className="flex shrink-0 gap-1">
+                {c.fix && <Button size="sm" variant="primary" onClick={() => lockRow(c.rowId, c.fix!.mass)}>Use {c.fix.channel}</Button>}
+                <Button size="sm" variant="danger" onClick={() => removeRow(c.rowId)}>Remove</Button>
+              </div>
+            </li>
+          ))}
           {warnings.map((w, i) => (
             <li key={i} className={cx("flex flex-wrap items-start gap-3 rounded-lg border p-3 text-sm", w.severity === "critical" ? "border-rose-300 bg-rose-50 dark:border-rose-800 dark:bg-rose-950" : w.severity === "warning" ? "border-amber-300 bg-amber-50 dark:border-amber-800 dark:bg-amber-950" : "border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800")}>
               <Pill tone={w.severity === "critical" ? "rose" : w.severity === "warning" ? "amber" : "slate"}>{w.severity}</Pill>

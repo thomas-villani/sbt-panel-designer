@@ -36,7 +36,8 @@ interface State {
   addModule: (m: PanelModule) => void;
   removeModule: (id: string) => void;
   addTarget: (targetId: string, opts?: { moduleId?: string; level?: AbundanceLevel | null; clone?: string | null }) => void;
-  addCustom: (name: string) => void;
+  addCustom: (name: string, mass?: number | null) => void;
+  toggleBlocked: (mass: number) => void;
   removeRow: (id: string) => void;
   setLevel: (id: string, level: AbundanceLevel) => void;
   setClone: (id: string, clone: string | null) => void;
@@ -49,6 +50,7 @@ interface State {
 
 const DEFAULT_SETUP: Setup = {
   modality: "suspension", species: "human", sampleType: "pbmc", instrumentId: "cytof_xt", viability: true, barcoding: false,
+  segmentation: true, blocked: [],
 };
 
 let timer: ReturnType<typeof setTimeout> | null = null;
@@ -171,9 +173,16 @@ export const useStore = create<State>((set, get) => {
       if (row) set({ rows: upsertRow(get().rows, row) });
       touch();
     },
-    addCustom: (name) => {
+    addCustom: (name, mass = null) => {
       const id = `custom:${name}`;
-      set({ rows: upsertRow(get().rows, { id, targetId: null, name, level: "medium", clone: null, custom: true, locked: null, moduleIds: [] }) });
+      set({ rows: upsertRow(get().rows, { id, targetId: null, name, level: "medium", clone: null, custom: true, locked: mass ?? null, moduleIds: [] }) });
+      touch();
+    },
+    /** Keep a channel empty (an RPT nuclide, a reagent we do not model). Any row locked there is released. */
+    toggleBlocked: (mass) => {
+      const { setup, rows } = get();
+      const blocked = setup.blocked.includes(mass) ? setup.blocked.filter((m) => m !== mass) : [...setup.blocked, mass].sort((a, b) => a - b);
+      set({ setup: { ...setup, blocked }, rows: rows.map((r) => (r.locked === mass && blocked.includes(mass) ? { ...r, locked: null } : r)) });
       touch();
     },
     removeRow: (id) => { set({ rows: get().rows.filter((r) => r.id !== id) }); touch(); },
@@ -200,6 +209,7 @@ export const useStore = create<State>((set, get) => {
       try {
         const result = await balanceInWorker({
           instrumentId: setup.instrumentId, rows: rows.map((r) => rowSpec(idx, r, setup)), reservedRoles: reservedRoles(setup),
+          extraReserved: setup.blocked,
         }, { seed: 1 });
         set({ result, balancing: false });
       } catch (e) {

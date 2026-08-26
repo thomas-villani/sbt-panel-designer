@@ -16,8 +16,8 @@ export function index(): Index {
   return cached;
 }
 
-export const IMC: Setup = { modality: "imaging", species: "human", sampleType: "ffpe", instrumentId: "hyperion_xti", viability: false, barcoding: false };
-export const CYTOF: Setup = { modality: "suspension", species: "human", sampleType: "pbmc", instrumentId: "cytof_xt", viability: true, barcoding: false };
+export const IMC: Setup = { modality: "imaging", species: "human", sampleType: "ffpe", instrumentId: "hyperion_xti", viability: false, barcoding: false, segmentation: true, blocked: [] };
+export const CYTOF: Setup = { modality: "suspension", species: "human", sampleType: "pbmc", instrumentId: "cytof_xt", viability: true, barcoding: false, segmentation: true, blocked: [] };
 
 export function rowsFromModule(idx: Index, moduleId: string, setup: Setup): PanelRow[] {
   const m = idx.modulesById.get(moduleId);

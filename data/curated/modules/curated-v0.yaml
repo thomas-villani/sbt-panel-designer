@@ -5,6 +5,7 @@ version: 2026-08-24.1
 modules:
   - id: human-pbmc-lineage
     name: Immune lineage backbone (human)
+    aliases: [immune profiling, immunophenotyping, backbone, PBMC, immune]
     application: suspension
     species: [human]
     sample_types: [pbmc, whole_blood]
@@ -28,6 +29,7 @@ modules:
 
   - id: human-t-differentiation
     name: T-cell differentiation
+    aliases: [T-cell, memory, differentiation]
     application: suspension
     species: [human]
     sample_types: [pbmc, whole_blood]
@@ -47,6 +49,7 @@ modules:
 
   - id: human-t-activation-exhaustion
     name: T-cell activation and exhaustion
+    aliases: [IO, immuno-oncology, checkpoint, exhaustion]
     application: both
     species: [human]
     sample_types: [pbmc, whole_blood, dissociated_tumour, ffpe]
@@ -69,6 +72,7 @@ modules:
 
   - id: human-treg
     name: Regulatory T cells
+    aliases: [Treg, Tregs, suppression]
     application: both
     species: [human]
     sample_types: [pbmc, whole_blood, ffpe]
@@ -84,6 +88,7 @@ modules:
 
   - id: human-nk
     name: NK cells
+    aliases: [NK, natural killer, cytotoxicity]
     application: suspension
     species: [human]
     sample_types: [pbmc, whole_blood]
@@ -100,6 +105,7 @@ modules:
 
   - id: human-b-plasma
     name: B cells and plasma cells
+    aliases: [B-cell, B cells, plasma cells, humoral]
     application: both
     species: [human]
     sample_types: [pbmc, whole_blood, ffpe]
@@ -116,6 +122,7 @@ modules:
 
   - id: human-cytokines
     name: Intracellular cytokines
+    aliases: [cytokines, ICS, intracellular cytokine staining]
     application: suspension
     species: [human]
     sample_types: [pbmc, whole_blood]
@@ -133,6 +140,7 @@ modules:
 
   - id: human-phospho-signalling
     name: Phospho-signalling
+    aliases: [signalling, signaling, phospho, pathway, STAT, MAPK]
     application: suspension
     species: [human]
     sample_types: [pbmc, whole_blood]
@@ -151,6 +159,7 @@ modules:
 
   - id: proliferation-death
     name: Proliferation and cell death
+    aliases: [proliferation, apoptosis, cell death, caspase, cell cycle]
     application: both
     species: [human, mouse]
     sample_types: [pbmc, whole_blood, dissociated_tumour, ffpe, frozen]
@@ -164,6 +173,7 @@ modules:
 
   - id: tumour-stroma-structural
     name: Tumour and stroma structure (IMC)
+    aliases: [TME, tumour microenvironment, tumor microenvironment, stroma, fibroblast, CAF, cancer, tumour, tumor]
     application: imaging
     species: [human]
     sample_types: [ffpe, frozen]
@@ -184,6 +194,7 @@ modules:
 
   - id: checkpoint-io-tissue
     name: Checkpoint / immuno-oncology (IMC)
+    aliases: [IO, immuno-oncology, immunotherapy, checkpoint, tumour microenvironment, TME]
     application: imaging
     species: [human]
     sample_types: [ffpe]
@@ -203,6 +214,7 @@ modules:
 
   - id: mouse-immune-backbone
     name: Immune lineage backbone (mouse)
+    aliases: [immune profiling, immunophenotyping, backbone, mouse immune, immune]
     application: suspension
     species: [mouse]
     sample_types: [spleen, blood, bone_marrow, dissociated_tumour]
@@ -227,6 +239,7 @@ modules:
 
   - id: mouse-io-tissue
     name: Mouse tumour immunology (IMC)
+    aliases: [IO, immuno-oncology, immunotherapy, tumour microenvironment, TME]
     application: imaging
     species: [mouse]
     sample_types: [ffpe, frozen]
@@ -250,6 +263,7 @@ modules:
 
   - id: metabolism
     name: Metabolism
+    aliases: [metabolism, metabolic, immunometabolism, glycolysis, OXPHOS]
     application: both
     species: [human]
     sample_types: [pbmc, ffpe]

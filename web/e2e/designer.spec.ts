@@ -161,3 +161,94 @@ test("cell types: 'dendritic' adds the DC gate with its negatives; overlap copy;
   await expect(page.getByText("What are you measuring?")).toBeVisible();
   await expect(page.getByTestId("restored-draft")).toHaveCount(0);
 });
+
+/** VP feedback round 1: the channel count must show its working and the segmentation kit must be optional. */
+test("IMC channel budget: 41 explained, segmentation kit optional, channels can be kept empty", async ({ page }) => {
+  await page.getByRole("button", { name: /Tissue imaging/ }).click();
+  await expect(page.getByTestId("setup-budget")).toContainText("41");
+  await expect(page.getByTestId("setup-budget")).toContainText("45 detection channels");
+
+  // Not running the segmentation kit gives its three Pt channels back.
+  await page.getByRole("checkbox", { name: /Cell segmentation kit/ }).uncheck();
+  await expect(page.getByTestId("setup-budget")).toContainText("44");
+  await page.getByRole("checkbox", { name: /Cell segmentation kit/ }).check();
+  await expect(page.getByTestId("setup-budget")).toContainText("41");
+  await expect(page.getByRole("checkbox", { name: /DNA intercalator/ })).toBeDisabled();
+
+  // "Blank" channels for an RPT nuclide: blocked masses come off the budget and out of the optimiser.
+  await page.getByTestId("blocked-toggle").click();
+  await page.getByTestId("blocked-picker").getByRole("button", { name: "175Lu", exact: true }).click();
+  await page.getByTestId("blocked-picker").getByRole("button", { name: "176Yb", exact: true }).click();
+  await expect(page.getByTestId("setup-budget")).toContainText("39");
+
+  await page.getByRole("button", { name: /Choose markers/ }).click();
+  await addModule(page, "Basic immune");
+  await page.getByTestId("channel-count").first().click();
+  const card = page.getByTestId("budget-card");
+  await expect(card).toContainText("Hyperion XTi channel budget");
+  await expect(card).toContainText("Heard 42?");
+  await expect(card).toContainText("Kept empty on purpose");
+
+  await balance(page);
+  for (const kept of ["175Lu", "176Yb"]) expect(await page.locator("aside").innerText()).not.toContain(kept);
+});
+
+test("markers carry their panels, topics search, browse-all lists the catalogue, custom markers take a metal", async ({ page }) => {
+  await page.getByRole("button", { name: /Tissue imaging/ }).click();
+  await page.getByRole("button", { name: /Choose markers/ }).click();
+  const box = page.getByPlaceholder(/e\.g\. CD8a/);
+
+  // "which panels is FAP already in?" — chips that add the whole panel.
+  await box.fill("FAP");
+  const inModules = page.getByTestId("in-modules").first();
+  await expect(inModules).toBeVisible();
+  await inModules.getByRole("button").first().click();
+  await expect(page.locator("aside")).toContainText("1 module");
+
+  // A topic, not a marker: "io" finds the immuno-oncology panels and can flood the grid.
+  await box.fill("io");
+  await expect(page.getByTestId("module-hit").first()).toContainText(/Immuno-oncology|Checkpoint/);
+  await page.getByTestId("show-all-modules").click();
+  await expect(page.getByText(/Panels matching “io”/)).toBeVisible();
+  await page.getByRole("button", { name: "clear", exact: true }).click();
+  await page.getByRole("button", { name: "Clear", exact: true }).click(); // empty the panel again
+
+  // Everything that is labelled, in one table.
+  await page.getByTestId("browse-toggle").click();
+  const browse = page.getByTestId("browse-all");
+  await expect(browse).toContainText("All markers");
+  await browse.getByPlaceholder(/filter by name/).fill("granzyme");
+  await expect(browse.getByRole("row")).toHaveCount(2); // header + Granzyme B
+  await browse.getByRole("button", { name: "add" }).click();
+  await expect(browse.getByRole("button", { name: "remove" })).toBeVisible();
+
+  // A marker of your own, already conjugated: pin its metal so the balancer works around it.
+  await box.fill("My own hybridoma");
+  await page.getByText(/custom conjugation/).first().click();
+  const row = sidebarRows(page).filter({ hasText: "My own hybridoma" });
+  await row.locator("button").first().click();
+  await row.getByRole("combobox").selectOption({ label: "already labelled with 168Er" });
+  await expect(row).toContainText("168Er");
+  await balance(page);
+  await expect(row).toContainText("168Er");
+});
+
+/** A marker with no conjugate for this modality must be called out at Balance, not discovered in the BOM. */
+test("balance warns when a marker would have to be conjugated to order", async ({ page }) => {
+  await page.getByRole("button", { name: /Tissue imaging/ }).click();
+  await page.getByRole("button", { name: /Choose markers/ }).click();
+  await page.getByPlaceholder(/e\.g\. CD8a/).fill("NK cells");
+  await page.getByTestId("module-hit").first().click();
+  await balance(page);
+
+  const warn = page.getByTestId("custom-conjugation-warning");
+  await expect(warn).toHaveCount(1);
+  await expect(warn).toContainText("CD56/NCAM has no off-the-shelf IMC conjugate");
+  await expect(warn).toContainText("Sold for CyTOF only");
+  await expect(page.locator("aside")).toContainText(/[0-9]{2,3}[A-Z][a-z][*]/); // channel is starred: no catalogue vial
+  await expect(page.locator("aside")).toContainText("1 warning to resolve");
+
+  await warn.getByRole("button", { name: "Remove" }).click();
+  await expect(page.getByTestId("custom-conjugation-warning")).toHaveCount(0);
+  await expect(page.locator("aside")).toContainText("no warnings");
+});

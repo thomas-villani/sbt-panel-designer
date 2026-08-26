@@ -16,7 +16,8 @@ const LEVELS: AbundanceLevel[] = ["low", "medium", "high", "very_high"];
 const CUSTOM = "custom:";
 const V2 = "~";
 
-type SetupTuple = [Setup["modality"], Setup["species"], Setup["sampleType"], string, 0 | 1, 0 | 1];
+// Trailing entries are dropped when they hold their default (segmentation on, nothing blocked), so old links still decode.
+type SetupTuple = [Setup["modality"], Setup["species"], Setup["sampleType"], string, 0 | 1, 0 | 1, (0 | 1)?, number[]?];
 type CloneV2 = string | 0 | 1; // 0 = no clone (custom conjugation), 1 = the catalogue default for this setup
 type RowV2 = [string, number, CloneV2?, (number | 0)?, string[]?];
 type V2 = [2, SetupTuple, number, 0 | 1, RowV2[]];
@@ -38,8 +39,15 @@ function fromB64url(s: string): Uint8Array {
   return Uint8Array.from(bin, (c) => c.charCodeAt(0));
 }
 
-const setupTuple = (s: Setup): SetupTuple => [s.modality, s.species, s.sampleType, s.instrumentId, s.viability ? 1 : 0, s.barcoding ? 1 : 0];
-const setupFromTuple = (t: SetupTuple): Setup => ({ modality: t[0], species: t[1], sampleType: t[2], instrumentId: t[3], viability: !!t[4], barcoding: !!t[5] });
+const setupTuple = (s: Setup): SetupTuple => {
+  const t: SetupTuple = [s.modality, s.species, s.sampleType, s.instrumentId, s.viability ? 1 : 0, s.barcoding ? 1 : 0, s.segmentation ? 1 : 0, s.blocked];
+  if (!t[7]!.length) { t.pop(); if (t[6] === 1) t.pop(); }
+  return t;
+};
+const setupFromTuple = (t: SetupTuple): Setup => ({
+  modality: t[0], species: t[1], sampleType: t[2], instrumentId: t[3], viability: !!t[4], barcoding: !!t[5],
+  segmentation: t[6] === undefined ? true : !!t[6], blocked: t[7] ?? [],
+});
 
 const defaultClone = (idx: Index | undefined, targetId: string, setup: Setup): string | null | undefined =>
   idx ? idx.cloneOptions(targetId, setup)[0]?.clone ?? null : undefined;

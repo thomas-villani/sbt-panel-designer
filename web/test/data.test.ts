@@ -92,12 +92,15 @@ describe("row specs, prior and budget", () => {
   });
   it("reserved roles and channel budget follow the setup toggles", () => {
     expect(reservedRoles(IMC)).toEqual(["dna_intercalator", "segmentation_kit"]);
+    expect(reservedRoles({ ...IMC, segmentation: false })).toEqual(["dna_intercalator"]);
+    expect(channelBudget(idx, { ...IMC, segmentation: false })).toBe(44);
+    expect(channelBudget(idx, { ...IMC, blocked: [175, 176] })).toBe(39);
     expect(reservedRoles(CYTOF)).toEqual(["dna_intercalator", "viability_cisplatin"]);
     expect(reservedRoles({ ...CYTOF, barcoding: true })).toContain("barcoding_pd");
     const usable = (id: string) => new Set(idx.instrument(id).channels.filter((c) => c.usable).map((c) => c.mass));
     const budget = (id: string, reserved: number[]) => [...usable(id)].filter((m) => !reserved.includes(m)).length;
     expect(channelBudget(idx, IMC)).toBe(budget("hyperion_xti", [191, 193, 195, 196, 198]));
-    expect(channelBudget(idx, IMC)).toBe(41); // 196Pt is not in the XTi sensitivity curve
+    expect(channelBudget(idx, IMC)).toBe(41); // 45 detection channels - 3 segmentation kit - 193Ir (191Ir is not in the XTi curve, so the intercalator costs one channel, not two)
     expect(channelBudget(idx, CYTOF)).toBe(budget("cytof_xt", [191, 193, 194, 195, 198]));
     expect(channelBudget(idx, { ...CYTOF, viability: false })).toBe(budget("cytof_xt", [191, 193]));
   });
@@ -115,7 +118,13 @@ describe("cell-type modules and module search", () => {
     const dc = ct.find((m) => m.id === "ct-human-dc")!;
     expect(dc.markers.filter((k) => k.polarity === "neg").map((k) => k.target_id)).toEqual(["cd3e", "cd19", "cd14", "cd56ncam"]);
     expect(idx.modulesFor(IMC).some((m) => m.id === "ct-human-pdc")).toBe(false); // suspension-only cell type
-    expect(idx.modulesFor(IMC).filter((m) => m.category === "celltype").length).toBeGreaterThanOrEqual(16);
+    expect(idx.modulesFor(IMC).filter((m) => m.category === "celltype").length).toBeGreaterThanOrEqual(14);
+    // A cell type whose own definition needs a marker with no IMC conjugate is hidden, not shown with a hole in it:
+    // Dendritic cells cannot call pDCs without CD123, T-cell memory needs CCR7, plasmablasts need CD138.
+    for (const id of ["ct-human-dc", "ct-human-t-memory", "ct-human-plasmablasts"]) {
+      expect(idx.modulesFor(CYTOF).some((m) => m.id === id)).toBe(true);
+      expect(idx.modulesFor(IMC).some((m) => m.id === id)).toBe(false);
+    }
     expect(idx.modulesFor({ ...CYTOF, species: "mouse" }).some((m) => m.id === "ct-mouse-nk")).toBe(true);
   });
   it("searchModules finds cell types by name and alias, scoped to the setup", () => {
@@ -128,7 +137,8 @@ describe("cell-type modules and module search", () => {
     expect(idx.searchModules("pDC", IMC)).toEqual([]);
     expect(idx.searchModules("pDC", IMC, 3, true)[0].id).toBe("ct-human-pdc"); // fallback: exists for suspension
     expect(idx.searchModules("nk cells", IMC)[0].id).toBe("ct-human-nk");
-    expect(idx.searchModules("cd", CYTOF)).toEqual([]); // too short
+    expect(idx.searchModules("c", CYTOF)).toEqual([]); // too short
+    expect(idx.searchModules("io", IMC).map((m) => m.name)).toContain("Immuno-oncology (31-marker master panel)"); // 2 chars: topic aliases
     expect(idx.searchModules("exhaustion", IMC).map((m) => m.name)).toContain("T-cell exhaustion");
   });
   it("markerPlan: unsold recommended markers are skipped, unsold required ones become custom", () => {
