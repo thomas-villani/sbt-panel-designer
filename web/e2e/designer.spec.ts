@@ -104,3 +104,60 @@ test("search offers custom conjugation when nothing matches", async ({ page }) =
   await expect(sidebarRows(page)).toHaveCount(1);
   await expect(page.locator("aside")).toContainText("custom");
 });
+
+test("cell types: 'dendritic' adds the DC gate with its negatives; overlap copy; save / restore in this browser", async ({ page }) => {
+  await page.getByRole("button", { name: /Suspension cells/ }).click();
+  await page.getByRole("button", { name: /Choose markers/ }).click();
+  const box = page.getByPlaceholder(/e\.g\. CD8a/);
+
+  // Typing "CD4" keeps the antibody first (Enter adds CD4, not the "CD4 helper T cells" module).
+  await box.fill("CD4");
+  await expect(page.locator("div.absolute button").first()).toHaveText(/^CD4/);
+  await box.press("Enter");
+  await expect(sidebarRows(page)).toHaveCount(1);
+
+  await box.fill("dendritic");
+  const hit = page.getByTestId("module-hit").first();
+  await expect(hit).toContainText("Dendritic cells");
+  await expect(hit).toContainText("adds HLA-DR, CD11c, CD123");
+  await expect(hit).toContainText("CD3ε−"); // lineage negatives are spelled out
+  await hit.click();
+  await expect(sidebarRows(page)).toHaveCount(8); // CD4 + HLA-DR, CD11c, CD123, CD3ε−, CD19−, CD14−, CD56−
+  await expect(page.locator("aside")).toContainText("1 module");
+
+  // Card copy when another module already covers the markers: no more "Add 0 markers".
+  const pdc = page.locator("div.rounded-lg").filter({ has: page.getByText("Plasmacytoid dendritic cells (pDC)", { exact: true }) }).first();
+  await expect(pdc).toContainText("3 of 4 already in panel");
+  await expect(pdc.getByRole("button", { name: "Add 1 marker" })).toBeVisible();
+  await page.getByRole("button", { name: "Cell types" }).click();
+  const tcells = page.locator("div.rounded-lg").filter({ has: page.getByText("T cells", { exact: true }) }).first();
+  await expect(tcells).toContainText("all targets already in panel");
+  await tcells.getByRole("button", { name: "Tag as module" }).click();
+  await expect(sidebarRows(page)).toHaveCount(8);
+  await expect(page.locator("aside")).toContainText("2 modules");
+
+  // Papers from the literature DB appear in the row drawer.
+  await sidebarRows(page).first().locator("button").first().click();
+  await expect(page.getByTestId("papers")).toContainText(/\d+ papers mention this marker/);
+
+  // Save in this browser, clear, load it back.
+  await page.getByRole("button", { name: "Save", exact: true }).click();
+  await page.getByLabel("Panel name").fill("My DC panel");
+  await page.getByLabel("Panel name").press("Enter");
+  await expect(page.getByTestId("saved-panels")).toContainText("My DC panel");
+  await expect(page.getByTestId("saved-panels")).toContainText("8 markers");
+  await page.getByRole("button", { name: "Clear" }).click();
+  await expect(sidebarRows(page)).toHaveCount(0);
+  await page.getByRole("button", { name: "My DC panel" }).click();
+  await expect(sidebarRows(page)).toHaveCount(8);
+
+  // A plain reload (no share hash) picks the draft back up and says so.
+  await page.goto("/");
+  await expect(page.getByTestId("restored-draft")).toContainText("8 markers");
+  await expect(sidebarRows(page)).toHaveCount(8);
+  await page.getByRole("button", { name: "Start fresh" }).click();
+  await expect(sidebarRows(page)).toHaveCount(0);
+  await page.goto("/");
+  await expect(page.getByText("What are you measuring?")).toBeVisible();
+  await expect(page.getByTestId("restored-draft")).toHaveCount(0);
+});

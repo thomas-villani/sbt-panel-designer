@@ -1,9 +1,9 @@
 {
- "version": "2026-08-24.1",
+ "version": "2026-08-25.1",
  "stats": {
-  "modules": 76,
+  "modules": 116,
   "sbt_kits": 62,
-  "curated": 14,
+  "curated": 54,
   "kit_rows": 640,
   "kit_rows_resolved": 635,
   "kit_rows_with_catalogue_conjugate": 603,
@@ -49,6 +49,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "biiitubulin",
@@ -150,6 +152,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "nestin",
@@ -289,6 +293,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "tau",
@@ -413,6 +419,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "app",
@@ -560,6 +568,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "neurofilament",
@@ -663,6 +673,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "app",
@@ -764,6 +776,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "asyn",
@@ -864,6 +878,8 @@
    "blurb": "Phospho-epitopes and pathway readouts in tissue.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "egfr",
@@ -1047,6 +1063,8 @@
    "blurb": "Glycolysis, fatty-acid oxidation and mitochondrial markers.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "glut1",
@@ -1227,6 +1245,8 @@
    "blurb": "Checkpoint and exhaustion markers (TIM-3, LAG-3, OX40, CTLA-4, IDO) for immuno-oncology.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd366tim3",
@@ -1364,6 +1384,8 @@
    "blurb": "The four markers that separate B cells, T cells, macrophages and all leukocytes in tissue.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd20",
@@ -1488,6 +1510,8 @@
    "blurb": "Vessels, epithelium and mesenchyme so every cell has an address.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "collagentypei",
@@ -1594,6 +1618,8 @@
    "blurb": "Extra immune subset markers to add on top of Basic immune.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd38",
@@ -1787,6 +1813,8 @@
    "blurb": "Tumour epithelium and EMT markers.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "vimentin",
@@ -1916,6 +1944,8 @@
    "blurb": "Proliferation, Tregs, PD-1 / PD-L1 and cytotoxic activity (Ki-67, FoxP3, PD-1, PD-L1, Granzyme B).",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "ki67",
@@ -2062,6 +2092,8 @@
    "blurb": "Macrophage, monocyte, dendritic-cell and granulocyte markers, including M2-like CD163.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd11bmac1",
@@ -2238,6 +2270,8 @@
    "blurb": "CD4 and CD8 T-cell subsets, B cells and NK cells.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd4",
@@ -2367,6 +2401,8 @@
    "blurb": "Fibroblasts, smooth muscle and extracellular matrix.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd44",
@@ -2485,6 +2521,8 @@
    "blurb": "SBT's complete validated IO tissue panel. A good starting point to trim rather than build up.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "collagentypei",
@@ -3252,6 +3290,8 @@
    "blurb": "The purchasable Maxpar IO IMC kit.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "asmoothmuscleactin",
@@ -3660,6 +3700,8 @@
    "blurb": "Glioma / brain-tumour microenvironment bundle.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "asmoothmuscleactin",
@@ -4244,6 +4286,8 @@
    "blurb": "The purchasable tissue-architecture kit.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "asmoothmuscleactin",
@@ -4395,6 +4439,8 @@
    "blurb": "TIL phenotyping kit.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "pancytokeratin",
@@ -4614,6 +4660,8 @@
    "blurb": "Activation-state markers kit.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd274pdl1",
@@ -4736,6 +4784,8 @@
    "blurb": "Membrane / cytoplasm / nucleus stains on Pt 195, 196, 198 for automated cell segmentation.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": null,
@@ -4825,6 +4875,8 @@
    "blurb": "Neurons, astrocytes, microglia, oligodendrocytes.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "iba1",
@@ -5013,6 +5065,8 @@
    "blurb": "Adds activation markers to MDIPA.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd107alamp1",
@@ -5182,6 +5236,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd134ox40",
@@ -5381,6 +5437,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd11a",
@@ -5578,6 +5636,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd40",
@@ -5767,6 +5827,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd181cxcr1",
@@ -5958,6 +6020,8 @@
    "blurb": "SBT's full validated T-cell functional panel.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd45",
@@ -6934,6 +6998,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd45",
@@ -7767,6 +7833,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "il5",
@@ -7865,6 +7933,8 @@
    "blurb": "Granzyme B, perforin and degranulation.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "il6",
@@ -7965,6 +8035,8 @@
    "blurb": "Intracellular IFN-γ, TNF, IL-2, IL-17A and IL-4 after stimulation.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "il2",
@@ -8117,6 +8189,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd278icos",
@@ -8216,6 +8290,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd2442b4",
@@ -8314,6 +8390,8 @@
    "blurb": "PD-1, TIM-3, LAG-3, TIGIT, CTLA-4 and their ligands.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd154cd40ligand",
@@ -8558,6 +8636,8 @@
    "blurb": "Naive / memory / effector differentiation and helper subsets.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "tcrab",
@@ -8819,6 +8899,8 @@
    "blurb": "Twenty-marker backbone covering every major immune lineage and T-cell memory subsets.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd45",
@@ -9330,6 +9412,8 @@
    "blurb": "The minimal backbone - T, B, monocytes, NK and granulocytes - in nine markers.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd45",
@@ -9587,6 +9671,8 @@
    "blurb": "The 30-marker dry-format immune profiling assay. 37 immune populations from whole blood or PBMC in one tube.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd45",
@@ -10295,6 +10381,8 @@
    "blurb": "",
    "featured": false,
    "hidden": true,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd194ccr4",
@@ -11006,6 +11094,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd11a",
@@ -11609,6 +11699,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd49d",
@@ -12431,6 +12523,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd134ox40",
@@ -12654,6 +12748,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "tra160",
@@ -12816,6 +12912,8 @@
    "blurb": "Treg identification and function (CD25, CD127, FoxP3, CTLA-4, Helios).",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd49d",
@@ -13152,6 +13250,8 @@
    "blurb": "Th1 / Th2 / Th17 / Tfh by chemokine receptors.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd196ccr6",
@@ -13537,6 +13637,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd19",
@@ -13927,6 +14029,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd19",
@@ -14320,6 +14424,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd4",
@@ -14524,6 +14630,8 @@
    "blurb": "Naive, memory, transitional and plasmablast B cells.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd19",
@@ -14818,6 +14926,8 @@
    "blurb": "IdU, cyclin B1, pHistone H3 and pRb for cell-cycle phase.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "prbs807s811",
@@ -14937,6 +15047,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd117ckit",
@@ -15124,6 +15236,8 @@
    "blurb": "Phospho-flow core (pSTAT, pERK, pS6, pAKT).",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "pstat5py694",
@@ -15304,6 +15418,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "il5",
@@ -15588,6 +15704,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd49d",
@@ -15837,6 +15955,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd11a",
@@ -16247,6 +16367,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd235ab",
@@ -16656,6 +16778,8 @@
    "blurb": "",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd20",
@@ -16837,6 +16961,5223 @@
    ]
   },
   {
+   "id": "ct-human-t-cells",
+   "slug": "ct-human-t-cells",
+   "name": "T cells",
+   "source": "curated",
+   "kit": null,
+   "application": "both",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood",
+    "dissociated_tumour",
+    "ffpe",
+    "frozen"
+   ],
+   "category": "celltype",
+   "blurb": "All T cells, with the B-cell negative that keeps the CD3 gate clean.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "T cell",
+    "T lymphocytes",
+    "CD3 T cells"
+   ],
+   "definition": "CD3+ (CD19-)",
+   "markers": [
+    {
+     "target_id": "cd3e",
+     "target_name": "CD3ε",
+     "raw_target": "CD3ε",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "152Sm",
+      "154Sm",
+      "165Ho",
+      "170Er",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd19",
+     "target_name": "CD19",
+     "raw_target": "CD19",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "142Nd",
+      "145Nd",
+      "149Sm",
+      "165Ho",
+      "166Er",
+      "169Tm",
+      "171Yb",
+      "198Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-cd4-t",
+   "slug": "ct-human-cd4-t",
+   "name": "CD4 helper T cells",
+   "source": "curated",
+   "kit": null,
+   "application": "both",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood",
+    "dissociated_tumour",
+    "ffpe",
+    "frozen"
+   ],
+   "category": "celltype",
+   "blurb": "Helper T cells. CD8 is included so CD4 and CD8 subsets separate cleanly.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "CD4 T cells",
+    "helper T cells",
+    "Th cells",
+    "CD4+ T"
+   ],
+   "definition": "CD3+ CD4+ CD8-",
+   "markers": [
+    {
+     "target_id": "cd3e",
+     "target_name": "CD3ε",
+     "raw_target": "CD3ε",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "152Sm",
+      "154Sm",
+      "165Ho",
+      "170Er",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd4",
+     "target_name": "CD4",
+     "raw_target": "CD4",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "116Cd",
+      "144Nd",
+      "145Nd",
+      "156Gd",
+      "159Tb",
+      "162Dy",
+      "163Dy",
+      "165Ho",
+      "169Tm",
+      "171Yb",
+      "172Yb",
+      "174Yb",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd8",
+     "target_name": "CD8a",
+     "raw_target": "CD8a",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "111Cd",
+      "112Cd",
+      "142Nd",
+      "146Nd",
+      "152Sm",
+      "153Eu",
+      "162Dy",
+      "165Ho",
+      "167Er",
+      "168Er",
+      "176Yb",
+      "194Pt",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-cd8-t",
+   "slug": "ct-human-cd8-t",
+   "name": "CD8 cytotoxic T cells",
+   "source": "curated",
+   "kit": null,
+   "application": "both",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood",
+    "dissociated_tumour",
+    "ffpe",
+    "frozen"
+   ],
+   "category": "celltype",
+   "blurb": "Cytotoxic T cells. Add Granzyme B / Perforin for function.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "CD8 T cells",
+    "cytotoxic T cells",
+    "CTL",
+    "killer T cells",
+    "CD8+ T"
+   ],
+   "definition": "CD3+ CD8+ CD4-",
+   "markers": [
+    {
+     "target_id": "cd3e",
+     "target_name": "CD3ε",
+     "raw_target": "CD3ε",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "152Sm",
+      "154Sm",
+      "165Ho",
+      "170Er",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd8",
+     "target_name": "CD8a",
+     "raw_target": "CD8a",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "111Cd",
+      "112Cd",
+      "142Nd",
+      "146Nd",
+      "152Sm",
+      "153Eu",
+      "162Dy",
+      "165Ho",
+      "167Er",
+      "168Er",
+      "176Yb",
+      "194Pt",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd4",
+     "target_name": "CD4",
+     "raw_target": "CD4",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "116Cd",
+      "144Nd",
+      "145Nd",
+      "156Gd",
+      "159Tb",
+      "162Dy",
+      "163Dy",
+      "165Ho",
+      "169Tm",
+      "171Yb",
+      "172Yb",
+      "174Yb",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-t-memory",
+   "slug": "ct-human-t-memory",
+   "name": "Naive / memory T-cell subsets",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood"
+   ],
+   "category": "celltype",
+   "blurb": "The two markers that split naive, central memory, effector memory and TEMRA on CD4 and CD8 T cells.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "naive T cells",
+    "memory T cells",
+    "central memory",
+    "effector memory",
+    "TEMRA",
+    "Tcm",
+    "Tem"
+   ],
+   "definition": "naive CD45RA+ CCR7+ · Tcm CD45RA- CCR7+ · Tem CD45RA- CCR7- · TEMRA CD45RA+ CCR7-",
+   "markers": [
+    {
+     "target_id": "cd45ra",
+     "target_name": "CD45RA",
+     "raw_target": "CD45RA",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "150Nd",
+      "153Eu",
+      "155Gd",
+      "169Tm",
+      "170Er"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "humanccr7cd197",
+     "target_name": "CD197/CCR7",
+     "raw_target": "CD197/CCR7",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "low",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "159Tb",
+      "163Dy",
+      "164Dy",
+      "167Er",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd27",
+     "target_name": "CD27",
+     "raw_target": "CD27",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "150Nd",
+      "155Gd",
+      "158Gd",
+      "162Dy",
+      "167Er"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd45ro",
+     "target_name": "CD45RO",
+     "raw_target": "CD45RO",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "149Sm",
+      "150Nd",
+      "163Dy",
+      "164Dy",
+      "165Ho",
+      "194Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-treg",
+   "slug": "ct-human-treg",
+   "name": "Regulatory T cells (Treg)",
+   "source": "curated",
+   "kit": null,
+   "application": "both",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood",
+    "dissociated_tumour",
+    "ffpe"
+   ],
+   "category": "celltype",
+   "blurb": "Tregs by the CD25 / CD127 gate confirmed with FoxP3.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "Treg",
+    "Tregs",
+    "regulatory T",
+    "FoxP3 T cells"
+   ],
+   "definition": "CD3+ CD4+ CD25+ CD127lo FoxP3+",
+   "markers": [
+    {
+     "target_id": "cd4",
+     "target_name": "CD4",
+     "raw_target": "CD4",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "116Cd",
+      "144Nd",
+      "145Nd",
+      "156Gd",
+      "159Tb",
+      "162Dy",
+      "163Dy",
+      "165Ho",
+      "169Tm",
+      "171Yb",
+      "172Yb",
+      "174Yb",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd25il2ra",
+     "target_name": "CD25/IL2Rα",
+     "raw_target": "CD25",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "low",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "149Sm",
+      "150Nd",
+      "151Eu",
+      "153Eu",
+      "169Tm",
+      "174Yb",
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd127il7ra",
+     "target_name": "CD127/IL7Rα",
+     "raw_target": "CD127/IL-7Rα",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "149Sm",
+      "165Ho",
+      "168Er",
+      "173Yb",
+      "174Yb",
+      "175Lu",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "neg"
+    },
+    {
+     "target_id": "foxp3",
+     "target_name": "FoxP3",
+     "raw_target": "FoxP3",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "low",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "155Gd",
+      "158Gd",
+      "159Tb",
+      "162Dy",
+      "165Ho",
+      "167Er"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-th-subsets",
+   "slug": "ct-human-th-subsets",
+   "name": "T-helper subsets (Th1 / Th2 / Th17)",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood"
+   ],
+   "category": "celltype",
+   "blurb": "Chemokine-receptor gating of helper subsets on memory CD4 T cells.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "Th1",
+    "Th2",
+    "Th17",
+    "T helper subsets",
+    "CXCR3 CCR4 CCR6"
+   ],
+   "definition": "Th1 CXCR3+ CCR6- · Th2 CCR4+ CXCR3- CCR6- · Th17 CCR6+ CCR4+ CXCR3- (on CD4+ memory)",
+   "markers": [
+    {
+     "target_id": "cd4",
+     "target_name": "CD4",
+     "raw_target": "CD4",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "116Cd",
+      "144Nd",
+      "145Nd",
+      "172Yb",
+      "174Yb",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd183cxcr3",
+     "target_name": "CD183/CXCR3",
+     "raw_target": "CD183/CXCR3",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "156Gd",
+      "163Dy"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd194ccr4",
+     "target_name": "CD194/CCR4",
+     "raw_target": "CD194/CCR4",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "149Sm",
+      "153Eu",
+      "158Gd",
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd196ccr6",
+     "target_name": "CD196/CCR6",
+     "raw_target": "CD196/CCR6",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "low",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "156Gd",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd45ra",
+     "target_name": "CD45RA",
+     "raw_target": "CD45RA",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "150Nd",
+      "153Eu",
+      "155Gd",
+      "169Tm",
+      "170Er"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-tfh",
+   "slug": "ct-human-tfh",
+   "name": "Follicular helper T cells (Tfh)",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood"
+   ],
+   "category": "celltype",
+   "blurb": "Circulating Tfh by CXCR5 and PD-1 on memory CD4 T cells.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "Tfh",
+    "follicular helper",
+    "circulating Tfh",
+    "cTfh"
+   ],
+   "definition": "CD3+ CD4+ CXCR5+ PD-1+ (CD45RA-)",
+   "markers": [
+    {
+     "target_id": "cd4",
+     "target_name": "CD4",
+     "raw_target": "CD4",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "116Cd",
+      "144Nd",
+      "145Nd",
+      "172Yb",
+      "174Yb",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd185cxcr5",
+     "target_name": "CD185/CXCR5",
+     "raw_target": "CD185/CXCR5",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "low",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "142Nd",
+      "153Eu",
+      "164Dy",
+      "171Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd279pd1",
+     "target_name": "CD279/PD-1",
+     "raw_target": "CD279/PD-1",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "low",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "155Gd",
+      "156Gd",
+      "159Tb",
+      "165Ho",
+      "174Yb",
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd45ra",
+     "target_name": "CD45RA",
+     "raw_target": "CD45RA",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "150Nd",
+      "153Eu",
+      "155Gd",
+      "169Tm",
+      "170Er"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-gd-t",
+   "slug": "ct-human-gd-t",
+   "name": "γδ T cells",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood",
+    "dissociated_tumour"
+   ],
+   "category": "celltype",
+   "blurb": "γδ T cells straight from the TCR; add Vδ2 clones on request.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "gamma delta T cells",
+    "gd T cells",
+    "TCRgd",
+    "gammadelta"
+   ],
+   "definition": "CD3+ TCRγδ+ (mostly CD4- CD8-)",
+   "markers": [
+    {
+     "target_id": "cd3e",
+     "target_name": "CD3ε",
+     "raw_target": "CD3ε",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "152Sm",
+      "154Sm",
+      "165Ho",
+      "170Er",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "tcrgd",
+     "target_name": "TCRγδ",
+     "raw_target": "TCRγδ",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "152Sm",
+      "155Gd",
+      "159Tb",
+      "172Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-mait",
+   "slug": "ct-human-mait",
+   "name": "MAIT cells",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood",
+    "dissociated_tumour"
+   ],
+   "category": "celltype",
+   "blurb": "Mucosal-associated invariant T cells by the semi-invariant TCR and CD161.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "MAIT",
+    "mucosal-associated invariant T",
+    "Va7.2"
+   ],
+   "definition": "CD3+ TCR Vα7.2+ CD161hi (mostly CD8+)",
+   "markers": [
+    {
+     "target_id": "cd3e",
+     "target_name": "CD3ε",
+     "raw_target": "CD3ε",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "152Sm",
+      "154Sm",
+      "165Ho",
+      "170Er",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "tcrva72",
+     "target_name": "TCR Vα7.2",
+     "raw_target": "TCR Vα7.2",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "153Eu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd161",
+     "target_name": "CD161",
+     "raw_target": "CD161",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "151Eu",
+      "159Tb",
+      "164Dy"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-inkt",
+   "slug": "ct-human-inkt",
+   "name": "Invariant NKT cells",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood"
+   ],
+   "category": "celltype",
+   "blurb": "Type I NKT cells by the invariant TCR; CD56 separates them from NK-like T cells.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "iNKT",
+    "NKT cells",
+    "natural killer T",
+    "Va24-Ja18"
+   ],
+   "definition": "CD3+ Vα24-Jα18+ (CD56 variable)",
+   "markers": [
+    {
+     "target_id": "cd3e",
+     "target_name": "CD3ε",
+     "raw_target": "CD3ε",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "152Sm",
+      "154Sm",
+      "165Ho",
+      "170Er",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "invariantnkt",
+     "target_name": "Invariant NKT",
+     "raw_target": "Invariant NKT",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "low",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "170Er"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd56ncam",
+     "target_name": "CD56/NCAM",
+     "raw_target": "CD56",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "149Sm",
+      "155Gd",
+      "163Dy",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-trm",
+   "slug": "ct-human-trm",
+   "name": "Tissue-resident memory T cells (Trm)",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "dissociated_tumour"
+   ],
+   "category": "celltype",
+   "blurb": "Trm in dissociated tissue by CD69 and CD103.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "Trm",
+    "tissue resident memory",
+    "CD103 T cells"
+   ],
+   "definition": "CD3+ CD69+ CD103+ (CCR7-)",
+   "markers": [
+    {
+     "target_id": "cd3e",
+     "target_name": "CD3ε",
+     "raw_target": "CD3ε",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "152Sm",
+      "154Sm",
+      "165Ho",
+      "170Er",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd69",
+     "target_name": "CD69",
+     "raw_target": "CD69",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "113Cd",
+      "143Nd",
+      "144Nd",
+      "145Nd",
+      "162Dy"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd103",
+     "target_name": "CD103",
+     "raw_target": "CD103",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "151Eu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "humanccr7cd197",
+     "target_name": "CD197/CCR7",
+     "raw_target": "CD197/CCR7",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "low",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "159Tb",
+      "163Dy",
+      "164Dy",
+      "167Er",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-b-cells",
+   "slug": "ct-human-b-cells",
+   "name": "B cells",
+   "source": "curated",
+   "kit": null,
+   "application": "both",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood",
+    "dissociated_tumour",
+    "ffpe",
+    "frozen"
+   ],
+   "category": "celltype",
+   "blurb": "All B cells; CD20 drops on plasmablasts so both markers are worth carrying.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "B cell",
+    "B lymphocytes",
+    "CD19 B cells",
+    "CD20 B cells"
+   ],
+   "definition": "CD19+ CD20+ CD3-",
+   "markers": [
+    {
+     "target_id": "cd19",
+     "target_name": "CD19",
+     "raw_target": "CD19",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "142Nd",
+      "145Nd",
+      "149Sm",
+      "165Ho",
+      "166Er",
+      "169Tm",
+      "171Yb",
+      "198Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd20",
+     "target_name": "CD20",
+     "raw_target": "CD20",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "115In",
+      "145Nd",
+      "147Sm",
+      "156Gd",
+      "161Dy",
+      "164Dy",
+      "171Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd3e",
+     "target_name": "CD3ε",
+     "raw_target": "CD3ε",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "152Sm",
+      "154Sm",
+      "165Ho",
+      "170Er",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-b-subsets",
+   "slug": "ct-human-b-subsets",
+   "name": "Naive / memory B-cell subsets",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood"
+   ],
+   "category": "celltype",
+   "blurb": "IgD and CD27 split naive from memory; CD38 / CD24 add transitional cells and plasmablasts.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "naive B cells",
+    "memory B cells",
+    "switched memory",
+    "transitional B cells"
+   ],
+   "definition": "naive IgD+ CD27- · unswitched memory IgD+ CD27+ · switched memory IgD- CD27+ · transitional CD24hi CD38hi",
+   "markers": [
+    {
+     "target_id": "cd19",
+     "target_name": "CD19",
+     "raw_target": "CD19",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "142Nd",
+      "145Nd",
+      "149Sm",
+      "165Ho",
+      "166Er",
+      "169Tm",
+      "171Yb",
+      "198Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "igd",
+     "target_name": "IgD",
+     "raw_target": "IgD",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "110Cd",
+      "146Nd",
+      "150Nd"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd27",
+     "target_name": "CD27",
+     "raw_target": "CD27",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "150Nd",
+      "155Gd",
+      "158Gd",
+      "162Dy",
+      "167Er"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd38",
+     "target_name": "CD38",
+     "raw_target": "CD38",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "144Nd",
+      "161Dy",
+      "167Er",
+      "171Yb",
+      "172Yb",
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd24",
+     "target_name": "CD24",
+     "raw_target": "CD24",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "111Cd",
+      "150Nd",
+      "166Er",
+      "169Tm"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-plasmablasts",
+   "slug": "ct-human-plasmablasts",
+   "name": "Plasmablasts / plasma cells",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood",
+    "bone_marrow",
+    "dissociated_tumour"
+   ],
+   "category": "celltype",
+   "blurb": "Antibody-secreting cells by CD27 / CD38, with CD20 as the negative and CD138 for mature plasma cells.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "plasmablasts",
+    "plasma cells",
+    "antibody-secreting cells",
+    "ASC"
+   ],
+   "definition": "CD19lo CD27hi CD38hi CD20- (CD138+ plasma cells)",
+   "markers": [
+    {
+     "target_id": "cd19",
+     "target_name": "CD19",
+     "raw_target": "CD19",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "142Nd",
+      "145Nd",
+      "149Sm",
+      "165Ho",
+      "166Er",
+      "169Tm",
+      "171Yb",
+      "198Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd27",
+     "target_name": "CD27",
+     "raw_target": "CD27",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "150Nd",
+      "155Gd",
+      "158Gd",
+      "162Dy",
+      "167Er"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd38",
+     "target_name": "CD38",
+     "raw_target": "CD38",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "144Nd",
+      "161Dy",
+      "167Er",
+      "171Yb",
+      "172Yb",
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd20",
+     "target_name": "CD20",
+     "raw_target": "CD20",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "147Sm",
+      "156Gd",
+      "171Yb"
+     ],
+     "note": null,
+     "polarity": "neg"
+    },
+    {
+     "target_id": "cd138sdc1",
+     "target_name": "CD138/SDC1",
+     "raw_target": "CD138/Syndecan-1",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "145Nd",
+      "150Nd",
+      "163Dy",
+      "168Er"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-nk",
+   "slug": "ct-human-nk",
+   "name": "NK cells",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood",
+    "dissociated_tumour"
+   ],
+   "category": "celltype",
+   "blurb": "Natural killer cells and their bright / dim split. CD3 keeps NKT cells out.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "NK cell",
+    "natural killer cells",
+    "CD56 NK"
+   ],
+   "definition": "CD3- CD56+ (CD56bright CD16- · CD56dim CD16+)",
+   "markers": [
+    {
+     "target_id": "cd56ncam",
+     "target_name": "CD56/NCAM",
+     "raw_target": "CD56",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "149Sm",
+      "155Gd",
+      "163Dy",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd16",
+     "target_name": "CD16",
+     "raw_target": "CD16",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "145Nd",
+      "148Nd",
+      "165Ho",
+      "209Bi"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd3e",
+     "target_name": "CD3ε",
+     "raw_target": "CD3ε",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "152Sm",
+      "154Sm",
+      "165Ho",
+      "170Er",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-ilc",
+   "slug": "ct-human-ilc",
+   "name": "Innate lymphoid cells (ILC)",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood",
+    "dissociated_tumour"
+   ],
+   "category": "celltype",
+   "blurb": "Lineage-negative CD127+ cells split by CRTH2 and c-kit.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "ILC",
+    "ILC1",
+    "ILC2",
+    "ILC3",
+    "innate lymphoid"
+   ],
+   "definition": "Lin- CD127+ (ILC2 CRTH2+ · ILC3 CD117+ · ILC1 CRTH2- CD117-)",
+   "markers": [
+    {
+     "target_id": "cd127il7ra",
+     "target_name": "CD127/IL7Rα",
+     "raw_target": "CD127/IL-7Rα",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "149Sm",
+      "165Ho",
+      "168Er",
+      "173Yb",
+      "174Yb",
+      "175Lu",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd294crth2",
+     "target_name": "CD294/CRTH2",
+     "raw_target": "CD294/CRTH2",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "low",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "163Dy"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd117ckit",
+     "target_name": "CD117/c-kit",
+     "raw_target": "CD117/c-kit",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "low",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "166Er",
+      "173Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd3e",
+     "target_name": "CD3ε",
+     "raw_target": "CD3ε",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "152Sm",
+      "154Sm",
+      "165Ho",
+      "170Er",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    },
+    {
+     "target_id": "cd19",
+     "target_name": "CD19",
+     "raw_target": "CD19",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "142Nd",
+      "145Nd",
+      "149Sm",
+      "165Ho",
+      "166Er",
+      "169Tm",
+      "171Yb",
+      "198Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    },
+    {
+     "target_id": "cd14",
+     "target_name": "CD14",
+     "raw_target": "CD14",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "146Nd",
+      "151Eu",
+      "156Gd",
+      "160Gd",
+      "175Lu",
+      "195Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-monocytes",
+   "slug": "ct-human-monocytes",
+   "name": "Monocytes",
+   "source": "curated",
+   "kit": null,
+   "application": "both",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood",
+    "dissociated_tumour",
+    "ffpe"
+   ],
+   "category": "celltype",
+   "blurb": "The three monocyte subsets from CD14 and CD16 on HLA-DR+ cells.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "monocyte",
+    "classical monocytes",
+    "non-classical monocytes",
+    "intermediate monocytes",
+    "CD14 monocytes"
+   ],
+   "definition": "HLA-DR+ (classical CD14+ CD16- · intermediate CD14+ CD16+ · non-classical CD14lo CD16+)",
+   "markers": [
+    {
+     "target_id": "cd14",
+     "target_name": "CD14",
+     "raw_target": "CD14",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "144Nd",
+      "146Nd",
+      "148Nd",
+      "151Eu",
+      "153Eu",
+      "156Gd",
+      "160Gd",
+      "163Dy",
+      "175Lu",
+      "195Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd16",
+     "target_name": "CD16",
+     "raw_target": "CD16",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "145Nd",
+      "146Nd",
+      "148Nd",
+      "149Sm",
+      "153Eu",
+      "165Ho",
+      "209Bi"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "hladr",
+     "target_name": "HLA-DR",
+     "raw_target": "HLA-DR",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "151Eu",
+      "154Sm",
+      "170Er",
+      "173Yb",
+      "174Yb",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd3e",
+     "target_name": "CD3ε",
+     "raw_target": "CD3ε",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "152Sm",
+      "154Sm",
+      "165Ho",
+      "170Er",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    },
+    {
+     "target_id": "cd19",
+     "target_name": "CD19",
+     "raw_target": "CD19",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "142Nd",
+      "145Nd",
+      "149Sm",
+      "165Ho",
+      "166Er",
+      "169Tm",
+      "171Yb",
+      "198Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-dc",
+   "slug": "ct-human-dc",
+   "name": "Dendritic cells",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood",
+    "dissociated_tumour"
+   ],
+   "category": "celltype",
+   "blurb": "Dendritic cells are what is left of HLA-DR+ after the lineage negatives, split into conventional (CD11c) and plasmacytoid (CD123).",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "dendritic cell",
+    "DC",
+    "DCs",
+    "myeloid dendritic cells",
+    "mDC",
+    "cDC"
+   ],
+   "definition": "Lin- (CD3- CD19- CD14- CD56-) HLA-DR+ · cDC CD11c+ · pDC CD123+ (cDC1 CD141+)",
+   "markers": [
+    {
+     "target_id": "hladr",
+     "target_name": "HLA-DR",
+     "raw_target": "HLA-DR",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "151Eu",
+      "170Er",
+      "173Yb",
+      "174Yb",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd11c",
+     "target_name": "CD11c",
+     "raw_target": "CD11c",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "142Nd",
+      "146Nd",
+      "147Sm",
+      "159Tb",
+      "161Dy",
+      "162Dy",
+      "198Pt",
+      "209Bi"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd123il3r",
+     "target_name": "CD123/IL-3R",
+     "raw_target": "CD123",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "151Eu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd3e",
+     "target_name": "CD3ε",
+     "raw_target": "CD3ε",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "152Sm",
+      "154Sm",
+      "165Ho",
+      "170Er",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    },
+    {
+     "target_id": "cd19",
+     "target_name": "CD19",
+     "raw_target": "CD19",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "142Nd",
+      "145Nd",
+      "149Sm",
+      "165Ho",
+      "166Er",
+      "169Tm",
+      "171Yb",
+      "198Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    },
+    {
+     "target_id": "cd14",
+     "target_name": "CD14",
+     "raw_target": "CD14",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "146Nd",
+      "151Eu",
+      "156Gd",
+      "160Gd",
+      "175Lu",
+      "195Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    },
+    {
+     "target_id": "cd56ncam",
+     "target_name": "CD56/NCAM",
+     "raw_target": "CD56",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "149Sm",
+      "155Gd",
+      "163Dy",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "neg"
+    },
+    {
+     "target_id": "cd141",
+     "target_name": "CD141",
+     "raw_target": "CD141",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "low",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "166Er",
+      "173Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-pdc",
+   "slug": "ct-human-pdc",
+   "name": "Plasmacytoid dendritic cells (pDC)",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "pbmc",
+    "whole_blood",
+    "dissociated_tumour"
+   ],
+   "category": "celltype",
+   "blurb": "pDC by CD123 and BDCA-2; CD11c separates them from conventional DCs.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "pDC",
+    "plasmacytoid",
+    "BDCA2"
+   ],
+   "definition": "Lin- HLA-DR+ CD123+ CD303+ CD11c-",
+   "markers": [
+    {
+     "target_id": "cd123il3r",
+     "target_name": "CD123/IL-3R",
+     "raw_target": "CD123",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "151Eu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd303bdca2",
+     "target_name": "CD303/BDCA2",
+     "raw_target": "CD303/BDCA2",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "147Sm",
+      "153Eu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "hladr",
+     "target_name": "HLA-DR",
+     "raw_target": "HLA-DR",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "151Eu",
+      "170Er",
+      "173Yb",
+      "174Yb",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd11c",
+     "target_name": "CD11c",
+     "raw_target": "CD11c",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "142Nd",
+      "146Nd",
+      "147Sm",
+      "159Tb",
+      "161Dy",
+      "162Dy",
+      "198Pt",
+      "209Bi"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-macrophages",
+   "slug": "ct-human-macrophages",
+   "name": "Macrophages",
+   "source": "curated",
+   "kit": null,
+   "application": "both",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "dissociated_tumour",
+    "ffpe",
+    "frozen"
+   ],
+   "category": "celltype",
+   "blurb": "Tissue macrophages; CD163 / CD206 flag the M2-like, tumour-associated phenotype.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "macrophage",
+    "TAM",
+    "tumour-associated macrophages",
+    "M2 macrophages",
+    "CD68 CD163"
+   ],
+   "definition": "CD68+ (CD163+ CD206+ M2-like)",
+   "markers": [
+    {
+     "target_id": "cd68",
+     "target_name": "CD68",
+     "raw_target": "CD68",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "144Nd",
+      "146Nd",
+      "159Tb",
+      "171Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd163m130",
+     "target_name": "CD163/M130",
+     "raw_target": "CD163/M130",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "145Nd",
+      "147Sm",
+      "148Nd",
+      "151Eu",
+      "152Sm",
+      "154Sm",
+      "165Ho"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd206mmr",
+     "target_name": "CD206/MMR",
+     "raw_target": "CD206/MMR",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "153Eu",
+      "163Dy",
+      "167Er",
+      "168Er",
+      "169Tm"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-neutrophils",
+   "slug": "ct-human-neutrophils",
+   "name": "Neutrophils",
+   "source": "curated",
+   "kit": null,
+   "application": "both",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "whole_blood",
+    "dissociated_tumour",
+    "ffpe"
+   ],
+   "category": "celltype",
+   "blurb": "Neutrophils in whole blood or tissue; absent from Ficoll PBMC unless low-density.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "neutrophil",
+    "granulocytes",
+    "PMN",
+    "CD66b"
+   ],
+   "definition": "CD66b+ CD15+ CD16+ (HLA-DR- CD14-)",
+   "markers": [
+    {
+     "target_id": "cd66b",
+     "target_name": "CD66b",
+     "raw_target": "CD66b",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "152Sm",
+      "153Eu",
+      "154Sm",
+      "160Gd",
+      "166Er"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd15ssea1",
+     "target_name": "CD15/SSEA-1",
+     "raw_target": "CD15",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "144Nd",
+      "145Nd",
+      "149Sm",
+      "164Dy",
+      "172Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd16",
+     "target_name": "CD16",
+     "raw_target": "CD16",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "145Nd",
+      "146Nd",
+      "148Nd",
+      "149Sm",
+      "153Eu",
+      "165Ho",
+      "209Bi"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd14",
+     "target_name": "CD14",
+     "raw_target": "CD14",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "144Nd",
+      "146Nd",
+      "148Nd",
+      "151Eu",
+      "153Eu",
+      "156Gd",
+      "160Gd",
+      "163Dy",
+      "175Lu",
+      "195Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-eosinophils",
+   "slug": "ct-human-eosinophils",
+   "name": "Eosinophils",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "whole_blood"
+   ],
+   "category": "celltype",
+   "blurb": "Eosinophils by Siglec-8 on CD66b+ granulocytes; CD16 excludes neutrophils.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "eosinophil",
+    "Siglec-8"
+   ],
+   "definition": "CD66b+ Siglec-8+ CD16- (CRTH2+)",
+   "markers": [
+    {
+     "target_id": "cd66b",
+     "target_name": "CD66b",
+     "raw_target": "CD66b",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "152Sm"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "siglec8",
+     "target_name": "Siglec 8",
+     "raw_target": "Siglec-8",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "164Dy"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd16",
+     "target_name": "CD16",
+     "raw_target": "CD16",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "145Nd",
+      "148Nd",
+      "165Ho",
+      "209Bi"
+     ],
+     "note": null,
+     "polarity": "neg"
+    },
+    {
+     "target_id": "cd294crth2",
+     "target_name": "CD294/CRTH2",
+     "raw_target": "CD294/CRTH2",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "163Dy"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-basophils",
+   "slug": "ct-human-basophils",
+   "name": "Basophils",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "whole_blood",
+    "pbmc"
+   ],
+   "category": "celltype",
+   "blurb": "Basophils by FcεRI and CD123 without HLA-DR (which separates them from pDC).",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "basophil",
+    "FceRI"
+   ],
+   "definition": "FcεRI+ CD123+ HLA-DR- (CRTH2+ CD3-)",
+   "markers": [
+    {
+     "target_id": "fceri",
+     "target_name": "FceRI",
+     "raw_target": "FcεRI",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "150Nd"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd123il3r",
+     "target_name": "CD123/IL-3R",
+     "raw_target": "CD123",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "151Eu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "hladr",
+     "target_name": "HLA-DR",
+     "raw_target": "HLA-DR",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "151Eu",
+      "170Er",
+      "173Yb",
+      "174Yb",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "neg"
+    },
+    {
+     "target_id": "cd294crth2",
+     "target_name": "CD294/CRTH2",
+     "raw_target": "CD294/CRTH2",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "163Dy"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-mast",
+   "slug": "ct-human-mast",
+   "name": "Mast cells",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "dissociated_tumour",
+    "bone_marrow"
+   ],
+   "category": "celltype",
+   "blurb": "Tissue mast cells by c-kit and FcεRI.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "mast cell",
+    "c-kit FceRI"
+   ],
+   "definition": "CD117+ FcεRI+ (CD34- CD3-)",
+   "markers": [
+    {
+     "target_id": "cd117ckit",
+     "target_name": "CD117/c-kit",
+     "raw_target": "CD117/c-kit",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "166Er",
+      "173Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "fceri",
+     "target_name": "FceRI",
+     "raw_target": "FcεRI",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "150Nd"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-hspc",
+   "slug": "ct-human-hspc",
+   "name": "Haematopoietic stem / progenitor cells",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "bone_marrow",
+    "pbmc",
+    "whole_blood"
+   ],
+   "category": "celltype",
+   "blurb": "CD34+ progenitors, with CD38 to separate the stem-cell fraction.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "HSPC",
+    "HSC",
+    "stem cells",
+    "CD34 progenitors"
+   ],
+   "definition": "Lin- CD34+ (CD38- HSC · CD38+ progenitors) CD117+",
+   "markers": [
+    {
+     "target_id": "cd34",
+     "target_name": "CD34",
+     "raw_target": "CD34",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "148Nd",
+      "149Sm",
+      "163Dy",
+      "166Er"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd38",
+     "target_name": "CD38",
+     "raw_target": "CD38",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "144Nd",
+      "161Dy",
+      "167Er",
+      "171Yb",
+      "172Yb",
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd117ckit",
+     "target_name": "CD117/c-kit",
+     "raw_target": "CD117/c-kit",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "166Er",
+      "173Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd45",
+     "target_name": "CD45",
+     "raw_target": "CD45",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "89Y",
+      "106Cd",
+      "110Cd",
+      "111Cd",
+      "112Cd",
+      "113Cd",
+      "114Cd",
+      "116Cd",
+      "141Pr",
+      "147Sm",
+      "154Sm",
+      "156Gd",
+      "175Lu",
+      "194Pt",
+      "195Pt",
+      "196Pt",
+      "198Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-platelets-rbc",
+   "slug": "ct-human-platelets-rbc",
+   "name": "Platelets and red cells (exclusion)",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "whole_blood",
+    "pbmc",
+    "bone_marrow"
+   ],
+   "category": "celltype",
+   "blurb": "Not immune cells, but worth a channel each so platelet-bound and red-cell events can be gated out.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "platelets",
+    "red blood cells",
+    "RBC",
+    "erythrocytes",
+    "CD41 CD235"
+   ],
+   "definition": "platelets CD41+ CD61+ · erythrocytes CD235ab+ (CD45-)",
+   "markers": [
+    {
+     "target_id": "cd41",
+     "target_name": "CD41",
+     "raw_target": "CD41",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "89Y",
+      "143Nd"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd235ab",
+     "target_name": "CD235ab",
+     "raw_target": "CD235ab",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "163Dy",
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd61",
+     "target_name": "CD61",
+     "raw_target": "CD61",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "146Nd",
+      "150Nd",
+      "165Ho",
+      "209Bi"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-epithelial",
+   "slug": "ct-human-epithelial",
+   "name": "Epithelial / tumour cells",
+   "source": "curated",
+   "kit": null,
+   "application": "imaging",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "ffpe",
+    "frozen"
+   ],
+   "category": "celltype",
+   "blurb": "Carcinoma and normal epithelium.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "epithelium",
+    "tumour cells",
+    "carcinoma",
+    "cytokeratin",
+    "EpCAM"
+   ],
+   "definition": "Pan-CK+ E-cadherin+ (EpCAM+)",
+   "markers": [
+    {
+     "target_id": "pancytokeratin",
+     "target_name": "Pan-Cytokeratin",
+     "raw_target": "Pan-Cytokeratin",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "142Nd",
+      "148Nd",
+      "155Gd",
+      "162Dy",
+      "174Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd324ecadherin",
+     "target_name": "E-Cadherin",
+     "raw_target": "E-Cadherin",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "158Gd",
+      "172Yb",
+      "173Yb",
+      "174Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd326epcam",
+     "target_name": "CD326/EpCAM",
+     "raw_target": "CD326/EpCAM",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "144Nd",
+      "147Sm",
+      "151Eu",
+      "154Sm",
+      "172Yb",
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-endothelial",
+   "slug": "ct-human-endothelial",
+   "name": "Endothelial cells / vessels",
+   "source": "curated",
+   "kit": null,
+   "application": "imaging",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "ffpe",
+    "frozen"
+   ],
+   "category": "celltype",
+   "blurb": "Blood vessels by CD31 / CD34; Podoplanin adds lymphatic vessels.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "endothelium",
+    "blood vessels",
+    "vasculature",
+    "CD31"
+   ],
+   "definition": "CD31+ (CD34+) · lymphatics Podoplanin+",
+   "markers": [
+    {
+     "target_id": "cd31pecam1",
+     "target_name": "CD31/PECAM-1",
+     "raw_target": "CD31/PECAM-1",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "144Nd",
+      "145Nd",
+      "146Nd",
+      "151Eu",
+      "165Ho",
+      "171Yb",
+      "172Yb",
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd34",
+     "target_name": "CD34",
+     "raw_target": "CD34",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "151Eu",
+      "167Er"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "podoplanin",
+     "target_name": "Podoplanin",
+     "raw_target": "Podoplanin",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "164Dy"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-human-fibroblasts",
+   "slug": "ct-human-fibroblasts",
+   "name": "Fibroblasts / CAFs",
+   "source": "curated",
+   "kit": null,
+   "application": "imaging",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "ffpe",
+    "frozen"
+   ],
+   "category": "celltype",
+   "blurb": "Stromal fibroblasts and activated CAFs.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "fibroblast",
+    "CAF",
+    "cancer-associated fibroblasts",
+    "stroma",
+    "myofibroblasts"
+   ],
+   "definition": "Vimentin+ αSMA+ (FAP+) Pan-CK-",
+   "markers": [
+    {
+     "target_id": "vimentin",
+     "target_name": "Vimentin",
+     "raw_target": "Vimentin",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "149Sm",
+      "151Eu",
+      "154Sm"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "asmoothmuscleactin",
+     "target_name": "α-Smooth Muscle Actin",
+     "raw_target": "α-Smooth Muscle Actin",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "142Nd",
+      "153Eu",
+      "209Bi"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "fap",
+     "target_name": "FAP",
+     "raw_target": "FAP",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "161Dy"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "pancytokeratin",
+     "target_name": "Pan-Cytokeratin",
+     "raw_target": "Pan-Cytokeratin",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "142Nd",
+      "148Nd",
+      "155Gd",
+      "162Dy",
+      "174Yb"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-mouse-t-cells",
+   "slug": "ct-mouse-t-cells",
+   "name": "T cells (mouse)",
+   "source": "curated",
+   "kit": null,
+   "application": "both",
+   "species": [
+    "mouse"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "spleen",
+    "blood",
+    "bone_marrow",
+    "dissociated_tumour",
+    "ffpe",
+    "frozen"
+   ],
+   "category": "celltype",
+   "blurb": "T cells and the CD4 / CD8 split.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "T cell",
+    "T lymphocytes",
+    "CD3 T cells"
+   ],
+   "definition": "CD3+ (TCRβ+) · CD4+ · CD8+",
+   "markers": [
+    {
+     "target_id": "cd3e",
+     "target_name": "CD3ε",
+     "raw_target": "CD3ε",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "152Sm",
+      "154Sm",
+      "165Ho",
+      "170Er",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd4",
+     "target_name": "CD4",
+     "raw_target": "CD4",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "116Cd",
+      "144Nd",
+      "145Nd",
+      "156Gd",
+      "159Tb",
+      "162Dy",
+      "163Dy",
+      "165Ho",
+      "169Tm",
+      "171Yb",
+      "172Yb",
+      "174Yb",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd8",
+     "target_name": "CD8a",
+     "raw_target": "CD8a",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "111Cd",
+      "112Cd",
+      "142Nd",
+      "146Nd",
+      "152Sm",
+      "153Eu",
+      "162Dy",
+      "165Ho",
+      "167Er",
+      "168Er",
+      "176Yb",
+      "194Pt",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "tcrb",
+     "target_name": "TCRβ",
+     "raw_target": "TCRβ",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "169Tm"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-mouse-treg",
+   "slug": "ct-mouse-treg",
+   "name": "Regulatory T cells (mouse)",
+   "source": "curated",
+   "kit": null,
+   "application": "both",
+   "species": [
+    "mouse"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "spleen",
+    "blood",
+    "dissociated_tumour",
+    "ffpe"
+   ],
+   "category": "celltype",
+   "blurb": "Murine Tregs by CD25 and FoxP3.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "Treg",
+    "Tregs",
+    "regulatory T",
+    "FoxP3 T cells"
+   ],
+   "definition": "CD3+ CD4+ CD25+ FoxP3+",
+   "markers": [
+    {
+     "target_id": "cd4",
+     "target_name": "CD4",
+     "raw_target": "CD4",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "116Cd",
+      "144Nd",
+      "145Nd",
+      "156Gd",
+      "159Tb",
+      "162Dy",
+      "163Dy",
+      "165Ho",
+      "169Tm",
+      "171Yb",
+      "172Yb",
+      "174Yb",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd25il2ra",
+     "target_name": "CD25/IL2Rα",
+     "raw_target": "CD25",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "low",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "149Sm",
+      "150Nd",
+      "151Eu",
+      "153Eu",
+      "169Tm",
+      "174Yb",
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "foxp3",
+     "target_name": "FoxP3",
+     "raw_target": "FoxP3",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "low",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "155Gd",
+      "158Gd",
+      "159Tb",
+      "162Dy",
+      "165Ho",
+      "167Er"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-mouse-t-memory",
+   "slug": "ct-mouse-t-memory",
+   "name": "Naive / memory T cells (mouse)",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "mouse"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "spleen",
+    "blood",
+    "dissociated_tumour"
+   ],
+   "category": "celltype",
+   "blurb": "CD44 and CD62L split murine naive, central-memory and effector-memory T cells.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "naive T cells",
+    "memory T cells",
+    "CD44 CD62L"
+   ],
+   "definition": "naive CD44lo CD62L+ · central memory CD44hi CD62L+ · effector memory CD44hi CD62L-",
+   "markers": [
+    {
+     "target_id": "cd44",
+     "target_name": "CD44",
+     "raw_target": "CD44",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "106Cd",
+      "114Cd",
+      "141Pr",
+      "150Nd",
+      "162Dy",
+      "166Er",
+      "171Yb",
+      "194Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd62l",
+     "target_name": "CD62L",
+     "raw_target": "CD62L",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "153Eu",
+      "160Gd",
+      "164Dy",
+      "166Er",
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-mouse-b-cells",
+   "slug": "ct-mouse-b-cells",
+   "name": "B cells (mouse)",
+   "source": "curated",
+   "kit": null,
+   "application": "both",
+   "species": [
+    "mouse"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "spleen",
+    "blood",
+    "bone_marrow",
+    "dissociated_tumour",
+    "ffpe",
+    "frozen"
+   ],
+   "category": "celltype",
+   "blurb": "Murine B cells by CD19 and B220.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "B cell",
+    "B lymphocytes",
+    "B220"
+   ],
+   "definition": "CD19+ B220+ CD3-",
+   "markers": [
+    {
+     "target_id": "cd19",
+     "target_name": "CD19",
+     "raw_target": "CD19",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "142Nd",
+      "145Nd",
+      "149Sm",
+      "165Ho",
+      "166Er",
+      "169Tm",
+      "171Yb",
+      "198Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd45rb220",
+     "target_name": "CD45R/B220",
+     "raw_target": "CD45R/B220",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "112Cd",
+      "114Cd",
+      "144Nd",
+      "148Nd",
+      "154Sm",
+      "159Tb",
+      "160Gd",
+      "168Er",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd3e",
+     "target_name": "CD3ε",
+     "raw_target": "CD3ε",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "152Sm",
+      "154Sm",
+      "165Ho",
+      "170Er",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-mouse-nk",
+   "slug": "ct-mouse-nk",
+   "name": "NK cells (mouse)",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "mouse"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "spleen",
+    "blood",
+    "dissociated_tumour"
+   ],
+   "category": "celltype",
+   "blurb": "NK cells by NK1.1 (B6) or NKp46 (all strains); CD3 excludes NKT.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "NK cell",
+    "natural killer cells",
+    "NK1.1",
+    "NKp46"
+   ],
+   "definition": "CD3- NK1.1+ NKp46+ (C57BL/6; use NKp46 on BALB/c)",
+   "markers": [
+    {
+     "target_id": "nk11",
+     "target_name": "NK1.1",
+     "raw_target": "NK1.1",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "165Ho",
+      "170Er"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd335nkp46",
+     "target_name": "CD335/NKp46",
+     "raw_target": "CD335/NKp46",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "153Eu",
+      "167Er"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd3e",
+     "target_name": "CD3ε",
+     "raw_target": "CD3ε",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "152Sm",
+      "154Sm",
+      "165Ho",
+      "170Er",
+      "196Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-mouse-monocytes",
+   "slug": "ct-mouse-monocytes",
+   "name": "Monocytes (mouse)",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "mouse"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "spleen",
+    "blood",
+    "bone_marrow",
+    "dissociated_tumour"
+   ],
+   "category": "celltype",
+   "blurb": "Murine monocyte subsets by Ly-6C, with Ly-6G to exclude neutrophils.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "monocyte",
+    "Ly6C monocytes",
+    "inflammatory monocytes"
+   ],
+   "definition": "CD11b+ Ly-6C hi (classical) / Ly-6C lo (non-classical) Ly-6G-",
+   "markers": [
+    {
+     "target_id": "cd11bmac1",
+     "target_name": "CD11b/Mac-1",
+     "raw_target": "CD11b/Mac-1",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "110Cd",
+      "114Cd",
+      "143Nd",
+      "144Nd",
+      "148Nd",
+      "154Sm",
+      "167Er",
+      "172Yb",
+      "195Pt",
+      "196Pt",
+      "209Bi"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "ly6c",
+     "target_name": "Ly-6C",
+     "raw_target": "Ly-6C",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "150Nd",
+      "162Dy",
+      "198Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "ly6g",
+     "target_name": "Ly-6G",
+     "raw_target": "Ly-6G",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "151Eu",
+      "195Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    },
+    {
+     "target_id": "cd115",
+     "target_name": "CD115",
+     "raw_target": "CD115",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "144Nd"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-mouse-neutrophils",
+   "slug": "ct-mouse-neutrophils",
+   "name": "Neutrophils (mouse)",
+   "source": "curated",
+   "kit": null,
+   "application": "both",
+   "species": [
+    "mouse"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "spleen",
+    "blood",
+    "bone_marrow",
+    "dissociated_tumour",
+    "ffpe"
+   ],
+   "category": "celltype",
+   "blurb": "Murine neutrophils by Ly-6G.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "neutrophil",
+    "granulocytes",
+    "Ly6G",
+    "PMN"
+   ],
+   "definition": "CD11b+ Ly-6G+",
+   "markers": [
+    {
+     "target_id": "cd11bmac1",
+     "target_name": "CD11b/Mac-1",
+     "raw_target": "CD11b/Mac-1",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "110Cd",
+      "114Cd",
+      "143Nd",
+      "144Nd",
+      "146Nd",
+      "148Nd",
+      "149Sm",
+      "154Sm",
+      "163Dy",
+      "165Ho",
+      "167Er",
+      "172Yb",
+      "195Pt",
+      "196Pt",
+      "209Bi"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "ly6g",
+     "target_name": "Ly-6G",
+     "raw_target": "Ly-6G",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "150Nd",
+      "151Eu",
+      "160Gd",
+      "166Er",
+      "174Yb",
+      "195Pt"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-mouse-macrophages",
+   "slug": "ct-mouse-macrophages",
+   "name": "Macrophages (mouse)",
+   "source": "curated",
+   "kit": null,
+   "application": "both",
+   "species": [
+    "mouse"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "spleen",
+    "dissociated_tumour",
+    "ffpe",
+    "frozen"
+   ],
+   "category": "celltype",
+   "blurb": "Murine macrophages by F4/80; CD206 flags the M2-like phenotype.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "macrophage",
+    "F4/80",
+    "TAM"
+   ],
+   "definition": "CD11b+ F4/80+ (CD64+ · CD206+ M2-like)",
+   "markers": [
+    {
+     "target_id": "f480",
+     "target_name": "F4/80",
+     "raw_target": "F4/80",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "146Nd",
+      "151Eu",
+      "153Eu",
+      "156Gd",
+      "159Tb",
+      "161Dy",
+      "166Er",
+      "169Tm",
+      "173Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd11bmac1",
+     "target_name": "CD11b/Mac-1",
+     "raw_target": "CD11b/Mac-1",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "110Cd",
+      "114Cd",
+      "143Nd",
+      "144Nd",
+      "146Nd",
+      "148Nd",
+      "149Sm",
+      "154Sm",
+      "163Dy",
+      "165Ho",
+      "167Er",
+      "172Yb",
+      "195Pt",
+      "196Pt",
+      "209Bi"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd206mmr",
+     "target_name": "CD206/MMR",
+     "raw_target": "CD206/MMR",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "153Eu",
+      "163Dy",
+      "167Er",
+      "168Er",
+      "169Tm"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd64",
+     "target_name": "CD64",
+     "raw_target": "CD64",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "146Nd",
+      "151Eu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    }
+   ]
+  },
+  {
+   "id": "ct-mouse-dc",
+   "slug": "ct-mouse-dc",
+   "name": "Dendritic cells (mouse)",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "mouse"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "spleen",
+    "dissociated_tumour"
+   ],
+   "category": "celltype",
+   "blurb": "Conventional DCs by CD11c and MHC class II; XCR1 marks cDC1.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "dendritic cell",
+    "DC",
+    "cDC1",
+    "cDC2",
+    "XCR1"
+   ],
+   "definition": "CD11c+ MHC-II+ (cDC1 XCR1+ · cDC2 CD11b+) F4/80-",
+   "markers": [
+    {
+     "target_id": "cd11c",
+     "target_name": "CD11c",
+     "raw_target": "CD11c",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "142Nd",
+      "146Nd",
+      "147Sm",
+      "159Tb",
+      "161Dy",
+      "162Dy",
+      "198Pt",
+      "209Bi"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "mhcclassii",
+     "target_name": "MHC Class II",
+     "raw_target": "MHC Class II",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "106Cd",
+      "174Yb",
+      "209Bi"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "xcr1",
+     "target_name": "XCR1",
+     "raw_target": "XCR1",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "low",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "152Sm",
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "f480",
+     "target_name": "F4/80",
+     "raw_target": "F4/80",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "146Nd",
+      "151Eu",
+      "159Tb",
+      "161Dy",
+      "173Yb"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-mouse-eosinophils",
+   "slug": "ct-mouse-eosinophils",
+   "name": "Eosinophils (mouse)",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "mouse"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "blood",
+    "spleen",
+    "bone_marrow",
+    "dissociated_tumour"
+   ],
+   "category": "celltype",
+   "blurb": "Murine eosinophils by Siglec-F.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "eosinophil",
+    "Siglec-F"
+   ],
+   "definition": "CD11b+ Siglec-F+ Ly-6G-",
+   "markers": [
+    {
+     "target_id": "cd11bmac1",
+     "target_name": "CD11b/Mac-1",
+     "raw_target": "CD11b/Mac-1",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "110Cd",
+      "114Cd",
+      "143Nd",
+      "144Nd",
+      "148Nd",
+      "154Sm",
+      "167Er",
+      "172Yb",
+      "195Pt",
+      "196Pt",
+      "209Bi"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd170siglecf",
+     "target_name": "CD170/Siglec-F",
+     "raw_target": "CD170/Siglec-F",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "154Sm",
+      "163Dy"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "ly6g",
+     "target_name": "Ly-6G",
+     "raw_target": "Ly-6G",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "148Nd",
+      "151Eu",
+      "195Pt"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
+   "id": "ct-mouse-hspc",
+   "slug": "ct-mouse-hspc",
+   "name": "Stem / progenitor cells (mouse LSK)",
+   "source": "curated",
+   "kit": null,
+   "application": "suspension",
+   "species": [
+    "mouse"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "bone_marrow"
+   ],
+   "category": "celltype",
+   "blurb": "The LSK gate for murine bone-marrow progenitors.",
+   "featured": false,
+   "hidden": false,
+   "aliases": [
+    "LSK",
+    "HSC",
+    "HSPC",
+    "Sca-1 c-kit"
+   ],
+   "definition": "Lin- Sca-1+ c-kit+",
+   "markers": [
+    {
+     "target_id": "sca1ly6ae",
+     "target_name": "Sca-1/Ly-6A/E",
+     "raw_target": "Sca-1/Ly-6A/E",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "164Dy",
+      "169Tm"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "cd117ckit",
+     "target_name": "CD117/c-kit",
+     "raw_target": "CD117/c-kit",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "166Er",
+      "173Yb"
+     ],
+     "note": null,
+     "polarity": "pos"
+    },
+    {
+     "target_id": "ter119",
+     "target_name": "TER-119",
+     "raw_target": "TER-119",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "154Sm",
+      "162Dy"
+     ],
+     "note": null,
+     "polarity": "neg"
+    }
+   ]
+  },
+  {
    "id": "human-pbmc-lineage",
    "slug": "human-pbmc-lineage",
    "name": "Immune lineage backbone (human)",
@@ -16855,6 +22196,8 @@
    "blurb": "Every major leukocyte lineage. Start here for any human blood panel.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd45",
@@ -16892,7 +22235,8 @@
       "196Pt",
       "198Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd3e",
@@ -16920,7 +22264,8 @@
       "170Er",
       "196Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd4",
@@ -16947,7 +22292,8 @@
       "174Yb",
       "176Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd8",
@@ -16977,7 +22323,8 @@
       "194Pt",
       "196Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd19",
@@ -17006,7 +22353,8 @@
       "171Yb",
       "198Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd20",
@@ -17030,7 +22378,8 @@
       "156Gd",
       "171Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd14",
@@ -17057,7 +22406,8 @@
       "175Lu",
       "195Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd16",
@@ -17082,7 +22432,8 @@
       "165Ho",
       "209Bi"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd56ncam",
@@ -17107,7 +22458,8 @@
       "163Dy",
       "176Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd11c",
@@ -17136,7 +22488,8 @@
       "198Pt",
       "209Bi"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "hladr",
@@ -17163,7 +22516,8 @@
       "174Yb",
       "176Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd123il3r",
@@ -17186,7 +22540,8 @@
       "143Nd",
       "151Eu"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd66b",
@@ -17208,7 +22563,8 @@
      "catalogue_metals": [
       "152Sm"
      ],
-     "note": "whole blood only"
+     "note": "whole blood only",
+     "polarity": "pos"
     }
    ]
   },
@@ -17231,6 +22587,8 @@
    "blurb": "Naive, central memory, effector memory and TEMRA; senescence and IL-7 responsiveness.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd45ra",
@@ -17257,7 +22615,8 @@
       "169Tm",
       "170Er"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd45ro",
@@ -17284,7 +22643,8 @@
       "165Ho",
       "194Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "humanccr7cd197",
@@ -17310,7 +22670,8 @@
       "167Er",
       "176Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd27",
@@ -17336,7 +22697,8 @@
       "162Dy",
       "167Er"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd28",
@@ -17359,7 +22721,8 @@
       "151Eu",
       "160Gd"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd127il7ra",
@@ -17388,7 +22751,8 @@
       "175Lu",
       "176Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd25il2ra",
@@ -17415,7 +22779,8 @@
       "169Tm",
       "174Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd57",
@@ -17438,7 +22803,8 @@
       "163Dy",
       "172Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd95fas",
@@ -17463,7 +22829,8 @@
       "164Dy",
       "176Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     }
    ]
   },
@@ -17488,6 +22855,8 @@
    "blurb": "Recent activation plus the checkpoint receptors that define exhausted and tumour-reactive T cells.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd69",
@@ -17513,7 +22882,8 @@
       "145Nd",
       "162Dy"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd38",
@@ -17542,7 +22912,8 @@
       "172Yb",
       "175Lu"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "hladr",
@@ -17570,7 +22941,8 @@
       "174Yb",
       "176Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd279pd1",
@@ -17597,7 +22969,8 @@
       "174Yb",
       "175Lu"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd366tim3",
@@ -17624,7 +22997,8 @@
       "162Dy",
       "169Tm"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd223lag3",
@@ -17652,7 +23026,8 @@
       "174Yb",
       "175Lu"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "tigit",
@@ -17678,7 +23053,8 @@
       "166Er",
       "209Bi"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd152ctla4",
@@ -17705,7 +23081,8 @@
       "168Er",
       "170Er"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd278icos",
@@ -17735,7 +23112,8 @@
       "175Lu",
       "176Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd39",
@@ -17758,7 +23136,8 @@
       "142Nd",
       "160Gd"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": null,
@@ -17778,7 +23157,8 @@
      "in_catalogue": false,
      "conjugate_id": null,
      "catalogue_metals": [],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "ki67",
@@ -17805,7 +23185,8 @@
       "172Yb",
       "173Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     }
    ]
   },
@@ -17829,6 +23210,8 @@
    "blurb": "Tregs by CD25 / CD127 / FoxP3, with suppressive-function markers.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd25il2ra",
@@ -17856,7 +23239,8 @@
       "174Yb",
       "175Lu"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd127il7ra",
@@ -17885,7 +23269,8 @@
       "175Lu",
       "176Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "foxp3",
@@ -17912,7 +23297,8 @@
       "165Ho",
       "167Er"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd152ctla4",
@@ -17939,7 +23325,8 @@
       "168Er",
       "170Er"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": null,
@@ -17959,7 +23346,8 @@
      "in_catalogue": false,
      "conjugate_id": null,
      "catalogue_metals": [],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd39",
@@ -17982,7 +23370,8 @@
       "142Nd",
       "160Gd"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     }
    ]
   },
@@ -18005,6 +23394,8 @@
    "blurb": "CD56 bright / dim NK subsets, receptors and cytotoxic machinery.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd56ncam",
@@ -18029,7 +23420,8 @@
       "163Dy",
       "176Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd16",
@@ -18054,7 +23446,8 @@
       "165Ho",
       "209Bi"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": null,
@@ -18074,7 +23467,8 @@
      "in_catalogue": false,
      "conjugate_id": null,
      "catalogue_metals": [],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": null,
@@ -18094,7 +23488,8 @@
      "in_catalogue": false,
      "conjugate_id": null,
      "catalogue_metals": [],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd57",
@@ -18117,7 +23512,8 @@
       "163Dy",
       "172Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "granzymeb",
@@ -18141,7 +23537,8 @@
       "173Yb",
       "198Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "perforin",
@@ -18165,7 +23562,8 @@
       "175Lu",
       "196Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     }
    ]
   },
@@ -18189,6 +23587,8 @@
    "blurb": "Naive, memory, transitional B cells and plasmablasts.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd19",
@@ -18217,7 +23617,8 @@
       "171Yb",
       "198Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd20",
@@ -18245,7 +23646,8 @@
       "164Dy",
       "171Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd27",
@@ -18272,7 +23674,8 @@
       "167Er",
       "171Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "igd",
@@ -18296,7 +23699,8 @@
       "146Nd",
       "150Nd"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd38",
@@ -18325,7 +23729,8 @@
       "172Yb",
       "175Lu"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd138sdc1",
@@ -18350,7 +23755,8 @@
       "163Dy",
       "168Er"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd24",
@@ -18375,7 +23781,8 @@
       "166Er",
       "169Tm"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     }
    ]
   },
@@ -18398,6 +23805,8 @@
    "blurb": "Effector cytokines after PMA / ionomycin or antigen stimulation. Bright when induced; plan for high signal.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "ifng",
@@ -18422,7 +23831,8 @@
       "165Ho",
       "168Er"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "tnfa",
@@ -18449,7 +23859,8 @@
       "162Dy",
       "175Lu"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "il2",
@@ -18474,7 +23885,8 @@
       "158Gd",
       "166Er"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "il17a",
@@ -18502,7 +23914,8 @@
       "174Yb",
       "195Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "il4",
@@ -18528,7 +23941,8 @@
       "166Er",
       "171Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "il10",
@@ -18553,7 +23967,8 @@
       "165Ho",
       "166Er"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "gmcsf",
@@ -18575,7 +23990,8 @@
      "catalogue_metals": [
       "159Tb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "granzymeb",
@@ -18599,7 +24015,8 @@
       "173Yb",
       "198Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     }
    ]
   },
@@ -18622,6 +24039,8 @@
    "blurb": "JAK/STAT, MAPK, PI3K and NF-κB readouts for stimulation assays.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "stat1py701",
@@ -18643,7 +24062,8 @@
      "catalogue_metals": [
       "153Eu"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "pstat3y705",
@@ -18665,7 +24085,8 @@
      "catalogue_metals": [
       "158Gd"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "pstat5py694",
@@ -18688,7 +24109,8 @@
       "147Sm",
       "150Nd"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "ps6s235s236",
@@ -18711,7 +24133,8 @@
       "172Yb",
       "175Lu"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "perk12t202y204",
@@ -18734,7 +24157,8 @@
       "167Er",
       "171Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "pakts473",
@@ -18756,7 +24180,8 @@
      "catalogue_metals": [
       "152Sm"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "pnfkbp65s529",
@@ -18778,7 +24203,8 @@
      "catalogue_metals": [
       "166Er"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "p38t180y182",
@@ -18800,7 +24226,8 @@
      "catalogue_metals": [
       "156Gd"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "ikba",
@@ -18822,7 +24249,8 @@
      "catalogue_metals": [
       "164Dy"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     }
    ]
   },
@@ -18849,6 +24277,8 @@
    "blurb": "Cycling, mitotic and apoptotic cells.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "ki67",
@@ -18875,7 +24305,8 @@
       "172Yb",
       "173Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "phistoneh3s28",
@@ -18897,7 +24328,8 @@
      "catalogue_metals": [
       "175Lu"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cleavedcaspase3",
@@ -18920,7 +24352,8 @@
       "142Nd",
       "172Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cleavedparp",
@@ -18942,7 +24375,8 @@
      "catalogue_metals": [
       "143Nd"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     }
    ]
   },
@@ -18965,6 +24399,8 @@
    "blurb": "Epithelium, mesenchyme, matrix and vessels - the map every tissue panel needs.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "pancytokeratin",
@@ -18991,7 +24427,8 @@
       "162Dy",
       "174Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd324ecadherin",
@@ -19016,7 +24453,8 @@
       "173Yb",
       "174Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd326epcam",
@@ -19044,7 +24482,8 @@
       "172Yb",
       "175Lu"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "vimentin",
@@ -19069,7 +24508,8 @@
       "151Eu",
       "154Sm"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "asmoothmuscleactin",
@@ -19094,7 +24534,8 @@
       "153Eu",
       "209Bi"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "collagentypei",
@@ -19121,7 +24562,8 @@
       "169Tm",
       "173Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "fibronectin",
@@ -19150,7 +24592,8 @@
       "174Yb",
       "175Lu"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd31pecam1",
@@ -19179,7 +24622,8 @@
       "172Yb",
       "175Lu"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "podoplanin",
@@ -19201,7 +24645,8 @@
      "catalogue_metals": [
       "164Dy"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "nonpactivebcatenin",
@@ -19227,7 +24672,8 @@
       "169Tm",
       "172Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     }
    ]
   },
@@ -19249,6 +24695,8 @@
    "blurb": "PD-L1 axis, antigen presentation and the cells that respond.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd274pdl1",
@@ -19274,7 +24722,8 @@
       "166Er",
       "174Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd279pd1",
@@ -19296,7 +24745,8 @@
      "catalogue_metals": [
       "165Ho"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd276b7h3",
@@ -19318,7 +24768,8 @@
      "catalogue_metals": [
       "173Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "ido",
@@ -19341,7 +24792,8 @@
       "145Nd",
       "155Gd"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "hlaabc",
@@ -19363,7 +24815,8 @@
      "catalogue_metals": [
       "144Nd"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "b2microglobulin",
@@ -19383,7 +24836,8 @@
      "in_catalogue": true,
      "conjugate_id": null,
      "catalogue_metals": [],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "ki67",
@@ -19408,7 +24862,8 @@
       "172Yb",
       "173Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd8",
@@ -19435,7 +24890,8 @@
       "167Er",
       "176Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "foxp3",
@@ -19461,7 +24917,8 @@
       "165Ho",
       "167Er"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     }
    ]
   },
@@ -19486,6 +24943,8 @@
    "blurb": "Every major murine leukocyte lineage.",
    "featured": true,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd45",
@@ -19523,7 +24982,8 @@
       "196Pt",
       "198Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd3e",
@@ -19551,7 +25011,8 @@
       "170Er",
       "196Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd4",
@@ -19578,7 +25039,8 @@
       "174Yb",
       "176Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd8",
@@ -19608,7 +25070,8 @@
       "194Pt",
       "196Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd19",
@@ -19637,7 +25100,8 @@
       "171Yb",
       "198Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd45rb220",
@@ -19664,7 +25128,8 @@
       "160Gd",
       "176Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd11bmac1",
@@ -19696,7 +25161,8 @@
       "196Pt",
       "209Bi"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd11c",
@@ -19725,7 +25191,8 @@
       "198Pt",
       "209Bi"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "f480",
@@ -19751,7 +25218,8 @@
       "161Dy",
       "173Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "ly6g",
@@ -19776,7 +25244,8 @@
       "151Eu",
       "195Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "ly6c",
@@ -19800,7 +25269,8 @@
       "162Dy",
       "198Pt"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "nk11",
@@ -19823,7 +25293,8 @@
       "165Ho",
       "170Er"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "mhcclassii",
@@ -19847,7 +25318,8 @@
       "174Yb",
       "209Bi"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "tcrb",
@@ -19870,7 +25342,8 @@
       "143Nd",
       "169Tm"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     }
    ]
   },
@@ -19893,6 +25366,8 @@
    "blurb": "Murine tumour microenvironment - T cells, macrophages, checkpoint and structure.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "cd45",
@@ -19920,7 +25395,8 @@
       "163Dy",
       "175Lu"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd3e",
@@ -19942,7 +25418,8 @@
      "catalogue_metals": [
       "170Er"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd4",
@@ -19970,7 +25447,8 @@
       "169Tm",
       "171Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd8",
@@ -19997,7 +25475,8 @@
       "167Er",
       "176Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "f480",
@@ -20022,7 +25501,8 @@
       "166Er",
       "169Tm"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd68",
@@ -20047,7 +25527,8 @@
       "146Nd",
       "159Tb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd206mmr",
@@ -20071,7 +25552,8 @@
       "163Dy",
       "167Er"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "arginasei",
@@ -20093,7 +25575,8 @@
      "catalogue_metals": [
       "164Dy"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd274pdl1",
@@ -20119,7 +25602,8 @@
       "166Er",
       "174Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "foxp3",
@@ -20145,7 +25629,8 @@
       "165Ho",
       "167Er"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "ki67",
@@ -20170,7 +25655,8 @@
       "172Yb",
       "173Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "pancytokeratin",
@@ -20197,7 +25683,8 @@
       "162Dy",
       "174Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "asmoothmuscleactin",
@@ -20222,7 +25709,8 @@
       "153Eu",
       "209Bi"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd31pecam1",
@@ -20251,7 +25739,8 @@
       "172Yb",
       "175Lu"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     }
    ]
   },
@@ -20274,6 +25763,8 @@
    "blurb": "Glycolysis, fatty-acid oxidation, amino-acid transport and mitochondrial mass.",
    "featured": false,
    "hidden": false,
+   "aliases": [],
+   "definition": null,
    "markers": [
     {
      "target_id": "glut1",
@@ -20295,7 +25786,8 @@
      "catalogue_metals": [
       "142Nd"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cpt1a",
@@ -20317,7 +25809,8 @@
      "catalogue_metals": [
       "146Nd"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": null,
@@ -20337,7 +25830,8 @@
      "in_catalogue": false,
      "conjugate_id": null,
      "catalogue_metals": [],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "cd98",
@@ -20360,7 +25854,8 @@
       "159Tb",
       "173Yb"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "atp5a",
@@ -20382,7 +25877,8 @@
      "catalogue_metals": [
       "145Nd"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     },
     {
      "target_id": "citratesynthase",
@@ -20404,7 +25900,8 @@
      "catalogue_metals": [
       "143Nd"
      ],
-     "note": null
+     "note": null,
+     "polarity": "pos"
     }
    ]
   }

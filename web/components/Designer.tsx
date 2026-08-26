@@ -22,6 +22,9 @@ export function Designer() {
   const setStep = useStore((s) => s.setStep);
   const rows = useStore((s) => s.rows);
   const balanced = useStore((s) => s.balanced);
+  const restoredDraft = useStore((s) => s.restoredDraft);
+  const dismissRestored = useStore((s) => s.dismissRestored);
+  const clearPanel = useStore((s) => s.clearPanel);
   const [error, setError] = [useStore((s) => s.loadError), (e: string) => useStore.setState({ loadError: e })];
 
   useEffect(() => {
@@ -58,6 +61,15 @@ export function Designer() {
           </nav>
         </div>
       </header>
+      {restoredDraft && (
+        <div className="border-b border-teal-200 bg-teal-50 text-sm text-teal-900 dark:border-teal-800 dark:bg-teal-950 dark:text-teal-100" data-testid="restored-draft">
+          <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-1.5">
+            <span>Picked up the panel you were working on last time ({rows.length} markers).</span>
+            <button className="underline" onClick={dismissRestored}>Keep it</button>
+            <button className="underline" onClick={() => { clearPanel(); setStep("setup"); }}>Start fresh</button>
+          </div>
+        </div>
+      )}
       <div className="mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 gap-6 px-4 py-6 lg:grid-cols-[1fr_360px]">
         <main className="min-w-0">
           {step === "setup" && <SetupStep />}

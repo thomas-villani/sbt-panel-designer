@@ -13,7 +13,7 @@ Status legend: 🟢 in progress · 🟡 needs data or a decision · ⚪ idea
 | Item | Status | Notes |
 |---|---|---|
 | **IMC image gallery per antibody** — representative image(s) per conjugate/clone/tissue, shown in the search hit, module card and BOM row | 🟡 | Needs: SBT R&D / marketing image library (TIFF/PNG + tissue, sample type, clone, metal, dilution, Hyperion model). Store as static `public/img/<conjugate_id>/…` with a JSON manifest from ETL; lazy-load thumbnails. Licensing: SBT-owned images only, or publication images with permission. |
-| **Publications per antibody** — list of papers using the clone/conjugate, with DOI, year, sample type, application | 🟡 | Sources: SBT citation database if one exists; otherwise Europe PMC / PubMed full-text search on clone + "Maxpar" / "CyTOF" / "imaging mass cytometry", curated. Show a count badge ("12 papers") on the target and a drawer with the list. Also feeds *sample-validated* flags. |
+| **Publications per antibody** — list of papers using the clone/conjugate, with DOI, year, sample type, application | 🟢 v0 shipped | v0 (2026-08-25): `pd3-etl pubs` matches every catalogue target's name/aliases against the titles + abstracts of 5.4k CyTOF / IMC papers in Tom's `biblionautica.sqlite` (OpenAlex-derived; 312 of 384 targets get ≥1 hit, 1.3k papers). Shown as an "n papers" badge in search hits and a top-12 list (DOI links) in the row drawer. Abstract-level only, so it is *marker mentioned*, not *this clone used*. Next: full-text / supplementary-table matching on clone names, sample type and application; SBT citation DB if one exists; feed *sample-validated* flags. |
 | **Suspension staining examples** — histogram / biaxial plot per conjugate (from TDS) | ⚪ | TDS PDFs already linked; extracting the plot image gives the same UX as the IMC gallery for CyTOF users. |
 | **Clone comparison** — when >1 clone: show epitope, isotype, validated sample types, images and citations side by side | ⚪ | Clone selector exists; this is its "why" panel. |
 | **Lot / titration data upload** (SPEC non-goal for v1; FAS mode) | ⚪ | Users upload titration signal values → per-account S/T priors. |
@@ -36,10 +36,14 @@ Status legend: 🟢 in progress · 🟡 needs data or a decision · ⚪ idea
 | **Exclusivity groups UI** ("Advanced": markers that never co-express can share tolerance) | ⚪ | Engine supports it; UI hidden. Seed groups from lineage in modules. |
 | **Acquisition template export** — CyTOF XT/Helios channel template, Hyperion panel CSV (mass, label) | ⚪ | Cheap win for users; complements the BOM. |
 | **Panel diff / versioning** — compare two share links; "what changed and why the score moved" | ⚪ | State is already in the URL; a diff view is mostly UI. |
-| **Saved panels + accounts** (email-gated save/share, SPEC goal 5) | ⚪ | Requires backend; do with Azure move. |
+| **Saved panels + accounts** (email-gated save/share, SPEC goal 5) | 🟢 v0 shipped / 🟡 backend | v0 (2026-08-25): named saves and an auto-draft in `localStorage` (`web/lib/saved.ts`); a plain reload picks the draft up with a "Keep it / Start fresh" bar. Permanent saves need login + a store: leaning **SQLite** (single file, trivially backed up, fits a small Azure App Service) behind a tiny API; migrate the localStorage list on first login and port pdv2 users' saved panels (needs the pdv2 export, §8 ask 1). |
 | **Starting-point library** — SBT validated panels and MDIPA/expansion kits as one-click starts | 🟡 | Kits are captured (SPEC §3.4b); needs internal validated-panel library. |
 | **"People who chose X also chose Y"** recommendations (SPEC §3.5) | 🟡 | Needs pdv2 saved-panel export (anonymised counts). |
-| **Cell-type coverage check** — "your panel can't separate NK from CD8 T" from a lineage ontology | ⚪ | Explanation layer on top of modules. |
+| **Cell-type modules** — 1-4 markers per immune / tissue cell type, with lineage negatives, searchable from the marker box ("dendritic" → HLA-DR, CD11c, CD123 + CD3−, CD19−, CD14−, CD56−) | 🟢 shipped | 40 modules in `data/curated/modules/cell-types.yaml` (27 human, 13 mouse) following the standard PBMC / whole-blood gating map (Teiko-style Lin = CD3/CD19/CD14/CD56). Negatives carry `polarity: neg` and render dashed. Next: subsets people ask for (Vδ2, cDC1/cDC2 once CD1c/XCR1 are sold for human, M1/M2, exhausted vs senescent), NHP, and a "which cell types can this panel resolve?" reverse view. |
+| **Cell-type coverage check** — "your panel can't separate NK from CD8 T" from a lineage ontology | ⚪ | Explanation layer on top of the cell-type modules' definitions (the gating shorthand is already structured enough to evaluate). |
+| **"Panel not possible" guidance** — when the optimiser cannot place every marker, say *why* and what to do (custom conjugation, drop a low-value marker, switch instrument, split the panel) | 🟡 | Engine reports `unassigned`; the UI needs a proper explanation + suggested actions rather than a red pill. |
+| **"View all" marker table** — a sortable table of every catalogue marker for the setup (clone, metals, papers, validated), as an alternative to search | ⚪ | SPEC decision 3 says no 35-page grid *as the front door*; a secondary view is fine. |
+| **Enter by catalogue number / other identifiers** — paste part numbers (3148020D), clone names, UniProt / gene symbols | ⚪ | Search keys today: target name + aliases. Add SKU, clone and gene-symbol keys to the index. |
 | **Custom conjugation flow** — metal availability per labelling kit (X8/MCP9), lead time, pricing | 🟡 | Needs kit metal lists (SPEC §9 ask 4). |
 | **Multi-panel / shared backbone** — design a backbone once, derive tumour/immune sub-panels | ⚪ | |
 
@@ -48,7 +52,7 @@ Status legend: 🟢 in progress · 🟡 needs data or a decision · ⚪ idea
 | Item | Status | Notes |
 |---|---|---|
 | **Prices in the BOM** (decision 6) | 🟡 | Manual price table stop-gap until the ERP/Salesforce feed. |
-| **Quote request** — email + structured payload to sales/SFDC (decision 9) | 🟡 | Deferred until UI sign-off. The BOM is already a structured order object. |
+| **Quote request** — email + structured payload to sales/SFDC (decision 9) | 🟡 | Deferred until UI sign-off. The BOM is already a structured order object. Must keep kits whole: a panel started from MDIPA has to reach the quote as the MDIPA SKU, not 30 vials. |
 | **Add to cart** when the e-store exists | ⚪ | New sink on the same order object. |
 | **Distributor / region awareness** — part numbers and currency by region | ⚪ | |
 | **Imaging vial sizing** — replace the "~50 slides per 25 µg" assumption with real dilution guidance | 🟡 | Needs TDS recommended dilutions per conjugate. |
@@ -75,7 +79,7 @@ Status legend: 🟢 in progress · 🟡 needs data or a decision · ⚪ idea
 | Item | Status | Notes |
 |---|---|---|
 | **Azure production deploy** under standardbiotools.com (decision 7) | ⚪ | Static Web App or App Service; keep GitHub Pages as the staging demo. |
-| **Backend** (only when save/quote/FAS need it) — small API + Postgres; keep the engine client-side | ⚪ | |
+| **Backend** (only when save/quote/FAS need it) — small API + SQLite (Postgres later if needed); keep the engine client-side | ⚪ | SQLite first: one file, easy backup/restore, enough for saved panels + quotes at this scale. |
 | Accessibility pass (keyboard nav in search, ARIA on the mass strip, colour-blind safe palette for clean/watch/spillover) | ⚪ | |
 | Mobile layout (sidebar as bottom sheet) | ⚪ | |
 | Internationalisation (at least units/currency) | ⚪ | |
@@ -91,4 +95,4 @@ Status legend: 🟢 in progress · 🟡 needs data or a decision · ⚪ idea
 3. Stable catalogue feed with price, stock, lead time.
 4. Isotope purity, X8/MCP9 metal lists, reserved channels per instrument.
 5. Validated-panel library and MDIPA expansion definitions.
-6. **New:** IMC image library per conjugate; citation database; IMC titration / intensity data; TDS recommended dilutions.
+6. **New:** IMC image library per conjugate; citation database (we have an abstract-level literature DB already, see §1); IMC titration / intensity data; TDS recommended dilutions.

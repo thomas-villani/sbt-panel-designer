@@ -32,7 +32,8 @@ npm run typecheck
 cd etl
 uv run pd3-etl instruments      # spillover matrices + sensitivity curves + reserved channels
 uv run pd3-etl catalog          # store CSV + pdv2 S/T harvest -> targets/clones/conjugates/SKUs
-uv run pd3-etl modules          # 62 SBT kits + curated modules, resolved against the catalogue
+uv run pd3-etl modules          # 62 SBT kits + curated + cell-type modules, resolved against the catalogue
+uv run pd3-etl pubs             # papers per marker from the local literature DB (optional; PD3_PUBS_DB)
 uv run pytest
 ```
 

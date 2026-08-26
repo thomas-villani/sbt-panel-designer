@@ -150,6 +150,7 @@ def load_kits(cat_idx: CatalogIndex) -> tuple[list[dict], list[str]]:
                 "blurb": ov.get("blurb", ""),
                 "featured": ov.get("featured", False),
                 "hidden": ov.get("hidden", False),
+                "aliases": ov.get("aliases", []), "definition": None,
                 "markers": markers,
             })
     return modules, unresolved
@@ -168,6 +169,7 @@ def load_curated(cat_idx: CatalogIndex) -> tuple[list[dict], list[str]]:
                 role = mk.get("role", "required") if isinstance(mk, dict) else "required"
                 hint = mk.get("abundance") if isinstance(mk, dict) else None
                 note = mk.get("note") if isinstance(mk, dict) else None
+                negative = bool(mk.get("negative")) if isinstance(mk, dict) else False
                 tid = cat_idx.resolve(name)
                 if tid is None:
                     unresolved.append(f"{m['id']}: {name}")
@@ -183,13 +185,14 @@ def load_curated(cat_idx: CatalogIndex) -> tuple[list[dict], list[str]]:
                     "signal": None, "tolerance": None, "st_source": "curated" if hint else "default",
                     "abundance_level": hint, "kit_only": False, "custom": False, "in_catalogue": tid is not None,
                     "conjugate_id": None,
-                    "catalogue_metals": metals, "note": note,
+                    "catalogue_metals": metals, "note": note, "polarity": "neg" if negative else "pos",
                 })
             modules.append({
                 "id": m["id"], "slug": m["id"], "name": m["name"], "source": "curated", "kit": None,
                 "application": m["application"], "species": m["species"], "instruments": [],
                 "sample_types": m.get("sample_types", []), "category": m.get("category", "uncategorised"),
                 "blurb": m.get("blurb", ""), "featured": m.get("featured", False), "hidden": False,
+                "aliases": m.get("aliases", []), "definition": m.get("definition"),
                 "markers": markers,
             })
     return modules, unresolved
@@ -211,7 +214,7 @@ def build() -> dict:
         "unresolved_kit_targets": unresolved_k,
         "unresolved_curated_targets": unresolved_c,
     }
-    return {"version": "2026-08-24.1", "stats": stats, "modules": modules}
+    return {"version": "2026-08-25.1", "stats": stats, "modules": modules}
 
 
 def main() -> None:

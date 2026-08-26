@@ -102,3 +102,30 @@ describe("row specs, prior and budget", () => {
     expect(channelBudget(idx, { ...CYTOF, viability: false })).toBe(budget("cytof_xt", [191, 193]));
   });
 });
+
+describe("cell-type modules and module search", () => {
+  it("cell-type modules carry a definition and lineage negatives that resolve to catalogue targets", () => {
+    const ct = idx.modulesFor(CYTOF).filter((m) => m.category === "celltype");
+    expect(ct.length).toBeGreaterThanOrEqual(20);
+    for (const m of ct) {
+      expect(m.definition).toBeTruthy();
+      expect(m.aliases.length).toBeGreaterThan(0);
+      for (const k of m.markers) expect(k.in_catalogue).toBe(true);
+    }
+    const dc = ct.find((m) => m.id === "ct-human-dc")!;
+    expect(dc.markers.filter((k) => k.polarity === "neg").map((k) => k.target_id)).toEqual(["cd3e", "cd19", "cd14", "cd56ncam"]);
+    expect(idx.modulesFor(IMC).some((m) => m.id === "ct-human-dc")).toBe(false); // suspension-only cell type
+    expect(idx.modulesFor({ ...CYTOF, species: "mouse" }).some((m) => m.id === "ct-mouse-nk")).toBe(true);
+  });
+  it("searchModules finds cell types by name and alias, scoped to the setup", () => {
+    expect(idx.searchModules("dendritic", CYTOF)[0].id).toBe("ct-human-dc");
+    expect(idx.searchModules("Dendritic cell", CYTOF)[0].id).toBe("ct-human-dc");
+    expect(idx.searchModules("pDC", CYTOF)[0].id).toBe("ct-human-pdc");
+    expect(idx.searchModules("NK cells", CYTOF)[0].id).toBe("ct-human-nk");
+    expect(idx.searchModules("treg", CYTOF).map((m) => m.id)).toContain("ct-human-treg");
+    expect(idx.searchModules("macrophage", IMC)[0].id).toBe("ct-human-macrophages");
+    expect(idx.searchModules("dendritic", IMC)).toEqual([]);
+    expect(idx.searchModules("cd", CYTOF)).toEqual([]); // too short
+    expect(idx.searchModules("exhaustion", IMC).map((m) => m.name)).toContain("T-cell exhaustion");
+  });
+});

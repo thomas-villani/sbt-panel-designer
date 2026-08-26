@@ -1,0 +1,600 @@
+# Cell-type modules: 1-4 markers that define one immune (or tissue) cell type, for users who know which cells they
+# want rather than which theme. Each module lists the *defining* markers (required) and, where the lineage gate
+# matters, the *negatives* (negative: true) that separate the cell from its neighbours. Negatives are added as
+# recommended markers: the optimiser treats them like any other antibody, the card explains why they are there.
+#
+# `definition` is the phenotype in gating shorthand and is shown on the card / in search.
+# `aliases` are extra search terms ("Dendritic cell" finds the module from the marker search box).
+#
+# Human blood populations follow the standard PBMC / whole-blood gating map (e.g. Teiko Labs' CyTOF PBMC
+# reference: Lin = CD3 / CD19 / CD14 / CD56; DC = HLA-DR+ Lin-; monocyte subsets by CD14 / CD16).
+version: 2026-08-25.1
+modules:
+  # ---------------- Human lymphocytes ----------------
+  - id: ct-human-t-cells
+    name: T cells
+    application: both
+    species: [human]
+    sample_types: [pbmc, whole_blood, dissociated_tumour, ffpe, frozen]
+    category: celltype
+    aliases: [T cell, T lymphocytes, CD3 T cells]
+    definition: CD3+ (CD19-)
+    blurb: All T cells, with the B-cell negative that keeps the CD3 gate clean.
+    markers:
+      - {target: CD3ε, abundance: very_high}
+      - {target: CD19, abundance: high, role: recommended, negative: true}
+
+  - id: ct-human-cd4-t
+    name: CD4 helper T cells
+    application: both
+    species: [human]
+    sample_types: [pbmc, whole_blood, dissociated_tumour, ffpe, frozen]
+    category: celltype
+    aliases: [CD4 T cells, helper T cells, Th cells, CD4+ T]
+    definition: CD3+ CD4+ CD8-
+    blurb: Helper T cells. CD8 is included so CD4 and CD8 subsets separate cleanly.
+    markers:
+      - {target: CD3ε, abundance: very_high}
+      - {target: CD4, abundance: high}
+      - {target: CD8a, abundance: high, role: recommended, negative: true}
+
+  - id: ct-human-cd8-t
+    name: CD8 cytotoxic T cells
+    application: both
+    species: [human]
+    sample_types: [pbmc, whole_blood, dissociated_tumour, ffpe, frozen]
+    category: celltype
+    aliases: [CD8 T cells, cytotoxic T cells, CTL, killer T cells, CD8+ T]
+    definition: CD3+ CD8+ CD4-
+    blurb: Cytotoxic T cells. Add Granzyme B / Perforin for function.
+    markers:
+      - {target: CD3ε, abundance: very_high}
+      - {target: CD8a, abundance: high}
+      - {target: CD4, abundance: high, role: recommended, negative: true}
+
+  - id: ct-human-t-memory
+    name: Naive / memory T-cell subsets
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood]
+    category: celltype
+    aliases: [naive T cells, memory T cells, central memory, effector memory, TEMRA, Tcm, Tem]
+    definition: naive CD45RA+ CCR7+ · Tcm CD45RA- CCR7+ · Tem CD45RA- CCR7- · TEMRA CD45RA+ CCR7-
+    blurb: The two markers that split naive, central memory, effector memory and TEMRA on CD4 and CD8 T cells.
+    markers:
+      - {target: CD45RA, abundance: high}
+      - {target: CD197/CCR7, abundance: low}
+      - {target: CD27, abundance: high, role: recommended}
+      - {target: CD45RO, abundance: high, role: optional}
+
+  - id: ct-human-treg
+    name: Regulatory T cells (Treg)
+    application: both
+    species: [human]
+    sample_types: [pbmc, whole_blood, dissociated_tumour, ffpe]
+    category: celltype
+    aliases: [Treg, Tregs, regulatory T, FoxP3 T cells]
+    definition: CD3+ CD4+ CD25+ CD127lo FoxP3+
+    blurb: Tregs by the CD25 / CD127 gate confirmed with FoxP3.
+    markers:
+      - {target: CD4, abundance: high}
+      - {target: CD25, abundance: low}
+      - {target: CD127/IL-7Rα, abundance: medium, negative: true}
+      - {target: FoxP3, abundance: low}
+
+  - id: ct-human-th-subsets
+    name: T-helper subsets (Th1 / Th2 / Th17)
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood]
+    category: celltype
+    aliases: [Th1, Th2, Th17, T helper subsets, CXCR3 CCR4 CCR6]
+    definition: Th1 CXCR3+ CCR6- · Th2 CCR4+ CXCR3- CCR6- · Th17 CCR6+ CCR4+ CXCR3- (on CD4+ memory)
+    blurb: Chemokine-receptor gating of helper subsets on memory CD4 T cells.
+    markers:
+      - {target: CD4, abundance: high}
+      - {target: CD183/CXCR3, abundance: medium}
+      - {target: CD194/CCR4, abundance: medium}
+      - {target: CD196/CCR6, abundance: low}
+      - {target: CD45RA, abundance: high, role: recommended, negative: true}
+
+  - id: ct-human-tfh
+    name: Follicular helper T cells (Tfh)
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood]
+    category: celltype
+    aliases: [Tfh, follicular helper, circulating Tfh, cTfh]
+    definition: CD3+ CD4+ CXCR5+ PD-1+ (CD45RA-)
+    blurb: Circulating Tfh by CXCR5 and PD-1 on memory CD4 T cells.
+    markers:
+      - {target: CD4, abundance: high}
+      - {target: CD185/CXCR5, abundance: low}
+      - {target: CD279/PD-1, abundance: low}
+      - {target: CD45RA, abundance: high, role: recommended, negative: true}
+
+  - id: ct-human-gd-t
+    name: γδ T cells
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood, dissociated_tumour]
+    category: celltype
+    aliases: [gamma delta T cells, gd T cells, TCRgd, gammadelta]
+    definition: CD3+ TCRγδ+ (mostly CD4- CD8-)
+    blurb: γδ T cells straight from the TCR; add Vδ2 clones on request.
+    markers:
+      - {target: CD3ε, abundance: very_high}
+      - {target: TCRγδ, abundance: medium}
+
+  - id: ct-human-mait
+    name: MAIT cells
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood, dissociated_tumour]
+    category: celltype
+    aliases: [MAIT, mucosal-associated invariant T, Va7.2]
+    definition: CD3+ TCR Vα7.2+ CD161hi (mostly CD8+)
+    blurb: Mucosal-associated invariant T cells by the semi-invariant TCR and CD161.
+    markers:
+      - {target: CD3ε, abundance: very_high}
+      - {target: TCR Vα7.2, abundance: medium}
+      - {target: CD161, abundance: medium}
+
+  - id: ct-human-inkt
+    name: Invariant NKT cells
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood]
+    category: celltype
+    aliases: [iNKT, NKT cells, natural killer T, Va24-Ja18]
+    definition: CD3+ Vα24-Jα18+ (CD56 variable)
+    blurb: Type I NKT cells by the invariant TCR; CD56 separates them from NK-like T cells.
+    markers:
+      - {target: CD3ε, abundance: very_high}
+      - {target: Invariant NKT, abundance: low}
+      - {target: CD56, abundance: medium, role: recommended}
+
+  - id: ct-human-trm
+    name: Tissue-resident memory T cells (Trm)
+    application: suspension
+    species: [human]
+    sample_types: [dissociated_tumour]
+    category: celltype
+    aliases: [Trm, tissue resident memory, CD103 T cells]
+    definition: CD3+ CD69+ CD103+ (CCR7-)
+    blurb: Trm in dissociated tissue by CD69 and CD103.
+    markers:
+      - {target: CD3ε, abundance: very_high}
+      - {target: CD69, abundance: medium}
+      - {target: CD103, abundance: medium}
+      - {target: CD197/CCR7, abundance: low, role: recommended, negative: true}
+
+  - id: ct-human-b-cells
+    name: B cells
+    application: both
+    species: [human]
+    sample_types: [pbmc, whole_blood, dissociated_tumour, ffpe, frozen]
+    category: celltype
+    aliases: [B cell, B lymphocytes, CD19 B cells, CD20 B cells]
+    definition: CD19+ CD20+ CD3-
+    blurb: All B cells; CD20 drops on plasmablasts so both markers are worth carrying.
+    markers:
+      - {target: CD19, abundance: high}
+      - {target: CD20, abundance: high}
+      - {target: CD3ε, abundance: very_high, role: recommended, negative: true}
+
+  - id: ct-human-b-subsets
+    name: Naive / memory B-cell subsets
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood]
+    category: celltype
+    aliases: [naive B cells, memory B cells, switched memory, transitional B cells]
+    definition: naive IgD+ CD27- · unswitched memory IgD+ CD27+ · switched memory IgD- CD27+ · transitional CD24hi CD38hi
+    blurb: IgD and CD27 split naive from memory; CD38 / CD24 add transitional cells and plasmablasts.
+    markers:
+      - {target: CD19, abundance: high}
+      - {target: IgD, abundance: high}
+      - {target: CD27, abundance: high}
+      - {target: CD38, abundance: high, role: recommended}
+      - {target: CD24, abundance: medium, role: optional}
+
+  - id: ct-human-plasmablasts
+    name: Plasmablasts / plasma cells
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood, bone_marrow, dissociated_tumour]
+    category: celltype
+    aliases: [plasmablasts, plasma cells, antibody-secreting cells, ASC]
+    definition: CD19lo CD27hi CD38hi CD20- (CD138+ plasma cells)
+    blurb: Antibody-secreting cells by CD27 / CD38, with CD20 as the negative and CD138 for mature plasma cells.
+    markers:
+      - {target: CD19, abundance: high}
+      - {target: CD27, abundance: high}
+      - {target: CD38, abundance: very_high}
+      - {target: CD20, abundance: high, role: recommended, negative: true}
+      - {target: CD138/Syndecan-1, abundance: medium, role: recommended}
+
+  - id: ct-human-nk
+    name: NK cells
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood, dissociated_tumour]
+    category: celltype
+    aliases: [NK cell, natural killer cells, CD56 NK]
+    definition: CD3- CD56+ (CD56bright CD16- · CD56dim CD16+)
+    blurb: Natural killer cells and their bright / dim split. CD3 keeps NKT cells out.
+    markers:
+      - {target: CD56, abundance: medium}
+      - {target: CD16, abundance: high}
+      - {target: CD3ε, abundance: very_high, role: recommended, negative: true}
+
+  - id: ct-human-ilc
+    name: Innate lymphoid cells (ILC)
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood, dissociated_tumour]
+    category: celltype
+    aliases: [ILC, ILC1, ILC2, ILC3, innate lymphoid]
+    definition: Lin- CD127+ (ILC2 CRTH2+ · ILC3 CD117+ · ILC1 CRTH2- CD117-)
+    blurb: Lineage-negative CD127+ cells split by CRTH2 and c-kit.
+    markers:
+      - {target: CD127/IL-7Rα, abundance: medium}
+      - {target: CD294/CRTH2, abundance: low}
+      - {target: CD117/c-kit, abundance: low}
+      - {target: CD3ε, abundance: very_high, role: recommended, negative: true}
+      - {target: CD19, abundance: high, role: recommended, negative: true}
+      - {target: CD14, abundance: high, role: recommended, negative: true}
+
+  # ---------------- Human myeloid ----------------
+  - id: ct-human-monocytes
+    name: Monocytes
+    application: both
+    species: [human]
+    sample_types: [pbmc, whole_blood, dissociated_tumour, ffpe]
+    category: celltype
+    aliases: [monocyte, classical monocytes, non-classical monocytes, intermediate monocytes, CD14 monocytes]
+    definition: HLA-DR+ (classical CD14+ CD16- · intermediate CD14+ CD16+ · non-classical CD14lo CD16+)
+    blurb: The three monocyte subsets from CD14 and CD16 on HLA-DR+ cells.
+    markers:
+      - {target: CD14, abundance: high}
+      - {target: CD16, abundance: high}
+      - {target: HLA-DR, abundance: very_high}
+      - {target: CD3ε, abundance: very_high, role: recommended, negative: true}
+      - {target: CD19, abundance: high, role: recommended, negative: true}
+
+  - id: ct-human-dc
+    name: Dendritic cells
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood, dissociated_tumour]
+    category: celltype
+    aliases: [dendritic cell, DC, DCs, myeloid dendritic cells, mDC, cDC]
+    definition: Lin- (CD3- CD19- CD14- CD56-) HLA-DR+ · cDC CD11c+ · pDC CD123+ (cDC1 CD141+)
+    blurb: Dendritic cells are what is left of HLA-DR+ after the lineage negatives, split into conventional (CD11c) and plasmacytoid (CD123).
+    markers:
+      - {target: HLA-DR, abundance: very_high}
+      - {target: CD11c, abundance: medium}
+      - {target: CD123, abundance: medium}
+      - {target: CD3ε, abundance: very_high, role: recommended, negative: true}
+      - {target: CD19, abundance: high, role: recommended, negative: true}
+      - {target: CD14, abundance: high, role: recommended, negative: true}
+      - {target: CD56, abundance: medium, role: recommended, negative: true}
+      - {target: CD141, abundance: low, role: optional}
+
+  - id: ct-human-pdc
+    name: Plasmacytoid dendritic cells (pDC)
+    application: suspension
+    species: [human]
+    sample_types: [pbmc, whole_blood, dissociated_tumour]
+    category: celltype
+    aliases: [pDC, plasmacytoid, BDCA2]
+    definition: Lin- HLA-DR+ CD123+ CD303+ CD11c-
+    blurb: pDC by CD123 and BDCA-2; CD11c separates them from conventional DCs.
+    markers:
+      - {target: CD123, abundance: medium}
+      - {target: CD303/BDCA2, abundance: medium}
+      - {target: HLA-DR, abundance: very_high}
+      - {target: CD11c, abundance: medium, role: recommended, negative: true}
+
+  - id: ct-human-macrophages
+    name: Macrophages
+    application: both
+    species: [human]
+    sample_types: [dissociated_tumour, ffpe, frozen]
+    category: celltype
+    aliases: [macrophage, TAM, tumour-associated macrophages, M2 macrophages, CD68 CD163]
+    definition: CD68+ (CD163+ CD206+ M2-like)
+    blurb: Tissue macrophages; CD163 / CD206 flag the M2-like, tumour-associated phenotype.
+    markers:
+      - {target: CD68, abundance: high}
+      - {target: CD163/M130, abundance: medium}
+      - {target: CD206/MMR, abundance: medium, role: recommended}
+
+  - id: ct-human-neutrophils
+    name: Neutrophils
+    application: both
+    species: [human]
+    sample_types: [whole_blood, dissociated_tumour, ffpe]
+    category: celltype
+    aliases: [neutrophil, granulocytes, PMN, CD66b]
+    definition: CD66b+ CD15+ CD16+ (HLA-DR- CD14-)
+    blurb: Neutrophils in whole blood or tissue; absent from Ficoll PBMC unless low-density.
+    markers:
+      - {target: CD66b, abundance: high}
+      - {target: CD15, abundance: high}
+      - {target: CD16, abundance: high, role: recommended}
+      - {target: CD14, abundance: high, role: recommended, negative: true}
+
+  - id: ct-human-eosinophils
+    name: Eosinophils
+    application: suspension
+    species: [human]
+    sample_types: [whole_blood]
+    category: celltype
+    aliases: [eosinophil, Siglec-8]
+    definition: CD66b+ Siglec-8+ CD16- (CRTH2+)
+    blurb: Eosinophils by Siglec-8 on CD66b+ granulocytes; CD16 excludes neutrophils.
+    markers:
+      - {target: CD66b, abundance: high}
+      - {target: Siglec-8, abundance: medium}
+      - {target: CD16, abundance: high, role: recommended, negative: true}
+      - {target: CD294/CRTH2, abundance: medium, role: optional}
+
+  - id: ct-human-basophils
+    name: Basophils
+    application: suspension
+    species: [human]
+    sample_types: [whole_blood, pbmc]
+    category: celltype
+    aliases: [basophil, FceRI]
+    definition: FcεRI+ CD123+ HLA-DR- (CRTH2+ CD3-)
+    blurb: Basophils by FcεRI and CD123 without HLA-DR (which separates them from pDC).
+    markers:
+      - {target: FcεRI, abundance: medium}
+      - {target: CD123, abundance: medium}
+      - {target: HLA-DR, abundance: very_high, role: recommended, negative: true}
+      - {target: CD294/CRTH2, abundance: medium, role: optional}
+
+  - id: ct-human-mast
+    name: Mast cells
+    application: suspension
+    species: [human]
+    sample_types: [dissociated_tumour, bone_marrow]
+    category: celltype
+    aliases: [mast cell, c-kit FceRI]
+    definition: CD117+ FcεRI+ (CD34- CD3-)
+    blurb: Tissue mast cells by c-kit and FcεRI.
+    markers:
+      - {target: CD117/c-kit, abundance: high}
+      - {target: FcεRI, abundance: medium}
+
+  - id: ct-human-hspc
+    name: Haematopoietic stem / progenitor cells
+    application: suspension
+    species: [human]
+    sample_types: [bone_marrow, pbmc, whole_blood]
+    category: celltype
+    aliases: [HSPC, HSC, stem cells, CD34 progenitors]
+    definition: Lin- CD34+ (CD38- HSC · CD38+ progenitors) CD117+
+    blurb: CD34+ progenitors, with CD38 to separate the stem-cell fraction.
+    markers:
+      - {target: CD34, abundance: medium}
+      - {target: CD38, abundance: high}
+      - {target: CD117/c-kit, abundance: medium, role: recommended}
+      - {target: CD45, abundance: very_high, role: recommended}
+
+  - id: ct-human-platelets-rbc
+    name: Platelets and red cells (exclusion)
+    application: suspension
+    species: [human]
+    sample_types: [whole_blood, pbmc, bone_marrow]
+    category: celltype
+    aliases: [platelets, red blood cells, RBC, erythrocytes, CD41 CD235]
+    definition: platelets CD41+ CD61+ · erythrocytes CD235ab+ (CD45-)
+    blurb: Not immune cells, but worth a channel each so platelet-bound and red-cell events can be gated out.
+    markers:
+      - {target: CD41, abundance: high}
+      - {target: CD235ab, abundance: very_high}
+      - {target: CD61, abundance: high, role: optional}
+
+  # ---------------- Human tissue (IMC) ----------------
+  - id: ct-human-epithelial
+    name: Epithelial / tumour cells
+    application: imaging
+    species: [human]
+    sample_types: [ffpe, frozen]
+    category: celltype
+    aliases: [epithelium, tumour cells, carcinoma, cytokeratin, EpCAM]
+    definition: Pan-CK+ E-cadherin+ (EpCAM+)
+    blurb: Carcinoma and normal epithelium.
+    markers:
+      - {target: Pan-Cytokeratin, abundance: very_high}
+      - {target: E-Cadherin, abundance: high}
+      - {target: CD326/EpCAM, abundance: high, role: optional}
+
+  - id: ct-human-endothelial
+    name: Endothelial cells / vessels
+    application: imaging
+    species: [human]
+    sample_types: [ffpe, frozen]
+    category: celltype
+    aliases: [endothelium, blood vessels, vasculature, CD31]
+    definition: CD31+ (CD34+) · lymphatics Podoplanin+
+    blurb: Blood vessels by CD31 / CD34; Podoplanin adds lymphatic vessels.
+    markers:
+      - {target: CD31/PECAM-1, abundance: medium}
+      - {target: CD34, abundance: medium, role: recommended}
+      - {target: Podoplanin, abundance: medium, role: optional}
+
+  - id: ct-human-fibroblasts
+    name: Fibroblasts / CAFs
+    application: imaging
+    species: [human]
+    sample_types: [ffpe, frozen]
+    category: celltype
+    aliases: [fibroblast, CAF, cancer-associated fibroblasts, stroma, myofibroblasts]
+    definition: Vimentin+ αSMA+ (FAP+) Pan-CK-
+    blurb: Stromal fibroblasts and activated CAFs.
+    markers:
+      - {target: Vimentin, abundance: very_high}
+      - {target: α-Smooth Muscle Actin, abundance: very_high}
+      - {target: FAP, abundance: medium, role: recommended}
+      - {target: Pan-Cytokeratin, abundance: very_high, role: recommended, negative: true}
+
+  # ---------------- Mouse ----------------
+  - id: ct-mouse-t-cells
+    name: T cells (mouse)
+    application: both
+    species: [mouse]
+    sample_types: [spleen, blood, bone_marrow, dissociated_tumour, ffpe, frozen]
+    category: celltype
+    aliases: [T cell, T lymphocytes, CD3 T cells]
+    definition: CD3+ (TCRβ+) · CD4+ · CD8+
+    blurb: T cells and the CD4 / CD8 split.
+    markers:
+      - {target: CD3ε, abundance: high}
+      - {target: CD4, abundance: high}
+      - {target: CD8a, abundance: high}
+      - {target: TCRβ, abundance: high, role: optional}
+
+  - id: ct-mouse-treg
+    name: Regulatory T cells (mouse)
+    application: both
+    species: [mouse]
+    sample_types: [spleen, blood, dissociated_tumour, ffpe]
+    category: celltype
+    aliases: [Treg, Tregs, regulatory T, FoxP3 T cells]
+    definition: CD3+ CD4+ CD25+ FoxP3+
+    blurb: Murine Tregs by CD25 and FoxP3.
+    markers:
+      - {target: CD4, abundance: high}
+      - {target: CD25, abundance: low}
+      - {target: FoxP3, abundance: low}
+
+  - id: ct-mouse-t-memory
+    name: Naive / memory T cells (mouse)
+    application: suspension
+    species: [mouse]
+    sample_types: [spleen, blood, dissociated_tumour]
+    category: celltype
+    aliases: [naive T cells, memory T cells, CD44 CD62L]
+    definition: naive CD44lo CD62L+ · central memory CD44hi CD62L+ · effector memory CD44hi CD62L-
+    blurb: CD44 and CD62L split murine naive, central-memory and effector-memory T cells.
+    markers:
+      - {target: CD44, abundance: high}
+      - {target: CD62L, abundance: high}
+
+  - id: ct-mouse-b-cells
+    name: B cells (mouse)
+    application: both
+    species: [mouse]
+    sample_types: [spleen, blood, bone_marrow, dissociated_tumour, ffpe, frozen]
+    category: celltype
+    aliases: [B cell, B lymphocytes, B220]
+    definition: CD19+ B220+ CD3-
+    blurb: Murine B cells by CD19 and B220.
+    markers:
+      - {target: CD19, abundance: high}
+      - {target: CD45R/B220, abundance: very_high}
+      - {target: CD3ε, abundance: high, role: recommended, negative: true}
+
+  - id: ct-mouse-nk
+    name: NK cells (mouse)
+    application: suspension
+    species: [mouse]
+    sample_types: [spleen, blood, dissociated_tumour]
+    category: celltype
+    aliases: [NK cell, natural killer cells, NK1.1, NKp46]
+    definition: CD3- NK1.1+ NKp46+ (C57BL/6; use NKp46 on BALB/c)
+    blurb: NK cells by NK1.1 (B6) or NKp46 (all strains); CD3 excludes NKT.
+    markers:
+      - {target: NK1.1, abundance: medium}
+      - {target: CD335/NKp46, abundance: medium, role: recommended}
+      - {target: CD3ε, abundance: high, role: recommended, negative: true}
+
+  - id: ct-mouse-monocytes
+    name: Monocytes (mouse)
+    application: suspension
+    species: [mouse]
+    sample_types: [spleen, blood, bone_marrow, dissociated_tumour]
+    category: celltype
+    aliases: [monocyte, Ly6C monocytes, inflammatory monocytes]
+    definition: CD11b+ Ly-6C hi (classical) / Ly-6C lo (non-classical) Ly-6G-
+    blurb: Murine monocyte subsets by Ly-6C, with Ly-6G to exclude neutrophils.
+    markers:
+      - {target: CD11b/Mac-1, abundance: high}
+      - {target: Ly-6C, abundance: high}
+      - {target: Ly-6G, abundance: very_high, role: recommended, negative: true}
+      - {target: CD115, abundance: medium, role: optional}
+
+  - id: ct-mouse-neutrophils
+    name: Neutrophils (mouse)
+    application: both
+    species: [mouse]
+    sample_types: [spleen, blood, bone_marrow, dissociated_tumour, ffpe]
+    category: celltype
+    aliases: [neutrophil, granulocytes, Ly6G, PMN]
+    definition: CD11b+ Ly-6G+
+    blurb: Murine neutrophils by Ly-6G.
+    markers:
+      - {target: CD11b/Mac-1, abundance: high}
+      - {target: Ly-6G, abundance: very_high}
+
+  - id: ct-mouse-macrophages
+    name: Macrophages (mouse)
+    application: both
+    species: [mouse]
+    sample_types: [spleen, dissociated_tumour, ffpe, frozen]
+    category: celltype
+    aliases: [macrophage, F4/80, TAM]
+    definition: CD11b+ F4/80+ (CD64+ · CD206+ M2-like)
+    blurb: Murine macrophages by F4/80; CD206 flags the M2-like phenotype.
+    markers:
+      - {target: F4/80, abundance: medium}
+      - {target: CD11b/Mac-1, abundance: high}
+      - {target: CD206/MMR, abundance: medium, role: recommended}
+      - {target: CD64, abundance: medium, role: optional}
+
+  - id: ct-mouse-dc
+    name: Dendritic cells (mouse)
+    application: suspension
+    species: [mouse]
+    sample_types: [spleen, dissociated_tumour]
+    category: celltype
+    aliases: [dendritic cell, DC, cDC1, cDC2, XCR1]
+    definition: CD11c+ MHC-II+ (cDC1 XCR1+ · cDC2 CD11b+) F4/80-
+    blurb: Conventional DCs by CD11c and MHC class II; XCR1 marks cDC1.
+    markers:
+      - {target: CD11c, abundance: medium}
+      - {target: MHC Class II, abundance: very_high}
+      - {target: XCR1, abundance: low, role: recommended}
+      - {target: F4/80, abundance: medium, role: recommended, negative: true}
+
+  - id: ct-mouse-eosinophils
+    name: Eosinophils (mouse)
+    application: suspension
+    species: [mouse]
+    sample_types: [blood, spleen, bone_marrow, dissociated_tumour]
+    category: celltype
+    aliases: [eosinophil, Siglec-F]
+    definition: CD11b+ Siglec-F+ Ly-6G-
+    blurb: Murine eosinophils by Siglec-F.
+    markers:
+      - {target: CD11b/Mac-1, abundance: high}
+      - {target: CD170/Siglec-F, abundance: high}
+      - {target: Ly-6G, abundance: very_high, role: recommended, negative: true}
+
+  - id: ct-mouse-hspc
+    name: Stem / progenitor cells (mouse LSK)
+    application: suspension
+    species: [mouse]
+    sample_types: [bone_marrow]
+    category: celltype
+    aliases: [LSK, HSC, HSPC, Sca-1 c-kit]
+    definition: Lin- Sca-1+ c-kit+
+    blurb: The LSK gate for murine bone-marrow progenitors.
+    markers:
+      - {target: Sca-1/Ly-6A/E, abundance: high}
+      - {target: CD117/c-kit, abundance: high}
+      - {target: TER-119, abundance: very_high, role: recommended, negative: true}

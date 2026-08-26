@@ -25,7 +25,7 @@ web/                       Next.js 16 static export (Tailwind, Zustand, engine i
 .github/workflows/         pages.yml: test engine, build web, deploy to GitHub Pages
 ```
 
-Tests: 26 pytest (etl), 12 vitest (engine), 21 vitest + 3 Playwright (web) - see 3c. All work committed on `master`.
+Tests: 30 pytest (etl), 12 vitest (engine), 27 vitest + 4 Playwright (web) - see 3c. All work committed on `master`.
 
 ---
 
@@ -51,6 +51,7 @@ cd etl
 uv run pd3-etl instruments   # -> data/build/instruments.json
 uv run pd3-etl catalog       # -> data/build/catalog.json
 uv run pd3-etl modules       # -> data/build/modules.json  (needs catalog.json)
+uv run pd3-etl pubs          # -> data/build/publications.json (needs catalog.json + the local literature DB, see 2.6)
 uv run pytest
 ```
 Order matters: `modules` resolves kit rows against the catalogue. `python` is not on PATH on the dev machine — always `uv run`.
@@ -108,7 +109,9 @@ Normalisation rules (`names.py`):
 
 ### 2.5 `modules.json` (464 KB) — `etl/pd3_etl/modules.py`
 
-76 modules: 62 SBT kits (36 suspension, 26 IMC) + 14 curated (`data/curated/modules/curated-v0.yaml`).
+116 modules: 62 SBT kits (36 suspension, 26 IMC) + 14 curated (`data/curated/modules/curated-v0.yaml`) + 40 cell-type
+modules (`data/curated/modules/cell-types.yaml`, category `celltype`: 27 human, 13 mouse; 1-4 defining markers each plus
+lineage negatives marked `negative: true` → `polarity: "neg"`, a `definition` in gating shorthand and search `aliases`).
 Kit rows: 640, of which 635 resolve to a catalogue target and 603 to an exact catalogue conjugate.
 The 34 non-matching rows are listed in `docs/review/kit-rows-not-in-catalogue.csv` (kit-only conjugates — MDIPA alone has ~10,
 so the BOM must treat MDIPA as a single SKU).
@@ -118,7 +121,8 @@ modules[] { id, slug, name, source sbt_kit|curated, kit{pdv2_kit_id, pdv2_experi
             application suspension|imaging|both, species[], instruments[], sample_types[], category, blurb, featured, hidden,
             markers[ { target_id, target_name, raw_target, kind antibody|segmentation, role required|recommended|optional,
                        clone, metal, mass, signal, tolerance, st_source titrated|default|kit_pill|curated,
-                       abundance_level, kit_only, custom, in_catalogue, conjugate_id, catalogue_metals[], note? } ] }
+                       abundance_level, kit_only, custom, in_catalogue, conjugate_id, catalogue_metals[], note?, polarity pos|neg } ],
+            aliases[], definition|null }
 ```
 
 * Abundance level from titrated signal: `< 60 low`, `< 150 medium`, `< 400 high`, else `very_high`.
@@ -128,6 +132,17 @@ modules[] { id, slug, name, source sbt_kit|curated, kit{pdv2_kit_id, pdv2_experi
 * Curated targets not sold by SBT (TOX, Helios, NKG2A/D, HK2, IgA, CD79B) stay in modules with `in_catalogue: false`.
 
 Review sheets: `docs/review/targets-aliases.csv` (every merge), `docs/review/modules.csv`, `docs/review/kit-rows-not-in-catalogue.csv`.
+
+### 2.6 `publications.json` (925 KB) — `etl/pd3_etl/pubs.py`
+
+Papers per catalogue target from a local literature database: `biblionautica.sqlite` (OpenAlex-derived; tables `works`
+with title/abstract, `venues`, `work_techniques` tagging each paper cytof / imc / mihc / …). Path from `PD3_PUBS_DB`, default
+Tom's copy under `notes/personal/megalodon/artifacts/`; when the file is absent the command leaves the committed JSON alone
+(CI never needs the DB). Only `cytof` and `imc` papers are scanned (5,437). Matching: whole-word regex over title + abstract
+built from the target name and aliases (`search_terms`: split on `/` unless the tail is numeric, drop bracket qualifiers,
+stoplist for words like Fas / kit). 312 of 384 targets hit; per target the JSON keeps `n`, `by_technique` and the top 12
+works by citations (`id`, `doi`, `title`, `year`, `venue`, `cited`, `techniques`). It is *abstract-level*: "mentions CD8",
+not "used clone RPA-T8 on 146Nd". The UI fetches it lazily (first search-box focus / row drawer open).
 
 ---
 
@@ -247,12 +262,15 @@ app/            layout + page (renders <Designer/>)
 components/     Designer (stepper + sidebar layout), SetupStep, BuildStep, BalanceStep (+HeatMap), MassStrip, OrderStep,
                 PanelSidebar (rows: abundance pill, metal chip after Balance, clone/lock drawer), ui (Button/Pill/Card/Tile)
 lib/types.ts    slim bundle shapes; PanelRow {id, targetId, name, level, clone, custom, locked, moduleIds}; Setup
-lib/data.ts     loadBundles, Index (targets/conjugates/modules, normKey search, cloneOptions, modulesFor, suggestNext),
+lib/data.ts     loadBundles, loadPublications (lazy), Index (targets/conjugates/modules, normKey search, searchModules
+                for cell types by name/alias, cloneOptions, modulesFor, suggestNext),
                 rowSpec (PanelRow -> engine RowSpec), reservedRoles, channelBudget, SPECIES / SAMPLE_TYPES
 lib/store.ts    Zustand store: setup, rows, step, balanced, result; every mutation re-writes the URL hash and, once the
                 user has balanced, re-runs the engine (120 ms debounce)
 lib/engine-client.ts + workers/balance.worker.ts   init(bundle) once, then balance/evaluate by request id
 lib/url.ts      state <-> base64url JSON in location.hash (shareable without an account)
+lib/saved.ts    localStorage: named saved panels (`pd3.savedPanels.v1`, newest first, same name replaces) and the auto-draft
+                (`pd3.draft.v1`, written on every change; restored on load when there is no share hash, with a banner)
 lib/bom.ts      BOM lines (SKU + format + qty from sample count), accessories from reserved roles, CSV
 scripts/smoke.ts   headless SPEC 6.4 walk-through: `../engine/node_modules/.bin/tsx scripts/smoke.ts`
 ```
@@ -272,8 +290,13 @@ Build notes: `@pd3/engine` is a `file:../engine` dependency resolved from TypeSc
 does not map `./x.js` → `./x.ts`). `NEXT_PUBLIC_BASE_PATH` (set to `/<repo>` by the Pages workflow) prefixes both routes and
 data fetches. Deployment: `.github/workflows/pages.yml` runs engine tests, builds, and publishes `web/out` on push to master.
 
-Not yet in the UI: exclusivity groups (engine supports them), pdv2 CSV import/export, prices/cart/quote, login/FAS mode,
-"start from" gallery of saved panels.
+Build step search order: a query that exactly matches a module name/alias ("NK cells", "pDC") lists cell-type modules
+first and Enter adds the module; otherwise antibodies come first ("CD4" + Enter adds CD4, not "CD4 helper T cells").
+Module cards say "3 of 4 already in panel" / "all targets already in panel" (with a *Tag as module* button) instead of
+"Add 0 markers".
+
+Not yet in the UI: exclusivity groups (engine supports them), pdv2 CSV import/export, prices/cart/quote, login/FAS mode
+(saved panels are localStorage-only until then).
 
 ---
 
@@ -281,10 +304,10 @@ Not yet in the UI: exclusivity groups (engine supports them), pdv2 CSV import/ex
 
 | Layer | Tool | Where | Run |
 |---|---|---|---|
-| ETL | pytest (26) | `etl/tests/` | `cd etl && uv run pytest` |
+| ETL | pytest (30) | `etl/tests/` — incl. `test_pubs.py` (term builder + in-memory SQLite build) | `cd etl && uv run pytest` |
 | Engine | vitest (12) | `engine/test/` | `cd engine && npm test` |
-| Web unit | vitest (21) | `web/test/` — data (search, clone defaulting, modules, rowSpec, budget), url, bom, store | `cd web && npm test` |
-| Web e2e | @playwright/test (3) | `web/e2e/designer.spec.ts` — SPEC 6.4 Priya scenario, suspension backbone, custom-conjugation search | `cd web && npm run e2e` (starts `next dev` itself) |
+| Web unit | vitest (27) | `web/test/` — data (search, clone defaulting, modules, cell types + searchModules, rowSpec, budget), url, bom, store, saved (fake window/localStorage) | `cd web && npm test` |
+| Web e2e | @playwright/test (4) | `web/e2e/designer.spec.ts` — SPEC 6.4 Priya scenario, suspension backbone, custom-conjugation search, cell-type search + overlap copy + save/draft restore + papers | `cd web && npm run e2e` (starts `next dev` itself) |
 | Kit reproduction | script | `engine/scripts/validate-kits.ts` | `cd engine && npm run validate` |
 
 Root `package.json` wraps them: `npm test` (etl + engine + web unit), `npm run e2e`, `npm run typecheck`, `npm run validate`,
@@ -320,6 +343,7 @@ Phase status below; the full backlog with rationale lives in [ROADMAP.md](../ROA
 | 0 | Instrument tables, catalogue, modules ETL; review sheets | done |
 | 1 | Engine: PO model, optimiser, explanations, kit validation | done |
 | 2 | `web/` Next.js static export — Setup → Build → Balance → Order; engine in a Web Worker; Zustand; Tailwind | done (alpha) |
-| 2b | GitHub Actions → GitHub Pages demo for SBT stakeholders | workflow in place; needs a GitHub remote + Pages enabled |
+| 2b | GitHub Actions → GitHub Pages demo for SBT stakeholders | live: https://thomas-villani.github.io/sbt-panel-designer/ |
+| 2c | Cell-type modules + search, clearer module overlap copy, localStorage saved panels / draft, abstract-level publications per marker | done 2026-08-25 |
 | 3 | pdv2 CSV import/export (SPEC §9b), BOM / quote object (MDIPA as one SKU), IMC literature prior, exclusivity groups from lineage | planned |
 | 4 | Azure production deploy; WooCommerce / purchasing / SFDC integration — only after UI sign-off | deferred |

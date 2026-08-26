@@ -44,12 +44,23 @@ write("modules.json", {
   modules: mods.modules.filter((m) => !m.hidden).map((m) => ({
     id: m.id, name: m.name, source: m.source, application: m.application, species: m.species, instruments: m.instruments,
     sample_types: m.sample_types, category: m.category, blurb: m.blurb, featured: m.featured,
+    aliases: m.aliases ?? [], definition: m.definition ?? null,
     kit: m.kit ? { pdv2_kit_id: m.kit.pdv2_kit_id, raw_name: m.kit.raw_name } : null,
     markers: m.markers.map((k) => ({
       target_id: k.target_id, target_name: k.target_name, kind: k.kind, role: k.role, clone: k.clone, metal: k.metal, mass: k.mass,
       signal: k.signal, tolerance: k.tolerance, st_source: k.st_source, abundance_level: k.abundance_level,
       kit_only: k.kit_only, custom: k.custom, in_catalogue: k.in_catalogue, conjugate_id: k.conjugate_id,
-      catalogue_metals: k.catalogue_metals, note: k.note ?? null,
+      catalogue_metals: k.catalogue_metals, note: k.note ?? null, polarity: k.polarity ?? "pos",
     })),
   })),
 });
+
+// Publications per target (optional: built from a local literature DB, see etl/pd3_etl/pubs.py). Loaded lazily by the UI.
+import { existsSync } from "node:fs";
+if (existsSync(resolve(SRC, "publications.json"))) {
+  const pubs = read("publications.json");
+  write("publications.json", pubs);
+} else {
+  write("publications.json", { version: null, source: null, stats: {}, targets: {} });
+  console.log("publications.json: no data/build/publications.json, wrote empty stub");
+}

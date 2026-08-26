@@ -1,7 +1,7 @@
 /** Bundle loading, indexing, clone defaulting and search. Pure functions over the slim bundles. */
 import type { RowSpec } from "@pd3/engine";
 import type {
-  AbundanceLevel, Bundles, Catalog, Conjugate, InstrumentBundle, PanelModule, PanelRow, Setup, Species, Target,
+  AbundanceLevel, Bundles, Catalog, Conjugate, InstrumentBundle, PanelModule, PanelRow, Publications, Setup, Species, Target,
 } from "./types";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -16,6 +16,17 @@ export async function loadBundles(): Promise<Bundles> {
     get<InstrumentBundle>("instruments.json"), get<Catalog>("catalog.json"), get<{ modules: PanelModule[] }>("modules.json"),
   ]);
   return { instruments, catalog, modules: mods.modules };
+}
+
+/** Papers per target: ~1 MB, fetched only when the UI first needs it. Missing file = no badges. */
+export async function loadPublications(): Promise<Publications> {
+  try {
+    const r = await fetch(`${BASE}/data/publications.json`);
+    if (!r.ok) throw new Error(String(r.status));
+    return r.json();
+  } catch {
+    return { version: null, source: null, stats: {}, targets: {} };
+  }
 }
 
 const GREEK: Record<string, string> = { α: "a", β: "b", γ: "g", δ: "d", ε: "e", κ: "k", λ: "l", μ: "u", ζ: "z", η: "h" };
@@ -80,6 +91,20 @@ export class Index {
     }
     return [...scored.entries()].sort((a, b) => b[1] - a[1] || this.targetsById.get(a[0])!.name.localeCompare(this.targetsById.get(b[0])!.name))
       .slice(0, limit).map(([id]) => this.targetsById.get(id)!);
+  }
+
+  /** Modules whose name or aliases match the query ("dendritic" finds Dendritic cells), best match first. */
+  searchModules(query: string, setup: Setup, limit = 4): PanelModule[] {
+    const q = normKey(query);
+    if (q.length < 3) return [];
+    const scored: [PanelModule, number][] = [];
+    for (const m of this.modulesFor(setup)) {
+      const keys = [m.name, ...m.aliases].map(normKey);
+      let s = 0;
+      for (const k of keys) s = Math.max(s, k === q ? 4 : k.startsWith(q) ? 3 : q.startsWith(k) && k.length >= 4 ? 2 : k.includes(q) ? 1 : 0);
+      if (s) scored.push([m, s + (m.category === "celltype" ? 0.5 : 0)]);
+    }
+    return scored.sort((a, b) => b[1] - a[1] || a[0].name.localeCompare(b[0].name)).slice(0, limit).map(([m]) => m);
   }
 
   /** Modules relevant to the setup, featured first. */

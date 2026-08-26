@@ -62,6 +62,7 @@ export interface ModuleMarker {
   conjugate_id: string | null;
   catalogue_metals: string[];
   note: string | null;
+  polarity: "pos" | "neg"; // neg: a lineage negative carried so the gate is clean (cell-type modules)
 }
 
 export interface PanelModule {
@@ -75,9 +76,16 @@ export interface PanelModule {
   category: string;
   blurb: string;
   featured: boolean;
+  aliases: string[]; // extra search terms ("Dendritic cell", "pDC")
+  definition: string | null; // gating shorthand for cell-type modules ("CD3+ CD4+ CD8-")
   kit: { pdv2_kit_id: number | string; raw_name: string } | null;
   markers: ModuleMarker[];
 }
+
+/** Papers per target from the literature DB (public/data/publications.json, loaded on demand). */
+export interface PubWork { id: string; doi: string | null; title: string; year: number | null; venue: string | null; cited: number; techniques: string[] }
+export interface PubTarget { n: number; by_technique: Record<string, number>; works: PubWork[] }
+export interface Publications { version: string | null; source: { db: string; techniques: string[]; works_scanned: number } | null; stats: Record<string, unknown>; targets: Record<string, PubTarget> }
 
 export interface Bundles {
   instruments: InstrumentBundle;

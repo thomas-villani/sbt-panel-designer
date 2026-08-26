@@ -2,10 +2,11 @@
 /** Panel state. Rows hold biology (target, level, clone, lock); metals only ever live in `result`. */
 import { create } from "zustand";
 import type { Fix, Result } from "@pd3/engine";
-import { Index, channelBudget, defaultInstrument, levelFromSignal, reservedRoles, rowSpec, titratedST } from "./data";
+import { Index, channelBudget, defaultInstrument, levelFromSignal, loadPublications, reservedRoles, rowSpec, titratedST } from "./data";
 import { balanceInWorker, initEngine } from "./engine-client";
-import type { AbundanceLevel, Bundles, PanelModule, PanelRow, Setup } from "./types";
-import { decodeState, writeHash } from "./url";
+import { clearDraft, deleteSaved, listSaved, loadSaved, readDraft, savePanel, writeDraft, type SavedPanel } from "./saved";
+import type { AbundanceLevel, Bundles, PanelModule, PanelRow, Publications, Setup } from "./types";
+import { decodeState, writeHash, type UrlState } from "./url";
 
 export type Step = "setup" | "build" | "balance" | "order";
 
@@ -20,8 +21,16 @@ interface State {
   result: Result | null;
   engineError: string | null;
   nSamples: number;
+  saved: SavedPanel[]; // localStorage, see lib/saved.ts
+  restoredDraft: boolean; // the panel on screen came from the last session's draft, not a share link
+  pubs: Publications | null; // papers per target, loaded on demand
 
   init: (b: Bundles) => void;
+  savePanel: (name: string) => void;
+  loadSavedPanel: (id: string) => void;
+  deleteSavedPanel: (id: string) => void;
+  dismissRestored: () => void;
+  ensurePubs: () => void;
   setStep: (s: Step) => void;
   setSetup: (patch: Partial<Setup>) => void;
   addModule: (m: PanelModule) => void;
@@ -45,9 +54,19 @@ const DEFAULT_SETUP: Setup = {
 let timer: ReturnType<typeof setTimeout> | null = null;
 
 export const useStore = create<State>((set, get) => {
-  const persist = () => {
+  const snapshot = (): UrlState => {
     const { setup, rows, nSamples, balanced } = get();
-    writeHash({ setup, rows, nSamples, balanced });
+    return { setup, rows, nSamples, balanced };
+  };
+  const persist = () => {
+    const st = snapshot();
+    writeHash(st);
+    writeDraft(st);
+  };
+  const restore = (st: UrlState, extra: Partial<State> = {}) => {
+    set({ setup: st.setup, rows: st.rows, nSamples: st.nSamples, balanced: st.balanced, result: null, step: st.rows.length ? (st.balanced ? "balance" : "build") : "setup", ...extra });
+    persist();
+    if (st.balanced) void get().balanceNow();
   };
   const touch = () => {
     persist();
@@ -74,16 +93,32 @@ export const useStore = create<State>((set, get) => {
 
   return {
     idx: null, loadError: null, setup: DEFAULT_SETUP, rows: [], step: "setup", balanced: false, balancing: false, result: null,
-    engineError: null, nSamples: 20,
+    engineError: null, nSamples: 20, saved: [], restoredDraft: false, pubs: null,
 
     init: (b) => {
       const idx = new Index(b);
       initEngine(b.instruments);
+      set({ idx, saved: listSaved() });
       const fromUrl = typeof window !== "undefined" ? decodeState(window.location.hash) : null;
-      if (fromUrl) {
-        set({ idx, setup: fromUrl.setup, rows: fromUrl.rows, nSamples: fromUrl.nSamples, balanced: fromUrl.balanced, step: fromUrl.rows.length ? (fromUrl.balanced ? "balance" : "build") : "setup" });
-        if (fromUrl.balanced) void get().balanceNow();
-      } else set({ idx });
+      const draft = fromUrl ? null : readDraft();
+      if (fromUrl) restore(fromUrl);
+      else if (draft && draft.rows.length) restore(draft, { restoredDraft: true });
+    },
+    savePanel: (name) => {
+      if (!name.trim()) return;
+      savePanel(name, snapshot());
+      set({ saved: listSaved() });
+    },
+    loadSavedPanel: (id) => {
+      const st = loadSaved(id);
+      if (st) restore(st, { restoredDraft: false });
+    },
+    deleteSavedPanel: (id) => { deleteSaved(id); set({ saved: listSaved() }); },
+    dismissRestored: () => set({ restoredDraft: false }),
+    ensurePubs: () => {
+      if (get().pubs || typeof window === "undefined") return;
+      set({ pubs: { version: null, source: null, stats: {}, targets: {} } }); // placeholder while loading
+      void loadPublications().then((pubs) => set({ pubs }));
     },
     setStep: (step) => set({ step }),
     setSetup: (patch) => {
@@ -169,7 +204,7 @@ export const useStore = create<State>((set, get) => {
       }
     },
     setNSamples: (n) => { set({ nSamples: Math.max(1, Math.round(n) || 1) }); persist(); },
-    clearPanel: () => { set({ rows: [], result: null, balanced: false }); persist(); },
+    clearPanel: () => { set({ rows: [], result: null, balanced: false, restoredDraft: false }); clearDraft(); persist(); },
   };
 });
 

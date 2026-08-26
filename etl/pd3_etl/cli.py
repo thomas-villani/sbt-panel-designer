@@ -1,8 +1,8 @@
 import sys
 
-from . import catalog, instruments, modules
+from . import catalog, instruments, modules, pubs
 
-COMMANDS = {"instruments": instruments.main, "catalog": catalog.main, "modules": modules.main}
+COMMANDS = {"instruments": instruments.main, "catalog": catalog.main, "modules": modules.main, "pubs": pubs.main}
 
 
 def main(argv=None):
