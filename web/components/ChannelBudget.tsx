@@ -1,5 +1,5 @@
 "use client";
-/** The channel count, with its working shown: total detection channels minus every reservation. */
+/** The channel count, with its working shown: antibody channels plus scaffolding, minus every reservation. */
 import { useState } from "react";
 import { channelBudgetDetail, reservedRoles } from "@/lib/data";
 import { useStore } from "@/lib/store";

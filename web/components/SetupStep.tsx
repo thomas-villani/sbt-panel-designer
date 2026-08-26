@@ -38,7 +38,7 @@ export function SetupStep() {
       <section>
         <H2 hint="defaults to the current instrument for your application">Instrument</H2>
         <div className="flex flex-wrap gap-2">
-          {instruments.map((i) => <Tile key={i.id} label={i.name} sub={`${i.channels.filter((c) => c.usable).length} detection channels`} active={setup.instrumentId === i.id} onClick={() => setSetup({ instrumentId: i.id })} />)}
+          {instruments.map((i) => <Tile key={i.id} label={i.name} sub={`${i.channels.filter(antibodyChannel).length} antibody channels`} active={setup.instrumentId === i.id} onClick={() => setSetup({ instrumentId: i.id })} />)}
         </div>
       </section>
       <section>
