@@ -58,16 +58,23 @@ def test_channels_have_elements_and_classes(bundle):
         assert 191 in masses and 193 in masses  # Ir always present
 
 
-def test_cadmium_usable_only_on_suspension(bundle):
+def test_cadmium_is_an_opt_in_on_imaging(bundle):
+    """Cd is a catalogue metal on CyTOF. On IMC it is detectable but off SBT's conjugation list: usable only through the
+    `advanced` opt-in (antibody=False, assumed sensitivity from instruments.yaml), never an antibody channel by default."""
+    advanced = {m for g in bundle["advanced"]["imaging"] for m in g["masses"]}
+    assert advanced, "instruments.yaml should offer Cd as an opt-in for imaging"
     for inst in bundle["instruments"]:
-        usable_elements = {c["element"] for c in inst["channels"] if c["usable"]}
+        cd = [c for c in inst["channels"] if c["element"] == "Cd"]
         if inst["modality"] == "imaging":
-            assert "Cd" not in usable_elements
+            assert all(not c["antibody"] for c in cd)
+            assert {c["mass"] for c in cd if c["usable"]} == advanced
+            assert all(c["rel_sensitivity"] == 0.3 for c in cd if c["usable"])
         else:
-            assert "Cd" in usable_elements
+            assert any(c["usable"] and c["antibody"] for c in cd)
 
 
 def test_usable_channel_counts(bundle):
     counts = {i["id"]: sum(c["usable"] for c in i["channels"]) for i in bundle["instruments"]}
-    assert counts["hyperion_xti"] == 45   # 89, 115, 141-176, 193-198, 209 per the IMC curve (no 191, 113)
+    # 89, 115, 141-176, 193-198, 209 per the IMC curve (no 191, 113) = 45, plus the 7 opt-in Cd channels.
+    assert counts["hyperion_xti"] == 45 + len(bundle["advanced"]["imaging"][0]["masses"])
     assert counts["cytof_xt"] >= 60
