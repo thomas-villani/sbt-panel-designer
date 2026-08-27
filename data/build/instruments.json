@@ -6633,8 +6633,8 @@
      "mass": 106,
      "element": "Cd",
      "label": "106Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -6653,8 +6653,8 @@
      "mass": 110,
      "element": "Cd",
      "label": "110Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -6663,8 +6663,8 @@
      "mass": 111,
      "element": "Cd",
      "label": "111Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -6673,8 +6673,8 @@
      "mass": 112,
      "element": "Cd",
      "label": "112Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -6683,8 +6683,8 @@
      "mass": 113,
      "element": "Cd",
      "label": "113Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -6693,8 +6693,8 @@
      "mass": 114,
      "element": "Cd",
      "label": "114Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -6713,8 +6713,8 @@
      "mass": 116,
      "element": "Cd",
      "label": "116Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -7304,8 +7304,8 @@
      "mass": 106,
      "element": "Cd",
      "label": "106Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -7324,8 +7324,8 @@
      "mass": 110,
      "element": "Cd",
      "label": "110Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -7334,8 +7334,8 @@
      "mass": 111,
      "element": "Cd",
      "label": "111Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -7344,8 +7344,8 @@
      "mass": 112,
      "element": "Cd",
      "label": "112Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -7354,8 +7354,8 @@
      "mass": 113,
      "element": "Cd",
      "label": "113Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -7364,8 +7364,8 @@
      "mass": 114,
      "element": "Cd",
      "label": "114Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -7384,8 +7384,8 @@
      "mass": 116,
      "element": "Cd",
      "label": "116Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -7975,8 +7975,8 @@
      "mass": 106,
      "element": "Cd",
      "label": "106Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -7995,8 +7995,8 @@
      "mass": 110,
      "element": "Cd",
      "label": "110Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -8005,8 +8005,8 @@
      "mass": 111,
      "element": "Cd",
      "label": "111Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -8015,8 +8015,8 @@
      "mass": 112,
      "element": "Cd",
      "label": "112Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -8025,8 +8025,8 @@
      "mass": 113,
      "element": "Cd",
      "label": "113Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -8035,8 +8035,8 @@
      "mass": 114,
      "element": "Cd",
      "label": "114Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -8055,8 +8055,8 @@
      "mass": 116,
      "element": "Cd",
      "label": "116Cd",
-     "rel_sensitivity": null,
-     "usable": false,
+     "rel_sensitivity": 0.3,
+     "usable": true,
      "antibody": false,
      "in_po_matrix": true,
      "range_class": "bright_only"
@@ -8652,7 +8652,7 @@
    },
    {
     "role": "viability_cisplatin",
-    "label": "Viability (cisplatin)",
+    "label": "Viability (cisplatin, natural Pt)",
     "masses": [
      194,
      195,
@@ -8660,7 +8660,27 @@
     ],
     "default": true,
     "hard": false,
-    "note": "Any one Pt channel is enough; 195Pt is the usual choice. Alternative: the Rh103 intercalator."
+    "note": "Natural-abundance cisplatin lights 194, 195 and 198Pt; keep all three clear. Monoisotopic 195Pt or 198Pt cisplatin frees the other two."
+   },
+   {
+    "role": "viability_pt195",
+    "label": "Viability (monoisotopic 195Pt cisplatin)",
+    "masses": [
+     195
+    ],
+    "default": false,
+    "hard": false,
+    "note": "Cell-ID Cisplatin-195Pt: one channel; 194 and 198Pt stay free for antibodies."
+   },
+   {
+    "role": "viability_pt198",
+    "label": "Viability (monoisotopic 198Pt cisplatin)",
+    "masses": [
+     198
+    ],
+    "default": false,
+    "hard": false,
+    "note": "Cell-ID Cisplatin-198Pt: one channel; 194 and 195Pt stay free for antibodies."
    },
    {
     "role": "viability_rhodium",
@@ -8669,11 +8689,12 @@
      103
     ],
     "default": false,
-    "hard": false
+    "hard": false,
+    "note": "Cell-ID Intercalator-Rh: a DNA intercalator that only enters dead cells; uses 103Rh, no Pt channel."
    },
    {
     "role": "barcoding_pd",
-    "label": "Cell barcoding (Pd)",
+    "label": "Cell barcoding (Cell-ID 20-Plex Pd)",
     "masses": [
      102,
      104,
@@ -8683,7 +8704,8 @@
      110
     ],
     "default": false,
-    "hard": true
+    "hard": true,
+    "note": "Six Pd channels; 106Cd and 110Cd antibody channels are lost while barcoding."
    },
    {
     "role": "eq_beads",
@@ -8736,6 +8758,26 @@
     ],
     "default": false,
     "hard": true
+   }
+  ]
+ },
+ "advanced": {
+  "suspension": [],
+  "imaging": [
+   {
+    "id": "cadmium",
+    "label": "Cadmium (106-116Cd)",
+    "masses": [
+     106,
+     110,
+     111,
+     112,
+     113,
+     114,
+     116
+    ],
+    "rel_sensitivity": 0.3,
+    "note": "Not on the IMC conjugation list: some labs get Cd conjugates to work on tissue, but it is tissue-dependent. Validate on your own sections before relying on it."
    }
   ]
  },

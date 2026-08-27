@@ -64,3 +64,20 @@ describe("panelHealth", () => {
     expect(h.unlikely[0].why).toContain(mod.name);
   });
 });
+
+describe("kit-validated pairs", () => {
+  it("spill between two markers of one SBT kit, both on their kit metals, is filed as validated (unlikely), not as a to-do", () => {
+    const mdipa = idx.modulesById.get("direct-immune-profiling-assay-mdipa")!;
+    const rows: PanelRow[] = mdipa.markers.filter((k) => k.target_id && k.mass != null).map((k) => ({
+      id: k.target_id!, targetId: k.target_id, name: k.target_name, level: k.abundance_level ?? "medium", clone: k.clone, clonePinned: true, custom: false, locked: k.mass, moduleIds: [mdipa.id],
+    }));
+    const res = run(rows);
+    expect(res.unassigned).toEqual([]);
+    const h = panelHealth(idx, setup, rows, res);
+    expect(h.conflicts).toEqual([]);
+    expect(h.checks.filter((w) => w.code === "spillover")).toEqual([]);
+    expect(h.unlikely.length).toBeGreaterThan(0);
+    expect(h.unlikely[0].why).toMatch(/validated as a set/);
+    expect(h.tone).toBe("emerald");
+  });
+});

@@ -8,6 +8,7 @@ import { OrderStep } from "./OrderStep";
 import { PanelSidebar } from "./PanelSidebar";
 import { SetupStep } from "./SetupStep";
 import { cx } from "./ui";
+import pkg from "../package.json";
 
 const STEPS: { id: Step; label: string; n: number }[] = [
   { id: "setup", label: "Setup", n: 1 }, { id: "build", label: "Build", n: 2 }, { id: "balance", label: "Balance", n: 3 }, { id: "order", label: "Order", n: 4 },
@@ -36,7 +37,7 @@ export function Designer() {
   useEffect(() => { setSheet(false); }, [step]); // changing step closes the sheet
 
   if (error) return <div className="p-8 text-rose-700">Could not load the panel data: {error}</div>;
-  if (!idx) return <div className="p-8 text-slate-500">Loading catalogue…</div>;
+  if (!idx) return <div className="p-8 text-slate-600 dark:text-slate-400">Loading catalogue…</div>;
 
   const enabled = (s: Step) => s === "setup" || s === "build" || rows.length > 0 && (s === "balance" || balanced);
 
@@ -68,7 +69,7 @@ export function Designer() {
           <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-3 gap-y-1 px-4 py-1.5">
             <span>Picked up the panel you were working on last time ({rows.length} markers).</span>
             <button className="underline" onClick={dismissRestored}>Keep it</button>
-            <button className="underline" onClick={() => { clearPanel(); setStep("setup"); }}>Start fresh</button>
+            <button className="underline" onClick={clearPanel}>Start fresh</button>
           </div>
         </div>
       )}
@@ -81,6 +82,10 @@ export function Designer() {
         </main>
         <aside className="hidden lg:sticky lg:top-14 lg:block lg:self-start"><PanelSidebar /></aside>
       </div>
+
+      <footer className="mx-auto w-full max-w-7xl px-4 pb-24 text-xs text-slate-600 dark:text-slate-400 lg:pb-4" data-testid="footer">
+        Maxpar Panel Designer v{pkg.version} · demo on public data · <a className="underline" href="https://github.com/thomas-villani/sbt-panel-designer/blob/master/CHANGELOG.md" target="_blank" rel="noreferrer">what changed</a>
+      </footer>
 
       {/* Mobile: the panel lives in a bottom bar that expands into a sheet. */}
       <MobilePanelBar open={sheet} onToggle={() => setSheet((v) => !v)} />
@@ -110,7 +115,7 @@ function MobilePanelBar({ open, onToggle }: { open: boolean; onToggle: () => voi
           className="flex w-full items-center gap-3 px-4 py-3 text-left" data-testid="mobile-panel-toggle">
           <span className="min-w-0 flex-1">
             <span className="block text-sm font-semibold">Your panel · {rows.length} of ~{budget}</span>
-            <span className="block truncate text-xs text-slate-500">
+            <span className="block truncate text-xs text-slate-600 dark:text-slate-400">
               {rows.length === 0 ? "nothing added yet"
                 : balancing && !result ? "checking…"
                   : health && (balanced || health.tone !== "emerald") ? health.headline

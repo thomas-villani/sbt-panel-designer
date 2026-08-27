@@ -116,8 +116,12 @@ export interface Setup {
   species: Species;
   sampleType: SampleType;
   instrumentId: string;
-  viability: boolean; // suspension: cisplatin
+  viability: boolean; // suspension: a viability stain is in use
+  /** Which viability reagent: natural cisplatin (194/195/198Pt, default), monoisotopic 195Pt or 198Pt, or the Rh103 intercalator. */
+  viabilityMode?: "pt" | "pt195" | "pt198" | "rh103";
   barcoding: boolean; // suspension: Pd barcoding
+  /** Masses the user opted into although SBT lists no conjugation metal for them here (Cd on IMC). See bundle.advanced. */
+  extraMetals?: number[];
   segmentation: boolean; // imaging: Maxpar cell segmentation kit (3 Pt channels)
   /** Masses deliberately kept empty (an RPT nuclide, a reagent the designer does not model). Hard-reserved. */
   blocked: number[];

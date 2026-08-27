@@ -75,8 +75,10 @@ def build() -> dict:
         curve = curves[str(inst["sensitivity_curve"])]
         reserved_masses = {m for role in cfg["reserved"][inst["modality"]] for m in role["masses"]}
         conjugation = set(cfg["conjugation"][inst["modality"]]["masses"])
+        # Opt-in metals (Cd on IMC): detectable, off the conjugation list, sensitivity assumed when the curve has none.
+        advanced = {m: g for g in cfg.get("advanced", {}).get(inst["modality"], []) for m in g["masses"]}
         channels = []
-        for mass in sorted(set(po["recipients"]) | reserved_masses):
+        for mass in sorted(set(po["recipients"]) | reserved_masses | set(advanced)):
             element = isotopes.get(str(mass))
             if element is None:
                 raise KeyError(f"no element for mass {mass}; add it to isotopes.yaml")
@@ -85,8 +87,8 @@ def build() -> dict:
                 "element": element,
                 "label": f"{mass}{element}",
                 # The pdv2 sensitivity curve doubles as the "usable channel" list: the IMC curve omits Cd/Te/Xe.
-                "rel_sensitivity": curve.get(str(mass)),
-                "usable": str(mass) in curve,
+                "rel_sensitivity": curve.get(str(mass), advanced[mass].get("rel_sensitivity") if mass in advanced else None),
+                "usable": str(mass) in curve or mass in advanced,
                 # A conjugation metal SBT sells for this modality: the channel can carry an antibody.
                 "antibody": mass in conjugation and str(mass) in curve,
                 "in_po_matrix": mass in po["recipients"],
@@ -103,6 +105,7 @@ def build() -> dict:
         "instruments": instruments,
         "conjugation": cfg["conjugation"],
         "reserved": cfg["reserved"],
+        "advanced": cfg.get("advanced", {}),
         "range_classes": cfg["range_classes"],
     }
 

@@ -9,9 +9,9 @@ import { InModules } from "./InModules";
 import { Button, Card, H2, Pill, cx } from "./ui";
 
 const CATEGORY_LABEL: Record<string, string> = {
-  celltype: "Cell types", lineage: "Lineage", functional: "Functional state", tissue: "Tissue", disease: "Disease-specific", assay: "Complete assays / kits", scaffolding: "Scaffolding",
+  celltype: "Cell types", lineage: "Lineage", functional: "Functional state", tissue: "Tissue", structural: "Tissue structure", disease: "Disease-specific", assay: "Complete assays / kits", scaffolding: "Cell ID & controls",
 };
-const CATEGORY_ORDER = ["lineage", "celltype", "functional", "tissue", "assay", "disease", "scaffolding"];
+const CATEGORY_ORDER = ["lineage", "celltype", "functional", "tissue", "structural", "assay", "disease", "scaffolding"];
 
 const markerLabel = (k: ModuleMarker) => k.target_name + (k.polarity === "neg" ? "−" : "");
 const rowIdOf = (k: ModuleMarker) => k.target_id ?? `custom:${k.target_name}`;
@@ -84,10 +84,10 @@ export function BuildStep() {
         className="flex w-full items-center justify-between gap-3 border-b border-slate-100 px-3 py-2 text-left text-sm hover:bg-teal-50 disabled:opacity-50 dark:border-slate-800 dark:hover:bg-slate-800">
         <span className="min-w-0">
           <span className="font-medium">{m.name}</span>
-          <Pill tone="teal" className="ml-2">{m.category === "celltype" ? "cell type" : "module"}</Pill>
-          <span className="mt-0.5 block truncate text-xs text-slate-500">{m.definition ?? m.markers.filter((k) => markerPlan(k, setup) !== "skip").map(markerLabel).join(", ")}</span>
+          <Pill tone="teal" className="ml-2">{m.category === "celltype" ? "cell type" : "marker set"}</Pill>
+          <span className="mt-0.5 block truncate text-xs text-slate-600 dark:text-slate-400">{m.definition ?? m.markers.filter((k) => markerPlan(k, setup) !== "skip").map(markerLabel).join(", ")}</span>
         </span>
-        <span className={cx("hidden max-w-[45%] shrink-0 truncate text-xs sm:block", !added && cov.missing.length > left ? "text-rose-700 dark:text-rose-300" : "text-slate-500")}>{added ? "added" : cov.missing.length === 0 ? "all in panel" : cov.missing.length > left ? `needs ${cov.missing.length} channels, ${left === 0 ? "none" : `only ${left}`} left` : `adds ${cov.missing.map(markerLabel).join(", ")}`}</span>
+        <span className={cx("hidden max-w-[45%] shrink-0 truncate text-xs sm:block", !added && cov.missing.length > left ? "text-rose-700 dark:text-rose-300" : "text-slate-600 dark:text-slate-400")}>{added ? "added" : cov.missing.length === 0 ? "all in panel" : cov.missing.length > left ? `needs ${cov.missing.length} channels, ${left === 0 ? "none" : `only ${left}`} left` : `adds ${cov.missing.map(markerLabel).join(", ")}`}</span>
       </button>
     );
   };
@@ -100,8 +100,8 @@ export function BuildStep() {
       <div key={t.id} className="border-b border-slate-100 last:border-b-0 dark:border-slate-800">
         <button disabled={added} onClick={() => { addTarget(t.id); setQ(""); }}
           className="flex w-full items-center justify-between gap-2 px-3 py-2 text-left text-sm hover:bg-slate-50 disabled:opacity-50 dark:hover:bg-slate-800">
-          <span className="min-w-0"><span className="font-medium">{t.name}</span>{t.aliases.length > 0 && <span className="ml-2 text-xs text-slate-500">{t.aliases.slice(0, 3).join(" · ")}</span>}</span>
-          <span className="shrink-0 text-xs text-slate-500">
+          <span className="min-w-0"><span className="font-medium">{t.name}</span>{t.aliases.length > 0 && <span className="ml-2 text-xs text-slate-600 dark:text-slate-400">{t.aliases.slice(0, 3).join(" · ")}</span>}</span>
+          <span className="shrink-0 text-xs text-slate-600 dark:text-slate-400">
             {np > 0 && <span className="mr-2 rounded bg-slate-100 px-1 text-[10px] dark:bg-slate-800" title="CyTOF / IMC papers mentioning this marker">{np} paper{np > 1 ? "s" : ""}</span>}
             {added ? "added" : opts.length ? `${opts.length} clone${opts.length > 1 ? "s" : ""} · ${new Set(opts.flatMap((o) => o.metals)).size} metals` : "custom conjugation"}
           </span>
@@ -158,7 +158,7 @@ export function BuildStep() {
             </div>
           )}
         </div>
-        <div className="mt-2 text-xs text-slate-500">
+        <div className="mt-2 text-xs text-slate-600 dark:text-slate-400">
           Not sure what exists?{" "}
           <button onClick={() => setBrowse((v) => !v)} data-testid="browse-toggle" className="font-medium text-teal-700 underline dark:text-teal-300">
             {browse ? "Hide the marker list" : `Browse all ${catalogue.length} markers available for ${modality}`}
@@ -170,7 +170,7 @@ export function BuildStep() {
 
       {suggestions.length > 0 && (
         <section>
-          <H2 hint="from modules that overlap your panel">Suggested next</H2>
+          <H2 hint="from marker sets that overlap your panel">Suggested next</H2>
           <div className="flex flex-wrap gap-2">
             {suggestions.map((s) => <Pill key={s.targetId} tone="teal" onClick={() => addTarget(s.targetId)} title={s.reason}>+ {s.name}<span className="ml-1 font-normal opacity-70">{s.reason}</span></Pill>)}
           </div>
@@ -178,8 +178,8 @@ export function BuildStep() {
       )}
 
       <section>
-        <H2 hint={topicHits ? `${visible.length} of ${modules.length} modules match` : `${modules.length} modules for ${setup.modality} · ${setup.species}`}>
-          {topic ? <span className="flex flex-wrap items-center gap-2">Panels matching “{topic}”<Button size="sm" variant="ghost" onClick={() => setTopic(null)}>clear</Button></span> : "Start from a module or a cell type"}
+        <H2 hint={topicHits ? `${visible.length} of ${modules.length} sets match` : `${modules.length} marker sets for ${setup.modality} · ${setup.species}`}>
+          {topic ? <span className="flex flex-wrap items-center gap-2">Panels matching “{topic}”<Button size="sm" variant="ghost" onClick={() => setTopic(null)}>clear</Button></span> : "Start from a marker set or a cell type"}
         </H2>
         {!topic && (
           <div className="mb-3 flex flex-wrap gap-1">
@@ -203,7 +203,7 @@ export function BuildStep() {
                   <div>
                     <div className="font-medium leading-tight">{m.name}</div>
                     {m.definition && <div className="mt-0.5 font-mono text-[11px] text-teal-800 dark:text-teal-200">{m.definition}</div>}
-                    <div className="mt-0.5 text-xs text-slate-500">{m.blurb}</div>
+                    <div className="mt-0.5 text-xs text-slate-600 dark:text-slate-400">{m.blurb}</div>
                   </div>
                   {m.source === "sbt_kit" && <Pill tone="violet" title="Sold as a kit by Standard BioTools">SBT kit</Pill>}
                 </div>
@@ -220,16 +220,16 @@ export function BuildStep() {
                       </span>
                     );
                   })}
-                  {markers.length > 14 && <span className="text-[11px] text-slate-500">+{markers.length - 14} more</span>}
+                  {markers.length > 14 && <span className="text-[11px] text-slate-600 dark:text-slate-400">+{markers.length - 14} more</span>}
                 </div>
                 {(hasNeg || nCustom > 0) && (
-                  <div className="text-[11px] text-slate-500">
+                  <div className="text-[11px] text-slate-600 dark:text-slate-400">
                     {hasNeg && "Dashed = lineage negative, added so the gate stays clean. "}
                     {nCustom > 0 && `* = conjugated to order (custom conjugation), not an off-the-shelf vial.`}
                   </div>
                 )}
                 <div className="mt-auto flex items-center justify-between gap-2">
-                  <span className={cx("text-xs", !added && nMissing > left ? "text-rose-700 dark:text-rose-300" : "text-slate-500")}>
+                  <span className={cx("text-xs", !added && nMissing > left ? "text-rose-700 dark:text-rose-300" : "text-slate-600 dark:text-slate-400")}>
                     {added ? `${cov.n}/${cov.total} in panel`
                       : nMissing > left ? `needs ${nMissing} channel${nMissing === 1 ? "" : "s"}, ${left === 0 ? "none" : `only ${left}`} left`
                         : cov.n === 0 ? `${cov.total} marker${cov.total === 1 ? "" : "s"}` : nMissing === 0 ? "all targets already in panel" : `${cov.n} of ${cov.total} already in panel`}
@@ -237,7 +237,7 @@ export function BuildStep() {
                   {added
                     ? <Button size="sm" variant="danger" onClick={() => removeModule(m.id)}>Remove</Button>
                     : nMissing === 0
-                      ? <Button size="sm" variant="secondary" title="Every marker is already in your panel; tag them as this module" onClick={() => addModule(m)}>Tag as module</Button>
+                      ? <Button size="sm" variant="secondary" title="Every marker is already in your panel; tag them as this set" onClick={() => addModule(m)}>Tag as set</Button>
                       : <Button size="sm" variant={nMissing > left ? "secondary" : "primary"} title={nMissing > left ? "This will push the panel over the channel budget; you can still add it and trim afterwards." : undefined} onClick={() => addModule(m)}>Add {nMissing} marker{nMissing === 1 ? "" : "s"}{nMissing > left ? " anyway" : ""}</Button>}
                 </div>
               </Card>
@@ -248,7 +248,7 @@ export function BuildStep() {
 
       <div className="flex items-center gap-3">
         <Button variant="primary" size="lg" disabled={!rows.length} onClick={() => setStep("balance")}>{balanced ? "Back to balance →" : "Balance panel →"}</Button>
-        <ChannelCount used={rows.length} className="text-sm text-slate-500" />
+        <ChannelCount used={rows.length} className="text-sm text-slate-600 dark:text-slate-400" />
       </div>
     </div>
   );

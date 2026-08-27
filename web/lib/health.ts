@@ -6,9 +6,9 @@
  * Users think in decisions: is the panel too big, which marker do I drop, which spill is real. This module regroups
  * the residuals into those decisions.
  */
-import type { Result, Warning } from "@pd3/engine";
+import { SPILL_WARN, type Result, type Warning } from "@pd3/engine";
 import { conjugationIssues, type ConjugationIssue } from "./conjugation";
-import { channelBudget, rowMetals, type Index } from "./data";
+import { advancedGroup, channelBudget, channelLabel, kitSupplies, rowMetals, type Index } from "./data";
 import type { PanelRow, Setup } from "./types";
 
 export interface DropCandidate {
@@ -92,11 +92,17 @@ export function panelHealth(idx: Index, setup: Setup, rows: PanelRow[], result: 
     const donorRow = donor ? rowById.get(donor.rowId) : undefined;
     const why = row?.targetId && donorRow?.targetId ? excl.get(pairKey(row.targetId, donorRow.targetId)) : undefined;
     if (why) { unlikely.push({ w: x, why: `${donorRow!.name} and ${row!.name} are not on the same cells (${why}), so the spill lands where there is no signal to blur.` }); return false; }
+    const kit = row && donorRow ? sharedKit(idx, row, donorRow, rr.get(x.rowId)?.mass ?? null, donor?.mass ?? null) : null;
+    if (kit) { unlikely.push({ w: x, why: `${donorRow!.name} and ${row!.name} ship together on these metals in ${kit}, which Standard BioTools validated as a set.` }); return false; }
     return true;
   });
   const conflicts = w.filter((x) => x.code !== "unassigned" && x.severity === "critical" || x.code === "reserved_lock");
   const checks = w.filter((x) => x.severity === "warning" && x.code !== "reserved_lock");
   const notes = w.filter((x) => x.severity === "info");
+  for (const r of rows) {
+    const g = advancedGroup(idx, setup, result.assignment[r.id] ?? null);
+    if (g) notes.push({ severity: "info", rowId: r.id, code: "advanced_metal", message: `${r.name} sits on ${channelLabel(idx, setup, result.assignment[r.id]!)}, ${g.label} — ${g.note}` });
+  }
   const drops = dropCandidates(idx, setup, rows, result, unassigned, custom, over);
   const todo = (over || unassigned.length) + conflicts.length + custom.length + checks.length;
 
@@ -113,6 +119,17 @@ export function panelHealth(idx: Index, setup: Setup, rows: PanelRow[], result: 
 }
 
 const pairKey = (a: string, b: string) => (a < b ? `${a}|${b}` : `${b}|${a}`);
+
+/** The SBT kit that supplies both rows on exactly these metals, if any: that pairing has been validated by the vendor. */
+function sharedKit(idx: Index, a: PanelRow, b: PanelRow, massA: number | null, massB: number | null): string | null {
+  for (const id of a.moduleIds) {
+    if (!b.moduleIds.includes(id)) continue;
+    const m = idx.modulesById.get(id);
+    if (m?.source !== "sbt_kit") continue;
+    if (kitSupplies(idx, { ...a, moduleIds: [id] }, massA) && kitSupplies(idx, { ...b, moduleIds: [id] }, massB)) return m.name;
+  }
+  return null;
+}
 
 /**
  * Pairs of targets that a cell-type module puts on opposite sides of a gate (CD19+ CD3−: B cells), keyed both ways.
@@ -166,7 +183,7 @@ function dropCandidates(idx: Index, setup: Setup, rows: PanelRow[], result: Resu
   for (const r of rest) if (customIds.has(r.id)) push(r, "would be conjugated to order");
   // Then whoever receives the most spill, i.e. the marker the panel is straining hardest to accommodate.
   const spill = (r: PanelRow) => rr.get(r.id)?.receivedOverT ?? 0;
-  for (const r of [...rest].sort((a, b) => spill(b) - spill(a))) if (spill(r) >= 0.5) push(r, `receives ${Math.round(spill(r) * 100)} % of its tolerance in spill`);
+  for (const r of [...rest].sort((a, b) => spill(b) - spill(a))) if (spill(r) >= SPILL_WARN) push(r, `receives ${Math.round(spill(r) * 100)} % of its tolerance in spill`);
   for (const r of [...rest].sort((a, b) => a.moduleIds.length - b.moduleIds.length)) push(r, r.moduleIds.length === 1 ? "in one module" : `in ${r.moduleIds.length} modules`);
   return out.slice(0, Math.min(8, Math.max(over, unassigned.length) + 4));
 }

@@ -66,7 +66,7 @@ export function BrowseAll({ onClose }: { onClose: () => void }) {
         <input value={q} onChange={(e) => { setQ(e.target.value); setLimit(PAGE); }} onFocus={ensurePubs} placeholder="filter by name, alias or panel…" autoCapitalize="none" autoCorrect="off" spellCheck={false}
           className="min-w-0 flex-1 rounded-lg border border-slate-300 px-3 py-1.5 text-sm shadow-sm focus:border-teal-500 focus:outline-none dark:border-slate-600 dark:bg-slate-900" />
         <label className="flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-300">
-          <input type="checkbox" checked={inModuleOnly} onChange={() => { setInModuleOnly((v) => !v); setLimit(PAGE); }} className="h-3.5 w-3.5 accent-teal-700" />in a panel
+          <input type="checkbox" checked={inModuleOnly} onChange={() => { setInModuleOnly((v) => !v); setLimit(PAGE); }} className="h-3.5 w-3.5 accent-teal-700" />in a marker set
         </label>
         <label className="flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-300">
           <input type="checkbox" checked={hideAdded} onChange={() => { setHideAdded((v) => !v); setLimit(PAGE); }} className="h-3.5 w-3.5 accent-teal-700" />not yet added
@@ -77,14 +77,14 @@ export function BrowseAll({ onClose }: { onClose: () => void }) {
             <option value="name">A–Z</option>
             <option value="papers">papers</option>
             <option value="clones">clones</option>
-            <option value="modules">panels</option>
+            <option value="modules">marker sets</option>
           </select>
         </label>
       </div>
 
       <div className="max-h-[65vh] overflow-auto rounded-lg border border-slate-100 dark:border-slate-800">
         <table className="w-full min-w-[640px] text-sm">
-          <thead className="sticky top-0 z-10 bg-slate-50 text-left text-[11px] uppercase tracking-wide text-slate-500 dark:bg-slate-800">
+          <thead className="sticky top-0 z-10 bg-slate-50 text-left text-[11px] uppercase tracking-wide text-slate-600 dark:text-slate-400 dark:bg-slate-800">
             <tr>
               <th className="px-2 py-1.5">Marker</th>
               <th className="px-2 py-1.5">Clones</th>
@@ -103,12 +103,12 @@ export function BrowseAll({ onClose }: { onClose: () => void }) {
                   <td className="px-2 py-1.5 align-top">
                     <div className="font-medium">{r.t.name}</div>
                     {setup.modality === "imaging" && !r.validated && r.clones > 0 && <div className="text-[11px] text-amber-700 dark:text-amber-300" title="no clone lists this sample type on its datasheet">not {setup.sampleType}-validated</div>}
-                    {r.t.aliases.length > 0 && <div className="text-[11px] text-slate-500">{r.t.aliases.slice(0, 4).join(" · ")}</div>}
+                    {r.t.aliases.length > 0 && <div className="text-[11px] text-slate-600 dark:text-slate-400">{r.t.aliases.slice(0, 4).join(" · ")}</div>}
                   </td>
                   <td className="px-2 py-1.5 align-top tabular-nums">{r.clones || <span className="text-violet-700 dark:text-violet-300">custom</span>}</td>
-                  <td className="px-2 py-1.5 align-top text-[11px] text-slate-500">{r.metals.length ? `${r.metals.length}: ${r.metals.slice(0, 4).join(", ")}${r.metals.length > 4 ? "…" : ""}` : "—"}
+                  <td className="px-2 py-1.5 align-top text-[11px] text-slate-600 dark:text-slate-400">{r.metals.length ? `${r.metals.length}: ${r.metals.slice(0, 4).join(", ")}${r.metals.length > 4 ? "…" : ""}` : "—"}
                     {r.tds && <a href={r.tds} target="_blank" rel="noreferrer" className="ml-1 text-teal-700 underline dark:text-teal-300">TDS</a>}</td>
-                  <td className="px-2 py-1.5 align-top tabular-nums text-slate-500">{np || ""}</td>
+                  <td className="px-2 py-1.5 align-top tabular-nums text-slate-600 dark:text-slate-400">{np || ""}</td>
                   <td className="px-2 py-1.5 align-top">{r.modules.length ? <InModules modules={r.modules} max={2} bare /> : <span className="text-[11px] text-slate-400">—</span>}</td>
                   <td className="px-2 py-1.5 align-top text-right">
                     {added
@@ -118,7 +118,7 @@ export function BrowseAll({ onClose }: { onClose: () => void }) {
                 </tr>
               );
             })}
-            {!shown.length && <tr><td colSpan={6} className="px-2 py-6 text-center text-sm text-slate-500">Nothing matches “{q}”.</td></tr>}
+            {!shown.length && <tr><td colSpan={6} className="px-2 py-6 text-center text-sm text-slate-600 dark:text-slate-400">Nothing matches “{q}”.</td></tr>}
           </tbody>
         </table>
       </div>
@@ -127,7 +127,7 @@ export function BrowseAll({ onClose }: { onClose: () => void }) {
           <Button size="sm" onClick={() => setLimit((n) => n + PAGE)}>Show {Math.min(PAGE, list.length - shown.length)} more ({list.length - shown.length} left)</Button>
         </div>
       )}
-      <p className="mt-2 text-[11px] text-slate-500">
+      <p className="mt-2 text-[11px] text-slate-600 dark:text-slate-400">
         Every marker here has an off-the-shelf {modality} conjugate. Anything else can still go in the panel as a custom
         conjugation — type its name in the search box above.
       </p>

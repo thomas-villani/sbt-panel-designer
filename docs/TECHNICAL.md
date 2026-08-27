@@ -224,7 +224,9 @@ Per row: channel class and relative sensitivity; lock / "only allowed channel" /
 contribution with mechanism (`oxide` M+16, `adjacent` M±1, `isotope` same element, `other`) and its PO %; the largest fraction of
 someone else's tolerance the row consumes.
 
-Warnings: `spillover` (≥ 50 % of tolerance = warning, ≥ 100 % = critical) with a **fix** = the best single relocate/swap of the
+Warnings: `spillover` (≥ 100 % of tolerance = warning, ≥ 200 % = critical; calibrated 2026-08-27 so SBT's own kits run on
+their kit metals read clean - MDIPA peaks at 175 % (CD16 148Nd oxide into TCRγδ 164Dy), and spill between two markers of
+one kit is filed "validated in kit" by the web health layer regardless) with a **fix** = the best single relocate/swap of the
 donor or the recipient that lowers the total score (`bestMoveFor`); when no single move helps the message names the locked rows to
 unlock. Also `unassigned`, `flagged_channel` (info), `dim_bright_channel` (T < 10 on a `bright_only` channel), `reserved_lock`.
 Because the optimiser ends in a local optimum, fixes mostly appear on evaluated (kit / manual) assignments and on locked rows.

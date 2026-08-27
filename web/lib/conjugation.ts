@@ -6,7 +6,7 @@
  * time, so it must show up next to the spillover warnings rather than as a surprise in the bill of materials.
  */
 import type { Result } from "@pd3/engine";
-import { channelLabel, reservedRoles, type Index } from "./data";
+import { channelLabel, kitSupplies, reservedRoles, type Index } from "./data";
 import type { PanelRow, Setup } from "./types";
 
 export interface ConjugationIssue {
@@ -39,6 +39,7 @@ export function conjugationIssues(idx: Index, rows: PanelRow[], result: Result, 
   for (const row of rows) {
     const mass = result.assignment[row.id];
     if (mass == null || !row.targetId) continue; // unassigned rows already carry an engine warning; typed-in markers are knowingly custom
+    if (kitSupplies(idx, row, mass)) continue; // the kit box has this vial
     const cands = idx.candidates(row.targetId, setup);
 
     if (!cands.length) {
@@ -56,6 +57,7 @@ export function conjugationIssues(idx: Index, rows: PanelRow[], result: Result, 
     }
 
     if (!row.clone) continue; // "custom conjugation" chosen deliberately in the clone picker
+    if (row.custom && row.locked === mass) continue; // pinned by hand to a metal the clone is not sold on: a vial of their own
     const sold = row.clonePinned ? cands.filter((c) => c.clone === row.clone) : cands;
     if (sold.some((c) => c.mass === mass)) continue;
     const free = [...new Set(sold.map((c) => c.mass))].filter((m) => usable.has(m) && !off.has(m) && !taken.has(m)).sort((a, b) => a - b);

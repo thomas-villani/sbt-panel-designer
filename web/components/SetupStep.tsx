@@ -1,7 +1,25 @@
 "use client";
 import { useState } from "react";
-import { SAMPLE_TYPES, SPECIES, antibodyChannel, reservedRoles } from "@/lib/data";
+import { SAMPLE_TYPES, SPECIES, VIABILITY_ROLE, antibodyChannel, reservedRoles } from "@/lib/data";
 import { useStore } from "@/lib/store";
+import type { Setup } from "@/lib/types";
+
+const VIABILITY_CHOICES: { id: NonNullable<Setup["viabilityMode"]>; label: string }[] = [
+  { id: "pt", label: "Cisplatin, natural Pt" }, { id: "pt195", label: "Cisplatin 195Pt" }, { id: "pt198", label: "Cisplatin 198Pt" }, { id: "rh103", label: "Rh103 intercalator" },
+];
+const roleMasses = (roles: { role: string; masses: number[] }[], id: string) => { const r = roles.find((x) => x.role === id); return r ? `${r.masses.length === 1 ? "channel" : "channels"} ${r.masses.join(", ")}` : ""; };
+
+/** One labelled row of mutually exclusive options. */
+function Choice({ label, value, options, onChange, testId }: { label: string; value: string; options: { id: string; label: string; sub?: string }[]; onChange: (id: string) => void; testId?: string }) {
+  return (
+    <div className="flex flex-wrap items-start gap-3" data-testid={testId}>
+      <span className="w-28 shrink-0 pt-2 font-medium">{label}</span>
+      <div className="flex flex-wrap gap-2">
+        {options.map((o) => <Tile key={o.id} label={o.label} sub={o.sub} active={value === o.id} onClick={() => onChange(o.id)} />)}
+      </div>
+    </div>
+  );
+}
 import { useBudgetDetail } from "./ChannelBudget";
 import { Button, H2, Tile, cx } from "./ui";
 
@@ -15,7 +33,7 @@ export function SetupStep() {
   const budget = useBudgetDetail();
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-10">
       <section>
         <H2>What are you measuring?</H2>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -38,27 +56,31 @@ export function SetupStep() {
       <section>
         <H2 hint="defaults to the current instrument for your application">Instrument</H2>
         <div className="flex flex-wrap gap-2">
-          {instruments.map((i) => <Tile key={i.id} label={i.name} sub={`${i.channels.filter(antibodyChannel).length} antibody channels`} active={setup.instrumentId === i.id} onClick={() => setSetup({ instrumentId: i.id })} />)}
+          {instruments.map((i) => <Tile key={i.id} label={i.name} sub={`${i.channels.filter((c) => antibodyChannel(c, setup)).length} antibody channels`} active={setup.instrumentId === i.id} onClick={() => setSetup({ instrumentId: i.id })} />)}
         </div>
       </section>
       <section>
-        <H2 hint="these reserve channels so antibodies never collide with them">Scaffolding</H2>
-        <div className="space-y-2 text-sm">
-          {roles.map((r) => {
-            const fixed = r.role === "dna_intercalator";
-            const toggle = r.role === "segmentation_kit" ? () => setSetup({ segmentation: !setup.segmentation })
-              : r.role === "viability_cisplatin" ? () => setSetup({ viability: !setup.viability })
-                : r.role === "barcoding_pd" ? () => setSetup({ barcoding: !setup.barcoding }) : undefined;
-            const on = fixed || (r.role === "segmentation_kit" && setup.segmentation) || (r.role === "viability_cisplatin" && setup.viability) || (r.role === "barcoding_pd" && setup.barcoding);
-            if (!fixed && !toggle) return null;
-            return (
-              <label key={r.role} className="flex items-center gap-3">
-                <input type="checkbox" checked={on} disabled={fixed} onChange={toggle} className="h-4 w-4 accent-teal-700" />
-                <span>{r.label}</span>
-                <span className="text-xs text-slate-500">channels {r.masses.join(", ")}{fixed ? " · always" : ""}</span>
-              </label>
-            );
-          })}
+        <H2 hint="DNA stain, viability, barcoding: these reserve channels so antibodies never collide with them">Cell ID &amp; controls</H2>
+        <div className="space-y-3 text-sm">
+          {roles.filter((r) => r.role === "dna_intercalator").map((r) => (
+            <div key={r.role} className="flex flex-wrap items-center gap-3"><span className="w-28 shrink-0 font-medium">DNA</span><span>{r.label}</span><span className="text-xs text-slate-600 dark:text-slate-400">channels {r.masses.join(", ")} · always</span></div>
+          ))}
+          {setup.modality === "suspension" && (
+            <Choice label="Viability" value={setup.viability ? setup.viabilityMode ?? "pt" : "none"} testId="viability-choice"
+              options={[{ id: "none", label: "None", sub: "no channel reserved" }, ...VIABILITY_CHOICES.map((c) => ({ ...c, sub: roleMasses(roles, VIABILITY_ROLE[c.id]) }))]}
+              onChange={(v) => setSetup(v === "none" ? { viability: false } : { viability: true, viabilityMode: v as Setup["viabilityMode"] })} />
+          )}
+          {setup.modality === "suspension" && (
+            <Choice label="Barcoding" value={setup.barcoding ? "pd" : "none"} testId="barcoding-choice"
+              options={[{ id: "none", label: "None", sub: "no channel reserved" }, { id: "pd", label: "Cell-ID 20-Plex Pd", sub: roleMasses(roles, "barcoding_pd") }]}
+              onChange={(v) => setSetup({ barcoding: v === "pd" })} />
+          )}
+          {setup.modality === "imaging" && roles.filter((r) => r.role === "segmentation_kit").map((r) => (
+            <Choice key={r.role} label="Segmentation" value={setup.segmentation ? "kit" : "none"} testId="segmentation-choice"
+              options={[{ id: "kit", label: "Cell segmentation kit", sub: `Pt · channels ${r.masses.join(", ")}` }, { id: "none", label: "None", sub: "segment on DNA and membrane markers" }]}
+              onChange={(v) => setSetup({ segmentation: v === "kit" })} />
+          ))}
+          {(() => { const id = reservedRoles(setup).find((x) => x.startsWith("viability")); const r = roles.find((x) => x.role === id); return r?.note ? <p className="text-xs text-slate-600 dark:text-slate-400">{r.note}</p> : null; })()}
         </div>
         {budget && (
           <p className="mt-3 text-sm text-slate-600 dark:text-slate-300" data-testid="setup-budget">
@@ -68,8 +90,47 @@ export function SetupStep() {
         )}
       </section>
       <BlockedChannels />
+      <AdvancedMetals />
       <Button variant="primary" size="lg" onClick={() => setStep("build")}>Choose markers →</Button>
     </div>
+  );
+}
+
+/** Metals SBT does not list for this modality (Cd on IMC) that some labs use anyway: opt in, and every marker that lands on one is labelled. */
+function AdvancedMetals() {
+  const idx = useStore((s) => s.idx)!;
+  const setup = useStore((s) => s.setup);
+  const setSetup = useStore((s) => s.setSetup);
+  const [open, setOpen] = useState(!!setup.extraMetals?.length);
+  const groups = idx.instruments.advanced?.[setup.modality] ?? [];
+  const inst = idx.instrument(setup.instrumentId);
+  if (!groups.length) return null;
+  const on = (g: { masses: number[] }) => g.masses.some((m) => setup.extraMetals?.includes(m));
+  const toggle = (g: { masses: number[] }) => {
+    const cur = new Set(setup.extraMetals ?? []);
+    if (on(g)) for (const m of g.masses) cur.delete(m); else for (const m of g.masses) if (inst.channels.some((c) => c.mass === m && c.usable)) cur.add(m);
+    setSetup({ extraMetals: [...cur].sort((a, b) => a - b) });
+  };
+  return (
+    <section data-testid="advanced-metals">
+      <button onClick={() => setOpen((v) => !v)} aria-expanded={open} className="flex w-full flex-wrap items-baseline gap-2 text-left" data-testid="advanced-metals-toggle">
+        <span className={cx("inline-block text-sm transition", open && "rotate-90")}>▸</span>
+        <h2 className="text-lg font-semibold tracking-tight">Metals beyond the catalogue</h2>
+        <span className="text-xs text-slate-600 dark:text-slate-400">{groups.some(on) ? `${groups.filter(on).map((g) => g.label).join(", ")} opted in` : "not on the Standard BioTools conjugation list for this application"}</span>
+      </button>
+      {open && <div className="mt-3 space-y-2 text-sm">
+        {groups.map((g) => (
+          <label key={g.id} className="flex items-start gap-3">
+            <input type="checkbox" checked={on(g)} onChange={() => toggle(g)} className="mt-1 h-4 w-4 accent-teal-700" />
+            <span>
+              <span className="font-medium">{g.label}</span>
+              <span className="ml-2 text-xs text-slate-600 dark:text-slate-400">channels {g.masses.join(", ")}{on(g) ? " · markers placed here are flagged on Balance and Order" : ""}</span>
+              <span className="block text-xs text-amber-800 dark:text-amber-300">{g.note}</span>
+            </span>
+          </label>
+        ))}
+      </div>}
+    </section>
   );
 }
 
@@ -85,7 +146,7 @@ function BlockedChannels() {
     if (!reservedRoles(setup).includes(r.role)) continue;
     for (const m of r.masses) reserved.set(m, r.label);
   }
-  const channels = inst.channels.filter(antibodyChannel);
+  const channels = inst.channels.filter((c) => antibodyChannel(c, setup));
   const n = setup.blocked.length;
 
   return (
@@ -95,9 +156,10 @@ function BlockedChannels() {
         <Button size="sm" variant={open ? "secondary" : "ghost"} onClick={() => setOpen((v) => !v)} data-testid="blocked-toggle">
           {open ? "Hide channels" : n ? `Edit blocked channels (${n})` : "Block channels…"}
         </Button>
-        <span className="text-xs text-slate-500">
-          Reserve a channel for a radionuclide you will add later — Lu-177 for radiopharmaceutical therapy, for example — and
-          the optimiser keeps it, and its spillover, out of your panel.
+        <span className="text-xs text-slate-600 dark:text-slate-400">
+          Any channel you would rather not use: one you are saving for a reagent we do not list, a channel your instrument
+          struggles with, or a radionuclide you will add later (Lu-177, say). The optimiser keeps it, and its spillover, out of your panel.
+          You can also click any open channel on the Balance page.
         </span>
       </div>
       {n > 0 && !open && (

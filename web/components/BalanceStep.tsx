@@ -5,10 +5,13 @@
  * solve, one recommended action each; the rest folds away.
  */
 import { useMemo, useState, type ReactNode } from "react";
-import type { Warning } from "@pd3/engine";
+import { SPILL_CRIT, SPILL_WARN, type Warning } from "@pd3/engine";
+import { kitSupplies } from "@/lib/data";
 import { plainWarning } from "@/lib/health";
 import { useHealth, useStore, type CloneTrial, type FixPreview } from "@/lib/store";
 import { MassStrip } from "./MassStrip";
+import { OpenChannels } from "./OpenChannels";
+import { SpillTable } from "./SpillTable";
 import { Button, H2, Pill, cx } from "./ui";
 
 export function BalanceStep() {
@@ -35,7 +38,23 @@ export function BalanceStep() {
   const [showKnown, setShowKnown] = useState(false);
   const unacceptWarning = useStore((s) => s.unacceptWarning);
   const instrument = idx.instrument(setup.instrumentId);
+  // Kit markers sit on the kit's metals by definition: one chip per kit, not thirty pins.
+  const kitPins = useMemo(() => {
+    const byKit = new Map<string, { name: string; rows: string[] }>();
+    for (const r of rows) {
+      if (r.locked == null) continue;
+      const kit = r.moduleIds.find((id) => idx.modulesById.get(id)?.source === "sbt_kit" && kitSupplies(idx, { ...r, moduleIds: [id] }, r.locked));
+      if (!kit) continue;
+      const e = byKit.get(kit) ?? { name: idx.modulesById.get(kit)?.name ?? kit, rows: [] };
+      e.rows.push(r.id);
+      byKit.set(kit, e);
+    }
+    return byKit;
+  }, [idx, rows]);
+  const kitRowIds = useMemo(() => new Set([...kitPins.values()].flatMap((k) => k.rows)), [kitPins]);
   const channelName = (m: number) => instrument.channels.find((c) => c.mass === m)?.label ?? String(m);
+  // Spill the user accepted, or that lands where it cannot matter, paints the strip green: the headline and the strip agree.
+  const waived = useMemo(() => new Set([...(health?.unlikely ?? []).map((u) => u.w.rowId), ...(health?.accepted ?? []).map((a) => a.w.rowId)]), [health]);
 
   if (!rows.length) {
     return (
@@ -50,7 +69,7 @@ export function BalanceStep() {
     return (
       <div className="space-y-6">
         <H2>Balance</H2>
-        {engineError ? <div className="rounded-md bg-rose-50 p-3 text-sm text-rose-800">Engine error: {engineError}</div> : <div className="text-sm text-slate-500">Balancing…</div>}
+        {engineError ? <div className="rounded-md bg-rose-50 p-3 text-sm text-rose-800">Engine error: {engineError}</div> : <div className="text-sm text-slate-600 dark:text-slate-400">Balancing…</div>}
       </div>
     );
   }
@@ -70,10 +89,11 @@ export function BalanceStep() {
     <div className="space-y-6">
       <section>
         <H2 hint={`${result.stats.ms.toFixed(0)} ms · re-runs on every change`}>
-          <span className="flex items-center gap-2">Balance{balancing && <span className="text-xs font-normal text-slate-500">updating…</span>}</span>
+          <span className="flex items-center gap-2">Balance{balancing && <span className="text-xs font-normal text-slate-600 dark:text-slate-400">updating…</span>}</span>
         </H2>
         {engineError && <div className="mb-3 rounded-md bg-rose-50 p-3 text-sm text-rose-800">Engine error: {engineError}</div>}
-        <MassStrip instrument={instrument} result={result} />
+        <MassStrip instrument={instrument} result={result} waived={waived} />
+        <OpenChannels className="mt-3" />
       </section>
 
       {notice && (
@@ -100,15 +120,15 @@ export function BalanceStep() {
             </div>
             {modulesFirst && (
               <>
-                <div className="mt-3 text-xs font-semibold uppercase tracking-wide text-rose-800 dark:text-rose-200">Quickest: remove a module you can live without</div>
+                <div className="mt-3 text-xs font-semibold uppercase tracking-wide text-rose-800 dark:text-rose-200">Quickest: remove a marker set you can live without</div>
                 <ul className="mt-1 divide-y divide-rose-200/70 dark:divide-rose-900" data-testid="module-drops">
                   {shownModules.map((m) => (
                     <li key={m.id} className="flex items-center gap-3 py-1.5">
                       <span className="min-w-0 flex-1"><span className="font-medium">{m.name}</span><span className="ml-2 text-xs text-slate-600 dark:text-slate-300">frees {m.frees} channel{m.frees === 1 ? "" : "s"}</span></span>
-                      <Button size="sm" variant="danger" onClick={() => removeModule(m.id)}>Remove module</Button>
+                      <Button size="sm" variant="danger" onClick={() => removeModule(m.id)}>Remove set</Button>
                     </li>
                   ))}
-                  {moduleDrops.length > shownModules.length && <li className="py-1 text-xs text-slate-500">…and {moduleDrops.length - shownModules.length} more; the Build page lists them all.</li>}
+                  {moduleDrops.length > shownModules.length && <li className="py-1 text-xs text-slate-600 dark:text-slate-400">…and {moduleDrops.length - shownModules.length} more; the Build page lists them all.</li>}
                 </ul>
                 <div className="mt-3 text-xs font-semibold uppercase tracking-wide text-rose-800 dark:text-rose-200">Or trim single markers, most expendable first</div>
               </>
@@ -117,7 +137,7 @@ export function BalanceStep() {
             <ul className="mt-1 divide-y divide-rose-200/70 dark:divide-rose-900">
               {drops.map((d, i) => (
                 <li key={d.row.id} className="flex items-center gap-3 py-1.5">
-                  <span className="w-5 text-right text-xs text-slate-500">{i + 1}.</span>
+                  <span className="w-5 text-right text-xs text-slate-600 dark:text-slate-400">{i + 1}.</span>
                   <span className="min-w-0 flex-1"><span className="font-medium">{d.row.name}</span><span className="ml-2 text-xs text-slate-600 dark:text-slate-300">{d.reason}</span></span>
                   {d.canGoCustom && <Button size="sm" variant="primary" title="Any free lanthanide; you supply the antibody" onClick={() => setClone(d.row.id, null)}>Custom conjugation</Button>}
                   <Button size="sm" variant="danger" onClick={() => removeRow(d.row.id)}>Drop</Button>
@@ -133,8 +153,9 @@ export function BalanceStep() {
 
         {pinned.length > 0 && (
           <div className="mb-4 flex flex-wrap items-center gap-2 rounded-lg border border-slate-300 bg-slate-50 p-3 text-sm dark:border-slate-600 dark:bg-slate-800" data-testid="pinned">
-            <span className="text-slate-600 dark:text-slate-300">Pinned by you or a fix — the optimiser must work around these:</span>
-            {pinned.map((r) => <Pill key={r.id} tone="slate" title="unpin" onClick={() => lockRow(r.id, null)}>🔒 {r.name} → {channelName(r.locked!)} ×</Pill>)}
+            <span className="text-slate-600 dark:text-slate-300">{pinned.length > kitRowIds.size ? "Pinned by you or a fix — the optimiser must work around these:" : "On kit metals — the optimiser works around them:"}</span>
+            {[...kitPins].map(([id, k]) => <Pill key={id} tone="violet" title={`${k.rows.length} markers on the metals ${k.name} ships with; click to free them all`} onClick={() => k.rows.forEach((r) => lockRow(r, null))}>📦 {k.name} · {k.rows.length} ×</Pill>)}
+            {pinned.filter((r) => !kitRowIds.has(r.id)).map((r) => <Pill key={r.id} tone="slate" title="unpin" onClick={() => lockRow(r.id, null)}>🔒 {r.name} → {channelName(r.locked!)} ×</Pill>)}
             <span className="flex-1" />
             <Button size="sm" onClick={() => pinned.forEach((r) => lockRow(r.id, null))}>Unpin all ({pinned.length})</Button>
           </div>
@@ -162,8 +183,18 @@ export function BalanceStep() {
 
         {!blocked && !mustFix && (
           <p className="text-sm text-slate-600 dark:text-slate-300">
-            {checks.length ? "Every marker has a channel and nothing drowns anything else. A few pairs sit closer than ideal; see below if you want to tune them." : "Every marker has a channel and nothing spills more than half of what its neighbour can take."}
+            {checks.length ? "Every marker has a channel and nothing drowns anything else. A few pairs sit closer than ideal; the table shows which." : "Every marker has a channel and nothing spills more than its neighbour can take."}
           </p>
+        )}
+
+        {!blocked && (
+          <div className="mt-4">
+            <div className="mb-1.5 flex flex-wrap items-baseline justify-between gap-2 text-xs text-slate-600 dark:text-slate-400">
+              <span>Spill in and out per marker, as a share of what the receiving marker can take. Hover a row for the detail.</span>
+              <span>Worth checking from {SPILL_WARN * 100} %, must fix from {SPILL_CRIT * 100} %</span>
+            </div>
+            <SpillTable result={result} health={health} />
+          </div>
         )}
 
         {!blocked && checks.length > 0 && (
@@ -230,7 +261,7 @@ function Fold({ open, onToggle, label, hint, children, testId }: { open: boolean
   return (
     <div className="mt-3" data-testid={testId}>
       <button onClick={onToggle} aria-expanded={open} className="flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-teal-700 dark:text-slate-200 dark:hover:text-teal-300">
-        <span className={cx("inline-block transition", open && "rotate-90")}>▸</span>{label}<span className="text-xs font-normal text-slate-500">{hint}</span>
+        <span className={cx("inline-block transition", open && "rotate-90")}>▸</span>{label}<span className="text-xs font-normal text-slate-600 dark:text-slate-400">{hint}</span>
       </button>
       {open && <ul className="mt-2 space-y-2">{children}</ul>}
     </div>
@@ -291,9 +322,9 @@ function WarnCard({ w, tone, label, note, extra, onRemove, onUnpin }: {
           {note && <div className="mt-1 text-xs text-slate-600 dark:text-slate-300">{note}</div>}
           {action && !note && <div className="mt-1 text-xs text-slate-600 dark:text-slate-300">{w.fix ? "Suggested: " : ""}{action}</div>}
           {title !== w.message && (
-            <button className="mt-1 text-xs text-slate-500 underline decoration-dotted" onClick={() => setMore((v) => !v)}>{more ? "less" : "details"}</button>
+            <button className="mt-1 text-xs text-slate-600 dark:text-slate-400 underline decoration-dotted" onClick={() => setMore((v) => !v)}>{more ? "less" : "details"}</button>
           )}
-          {more && <div className="mt-1 text-xs text-slate-500">{w.message}</div>}
+          {more && <div className="mt-1 text-xs text-slate-600 dark:text-slate-400">{w.message}</div>}
         </div>
         <div className="flex shrink-0 flex-wrap gap-1">
           {extra}
@@ -334,16 +365,16 @@ function WarnCard({ w, tone, label, note, extra, onRemove, onUnpin }: {
             {trials.map((t) => (
               <li key={`${t.rowId}-${t.clone}`} className="flex flex-wrap items-center gap-2">
                 <span className="min-w-0 flex-1">
-                  <b>{nameOf(t.rowId)}</b> → clone {t.clone} <span className="text-slate-500">({t.nMetals} metal{t.nMetals > 1 ? "s" : ""}{t.channel ? `, lands on ${t.channel}` : ""})</span>
+                  <b>{nameOf(t.rowId)}</b> → clone {t.clone} <span className="text-slate-600 dark:text-slate-400">({t.nMetals} metal{t.nMetals > 1 ? "s" : ""}{t.channel ? `, lands on ${t.channel}` : ""})</span>
                   {" · "}
-                  {resolves(t) ? <span className="text-emerald-700 dark:text-emerald-300">resolves this</span> : <span className="text-slate-500">still {Math.round((t.result.rows.find((r) => r.rowId === w.rowId)?.receivedOverT ?? 0) * 100)} %</span>}
-                  <span className="text-slate-500"> · score {t.score.toFixed(2)}</span>
+                  {resolves(t) ? <span className="text-emerald-700 dark:text-emerald-300">resolves this</span> : <span className="text-slate-600 dark:text-slate-400">still {Math.round((t.result.rows.find((r) => r.rowId === w.rowId)?.receivedOverT ?? 0) * 100)} %</span>}
+                  <span className="text-slate-600 dark:text-slate-400"> · score {t.score.toFixed(2)}</span>
                 </span>
                 <Button size="sm" variant={resolves(t) ? "primary" : "secondary"} onClick={() => { setClone(t.rowId, t.clone); setTrials(null); }}>Use</Button>
               </li>
             ))}
           </ul>
-          <button className="mt-2 text-slate-500 underline decoration-dotted" onClick={() => setTrials(null)}>close</button>
+          <button className="mt-2 text-slate-600 dark:text-slate-400 underline decoration-dotted" onClick={() => setTrials(null)}>close</button>
         </div>
       )}
 
@@ -379,10 +410,10 @@ function HeatMap() {
             {rows.map((g) => (
               <tr key={g.rowId}>
                 <td className="whitespace-nowrap p-0.5 text-right">{g.label}</td>
-                <td className="p-0.5 text-slate-500">{g.channel}</td>
+                <td className="p-0.5 text-slate-600 dark:text-slate-400">{g.channel}</td>
                 {rows.map((r) => {
                   const f = cell.get(`${g.rowId}>${r.rowId}`) ?? 0;
-                  const bg = f === 0 ? undefined : f >= 1 ? "#f43f5e" : f >= 0.5 ? "#fbbf24" : f >= 0.1 ? "#a7f3d0" : "#ecfdf5";
+                  const bg = f === 0 ? undefined : f >= SPILL_CRIT ? "#f43f5e" : f >= SPILL_WARN ? "#fbbf24" : f >= 0.1 ? "#a7f3d0" : "#ecfdf5";
                   return <td key={r.rowId} className="h-5 w-5 border border-slate-100 text-center dark:border-slate-800" style={{ background: bg }} title={`${g.label} → ${r.label}: ${(f * 100).toFixed(0)}% of tolerance`}>{f >= 0.1 ? Math.round(f * 100) : ""}</td>;
                 })}
               </tr>

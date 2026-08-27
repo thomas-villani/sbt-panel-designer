@@ -17,7 +17,7 @@ const CUSTOM = "custom:";
 const V2 = "~";
 
 // Trailing entries are dropped when they hold their default (segmentation on, nothing blocked), so old links still decode.
-type SetupTuple = [Setup["modality"], Setup["species"], Setup["sampleType"], string, 0 | 1, 0 | 1, (0 | 1)?, number[]?];
+type SetupTuple = [Setup["modality"], Setup["species"], Setup["sampleType"], string, 0 | 1, 0 | 1, (0 | 1)?, number[]?, (string | 0)?, number[]?]; // 8: viability mode (0 = natural Pt), 9: opted-in metals
 type CloneV2 = string | 0 | 1 | [string]; // 0 = custom conjugation; 1 = free (catalogue default, re-resolved on decode); string = pinned; [string] = free but recorded (no catalogue at encode time)
 type RowV2 = [string, number, CloneV2?, (number | 0)?, string[]?, string?]; // trailing: accepted-spill reason
 type V2 = [2, SetupTuple, number, 0 | 1, RowV2[]];
@@ -40,13 +40,17 @@ function fromB64url(s: string): Uint8Array {
 }
 
 const setupTuple = (s: Setup): SetupTuple => {
-  const t: SetupTuple = [s.modality, s.species, s.sampleType, s.instrumentId, s.viability ? 1 : 0, s.barcoding ? 1 : 0, s.segmentation ? 1 : 0, s.blocked];
-  if (!t[7]!.length) { t.pop(); if (t[6] === 1) t.pop(); }
+  const mode = s.viabilityMode && s.viabilityMode !== "pt" ? s.viabilityMode : 0;
+  const extra = s.extraMetals ?? [];
+  const t: SetupTuple = [s.modality, s.species, s.sampleType, s.instrumentId, s.viability ? 1 : 0, s.barcoding ? 1 : 0, s.segmentation ? 1 : 0, s.blocked, mode, extra];
+  // Trailing defaults fall off so short links stay short and old links still decode.
+  if (!extra.length) { t.pop(); if (mode === 0) { t.pop(); if (!t[7]!.length) { t.pop(); if (t[6] === 1) t.pop(); } } }
   return t;
 };
 const setupFromTuple = (t: SetupTuple): Setup => ({
   modality: t[0], species: t[1], sampleType: t[2], instrumentId: t[3], viability: !!t[4], barcoding: !!t[5],
   segmentation: t[6] === undefined ? true : !!t[6], blocked: t[7] ?? [],
+  ...(t[8] ? { viabilityMode: t[8] as Setup["viabilityMode"] } : {}), ...(t[9]?.length ? { extraMetals: t[9] } : {}),
 });
 
 const defaultClone = (idx: Index | undefined, targetId: string, setup: Setup): string | null | undefined =>

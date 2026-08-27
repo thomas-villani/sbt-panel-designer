@@ -217,6 +217,15 @@ export function titratedST(conjugates: Conjugate[]): { signal: number; tolerance
   return { signal: med(s.map((c) => c.signal!)), tolerance: med(s.map((c) => c.tolerance!)) };
 }
 
+/** True when one of the row's SBT kits supplies this target on this mass: the vial is in the box, not conjugated to order. */
+export function kitSupplies(idx: Index, row: PanelRow, mass: number | null): boolean {
+  if (mass == null) return false;
+  return row.moduleIds.some((id) => {
+    const m = idx.modulesById.get(id);
+    return m?.source === "sbt_kit" && m.markers.some((k) => k.target_id === row.targetId && k.mass === mass);
+  });
+}
+
 /** Engine row spec for a panel row under the current setup. */
 export function rowSpec(idx: Index, row: PanelRow, setup: Setup): RowSpec {
   const opts = row.targetId ? idx.cloneOptions(row.targetId, setup) : [];
@@ -229,7 +238,7 @@ export function rowSpec(idx: Index, row: PanelRow, setup: Setup): RowSpec {
   return {
     id: row.id, label: row.name,
     signal: useTitrated ? st.signal : null, tolerance: useTitrated ? st.tolerance : null, level: row.level,
-    metals: [...new Set(pool.flatMap((o) => o.conjugates.map((c) => c.mass)))],
+    metals: [...new Set([...pool.flatMap((o) => o.conjugates.map((c) => c.mass)), ...(row.locked != null ? [row.locked] : [])])],
     allowCustom: row.custom || !opt,
     locked: row.locked, critical: row.critical,
   };
@@ -261,6 +270,8 @@ export function resolveClones(idx: Index, rows: PanelRow[], assignment: Record<s
   return changed ? out : rows;
 }
 
+export const VIABILITY_ROLE: Record<NonNullable<Setup["viabilityMode"]>, string> = { pt: "viability_cisplatin", pt195: "viability_pt195", pt198: "viability_pt198", rh103: "viability_rhodium" };
+
 /** Reserved role ids enabled by the setup toggles. */
 export function reservedRoles(setup: Setup): string[] {
   if (setup.modality === "imaging") {
@@ -269,14 +280,20 @@ export function reservedRoles(setup: Setup): string[] {
     return roles;
   }
   const roles = ["dna_intercalator"];
-  if (setup.viability) roles.push("viability_cisplatin");
+  if (setup.viability) roles.push(VIABILITY_ROLE[setup.viabilityMode ?? "pt"]);
   if (setup.barcoding) roles.push("barcoding_pd");
   return roles;
 }
 
-/** A channel the instrument detects *and* SBT sells a conjugation metal for: the only kind an antibody can occupy. */
-export function antibodyChannel(c: { usable: boolean; antibody?: boolean }): boolean {
-  return c.usable && c.antibody !== false;
+/** A channel the instrument detects *and* SBT sells a conjugation metal for (or the user opted into): the only kind an antibody can occupy. */
+export function antibodyChannel(c: { mass: number; usable: boolean; antibody?: boolean }, setup?: Pick<Setup, "extraMetals">): boolean {
+  return c.usable && (c.antibody !== false || !!setup?.extraMetals?.includes(c.mass));
+}
+
+/** The opted-in metal group a mass belongs to, if any (so the UI can caveat it). */
+export function advancedGroup(idx: Index, setup: Setup, mass: number | null): { id: string; label: string; note: string } | null {
+  if (mass == null || !setup.extraMetals?.includes(mass)) return null;
+  return (idx.instruments.advanced?.[setup.modality] ?? []).find((g) => g.masses.includes(mass)) ?? null;
 }
 
 export interface BudgetLine { label: string; masses: number[] }
@@ -298,7 +315,7 @@ export interface Budget {
  */
 export function channelBudgetDetail(idx: Index, setup: Setup): Budget {
   const inst = idx.instrument(setup.instrumentId);
-  const pool = new Set(inst.channels.filter(antibodyChannel).map((c) => c.mass));
+  const pool = new Set(inst.channels.filter((c) => antibodyChannel(c, setup)).map((c) => c.mass));
   const antibody = pool.size;
   let scaffoldOnly = 0;
   const enabled = reservedRoles(setup);

@@ -2,8 +2,11 @@
 import { Model, NONE, mechanismOf } from "./po-model";
 import type { Contribution, Fix, RangeClass, Result, RowResult, Warning } from "./types";
 
-export const SPILL_WARN = 0.5; // received / T above this -> warning
-export const SPILL_CRIT = 1.0; // -> critical
+// Calibrated 2026-08-27 against SBT's own kits run on their kit metals: MDIPA peaks at 1.75 (CD16 148Nd oxide into
+// TCRgd 164Dy), the Immuno-oncology master panel at 0.76, most kits below 0.5. A validated product must not read as
+// broken, so "worth checking" starts where the spill equals the tolerance and "must fix" at twice it.
+export const SPILL_WARN = 1.0; // received / T above this -> warning
+export const SPILL_CRIT = 2.0; // -> critical
 export const DIM_T = 10; // rows with tolerance below this are "dim"
 
 const CLASS_TEXT: Record<RangeClass, string> = {

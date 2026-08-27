@@ -173,11 +173,11 @@ modules:
 
   - id: tumour-stroma-structural
     name: Tumour and stroma structure (IMC)
-    aliases: [TME, tumour microenvironment, tumor microenvironment, stroma, fibroblast, CAF, cancer, tumour, tumor]
+    aliases: [TME, tumour microenvironment, tumor microenvironment, stroma, fibroblast, CAF, cancer, tumour, tumor, structure, structural]
     application: imaging
     species: [human]
     sample_types: [ffpe, frozen]
-    category: tissue
+    category: structural
     featured: true
     blurb: Epithelium, mesenchyme, matrix and vessels - the map every tissue panel needs.
     markers:
@@ -191,6 +191,89 @@ modules:
       - {target: CD31/PECAM-1, abundance: medium}
       - {target: Podoplanin, abundance: medium, role: optional}
       - {target: β-Catenin, abundance: high, role: optional}
+
+  # Structural markers for imaging (SBT FAS feedback 2026-08-27): the tissue map that cell-type markers sit on.
+  - id: imc-epithelium
+    name: Epithelium (IMC)
+    aliases: [epithelial, epithelium, tumour cells, tumor cells, carcinoma, keratin, cytokeratin, structure, structural]
+    application: imaging
+    species: [human]
+    sample_types: [ffpe, frozen]
+    category: structural
+    featured: true
+    blurb: Epithelial and tumour-cell outline - pan-cytokeratin and E-cadherin, with EpCAM and keratin subtypes to refine.
+    markers:
+      - {target: Pan-Cytokeratin, abundance: very_high}
+      - {target: E-Cadherin, abundance: high}
+      - {target: CD326/EpCAM, abundance: high, role: recommended}
+      - {target: Keratin 8/18, abundance: very_high, role: optional}
+      - {target: Cytokeratin 7, abundance: high, role: optional}
+      - {target: β-Catenin, abundance: high, role: optional}
+
+  - id: imc-vasculature
+    name: Vessels and lymphatics (IMC)
+    aliases: [vasculature, vessels, blood vessels, endothelium, endothelial, lymphatics, lymphatic vessels, angiogenesis, structure, structural]
+    application: imaging
+    species: [human]
+    sample_types: [ffpe, frozen]
+    category: structural
+    featured: true
+    blurb: Blood vessels (CD31, CD34), vessel walls (αSMA) and lymphatics (podoplanin).
+    markers:
+      - {target: CD31/PECAM-1, abundance: medium}
+      - {target: CD34, abundance: medium, role: recommended}
+      - {target: α-Smooth Muscle Actin, abundance: very_high}
+      - {target: Podoplanin, abundance: medium, role: recommended}
+
+  - id: imc-matrix-fibroblasts
+    name: Matrix and fibroblasts (IMC)
+    aliases: [ECM, extracellular matrix, matrix, collagen, fibroblasts, CAF, stroma, stromal, fibrosis, structure, structural]
+    application: imaging
+    species: [human]
+    sample_types: [ffpe, frozen]
+    category: structural
+    featured: true
+    blurb: Collagen and fibronectin for the matrix, vimentin, αSMA and FAP for the fibroblasts that lay it down.
+    markers:
+      - {target: Collagen Type I, abundance: very_high}
+      - {target: Fibronectin, abundance: high, role: recommended}
+      - {target: Vimentin, abundance: very_high}
+      - {target: α-Smooth Muscle Actin, abundance: very_high}
+      - {target: FAP, abundance: medium, role: optional}
+
+  - id: imc-nuclei-proliferation
+    name: Nuclei and proliferation (IMC)
+    aliases: [nuclear, nuclei, proliferation, cell cycle, mitosis, histone, Ki-67, segmentation, structure, structural]
+    application: imaging
+    species: [human]
+    sample_types: [ffpe, frozen]
+    category: structural
+    featured: true
+    blurb: Histone H3 for every nucleus (a segmentation aid alongside the Ir intercalator), Ki-67 for cycling cells, pHistone H3 for mitosis.
+    markers:
+      - {target: Histone H3, abundance: very_high}
+      - {target: Ki-67, abundance: high}
+      - {target: "pHistone H3 [Ser28]", abundance: high, role: optional}
+
+  - id: imc-brain-structure
+    name: Brain structure (IMC)
+    aliases: [neuro, brain, CNS, neurons, glia, astrocytes, microglia, oligodendrocytes, myelin, structure, structural]
+    application: imaging
+    species: [human]
+    sample_types: [ffpe, frozen]
+    category: structural
+    featured: true
+    blurb: Neurons (NeuN, MAP2, neurofilament, synaptophysin), astrocytes (GFAP), microglia (Iba1), oligodendrocytes and myelin (Olig2, MBP).
+    markers:
+      - {target: NeuN, abundance: high}
+      - {target: MAP2, abundance: very_high, role: recommended}
+      - {target: Neurofilament, abundance: very_high, role: recommended}
+      - {target: Synaptophysin, abundance: high, role: optional}
+      - {target: GFAP, abundance: very_high}
+      - {target: Iba1, abundance: high}
+      - {target: Olig2, abundance: medium, role: recommended}
+      - {target: MBP, abundance: very_high, role: recommended}
+      - {target: S100β, abundance: high, role: optional}
 
   - id: checkpoint-io-tissue
     name: Checkpoint / immuno-oncology (IMC)

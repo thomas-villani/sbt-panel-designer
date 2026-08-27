@@ -36,6 +36,8 @@ export interface PoMatrix {
   anomalies: string[];
 }
 
+export interface AdvancedMetals { id: string; label: string; masses: number[]; note: string }
+
 export interface ReservedRole {
   role: string;
   label: string;
@@ -54,6 +56,8 @@ export interface InstrumentBundle {
   reserved: Record<Modality, ReservedRole[]>;
   /** Metals available for (custom) antibody conjugation per modality. Missing on older bundles: falls back to X8/MCP9 constants. */
   conjugation?: Record<Modality, { masses: number[]; note?: string }>;
+  /** Metals not on the conjugation list that a user may opt into (Cd on IMC), with the caveat to show. */
+  advanced?: Record<Modality, AdvancedMetals[]>;
 }
 
 /** One panel row = one target that needs a channel. */
@@ -146,7 +150,7 @@ export interface Fix {
 export interface Warning {
   severity: "info" | "warning" | "critical";
   rowId: string;
-  code: "spillover" | "unassigned" | "flagged_channel" | "dim_bright_channel" | "reserved_lock";
+  code: "spillover" | "unassigned" | "flagged_channel" | "dim_bright_channel" | "reserved_lock" | "advanced_metal";
   message: string;
   fix?: Fix;
 }

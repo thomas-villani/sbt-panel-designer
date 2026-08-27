@@ -1,6 +1,6 @@
 "use client";
 /** The channel count, with its working shown: antibody channels plus scaffolding, minus every reservation. */
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { channelBudgetDetail, reservedRoles } from "@/lib/data";
 import { useStore } from "@/lib/store";
 import { cx } from "./ui";
@@ -28,6 +28,13 @@ export function ChannelCount({ used, className }: { used: number; className?: st
 }
 
 function BudgetCard({ onClose }: { onClose: () => void }) {
+  // Open upward by default; flip below the trigger when the card would run off the top of the viewport.
+  const ref = useRef<HTMLDivElement>(null);
+  const [flip, setFlip] = useState(false);
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (el) setFlip(el.getBoundingClientRect().top < 8);
+  }, []);
   const b = useBudgetDetail()!;
   const idx = useStore((s) => s.idx)!;
   const setup = useStore((s) => s.setup);
@@ -37,7 +44,7 @@ function BudgetCard({ onClose }: { onClose: () => void }) {
     ...(b.blocked.length ? [{ n: b.blocked.length, label: "Kept empty on purpose", masses: b.blocked }] : []),
   ];
   return (
-    <div className="absolute bottom-full right-0 z-30 mb-2 w-[22rem] max-w-[85vw] rounded-lg border border-slate-200 bg-white p-3 text-left text-xs shadow-xl dark:border-slate-600 dark:bg-slate-900" data-testid="budget-card">
+    <div ref={ref} className={cx("absolute right-0 z-30 w-[22rem] max-w-[85vw] rounded-lg border border-slate-200 bg-white p-3 text-left text-xs shadow-xl dark:border-slate-600 dark:bg-slate-900", flip ? "top-full mt-2" : "bottom-full mb-2")} data-testid="budget-card">
       <div className="mb-2 flex items-start justify-between gap-2">
         <span className="font-semibold">{b.instrument} channel budget</span>
         <button onClick={onClose} className="text-slate-400 hover:text-slate-700" aria-label="close">×</button>
@@ -46,13 +53,13 @@ function BudgetCard({ onClose }: { onClose: () => void }) {
         <tbody>
           <tr className="border-b border-slate-100 dark:border-slate-800">
             <td className="py-1 pr-2 text-right font-mono">{b.total}</td>
-            <td className="py-1">channels<div className="text-slate-500">{b.antibody} metals SBT offers for conjugation{b.total > b.antibody ? ` + ${b.total - b.antibody} scaffolding-only (Ir, Pd)` : ""}</div></td>
+            <td className="py-1">channels<div className="text-slate-600 dark:text-slate-400">{b.antibody} metals SBT offers for conjugation{b.total > b.antibody ? ` + ${b.total - b.antibody} Cell-ID-only (Ir, Pd)` : ""}</div></td>
           </tr>
           {rows.map((l) => (
             <tr key={l.label} className="border-b border-slate-100 dark:border-slate-800">
               <td className="py-1 pr-2 text-right font-mono text-rose-700 dark:text-rose-300">−{l.n}</td>
               <td className="py-1">{l.label}
-                <div className="text-slate-500">{l.masses.map(iso).join(", ")}</div>
+                <div className="text-slate-600 dark:text-slate-400">{l.masses.map(iso).join(", ")}</div>
               </td>
             </tr>
           ))}
@@ -63,13 +70,13 @@ function BudgetCard({ onClose }: { onClose: () => void }) {
         </tbody>
       </table>
       {setup.modality === "imaging" && (
-        <p className="mt-2 border-t border-slate-100 pt-2 text-slate-500 dark:border-slate-800">
+        <p className="mt-2 border-t border-slate-100 pt-2 text-slate-600 dark:text-slate-400 dark:border-slate-800">
           <b>Why not 45?</b> A Hyperion also detects 157Gd, 194Pt and 197Au, but SBT offers no IMC conjugation metal for
           them, and Pt on IMC performs poorly for antibodies: it is kept for the cell segmentation kit. Not running the
           kit? Turn it off in Setup and its three Pt channels come back.
         </p>
       )}
-      <p className="mt-2 text-slate-500">Scaffolding reservations: {reservedRoles(setup).length} role{reservedRoles(setup).length === 1 ? "" : "s"} · change them in Setup.</p>
+      <p className="mt-2 text-slate-600 dark:text-slate-400">Cell ID & controls: {reservedRoles(setup).length} role{reservedRoles(setup).length === 1 ? "" : "s"} · change them in Setup.</p>
     </div>
   );
 }

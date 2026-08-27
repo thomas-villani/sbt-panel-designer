@@ -22,7 +22,7 @@ export function Pill({ children, tone = "slate", className, title, onClick }: { 
     teal: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-100",
     amber: "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-100",
     rose: "bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-100",
-    emerald: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-100",
+    emerald: "bg-emerald-200 text-emerald-900 dark:bg-emerald-900 dark:text-emerald-100",
     violet: "bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-100",
   }[tone];
   const Tag = onClick ? "button" : "span";
@@ -41,16 +41,16 @@ export function H2({ children, hint }: { children: ReactNode; hint?: ReactNode }
   return (
     <div className="mb-3 flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
       <h2 className="text-lg font-semibold tracking-tight">{children}</h2>
-      {hint && <div className="text-xs text-slate-500 sm:text-right">{hint}</div>}
+      {hint && <div className="text-xs text-slate-600 dark:text-slate-400 sm:text-right">{hint}</div>}
     </div>
   );
 }
 
 export function Tile({ label, sub, active, onClick }: { label: string; sub?: string; active: boolean; onClick: () => void }) {
   return (
-    <button onClick={onClick} className={cx("min-w-0 rounded-lg border px-3 py-3 text-left transition sm:px-4", active ? "border-teal-600 bg-teal-50 text-teal-900 dark:bg-teal-950 dark:text-teal-100" : "border-slate-200 hover:border-teal-400 dark:border-slate-700")}>
+    <button onClick={onClick} className={cx("min-w-0 rounded-lg border px-3 py-3 text-left transition sm:px-4", active ? "border-teal-700 bg-teal-100 text-teal-950 ring-1 ring-teal-700 dark:bg-teal-900 dark:text-teal-50 dark:ring-teal-500" : "border-slate-400 hover:border-teal-500 dark:border-slate-600")}>
       <div className="font-medium">{label}</div>
-      {sub && <div className="text-xs text-slate-500">{sub}</div>}
+      {sub && <div className="text-xs text-slate-600 dark:text-slate-400">{sub}</div>}
     </button>
   );
 }

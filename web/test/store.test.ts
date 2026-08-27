@@ -163,3 +163,34 @@ describe("store: guided conflicts", () => {
     expect(useStore.getState().rows[0].accepted).toBeNull();
   });
 });
+
+describe("kits and the New panel button", () => {
+  it("a kit arrives on its own metals: every marker pinned to the kit mass, kit-only vials included", async () => {
+    const s = useStore.getState();
+    s.clearPanel();
+    s.setSetup({ modality: "suspension" });
+    const mdipa = useStore.getState().idx!.modulesById.get("direct-immune-profiling-assay-mdipa")!;
+    s.addModule(mdipa);
+    const rows = useStore.getState().rows;
+    expect(rows).toHaveLength(mdipa.markers.length);
+    for (const k of mdipa.markers) {
+      const r = rows.find((x) => x.targetId === k.target_id)!;
+      expect(r.locked).toBe(k.mass);
+      expect(r.clone).toBe(k.clone);
+      expect(r.clonePinned).toBe(true);
+    }
+    await useStore.getState().balanceNow();
+    const res = useStore.getState().result!;
+    expect(res.unassigned).toEqual([]); // CD66b-172Yb, CD57-155Gd and friends exist only in the kit, and still get placed
+    for (const k of mdipa.markers) expect(res.assignment[k.target_id!]).toBe(k.mass);
+  });
+
+  it("clearPanel empties the panel and returns to Setup (the share hash is dropped in the browser; see e2e)", () => {
+    const s = useStore.getState();
+    s.addModule(modules("suspension").find((m) => m.id === "human-pbmc-lineage")!);
+    s.setStep("build");
+    s.clearPanel();
+    expect(useStore.getState().rows).toEqual([]);
+    expect(useStore.getState().step).toBe("setup");
+  });
+});

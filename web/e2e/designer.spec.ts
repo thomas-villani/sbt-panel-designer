@@ -34,9 +34,9 @@ test("Priya: IMC panel from modules to BOM, shareable by URL", async ({ page }) 
 
   for (const m of ["Tissue architecture", "Basic immune", "Lymphoid", "Myeloid / macrophages", "Functional state", "T-cell exhaustion"]) await addModule(page, m);
   await expect(sidebarRows(page)).toHaveCount(27);
-  await expect(page.locator("aside")).toContainText("27 of ~38 channels · 6 modules");
-  await expect(page.locator("aside")).not.toContainText(METAL); // no metals before Balance
-  await expect(page.getByTestId("health")).toContainText(/fits/); // but the health line is live
+  await expect(page.locator("aside")).toContainText("27 of ~38 channels · 6 sets");
+  await expect(sidebarRows(page).filter({ hasText: "🔒" })).toHaveCount(27); // SBT kits arrive pinned to their kit metals
+  await expect(page.getByTestId("health")).toContainText(/fits/); // and the health line is live before Balance
 
   const box = page.getByPlaceholder(/e\.g\. CD8a/);
   await box.fill("granzyme");
@@ -128,7 +128,7 @@ test("cell types: 'dendritic' adds the DC gate with its negatives; overlap copy;
   await expect(hit).toContainText("CD3ε−"); // lineage negatives are spelled out
   await hit.click();
   await expect(sidebarRows(page)).toHaveCount(8); // CD4 + HLA-DR, CD11c, CD123, CD3ε−, CD19−, CD14−, CD56−
-  await expect(page.locator("aside")).toContainText("1 module");
+  await expect(page.locator("aside")).toContainText("1 set");
 
   // Card copy when another module already covers the markers: no more "Add 0 markers".
   const pdc = page.locator("div.rounded-lg").filter({ has: page.getByText("Plasmacytoid dendritic cells (pDC)", { exact: true }) }).first();
@@ -137,9 +137,9 @@ test("cell types: 'dendritic' adds the DC gate with its negatives; overlap copy;
   await page.getByRole("button", { name: "Cell types" }).click();
   const tcells = page.locator("div.rounded-lg").filter({ has: page.getByText("T cells", { exact: true }) }).first();
   await expect(tcells).toContainText("all targets already in panel");
-  await tcells.getByRole("button", { name: "Tag as module" }).click();
+  await tcells.getByRole("button", { name: "Tag as set" }).click();
   await expect(sidebarRows(page)).toHaveCount(8);
-  await expect(page.locator("aside")).toContainText("2 modules");
+  await expect(page.locator("aside")).toContainText("2 sets");
 
   // Papers from the literature DB appear in the row drawer.
   await sidebarRows(page).first().locator("button").first().click();
@@ -151,7 +151,8 @@ test("cell types: 'dendritic' adds the DC gate with its negatives; overlap copy;
   await page.getByLabel("Panel name").press("Enter");
   await expect(page.getByTestId("saved-panels")).toContainText("My DC panel");
   await expect(page.getByTestId("saved-panels")).toContainText("8 markers");
-  await page.getByRole("button", { name: "Clear" }).click();
+  await page.getByTestId("new-panel").click();
+  await page.getByRole("button", { name: "New panel" }).click();
   await expect(sidebarRows(page)).toHaveCount(0);
   await page.getByRole("button", { name: "My DC panel" }).click();
   await expect(sidebarRows(page)).toHaveCount(8);
@@ -174,11 +175,19 @@ test("IMC channel budget: 38 explained, segmentation kit optional, channels can 
   await expect(page.getByTestId("setup-budget")).toContainText("43 channels");
 
   // Not running the segmentation kit gives its three Pt channels back.
-  await page.getByRole("checkbox", { name: /Cell segmentation kit/ }).uncheck();
+  const seg = page.getByTestId("segmentation-choice");
+  await seg.getByRole("button", { name: /^None/ }).click();
   await expect(page.getByTestId("setup-budget")).toContainText("41");
-  await page.getByRole("checkbox", { name: /Cell segmentation kit/ }).check();
+  await seg.getByRole("button", { name: /Cell segmentation kit/ }).click();
   await expect(page.getByTestId("setup-budget")).toContainText("38");
-  await expect(page.getByRole("checkbox", { name: /DNA intercalator/ })).toBeDisabled();
+  await expect(page.getByText("DNA intercalator (Ir)").first()).toBeVisible(); // always on, no control
+
+  // Metals beyond the catalogue: opting into Cd adds its channels to the budget.
+  await page.getByTestId("advanced-metals-toggle").click();
+  await page.getByTestId("advanced-metals").getByRole("checkbox").check();
+  await expect(page.getByTestId("setup-budget")).toContainText("45");
+  await page.getByTestId("advanced-metals").getByRole("checkbox").uncheck();
+  await expect(page.getByTestId("setup-budget")).toContainText("38");
 
   // "Blank" channels for an RPT nuclide: blocked masses come off the budget and out of the optimiser.
   await page.getByTestId("blocked-toggle").click();
@@ -208,7 +217,7 @@ test("markers carry their panels, topics search, browse-all lists the catalogue,
   const inModules = page.getByTestId("in-modules").first();
   await expect(inModules).toBeVisible();
   await inModules.getByRole("button").first().click();
-  await expect(page.locator("aside")).toContainText("1 module");
+  await expect(page.locator("aside")).toContainText("1 set");
 
   // A topic, not a marker: "io" finds the immuno-oncology panels and can flood the grid.
   await box.fill("io");
@@ -216,7 +225,8 @@ test("markers carry their panels, topics search, browse-all lists the catalogue,
   await page.getByTestId("show-all-modules").click();
   await expect(page.getByText(/Panels matching “io”/)).toBeVisible();
   await page.getByRole("button", { name: "clear", exact: true }).click();
-  await page.getByRole("button", { name: "Clear", exact: true }).click(); // empty the panel again
+  await page.getByTestId("new-panel").click(); await page.getByRole("button", { name: "New panel" }).click(); // empty the panel again
+  await page.getByRole("button", { name: "Build" }).click();
 
   // Everything that is labelled, in one table.
   await page.getByTestId("browse-toggle").click();
@@ -230,9 +240,9 @@ test("markers carry their panels, topics search, browse-all lists the catalogue,
   // A marker of your own, already conjugated: pin its metal so the balancer works around it.
   await box.fill("My own hybridoma");
   await page.getByText(/custom conjugation/).first().click();
-  const row = sidebarRows(page).filter({ hasText: "My own hybridoma" });
+  const row = sidebarRows(page).filter({ hasText: "My own hybridoma" }).first(); // .first(): another open drawer may name this marker as a spill source
   await row.locator("button").first().click();
-  await row.getByRole("combobox").selectOption({ label: "already labelled with 168Er" });
+  await row.getByTestId("metal-pick").selectOption({ label: "168Er" });
   await expect(row).toContainText("168Er");
   await balance(page);
   await expect(row).toContainText("168Er");

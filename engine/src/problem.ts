@@ -35,6 +35,8 @@ export interface BuildOptions {
   /** Reserved roles to apply (ids from bundle.reserved[modality]); default = roles flagged `default: true`. */
   reservedRoles?: string[] | null;
   extraReserved?: number[];
+  /** Masses the user opted into although SBT lists no conjugation metal for them on this modality (see bundle.advanced). */
+  extraMetals?: number[];
   /** Masses to release from reservation (e.g. a kit that legitimately uses 195Pt). */
   unreserve?: number[];
   weights?: Partial<Weights>;
@@ -70,10 +72,11 @@ export function buildProblem(bundle: InstrumentBundle, opts: BuildOptions): Prob
   for (const r of enabled) for (const m of r.masses) (r.hard ? reserved : flagged).add(m);
   for (const m of release) reserved.delete(m);
 
-  const usable = new Set(instrument.channels.filter((c) => canCarryAntibody(c)).map((c) => c.mass));
-  const custom = bundle.conjugation?.[instrument.modality]?.masses ??
-    [...X8_MASSES, ...(instrument.modality === "suspension" ? MCP9_MASSES : [])];
-  const customMasses = custom.filter((m) => usable.has(m));
+  const extra = new Set(opts.extraMetals ?? []);
+  const usable = new Set(instrument.channels.filter((c) => canCarryAntibody(c) || (c.usable && extra.has(c.mass))).map((c) => c.mass));
+  const custom = [...(bundle.conjugation?.[instrument.modality]?.masses ??
+    [...X8_MASSES, ...(instrument.modality === "suspension" ? MCP9_MASSES : [])]), ...extra];
+  const customMasses = [...new Set(custom)].filter((m) => usable.has(m));
 
   const rows: Row[] = opts.rows.map((spec) => {
     const st = signalTolerance({ signal: spec.signal, tolerance: spec.tolerance }, spec.level);
@@ -84,6 +87,7 @@ export function buildProblem(bundle: InstrumentBundle, opts: BuildOptions): Prob
     }
     if (spec.allowCustom) for (const m of customMasses) dom.add(m);
     const locked = typeof spec.locked === "number" ? spec.locked : massOf(spec.locked ?? null);
+    if (locked != null && usable.has(locked)) dom.add(locked); // a pinned vial is what the user has, catalogue or not
     return {
       id: spec.id, label: spec.label, signal: st.signal, tolerance: st.tolerance,
       domain: [...dom].sort((a, b) => a - b), locked, groups: spec.groups, unary: spec.unary, critical: spec.critical,

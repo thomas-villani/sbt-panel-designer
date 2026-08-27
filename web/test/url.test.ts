@@ -78,3 +78,17 @@ it("v2 carries an accepted-spill reason and drops it when empty", async () => {
   const plain = decodeState(encodeState({ setup, rows: [{ ...row, accepted: null }], nSamples: 1, balanced: false }))!;
   expect(plain.rows[0].accepted).toBeUndefined();
 });
+
+describe("url state: setup extras (viability mode, opted-in metals)", () => {
+  it("round-trips the viability reagent and opted-in metals, and leaves them off the link at their defaults", () => {
+    const base: Setup = { ...CYTOF, viability: true, barcoding: false, segmentation: true, blocked: [] };
+    const plain = encodeState({ setup: base, rows: [], nSamples: 1, balanced: false });
+    const rh = encodeState({ setup: { ...base, viabilityMode: "rh103" }, rows: [], nSamples: 1, balanced: false });
+    const cd = encodeState({ setup: { ...IMC, extraMetals: [111, 112] }, rows: [], nSamples: 1, balanced: false });
+    expect(decodeState(`#${plain}`)!.setup.viabilityMode).toBeUndefined();
+    expect(decodeState(`#${rh}`)!.setup.viabilityMode).toBe("rh103");
+    expect(decodeState(`#${cd}`)!.setup.extraMetals).toEqual([111, 112]);
+    expect(rh.length).toBeGreaterThan(plain.length); // the default really is dropped
+    expect(decodeState(`#${encodeState({ setup: { ...base, viabilityMode: "pt" }, rows: [], nSamples: 1, balanced: false })}`)!.setup.viabilityMode).toBeUndefined();
+  });
+});

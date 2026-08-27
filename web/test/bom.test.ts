@@ -15,16 +15,29 @@ function balanced(moduleId: string, setup: typeof IMC) {
 describe("BOM", () => {
   it("resolves a SKU for every catalogue row of a balanced IMC panel and sizes by slides", () => {
     const m = idx.modulesFor(IMC).find((x) => x.name === "Basic immune")!;
-    const { rows, result } = balanced(m.id, IMC);
+    const loose0 = balanced(m.id, IMC);
+    // As the store adds a kit: every marker pinned to the metal it ships with.
+    const rows = loose0.rows.map((r) => ({ ...r, locked: m.markers.find((k) => k.target_id === r.targetId)!.mass }));
+    const result = balance(buildProblem(idx.instruments, { instrumentId: IMC.instrumentId, rows: rows.map((r) => rowSpec(idx, r, IMC)), reservedRoles: reservedRoles(IMC) }), { seed: 1 });
     const bom = buildBom(idx, rows, result, IMC, 40);
     expect(bom).toHaveLength(rows.length);
+    // The kit is one SKU (listed by the Order page): its vials carry no part number of their own and count for nothing.
     for (const l of bom) {
+      expect(l.sku).toBeNull();
+      expect(l.qty).toBe(0);
+      expect(l.kit).toBe("Basic immune");
+      expect(result.assignment[l.row.id]).toBe(l.row.locked);
+    }
+    // The same markers added by hand (no kit) resolve to catalogue vials sized by slides.
+    const loose = rows.map((r) => ({ ...r, moduleIds: [], locked: null }));
+    const bomLoose = buildBom(idx, loose, result, IMC, 40);
+    for (const l of bomLoose) {
       expect(l.sku).not.toBeNull();
       expect(l.conjugate!.mass).toBe(result.assignment[l.row.id]);
       expect(l.conjugate!.clone).toBe(l.row.clone);
       expect(l.qty).toBeGreaterThanOrEqual(1);
     }
-    const one = buildBom(idx, rows, result, IMC, 1);
+    const one = buildBom(idx, loose, result, IMC, 1);
     for (const l of one) expect(l.qty).toBe(1);
   });
   it("suspension vials cover the sample count with tests formats", () => {

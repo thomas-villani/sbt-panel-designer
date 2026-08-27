@@ -71,21 +71,35 @@ reserved:
       default: true
       hard: true
     - role: viability_cisplatin
-      label: Viability (cisplatin)
+      label: Viability (cisplatin, natural Pt)
       masses: [194, 195, 198]
       default: true
       hard: false
-      note: "Any one Pt channel is enough; 195Pt is the usual choice. Alternative: the Rh103 intercalator."
+      note: "Natural-abundance cisplatin lights 194, 195 and 198Pt; keep all three clear. Monoisotopic 195Pt or 198Pt cisplatin frees the other two."
+    - role: viability_pt195
+      label: Viability (monoisotopic 195Pt cisplatin)
+      masses: [195]
+      default: false
+      hard: false
+      note: "Cell-ID Cisplatin-195Pt: one channel; 194 and 198Pt stay free for antibodies."
+    - role: viability_pt198
+      label: Viability (monoisotopic 198Pt cisplatin)
+      masses: [198]
+      default: false
+      hard: false
+      note: "Cell-ID Cisplatin-198Pt: one channel; 194 and 195Pt stay free for antibodies."
     - role: viability_rhodium
       label: Viability (Rh103 intercalator)
       masses: [103]
       default: false
       hard: false
+      note: "Cell-ID Intercalator-Rh: a DNA intercalator that only enters dead cells; uses 103Rh, no Pt channel."
     - role: barcoding_pd
-      label: Cell barcoding (Pd)
+      label: Cell barcoding (Cell-ID 20-Plex Pd)
       masses: [102, 104, 105, 106, 108, 110]
       default: false
       hard: true
+      note: "Six Pd channels; 106Cd and 110Cd antibody channels are lost while barcoding."
     - role: eq_beads
       label: EQ normalisation beads
       masses: [140, 151, 153, 165, 175]
@@ -122,6 +136,19 @@ conjugation:
     note: "41 metals; 3 of them Pt. SBT: 'Pt for IMC has limited use and really should only be used for ICSK (the cell segmentation kit) due to performance'. No Cd, La, 194Pt or 197Au. With the two Ir DNA channels that is 43 channels, 38 for antibodies."
     masses: [89, 115, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 158, 159, 160, 161,
              162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 195, 196, 198, 209]
+
+# Metals SBT does not list for conjugation on a modality but that some labs use anyway. Off by default; the UI asks the
+# user to opt in and labels every marker that lands on one. Masses must be detectable channels of the instruments.
+advanced:
+  suspension: []
+  imaging:
+    - id: cadmium
+      label: Cadmium (106-116Cd)
+      masses: [106, 110, 111, 112, 113, 114, 116]
+      # The IMC sensitivity curve has no Cd entry; assume the low end of the mass range (115In = 0.3) until SBT supplies data.
+      rel_sensitivity: 0.3
+      # Source: SBT FAS feedback, 2026-08-27.
+      note: "Not on the IMC conjugation list: some labs get Cd conjugates to work on tissue, but it is tissue-dependent. Validate on your own sections before relying on it."
 
 # Human-readable channel range classes so the UI can say "low-sensitivity channel" without listing masses.
 range_classes:

@@ -65,4 +65,4 @@ Setup → Build → Balance → Order in one page; metals appear only after Bala
 
 ## Roadmap
 
-See [ROADMAP.md](ROADMAP.md) for the backlog (antibody image gallery, publications, real IMC priors, pdv2 import/export, quote flow, FAS mode, SEO pages, Azure).
+See [ROADMAP.md](ROADMAP.md) for the backlog (antibody image gallery, publications, real IMC priors, pdv2 import/export, quote flow, FAS mode, SEO pages, Azure). [CHANGELOG.md](CHANGELOG.md) records what each numbered build (footer of the app) contains.

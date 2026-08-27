@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import { create } from "zustand";
 import type { Fix, Result } from "@pd3/engine";
-import { Index, channelBudget, defaultInstrument, levelFromSignal, loadPublications, markerPlan, reservedRoles, resolveClones, rowSpec, titratedST } from "./data";
+import { Index, channelBudget, defaultInstrument, levelFromSignal, loadPublications, markerPlan, reservedRoles, resolveClones, rowMetals, rowSpec, titratedST } from "./data";
 import { balanceInWorker, initEngine } from "./engine-client";
 import { panelHealth, type Health } from "./health";
 import { clearDraft, deleteSaved, listSaved, loadSaved, readDraft, savePanel, writeDraft, type SavedPanel } from "./saved";
@@ -118,7 +118,7 @@ export const useStore = create<State>((set, get) => {
     try {
       const result = await balanceInWorker({
         instrumentId: setup.instrumentId, rows: rows.map((r) => rowSpec(idx, r, setup)), reservedRoles: reservedRoles(setup),
-        extraReserved: setup.blocked,
+        extraReserved: setup.blocked, extraMetals: setup.extraMetals,
       }, { seed: 1 });
       if (seq === runSeq) {
         const resolved = resolveClones(idx, get().rows, result.assignment, setup);
@@ -134,7 +134,7 @@ export const useStore = create<State>((set, get) => {
     const { idx, setup } = get();
     return balanceInWorker({
       instrumentId: setup.instrumentId, rows: rows.map((r) => rowSpec(idx!, r, setup)), reservedRoles: reservedRoles(setup),
-      extraReserved: setup.blocked,
+      extraReserved: setup.blocked, extraMetals: setup.extraMetals,
     }, { seed: 1 });
   };
   const withFix = (rows: PanelRow[], result: Result | null, fix: Fix): PanelRow[] => {
@@ -154,18 +154,26 @@ export const useStore = create<State>((set, get) => {
     const i = rows.findIndex((r) => r.id === row.id);
     if (i < 0) return [...rows, row];
     const cur = rows[i];
-    const merged = { ...cur, moduleIds: [...new Set([...cur.moduleIds, ...row.moduleIds])] };
+    // A kit joining an existing row brings its clone and metal along unless the user already pinned their own.
+    const merged = {
+      ...cur, moduleIds: [...new Set([...cur.moduleIds, ...row.moduleIds])],
+      ...(row.clonePinned && !cur.clonePinned ? { clone: row.clone, clonePinned: true, custom: false } : {}),
+      ...(row.locked != null && cur.locked == null ? { locked: row.locked } : {}),
+    };
     return rows.map((r, j) => (j === i ? merged : r));
   };
-  const makeRow = (idx: Index, setup: Setup, targetId: string, o: { moduleId?: string; level?: AbundanceLevel | null; clone?: string | null } = {}): PanelRow | null => {
+  const makeRow = (idx: Index, setup: Setup, targetId: string, o: { moduleId?: string; level?: AbundanceLevel | null; clone?: string | null; mass?: number | null } = {}): PanelRow | null => {
     const t = idx.targetsById.get(targetId);
     if (!t) return null;
     const opts = idx.cloneOptions(targetId, setup);
-    const pinned = !!o.clone && opts.some((x) => x.clone === o.clone); // a kit names its clone: keep it
+    // A kit's metal is part of the product: the row arrives pinned to it (the user can still unpin).
+    const locked = o.mass != null && idx.instrument(setup.instrumentId).channels.some((c) => c.mass === o.mass && c.usable) ? o.mass : null;
+    // A kit names its clone: keep it, even when that clone is only sold inside the kit (no loose catalogue vial).
+    const pinned = !!o.clone && (opts.some((x) => x.clone === o.clone) || locked != null);
     const clone = pinned ? o.clone! : opts[0]?.clone ?? null;
-    const st = clone ? titratedST(opts.find((x) => x.clone === clone)!.conjugates) : null;
+    const st = clone ? titratedST(opts.find((x) => x.clone === clone)?.conjugates ?? []) : null;
     const level = o.level ?? levelFromSignal(st?.signal) ?? "medium";
-    return { id: targetId, targetId, name: t.name, level, clone, custom: !clone, locked: null, moduleIds: o.moduleId ? [o.moduleId] : [], ...(pinned ? { clonePinned: true } : {}) };
+    return { id: targetId, targetId, name: t.name, level, clone, custom: !clone, locked, moduleIds: o.moduleId ? [o.moduleId] : [], ...(pinned ? { clonePinned: true } : {}) };
   };
 
   return {
@@ -229,7 +237,7 @@ export const useStore = create<State>((set, get) => {
         const plan = markerPlan(k, setup);
         if (plan === "skip") continue;
         if (k.target_id && k.in_catalogue) { // makeRow yields a custom row when no conjugate is sold for this modality
-          const row = makeRow(idx, setup, k.target_id, { moduleId: m.id, level: k.abundance_level, clone: k.clone });
+          const row = makeRow(idx, setup, k.target_id, { moduleId: m.id, level: k.abundance_level, clone: k.clone, mass: m.source === "sbt_kit" ? k.mass : null });
           if (row) rows = upsertRow(rows, row);
         } else {
           const id = `custom:${k.target_name}`;
@@ -268,7 +276,16 @@ export const useStore = create<State>((set, get) => {
     setLevel: (id, level) => { set({ rows: get().rows.map((r) => (r.id === id ? { ...r, level } : r)) }); touch(); },
     setClone: (id, clone) => { set({ rows: get().rows.map((r) => (r.id === id ? { ...r, clone, custom: !clone, locked: null, clonePinned: true } : r)) }); touch(); },
     freeClone: (id) => { set({ rows: get().rows.map((r) => (r.id === id ? { ...r, clonePinned: false, custom: false, locked: null } : r)) }); touch(); },
-    lockRow: (id, mass) => { set({ rows: get().rows.map((r) => (r.id === id ? { ...r, locked: mass } : r)) }); touch(); },
+    lockRow: (id, mass) => {
+      const { idx, setup } = get();
+      set({ rows: get().rows.map((r) => {
+        if (r.id !== id) return r;
+        // A metal no catalogue vial of this clone covers means the user has (or will make) their own conjugate.
+        const custom = mass != null && !!idx && r.targetId != null && !r.custom && !rowMetals(idx, r, setup).includes(mass) ? true : r.custom;
+        return { ...r, locked: mass, custom };
+      }) });
+      touch();
+    },
     /**
      * Try the engine's suggested move. The move pins the marker(s) so the next balance honours it; if the whole panel
      * ends up worse the pins are dropped again, so a chain of "Apply" clicks cannot dig the user into a hole.
@@ -327,7 +344,14 @@ export const useStore = create<State>((set, get) => {
     },
     dismissNotice: () => set({ notice: null }),
     setNSamples: (n) => { set({ nSamples: Math.max(1, Math.round(n) || 1) }); persist(); },
-    clearPanel: () => { if (timer) clearTimeout(timer); runSeq++; set({ rows: [], result: null, balanced: false, restoredDraft: false, notice: null }); clearDraft(); persist(); },
+    clearPanel: () => {
+      if (timer) clearTimeout(timer);
+      runSeq++;
+      set({ rows: [], result: null, balanced: false, restoredDraft: false, notice: null, step: "setup" });
+      clearDraft();
+      // Drop the share hash too: a leftover "#..." from the previous panel read as a file name to SBT's testers.
+      if (typeof window !== "undefined" && window.location.hash) window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    },
   };
 });
 

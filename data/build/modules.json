@@ -1,9 +1,9 @@
 {
  "version": "2026-08-25.1",
  "stats": {
-  "modules": 118,
+  "modules": 123,
   "sbt_kits": 62,
-  "curated": 56,
+  "curated": 61,
   "kit_rows": 640,
   "kit_rows_resolved": 635,
   "kit_rows_with_catalogue_conjugate": 603,
@@ -28181,7 +28181,7 @@
     "ffpe",
     "frozen"
    ],
-   "category": "tissue",
+   "category": "structural",
    "blurb": "Epithelium, mesenchyme, matrix and vessels - the map every tissue panel needs.",
    "featured": true,
    "hidden": false,
@@ -28194,7 +28194,9 @@
     "CAF",
     "cancer",
     "tumour",
-    "tumor"
+    "tumor",
+    "structure",
+    "structural"
    ],
    "definition": null,
    "markers": [
@@ -28505,6 +28507,963 @@
      "applications": [
       "imaging",
       "suspension"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "imc-epithelium",
+   "slug": "imc-epithelium",
+   "name": "Epithelium (IMC)",
+   "source": "curated",
+   "kit": null,
+   "application": "imaging",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "ffpe",
+    "frozen"
+   ],
+   "category": "structural",
+   "blurb": "Epithelial and tumour-cell outline - pan-cytokeratin and E-cadherin, with EpCAM and keratin subtypes to refine.",
+   "featured": true,
+   "hidden": false,
+   "aliases": [
+    "epithelial",
+    "epithelium",
+    "tumour cells",
+    "tumor cells",
+    "carcinoma",
+    "keratin",
+    "cytokeratin",
+    "structure",
+    "structural"
+   ],
+   "definition": null,
+   "markers": [
+    {
+     "target_id": "pancytokeratin",
+     "target_name": "Pan-Cytokeratin",
+     "raw_target": "Pan-Cytokeratin",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "142Nd",
+      "148Nd",
+      "155Gd",
+      "162Dy",
+      "174Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    },
+    {
+     "target_id": "cd324ecadherin",
+     "target_name": "E-Cadherin",
+     "raw_target": "E-Cadherin",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "158Gd",
+      "172Yb",
+      "173Yb",
+      "174Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    },
+    {
+     "target_id": "cd326epcam",
+     "target_name": "CD326/EpCAM",
+     "raw_target": "CD326/EpCAM",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "144Nd",
+      "147Sm",
+      "151Eu",
+      "154Sm",
+      "172Yb",
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    },
+    {
+     "target_id": "keratin818",
+     "target_name": "Keratin 8/18",
+     "raw_target": "Keratin 8/18",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "174Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    },
+    {
+     "target_id": "cytokeratin7",
+     "target_name": "Cytokeratin 7",
+     "raw_target": "Cytokeratin 7",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "164Dy"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    },
+    {
+     "target_id": "nonpactivebcatenin",
+     "target_name": "β-Catenin",
+     "raw_target": "β-Catenin",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "147Sm",
+      "151Eu",
+      "165Ho",
+      "169Tm",
+      "172Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "imc-vasculature",
+   "slug": "imc-vasculature",
+   "name": "Vessels and lymphatics (IMC)",
+   "source": "curated",
+   "kit": null,
+   "application": "imaging",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "ffpe",
+    "frozen"
+   ],
+   "category": "structural",
+   "blurb": "Blood vessels (CD31, CD34), vessel walls (αSMA) and lymphatics (podoplanin).",
+   "featured": true,
+   "hidden": false,
+   "aliases": [
+    "vasculature",
+    "vessels",
+    "blood vessels",
+    "endothelium",
+    "endothelial",
+    "lymphatics",
+    "lymphatic vessels",
+    "angiogenesis",
+    "structure",
+    "structural"
+   ],
+   "definition": null,
+   "markers": [
+    {
+     "target_id": "cd31pecam1",
+     "target_name": "CD31/PECAM-1",
+     "raw_target": "CD31/PECAM-1",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "144Nd",
+      "145Nd",
+      "146Nd",
+      "151Eu",
+      "165Ho",
+      "171Yb",
+      "172Yb",
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    },
+    {
+     "target_id": "cd34",
+     "target_name": "CD34",
+     "raw_target": "CD34",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "151Eu",
+      "167Er"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    },
+    {
+     "target_id": "asmoothmuscleactin",
+     "target_name": "α-Smooth Muscle Actin",
+     "raw_target": "α-Smooth Muscle Actin",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "142Nd",
+      "153Eu",
+      "209Bi"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
+    },
+    {
+     "target_id": "podoplanin",
+     "target_name": "Podoplanin",
+     "raw_target": "Podoplanin",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "164Dy"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "imc-matrix-fibroblasts",
+   "slug": "imc-matrix-fibroblasts",
+   "name": "Matrix and fibroblasts (IMC)",
+   "source": "curated",
+   "kit": null,
+   "application": "imaging",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "ffpe",
+    "frozen"
+   ],
+   "category": "structural",
+   "blurb": "Collagen and fibronectin for the matrix, vimentin, αSMA and FAP for the fibroblasts that lay it down.",
+   "featured": true,
+   "hidden": false,
+   "aliases": [
+    "ECM",
+    "extracellular matrix",
+    "matrix",
+    "collagen",
+    "fibroblasts",
+    "CAF",
+    "stroma",
+    "stromal",
+    "fibrosis",
+    "structure",
+    "structural"
+   ],
+   "definition": null,
+   "markers": [
+    {
+     "target_id": "collagentypei",
+     "target_name": "Collagen Type I",
+     "raw_target": "Collagen Type I",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "89Y",
+      "141Pr",
+      "142Nd",
+      "144Nd",
+      "169Tm",
+      "173Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
+    },
+    {
+     "target_id": "fibronectin",
+     "target_name": "Fibronectin",
+     "raw_target": "Fibronectin",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "142Nd",
+      "151Eu",
+      "152Sm",
+      "154Sm",
+      "156Gd",
+      "171Yb",
+      "174Yb",
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
+    },
+    {
+     "target_id": "vimentin",
+     "target_name": "Vimentin",
+     "raw_target": "Vimentin",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "149Sm",
+      "151Eu",
+      "154Sm"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    },
+    {
+     "target_id": "asmoothmuscleactin",
+     "target_name": "α-Smooth Muscle Actin",
+     "raw_target": "α-Smooth Muscle Actin",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "142Nd",
+      "153Eu",
+      "209Bi"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
+    },
+    {
+     "target_id": "fap",
+     "target_name": "FAP",
+     "raw_target": "FAP",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "161Dy"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "imc-nuclei-proliferation",
+   "slug": "imc-nuclei-proliferation",
+   "name": "Nuclei and proliferation (IMC)",
+   "source": "curated",
+   "kit": null,
+   "application": "imaging",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "ffpe",
+    "frozen"
+   ],
+   "category": "structural",
+   "blurb": "Histone H3 for every nucleus (a segmentation aid alongside the Ir intercalator), Ki-67 for cycling cells, pHistone H3 for mitosis.",
+   "featured": true,
+   "hidden": false,
+   "aliases": [
+    "nuclear",
+    "nuclei",
+    "proliferation",
+    "cell cycle",
+    "mitosis",
+    "histone",
+    "Ki-67",
+    "segmentation",
+    "structure",
+    "structural"
+   ],
+   "definition": null,
+   "markers": [
+    {
+     "target_id": "histoneh3",
+     "target_name": "Histone H3",
+     "raw_target": "Histone H3",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "142Nd",
+      "146Nd",
+      "171Yb",
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
+    },
+    {
+     "target_id": "ki67",
+     "target_name": "Ki-67",
+     "raw_target": "Ki-67",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "150Nd",
+      "168Er",
+      "172Yb",
+      "173Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    },
+    {
+     "target_id": "phistoneh3ser28",
+     "target_name": "pHistone H3 [Ser28]",
+     "raw_target": "pHistone H3 [Ser28]",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "176Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "imc-brain-structure",
+   "slug": "imc-brain-structure",
+   "name": "Brain structure (IMC)",
+   "source": "curated",
+   "kit": null,
+   "application": "imaging",
+   "species": [
+    "human"
+   ],
+   "instruments": [],
+   "sample_types": [
+    "ffpe",
+    "frozen"
+   ],
+   "category": "structural",
+   "blurb": "Neurons (NeuN, MAP2, neurofilament, synaptophysin), astrocytes (GFAP), microglia (Iba1), oligodendrocytes and myelin (Olig2, MBP).",
+   "featured": true,
+   "hidden": false,
+   "aliases": [
+    "neuro",
+    "brain",
+    "CNS",
+    "neurons",
+    "glia",
+    "astrocytes",
+    "microglia",
+    "oligodendrocytes",
+    "myelin",
+    "structure",
+    "structural"
+   ],
+   "definition": null,
+   "markers": [
+    {
+     "target_id": "neun",
+     "target_name": "NeuN",
+     "raw_target": "NeuN",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "145Nd",
+      "160Gd",
+      "171Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
+    },
+    {
+     "target_id": "map2",
+     "target_name": "MAP2",
+     "raw_target": "MAP2",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "148Nd",
+      "175Lu"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
+    },
+    {
+     "target_id": "neurofilament",
+     "target_name": "Neurofilament",
+     "raw_target": "Neurofilament",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "158Gd",
+      "169Tm"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
+    },
+    {
+     "target_id": "synaptophysin",
+     "target_name": "Synaptophysin",
+     "raw_target": "Synaptophysin",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "151Eu",
+      "158Gd",
+      "161Dy"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
+    },
+    {
+     "target_id": "gfap",
+     "target_name": "GFAP",
+     "raw_target": "GFAP",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "143Nd",
+      "163Dy"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging",
+      "suspension"
+     ]
+    },
+    {
+     "target_id": "iba1",
+     "target_name": "Iba1",
+     "raw_target": "Iba1",
+     "kind": "antibody",
+     "role": "required",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "142Nd",
+      "168Er"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
+    },
+    {
+     "target_id": "olig2",
+     "target_name": "Olig2",
+     "raw_target": "Olig2",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "medium",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "168Er",
+      "172Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
+    },
+    {
+     "target_id": "mbp",
+     "target_name": "MBP",
+     "raw_target": "MBP",
+     "kind": "antibody",
+     "role": "recommended",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "very_high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "141Pr",
+      "149Sm",
+      "158Gd",
+      "169Tm",
+      "172Yb"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging"
+     ]
+    },
+    {
+     "target_id": "s100b",
+     "target_name": "S100β",
+     "raw_target": "S100β",
+     "kind": "antibody",
+     "role": "optional",
+     "clone": null,
+     "metal": null,
+     "mass": null,
+     "signal": null,
+     "tolerance": null,
+     "st_source": "curated",
+     "abundance_level": "high",
+     "kit_only": false,
+     "custom": false,
+     "in_catalogue": true,
+     "conjugate_id": null,
+     "catalogue_metals": [
+      "146Nd",
+      "164Dy"
+     ],
+     "note": null,
+     "polarity": "pos",
+     "applications": [
+      "imaging"
      ]
     }
    ]

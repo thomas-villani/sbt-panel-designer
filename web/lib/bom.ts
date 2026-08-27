@@ -1,6 +1,6 @@
 /** Bill of materials from a balanced panel. Formats: suspension vials are tests; imaging vials are µg. */
 import type { Result } from "@pd3/engine";
-import type { Index } from "./data";
+import { advancedGroup, kitSupplies, type Index } from "./data";
 import type { Conjugate, PanelRow, Setup, Sku } from "./types";
 
 export interface BomLine {
@@ -10,6 +10,8 @@ export interface BomLine {
   sku: Sku | null;
   qty: number;
   note: string | null;
+  /** Set when an SBT kit in the panel supplies this vial: no part number of its own, the kit is the SKU. */
+  kit?: string;
   tds: string | null;
 }
 
@@ -22,15 +24,19 @@ export function buildBom(idx: Index, rows: PanelRow[], result: Result | null, se
     const mass = result?.assignment[row.id] ?? null;
     const metal = mass != null ? idx.instrument(setup.instrumentId).channels.find((c) => c.mass === mass)?.label ?? String(mass) : null;
     if (!row.targetId) return { row, metal, conjugate: null, sku: null, qty: 1, note: "Custom conjugation service (antibody supplied by you or sourced by SBT)", tds: null };
+    const adv = advancedGroup(idx, setup, mass);
+    const caveat = adv ? ` · ${adv.label}: ${adv.note}` : "";
+    const kit = row.moduleIds.map((id) => idx.modulesById.get(id)).find((m) => m?.source === "sbt_kit" && kitSupplies(idx, { ...row, moduleIds: [m.id] }, mass));
+    if (kit) return { row, metal, conjugate: null, sku: null, qty: 0, note: caveat ? caveat.slice(3) : null, kit: kit.name, tds: null };
     const conj = mass != null && row.clone
       ? idx.candidates(row.targetId, setup).find((c) => c.clone === row.clone && c.mass === mass) ?? null
       : null;
     if (!conj) {
       const why = mass == null ? "Unassigned: no free channel" : `No catalogue ${row.clone ?? ""} conjugate on ${metal}: custom conjugation (Maxpar X8 kit) or OnDemand`;
-      return { row, metal, conjugate: null, sku: null, qty: 1, note: why, tds: null };
+      return { row, metal, conjugate: null, sku: null, qty: 1, note: why + caveat, tds: null };
     }
     const { sku, qty } = pickSku(conj, setup, nSamples);
-    return { row, metal, conjugate: conj, sku, qty, note: null, tds: conj.tds_url };
+    return { row, metal, conjugate: conj, sku, qty, note: caveat ? caveat.slice(3) : null, tds: conj.tds_url };
   });
 }
 
