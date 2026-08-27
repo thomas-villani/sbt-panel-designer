@@ -1,12 +1,12 @@
 import { describe, expect, it } from "vitest";
 import { decodeState, encodeState } from "@/lib/url";
-import type { PanelRow } from "@/lib/types";
+import type { PanelRow, Setup } from "@/lib/types";
 import { CYTOF, IMC, index } from "./util";
 
 const rows: PanelRow[] = [
-  { id: "cd45", targetId: "cd45", name: "CD45", level: "very_high", clone: "HI30", custom: false, locked: 89, moduleIds: ["a", "b"] },
+  { id: "cd45", targetId: "cd45", name: "CD45", level: "very_high", clone: "HI30", custom: false, locked: 89, moduleIds: ["a", "b"], clonePinned: true },
   { id: "custom:TOX", targetId: null, name: "TOX", level: "low", clone: null, custom: true, locked: null, moduleIds: [] },
-  { id: "cd3e", targetId: "cd3e", name: "CD3ε", level: "high", clone: "UCHT1", custom: false, locked: null, moduleIds: ["a"] },
+  { id: "cd3e", targetId: "cd3e", name: "CD3ε", level: "high", clone: "UCHT1", custom: false, locked: null, moduleIds: ["a"] }, // free: the optimiser may swap clones
 ];
 
 // v1 (pre-compression) share link for the same state, kept verbatim so old links stay decodable.
@@ -56,7 +56,7 @@ describe("url state", () => {
     for (const setup of [IMC, CYTOF]) {
       const dec = decodeState(`#${v1(setup)}`)!;
       expect(dec.setup).toEqual(setup);
-      expect(dec.rows).toEqual(rows);
+      expect(dec.rows).toEqual(rows.map((r) => (r.clone ? { ...r, clonePinned: true } : r))); // v1 clones were explicit choices
       expect(dec.nSamples).toBe(40);
     }
   });
@@ -67,4 +67,14 @@ describe("url state", () => {
     expect(decodeState("#~not-deflate")).toBeNull();
     expect(decodeState("#" + Buffer.from('{"v":2}').toString("base64url"))).toBeNull();
   });
+});
+
+it("v2 carries an accepted-spill reason and drops it when empty", async () => {
+  const { encodeState, decodeState } = await import("@/lib/url");
+  const setup = { modality: "suspension", species: "human", sampleType: "pbmc", instrumentId: "cytof_xt", viability: true, barcoding: false, segmentation: true, blocked: [] as number[] } as Setup;
+  const row = { id: "cd4", targetId: "cd4", name: "CD4", level: "medium" as const, clone: "RPA-T4", custom: false, locked: null, moduleIds: [], accepted: "CD4 and CD19 never co-express" };
+  const st = decodeState(encodeState({ setup, rows: [row], nSamples: 1, balanced: false }))!;
+  expect(st.rows[0].accepted).toBe("CD4 and CD19 never co-express");
+  const plain = decodeState(encodeState({ setup, rows: [{ ...row, accepted: null }], nSamples: 1, balanced: false }))!;
+  expect(plain.rows[0].accepted).toBeUndefined();
 });

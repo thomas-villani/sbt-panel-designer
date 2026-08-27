@@ -1,7 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import { markerPlan, normKey } from "@/lib/data";
-import { useStore } from "@/lib/store";
+import { useHealth, useStore } from "@/lib/store";
 import type { ModuleMarker, PanelModule, Target } from "@/lib/types";
 import { BrowseAll } from "./BrowseAll";
 import { ChannelCount } from "./ChannelBudget";
@@ -28,6 +28,8 @@ export function BuildStep() {
   const balanced = useStore((s) => s.balanced);
   const pubs = useStore((s) => s.pubs);
   const ensurePubs = useStore((s) => s.ensurePubs);
+  const health = useHealth();
+  const left = health ? Math.max(0, health.budget - rows.length) : Infinity; // channels still free
   const [q, setQ] = useState("");
   const [cat, setCat] = useState<string | null>(null);
   const [topic, setTopic] = useState<string | null>(null); // "show me everything matching io / neuro"
@@ -85,7 +87,7 @@ export function BuildStep() {
           <Pill tone="teal" className="ml-2">{m.category === "celltype" ? "cell type" : "module"}</Pill>
           <span className="mt-0.5 block truncate text-xs text-slate-500">{m.definition ?? m.markers.filter((k) => markerPlan(k, setup) !== "skip").map(markerLabel).join(", ")}</span>
         </span>
-        <span className="hidden max-w-[45%] shrink-0 truncate text-xs text-slate-500 sm:block">{added ? "added" : cov.missing.length === 0 ? "all in panel" : `adds ${cov.missing.map(markerLabel).join(", ")}`}</span>
+        <span className={cx("hidden max-w-[45%] shrink-0 truncate text-xs sm:block", !added && cov.missing.length > left ? "text-rose-700 dark:text-rose-300" : "text-slate-500")}>{added ? "added" : cov.missing.length === 0 ? "all in panel" : cov.missing.length > left ? `needs ${cov.missing.length} channels, ${left === 0 ? "none" : `only ${left}`} left` : `adds ${cov.missing.map(markerLabel).join(", ")}`}</span>
       </button>
     );
   };
@@ -111,6 +113,17 @@ export function BuildStep() {
 
   return (
     <div className="space-y-6">
+      {health && health.over > 0 && (
+        <div className="flex flex-wrap items-center gap-3 rounded-lg border border-rose-300 bg-rose-50 p-3 text-sm dark:border-rose-800 dark:bg-rose-950" data-testid="over-budget">
+          <span className="flex-1"><b>{rows.length} markers, {health.budget} channels.</b> The {idx.instrument(setup.instrumentId).name} cannot hold this panel: drop {health.over} marker{health.over > 1 ? "s" : ""}, or let Balance suggest which.</span>
+          <Button size="sm" variant="primary" onClick={() => setStep("balance")}>Suggest what to drop →</Button>
+        </div>
+      )}
+      {health && health.over === 0 && left <= 3 && rows.length > 0 && (
+        <div className="rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm dark:border-amber-800 dark:bg-amber-950" data-testid="near-budget">
+          {left === 0 ? "Every antibody channel is spoken for. Adding more means dropping something." : `${left} channel${left > 1 ? "s" : ""} left.`}
+        </div>
+      )}
       <section>
         <H2 hint="type a marker, an alias (PD-L1 finds CD274), a cell type (dendritic cells) or paste a comma-separated list">Add a marker or cell type</H2>
         <div className="relative">
@@ -216,14 +229,16 @@ export function BuildStep() {
                   </div>
                 )}
                 <div className="mt-auto flex items-center justify-between gap-2">
-                  <span className="text-xs text-slate-500">
-                    {added ? `${cov.n}/${cov.total} in panel` : cov.n === 0 ? `${cov.total} marker${cov.total === 1 ? "" : "s"}` : nMissing === 0 ? "all targets already in panel" : `${cov.n} of ${cov.total} already in panel`}
+                  <span className={cx("text-xs", !added && nMissing > left ? "text-rose-700 dark:text-rose-300" : "text-slate-500")}>
+                    {added ? `${cov.n}/${cov.total} in panel`
+                      : nMissing > left ? `needs ${nMissing} channel${nMissing === 1 ? "" : "s"}, ${left === 0 ? "none" : `only ${left}`} left`
+                        : cov.n === 0 ? `${cov.total} marker${cov.total === 1 ? "" : "s"}` : nMissing === 0 ? "all targets already in panel" : `${cov.n} of ${cov.total} already in panel`}
                   </span>
                   {added
                     ? <Button size="sm" variant="danger" onClick={() => removeModule(m.id)}>Remove</Button>
                     : nMissing === 0
                       ? <Button size="sm" variant="secondary" title="Every marker is already in your panel; tag them as this module" onClick={() => addModule(m)}>Tag as module</Button>
-                      : <Button size="sm" variant="primary" onClick={() => addModule(m)}>Add {nMissing} marker{nMissing === 1 ? "" : "s"}</Button>}
+                      : <Button size="sm" variant={nMissing > left ? "secondary" : "primary"} title={nMissing > left ? "This will push the panel over the channel budget; you can still add it and trim afterwards." : undefined} onClick={() => addModule(m)}>Add {nMissing} marker{nMissing === 1 ? "" : "s"}{nMissing > left ? " anyway" : ""}</Button>}
                 </div>
               </Card>
             );

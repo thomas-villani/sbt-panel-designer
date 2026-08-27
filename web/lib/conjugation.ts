@@ -56,13 +56,15 @@ export function conjugationIssues(idx: Index, rows: PanelRow[], result: Result, 
     }
 
     if (!row.clone) continue; // "custom conjugation" chosen deliberately in the clone picker
-    const sold = cands.filter((c) => c.clone === row.clone);
+    const sold = row.clonePinned ? cands.filter((c) => c.clone === row.clone) : cands;
     if (sold.some((c) => c.mass === mass)) continue;
     const free = [...new Set(sold.map((c) => c.mass))].filter((m) => usable.has(m) && !off.has(m) && !taken.has(m)).sort((a, b) => a - b);
     out.push({
       rowId: row.id, name: row.name, channel: label(mass), kind: "metal_not_sold",
-      message: `${row.name} (clone ${row.clone}) sits on ${label(mass)}, which that clone is not sold on: it would be a custom conjugation.`,
-      detail: free.length ? null : `Every catalogue metal for this clone (${[...new Set(sold.map((c) => c.metal))].join(", ")}) is taken or reserved — free one up, or accept the custom conjugation.`,
+      message: row.clonePinned
+        ? `${row.name} (clone ${row.clone}) sits on ${label(mass)}, which that clone is not sold on: it would be a custom conjugation.`
+        : `${row.name} sits on ${label(mass)}, which no catalogue clone is sold on: it would be a custom conjugation.`,
+      detail: free.length ? null : `Every catalogue metal for ${row.clonePinned ? "this clone" : "this marker"} (${[...new Set(sold.map((c) => c.metal))].join(", ")}) is taken or reserved — free one up, or accept the custom conjugation.`,
       fix: free.length ? { mass: free[0], channel: label(free[0]) } : null,
     });
   }

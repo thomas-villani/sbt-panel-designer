@@ -100,11 +100,15 @@ export interface PanelRow {
   targetId: string | null; // null when the marker is not in the catalogue at all
   name: string;
   level: AbundanceLevel;
-  clone: string | null; // chosen clone (null = custom conjugation / not in catalogue)
+  clone: string | null; // the clone in play (null = custom conjugation / not in catalogue). Unless pinned, the optimiser may swap it.
+  /** The user (or a kit) chose this clone: keep it. Otherwise every catalogue clone is on the table and `clone` is whichever the balance landed on. */
+  clonePinned?: boolean;
   custom: boolean; // custom conjugation allowed (no catalogue conjugate on a free channel)
   locked: number | null; // mass the user pinned
   moduleIds: string[];
   critical?: boolean;
+  /** The user looked at the spill this marker receives and decided it is fine; the reason travels with the panel. */
+  accepted?: string | null;
 }
 
 export interface Setup {

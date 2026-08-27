@@ -40,12 +40,11 @@ test("phone: build with the bottom-sheet panel, balance, order — no horizontal
   await expect(sheet).toBeHidden();
 
   await page.getByTestId("mobile-panel").getByText("Balance panel →").click();
-  await page.getByRole("button", { name: "Balance panel", exact: true }).click();
-  await expect(page.getByText(/Panel is balanced|thing(s)? to look at/)).toBeVisible({ timeout: 30_000 });
+  await expect(page.getByRole("heading", { name: /Panel is balanced|Panel fits|thing(s)? to fix|does not fit yet/ })).toBeVisible({ timeout: 30_000 });
   await noHorizontalScroll(page); // the mass strip scrolls inside its own container
   const strip = page.getByTestId("mass-strip");
   expect(await strip.evaluate((el) => el.scrollWidth > el.clientWidth)).toBe(true);
-  await expect(page.getByTestId("mobile-panel-toggle")).toContainText(/balanced · no warnings|warning/);
+  await expect(page.getByTestId("mobile-panel-toggle")).toContainText(/fits|to fix|over budget/);
 
   await page.getByTestId("mobile-panel").getByText("Order →").click();
   await expect(page.getByText("Part number")).toBeVisible();

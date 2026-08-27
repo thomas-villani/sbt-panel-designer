@@ -1,14 +1,18 @@
 "use client";
 import { useMemo, useState } from "react";
-import { conjugationIssues } from "@/lib/conjugation";
 import { LEVELS, LEVEL_LABEL, antibodyChannel, type CloneOption } from "@/lib/data";
-import { useStore } from "@/lib/store";
+import { useHealth, useStore } from "@/lib/store";
 import type { PanelModule, PanelRow, PubTarget } from "@/lib/types";
 import { ChannelCount } from "./ChannelBudget";
 import { InModules } from "./InModules";
 import { Button, Pill, cx } from "./ui";
 
+const FREE = "\u0000any"; // clone-select sentinel: let the optimiser choose among every catalogue clone
 const LEVEL_TONE = { low: "amber", medium: "slate", high: "teal", very_high: "emerald" } as const;
+const HEALTH_TEXT = {
+  rose: "text-rose-700 dark:text-rose-300", amber: "text-amber-700 dark:text-amber-300",
+  emerald: "text-emerald-700 dark:text-emerald-300", slate: "text-slate-500",
+} as const;
 
 export function PanelSidebar() {
   const idx = useStore((s) => s.idx)!;
@@ -20,7 +24,11 @@ export function PanelSidebar() {
   const removeRow = useStore((s) => s.removeRow);
   const setLevel = useStore((s) => s.setLevel);
   const setClone = useStore((s) => s.setClone);
+  const freeClone = useStore((s) => s.freeClone);
   const lockRow = useStore((s) => s.lockRow);
+  const setStep = useStore((s) => s.setStep);
+  const step = useStore((s) => s.step);
+  const health = useHealth();
   const clearPanel = useStore((s) => s.clearPanel);
   const saved = useStore((s) => s.saved);
   const savePanel = useStore((s) => s.savePanel);
@@ -34,9 +42,7 @@ export function PanelSidebar() {
 
   const modules = useMemo(() => new Set(rows.flatMap((r) => r.moduleIds)), [rows]);
   const byRow = useMemo(() => new Map(result?.rows.map((r) => [r.rowId, r]) ?? []), [result]);
-  const custom = useMemo(() => (result ? conjugationIssues(idx, rows, result, setup) : []), [idx, rows, result, setup]);
-  const customRows = useMemo(() => new Set(custom.map((c) => c.rowId)), [custom]);
-  const nWarn = (result?.warnings.filter((w) => w.severity !== "info").length ?? 0) + custom.length;
+  const customRows = useMemo(() => new Set([...(health?.custom ?? []), ...(health?.customKnown ?? [])].map((c) => c.rowId)), [health]);
   const channels = idx.instrument(setup.instrumentId).channels;
 
   return (
@@ -98,7 +104,7 @@ export function PanelSidebar() {
               {open === r.id && (
                 <RowDetails row={r} clones={opts} channels={channels} rr={rr} balanced={balanced} blocked={setup.blocked}
                   pubs={r.targetId ? pubs?.targets[r.targetId] ?? null : null} modules={r.targetId ? idx.modulesWith(r.targetId, setup) : []}
-                  onClone={(c) => setClone(r.id, c)} onLock={(m) => lockRow(r.id, m)} />
+                  onClone={(c) => (c === FREE ? freeClone(r.id) : setClone(r.id, c))} onLock={(m) => lockRow(r.id, m)} />
               )}
             </li>
           );
@@ -106,13 +112,13 @@ export function PanelSidebar() {
       </ul>
       <div className="space-y-1 border-t border-slate-200 px-3 py-2 text-xs text-slate-600 dark:border-slate-700 dark:text-slate-300">
         <div><ChannelCount used={rows.length} /> · <b>{modules.size}</b> module{modules.size === 1 ? "" : "s"}</div>
-        {balanced && result && (
-          <div className={cx(nWarn ? "text-amber-700 dark:text-amber-300" : "text-emerald-700 dark:text-emerald-300")}>
-            {balancing ? "balancing…" : nWarn ? `${nWarn} warning${nWarn > 1 ? "s" : ""} to resolve` : "no warnings — panel is balanced"}
-            {result.unassigned.length > 0 && ` · ${result.unassigned.length} unassigned`}
-          </div>
+        {health && rows.length > 0 && (
+          <button onClick={() => setStep("balance")} data-testid="health" data-tone={health.tone} title={step === "balance" ? undefined : "open Balance"}
+            className={cx("block text-left font-medium", step !== "balance" && "underline decoration-dotted underline-offset-2", HEALTH_TEXT[health.tone])}>
+            {balancing && !result ? "checking…" : health.headline}
+          </button>
         )}
-        {balanced && result && <div className="text-slate-400">spillover score {result.objective.toFixed(2)} (lower is better)</div>}
+        {balanced && result && <div className="text-slate-400">spillover score {result.objective.toFixed(2)} (lower is better){balancing ? " · updating…" : ""}</div>}
       </div>
     </div>
   );
@@ -123,19 +129,22 @@ function RowDetails({ row, clones, channels, rr, balanced, blocked, pubs, module
   channels: { mass: number; label: string; usable: boolean; antibody?: boolean }[]; rr: { mass: number | null; reasons: string[]; contributions: { label: string; mass: number; fraction: number; mechanism: string }[] } | undefined;
   balanced: boolean; onClone: (c: string | null) => void; onLock: (m: number | null) => void;
 }) {
-  const allowed = new Set(clones.find((c) => c.clone === row.clone)?.conjugates.map((c) => c.mass) ?? []);
+  const pool = row.clonePinned ? clones.filter((c) => c.clone === row.clone) : clones;
+  const allowed = new Set(pool.flatMap((c) => c.conjugates.map((x) => x.mass)));
   const pickable = channels.filter((c) => antibodyChannel(c) && !blocked.includes(c.mass) && (allowed.size === 0 || allowed.has(c.mass)));
   return (
     <div className="mt-1 space-y-2 rounded-md bg-slate-50 p-2 text-xs dark:bg-slate-800">
       {clones.length > 1 && (
         <label className="flex items-center gap-2">
           <span className="text-slate-500">Clone</span>
-          <select value={row.clone ?? ""} onChange={(e) => onClone(e.target.value || null)} className="rounded border border-slate-300 bg-white px-1 py-0.5 dark:border-slate-600 dark:bg-slate-900">
+          <select value={row.clonePinned || !row.clone ? row.clone ?? "" : FREE} onChange={(e) => onClone(e.target.value === FREE ? FREE : e.target.value || null)} className="rounded border border-slate-300 bg-white px-1 py-0.5 dark:border-slate-600 dark:bg-slate-900" data-testid="clone-select">
+            <option value={FREE}>any clone — optimiser picks{row.clone && !row.clonePinned ? ` (now ${row.clone})` : ""}</option>
             {clones.map((c) => <option key={c.clone} value={c.clone}>{c.clone} · {c.metals.length} metal{c.metals.length > 1 ? "s" : ""}{c.sampleValidated ? " · validated" : ""} · {c.reactivity.join("/")}</option>)}
             <option value="">custom conjugation</option>
           </select>
         </label>
       )}
+      {clones.length > 1 && !row.clonePinned && row.clone && <div className="text-slate-500">Clone {row.clone} this time; the optimiser may switch to another catalogue clone when the panel changes. Pick one above to keep it.</div>}
       {clones.length === 1 && <div className="text-slate-500">Clone {clones[0].clone} · {clones[0].reactivity.join("/")} · {clones[0].tds && <a className="underline" href={clones[0].tds} target="_blank" rel="noreferrer">TDS</a>}</div>}
       {clones.length === 0 && <div className="text-violet-700 dark:text-violet-300">No catalogue conjugate for this species/application: custom conjugation with the Maxpar X8 kit (any lanthanide).</div>}
       {(balanced || row.custom) && (

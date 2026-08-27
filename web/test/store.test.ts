@@ -6,6 +6,11 @@ import { index } from "./util";
 const idx = index();
 const modules = (app: "imaging" | "suspension") => idx.modulesFor({ modality: app, species: "human", sampleType: app === "imaging" ? "ffpe" : "pbmc", instrumentId: "", viability: true, barcoding: false, segmentation: true, blocked: [] });
 
+const until = async (ok: () => boolean, ms = 5000) => {
+  const t0 = Date.now();
+  while (!ok()) { if (Date.now() - t0 > ms) throw new Error("timed out"); await new Promise((r) => setTimeout(r, 25)); }
+};
+
 beforeEach(() => {
   useStore.setState({ rows: [], result: null, balanced: false, step: "setup", setup: { modality: "suspension", species: "human", sampleType: "pbmc", instrumentId: "cytof_xt", viability: true, barcoding: false, segmentation: true, blocked: [] } });
   useStore.getState().init(idx.bundles);
@@ -41,29 +46,58 @@ describe("store", () => {
     }
   });
 
-  it("balanceNow assigns every row, then applyFix / lockRow re-balance with the lock honoured", async () => {
+  it("the engine runs on every change; metals stay hidden (balanced=false) until Balance is opened", async () => {
     const s = useStore.getState();
     s.addModule(modules("suspension").find((m) => m.id === "human-pbmc-lineage")!);
-    expect(useStore.getState().result).toBeNull();
+    expect(useStore.getState().balanced).toBe(false);
+    await until(() => useStore.getState().result != null); // debounce + lazy engine import on the main thread
+    const r1 = useStore.getState().result!;
+    expect(r1).not.toBeNull();
+    expect(useStore.getState().balanced).toBe(false);
+    expect(r1.unassigned).toEqual([]);
+    expect(Object.keys(r1.assignment)).toHaveLength(useStore.getState().rows.length);
+    s.setStep("balance");
+    expect(useStore.getState().balanced).toBe(true);
+    s.removeRow(useStore.getState().rows[0].id);
+    await until(() => !useStore.getState().balancing && useStore.getState().result?.rows.length === useStore.getState().rows.length);
+    expect(Object.keys(useStore.getState().result!.assignment)).toHaveLength(useStore.getState().rows.length);
+  });
+
+  it("applyFix pins the move when it helps and undoes it (with a notice) when the panel gets worse; lockRow is honoured", async () => {
+    const s = useStore.getState();
+    s.addModule(modules("suspension").find((m) => m.id === "human-pbmc-lineage")!);
     await s.balanceNow();
     const r1 = useStore.getState().result!;
     expect(useStore.getState().balanced).toBe(true);
-    expect(r1.unassigned).toEqual([]);
-    expect(Object.keys(r1.assignment)).toHaveLength(useStore.getState().rows.length);
 
+    // An arbitrary swap of two rows the optimiser placed deliberately: expected to be worse, hence reverted.
     const row = useStore.getState().rows[0];
     const other = row.id === "cd45" ? "cd3e" : "cd45";
-    const target = r1.assignment[other];
-    s.applyFix({ rowId: row.id, to: target, toChannel: String(target), swapWith: other, delta: 0, message: "" });
-    await new Promise((r) => setTimeout(r, 400)); // debounce
+    await s.applyFix({ rowId: row.id, to: r1.assignment[other], toChannel: String(r1.assignment[other]), swapWith: other, delta: 0, message: "swap for the test" });
     const st = useStore.getState();
-    expect(st.rows.find((r) => r.id === row.id)!.locked).toBe(target);
-    expect(st.rows.find((r) => r.id === other)!.locked).toBe(r1.assignment[row.id]);
-    expect(st.result!.assignment[row.id]).toBe(target);
-    expect(st.result!.assignment[other]).toBe(r1.assignment[row.id]);
+    if (st.notice) {
+      expect(st.notice).toMatch(/undone/);
+      expect(st.rows.every((r) => r.locked == null)).toBe(true);
+      expect(st.result!.score).toBeLessThanOrEqual(r1.score + 1e-6);
+    } else {
+      expect(st.rows.find((r) => r.id === row.id)!.locked).toBe(r1.assignment[other]);
+      expect(st.result!.assignment[row.id]).toBe(r1.assignment[other]);
+    }
 
-    s.lockRow(row.id, null);
-    s.lockRow(other, null);
+    // A fix the engine itself proposes must never be undone: by construction it lowers the score.
+    const proposed = useStore.getState().result!.warnings.find((w) => w.fix)?.fix;
+    if (proposed) {
+      await s.applyFix(proposed);
+      expect(useStore.getState().notice).toBeNull();
+      expect(useStore.getState().rows.find((r) => r.id === proposed.rowId)!.locked).toBe(proposed.to);
+    }
+
+    // A user lock is honoured and released.
+    const target = r1.assignment[other];
+    s.lockRow(row.id, target);
+    await new Promise((r) => setTimeout(r, 400));
+    expect(useStore.getState().result!.assignment[row.id]).toBe(target);
+    useStore.getState().rows.forEach((r) => r.locked != null && s.lockRow(r.id, null));
     await new Promise((r) => setTimeout(r, 400));
     expect(useStore.getState().rows.every((r) => r.locked == null)).toBe(true);
   });
@@ -89,5 +123,43 @@ describe("store", () => {
     expect(rows.find((r) => r.id === cd8)!.level).toBe("low");
     s.setClone(cd8, null);
     expect(useStore.getState().rows.find((r) => r.id === cd8)).toMatchObject({ clone: null, custom: true });
+  });
+});
+
+describe("store: guided conflicts", () => {
+  it("previewFix reports the diff without touching state; commitPreview applies it", async () => {
+    const s = useStore.getState();
+    s.addModule(modules("suspension").find((m) => m.id === "human-pbmc-lineage")!);
+    await s.balanceNow();
+    const r1 = useStore.getState().result!;
+    const row = useStore.getState().rows[0];
+    const other = row.id === "cd45" ? "cd3e" : "cd45";
+    const p = await s.previewFix({ rowId: row.id, to: r1.assignment[other], toChannel: "", swapWith: other, delta: 0, message: "swap" });
+    expect(useStore.getState().result).toBe(r1); // untouched
+    expect(p.moves.map((m) => m.rowId)).toContain(row.id);
+    expect(p.moves[0].rowId).toBe(row.id);
+    s.commitPreview(p);
+    expect(useStore.getState().result).toBe(p.result);
+    expect(useStore.getState().rows.find((r) => r.id === row.id)!.locked).toBe(r1.assignment[other]);
+  });
+
+  it("cloneAlternatives re-balances with every other clone and never returns the current one", async () => {
+    const s = useStore.getState();
+    s.addModule(modules("suspension").find((m) => m.id === "human-pbmc-lineage")!);
+    await s.balanceNow();
+    const multi = useStore.getState().rows.find((r) => r.targetId && idx.cloneOptions(r.targetId, useStore.getState().setup).length > 1);
+    if (!multi) return;
+    const trials = await s.cloneAlternatives(multi.id);
+    expect(trials.length).toBe(idx.cloneOptions(multi.targetId!, useStore.getState().setup).length - 1);
+    expect(trials.every((t) => t.clone !== multi.clone && t.result.rows.length === useStore.getState().rows.length)).toBe(true);
+  });
+
+  it("acceptWarning / unacceptWarning round-trip on the row", () => {
+    const s = useStore.getState();
+    s.addTarget("cd45");
+    s.acceptWarning("cd45", "  fine  ");
+    expect(useStore.getState().rows[0].accepted).toBe("fine");
+    s.unacceptWarning("cd45");
+    expect(useStore.getState().rows[0].accepted).toBeNull();
   });
 });

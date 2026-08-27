@@ -84,6 +84,19 @@ export function OrderStep() {
         </ul>
       </section>
 
+      {rows.some((r) => r.accepted) && (
+        <section data-testid="accepted-spill">
+          <H2 hint="signed off on the Balance page; travels with the share link">Spillover you accepted</H2>
+          <ul className="space-y-1 text-sm">
+            {rows.filter((r) => r.accepted).map((r) => {
+              const rr = result?.rows.find((x) => x.rowId === r.id);
+              const top = rr?.contributions[0];
+              return <li key={r.id}><b>{r.name}</b>{rr?.channel ? ` (${rr.channel})` : ""}{top ? ` receives ${Math.round((rr?.receivedOverT ?? 0) * 100)} % of its tolerance, mostly from ${top.label}` : ""} <span className="text-xs text-slate-500">— {r.accepted}</span></li>;
+            })}
+          </ul>
+        </section>
+      )}
+
       <section className="flex flex-wrap items-center gap-2">
         <Button variant="primary" onClick={download}>Download CSV</Button>
         <Button onClick={share}>{copied ? "Link copied" : "Copy share link"}</Button>

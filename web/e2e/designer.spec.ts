@@ -9,8 +9,7 @@ const addModule = async (page: Page, name: string) => {
 };
 const balance = async (page: Page) => {
   await page.getByRole("button", { name: /Balance panel/ }).first().click();
-  await page.getByRole("button", { name: "Balance panel", exact: true }).click();
-  await expect(page.getByText(/Panel is balanced|thing(s)? to look at/)).toBeVisible({ timeout: 30_000 });
+  await expect(page.getByRole("heading", { name: /Panel is balanced|Panel fits|thing(s)? to fix|does not fit yet/ })).toBeVisible({ timeout: 30_000 });
   await expect(page.locator("aside")).toContainText(/spillover score/);
 };
 
@@ -37,6 +36,7 @@ test("Priya: IMC panel from modules to BOM, shareable by URL", async ({ page }) 
   await expect(sidebarRows(page)).toHaveCount(27);
   await expect(page.locator("aside")).toContainText("27 of ~38 channels · 6 modules");
   await expect(page.locator("aside")).not.toContainText(METAL); // no metals before Balance
+  await expect(page.getByTestId("health")).toContainText(/fits/); // but the health line is live
 
   const box = page.getByPlaceholder(/e\.g\. CD8a/);
   await box.fill("granzyme");
@@ -51,19 +51,24 @@ test("Priya: IMC panel from modules to BOM, shareable by URL", async ({ page }) 
   expect(await strip.count()).toBe(43); // 41 antibody channels + 191/193Ir
   await expect(strip.filter({ hasText: "" }).locator("div.bg-emerald-500")).toHaveCount(28);
 
-  // Apply every offered fix; the panel must stay fully assigned.
-  for (let i = 0; i < 5 && (await page.getByRole("button", { name: "Apply" }).count()); i++) {
-    await page.getByRole("button", { name: "Apply" }).first().click();
-    await page.waitForTimeout(500);
+  // Apply every offered fix (folded sections included); the panel must stay fully assigned and never get worse.
+  for (const fold of await page.getByRole("button", { name: /worth checking|FYI/ }).all()) await fold.click();
+  for (let i = 0; i < 5 && (await page.getByRole("button", { name: "Try the move" }).count()); i++) {
+    await page.getByRole("button", { name: "Try the move" }).first().click();
+    await expect(page.getByTestId("fix-preview").first()).toBeVisible();
+    await page.getByRole("button", { name: /^Keep it/ }).first().click();
+    await page.waitForTimeout(300);
   }
-  await expect(page.locator("aside")).not.toContainText("unassigned");
+  await expect(page.locator("aside")).not.toContainText("without a channel");
+  await expect(page.getByTestId("fix-notice")).toHaveCount(0);
+  if (await page.getByTestId("pinned").count()) await page.getByRole("button", { name: /Unpin all/ }).click();
 
   // Lock the first row to a specific channel via the drawer.
   const first = sidebarRows(page).first();
   await first.locator("button").first().click();
   await first.locator("select").last().selectOption({ index: 1 });
   await expect(first).toContainText("🔒");
-  await expect(page.getByRole("button", { name: /Unlock all \(1\)/ })).toBeVisible();
+  await expect(page.getByRole("button", { name: /Unpin all \(1\)/ })).toBeVisible();
 
   await page.getByRole("button", { name: /Show overlap map/ }).click();
   await expect(page.getByRole("heading", { name: "Overlap map" })).toBeVisible();
@@ -241,14 +246,19 @@ test("balance warns when a marker would have to be conjugated to order", async (
   await page.getByTestId("module-hit").first().click();
   await balance(page);
 
-  const warn = page.getByTestId("custom-conjugation-warning");
-  await expect(warn).toHaveCount(1);
-  await expect(warn).toContainText("CD56/NCAM has no off-the-shelf IMC conjugate");
-  await expect(warn).toContainText("Sold for CyTOF only");
-  await expect(page.locator("aside")).toContainText(/[0-9]{2,3}[A-Z][a-z][*]/); // channel is starred: no catalogue vial
-  await expect(page.locator("aside")).toContainText("1 warning to resolve");
-
-  await warn.getByRole("button", { name: "Remove" }).click();
+  // No IMC catalogue antibody at all: a calm "to order" fold, not a thing to fix.
   await expect(page.getByTestId("custom-conjugation-warning")).toHaveCount(0);
-  await expect(page.locator("aside")).toContainText("no warnings");
+  const fold = page.getByTestId("custom-known");
+  await expect(fold).toContainText("1 conjugated to order");
+  await fold.getByRole("button").first().click();
+  const row = page.getByTestId("custom-known-row");
+  await expect(row).toHaveCount(1);
+  await expect(row).toContainText("CD56/NCAM goes on");
+  await expect(row).toContainText("Sold for CyTOF only");
+  await expect(page.locator("aside")).toContainText(/[0-9]{2,3}[A-Z][a-z][*]/); // channel is starred: no catalogue vial
+  await expect(page.getByTestId("health")).toContainText("1 to order");
+
+  await row.getByRole("button", { name: "Drop" }).click();
+  await expect(page.getByTestId("custom-known")).toHaveCount(0);
+  await expect(page.getByTestId("health")).toContainText(/fits/);
 });

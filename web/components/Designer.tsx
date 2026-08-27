@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { loadBundles } from "@/lib/data";
-import { useStore, useBudget, type Step } from "@/lib/store";
+import { useStore, useBudget, useHealth, type Step } from "@/lib/store";
 import { BalanceStep } from "./BalanceStep";
 import { BuildStep } from "./BuildStep";
 import { OrderStep } from "./OrderStep";
@@ -96,7 +96,7 @@ function MobilePanelBar({ open, onToggle }: { open: boolean; onToggle: () => voi
   const step = useStore((s) => s.step);
   const setStep = useStore((s) => s.setStep);
   const budget = useBudget();
-  const nWarn = result?.warnings.filter((w) => w.severity !== "info").length ?? 0;
+  const health = useHealth();
   const next: { label: string; to: Step } | null =
     step === "setup" ? { label: "Choose markers", to: "build" }
       : step === "build" && rows.length ? { label: balanced ? "Balance" : "Balance panel", to: "balance" }
@@ -112,8 +112,8 @@ function MobilePanelBar({ open, onToggle }: { open: boolean; onToggle: () => voi
             <span className="block text-sm font-semibold">Your panel · {rows.length} of ~{budget}</span>
             <span className="block truncate text-xs text-slate-500">
               {rows.length === 0 ? "nothing added yet"
-                : balancing ? "balancing…"
-                  : balanced && result ? (nWarn ? `${nWarn} warning${nWarn > 1 ? "s" : ""} to resolve` : "balanced · no warnings")
+                : balancing && !result ? "checking…"
+                  : health && (balanced || health.tone !== "emerald") ? health.headline
                     : `${rows.slice(0, 4).map((r) => r.name).join(", ")}${rows.length > 4 ? ` +${rows.length - 4}` : ""}`}
             </span>
           </span>

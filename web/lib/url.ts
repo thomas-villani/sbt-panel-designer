@@ -2,7 +2,7 @@
  * Every panel state is a URL: setup + rows live in the hash (SPEC 6.2).
  *
  * v2 (current): `#~` + base64url(deflate-raw(JSON)). The JSON keeps only what the catalogue cannot rebuild — a row is
- * `[id, level, clone?, locked?, moduleIds?]` with trailing defaults dropped; names come back from the target id, and a
+ * `[id, level, clone?, locked?, moduleIds?, accepted?]` with trailing defaults dropped; names come back from the target id, and a
  * clone equal to the catalogue default for the setup is written as `1` and re-resolved on decode. ~7× smaller than v1.
  * v1 (legacy, still decoded): base64url JSON with every field spelled out. Old share links keep working.
  */
@@ -18,8 +18,8 @@ const V2 = "~";
 
 // Trailing entries are dropped when they hold their default (segmentation on, nothing blocked), so old links still decode.
 type SetupTuple = [Setup["modality"], Setup["species"], Setup["sampleType"], string, 0 | 1, 0 | 1, (0 | 1)?, number[]?];
-type CloneV2 = string | 0 | 1; // 0 = no clone (custom conjugation), 1 = the catalogue default for this setup
-type RowV2 = [string, number, CloneV2?, (number | 0)?, string[]?];
+type CloneV2 = string | 0 | 1 | [string]; // 0 = custom conjugation; 1 = free (catalogue default, re-resolved on decode); string = pinned; [string] = free but recorded (no catalogue at encode time)
+type RowV2 = [string, number, CloneV2?, (number | 0)?, string[]?, string?]; // trailing: accepted-spill reason
 type V2 = [2, SetupTuple, number, 0 | 1, RowV2[]];
 type V1 = {
   v: 1;
@@ -56,10 +56,10 @@ const defaultClone = (idx: Index | undefined, targetId: string, setup: Setup): s
 export function encodeState(st: UrlState, idx?: Index): string {
   const rows: RowV2[] = st.rows.map((r) => {
     const id = r.targetId ?? `${CUSTOM}${r.name}`;
-    const clone: CloneV2 = r.clone === null ? 0 : r.targetId && defaultClone(idx, r.targetId, st.setup) === r.clone ? 1 : r.clone;
-    const row: RowV2 = [id, Math.max(0, LEVELS.indexOf(r.level)), clone, r.locked ?? 0, r.moduleIds];
-    // Drop trailing defaults: no modules, no lock, default clone.
-    if (row[4]!.length === 0) { row.pop(); if (row[3] === 0) { row.pop(); if (row[2] === 1) row.pop(); } }
+    const clone: CloneV2 = r.clone === null ? 0 : r.clonePinned || !r.targetId ? r.clone : idx ? 1 : [r.clone];
+    const row: RowV2 = [id, Math.max(0, LEVELS.indexOf(r.level)), clone, r.locked ?? 0, r.moduleIds, r.accepted ?? ""];
+    // Drop trailing defaults: nothing accepted, no modules, no lock, default clone.
+    if (row[5] === "") { row.pop(); if (row[4]!.length === 0) { row.pop(); if (row[3] === 0) { row.pop(); if (row[2] === 1) row.pop(); } } }
     return row;
   });
   const v2: V2 = [2, setupTuple(st.setup), st.nSamples, st.balanced ? 1 : 0, rows];
@@ -76,7 +76,8 @@ export function decodeState(hash: string, idx?: Index): UrlState | null {
     if (c.v !== 1) return null;
     return {
       setup: setupFromTuple(c.s), nSamples: c.n, balanced: !!c.b,
-      rows: c.r.map(([id, targetId, name, level, clone, custom, locked, moduleIds]) => ({ id, targetId, name, level, clone, custom: !!custom, locked, moduleIds })),
+      // v1 links wrote the clone the user saw; keep it pinned so an old link still orders what it showed.
+      rows: c.r.map(([id, targetId, name, level, clone, custom, locked, moduleIds]) => ({ id, targetId, name, level, clone, custom: !!custom, locked, moduleIds, ...(clone ? { clonePinned: true } : {}) })),
     };
   } catch {
     return null;
@@ -86,13 +87,16 @@ export function decodeState(hash: string, idx?: Index): UrlState | null {
 function decodeV2(v: V2, idx?: Index): UrlState | null {
   if (v[0] !== 2) return null;
   const setup = setupFromTuple(v[1]);
-  const rows: PanelRow[] = v[4].map(([id, level, clone = 1, locked = 0, moduleIds = []]) => {
+  const rows: PanelRow[] = v[4].map(([id, level, clone = 1, locked = 0, moduleIds = [], accepted = ""]) => {
+    const acc = accepted ? { accepted } : {};
     if (id.startsWith(CUSTOM)) {
       const name = id.slice(CUSTOM.length);
-      return { id, targetId: null, name, level: LEVELS[level] ?? "medium", clone: null, custom: true, locked: locked || null, moduleIds };
+      return { id, targetId: null, name, level: LEVELS[level] ?? "medium", clone: null, custom: true, locked: locked || null, moduleIds, ...acc };
     }
-    const resolved = clone === 1 ? defaultClone(idx, id, setup) ?? null : clone === 0 ? null : clone;
-    return { id, targetId: id, name: idx?.targetsById.get(id)?.name ?? id, level: LEVELS[level] ?? "medium", clone: resolved, custom: !resolved, locked: locked || null, moduleIds };
+    const free = clone === 1 || Array.isArray(clone);
+    const resolved = clone === 1 ? defaultClone(idx, id, setup) ?? null : clone === 0 ? null : Array.isArray(clone) ? clone[0] : clone;
+    const pin = typeof clone === "string" ? { clonePinned: true } : {};
+    return { id, targetId: id, name: idx?.targetsById.get(id)?.name ?? id, level: LEVELS[level] ?? "medium", clone: resolved, custom: !resolved, locked: locked || null, moduleIds, ...acc, ...pin };
   });
   return { setup, nSamples: v[2], balanced: !!v[3], rows };
 }

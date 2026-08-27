@@ -219,17 +219,46 @@ export function titratedST(conjugates: Conjugate[]): { signal: number; tolerance
 
 /** Engine row spec for a panel row under the current setup. */
 export function rowSpec(idx: Index, row: PanelRow, setup: Setup): RowSpec {
-  const opt = row.targetId && row.clone ? idx.cloneOptions(row.targetId, setup).find((o) => o.clone === row.clone) : undefined;
+  const opts = row.targetId ? idx.cloneOptions(row.targetId, setup) : [];
+  const opt = row.clone ? opts.find((o) => o.clone === row.clone) : undefined;
   const st = opt ? titratedST(opt.conjugates) : null;
   // Only trust titration when the user has not overridden the level away from what it implies.
   const useTitrated = st && levelFromSignal(st.signal) === row.level;
+  // Users care about the target, not the clone: unless one was pinned, every catalogue clone's metals are fair game.
+  const pool = row.clonePinned || !opt ? (opt ? [opt] : []) : opts;
   return {
     id: row.id, label: row.name,
     signal: useTitrated ? st.signal : null, tolerance: useTitrated ? st.tolerance : null, level: row.level,
-    metals: opt ? opt.conjugates.map((c) => c.mass) : [],
+    metals: [...new Set(pool.flatMap((o) => o.conjugates.map((c) => c.mass)))],
     allowCustom: row.custom || !opt,
     locked: row.locked, critical: row.critical,
   };
+}
+
+/** Every metal any catalogue clone of this row could use (the pinned clone's only, when pinned). */
+export function rowMetals(idx: Index, row: PanelRow, setup: Setup): number[] {
+  if (!row.targetId) return [];
+  const opts = idx.cloneOptions(row.targetId, setup);
+  const pool = row.clonePinned ? opts.filter((o) => o.clone === row.clone) : opts;
+  return [...new Set(pool.flatMap((o) => o.conjugates.map((c) => c.mass)))].sort((a, b) => a - b);
+}
+
+/** After a balance: for free rows, the clone becomes whichever one is sold on the assigned metal (keeping the current one when it is). */
+export function resolveClones(idx: Index, rows: PanelRow[], assignment: Record<string, number | null | undefined>, setup: Setup): PanelRow[] {
+  let changed = false;
+  const out = rows.map((r) => {
+    if (r.clonePinned || !r.targetId) return r;
+    const mass = assignment[r.id];
+    if (mass == null) return r;
+    const opts = idx.cloneOptions(r.targetId, setup);
+    const has = (o: CloneOption) => o.conjugates.some((c) => c.mass === mass);
+    const cur = opts.find((o) => o.clone === r.clone);
+    const pick = cur && has(cur) ? cur : opts.find(has);
+    if (!pick || pick.clone === r.clone) return r;
+    changed = true;
+    return { ...r, clone: pick.clone, custom: false };
+  });
+  return changed ? out : rows;
 }
 
 /** Reserved role ids enabled by the setup toggles. */
