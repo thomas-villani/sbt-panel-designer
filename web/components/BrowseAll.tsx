@@ -64,7 +64,7 @@ export function BrowseAll({ onClose }: { onClose: () => void }) {
       </H2>
       <div className="mb-3 flex flex-wrap items-center gap-2 text-sm">
         <input value={q} onChange={(e) => { setQ(e.target.value); setLimit(PAGE); }} onFocus={ensurePubs} placeholder="filter by name, alias or panel…" autoCapitalize="none" autoCorrect="off" spellCheck={false}
-          className="min-w-0 flex-1 rounded-lg border border-slate-300 px-3 py-1.5 text-sm shadow-sm focus:border-teal-500 focus:outline-none dark:border-slate-600 dark:bg-slate-900" />
+          className="min-w-0 flex-1 rounded-lg border border-slate-300 px-3 py-1.5 text-sm shadow-sm focus:border-teal-500 dark:border-slate-600 dark:bg-slate-900" />
         <label className="flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-300">
           <input type="checkbox" checked={inModuleOnly} onChange={() => { setInModuleOnly((v) => !v); setLimit(PAGE); }} className="h-3.5 w-3.5 accent-teal-700" />in a marker set
         </label>

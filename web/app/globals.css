@@ -28,3 +28,9 @@
 }
 
 :root { color-scheme: light dark; }
+
+/* Keyboard focus is always visible; inputs keep their border highlight on top of it. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+}

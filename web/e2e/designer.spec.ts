@@ -40,16 +40,16 @@ test("Priya: IMC panel from modules to BOM, shareable by URL", async ({ page }) 
 
   const box = page.getByPlaceholder(/e\.g\. CD8a/);
   await box.fill("granzyme");
-  await expect(page.locator("div.absolute button").first()).toBeDisabled(); // already in the panel
+  await expect(page.getByRole("listbox").getByRole("option").first()).toBeDisabled(); // already in the panel
   await box.fill("CD163, Pan-Cytokeratin, CD31");
-  await page.getByRole("button", { name: /Add all/ }).click();
+  await page.getByRole("option", { name: /Add all/ }).click();
   await expect(sidebarRows(page)).toHaveCount(28);
 
   await balance(page);
   await expect(page.locator("aside")).toContainText(METAL);
-  const strip = page.locator("main .flex.h-24 > div");
+  const strip = page.getByTestId("mass-strip").locator("[data-mass]");
   expect(await strip.count()).toBe(43); // 41 antibody channels + 191/193Ir
-  await expect(strip.filter({ hasText: "" }).locator("div.bg-emerald-500")).toHaveCount(28);
+  await expect(strip.locator("span.bg-emerald-500")).toHaveCount(28);
 
   // Apply every offered fix (folded sections included); the panel must stay fully assigned and never get worse.
   for (const fold of await page.getByRole("button", { name: /worth checking|FYI/ }).all()) await fold.click();
@@ -98,7 +98,7 @@ test("suspension: PBMC backbone balances on the CyTOF XT with reserved channels 
   await balance(page);
   const txt = await page.locator("aside").innerText();
   for (const reserved of ["191Ir", "193Ir", "194Pt", "195Pt", "198Pt"]) expect(txt).not.toContain(reserved);
-  await expect(page.locator("main .flex.h-24 > div")).toHaveCount(53); // 51 antibody channels + 191/193Ir
+  await expect(page.getByTestId("mass-strip").locator("[data-mass]")).toHaveCount(53); // 51 antibody channels + 191/193Ir
 });
 
 test("search offers custom conjugation when nothing matches", async ({ page }) => {
@@ -117,7 +117,7 @@ test("cell types: 'dendritic' adds the DC gate with its negatives; overlap copy;
 
   // Typing "CD4" keeps the antibody first (Enter adds CD4, not the "CD4 helper T cells" module).
   await box.fill("CD4");
-  await expect(page.locator("div.absolute button").first()).toHaveText(/^CD4/);
+  await expect(page.getByRole("listbox").getByRole("option").first()).toHaveText(/^CD4/);
   await box.press("Enter");
   await expect(sidebarRows(page)).toHaveCount(1);
 
@@ -154,7 +154,7 @@ test("cell types: 'dendritic' adds the DC gate with its negatives; overlap copy;
   await page.getByTestId("new-panel").click();
   await page.getByRole("button", { name: "New panel" }).click();
   await expect(sidebarRows(page)).toHaveCount(0);
-  await page.getByRole("button", { name: "My DC panel" }).click();
+  await page.getByRole("button", { name: "My DC panel", exact: true }).click();
   await expect(sidebarRows(page)).toHaveCount(8);
 
   // A plain reload (no share hash) picks the draft back up and says so.
@@ -271,4 +271,48 @@ test("balance warns when a marker would have to be conjugated to order", async (
   await row.getByRole("button", { name: "Drop" }).click();
   await expect(page.getByTestId("custom-known")).toHaveCount(0);
   await expect(page.getByTestId("health")).toContainText(/fits/);
+});
+
+test("keyboard: search combobox, mass strip buttons, budget popover", async ({ page }) => {
+  await page.getByRole("button", { name: /Suspension/ }).click();
+  await page.getByRole("button", { name: /Choose markers/ }).click();
+
+  // The search box is a combobox: arrows move the highlight, Enter adds the highlighted result, Escape closes the list.
+  const box = page.getByRole("combobox", { name: /Add a marker/ });
+  await box.fill("CD4");
+  const options = page.getByRole("listbox").getByRole("option");
+  await expect(options.first()).toHaveAttribute("aria-selected", "true");
+  await box.press("ArrowDown");
+  await expect(options.nth(1)).toHaveAttribute("aria-selected", "true");
+  const second = await options.nth(1).locator("span.font-medium").first().innerText();
+  await box.press("Enter");
+  await expect(sidebarRows(page)).toHaveCount(1);
+  await expect(sidebarRows(page).first()).toContainText(second);
+  await box.fill("CD8");
+  await expect(page.getByRole("listbox")).toBeVisible();
+  await box.press("Escape");
+  await expect(page.getByRole("listbox")).toHaveCount(0);
+
+  // Open channels on the strip are buttons: Enter keeps one empty, the count drops by one, Enter again frees it.
+  await addModule(page, "Peripheral blood basic");
+  await balance(page);
+  const openBar = page.getByTestId("mass-strip").getByRole("button", { name: /open, sensitivity/ }).first();
+  const before = await page.getByTestId("channel-count").first().innerText();
+  await openBar.focus();
+  await page.keyboard.press("Enter");
+  await expect(page.getByTestId("mass-strip").getByRole("button", { name: /kept empty on purpose/ })).toHaveCount(1);
+  await expect(page.getByTestId("channel-count").first()).not.toHaveText(before);
+  await page.keyboard.press("Enter");
+  await expect(page.getByTestId("mass-strip").getByRole("button", { name: /kept empty on purpose/ })).toHaveCount(0);
+  await expect(page.getByTestId("mass-strip").locator("[aria-label*='must fix'], [aria-label*='worth checking']")).toHaveCount(await page.getByTestId("mass-strip").locator("span.bg-rose-500, span.bg-amber-400").count());
+
+  // The budget card is a dialog: focus lands inside, Escape closes it and returns focus to the trigger.
+  const trigger = page.getByTestId("channel-count").first();
+  await trigger.click();
+  const card = page.getByRole("dialog", { name: /channel budget/ });
+  await expect(card).toBeVisible();
+  expect(await card.evaluate((el) => el.contains(document.activeElement))).toBe(true);
+  await page.keyboard.press("Escape");
+  await expect(card).toHaveCount(0);
+  await expect(trigger).toBeFocused();
 });

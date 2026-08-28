@@ -11,6 +11,10 @@ Audit round (`docs/review/audit-2026-08-27.md`): the Tier 1 bug list, fixed acro
 - Kit modules are identified by a hand-owned `id` in `kit-overrides.yaml` (`kit-<pdv2 kit_id>`); the name-derived `slug` is display/routing only. Old share links and saved panels that reference a slug are translated on decode.
 - Target ids are pinned by `data/curated/target-ids.yaml`: a new spelling or alias can no longer rename a target; new targets fail the ETL until `pd3-etl catalog --update-ledger` lists them.
 
+### Accessibility pass (audit Tier 4)
+- Keyboard: one visible focus ring everywhere; the marker search is a combobox (Arrow keys, Enter, Escape); open channels on the mass strip are buttons; the budget card and the mobile panel sheet are dialogs that close on Escape / outside click and return focus.
+- Not colour alone: must-fix bars carry `!`, worth-checking `~`; every bar, icon button and sidebar row has an accessible name.
+
 ### Step registry and Balance split (audit J / Tier 3)
 - `lib/steps.ts` owns step order, gating and the mobile "next" action; `BalanceStep` split into `WarnCard`, `HeatMap`, `EngineError` with state passed as props.
 

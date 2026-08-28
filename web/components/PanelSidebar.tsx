@@ -96,7 +96,7 @@ export function PanelSidebar() {
               <div key={p.id} className="flex items-center gap-2">
                 <button className="min-w-0 flex-1 truncate text-left font-medium hover:underline" title={`${p.summary} · saved ${new Date(p.savedAt).toLocaleString()}`} onClick={() => { loadSavedPanel(p.id); setShowSaved(false); }}>{p.name}</button>
                 <span className="shrink-0 text-slate-600 dark:text-slate-400">{p.nRows} markers</span>
-                <button onClick={() => deleteSavedPanel(p.id)} className="text-slate-400 hover:text-rose-600" title="delete saved panel">×</button>
+                <button onClick={() => deleteSavedPanel(p.id)} className="text-slate-400 hover:text-rose-600" title="delete saved panel" aria-label={`delete saved panel ${p.name}`}>×</button>
               </div>
             ))}
           </div>
@@ -123,7 +123,7 @@ export function PanelSidebar() {
           return (
             <li key={r.id} className="px-3 py-1.5">
               <div className="flex items-center gap-2">
-                <button className="min-w-0 flex-1 truncate text-left font-medium" onClick={() => { setOpen(open === r.id ? null : r.id); ensurePubs(); }} title={r.clone ? `clone ${r.clone}` : "custom conjugation"}>
+                <button className="min-w-0 flex-1 truncate text-left font-medium" onClick={() => { setOpen(open === r.id ? null : r.id); ensurePubs(); }} title={r.clone ? `clone ${r.clone}` : "custom conjugation"} aria-expanded={open === r.id} aria-controls={`row-details-${r.id}`}>
                   {r.name}
                   {r.targetId && (pubs?.targets[r.targetId]?.n ?? 0) > 0 && <span className="ml-1.5 font-normal text-[10px] text-slate-500 dark:text-slate-400" title="CyTOF / IMC papers mentioning this marker (click for the list)">{pubs!.targets[r.targetId].n} papers</span>}
                 </button>
@@ -132,7 +132,7 @@ export function PanelSidebar() {
                   tone={showMetal ? (rr.mass != null ? sev : "rose") : r.locked != null ? "slate" : r.custom ? "violet" : "slate"}
                   title={showMetal && rr.mass != null ? `received ${rr.received.toFixed(1)} counts = ${rr.receivedOverT.toFixed(2)} × tolerance${customRows.has(r.id) ? " · * no catalogue vial on this channel: conjugated to order" : ""} — click to change the metal` : r.locked != null ? (kitSupplies(idx, r, r.locked) ? "the metal this marker ships with in its kit — click to change (the kit vial then goes unused)" : "you pinned this marker to this channel — click to change") : r.custom ? "no catalogue conjugate for this setup: custom conjugation — click to pick the metal" : "click to pick a metal by hand"}
                   star={customRows.has(r.id)} onLock={(m) => lockRow(r.id, m)} />
-                <button onClick={() => removeRow(r.id)} className="text-slate-400 hover:text-rose-600" title="remove">×</button>
+                <button onClick={() => removeRow(r.id)} className="text-slate-400 hover:text-rose-600" title="remove" aria-label={`remove ${r.name}`}>×</button>
               </div>
               {open === r.id && (
                 <RowDetails row={r} clones={opts} rr={rr} balanced={balanced}
@@ -215,7 +215,7 @@ function RowDetails({ row, clones, rr, balanced, pubs, modules, onClone }: {
   const idx = useStore((s) => s.idx)!;
   const setup = useStore((s) => s.setup);
   return (
-    <div className="mt-1 space-y-2 rounded-md bg-slate-50 p-2 text-xs dark:bg-slate-800">
+    <div id={`row-details-${row.id}`} className="mt-1 space-y-2 rounded-md bg-slate-50 p-2 text-xs dark:bg-slate-800">
       {clones.length > 1 && (
         <label className="flex items-center gap-2">
           <span className="text-slate-600 dark:text-slate-400">Clone</span>
