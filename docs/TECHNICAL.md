@@ -272,8 +272,12 @@ which slims `data/build/*.json` into `public/data/`). Output: `web/out/`.
 
 ```
 app/            layout + page (renders <Designer/>)
-components/     Designer (stepper + sidebar layout), SetupStep, BuildStep, BalanceStep (+HeatMap), MassStrip, OrderStep,
-                PanelSidebar (rows: abundance pill, metal chip after Balance, clone/lock drawer), ui (Button/Pill/Card/Tile)
+components/     Designer (header stepper + sidebar layout; binds step ids to views), SetupStep, BuildStep, BalanceStep
+                (triage page; WarnCard + Fold, HeatMap, EngineError are its leaf components), MassStrip, SpillTable, OpenChannels,
+                OrderStep, PanelSidebar (rows: abundance pill, metal chip after Balance, clone/lock drawer), ui (Button/Pill/Card/Tile)
+                Convention: step pages and the sidebar read the store; leaf components take *state* through props (result, rows,
+                health) and may bind store *actions* directly, so they render the same in a preview / test with a different result.
+lib/steps.ts    the step registry: order/labels (STEPS), stepEnabled, nextStep (mobile bar), landingStep (restored panels)
 lib/types.ts    slim bundle shapes; PanelRow {id, targetId, name, level, clone, custom, locked, moduleIds}; Setup
 lib/data.ts     loadBundles, loadPublications (lazy), Index (targets/conjugates/modules, normKey search, searchModules
                 for cell types by name/alias, cloneOptions, modulesFor, suggestNext),

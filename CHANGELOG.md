@@ -11,6 +11,9 @@ Audit round (`docs/review/audit-2026-08-27.md`): the Tier 1 bug list, fixed acro
 - Kit modules are identified by a hand-owned `id` in `kit-overrides.yaml` (`kit-<pdv2 kit_id>`); the name-derived `slug` is display/routing only. Old share links and saved panels that reference a slug are translated on decode.
 - Target ids are pinned by `data/curated/target-ids.yaml`: a new spelling or alias can no longer rename a target; new targets fail the ETL until `pd3-etl catalog --update-ledger` lists them.
 
+### Step registry and Balance split (audit J / Tier 3)
+- `lib/steps.ts` owns step order, gating and the mobile "next" action; `BalanceStep` split into `WarnCard`, `HeatMap`, `EngineError` with state passed as props.
+
 ### Engine and web (audit round)
 - Engine: `extraMetals` (Cd opt-in) reach the channel universe; duplicate locks, duplicate row ids and `evaluate()` collisions are caught instead of silently collapsing; unknown modality / reserved role now error; `unreserve` clears the flag as well as the reservation.
 - Web: worker crashes and timeouts settle the pending promise instead of hanging on "checking…"; Cancel no longer submits the save / accept-warning forms; warning cards keyed by warning, not by index; unreadable share links say so; stale link fields (instrument, species, sample, custom rows) validated and round-tripped; modality switch clears the previous modality's blocked and opt-in metals; save failures surface; BOM CSV download fixed; balance prose and the "resolves this" badge follow the 1×/2× thresholds; one panel-health headline.

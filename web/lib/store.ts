@@ -8,9 +8,10 @@ import { balanceInWorker, initEngine } from "./engine-client";
 import { panelHealth, type Health } from "./health";
 import { LocalPanelStore, clearDraft, readDraft, writeDraft, type PanelStore, type SavedPanel } from "./saved";
 import type { AbundanceLevel, Bundles, PanelModule, PanelRow, Publications, Setup } from "./types";
+import { landingStep, type Step } from "./steps";
 import { decodeStateResult, writeHash, type DecodeDrift, type PanelDoc } from "./url";
 
-export type Step = "setup" | "build" | "balance" | "order";
+export type { Step } from "./steps";
 
 export interface FixPreview {
   fix: Fix;
@@ -131,7 +132,7 @@ export const useStore = create<State>((set, get) => {
     writeDraft(doc, idx);
   };
   const restore = (doc: PanelDoc, extra: Partial<State> = {}) => {
-    set({ setup: doc.setup, rows: doc.rows, nSamples: doc.nSamples, balanced: doc.balanced, result: null, notice: null, step: doc.rows.length ? (doc.balanced ? "balance" : "build") : "setup", ...extra });
+    set({ setup: doc.setup, rows: doc.rows, nSamples: doc.nSamples, balanced: doc.balanced, result: null, notice: null, step: landingStep(doc), ...extra });
     persist();
     if (doc.rows.length) void run();
   };

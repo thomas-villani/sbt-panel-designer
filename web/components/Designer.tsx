@@ -1,7 +1,8 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ComponentType } from "react";
 import { loadBundles } from "@/lib/data";
-import { useStore, useBudget, useHealth, type Seed, type Step } from "@/lib/store";
+import { STEPS, nextStep, stepDef, stepEnabled, type Step } from "@/lib/steps";
+import { useStore, useBudget, useHealth, type Seed } from "@/lib/store";
 import { BalanceStep } from "./BalanceStep";
 import { BuildStep } from "./BuildStep";
 import { OrderStep } from "./OrderStep";
@@ -10,9 +11,8 @@ import { SetupStep } from "./SetupStep";
 import { cx } from "./ui";
 import pkg from "../package.json";
 
-const STEPS: { id: Step; label: string; n: number }[] = [
-  { id: "setup", label: "Setup", n: 1 }, { id: "build", label: "Build", n: 2 }, { id: "balance", label: "Balance", n: 3 }, { id: "order", label: "Order", n: 4 },
-];
+/** Step id -> page. The order, labels and gating live in lib/steps.ts; only the views are bound here. */
+const STEP_VIEWS: Record<Step, ComponentType> = { setup: SetupStep, build: BuildStep, balance: BalanceStep, order: OrderStep };
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -45,7 +45,8 @@ export function Designer({ seed }: { seed?: Seed } = {}) {
   if (error) return <div className="p-8 text-rose-700">Could not load the panel data: {error}</div>;
   if (!idx) return <div className="p-8 text-slate-600 dark:text-slate-400">Loading catalogue…</div>;
 
-  const enabled = (s: Step) => s === "setup" || s === "build" || rows.length > 0 && (s === "balance" || balanced);
+  const ctx = { rows, balanced };
+  const View = STEP_VIEWS[step];
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -61,7 +62,7 @@ export function Designer({ seed }: { seed?: Seed } = {}) {
           </div>
           <nav className="ml-auto flex shrink-0 items-center gap-0.5 text-sm sm:gap-1" aria-label="Steps">
             {STEPS.map((s) => (
-              <button key={s.id} disabled={!enabled(s.id)} onClick={() => setStep(s.id)} aria-label={s.label} aria-current={step === s.id ? "step" : undefined}
+              <button key={s.id} disabled={!stepEnabled(s.id, ctx)} onClick={() => setStep(s.id)} aria-label={s.label} aria-current={step === s.id ? "step" : undefined}
                 className={cx("flex items-center gap-1.5 rounded-md px-1.5 py-1.5 disabled:opacity-40 sm:px-3", step === s.id ? "bg-white text-teal-700 shadow-sm" : "text-white/85 hover:bg-white/10")}>
                 <span className={cx("grid h-6 w-6 place-items-center rounded-full text-xs sm:h-5 sm:w-5", step === s.id ? "bg-teal-100 text-teal-800" : "bg-white/15")}>{s.n}</span>
                 <span className="hidden sm:inline">{s.label}</span>
@@ -79,7 +80,7 @@ export function Designer({ seed }: { seed?: Seed } = {}) {
           </div>
         </div>
       )}
-      {notice && step !== "balance" && (
+      {notice && !stepDef(step).ownsNotice && (
         <div className="border-b border-amber-200 bg-amber-50 text-sm text-amber-900 dark:border-amber-800 dark:bg-amber-950 dark:text-amber-100" data-testid="notice">
           <div className="mx-auto flex max-w-7xl items-start gap-3 px-4 py-1.5">
             <span className="flex-1">{notice}</span>
@@ -89,10 +90,7 @@ export function Designer({ seed }: { seed?: Seed } = {}) {
       )}
       <div className="mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 gap-6 px-3 py-4 pb-24 sm:px-4 sm:py-6 lg:grid-cols-[1fr_360px] lg:pb-6">
         <main className="min-w-0">
-          {step === "setup" && <SetupStep />}
-          {step === "build" && <BuildStep />}
-          {step === "balance" && <BalanceStep />}
-          {step === "order" && <OrderStep />}
+          <View />
         </main>
         <aside className="hidden lg:sticky lg:top-14 lg:block lg:self-start"><PanelSidebar /></aside>
       </div>
@@ -116,10 +114,7 @@ function MobilePanelBar({ open, onToggle }: { open: boolean; onToggle: () => voi
   const setStep = useStore((s) => s.setStep);
   const budget = useBudget();
   const health = useHealth();
-  const next: { label: string; to: Step } | null =
-    step === "setup" ? { label: "Choose markers", to: "build" }
-      : step === "build" && rows.length ? { label: balanced ? "Balance" : "Balance panel", to: "balance" }
-        : step === "balance" && result && !result.unassigned.length ? { label: "Order", to: "order" } : null;
+  const next = nextStep(step, { rows, balanced, result });
 
   return (
     <div className="lg:hidden">
