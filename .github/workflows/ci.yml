@@ -11,8 +11,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
-      - run: uv run pytest -q
+        with:
+          python-version: "3.12"
+      - run: uv run --frozen pytest -q
         working-directory: etl
+      # data/build is committed and served by the web app: regenerate it and fail if the checked-in bundles are stale.
+      # `version` carries the build date, so it always differs; -I drops hunks whose only changed lines are that field.
+      - name: Rebuild bundles
+        working-directory: etl
+        run: |
+          uv run --frozen pd3-etl instruments
+          uv run --frozen pd3-etl catalog
+          uv run --frozen pd3-etl modules
+      - name: data/build is up to date
+        run: git diff --exit-code -I '"version"' -- data/build
 
   engine:
     runs-on: ubuntu-latest
@@ -20,7 +32,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 24 }
-      - run: npm ci && npm run typecheck && npm test
+      - run: npm ci && npm run typecheck && npm test && npm run validate:check
         working-directory: engine
 
   web:

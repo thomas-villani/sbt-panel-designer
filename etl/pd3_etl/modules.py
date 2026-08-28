@@ -12,14 +12,21 @@ Module marker fields:
 from __future__ import annotations
 
 import json
+import logging
 import re
-from collections import defaultdict
+from collections import Counter, defaultdict
+from pathlib import Path
 
 import yaml
 
 from . import BUILD, CURATED, RAW_PDV2
-from .names import clean, norm_key
-from .util import write_json
+from .names import clean, mass_sort_key, norm_key, parse_mass
+from .util import build_version, write_json
+
+log = logging.getLogger(__name__)
+
+KIT_OVERRIDES = CURATED / "modules" / "kit-overrides.yaml"
+KIT_CAPTURES = {"api_kit_contents.json": "imaging", "api_kit_contents_susp.json": "suspension"}
 
 PDV2_REACTIVITY = {1: "human", 2: "mouse", 3: "rat", 4: "rabbit"}
 PDV2_INSTRUMENT = {1: "helios", 2: "cytof1", 3: "cytof2", 4: "cytof_xt", 5: "hyperion", 6: "hyperion_plus", 7: "hyperion_xti"}
@@ -28,6 +35,17 @@ NON_ANTIBODY = re.compile(r"^ICSK-\d$", re.I)
 # Titrated-signal quantile cut points (dual counts, PBMC). Derived from the suspension harvest: IQR 58-374, 95th pct 1303.
 ABUNDANCE_CUTS = [(60, "low"), (150, "medium"), (400, "high")]  # else very_high
 IMC_PILL = {33: "low", 66: "medium", 100: "high"}
+
+
+def _num(v, context: str, field: str, issues: dict[str, list]) -> float | None:
+    """float(v), or None when pdv2 leaves the cell empty (0 / '' / null). Unparseable values are recorded, not raised."""
+    if v is None or v == "" or v == 0:
+        return None
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        issues["abundance"].append({"context": context, "field": field, "value": repr(v)})
+        return None
 
 
 def abundance_from_signal(signal: float | None) -> str | None:
@@ -63,16 +81,36 @@ class CatalogIndex:
         return self.key_to_id.get(norm_key(name))
 
 
-def parse_list(v) -> list:
-    """pdv2 stores lists as JSON strings with mixed int/str: '[\"5\",\"6\"]' or '[1,2]'."""
+def parse_list(v, errors: list | None = None, context: str = "") -> list:
+    """pdv2 stores lists as JSON strings with mixed int/str: '[\"5\",\"6\"]' or '[1,2]'.
+
+    Anything that does not parse is recorded in ``errors`` (with row context) rather than silently becoming [].
+    """
+    def fail(why: str):
+        if errors is not None:
+            errors.append({"context": context, "value": repr(v), "error": why})
+        return []
+
     if isinstance(v, list):
         raw = v
+    elif v is None or (isinstance(v, str) and not v.strip()):
+        return []
     else:
         try:
             raw = json.loads(v)
+        except (TypeError, ValueError) as e:
+            return fail(f"not JSON: {e}")
+        if not isinstance(raw, list):
+            return fail(f"not a list: {type(raw).__name__}")
+    out = []
+    for x in raw:
+        if x is None or str(x).strip() == "":
+            continue
+        try:
+            out.append(int(x))
         except (TypeError, ValueError):
-            return []
-    return [int(x) for x in raw if x is not None and str(x).strip() != ""]
+            fail(f"non-integer element {x!r}")
+    return out
 
 
 def slugify(s: str) -> str:
@@ -92,12 +130,15 @@ def kit_display_name(raw: str) -> str:
     return re.sub(r"\s+", " ", n).strip()
 
 
-def load_kits(cat_idx: CatalogIndex) -> tuple[list[dict], list[str]]:
-    overrides = yaml.safe_load((CURATED / "modules" / "kit-overrides.yaml").read_text(encoding="utf8")).get("kits", {})
+def load_kits(cat_idx: CatalogIndex) -> tuple[list[dict], list[str], dict[str, list]]:
+    overrides = yaml.safe_load(KIT_OVERRIDES.read_text(encoding="utf8")).get("kits", {})
     modules, unresolved = [], []
+    issues: dict[str, list] = {"parse_list": [], "abundance": []}
     seen_slugs: set[str] = set()
-    for fname, application in (("api_kit_contents.json", "imaging"), ("api_kit_contents_susp.json", "suspension")):
+    captured_names: set[str] = set()
+    for fname, application in KIT_CAPTURES.items():
         kits = json.loads((RAW_PDV2 / fname).read_text(encoding="utf8"))
+        captured_names |= set(kits)
         for raw_name, kit in kits.items():
             meta = kit["meta"]
             ov = overrides.get(raw_name, {})
@@ -118,16 +159,18 @@ def load_kits(cat_idx: CatalogIndex) -> tuple[list[dict], list[str]]:
                 if kind == "antibody" and tid is None:
                     unresolved.append(f"{raw_name}: {tname}")
                 metal = clean(n["label"])
-                mass = int(re.match(r"\d+", metal).group()) if re.match(r"\d+", metal) else None
+                mass = parse_mass(metal)
                 clone = clean(n.get("clone"))
+                row_ctx = f"{raw_name}: {tname} ({metal})"
                 if application == "suspension":
-                    signal = float(n["abundance_factor"]) if n.get("abundance_factor") else None
-                    tolerance = float(n["important"]) if n.get("important") else None
+                    signal = _num(n.get("abundance_factor"), row_ctx, "abundance_factor", issues)
+                    tolerance = _num(n.get("important"), row_ctx, "important", issues)
                     level = abundance_from_signal(signal)
                     st_source = "titrated" if signal else "default"
                 else:
                     signal, tolerance = None, None
-                    level = IMC_PILL.get(int(n.get("abundance_factor") or 66), "medium")
+                    pill = _num(n.get("abundance_factor"), row_ctx, "abundance_factor", issues)
+                    level = IMC_PILL.get(int(pill) if pill is not None else 66, "medium")
                     st_source = "kit_pill"
                 conj = cat_idx.conj_by_key.get((tid, norm_key(clone), metal, application)) if tid else None
                 markers.append({
@@ -140,7 +183,7 @@ def load_kits(cat_idx: CatalogIndex) -> tuple[list[dict], list[str]]:
                     "in_catalogue": tid is not None,
                     "conjugate_id": conj["id"] if conj else None,
                     "catalogue_metals": sorted(set(cat_idx.metals_by_clone.get((tid, norm_key(clone), application), [])),
-                                               key=lambda m: int(re.match(r"\d+", m).group())) if tid else [],
+                                               key=mass_sort_key) if tid else [],
                     "applications": sorted(cat_idx.apps_by_target.get(tid, [])) if tid else [],
                 })
             modules.append({
@@ -148,8 +191,12 @@ def load_kits(cat_idx: CatalogIndex) -> tuple[list[dict], list[str]]:
                 "kit": {"pdv2_kit_id": meta["kit_id"], "pdv2_experiment_id": meta["id"], "raw_name": raw_name,
                         "created": meta.get("created"), "owner_user_id": meta.get("user_id")},
                 "application": application,
-                "species": [PDV2_REACTIVITY.get(i, str(i)) for i in parse_list(meta.get("kit_reactivity") or meta.get("reactivity"))],
-                "instruments": [PDV2_INSTRUMENT.get(i, str(i)) for i in parse_list(meta.get("kit_instrument_avail"))],
+                "species": [PDV2_REACTIVITY.get(i, str(i)) for i in
+                            parse_list(meta.get("kit_reactivity") or meta.get("reactivity"), issues["parse_list"],
+                                       f"{raw_name}.kit_reactivity")],
+                "instruments": [PDV2_INSTRUMENT.get(i, str(i)) for i in
+                                parse_list(meta.get("kit_instrument_avail"), issues["parse_list"],
+                                           f"{raw_name}.kit_instrument_avail")],
                 "sample_types": ov.get("sample_types", ["ffpe"] if application == "imaging" else ["pbmc", "whole_blood"]),
                 "category": ov.get("category", "uncategorised"),
                 "blurb": ov.get("blurb", ""),
@@ -158,7 +205,17 @@ def load_kits(cat_idx: CatalogIndex) -> tuple[list[dict], list[str]]:
                 "aliases": ov.get("aliases", []), "definition": None,
                 "markers": markers,
             })
-    return modules, unresolved
+    # kit-overrides.yaml is keyed by the raw pdv2 kit name: both sides must line up exactly, or display metadata
+    # silently goes missing (unknown key) / a new kit ships as "uncategorised" (uncovered kit).
+    unknown_keys = sorted(set(overrides) - captured_names)
+    uncovered_kits = sorted(captured_names - set(overrides))
+    if unknown_keys or uncovered_kits:
+        raise ValueError(
+            f"{KIT_OVERRIDES.name} does not match the captured kits.\n"
+            f"  override keys with no kit ({len(unknown_keys)}): {unknown_keys}\n"
+            f"  kits with no override ({len(uncovered_kits)}): {uncovered_kits}"
+        )
+    return modules, unresolved, issues
 
 
 def load_curated(cat_idx: CatalogIndex) -> tuple[list[dict], list[str]]:
@@ -183,7 +240,7 @@ def load_curated(cat_idx: CatalogIndex) -> tuple[list[dict], list[str]]:
                 if tid:
                     apps = ["imaging", "suspension"] if app == "both" else [app]
                     metals = sorted({x for a in apps for x in cat_idx.metals_by_target.get((tid, a), [])},
-                                    key=lambda x: int(re.match(r"\d+", x).group()))
+                                    key=mass_sort_key)
                 markers.append({
                     "target_id": tid, "target_name": cat_idx.targets[tid]["name"] if tid else name, "raw_target": name,
                     "kind": "antibody", "role": role, "clone": None, "metal": None, "mass": None,
@@ -204,12 +261,19 @@ def load_curated(cat_idx: CatalogIndex) -> tuple[list[dict], list[str]]:
     return modules, unresolved
 
 
-def build() -> dict:
-    cat = json.loads((BUILD / "catalog.json").read_text(encoding="utf8"))
+def curated_yamls() -> list[Path]:
+    return sorted((CURATED / "modules").glob("*.yaml"))
+
+
+def build(cat: dict | None = None) -> dict:
+    cat = cat if cat is not None else json.loads((BUILD / "catalog.json").read_text(encoding="utf8"))
     idx = CatalogIndex(cat)
-    kits, unresolved_k = load_kits(idx)
+    kits, unresolved_k, issues = load_kits(idx)
     curated, unresolved_c = load_curated(idx)
     modules = kits + curated
+    dupe_ids = sorted(i for i, n in Counter(m["id"] for m in modules).items() if n > 1)
+    if dupe_ids:
+        raise ValueError(f"duplicate module ids across kits and curated YAML: {dupe_ids}")
     stats = {
         "modules": len(modules), "sbt_kits": len(kits), "curated": len(curated),
         "kit_rows": sum(len(m["markers"]) for m in kits),
@@ -219,12 +283,18 @@ def build() -> dict:
                                                         if mk["target_id"] and not mk["conjugate_id"] and mk["catalogue_metals"]),
         "unresolved_kit_targets": unresolved_k,
         "unresolved_curated_targets": unresolved_c,
+        "unparsed_kit_values": issues["abundance"] + issues["parse_list"],
     }
-    return {"version": "2026-08-25.1", "stats": stats, "modules": modules}
+    for issue in stats["unparsed_kit_values"]:
+        log.warning("unparseable kit value: %s", issue)
+    version = build_version([*curated_yamls(), *(RAW_PDV2 / f for f in KIT_CAPTURES)], extra=cat["version"])
+    return {"version": version, "stats": stats, "modules": modules}
 
 
-def main() -> None:
-    out = build()
-    write_json(BUILD / "modules.json", out)
-    for k, v in out["stats"].items():
-        print(f"{k}: {v}")
+def main(out_path: Path | None = None, cat: dict | None = None) -> dict:
+    out = build(cat)
+    path = out_path or (BUILD / "modules.json")
+    write_json(path, out)
+    log.info("modules %s -> %s", out["version"], path)
+    print(json.dumps(out["stats"], indent=1, ensure_ascii=False))
+    return out

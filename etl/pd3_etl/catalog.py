@@ -4,22 +4,46 @@ Entities (SPEC §4): Target -> Clone -> Conjugate (target, clone, metal, applica
 """
 from __future__ import annotations
 
+import json
+import logging
 import re
 from collections import defaultdict
+from pathlib import Path
 
 import pandas as pd
 import yaml
 
 from . import BUILD, CURATED, DATA, RAW_PDV2
-from .names import CD_PART, clean, name_parts, norm_key, split_target
-from .util import write_json
+from .names import CD_PART, clean, name_parts, norm_key, parse_mass, split_target
+from .util import build_version, resolve_input, write_json
 
-STORE_CSV = DATA / "sbt-catalog-master-2026-07-29.csv"
-HARVEST_CSV = RAW_PDV2 / "pdv2-conjugate-signal-tolerance-2026-08-24.csv"
-PDV2_PRODUCTS_CSV = RAW_PDV2 / "pdv2-product-table-2026-08-24.csv"
+log = logging.getLogger(__name__)
+
+# Dated inputs: newest match wins, overridable for a one-off rebuild against a different export.
+STORE_CSV = resolve_input(DATA, "sbt-catalog-master-*.csv", "PD3_STORE_CSV")
+HARVEST_CSV = resolve_input(RAW_PDV2, "pdv2-conjugate-signal-tolerance-*.csv", "PD3_HARVEST_CSV")
+PDV2_PRODUCTS_CSV = resolve_input(RAW_PDV2, "pdv2-product-table-*.csv", "PD3_PDV2_PRODUCTS_CSV")
+ALIASES_YAML = CURATED / "aliases.yaml"
+SPECIES_YAML = CURATED / "species.yaml"
 
 HREF = re.compile(r'href="([^"]+)"')
 MAXPAR_PN = re.compile(r"^\d{7}[A-Z]$")
+
+# Every value the store export is allowed to carry in these two columns. A label change must fail the build,
+# not silently reclassify 372 IMC SKUs (audit #18).
+APPLICATIONS = {"CyTOF (Cytometry)": "suspension", "IMC (Imaging)": "imaging"}
+ASSAY_TYPES = {"Maxpar": "maxpar", "MaxparOnDemand": "ondemand"}
+
+
+def classify(value, table: dict[str, str], column: str, part_number: str) -> str:
+    v = clean(value)
+    try:
+        return table[v]
+    except KeyError:
+        raise ValueError(
+            f"unknown {column} {v!r} on part number {part_number!r}; "
+            f"known values: {sorted(table)}. Add it to catalog.{column.upper().replace(' ', '_')}S."
+        ) from None
 
 
 def parse_link(cell) -> tuple[str | None, str | None]:
@@ -56,7 +80,7 @@ def parse_format(fmt: str) -> dict:
 
 class SpeciesMap:
     def __init__(self):
-        cfg = yaml.safe_load((CURATED / "species.yaml").read_text(encoding="utf8"))
+        cfg = yaml.safe_load(SPECIES_YAML.read_text(encoding="utf8"))
         self.lookup = {v.lower(): code for code, vals in cfg["species"].items() for v in vals}
         self.pseudo = {k.lower(): v for k, v in cfg["pseudo"].items()}
 
@@ -122,7 +146,7 @@ class TargetRegistry:
 
 def apply_curated_aliases(reg: TargetRegistry) -> dict[str, str]:
     """Returns {normalised key of canonical: canonical display name}."""
-    cfg = yaml.safe_load((CURATED / "aliases.yaml").read_text(encoding="utf8"))
+    cfg = yaml.safe_load(ALIASES_YAML.read_text(encoding="utf8"))
     canon_names = {}
     for canon, others in cfg["aliases"].items():
         kc = reg.add(canon, "curated")
@@ -160,8 +184,8 @@ def build() -> dict:
                     codes.insert(0, c)
         tds_url, tds_label = parse_link(r["Technical Data Sheet"])
         sds_url, sds_label = parse_link(r["Safety Data Sheet"])
-        app = "imaging" if clean(r["Application"]).startswith("IMC") else "suspension"
-        assay = "ondemand" if clean(r["Assay Type"]).lower().startswith("maxparondemand") else "maxpar"
+        app = classify(r["Application"], APPLICATIONS, "Application", pn)
+        assay = classify(r["Assay Type"], ASSAY_TYPES, "Assay Type", pn)
         sample_types = [s.strip().lower() for s in clean(r["Sample Type"]).split(",")
                         if s.strip() and s.strip().lower() != "various"]
         tkey = reg.add(target, "store")
@@ -223,7 +247,8 @@ def build() -> dict:
         display = choose_display_name(spellings, store_names, curated)
         targets[root] = {
             "id": root, "name": display,
-            "aliases": sorted(spellings - {display}, key=str.lower),
+            # Total order: case-insensitive, ties broken by the raw spelling so the bundle is byte-reproducible.
+            "aliases": sorted(spellings - {display}, key=lambda s: (s.lower(), s)),
             "sources": sorted(set().union(*(reg.sources[k] for k in keys))),
         }
     for s in skus:
@@ -232,12 +257,18 @@ def build() -> dict:
 
     # ---- conjugates (products) and clones -----------------------------------
     conj: dict[tuple, dict] = {}
+    unparsed_metals: list[dict] = []
     for s in skus:
+        mass = parse_mass(s["metal"])
+        if mass is None:
+            # No mass number in the metal label: the row cannot be placed on a channel. Record it, drop the conjugate.
+            unparsed_metals.append({"part_number": s["part_number"], "target": s["raw_target"], "metal": s["metal"]})
+            continue
         key = (s["target_id"], s["clone"], s["metal"], s["application"])
         c = conj.setdefault(key, {
             "id": f"{s['target_id']}|{s['clone']}|{s['metal']}|{s['application'][0]}",
             "target_id": s["target_id"], "target_name": targets[s["target_id"]]["name"], "clone": s["clone"],
-            "metal": s["metal"], "mass": int(re.match(r"\d+", s["metal"]).group()),
+            "metal": s["metal"], "mass": mass,
             "application": s["application"], "assay_type": s["assay_type"], "kind": s["kind"],
             "reactivity": [], "sample_types": [], "skus": [], "tds_url": s["tds_url"],
             "signal": None, "tolerance": None, "st_source": "default", "st_context": None,
@@ -290,10 +321,14 @@ def build() -> dict:
         "pdv2_name_joins": joined_names,
         "unmapped_species_terms": sorted({f[9:] for s in skus for f in s["reactivity_flags"] if f.startswith("unmapped:")}),
         "multi_metal_targets": sum(1 for t in targets_out if t["n_conjugates"] > 1),
+        "unparsed_metals": unparsed_metals,
     }
+    if unparsed_metals:
+        log.warning("%d SKU(s) with an unparseable metal label dropped from conjugates", len(unparsed_metals))
     return {
-        "version": "2026-07-29.1",
-        "sources": {"store_csv": STORE_CSV.name, "pdv2_harvest": HARVEST_CSV.name, "pdv2_products": PDV2_PRODUCTS_CSV.name},
+        "version": build_version([STORE_CSV, HARVEST_CSV, PDV2_PRODUCTS_CSV, ALIASES_YAML, SPECIES_YAML]),
+        "sources": {"store_csv": STORE_CSV.name, "pdv2_harvest": HARVEST_CSV.name, "pdv2_products": PDV2_PRODUCTS_CSV.name,
+                    "aliases": ALIASES_YAML.name, "species": SPECIES_YAML.name},
         "stats": stats,
         "targets": targets_out,
         "clones": sorted(clones.values(), key=lambda c: (c["target_id"], c["clone"])),
@@ -302,8 +337,10 @@ def build() -> dict:
     }
 
 
-def main() -> None:
+def main(out_path: Path | None = None) -> dict:
     out = build()
-    write_json(BUILD / "catalog.json", out)
-    for k, v in out["stats"].items():
-        print(f"{k}: {v}")
+    path = out_path or (BUILD / "catalog.json")
+    write_json(path, out)
+    log.info("catalog %s -> %s", out["version"], path)
+    print(json.dumps(out["stats"], indent=1, ensure_ascii=False))
+    return out

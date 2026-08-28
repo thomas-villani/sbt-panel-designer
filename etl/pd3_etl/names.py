@@ -66,3 +66,18 @@ def name_parts(name: str) -> list[str]:
     if CD_PART.match(parts[0]) or all(len(p) > 2 for p in parts):
         return [name] + parts
     return [name]
+
+
+MASS = re.compile(r"^\d+")
+
+
+def parse_mass(metal) -> int | None:
+    """'145Nd' -> 145. Returns None when the label carries no leading mass number."""
+    m = MASS.match(clean(metal))
+    return int(m.group()) if m else None
+
+
+def mass_sort_key(metal) -> tuple:
+    """Total order over metal labels that never raises on an unparseable one."""
+    mass = parse_mass(metal)
+    return (mass is None, mass or 0, clean(metal))

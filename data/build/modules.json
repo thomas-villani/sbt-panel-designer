@@ -1,5 +1,5 @@
 {
- "version": "2026-08-25.1",
+ "version": "2026-08-27.45ac0dd0",
  "stats": {
   "modules": 123,
   "sbt_kits": 62,
@@ -18,7 +18,8 @@
    "human-nk: CD159a/NKG2A",
    "human-nk: CD314/NKG2D",
    "metabolism: HK2"
-  ]
+  ],
+  "unparsed_kit_values": []
  },
  "modules": [
   {

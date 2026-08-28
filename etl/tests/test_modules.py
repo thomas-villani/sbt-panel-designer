@@ -1,18 +1,12 @@
 import json
 
 import pytest
+import yaml
 
-from pd3_etl import BUILD
+from pd3_etl import RAW_PDV2
+from pd3_etl.modules import KIT_CAPTURES, KIT_OVERRIDES, parse_list
 
-
-@pytest.fixture(scope="module")
-def mods():
-    return json.loads((BUILD / "modules.json").read_text(encoding="utf8"))
-
-
-@pytest.fixture(scope="module")
-def cat():
-    return json.loads((BUILD / "catalog.json").read_text(encoding="utf8"))
+# `mods` / `cat` are session fixtures in conftest.py: build() run into a tmp path, not the committed artefact.
 
 
 def test_counts(mods):
@@ -68,3 +62,32 @@ def test_featured_modules_have_blurbs(mods):
     for m in mods["modules"]:
         if m["featured"]:
             assert m["blurb"], m["id"]
+
+
+def test_kit_overrides_cover_exactly_the_captured_kits():
+    """build() raises on a mismatch; assert the invariant directly so the message points at the YAML."""
+    overrides = set(yaml.safe_load(KIT_OVERRIDES.read_text(encoding="utf8"))["kits"])
+    captured = set()
+    for fname in KIT_CAPTURES:
+        captured |= set(json.loads((RAW_PDV2 / fname).read_text(encoding="utf8")))
+    assert sorted(overrides - captured) == []
+    assert sorted(captured - overrides) == []
+
+
+def test_parse_list_records_failures():
+    errors = []
+    assert parse_list('["5","6"]', errors, "ctx") == [5, 6]
+    assert parse_list([1, 2], errors, "ctx") == [1, 2]
+    assert parse_list(None, errors, "ctx") == [] and errors == []
+    assert parse_list("not json", errors, "kit.field") == []
+    assert parse_list('["a"]', errors, "kit.other") == []
+    assert [e["context"] for e in errors] == ["kit.field", "kit.other"]
+
+
+def test_no_unparsed_kit_values(mods):
+    assert mods["stats"]["unparsed_kit_values"] == []
+
+
+def test_version_is_dated_content_hash(mods):
+    date, _, digest = mods["version"].partition(".")
+    assert len(date.split("-")) == 3 and len(digest) == 8

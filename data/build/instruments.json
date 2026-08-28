@@ -1,5 +1,5 @@
 {
- "version": "2026-08-26.1",
+ "version": "2026-08-26.1.eaa91da9",
  "sources": {
   "po_matrices": "pdv2.standardbio.com /spillover/get_customer/{instrument}, captured 2026-08-24",
   "sensitivity_curves": "pdv2.standardbio.com /massbias/get/{panel_type}, captured 2026-08-24 (coarse, 1 dp)",

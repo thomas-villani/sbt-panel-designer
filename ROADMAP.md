@@ -26,7 +26,7 @@ Status legend: 🟢 in progress · 🟡 needs data or a decision · ⚪ idea
 | **Sensitivity-range classes from the real instrument** (XT vs XTi, Helios) | 🟡 | Usable-channel lists resolved 2026-08-26 from SBT's conjugation-metal tables (`instruments.yaml` → `conjugation`): IMC = 41 metals + 2 Ir = 43 channels, 38 for antibodies (Pt 195/196/198 are segmentation-kit only on IMC); CyTOF = 51 metals. 157Gd, and 194Pt/197Au on IMC, are detected but have no tag, so they are out of the budget. Still open: per-lot isotope purity, and a measured XT/XTi sensitivity curve to replace the coarse pdv2 one. |
 | **Abundance / expression level per target × sample type** | 🟡 | Today the level comes from the module seed or a titration; a proper table (Human Protein Atlas / CellMarker / internal) would set "dim/bright" automatically for FFPE vs PBMC. |
 | **Stable catalogue feed** with price, stock, OnDemand lead time | 🟡 | SPEC §9 ask 3. The public CSV URL changes per upload. |
-| **Catalogue review sheet loop** — the ETL emits review CSVs; turn FAS corrections into overrides checked into `data/overrides/` | ⚪ | |
+| **Catalogue review sheet loop** — the ETL emits review CSVs; turn FAS corrections into overrides checked into `data/curated/modules/kit-overrides.yaml` | ⚪ | |
 
 ## 3. Panel design features
 

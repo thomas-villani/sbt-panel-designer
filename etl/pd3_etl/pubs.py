@@ -15,17 +15,22 @@ Output shape::
 """
 from __future__ import annotations
 
+import contextlib
 import json
+import logging
 import os
 import re
 import sqlite3
 from collections import Counter
 from pathlib import Path
 
-from . import BUILD
+from . import BUILD, DATA
 from .util import write_json
 
-DEFAULT_DB = Path(os.environ.get("PD3_PUBS_DB", r"C:\Users\thoma\notes\personal\megalodon\artifacts\biblionautica.sqlite"))
+log = logging.getLogger(__name__)
+
+# Default: a copy dropped next to the other inputs. Point PD3_PUBS_DB at one elsewhere (see README).
+DEFAULT_DB = Path(os.environ.get("PD3_PUBS_DB") or DATA / "biblionautica.sqlite")
 TECHNIQUES = ("cytof", "imc")  # antibody-metal techniques only; mihc/codex/mibi validate other conjugates
 MAX_WORKS = 12
 # Alias fragments that are real English words / too generic to match on their own.
@@ -102,12 +107,16 @@ def build(conn: sqlite3.Connection, catalog: dict, source: str = "") -> dict:
     }
 
 
-def main() -> None:
+def main(out_path: Path | None = None) -> dict | None:
     if not DEFAULT_DB.exists():
-        print(f"publications: {DEFAULT_DB} not found; set PD3_PUBS_DB. Leaving data/build/publications.json as is.")
-        return
+        log.warning("publications: %s not found; set PD3_PUBS_DB. Leaving data/build/publications.json as is.", DEFAULT_DB)
+        return None
     catalog = json.loads((BUILD / "catalog.json").read_text(encoding="utf8"))
-    with sqlite3.connect(f"file:{DEFAULT_DB.as_posix()}?mode=ro", uri=True) as conn:
+    # `with sqlite3.connect(...)` is a transaction context, not a closing one: close the connection explicitly.
+    with contextlib.closing(sqlite3.connect(f"file:{DEFAULT_DB.as_posix()}?mode=ro", uri=True)) as conn:
         out = build(conn, catalog, source=DEFAULT_DB.name)
-    write_json(BUILD / "publications.json", out)
+    path = out_path or (BUILD / "publications.json")
+    write_json(path, out)
+    log.info("publications -> %s", path)
     print(json.dumps({**out["source"], **out["stats"]}, indent=1))
+    return out
