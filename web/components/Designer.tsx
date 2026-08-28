@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { loadBundles } from "@/lib/data";
-import { useStore, useBudget, useHealth, type Step } from "@/lib/store";
+import { useStore, useBudget, useHealth, type Seed, type Step } from "@/lib/store";
 import { BalanceStep } from "./BalanceStep";
 import { BuildStep } from "./BuildStep";
 import { OrderStep } from "./OrderStep";
@@ -16,9 +16,15 @@ const STEPS: { id: Step; label: string; n: number }[] = [
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-export function Designer() {
+/**
+ * The whole designer. `seed` says where the starting panel comes from; by default the page's own hash (a share link).
+ * A module landing page passes `{ moduleIds, setup }` instead (ROADMAP §6).
+ */
+export function Designer({ seed }: { seed?: Seed } = {}) {
   const idx = useStore((s) => s.idx);
   const init = useStore((s) => s.init);
+  const notice = useStore((s) => s.notice);
+  const dismissNotice = useStore((s) => s.dismissNotice);
   const step = useStore((s) => s.step);
   const setStep = useStore((s) => s.setStep);
   const rows = useStore((s) => s.rows);
@@ -31,7 +37,7 @@ export function Designer() {
 
   useEffect(() => {
     if (idx) return;
-    loadBundles().then(init).catch((e) => setError(e instanceof Error ? e.message : String(e)));
+    loadBundles().then((b) => init(b, seed ?? { hash: window.location.hash })).catch((e) => setError(e instanceof Error ? e.message : String(e)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => { setSheet(false); }, [step]); // changing step closes the sheet
@@ -73,6 +79,14 @@ export function Designer() {
           </div>
         </div>
       )}
+      {notice && step !== "balance" && (
+        <div className="border-b border-amber-200 bg-amber-50 text-sm text-amber-900 dark:border-amber-800 dark:bg-amber-950 dark:text-amber-100" data-testid="notice">
+          <div className="mx-auto flex max-w-7xl items-start gap-3 px-4 py-1.5">
+            <span className="flex-1">{notice}</span>
+            <button className="text-slate-500 hover:text-slate-800 dark:hover:text-slate-200" onClick={dismissNotice} aria-label="dismiss">×</button>
+          </div>
+        </div>
+      )}
       <div className="mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 gap-6 px-3 py-4 pb-24 sm:px-4 sm:py-6 lg:grid-cols-[1fr_360px] lg:pb-6">
         <main className="min-w-0">
           {step === "setup" && <SetupStep />}
@@ -111,23 +125,26 @@ function MobilePanelBar({ open, onToggle }: { open: boolean; onToggle: () => voi
     <div className="lg:hidden">
       {open && <div className="fixed inset-0 z-30 bg-slate-900/40" onClick={onToggle} aria-hidden />}
       <div className={cx("fixed inset-x-0 bottom-0 z-40 flex flex-col border-t border-slate-200 bg-white shadow-[0_-4px_16px_rgba(0,0,0,0.12)] dark:border-slate-700 dark:bg-slate-900", open && "max-h-[80vh] rounded-t-2xl")} data-testid="mobile-panel">
-        <button onClick={onToggle} aria-expanded={open} aria-controls="mobile-panel-sheet"
-          className="flex w-full items-center gap-3 px-4 py-3 text-left" data-testid="mobile-panel-toggle">
-          <span className="min-w-0 flex-1">
-            <span className="block text-sm font-semibold">Your panel · {rows.length} of ~{budget}</span>
-            <span className="block truncate text-xs text-slate-600 dark:text-slate-400">
-              {rows.length === 0 ? "nothing added yet"
-                : balancing && !result ? "checking…"
-                  : health && (balanced || health.tone !== "emerald") ? health.headline
-                    : `${rows.slice(0, 4).map((r) => r.name).join(", ")}${rows.length > 4 ? ` +${rows.length - 4}` : ""}`}
+        {/* Two real buttons side by side (a button inside a button is not focusable and breaks screen readers). */}
+        <div className="flex w-full items-center gap-3 px-4 py-3">
+          <button onClick={onToggle} aria-expanded={open} aria-controls="mobile-panel-sheet"
+            className="flex min-w-0 flex-1 items-center gap-3 text-left" data-testid="mobile-panel-toggle">
+            <span className="min-w-0 flex-1">
+              <span className="block text-sm font-semibold">Your panel · {rows.length} of ~{budget}</span>
+              <span className="block truncate text-xs text-slate-600 dark:text-slate-400">
+                {rows.length === 0 ? "nothing added yet"
+                  : balancing && !result ? "checking…"
+                    : health && (balanced || health.tone !== "emerald") ? health.headline
+                      : `${rows.slice(0, 4).map((r) => r.name).join(", ")}${rows.length > 4 ? ` +${rows.length - 4}` : ""}`}
+              </span>
             </span>
-          </span>
+            <span className={cx("shrink-0 text-slate-400 transition", open && "rotate-180")} aria-hidden>▲</span>
+          </button>
           {next && !open && (
-            <span role="button" onClick={(e) => { e.stopPropagation(); setStep(next.to); }}
-              className="shrink-0 rounded-md bg-teal-700 px-3 py-2 text-sm font-medium text-white shadow-sm">{next.label} →</span>
+            <button type="button" onClick={() => setStep(next.to)}
+              className="shrink-0 rounded-md bg-teal-700 px-3 py-2 text-sm font-medium text-white shadow-sm">{next.label} →</button>
           )}
-          <span className={cx("shrink-0 text-slate-400 transition", open && "rotate-180")} aria-hidden>▲</span>
-        </button>
+        </div>
         {open && <div id="mobile-panel-sheet" className="min-h-0 flex-1 overflow-y-auto px-2 pb-[env(safe-area-inset-bottom)]"><PanelSidebar /></div>}
       </div>
     </div>

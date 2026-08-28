@@ -3,7 +3,8 @@ import type { ButtonHTMLAttributes, ReactNode } from "react";
 
 export function cx(...xs: (string | false | null | undefined)[]) { return xs.filter(Boolean).join(" "); }
 
-export function Button({ variant = "secondary", size = "md", className, ...rest }: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: "primary" | "secondary" | "ghost" | "danger"; size?: "sm" | "md" | "lg" }) {
+/** `type` defaults to "button": a Cancel inside a <form> must never submit it. Pass type="submit" explicitly where wanted. */
+export function Button({ variant = "secondary", size = "md", className, type = "button", ...rest }: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: "primary" | "secondary" | "ghost" | "danger"; size?: "sm" | "md" | "lg" }) {
   const base = "inline-flex items-center gap-1.5 rounded-md font-medium transition disabled:opacity-40 disabled:cursor-not-allowed";
   const v = {
     primary: "bg-teal-700 text-white hover:bg-teal-800 shadow-sm",
@@ -13,7 +14,7 @@ export function Button({ variant = "secondary", size = "md", className, ...rest 
   }[variant];
   // Slightly taller on touch screens (min 36 px), the desktop density from `sm:` up.
   const s = { sm: "px-2.5 py-1.5 text-xs sm:px-2 sm:py-1", md: "px-3 py-2 text-sm sm:py-1.5", lg: "px-5 py-2.5 text-base" }[size];
-  return <button className={cx(base, v, s, className)} {...rest} />;
+  return <button type={type} className={cx(base, v, s, className)} {...rest} />;
 }
 
 export function Pill({ children, tone = "slate", className, title, onClick }: { children: ReactNode; tone?: "slate" | "teal" | "amber" | "rose" | "emerald" | "violet"; className?: string; title?: string; onClick?: () => void }) {

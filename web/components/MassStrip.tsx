@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import { SPILL_CRIT, SPILL_WARN, type Result } from "@pd3/engine";
 import type { InstrumentDef } from "@pd3/engine";
-import { antibodyChannel, reservedRoles } from "@/lib/data";
+import { antibodyChannel, reservedChannels } from "@/lib/data";
 import { useStore } from "@/lib/store";
 import { cx } from "./ui";
 
@@ -12,9 +12,7 @@ export function MassStrip({ instrument, result, waived }: { instrument: Instrume
   const setup = useStore((s) => s.setup);
   const toggleBlocked = useStore((s) => s.toggleBlocked);
   const reserved = useMemo(() => {
-    const roles = reservedRoles(setup);
-    const m = new Map<number, string>();
-    for (const r of idx.instruments.reserved[setup.modality]) if (roles.includes(r.role)) for (const mass of r.masses) m.set(mass, r.label);
+    const m = reservedChannels(idx, setup);
     for (const mass of setup.blocked) m.set(mass, "kept empty on purpose — click to free it");
     return m;
   }, [idx, setup]);

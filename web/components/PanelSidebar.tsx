@@ -1,6 +1,6 @@
 "use client";
 import { useMemo, useState } from "react";
-import { LEVELS, LEVEL_LABEL, antibodyChannel, kitSupplies, reservedRoles, type CloneOption } from "@/lib/data";
+import { LEVELS, LEVEL_LABEL, antibodyChannel, channelLabel, kitSupplies, reservedChannels, type CloneOption } from "@/lib/data";
 import { SPILL_CRIT, SPILL_WARN } from "@pd3/engine";
 import { useHealth, useStore } from "@/lib/store";
 import type { PanelModule, PanelRow, PubTarget } from "@/lib/types";
@@ -47,10 +47,9 @@ export function PanelSidebar() {
   const byRow = useMemo(() => new Map(result?.rows.map((r) => [r.rowId, r]) ?? []), [result]);
   const customRows = useMemo(() => new Set([...(health?.custom ?? []), ...(health?.customKnown ?? [])].map((c) => c.rowId)), [health]);
   const channels = idx.instrument(setup.instrumentId).channels;
-  const reservedMasses = useMemo(() => {
-    const roles = reservedRoles(setup);
-    return new Set(idx.instruments.reserved[setup.modality].filter((r) => roles.includes(r.role)).flatMap((r) => r.masses));
-  }, [idx, setup]);
+  const reservedMasses = useMemo(() => [...reservedChannels(idx, setup).keys()], [idx, setup]);
+  const engineError = useStore((s) => s.engineError);
+  const balanceNow = useStore((s) => s.balanceNow);
   const occupied = useMemo(() => {
     const m = new Map<number, string>();
     for (const r of rows) if (r.locked != null) m.set(r.locked, r.name);
@@ -82,10 +81,10 @@ export function PanelSidebar() {
         </div>
       )}
       {saveName !== null && (
-        <form className="flex items-center gap-1 border-b border-slate-200 px-3 py-2 dark:border-slate-700" onSubmit={(e) => { e.preventDefault(); if (saveName.trim()) { savePanel(saveName); setSaveName(null); setShowSaved(true); } }}>
+        <form className="flex items-center gap-1 border-b border-slate-200 px-3 py-2 dark:border-slate-700" onSubmit={(e) => { e.preventDefault(); if (saveName.trim()) { void savePanel(saveName); setSaveName(null); setShowSaved(true); } }}>
           <input autoFocus value={saveName} onChange={(e) => setSaveName(e.target.value)} placeholder="Panel name" aria-label="Panel name"
             className="min-w-0 flex-1 rounded border border-slate-300 px-2 py-1 text-xs dark:border-slate-600 dark:bg-slate-900" />
-          <Button size="sm" variant="primary" disabled={!saveName.trim()} onClick={() => { savePanel(saveName); setSaveName(null); setShowSaved(true); }}>Save</Button>
+          <Button size="sm" variant="primary" type="submit" disabled={!saveName.trim()}>Save</Button>
           <Button size="sm" variant="ghost" onClick={() => setSaveName(null)}>Cancel</Button>
         </form>
       )}
@@ -129,16 +128,16 @@ export function PanelSidebar() {
                   {r.targetId && (pubs?.targets[r.targetId]?.n ?? 0) > 0 && <span className="ml-1.5 font-normal text-[10px] text-slate-500 dark:text-slate-400" title="CyTOF / IMC papers mentioning this marker (click for the list)">{pubs!.targets[r.targetId].n} papers</span>}
                 </button>
                 <Pill tone={LEVEL_TONE[r.level]} onClick={() => setLevel(r.id, LEVELS[(LEVELS.indexOf(r.level) + 1) % LEVELS.length])} title="abundance: click to cycle">{LEVEL_LABEL[r.level]}</Pill>
-                <MetalPick row={r} clones={opts} channels={channels} occupied={occupied} blocked={[...setup.blocked, ...reservedMasses]} extraMetals={setup.extraMetals} mass={showMetal ? rr.mass : null} balanced={!!showMetal}
+                <MetalPick row={r} clones={opts} channels={channels} occupied={occupied} blocked={[...setup.blocked, ...reservedMasses]} label={(m) => channelLabel(idx, setup, m)} extraMetals={setup.extraMetals} mass={showMetal ? rr.mass : null} balanced={!!showMetal}
                   tone={showMetal ? (rr.mass != null ? sev : "rose") : r.locked != null ? "slate" : r.custom ? "violet" : "slate"}
                   title={showMetal && rr.mass != null ? `received ${rr.received.toFixed(1)} counts = ${rr.receivedOverT.toFixed(2)} × tolerance${customRows.has(r.id) ? " · * no catalogue vial on this channel: conjugated to order" : ""} — click to change the metal` : r.locked != null ? (kitSupplies(idx, r, r.locked) ? "the metal this marker ships with in its kit — click to change (the kit vial then goes unused)" : "you pinned this marker to this channel — click to change") : r.custom ? "no catalogue conjugate for this setup: custom conjugation — click to pick the metal" : "click to pick a metal by hand"}
                   star={customRows.has(r.id)} onLock={(m) => lockRow(r.id, m)} />
                 <button onClick={() => removeRow(r.id)} className="text-slate-400 hover:text-rose-600" title="remove">×</button>
               </div>
               {open === r.id && (
-                <RowDetails row={r} clones={opts} channels={channels} rr={rr} balanced={balanced} blocked={setup.blocked} extraMetals={setup.extraMetals}
+                <RowDetails row={r} clones={opts} rr={rr} balanced={balanced}
                   pubs={r.targetId ? pubs?.targets[r.targetId] ?? null : null} modules={r.targetId ? idx.modulesWith(r.targetId, setup) : []}
-                  onClone={(c) => (c === FREE ? freeClone(r.id) : setClone(r.id, c))} onLock={(m) => lockRow(r.id, m)} />
+                  onClone={(c) => (c === FREE ? freeClone(r.id) : setClone(r.id, c))} />
               )}
             </li>
           );
@@ -151,6 +150,11 @@ export function PanelSidebar() {
             className={cx("block text-left font-medium", step !== "balance" && "underline decoration-dotted underline-offset-2", HEALTH_TEXT[health.tone])}>
             {balancing && !result ? "checking…" : health.headline}
           </button>
+        )}
+        {engineError && (
+          <div className="text-rose-700 dark:text-rose-300" data-testid="sidebar-engine-error">
+            balancer failed · <button className="underline" onClick={() => void balanceNow()}>try again</button>
+          </div>
         )}
         {balanced && result && <div className="text-slate-400">spillover score {result.objective.toFixed(2)} (lower is better){balancing ? " · updating…" : ""}</div>}
       </div>
@@ -168,21 +172,27 @@ const PICK_TONE = {
  * The metal, as a pill you can open: pick any channel the clone can be conjugated to (open ones first, then a swap
  * with whoever holds it) or hand it back to the optimiser. Works before the first balance too.
  */
-function MetalPick({ row, clones, channels, occupied, blocked, extraMetals, mass, balanced, tone, title, star, onLock }: {
-  row: PanelRow; clones: CloneOption[]; channels: { mass: number; label: string; usable: boolean; antibody?: boolean }[]; occupied: Map<number, string>;
-  blocked: number[]; extraMetals?: number[]; mass: number | null; balanced: boolean; tone: keyof typeof PICK_TONE; title: string; star: boolean; onLock: (m: number | null) => void;
-}) {
+/** The channels a row may be pinned to under this setup: every antibody channel not blocked, split by whether its clone is sold there. */
+function rowChannelOptions(row: PanelRow, clones: CloneOption[], channels: { mass: number; label: string; usable: boolean; antibody?: boolean }[], blocked: number[], extraMetals?: number[]) {
   const pool = row.clonePinned ? clones.filter((c) => c.clone === row.clone) : clones;
   const allowed = new Set(pool.flatMap((c) => c.conjugates.map((x) => x.mass)));
   const usable = channels.filter((c) => antibodyChannel(c, { extraMetals }) && !blocked.includes(c.mass)).sort((a, b) => a.mass - b.mass);
-  const pickable = usable.filter((c) => allowed.size === 0 || allowed.has(c.mass));
+  return {
+    pickable: usable.filter((c) => allowed.size === 0 || allowed.has(c.mass)),
+    // Channels no catalogue vial of this clone covers: still pickable, as a custom conjugation of your own.
+    custom: usable.filter((c) => allowed.size > 0 && !allowed.has(c.mass)),
+  };
+}
+
+function MetalPick({ row, clones, channels, occupied, blocked, extraMetals, mass, balanced, tone, title, star, label: labelOf, onLock }: {
+  row: PanelRow; clones: CloneOption[]; channels: { mass: number; label: string; usable: boolean; antibody?: boolean }[]; occupied: Map<number, string>;
+  blocked: number[]; extraMetals?: number[]; mass: number | null; balanced: boolean; tone: keyof typeof PICK_TONE; title: string; star: boolean;
+  label: (mass: number) => string; onLock: (m: number | null) => void;
+}) {
+  const { pickable, custom } = rowChannelOptions(row, clones, channels, blocked, extraMetals);
   const free = pickable.filter((c) => !occupied.has(c.mass) || c.mass === row.locked);
   const taken = pickable.filter((c) => occupied.has(c.mass) && c.mass !== row.locked);
-  // Channels no catalogue vial of this clone covers: still pickable, as a custom conjugation of your own.
-  const custom = usable.filter((c) => allowed.size > 0 && !allowed.has(c.mass));
-  const label = mass != null ? channels.find((c) => c.mass === mass)?.label ?? String(mass)
-    : row.locked != null ? channels.find((c) => c.mass === row.locked)?.label ?? String(row.locked)
-      : balanced ? "no channel" : row.custom ? "custom" : "any metal";
+  const label = mass != null ? labelOf(mass) : row.locked != null ? labelOf(row.locked) : balanced ? "no channel" : row.custom ? "custom" : "any metal";
   return (
     <span className={cx("relative inline-flex items-center rounded-full py-0.5 pl-2 pr-1.5 text-xs font-medium whitespace-nowrap hover:ring-2 ring-offset-1 ring-teal-400", PICK_TONE[tone])} title={title}>
       <span>{row.locked != null ? "🔒 " : ""}{label}{star ? "*" : ""}</span><span className="ml-1 text-[9px] opacity-70">▾</span>
@@ -197,14 +207,13 @@ function MetalPick({ row, clones, channels, occupied, blocked, extraMetals, mass
   );
 }
 
-function RowDetails({ row, clones, channels, rr, balanced, blocked, extraMetals, pubs, modules, onClone, onLock }: {
-  row: PanelRow; clones: CloneOption[]; pubs: PubTarget | null; modules: PanelModule[]; blocked: number[]; extraMetals?: number[];
-  channels: { mass: number; label: string; usable: boolean; antibody?: boolean }[]; rr: { mass: number | null; reasons: string[]; contributions: { label: string; mass: number; fraction: number; mechanism: string }[] } | undefined;
-  balanced: boolean; onClone: (c: string | null) => void; onLock: (m: number | null) => void;
+function RowDetails({ row, clones, rr, balanced, pubs, modules, onClone }: {
+  row: PanelRow; clones: CloneOption[]; pubs: PubTarget | null; modules: PanelModule[];
+  rr: { mass: number | null; reasons: string[]; contributions: { label: string; mass: number; fraction: number; mechanism: string }[] } | undefined;
+  balanced: boolean; onClone: (c: string | null) => void;
 }) {
-  const pool = row.clonePinned ? clones.filter((c) => c.clone === row.clone) : clones;
-  const allowed = new Set(pool.flatMap((c) => c.conjugates.map((x) => x.mass)));
-  const pickable = channels.filter((c) => antibodyChannel(c, { extraMetals }) && !blocked.includes(c.mass) && (allowed.size === 0 || allowed.has(c.mass)));
+  const idx = useStore((s) => s.idx)!;
+  const setup = useStore((s) => s.setup);
   return (
     <div className="mt-1 space-y-2 rounded-md bg-slate-50 p-2 text-xs dark:bg-slate-800">
       {clones.length > 1 && (
@@ -223,7 +232,7 @@ function RowDetails({ row, clones, channels, rr, balanced, blocked, extraMetals,
       {clones.length === 0 && row.locked == null && (
         <div className="text-slate-600 dark:text-slate-400">Already have this antibody conjugated? Pick its metal from the pill on the right and the balancer will work around it.</div>
       )}
-      {row.locked != null && <div className="text-slate-600 dark:text-slate-400">Pinned to {channels.find((c) => c.mass === row.locked)?.label ?? row.locked}; choose “let the optimiser choose” on the pill to free it.</div>}
+      {row.locked != null && <div className="text-slate-600 dark:text-slate-400">Pinned to {channelLabel(idx, setup, row.locked)}; choose “let the optimiser choose” on the pill to free it.</div>}
       {modules.length > 0 && <InModules modules={modules} max={3} />}
       {balanced && rr && rr.reasons.length > 0 && <ul className="list-disc space-y-0.5 pl-4 text-slate-600 dark:text-slate-300">{rr.reasons.map((x, i) => <li key={i}>{x}</li>)}</ul>}
       {balanced && rr && rr.contributions.length > 0 && (

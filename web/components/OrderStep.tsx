@@ -1,10 +1,25 @@
 "use client";
+/**
+ * The order, read from one structured object (lib/bom.ts `buildOrder`): this page, the CSV and the future cart / quote
+ * sink all see the same lines, kits and accepted-spill notes.
+ */
 import { useMemo, useState } from "react";
-import { IMAGING_SIZING_NOTE, accessories, bomCsv, buildBom } from "@/lib/bom";
-import { reservedRoles } from "@/lib/data";
+import { IMAGING_SIZING_NOTE, bomCsv, buildOrder } from "@/lib/bom";
 import { useStore } from "@/lib/store";
 import { shareUrl } from "@/lib/url";
 import { Button, H2, Pill } from "./ui";
+
+/** Trigger a file download for text content. The anchor must be in the document and the URL must outlive the click. */
+export function downloadText(filename: string, text: string, type = "text/csv"): void {
+  const url = URL.createObjectURL(new Blob([text], { type }));
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  a.style.display = "none";
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => { a.remove(); URL.revokeObjectURL(url); }, 1000);
+}
 
 export function OrderStep() {
   const idx = useStore((s) => s.idx)!;
@@ -15,24 +30,11 @@ export function OrderStep() {
   const setNSamples = useStore((s) => s.setNSamples);
   const balanced = useStore((s) => s.balanced);
   const [copied, setCopied] = useState(false);
-  const [email, setEmail] = useState("");
 
-  const bom = useMemo(() => buildBom(idx, rows, result, setup, nSamples), [idx, rows, result, setup, nSamples]);
-  const acc = useMemo(() => accessories(idx, setup, reservedRoles(setup)), [idx, setup]);
-  const kits = useMemo(() => {
-    const ids = new Set(rows.flatMap((r) => r.moduleIds));
-    return [...ids].map((id) => idx.modulesById.get(id)).filter((m) => m && m.source === "sbt_kit");
-  }, [idx, rows]);
-  const custom = bom.filter((l) => !l.sku && !l.kit);
+  const order = useMemo(() => buildOrder(idx, rows, result, setup, nSamples), [idx, rows, result, setup, nSamples]);
+  const { lines, kits, custom, accessories, accepted } = order;
 
-  const download = () => {
-    const blob = new Blob([bomCsv(bom, setup)], { type: "text/csv" });
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = `pd3-panel-${setup.instrumentId}.csv`;
-    a.click();
-    URL.revokeObjectURL(a.href);
-  };
+  const download = () => downloadText(`pd3-panel-${setup.instrumentId}.csv`, bomCsv(lines, setup));
   const share = async () => {
     const url = shareUrl({ setup, rows, nSamples, balanced }, idx);
     try { await navigator.clipboard.writeText(url); setCopied(true); setTimeout(() => setCopied(false), 2000); } catch { window.prompt("Copy this link", url); }
@@ -50,8 +52,11 @@ export function OrderStep() {
       </section>
 
       {kits.length > 0 && (
-        <div className="rounded-md border border-violet-200 bg-violet-50 p-3 text-sm text-violet-900 dark:border-violet-800 dark:bg-violet-950 dark:text-violet-100">
-          This panel includes markers from {kits.map((k) => k!.name).join(", ")}. Those are sold as kits; kit-level SKUs and pricing come with the store integration, so they are listed here as individual conjugates.
+        <div className="rounded-md border border-violet-200 bg-violet-50 p-3 text-sm text-violet-900 dark:border-violet-800 dark:bg-violet-950 dark:text-violet-100" data-testid="kit-lines">
+          <div className="font-medium">Kits in this order</div>
+          <ul className="mt-1 space-y-0.5">
+            {kits.map((k) => <li key={k.moduleId}><b>{k.name}</b> <span className="text-xs">· {k.rowIds.length} marker{k.rowIds.length === 1 ? "" : "s"} on the kit's own metals · one SKU{k.partNumber ? ` · ${k.partNumber}` : " (catalogue no. comes with the store feed)"}</span></li>)}
+          </ul>
         </div>
       )}
 
@@ -61,12 +66,12 @@ export function OrderStep() {
             <tr><th className="py-1 pr-3">Marker</th><th className="py-1 pr-3">Clone</th><th className="py-1 pr-3">Metal</th><th className="py-1 pr-3">Part number</th><th className="py-1 pr-3">Format</th><th className="py-1 pr-3 text-right">Qty</th><th className="py-1">Notes</th></tr>
           </thead>
           <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
-            {bom.map((l) => (
+            {lines.map((l) => (
               <tr key={l.row.id}>
                 <td className="py-1.5 pr-3 font-medium">{l.row.name}</td>
                 <td className="py-1.5 pr-3">{l.row.clone ?? <Pill tone="violet">custom</Pill>}</td>
                 <td className="py-1.5 pr-3">{l.metal ?? "—"}</td>
-                <td className="py-1.5 pr-3 font-mono text-xs">{l.sku?.part_number ?? (l.kit ? <span className="font-sans text-slate-600 dark:text-slate-400" title={`supplied in the ${l.kit} kit, one SKU below`}>in kit</span> : "—")}{l.tds && <a href={l.tds} target="_blank" rel="noreferrer" className="ml-2 font-sans text-teal-700 underline">TDS</a>}</td>
+                <td className="py-1.5 pr-3 font-mono text-xs">{l.sku?.part_number ?? (l.kit ? <span className="font-sans text-slate-600 dark:text-slate-400" title={`supplied in the ${l.kit} kit, one SKU above`}>in kit</span> : "—")}{l.tds && <a href={l.tds} target="_blank" rel="noreferrer" className="ml-2 font-sans text-teal-700 underline">TDS</a>}</td>
                 <td className="py-1.5 pr-3 text-xs text-slate-600 dark:text-slate-400">{l.sku?.format?.raw ?? ""}</td>
                 <td className="py-1.5 pr-3 text-right">{l.sku ? l.qty : ""}</td>
                 <td className="py-1.5 text-xs text-slate-600 dark:text-slate-400">{l.note}</td>
@@ -79,20 +84,18 @@ export function OrderStep() {
       <section>
         <H2 hint="reserved channels you set up">Also needed</H2>
         <ul className="space-y-1 text-sm">
-          {acc.map((a) => <li key={a.label}><b>{a.label}</b> <span className="text-xs text-slate-600 dark:text-slate-400">{a.note}</span></li>)}
+          {accessories.map((a) => <li key={a.label}><b>{a.label}</b> <span className="text-xs text-slate-600 dark:text-slate-400">{a.note}</span></li>)}
           {custom.length > 0 && <li><b>Custom conjugation</b> <span className="text-xs text-slate-600 dark:text-slate-400">{custom.length} marker{custom.length > 1 ? "s" : ""}: Maxpar X8 labelling kit or SBT's conjugation service (lead time applies)</span></li>}
         </ul>
       </section>
 
-      {rows.some((r) => r.accepted) && (
+      {accepted.length > 0 && (
         <section data-testid="accepted-spill">
           <H2 hint="signed off on the Balance page; travels with the share link">Spillover you accepted</H2>
           <ul className="space-y-1 text-sm">
-            {rows.filter((r) => r.accepted).map((r) => {
-              const rr = result?.rows.find((x) => x.rowId === r.id);
-              const top = rr?.contributions[0];
-              return <li key={r.id}><b>{r.name}</b>{rr?.channel ? ` (${rr.channel})` : ""}{top ? ` receives ${Math.round((rr?.receivedOverT ?? 0) * 100)} % of its tolerance, mostly from ${top.label}` : ""} <span className="text-xs text-slate-600 dark:text-slate-400">— {r.accepted}</span></li>;
-            })}
+            {accepted.map((a) => (
+              <li key={a.rowId}><b>{a.name}</b>{a.channel ? ` (${a.channel})` : ""}{a.from ? ` receives ${a.receivedPct} % of its tolerance, mostly from ${a.from}` : ""} <span className="text-xs text-slate-600 dark:text-slate-400">— {a.reason}</span></li>
+            ))}
           </ul>
         </section>
       )}
@@ -101,7 +104,6 @@ export function OrderStep() {
         <Button variant="primary" onClick={download}>Download CSV</Button>
         <Button onClick={share}>{copied ? "Link copied" : "Copy share link"}</Button>
         <span className="flex-1" />
-        <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@lab.edu" inputMode="email" className="min-w-0 rounded border border-slate-300 px-2 py-1.5 text-sm dark:border-slate-600 dark:bg-slate-900" />
         <Button disabled title="Store cart / quote integration comes after UI sign-off">Request a quote</Button>
       </section>
       <p className="text-xs text-slate-600 dark:text-slate-400">Prices, cart and quote submission are not wired in this demo. Every state of this designer is in the URL: share it with your core facility or an application scientist.</p>

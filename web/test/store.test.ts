@@ -37,13 +37,27 @@ describe("store", () => {
     const s = useStore.getState();
     s.addTarget("cd45");
     s.addTarget("cd3e");
+    s.setSetup({ blocked: [175], extraMetals: [111] });
     s.setSetup({ modality: "imaging" });
     const st = useStore.getState();
     expect(st.setup.instrumentId).toBe("hyperion_xti");
     expect(st.setup.sampleType).toBe("ffpe");
+    // Blocked channels and opted-in metals belong to the previous instrument's strip: they do not carry across.
+    expect(st.setup.blocked).toEqual([]);
+    expect(st.setup.extraMetals).toBeUndefined();
     for (const r of st.rows) {
       if (r.clone) expect(idx.cloneOptions(r.targetId!, st.setup).some((o) => o.clone === r.clone)).toBe(true);
     }
+  });
+
+  it("pinning two rows to one channel releases the first: one row per channel", () => {
+    const s = useStore.getState();
+    s.addTarget("cd45");
+    s.addTarget("cd3e");
+    s.lockRow("cd45", 141);
+    s.lockRow("cd3e", 141);
+    const locked = useStore.getState().rows.map((r) => [r.id, r.locked]);
+    expect(locked).toEqual([["cd45", null], ["cd3e", 141]]);
   });
 
   it("the engine runs on every change; metals stay hidden (balanced=false) until Balance is opened", async () => {
@@ -157,7 +171,9 @@ describe("store: guided conflicts", () => {
   it("acceptWarning / unacceptWarning round-trip on the row", () => {
     const s = useStore.getState();
     s.addTarget("cd45");
-    s.acceptWarning("cd45", "  fine  ");
+    expect(s.acceptWarning("cd45", "   ")).toBe(false); // no reason, no sign-off: the note travels to the Order page
+    expect(useStore.getState().rows[0].accepted).toBeUndefined();
+    expect(s.acceptWarning("cd45", "  fine  ")).toBe(true);
     expect(useStore.getState().rows[0].accepted).toBe("fine");
     s.unacceptWarning("cd45");
     expect(useStore.getState().rows[0].accepted).toBeNull();

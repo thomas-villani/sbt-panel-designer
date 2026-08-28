@@ -6,8 +6,8 @@
  */
 import { useMemo, useState, type ReactNode } from "react";
 import { SPILL_CRIT, SPILL_WARN, type Warning } from "@pd3/engine";
-import { kitSupplies } from "@/lib/data";
-import { plainWarning } from "@/lib/health";
+import { channelLabel, kitSupplies } from "@/lib/data";
+import { plainWarning, spillTone } from "@/lib/health";
 import { useHealth, useStore, type CloneTrial, type FixPreview } from "@/lib/store";
 import { MassStrip } from "./MassStrip";
 import { OpenChannels } from "./OpenChannels";
@@ -52,7 +52,7 @@ export function BalanceStep() {
     return byKit;
   }, [idx, rows]);
   const kitRowIds = useMemo(() => new Set([...kitPins.values()].flatMap((k) => k.rows)), [kitPins]);
-  const channelName = (m: number) => instrument.channels.find((c) => c.mass === m)?.label ?? String(m);
+  const channelName = (m: number) => channelLabel(idx, setup, m);
   // Spill the user accepted, or that lands where it cannot matter, paints the strip green: the headline and the strip agree.
   const waived = useMemo(() => new Set([...(health?.unlikely ?? []).map((u) => u.w.rowId), ...(health?.accepted ?? []).map((a) => a.w.rowId)]), [health]);
 
@@ -69,21 +69,17 @@ export function BalanceStep() {
     return (
       <div className="space-y-6">
         <H2>Balance</H2>
-        {engineError ? <div className="rounded-md bg-rose-50 p-3 text-sm text-rose-800">Engine error: {engineError}</div> : <div className="text-sm text-slate-600 dark:text-slate-400">Balancing…</div>}
+        {engineError ? <EngineError message={engineError} /> : <div className="text-sm text-slate-600 dark:text-slate-400">Balancing…</div>}
       </div>
     );
   }
 
-  const { over, unassigned, drops, moduleDrops, conflicts, checks, notes, unlikely, accepted, custom, customKnown, pinned } = health;
-  const blocked = over > 0 || unassigned.length > 0;
+  // One reading of the panel, shared with the sidebar (lib/health.ts), so the page heading and the sidebar line agree.
+  const { over, unassigned, drops, moduleDrops, conflicts, checks, notes, unlikely, accepted, custom, customKnown, pinned, blocked, mustFix, pageHeadline: headline, pageHint: hint } = health;
   const nDrop = Math.min(drops.length, Math.max(over, unassigned.length));
   const dropSuggested = () => { for (const d of drops.slice(0, nDrop)) removeRow(d.row.id); };
-  // While the panel does not fit, the spillover picture is provisional: keep it out of the way until it does.
-  const mustFix = blocked ? 0 : conflicts.length + custom.length;
   const modulesFirst = over >= 4 && moduleDrops.length > 0;
   const shownModules = moduleDrops.slice(0, 8);
-  const headline = blocked ? "The panel does not fit yet" : mustFix ? `${mustFix} thing${mustFix > 1 ? "s" : ""} to fix` : checks.length ? "Panel fits" : "Panel is balanced";
-  const hint = blocked ? undefined : mustFix ? undefined : checks.length ? `${checks.length} worth checking` : "nothing to fix";
 
   return (
     <div className="space-y-6">
@@ -91,7 +87,7 @@ export function BalanceStep() {
         <H2 hint={`${result.stats.ms.toFixed(0)} ms · re-runs on every change`}>
           <span className="flex items-center gap-2">Balance{balancing && <span className="text-xs font-normal text-slate-600 dark:text-slate-400">updating…</span>}</span>
         </H2>
-        {engineError && <div className="mb-3 rounded-md bg-rose-50 p-3 text-sm text-rose-800">Engine error: {engineError}</div>}
+        {engineError && <div className="mb-3"><EngineError message={engineError} /></div>}
         <MassStrip instrument={instrument} result={result} waived={waived} />
         <OpenChannels className="mt-3" />
       </section>
@@ -104,7 +100,7 @@ export function BalanceStep() {
       )}
 
       <section>
-        <H2 hint={hint}>{headline}</H2>
+        <H2 hint={hint ?? undefined}>{headline}</H2>
 
         {blocked && (
           <div className="mb-4 rounded-lg border border-rose-300 bg-rose-50 p-4 text-sm dark:border-rose-800 dark:bg-rose-950" data-testid="blocker">
@@ -162,7 +158,7 @@ export function BalanceStep() {
         )}
 
         <ul className="space-y-2">
-          {!blocked && conflicts.map((w, i) => <WarnCard key={`c${i}`} w={w} tone="rose" label="must fix" onRemove={removeRow} onUnpin={(id) => lockRow(id, null)} />)}
+          {!blocked && conflicts.map((w) => <WarnCard key={`c:${w.code}:${w.rowId}`} w={w} tone="rose" label="must fix" onRemove={removeRow} onUnpin={(id) => lockRow(id, null)} />)}
           {!blocked && custom.map((c) => (
             <li key={`custom-${c.rowId}`} className="flex flex-wrap items-start gap-3 rounded-lg border border-violet-300 bg-violet-50 p-3 text-sm dark:border-violet-800 dark:bg-violet-950" data-testid="custom-conjugation-warning">
               <Pill tone="violet">metal not sold</Pill>
@@ -198,19 +194,19 @@ export function BalanceStep() {
         )}
 
         {!blocked && checks.length > 0 && (
-          <Fold open={showChecks} onToggle={() => setShowChecks((v) => !v)} label={`${checks.length} worth checking`} hint="spill above half tolerance, dim markers on weak channels">
-            {checks.map((w, i) => <WarnCard key={`w${i}`} w={w} tone="amber" label="worth checking" onRemove={removeRow} onUnpin={(id) => lockRow(id, null)} />)}
+          <Fold open={showChecks} onToggle={() => setShowChecks((v) => !v)} label={`${checks.length} worth checking`} hint={`spill between ${SPILL_WARN} × and ${SPILL_CRIT} × tolerance, dim markers on weak channels`}>
+            {checks.map((w) => <WarnCard key={`w:${w.code}:${w.rowId}`} w={w} tone="amber" label="worth checking" onRemove={removeRow} onUnpin={(id) => lockRow(id, null)} />)}
           </Fold>
         )}
         {!blocked && unlikely.length > 0 && (
           <Fold open={showUnlikely} onToggle={() => setShowUnlikely((v) => !v)} label={`${unlikely.length} unlikely to matter`} hint="spill between markers that never share a cell" testId="unlikely">
-            {unlikely.map(({ w, why }, i) => <WarnCard key={`u${i}`} w={w} tone="slate" label="unlikely" note={why} onRemove={removeRow} onUnpin={(id) => lockRow(id, null)} />)}
+            {unlikely.map(({ w, why }) => <WarnCard key={`u:${w.code}:${w.rowId}`} w={w} tone="slate" label="unlikely" note={why} onRemove={removeRow} onUnpin={(id) => lockRow(id, null)} />)}
           </Fold>
         )}
         {!blocked && accepted.length > 0 && (
           <Fold open={showAccepted} onToggle={() => setShowAccepted((v) => !v)} label={`${accepted.length} accepted by you`} hint="listed on the Order page" testId="accepted">
-            {accepted.map(({ w, reason }, i) => (
-              <WarnCard key={`a${i}`} w={w} tone="slate" label="accepted" note={`Your note: ${reason}`} onRemove={removeRow} onUnpin={(id) => lockRow(id, null)}
+            {accepted.map(({ w, reason }) => (
+              <WarnCard key={`a:${w.code}:${w.rowId}`} w={w} tone="slate" label="accepted" note={`Your note: ${reason}`} onRemove={removeRow} onUnpin={(id) => lockRow(id, null)}
                 extra={<Button size="sm" onClick={() => unacceptWarning(w.rowId)}>Reconsider</Button>} />
             ))}
           </Fold>
@@ -231,7 +227,7 @@ export function BalanceStep() {
         )}
         {!blocked && notes.length > 0 && (
           <Fold open={showNotes} onToggle={() => setShowNotes((v) => !v)} label={`${notes.length} FYI`} hint="nothing to do">
-            {notes.map((w, i) => <WarnCard key={`n${i}`} w={w} tone="slate" label="FYI" onRemove={removeRow} onUnpin={(id) => lockRow(id, null)} />)}
+            {notes.map((w) => <WarnCard key={`n:${w.code}:${w.rowId}`} w={w} tone="slate" label="FYI" onRemove={removeRow} onUnpin={(id) => lockRow(id, null)} />)}
           </Fold>
         )}
       </section>
@@ -247,7 +243,7 @@ export function BalanceStep() {
         <section className="rounded-lg border border-slate-200 bg-white p-4 text-sm leading-relaxed dark:border-slate-700 dark:bg-slate-900">
           <p><b>Sensitivity.</b> The mass cytometer detects some isotopes better than others: channels 153–176 are the sweet spot, 89Y and 141–152 are less sensitive, and the heavy end (&gt; 176) sits in between. Put dim markers (few molecules per cell) on sensitive channels and bright markers where sensitivity is poor.</p>
           <p className="mt-2"><b>Spillover.</b> A fraction of each metal's signal leaks into neighbouring channels: M±1 from isotopic impurity, M+16 when the metal forms an oxide, and the same element's other isotopes. The overlap matrix says how much (in %). A bright marker on 141Pr sends about 2–3 % of its signal to 157Gd, which drowns a dim marker sitting there.</p>
-          <p className="mt-2"><b>What the score means.</b> For each marker we add up the counts it receives from every other marker and divide by its tolerance (how much noise it can take before populations blur). Sum over markers = the score; lower is better. "Worth checking" means a marker receives more than half its tolerance, "must fix" above 1×.</p>
+          <p className="mt-2"><b>What the score means.</b> For each marker we add up the counts it receives from every other marker and divide by its tolerance (how much noise it can take before populations blur). Sum over markers = the score; lower is better. "Worth checking" means a marker receives at least {SPILL_WARN} × its tolerance, "must fix" from {SPILL_CRIT} × (thresholds calibrated so SBT's own kits, run on their metals, sit at "worth checking" at most).</p>
           <p className="mt-2"><b>Why is there anything left to fix?</b> The optimiser has already tried every channel for every marker. What is listed here is what no re-arrangement solves: the real levers are dropping a marker, picking another clone (sold on other metals), or accepting the spill.</p>
         </section>
       )}
@@ -307,9 +303,9 @@ function WarnCard({ w, tone, label, note, extra, onRemove, onUnpin }: {
     } finally { setBusy(null); }
   };
   const resolves = (t: CloneTrial) => {
-    // The receiver of this warning must end up under the "must fix" line, whichever row changed clone.
+    // The receiver of this warning must end up under the "must fix" line (SPILL_CRIT), whichever row changed clone.
     const mine = t.result.rows.find((r) => r.rowId === w.rowId);
-    return !!mine && mine.mass != null && mine.receivedOverT < 1 && t.result.unassigned.length === 0;
+    return !!mine && mine.mass != null && mine.receivedOverT < SPILL_CRIT && t.result.unassigned.length === 0;
   };
   const nameOf = (id: string) => rows.find((r) => r.id === id)?.name ?? id;
 
@@ -380,15 +376,28 @@ function WarnCard({ w, tone, label, note, extra, onRemove, onUnpin }: {
 
       {accepting !== null && (
         <form className="mt-3 flex flex-wrap items-center gap-2 rounded-md border border-slate-300 bg-white p-3 text-xs dark:border-slate-600 dark:bg-slate-900" data-testid="accept-form"
-          onSubmit={(e) => { e.preventDefault(); acceptWarning(w.rowId, accepting); setAccepting(null); }}>
+          onSubmit={(e) => { e.preventDefault(); if (acceptWarning(w.rowId, accepting)) setAccepting(null); }}>
           <span className="text-slate-600 dark:text-slate-300">Why is this fine?</span>
           <input autoFocus value={accepting} onChange={(e) => setAccepting(e.target.value)} placeholder={donor ? `e.g. ${donor.label} and ${rr?.label} are on different cells` : "e.g. not co-expressed"}
             className="min-w-[14rem] flex-1 rounded border border-slate-300 px-2 py-1 dark:border-slate-600 dark:bg-slate-900" aria-label="reason" />
-          <Button size="sm" variant="primary" onClick={() => { acceptWarning(w.rowId, accepting); setAccepting(null); }}>Accept</Button>
+          <Button size="sm" variant="primary" type="submit" disabled={!accepting.trim()} title={accepting.trim() ? undefined : "say why: the note travels with the panel to the Order page"}>Accept</Button>
           <Button size="sm" variant="ghost" onClick={() => setAccepting(null)}>Cancel</Button>
         </form>
       )}
     </li>
+  );
+}
+
+const HEAT: Record<ReturnType<typeof spillTone>, string> = { fix: "bg-rose-500 text-white", watch: "bg-amber-400", faint: "bg-emerald-200 dark:bg-emerald-800", clean: "bg-emerald-50 dark:bg-emerald-950" };
+
+/** The engine failed (worker crash, bad input): say so and offer a retry rather than a permanent "Balancing…". */
+function EngineError({ message }: { message: string }) {
+  const balanceNow = useStore((s) => s.balanceNow);
+  return (
+    <div className="flex flex-wrap items-center gap-3 rounded-md border border-rose-300 bg-rose-50 p-3 text-sm text-rose-800 dark:border-rose-800 dark:bg-rose-950 dark:text-rose-100" data-testid="engine-error">
+      <span className="flex-1">The balancer could not run: {message}</span>
+      <Button size="sm" variant="primary" onClick={() => void balanceNow()}>Try again</Button>
+    </div>
   );
 }
 
@@ -413,8 +422,8 @@ function HeatMap() {
                 <td className="p-0.5 text-slate-600 dark:text-slate-400">{g.channel}</td>
                 {rows.map((r) => {
                   const f = cell.get(`${g.rowId}>${r.rowId}`) ?? 0;
-                  const bg = f === 0 ? undefined : f >= SPILL_CRIT ? "#f43f5e" : f >= SPILL_WARN ? "#fbbf24" : f >= 0.1 ? "#a7f3d0" : "#ecfdf5";
-                  return <td key={r.rowId} className="h-5 w-5 border border-slate-100 text-center dark:border-slate-800" style={{ background: bg }} title={`${g.label} → ${r.label}: ${(f * 100).toFixed(0)}% of tolerance`}>{f >= 0.1 ? Math.round(f * 100) : ""}</td>;
+                  const bg = f === 0 ? undefined : HEAT[spillTone(f)];
+                  return <td key={r.rowId} className={cx("h-5 w-5 border border-slate-100 text-center dark:border-slate-800", bg)} title={`${g.label} → ${r.label}: ${(f * 100).toFixed(0)}% of tolerance`}>{f >= 0.1 ? Math.round(f * 100) : ""}</td>;
                 })}
               </tr>
             ))}

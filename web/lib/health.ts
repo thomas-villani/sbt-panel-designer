@@ -6,7 +6,7 @@
  * Users think in decisions: is the panel too big, which marker do I drop, which spill is real. This module regroups
  * the residuals into those decisions.
  */
-import { SPILL_WARN, type Result, type Warning } from "@pd3/engine";
+import { SPILL_CRIT, SPILL_WARN, type Result, type Warning } from "@pd3/engine";
 import { conjugationIssues, type ConjugationIssue } from "./conjugation";
 import { advancedGroup, channelBudget, channelLabel, kitSupplies, rowMetals, type Index } from "./data";
 import type { PanelRow, Setup } from "./types";
@@ -37,7 +37,7 @@ export interface Health {
   moduleDrops: ModuleDrop[];
   /** Serious spillover and locks on unusable channels: must be dealt with. */
   conflicts: Warning[];
-  /** Spillover above half tolerance, dim markers on weak channels: worth a look. */
+  /** Spillover at or above 1× tolerance (SPILL_WARN) but under the must-fix line, dim markers on weak channels: worth a look. */
   checks: Warning[];
   /** EQ bead channels and the like: fine, just so you know. */
   notes: Warning[];
@@ -56,6 +56,13 @@ export interface Health {
   headline: string;
   /** Everything that is not merely informational. */
   todo: number;
+  /** The panel does not fit (over budget or a marker without a channel): everything else is provisional. */
+  blocked: boolean;
+  /** Conflicts + metal-not-sold rows, once the panel fits. */
+  mustFix: number;
+  /** The Balance page's heading and its hint, so the page and the sidebar always tell the same story. */
+  pageHeadline: string;
+  pageHint: string | null;
 }
 
 const byRow = (result: Result) => new Map(result.rows.map((r) => [r.rowId, r]));
@@ -64,9 +71,9 @@ export function panelHealth(idx: Index, setup: Setup, rows: PanelRow[], result: 
   const budget = channelBudget(idx, setup);
   const over = Math.max(0, rows.length - budget);
   const moduleDrops = over ? moduleDropCandidates(idx, rows) : [];
-  const empty: Health = { budget, over, unassigned: [], drops: [], moduleDrops, conflicts: [], checks: [], notes: [], unlikely: [], accepted: [], custom: [], customKnown: [], pinned: [], tone: "slate", headline: "", todo: 0 };
+  const empty: Health = { budget, over, unassigned: [], drops: [], moduleDrops, conflicts: [], checks: [], notes: [], unlikely: [], accepted: [], custom: [], customKnown: [], pinned: [], tone: "slate", headline: "", todo: 0, blocked: over > 0, mustFix: 0, pageHeadline: "", pageHint: null };
   if (!result) {
-    if (over) return { ...empty, tone: "rose", headline: `${over} over budget`, todo: over };
+    if (over) return { ...empty, tone: "rose", headline: `${over} over budget`, todo: over, pageHeadline: "The panel does not fit yet" };
     return { ...empty, headline: rows.length ? "checking…" : "" };
   }
   const rowById = new Map(rows.map((r) => [r.id, r]));
@@ -96,26 +103,37 @@ export function panelHealth(idx: Index, setup: Setup, rows: PanelRow[], result: 
     if (kit) { unlikely.push({ w: x, why: `${donorRow!.name} and ${row!.name} ship together on these metals in ${kit}, which Standard BioTools validated as a set.` }); return false; }
     return true;
   });
-  const conflicts = w.filter((x) => x.code !== "unassigned" && x.severity === "critical" || x.code === "reserved_lock");
+  // Must-fix: anything critical except "no channel" (that is the budget story above), plus a pin on a channel that cannot take it.
+  const conflicts = w.filter((x) => (x.code !== "unassigned" && x.severity === "critical") || x.code === "reserved_lock");
   const checks = w.filter((x) => x.severity === "warning" && x.code !== "reserved_lock");
-  const notes = w.filter((x) => x.severity === "info");
+  const notes = w.filter((x) => x.severity === "info" && x.code !== "reserved_lock");
   for (const r of rows) {
     const g = advancedGroup(idx, setup, result.assignment[r.id] ?? null);
     if (g) notes.push({ severity: "info", rowId: r.id, code: "advanced_metal", message: `${r.name} sits on ${channelLabel(idx, setup, result.assignment[r.id]!)}, ${g.label} — ${g.note}` });
   }
   const drops = dropCandidates(idx, setup, rows, result, unassigned, custom, over);
-  const todo = (over || unassigned.length) + conflicts.length + custom.length + checks.length;
+  const blocked = over > 0 || unassigned.length > 0;
+  // While the panel does not fit, the spillover picture is provisional: it does not count as "to fix" yet.
+  const mustFix = blocked ? 0 : conflicts.length + custom.length;
+  const todo = Math.max(over, unassigned.length) + mustFix + (blocked ? 0 : checks.length);
 
   let tone: Health["tone"] = "emerald";
   let headline: string;
   if (over) { tone = "rose"; headline = `${over} over budget — drop ${over}`; }
   else if (unassigned.length) { tone = "rose"; headline = `${unassigned.length} marker${unassigned.length > 1 ? "s" : ""} without a channel`; }
-  else if (conflicts.length) { tone = "rose"; headline = `fits · ${conflicts.length} to fix`; }
-  else if (custom.length) { tone = "amber"; headline = `fits · ${custom.length} on a metal not sold`; }
+  else if (mustFix) { tone = conflicts.length ? "rose" : "amber"; headline = `fits · ${mustFix} to fix`; }
   else if (checks.length) { tone = "amber"; headline = `fits · ${checks.length} worth checking`; }
   else headline = (quiet ? `fits · ${budget - rows.length} channels free` : "fits · balanced") + (customKnown.length ? ` · ${customKnown.length} to order` : "");
+  const pageHeadline = blocked ? "The panel does not fit yet" : mustFix ? `${mustFix} thing${mustFix > 1 ? "s" : ""} to fix` : checks.length ? "Panel fits" : "Panel is balanced";
+  const pageHint = blocked || mustFix ? null : checks.length ? `${checks.length} worth checking` : "nothing to fix";
 
-  return { budget, over, unassigned, drops, moduleDrops, conflicts, checks, notes, unlikely, accepted, custom, customKnown, pinned, tone, headline, todo };
+  return { budget, over, unassigned, drops, moduleDrops, conflicts, checks, notes, unlikely, accepted, custom, customKnown, pinned, tone, headline, todo, blocked, mustFix, pageHeadline, pageHint };
+}
+
+/** Severity band of a spill fraction (received ÷ tolerance), in one place so every colour in the UI means the same thing. */
+export type SpillTone = "clean" | "faint" | "watch" | "fix";
+export function spillTone(fraction: number): SpillTone {
+  return fraction >= SPILL_CRIT ? "fix" : fraction >= SPILL_WARN ? "watch" : fraction >= 0.1 ? "faint" : "clean";
 }
 
 const pairKey = (a: string, b: string) => (a < b ? `${a}|${b}` : `${b}|${a}`);
@@ -205,6 +223,10 @@ export function plainWarning(w: Warning, result: Result): { title: string; actio
       return { title: `${rr?.label ?? w.rowId} is dim and sits on a weak channel (${rr?.channel}): expect soft separation.`, action: w.fix ? w.fix.message : "Nothing better is free; accept it or drop a bright marker from the sensitive range." };
     case "reserved_lock":
       return { title: w.message, action: "Unpin it and let the optimiser choose." };
+    case "duplicate_lock":
+      return { title: w.message, action: "Two markers are pinned to one channel: unpin one of them." };
+    case "invalid_assignment":
+      return { title: w.message, action: "The metal it was given is taken or not one its clone can use: let the optimiser place it." };
     case "flagged_channel":
       return { title: `${rr?.label ?? w.rowId} sits on an EQ bead channel (${rr?.channel}): fine once beads are gated out.`, action: null };
     default:

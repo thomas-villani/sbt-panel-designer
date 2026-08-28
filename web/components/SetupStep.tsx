@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { SAMPLE_TYPES, SPECIES, VIABILITY_ROLE, antibodyChannel, reservedRoles } from "@/lib/data";
+import { SAMPLE_TYPES, SPECIES, VIABILITY_ROLE, antibodyChannel, channelLabel, reservedChannels, reservedRoles } from "@/lib/data";
 import { useStore } from "@/lib/store";
 import type { Setup } from "@/lib/types";
 
@@ -141,11 +141,7 @@ function BlockedChannels() {
   const toggleBlocked = useStore((s) => s.toggleBlocked);
   const [open, setOpen] = useState(false);
   const inst = idx.instrument(setup.instrumentId);
-  const reserved = new Map<number, string>();
-  for (const r of idx.instruments.reserved[setup.modality]) {
-    if (!reservedRoles(setup).includes(r.role)) continue;
-    for (const m of r.masses) reserved.set(m, r.label);
-  }
+  const reserved = reservedChannels(idx, setup);
   const channels = inst.channels.filter((c) => antibodyChannel(c, setup));
   const n = setup.blocked.length;
 
@@ -167,7 +163,7 @@ function BlockedChannels() {
           {setup.blocked.map((m) => (
             <button key={m} onClick={() => toggleBlocked(m)} title="unblock"
               className="rounded bg-rose-100 px-1.5 py-0.5 text-[11px] text-rose-800 hover:line-through dark:bg-rose-900 dark:text-rose-100">
-              {inst.channels.find((c) => c.mass === m)?.label ?? m} ×
+              {channelLabel(idx, setup, m)} ×
             </button>
           ))}
         </div>
