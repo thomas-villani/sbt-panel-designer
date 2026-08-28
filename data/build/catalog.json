@@ -1,9 +1,12 @@
 {
- "version": "2026-07-29.1",
+ "version": "2026-08-27.93cdb949",
  "sources": {
   "store_csv": "sbt-catalog-master-2026-07-29.csv",
   "pdv2_harvest": "pdv2-conjugate-signal-tolerance-2026-08-24.csv",
-  "pdv2_products": "pdv2-product-table-2026-08-24.csv"
+  "pdv2_products": "pdv2-product-table-2026-08-24.csv",
+  "aliases": "aliases.yaml",
+  "species": "species.yaml",
+  "target_ids": "target-ids.yaml"
  },
  "stats": {
   "skus": 1822,
@@ -17,7 +20,10 @@
   "skus_with_pdv2": 1355,
   "pdv2_name_joins": 2764,
   "unmapped_species_terms": [],
-  "multi_metal_targets": 205
+  "multi_metal_targets": 205,
+  "unparsed_metals": [],
+  "targets_without_ledger_id": [],
+  "stale_ledger_ids": []
  },
  "targets": [
   {
@@ -2575,8 +2581,8 @@
     "CD366/Tim-3",
     "CD366/TIM3",
     "HAVCR2",
-    "Tim-3",
     "TIM-3",
+    "Tim-3",
     "TIM3"
    ],
    "sources": [
@@ -4145,8 +4151,8 @@
    "id": "foxp3",
    "name": "FoxP3",
    "aliases": [
-    "Foxp3",
-    "FOXP3"
+    "FOXP3",
+    "Foxp3"
    ],
    "sources": [
     "curated",
@@ -6887,8 +6893,8 @@
    "id": "nonpactivebcatenin",
    "name": "β-Catenin",
    "aliases": [
-    "beta-Catenin",
     "Beta-Catenin",
+    "beta-Catenin",
     "CTNNB1",
     "non-phospho (active) β-Catenin"
    ],

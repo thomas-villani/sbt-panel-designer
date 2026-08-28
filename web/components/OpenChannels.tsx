@@ -4,7 +4,7 @@
  * on purpose (a reagent the designer does not model, a radionuclide, a channel the user simply does not want used).
  */
 import { useMemo, useState } from "react";
-import { antibodyChannel, reservedRoles } from "@/lib/data";
+import { antibodyChannel, reservedChannels } from "@/lib/data";
 import { useStore } from "@/lib/store";
 import { cx } from "./ui";
 
@@ -19,9 +19,7 @@ export function OpenChannels({ compact = false, className }: { compact?: boolean
   const inst = idx.instrument(setup.instrumentId);
 
   const { free, blocked } = useMemo(() => {
-    const reserved = new Set<number>();
-    const roles = reservedRoles(setup);
-    for (const r of idx.instruments.reserved[setup.modality]) if (roles.includes(r.role)) for (const m of r.masses) reserved.add(m);
+    const reserved = reservedChannels(idx, setup);
     const taken = new Set<number>();
     if (balanced && result) for (const r of result.rows) if (r.mass != null) taken.add(r.mass);
     for (const r of rows) if (r.locked != null) taken.add(r.locked);

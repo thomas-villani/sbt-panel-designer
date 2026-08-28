@@ -6,7 +6,7 @@
  * time, so it must show up next to the spillover warnings rather than as a surprise in the bill of materials.
  */
 import type { Result } from "@pd3/engine";
-import { channelLabel, kitSupplies, reservedRoles, type Index } from "./data";
+import { channelLabel, kitSupplies, reservedMasses, type Index } from "./data";
 import type { PanelRow, Setup } from "./types";
 
 export interface ConjugationIssue {
@@ -29,9 +29,7 @@ export function conjugationIssues(idx: Index, rows: PanelRow[], result: Result, 
     const m = result.assignment[r.id];
     if (m != null) taken.add(m);
   }
-  const off = new Set<number>(setup.blocked);
-  const enabled = reservedRoles(setup);
-  for (const role of idx.instruments.reserved[setup.modality]) if (enabled.includes(role.role)) for (const m of role.masses) off.add(m);
+  const off = reservedMasses(idx, setup);
   const usable = new Set(idx.instrument(setup.instrumentId).channels.filter((c) => c.usable).map((c) => c.mass));
   const label = (m: number) => channelLabel(idx, setup, m);
 

@@ -30,5 +30,5 @@ export function syntheticProblem(
   };
   const po: PoMatrix = { donors: masses, recipients: masses, anomalies: [], pct: {} };
   for (const [d, r] of Object.entries(pct)) po.pct[d] = Object.fromEntries(Object.entries(r).map(([k, v]) => [k, v]));
-  return { instrument, po, rows, reserved: [], weights: { w_sens: 0, w_flagged: 0 }, ...extra };
+  return { instrument, po, rows, reserved: [], extraMetals: [], weights: { w_sens: 0, w_flagged: 0 }, ...extra };
 }

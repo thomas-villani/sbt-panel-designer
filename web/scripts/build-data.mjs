@@ -42,7 +42,7 @@ const mods = read("modules.json");
 write("modules.json", {
   version: mods.version,
   modules: mods.modules.filter((m) => !m.hidden).map((m) => ({
-    id: m.id, name: m.name, source: m.source, application: m.application, species: m.species, instruments: m.instruments,
+    id: m.id, slug: m.slug, name: m.name, source: m.source, application: m.application, species: m.species, instruments: m.instruments,
     sample_types: m.sample_types, category: m.category, blurb: m.blurb, featured: m.featured,
     aliases: m.aliases ?? [], definition: m.definition ?? null,
     kit: m.kit ? { pdv2_kit_id: m.kit.pdv2_kit_id, raw_name: m.kit.raw_name } : null,

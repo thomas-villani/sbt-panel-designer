@@ -25,11 +25,11 @@ jobs:
       - name: Engine tests
         working-directory: engine
         run: npm ci && npm test && npm run typecheck
-      - name: Build static site
+      - name: Web unit tests and static build
         working-directory: web
         env:
           NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
-        run: npm ci && npm run typecheck && npm run build
+        run: npm ci && npm run typecheck && npm test && npm run build
       - run: touch web/out/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:

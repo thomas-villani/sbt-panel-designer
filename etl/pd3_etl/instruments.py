@@ -15,20 +15,39 @@ Output shape (consumed by engine/):
 """
 from __future__ import annotations
 
+import json
+import logging
+from pathlib import Path
+
 import yaml
 
 from . import BUILD, CURATED, RAW_PDV2
-from .util import read_pdv2_capture, write_json
+from .util import content_hash, read_pdv2_capture, write_json
+
+log = logging.getLogger(__name__)
+
+INSTRUMENTS_YAML = CURATED / "instruments" / "instruments.yaml"
+ISOTOPES_YAML = CURATED / "instruments" / "isotopes.yaml"
+
+
+def po_matrix_path(pdv2_id: int) -> Path:
+    return RAW_PDV2 / f"api_spillover_{pdv2_id}.txt"
+
+
+def curve_path(panel_type: int) -> Path:
+    return RAW_PDV2 / f"api_massbias_{panel_type}.txt"
 
 
 def load_po_matrix(pdv2_id: int) -> dict:
-    raw = read_pdv2_capture(RAW_PDV2 / f"api_spillover_{pdv2_id}.txt")
+    path = po_matrix_path(pdv2_id)
+    raw = read_pdv2_capture(path)
     donors = sorted(int(k) for k in raw)
     recip_keys = sorted(int(k) for k in next(iter(raw.values())) if k.isdigit())
     pct: dict[str, dict[str, float]] = {}
     anomalies: list[str] = []
     for donor, row in raw.items():
-        assert row["tag_id"] == donor
+        if row["tag_id"] != donor:
+            raise ValueError(f"{path.name}: row keyed {donor!r} carries tag_id {row['tag_id']!r}")
         if row[donor] != "100":
             # pdv2 data-entry gap (128Te on Helios/XT has a null diagonal); treat as 100 and record it.
             anomalies.append(f"donor {donor}: diagonal {row[donor]!r} treated as 100")
@@ -45,7 +64,7 @@ def load_po_matrix(pdv2_id: int) -> dict:
 
 
 def load_sensitivity_curve(panel_type: int) -> dict[str, float]:
-    raw = read_pdv2_capture(RAW_PDV2 / f"api_massbias_{panel_type}.txt")
+    raw = read_pdv2_capture(curve_path(panel_type))
     return {str(r["channel"]): float(r["bias"]) for r in sorted(raw, key=lambda r: r["channel"])}
 
 
@@ -61,8 +80,8 @@ def classify_mass(mass: int, range_classes: list[dict]) -> str:
 
 
 def build() -> dict:
-    cfg = yaml.safe_load((CURATED / "instruments" / "instruments.yaml").read_text(encoding="utf8"))
-    isotopes = {str(k): v for k, v in yaml.safe_load((CURATED / "instruments" / "isotopes.yaml").read_text()).items()}
+    cfg = yaml.safe_load(INSTRUMENTS_YAML.read_text(encoding="utf8"))
+    isotopes = {str(k): v for k, v in yaml.safe_load(ISOTOPES_YAML.read_text()).items()}
 
     po_ids = sorted({i["po_matrix"] for i in cfg["instruments"]})
     po_matrices = {str(i): load_po_matrix(i) for i in po_ids}
@@ -96,8 +115,10 @@ def build() -> dict:
             })
         instruments.append({**inst, "channels": channels})
 
+    inputs = [INSTRUMENTS_YAML, ISOTOPES_YAML, *(po_matrix_path(i) for i in po_ids), *(curve_path(i) for i in curve_ids)]
     return {
-        "version": str(cfg["version"]),
+        # Curated YAML version, plus a hash of every file that went into the bundle.
+        "version": f"{cfg['version']}.{content_hash(inputs)}",
         "sources": cfg["sources"],
         "isotopes": isotopes,
         "po_matrices": po_matrices,
@@ -110,10 +131,16 @@ def build() -> dict:
     }
 
 
-def main() -> None:
+def main(out_path: Path | None = None) -> dict:
     out = build()
-    write_json(BUILD / "instruments.json", out)
+    path = out_path or (BUILD / "instruments.json")
+    write_json(path, out)
+    log.info("instruments %s -> %s", out["version"], path)
+    stats = {}
     for inst in out["instruments"]:
-        n_ch = len(inst["channels"])
         n_po = sum(len(v) for v in out["po_matrices"][str(inst["po_matrix"])]["pct"].values())
-        print(f"{inst['id']:14s} {inst['name']:13s} {n_ch} channels, {n_po} non-zero PO cells")
+        log.info("%-14s %-13s %d channels, %d non-zero PO cells", inst["id"], inst["name"], len(inst["channels"]), n_po)
+        stats[inst["id"]] = {"channels": len(inst["channels"]), "antibody_channels": sum(c["antibody"] for c in inst["channels"]),
+                             "po_cells": n_po}
+    print(json.dumps(stats, indent=1))
+    return out

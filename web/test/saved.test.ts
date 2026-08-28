@@ -15,6 +15,7 @@ const win = { localStorage: new MemStorage(), location: { hash: "", origin: "htt
 
 const { listSaved, savePanel, deleteSaved, loadSaved, writeDraft, readDraft, clearDraft } = await import("@/lib/saved");
 const { useStore } = await import("@/lib/store");
+const { encodeState } = await import("@/lib/url");
 const { index } = await import("./util");
 
 const idx = index();
@@ -66,21 +67,63 @@ describe("store integration", () => {
     expect(win.location.hash).toMatch(/^#/); // the restored panel is a share link again
   });
 
-  it("savePanel / loadSavedPanel / deleteSavedPanel drive the saved list", () => {
+  it("savePanel / loadSavedPanel / deleteSavedPanel drive the saved list (through the PanelStore port)", async () => {
     useStore.setState({ rows: [], saved: [], restoredDraft: false });
     useStore.getState().init(idx.bundles);
     const s = useStore.getState();
     s.addTarget("cd45");
     s.addTarget("cd3e");
-    s.savePanel("Backbone");
+    await s.savePanel("Backbone");
     expect(useStore.getState().saved.map((p) => p.name)).toEqual(["Backbone"]);
+    expect(useStore.getState().saved[0].catalogVersion).toBe(idx.bundles.catalog.version); // stamped for drift detection
     s.clearPanel();
     expect(useStore.getState().rows).toHaveLength(0);
-    s.loadSavedPanel(useStore.getState().saved[0].id);
+    await s.loadSavedPanel(useStore.getState().saved[0].id);
     expect(useStore.getState().rows.map((r) => r.id).sort()).toEqual(["cd3e", "cd45"]);
-    s.savePanel("   "); // blank names are ignored
+    await s.savePanel("   "); // blank names are ignored
     expect(useStore.getState().saved).toHaveLength(1);
-    s.deleteSavedPanel(useStore.getState().saved[0].id);
+    await s.deleteSavedPanel(useStore.getState().saved[0].id);
     expect(useStore.getState().saved).toEqual([]);
+  });
+
+  it("a storage write that fails (quota, private mode) is reported, not swallowed", async () => {
+    const good = win.localStorage.setItem.bind(win.localStorage);
+    win.localStorage.setItem = () => { throw new Error("QuotaExceededError"); };
+    try {
+      useStore.setState({ rows: [], saved: [], notice: null });
+      useStore.getState().init(idx.bundles);
+      useStore.getState().addTarget("cd45");
+      await useStore.getState().savePanel("Too big");
+      expect(useStore.getState().saved).toEqual([]);
+      expect(useStore.getState().notice).toMatch(/was not saved/);
+    } finally { win.localStorage.setItem = good; }
+  });
+
+  it("an unreadable share hash is reported instead of silently falling back to the draft", () => {
+    writeDraft({ ...state(0), rows: [{ id: "cd45", targetId: "cd45", name: "CD45", level: "very_high", clone: null, custom: true, locked: null, moduleIds: [] }] });
+    useStore.setState({ rows: [], notice: null, restoredDraft: false });
+    useStore.getState().init(idx.bundles, { hash: "#~not-a-real-link" });
+    const s = useStore.getState();
+    expect(s.notice).toMatch(/could not be read/);
+    expect(s.rows.map((r) => r.id)).toEqual(["cd45"]); // the draft still comes up, but the user is told why
+    expect(s.restoredDraft).toBe(true);
+  });
+
+  it("a link written against another catalogue with a vanished marker says so", () => {
+    const doc = { ...state(0), catalogVersion: "1999-01-01.deadbeef", rows: [{ id: "cd45", targetId: "cd45", name: "CD45", level: "medium" as const, clone: null, custom: true, locked: null, moduleIds: [] }, { id: "gone", targetId: "gone", name: "Gone", level: "medium" as const, clone: null, custom: true, locked: null, moduleIds: [] }] };
+    useStore.setState({ rows: [], notice: null });
+    useStore.getState().init(idx.bundles, { hash: `#${encodeState(doc)}` });
+    const s = useStore.getState();
+    expect(s.rows.map((r) => r.id)).toEqual(["cd45", "gone"]);
+    expect(s.notice).toMatch(/older catalogue/);
+    expect(s.notice).toMatch(/gone/);
+  });
+
+  it("a seed of module ids starts a panel on Build (module landing pages)", () => {
+    useStore.setState({ rows: [], notice: null, step: "setup" });
+    useStore.getState().init(idx.bundles, { moduleIds: ["human-pbmc-lineage"], setup: { modality: "suspension" } });
+    const s = useStore.getState();
+    expect(s.rows.length).toBeGreaterThan(5);
+    expect(s.step).toBe("build");
   });
 });

@@ -67,7 +67,8 @@ export interface ModuleMarker {
 }
 
 export interface PanelModule {
-  id: string;
+  id: string; // stable ledger id (kit-<pdv2 kit_id> / curated id); what links and saved panels store
+  slug: string; // display / routing name; may change with the name
   name: string;
   source: "sbt_kit" | "curated";
   application: "suspension" | "imaging" | "both";

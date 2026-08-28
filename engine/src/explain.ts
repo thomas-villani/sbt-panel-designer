@@ -1,13 +1,11 @@
 /** Turn an assignment into per-row explanations, warnings and one-click fixes. */
 import { Model, NONE, mechanismOf } from "./po-model";
-import type { Contribution, Fix, RangeClass, Result, RowResult, Warning } from "./types";
+import { DIM_T, GIVEN_MENTION, SPILL_CRIT, SPILL_WARN } from "./tuning";
+import { ENGINE_VERSION } from "./version";
+import type { BlockedChannel, Contribution, Fix, RangeClass, Result, RowResult, Warning } from "./types";
 
-// Calibrated 2026-08-27 against SBT's own kits run on their kit metals: MDIPA peaks at 1.75 (CD16 148Nd oxide into
-// TCRgd 164Dy), the Immuno-oncology master panel at 0.76, most kits below 0.5. A validated product must not read as
-// broken, so "worth checking" starts where the spill equals the tolerance and "must fix" at twice it.
-export const SPILL_WARN = 1.0; // received / T above this -> warning
-export const SPILL_CRIT = 2.0; // -> critical
-export const DIM_T = 10; // rows with tolerance below this are "dim"
+// Tuning lives in ./tuning.ts; re-exported here because these two are the public spill thresholds.
+export { DIM_T, SPILL_CRIT, SPILL_WARN } from "./tuning";
 
 const CLASS_TEXT: Record<RangeClass, string> = {
   bright_only: "low-sensitivity channel, suited to bright markers",
@@ -17,6 +15,12 @@ const CLASS_TEXT: Record<RangeClass, string> = {
 };
 
 const MECH_TEXT = { oxide: "oxide M+16", adjacent: "M+-1 abundance sensitivity", isotope: "isotopic impurity", other: "spillover" };
+
+const RESERVED_TEXT = {
+  role: "a reserved channel",
+  blocked: "a channel with no conjugation metal on this instrument",
+  undetected: "a channel this instrument does not detect",
+};
 
 const pct = (x: number) => `${Math.round(x * 100)}%`;
 const num = (x: number) => (x >= 10 ? x.toFixed(0) : x.toFixed(1));
@@ -86,12 +90,44 @@ export function bestMoveFor(model: Model, r: number, assign: Int32Array, occ = o
   return best;
 }
 
-export function buildResult(model: Model, assign: Int32Array, stats: Result["stats"]): Result {
+/** Every mass the row asked for and who holds it (null = reserved, not a channel, or simply free). */
+function blockedByFor(model: Model, i: number, occ: Int32Array): BlockedChannel[] {
+  return model.rows[i].domain.map((mass) => {
+    const c = model.massIndex.get(mass);
+    if (c == null || model.reservedCh[c]) return { mass, holderRowId: null };
+    const holder = occ[c];
+    return { mass, holderRowId: holder === NONE ? null : model.rows[holder].id };
+  });
+}
+
+export interface ResultNotes {
+  /**
+   * Rows whose caller-supplied assignment was rejected (rowId -> why). They come back `unassigned` with an
+   * `invalid_assignment` warning instead of the generic "no free channel" one.
+   */
+  invalidAssignment?: Record<string, string>;
+}
+
+export function buildResult(model: Model, assign: Int32Array, stats: Result["stats"], notes: ResultNotes = {}): Result {
   const occ = occupancy(model, assign);
   const rows: RowResult[] = [];
   const warnings: Warning[] = [];
   const unassigned: string[] = [];
   const assignment: Record<string, number> = {};
+
+  // Two rows pinned to one mass: the first in panel order keeps it, the rest were unlocked by the model.
+  for (const d of model.duplicateLocks) {
+    const label = (id: string) => model.rows.find((r) => r.id === id)?.label ?? id;
+    const channel = model.labels[model.massIndex.get(d.mass) ?? -1] ?? String(d.mass);
+    warnings.push({
+      severity: "critical", rowId: d.rowId, code: "duplicate_lock",
+      message: `${label(d.rowId)} and ${label(d.keptBy)} are both pinned to ${channel}. ${label(d.keptBy)} keeps it; ${label(d.rowId)} was treated as unpinned - unpin one of them.`,
+    });
+    warnings.push({
+      severity: "critical", rowId: d.keptBy, code: "duplicate_lock",
+      message: `${label(d.keptBy)} keeps ${channel}; ${label(d.rowId)} is pinned to the same channel and had to be moved.`,
+    });
+  }
 
   for (let i = 0; i < model.n; i++) {
     const row = model.rows[i];
@@ -101,12 +137,16 @@ export function buildResult(model: Model, assign: Int32Array, stats: Result["sta
       unassigned.push(row.id);
       const dom = model.domains[i];
       const allowed = dom.length ? [...dom].map((c) => model.labels[c]).join(", ") : "none";
-      warnings.push({
-        severity: "critical", rowId: row.id, code: "unassigned",
-        message: dom.length
-          ? `${row.label}: no free channel. Its allowed channels (${allowed}) are all taken or reserved - unlock a neighbour or allow a custom conjugate.`
-          : `${row.label}: no allowed channel on this instrument - allow a custom conjugate or choose another clone.`,
-      });
+      const blockedBy = blockedByFor(model, i, occ);
+      const invalid = notes.invalidAssignment?.[row.id];
+      warnings.push(invalid
+        ? { severity: "critical", rowId: row.id, code: "invalid_assignment", message: invalid, blockedBy }
+        : {
+          severity: "critical", rowId: row.id, code: "unassigned", blockedBy,
+          message: dom.length
+            ? `${row.label}: no free channel. Its allowed channels (${allowed}) are all taken or reserved - unlock a neighbour or allow a custom conjugate.`
+            : `${row.label}: no allowed channel on this instrument - allow a custom conjugate or choose another clone.`,
+        });
       rows.push({
         rowId: row.id, label: row.label, mass: null, channel: null, locked, rel_sensitivity: null, range_class: null,
         received: 0, receivedOverT: 0, contributions: [], given: [], reasons: ["unassigned"],
@@ -130,7 +170,7 @@ export function buildResult(model: Model, assign: Int32Array, stats: Result["sta
         `receives ${pct(overT)} of its tolerance (${num(recTotal)} of ${num(model.T[i])} counts), mostly from ${top.label} at ${top.mass} (${MECH_TEXT[top.mechanism]}, ${top.pct.toFixed(1)}%)`,
       );
     }
-    if (given.length && given[0].fraction >= 0.1) {
+    if (given.length && given[0].fraction >= GIVEN_MENTION) {
       const g = given[0];
       reasons.push(`spills ${pct(g.fraction)} of ${g.label}'s tolerance at ${g.mass} (${MECH_TEXT[g.mechanism]})`);
     }
@@ -140,11 +180,12 @@ export function buildResult(model: Model, assign: Int32Array, stats: Result["sta
       contributions: received, given, reasons,
     });
 
-    // Warnings.
-    if (model.reservedCh[ci]) {
+    // Warnings. A channel the user opted into (extraMetals) is a normal channel here: reservedCh is 0 for it.
+    const reason = model.reservedReason[ci];
+    if (model.reservedCh[ci] && reason) {
       warnings.push({
-        severity: "warning", rowId: row.id, code: "reserved_lock",
-        message: `${row.label} is locked on ${model.labels[ci]}, a reserved or unusable channel on ${model.problem.instrument.name}.`,
+        severity: "warning", rowId: row.id, code: "reserved_lock", reason,
+        message: `${row.label} is locked on ${model.labels[ci]}, ${RESERVED_TEXT[reason]} on ${model.problem.instrument.name}.`,
       });
     }
     if (overT >= SPILL_WARN && received.length) {
@@ -184,5 +225,8 @@ export function buildResult(model: Model, assign: Int32Array, stats: Result["sta
   warnings.sort((a, b) => order[a.severity] - order[b.severity]);
   const score = model.totalCost(assign);
   const objective = model.objective(assign);
-  return { assignment, score, objective, softCost: score - objective, rows, warnings, unassigned, stats };
+  return {
+    assignment, score, objective, softCost: score - objective, rows, warnings, unassigned,
+    engineVersion: ENGINE_VERSION, stats,
+  };
 }

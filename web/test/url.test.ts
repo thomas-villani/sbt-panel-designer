@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { decodeState, encodeState } from "@/lib/url";
+import { deflateSync, strToU8 } from "fflate";
+import { decodeState, decodeStateResult, encodeState } from "@/lib/url";
 import type { PanelRow, Setup } from "@/lib/types";
 import { CYTOF, IMC, index } from "./util";
 
@@ -60,12 +61,53 @@ describe("url state", () => {
       expect(dec.nSamples).toBe(40);
     }
   });
-  it("rejects garbage and empty hashes", () => {
+  it("rejects garbage and empty hashes, and says which it was", () => {
     expect(decodeState("")).toBeNull();
     expect(decodeState("#")).toBeNull();
     expect(decodeState("#not-base64!!")).toBeNull();
     expect(decodeState("#~not-deflate")).toBeNull();
     expect(decodeState("#" + Buffer.from('{"v":2}').toString("base64url"))).toBeNull();
+    expect(decodeStateResult("")).toEqual({ ok: false, reason: "empty" });
+    expect(decodeStateResult("#~not-deflate")).toEqual({ ok: false, reason: "unreadable" });
+    expect(decodeStateResult("#" + Buffer.from('{"v":2}').toString("base64url"))).toEqual({ ok: false, reason: "unsupported_version" });
+    // A future v3 tuple: not a crash, not an empty panel, an explicit "newer than me".
+    const future = "~" + Buffer.from(deflateSync(strToU8(JSON.stringify([3, [], 1, 0, []])))).toString("base64url");
+    expect(decodeStateResult(future)).toEqual({ ok: false, reason: "unsupported_version" });
+  });
+  it("keeps a catalogue row's custom flag when it disagrees with 'no clone' (a pinned clone on a metal it is not sold on)", () => {
+    const idx = index();
+    const pinnedCustom: PanelRow = { id: "cd45", targetId: "cd45", name: idx.targetsById.get("cd45")!.name, level: "high", clone: idx.cloneOptions("cd45", CYTOF)[0].clone, clonePinned: true, custom: true, locked: 89, moduleIds: [] };
+    const dec = decodeState(encodeState({ setup: CYTOF, rows: [pinnedCustom], nSamples: 1, balanced: false }, idx), idx)!;
+    expect(dec.rows[0]).toEqual(pinnedCustom);
+    // and the bit costs nothing when it is at its default
+    const plain = encodeState({ setup: CYTOF, rows: [{ ...pinnedCustom, custom: false }], nSamples: 1, balanced: false }, idx);
+    expect(decodeState(plain, idx)!.rows[0].custom).toBe(false);
+  });
+  it("stamps the catalogue version and reports drift", () => {
+    const idx = index();
+    const enc = encodeState({ setup: CYTOF, rows: [], nSamples: 1, balanced: false }, idx);
+    const r = decodeStateResult(enc, idx);
+    expect(r.ok && r.doc.catalogVersion).toBe(idx.bundles.catalog.version);
+    expect(r.ok && r.drift).toEqual({ catalogChanged: false, unknownTargets: [], resetFields: [] });
+    const old = decodeStateResult(encodeState({ setup: CYTOF, rows: [{ id: "nope", targetId: "nope", name: "Nope", level: "medium", clone: null, custom: true, locked: null, moduleIds: [] }], nSamples: 1, balanced: false, catalogVersion: "1999-01-01.0" }), idx);
+    expect(old.ok && old.drift).toEqual({ catalogChanged: true, unknownTargets: ["nope"], resetFields: [] });
+  });
+  it("validates the setup against the bundle: an unknown instrument falls back to the modality default and releases pins", () => {
+    const idx = index();
+    const bad: Setup = { ...IMC, instrumentId: "hyperion_9000", blocked: [999, 141], extraMetals: [999] };
+    const r = decodeStateResult(encodeState({ setup: bad, rows: [{ ...rows[0], locked: 141 }], nSamples: 1, balanced: false }), idx);
+    expect(r.ok).toBe(true);
+    if (!r.ok) return;
+    expect(r.doc.setup.instrumentId).toBe("hyperion_xti");
+    expect(r.doc.setup.blocked).toEqual([141]);
+    expect(r.doc.setup.extraMetals).toBeUndefined();
+    expect(r.doc.rows[0].locked).toBeNull();
+    expect(r.drift.resetFields).toEqual(expect.arrayContaining(["instrumentId", "blocked", "extraMetals"]));
+    // an instrument of the wrong modality is just as wrong
+    const wrong = decodeStateResult(encodeState({ setup: { ...IMC, instrumentId: "cytof_xt" }, rows: [], nSamples: 1, balanced: false }), idx);
+    expect(wrong.ok && wrong.doc.setup.instrumentId).toBe("hyperion_xti");
+    // without a bundle nothing can be validated, and nothing is invented
+    expect(decodeState(encodeState({ setup: bad, rows: [], nSamples: 1, balanced: false }))!.setup.instrumentId).toBe("hyperion_9000");
   });
 });
 
@@ -90,5 +132,16 @@ describe("url state: setup extras (viability mode, opted-in metals)", () => {
     expect(decodeState(`#${cd}`)!.setup.extraMetals).toEqual([111, 112]);
     expect(rh.length).toBeGreaterThan(plain.length); // the default really is dropped
     expect(decodeState(`#${encodeState({ setup: { ...base, viabilityMode: "pt" }, rows: [], nSamples: 1, balanced: false })}`)!.setup.viabilityMode).toBeUndefined();
+  });
+});
+
+describe("module references", () => {
+  it("translates legacy kit slugs in old links to the stable kit id", async () => {
+    const idx = index();
+    const mdipa = idx.modulesBySlug.get("direct-immune-profiling-assay-mdipa")!;
+    expect(mdipa.id).toBe("kit-201334");
+    const doc = { setup: CYTOF, nSamples: 20, balanced: false, rows: [{ ...rows[2], moduleIds: [mdipa.slug, mdipa.id, "not-a-module"] }] };
+    const res = decodeStateResult(`#${encodeState(doc, idx)}`, idx);
+    expect(res.ok && res.doc.rows[0].moduleIds).toEqual([mdipa.id, "not-a-module"]);
   });
 });

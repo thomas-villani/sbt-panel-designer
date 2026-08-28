@@ -1,8 +1,10 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import {
-  ABUNDANCE_PRIOR, Model, PDV2_WEIGHTS, balance, buildProblem, evaluate, greedy, massOf, signalTolerance,
+  ABUNDANCE_PRIOR, ENGINE_VERSION, Model, PDV2_WEIGHTS, SPILL_CRIT, SPILL_WARN, balance, buildProblem,
+  canCarryAntibody, channelUniverse, evaluate, greedy, massOf, signalTolerance,
 } from "../src/index";
-import type { Row } from "../src/index";
+import type { ChannelDef, Row } from "../src/index";
 import { loadBundle, syntheticProblem } from "./util";
 
 const bundle = loadBundle();
@@ -173,5 +175,175 @@ describe("real instrument sanity", () => {
     const best = balance(p);
     expect(best.assignment.cd45).toBe(89);
     expect(best.objective).toBeLessThan(kit.objective);
+  });
+});
+
+const CD_MASSES = [106, 110, 111, 112, 113, 114, 116];
+
+describe("channel universe (one rule)", () => {
+  it("canCarryAntibody: detected + a conjugation metal, or a mass the user opted into", () => {
+    const ch = (mass: number, usable: boolean, antibody?: boolean): ChannelDef =>
+      ({ mass, element: "X", label: `${mass}X`, rel_sensitivity: 1, usable, antibody, in_po_matrix: true, range_class: "mid" });
+    expect(canCarryAntibody(ch(162, true))).toBe(true);
+    expect(canCarryAntibody(ch(157, true, false))).toBe(false);
+    expect(canCarryAntibody(ch(157, true, false), [157])).toBe(true);
+    expect(canCarryAntibody(ch(157, false, false), [157])).toBe(false); // opting in cannot invent a detector
+    expect(canCarryAntibody(ch(113, true, false), new Set([113]))).toBe(true);
+  });
+
+  it("the model fills opted-in Cd channels on IMC, and cannot fill them without the opt-in", () => {
+    const rows = Array.from({ length: 46 }, (_, i) => ({ id: `r${i}`, label: `R${i}`, level: "medium" as const, allowCustom: true }));
+    const plain = buildProblem(bundle, { modality: "imaging", rows });
+    const opted = buildProblem(bundle, { modality: "imaging", rows, extraMetals: CD_MASSES });
+    expect(channelUniverse(plain)).toHaveLength(38);
+    expect(channelUniverse(opted)).toHaveLength(45); // + 7 Cd
+    expect(opted.extraMetals).toEqual(CD_MASSES);
+
+    const before = balance(plain, { seed: 1 });
+    const after = balance(opted, { seed: 1 });
+    expect(Object.values(before.assignment).filter((m) => CD_MASSES.includes(m))).toEqual([]);
+    expect(Object.values(after.assignment).filter((m) => CD_MASSES.includes(m))).toHaveLength(7);
+    expect(after.unassigned.length).toBeLessThan(before.unassigned.length);
+  });
+
+  it("a lock on an opted-in metal is not a reserved_lock; other locks say why", () => {
+    const lock = (extraMetals?: number[]) => balance(buildProblem(bundle, {
+      modality: "imaging", extraMetals, rows: [{ id: "x", label: "X", level: "medium", locked: 113 }],
+    }));
+    expect(lock().warnings.find((w) => w.code === "reserved_lock")).toMatchObject({ reason: "blocked" });
+    expect(lock(CD_MASSES).warnings.find((w) => w.code === "reserved_lock")).toBeUndefined();
+    expect(lock(CD_MASSES).assignment.x).toBe(113);
+
+    const reasonFor = (locked: number) => balance(buildProblem(bundle, {
+      instrumentId: "cytof_xt", rows: [{ id: "x", label: "X", level: "medium", locked }],
+    })).warnings.find((w) => w.code === "reserved_lock")?.reason;
+    expect(reasonFor(191)).toBe("role"); // hard-reserved DNA channel
+    expect(reasonFor(157)).toBe("blocked"); // detected, but no conjugation metal is sold
+    expect(reasonFor(300)).toBe("undetected"); // not a channel at all
+  });
+});
+
+describe("build options and boundary validation", () => {
+  it("extraReserved keeps rows off a blocked channel", () => {
+    const p = buildProblem(bundle, {
+      instrumentId: "cytof_xt", extraReserved: [141],
+      rows: [{ id: "x", label: "X", level: "medium", metals: ["141Pr", "142Nd"] }],
+    });
+    expect(p.reserved).toContain(141);
+    expect(balance(p).assignment.x).toBe(142);
+  });
+
+  it("unreserve releases a mass from both reserved and flagged", () => {
+    const rows = [{ id: "x", label: "X", level: "medium" as const, metals: [195] }];
+    const kept = buildProblem(bundle, { instrumentId: "cytof_xt", rows });
+    expect(kept.flagged).toEqual([194, 195, 198]);
+    expect(balance(kept).warnings.some((w) => w.code === "flagged_channel")).toBe(true);
+
+    const freed = buildProblem(bundle, { instrumentId: "cytof_xt", rows, unreserve: [195, 191] });
+    expect(freed.flagged).toEqual([194, 198]);
+    expect(freed.reserved).toEqual([193]);
+    expect(balance(freed).warnings.some((w) => w.code === "flagged_channel")).toBe(false);
+  });
+
+  it("rejects an unknown modality, unknown reserved roles and duplicate row ids", () => {
+    expect(() => buildProblem(bundle, { modality: "flow" as never, rows: [] }))
+      .toThrow(/no current instrument for modality "flow"/);
+    expect(() => buildProblem(bundle, { modality: "suspension", reservedRoles: ["dna_intercalator", "nope", "also_nope"], rows: [] }))
+      .toThrow(/unknown reserved role\(s\) for suspension: nope, also_nope/);
+    expect(() => buildProblem(bundle, {
+      modality: "suspension", rows: [{ id: "x", label: "A" }, { id: "x", label: "B" }, { id: "y", label: "C" }],
+    })).toThrow(/duplicate row id\(s\): x/);
+    expect(() => buildProblem(bundle, { instrumentId: "nope", rows: [] })).toThrow(/unknown instrument "nope"/);
+  });
+});
+
+describe("duplicate locks and invalid assignments", () => {
+  const pinned: Row[] = [
+    { id: "a", label: "A", signal: 100, tolerance: 10, domain: [141, 157], locked: 141 },
+    { id: "b", label: "B", signal: 100, tolerance: 10, domain: [141, 157], locked: 141 },
+  ];
+
+  it("two rows pinned to one mass: the first keeps it, the second is unpinned, both are warned", () => {
+    const res = balance(syntheticProblem([141, 157], {}, pinned));
+    expect(res.assignment.a).toBe(141);
+    expect(res.assignment.b).toBe(157); // unpinned, so it moves rather than double-booking 141
+    expect(res.rows.find((r) => r.rowId === "b")!.locked).toBe(false);
+    const dup = res.warnings.filter((w) => w.code === "duplicate_lock");
+    expect(dup.map((w) => w.rowId).sort()).toEqual(["a", "b"]);
+    expect(dup.every((w) => w.severity === "critical")).toBe(true);
+    expect(dup[0].message).toContain("141E");
+  });
+
+  it("evaluate() refuses a collision and an out-of-domain mass instead of placing them", () => {
+    const free = pinned.map((r) => ({ ...r, locked: null }));
+    const p = syntheticProblem([141, 157, 165], { 141: { 157: 2 } }, free);
+    const clash = evaluate(p, { a: 141, b: 141 });
+    expect(clash.assignment).toEqual({ a: 141 });
+    expect(clash.unassigned).toEqual(["b"]);
+    const w = clash.warnings.find((x) => x.rowId === "b")!;
+    expect(w).toMatchObject({ code: "invalid_assignment", severity: "critical" });
+    expect(w.message).toContain("already taken");
+
+    const off = evaluate(p, { a: 165, b: 157 });
+    expect(off.unassigned).toEqual(["a"]);
+    expect(off.warnings.find((x) => x.rowId === "a")!.code).toBe("invalid_assignment");
+    expect(off.assignment).toEqual({ b: 157 });
+  });
+
+  it("evaluate() still honours a pin on a channel outside the antibody universe", () => {
+    const p = buildProblem(bundle, {
+      instrumentId: "cytof_xt", rows: [{ id: "x", label: "X", level: "medium", metals: ["157Gd"], locked: "157Gd" }],
+    });
+    const res = evaluate(p, { x: 157 });
+    expect(res.assignment.x).toBe(157);
+    expect(res.warnings.find((w) => w.code === "invalid_assignment")).toBeUndefined();
+  });
+});
+
+describe("warning thresholds and explanations", () => {
+  // 100 % PO makes received == S exactly, so S/T lands on the threshold with no floating-point slack.
+  const at = (signal: number) => {
+    const rows: Row[] = [
+      { id: "donor", label: "D", signal, tolerance: 50, domain: [141], locked: 141 },
+      { id: "victim", label: "V", signal: 1, tolerance: 100, domain: [157], locked: 157 },
+    ];
+    const res = evaluate(syntheticProblem([141, 157], { 141: { 157: 100 } }, rows), { donor: 141, victim: 157 });
+    return {
+      overT: res.rows.find((r) => r.rowId === "victim")!.receivedOverT,
+      w: res.warnings.find((x) => x.code === "spillover"),
+    };
+  };
+
+  it("SPILL_WARN and SPILL_CRIT are inclusive lower bounds (0.99 / 1.0 / 1.99 / 2.0 of tolerance)", () => {
+    expect([SPILL_WARN, SPILL_CRIT]).toEqual([1, 2]);
+    expect(at(99).overT).toBeCloseTo(0.99, 12);
+    expect(at(99).w).toBeUndefined();
+    expect(at(100).w!.severity).toBe("warning");
+    expect(at(199).w!.severity).toBe("warning");
+    expect(at(200).w!.severity).toBe("critical");
+  });
+
+  it("unassigned rows report who holds each channel they asked for", () => {
+    const rows: Row[] = [
+      { id: "a", label: "A", signal: 100, tolerance: 10, domain: [141], locked: 141 },
+      { id: "b", label: "B", signal: 100, tolerance: 10, domain: [141, 157] },
+    ];
+    const res = balance(syntheticProblem([141, 157], {}, rows, { reserved: [157] }));
+    expect(res.unassigned).toEqual(["b"]);
+    const w = res.warnings.find((x) => x.code === "unassigned")!;
+    expect(w.blockedBy).toEqual([{ mass: 141, holderRowId: "a" }, { mass: 157, holderRowId: null }]);
+  });
+});
+
+describe("versioning", () => {
+  it("ENGINE_VERSION matches package.json and is stamped on every result", () => {
+    const pkg = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
+    expect(ENGINE_VERSION).toBe(pkg.version);
+    const p = buildProblem(bundle, { instrumentId: "cytof_xt", rows: [{ id: "x", label: "X", level: "medium", metals: [141] }] });
+    const res = balance(p);
+    expect(res.engineVersion).toBe(ENGINE_VERSION);
+    expect(evaluate(p, { x: 141 }).engineVersion).toBe(ENGINE_VERSION);
+    expect(p.bundleVersion).toBe(bundle.version);
+    expect(res.stats.converged).toBe(true);
   });
 });

@@ -10,6 +10,6 @@
     "e2e": "npm --prefix web run e2e",
     "typecheck": "npm --prefix engine run typecheck && npm --prefix web run typecheck",
     "validate": "npm --prefix engine run validate",
-    "data": "cd etl && uv run pd3-etl instruments && uv run pd3-etl catalog && uv run pd3-etl modules"
+    "data": "cd etl && uv run pd3-etl instruments && uv run pd3-etl catalog && uv run pd3-etl modules && uv run pd3-etl pubs"
   }
 }

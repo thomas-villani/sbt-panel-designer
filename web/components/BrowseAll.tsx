@@ -112,7 +112,7 @@ export function BrowseAll({ onClose }: { onClose: () => void }) {
                   <td className="px-2 py-1.5 align-top">{r.modules.length ? <InModules modules={r.modules} max={2} bare /> : <span className="text-[11px] text-slate-400">—</span>}</td>
                   <td className="px-2 py-1.5 align-top text-right">
                     {added
-                      ? <Button size="sm" variant="ghost" onClick={() => removeRow(r.t.id)} title="remove from panel">remove</Button>
+                      ? <Button size="sm" variant="ghost" onClick={() => { const row = rows.find((x) => x.targetId === r.t.id); if (row) removeRow(row.id); }} title="remove from panel">remove</Button>
                       : <Button size="sm" variant="secondary" onClick={() => addTarget(r.t.id)}>add</Button>}
                   </td>
                 </tr>

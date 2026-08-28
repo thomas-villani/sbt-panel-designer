@@ -1,304 +1,367 @@
 # Display metadata for SBT panel kits captured from pdv2 (keyed by the raw pdv2 kit name).
-# Anything not listed gets an auto-generated name and category "uncategorised".
+# Every captured kit must be listed with a stable `id` - the ledger that the web app, share links and saved panels key on
+# (`kit-<pdv2 kit_id>`, disambiguated by hand when pdv2 reuses a kit_id). The other fields are display metadata.
 # category values: lineage | functional | tissue | disease | scaffolding | assay
 version: 2026-08-24.1
 kits:
   # ---------------- IMC ----------------
   Hu_Basic_Immune_IMC_Panel_4_Antibodies:
+    id: kit-201518
     name: Basic immune
     aliases: [immune, immunophenotyping, leukocytes]
     category: lineage
     featured: true
     blurb: The four markers that separate B cells, T cells, macrophages and all leukocytes in tissue.
   Hu_Lymphoid_IMC_Panel_4_Antibodies:
+    id: kit-201512
     name: Lymphoid
     aliases: [lymphocytes, lymphoid, immune]
     category: lineage
     featured: true
     blurb: CD4 and CD8 T-cell subsets, B cells and NK cells.
   Hu_Myeloid_IMC_Panel_6_Antibodies:
+    id: kit-201513
     name: Myeloid / macrophages
     aliases: [myeloid, macrophages, monocytes, granulocytes]
     category: lineage
     featured: true
     blurb: Macrophage, monocyte, dendritic-cell and granulocyte markers, including M2-like CD163.
   Hu_T_Cell_Exhaustion_IMC_Panel_5_Andibodies:
+    id: kit-201519
     name: T-cell exhaustion
     aliases: [IO, immuno-oncology, immunotherapy, checkpoint, exhaustion]
     category: functional
     featured: true
     blurb: Checkpoint and exhaustion markers (TIM-3, LAG-3, OX40, CTLA-4, IDO) for immuno-oncology.
   Hu_Cell_Functional_State_IMC_Panel_5_Antibodies:
+    id: kit-201514
     name: Functional state
     aliases: [functional, activation, proliferation]
     category: functional
     featured: true
     blurb: Proliferation, Tregs, PD-1 / PD-L1 and cytotoxic activity (Ki-67, FoxP3, PD-1, PD-L1, Granzyme B).
   Hu_Cell_Signaling_IMC_Panel_7_Antibodies:
+    id: kit-201522
     name: Cell signalling
     aliases: [signalling, signaling, phospho, pathway, kinase]
     category: functional
     blurb: Phospho-epitopes and pathway readouts in tissue.
   Hu_Cell_Metabolism_IMC_Panel_7_Antibodies:
+    id: kit-201521
     name: Cell metabolism
     aliases: [metabolism, metabolic, immunometabolism, glycolysis, OXPHOS]
     category: functional
     blurb: Glycolysis, fatty-acid oxidation and mitochondrial markers.
   Hu_Epithelial_and_Mesenchymal_IMC_Panel_4_Antibodies:
+    id: kit-201515
     name: Epithelial / mesenchymal
     aliases: [EMT, epithelial, mesenchymal, tumour, tumor, cancer]
     category: tissue
     featured: true
     blurb: Tumour epithelium and EMT markers.
   Hu_Stromal_Cell_IMC_Panel_4_Antibodies:
+    id: kit-201511
     name: Stromal
     aliases: [stroma, fibroblast, CAF, ECM, extracellular matrix, TME, tumour microenvironment, tumor microenvironment]
     category: tissue
     featured: true
     blurb: Fibroblasts, smooth muscle and extracellular matrix.
   Hu_Basic_Tissue_Architecture_IMC_Panel_3_Antibodies:
+    id: kit-201517
     name: Tissue architecture
     aliases: [architecture, structure, vessels, TME, tumour microenvironment]
     category: tissue
     featured: true
     blurb: Vessels, epithelium and mesenchyme so every cell has an address.
   Hu_Immune_Cell_Expansion_IMC_Panel_7_Antibodies:
+    id: kit-201516
     name: Immune cell expansion
     aliases: [immune, expansion, immunophenotyping]
     category: lineage
     blurb: Extra immune subset markers to add on top of Basic immune.
   Hu_Immuno-Oncology_IMC_Panel_31_Antibodies:
+    id: kit-201509
     name: Immuno-oncology (31-marker master panel)
     aliases: [IO, immuno-oncology, immunotherapy, checkpoint, tumour microenvironment, TME]
     category: assay
     featured: true
     blurb: SBT's complete validated IO tissue panel. A good starting point to trim rather than build up.
   "Hu_Maxpar_Immuno-Oncology_IMC_Panel (kit)":
+    id: kit-201508
     name: Immuno-oncology kit (16)
     aliases: [IO, immuno-oncology, immunotherapy, checkpoint]
     category: assay
     blurb: The purchasable Maxpar IO IMC kit.
   Hu_Maxpar_Neuro-Oncology_IMC_Bundle:
+    id: kit-201508-neuro-oncology
     name: Neuro-oncology bundle
     aliases: [neuro, neuro-oncology, glioma, GBM, brain tumour, brain, CNS, cancer]
     category: disease
     blurb: Glioma / brain-tumour microenvironment bundle.
   "Hu_Maxpar_Tissue_Architecture_IMC_Panel (kit)":
+    id: kit-201507
     name: Tissue architecture kit (5)
     aliases: [architecture, structure, vessels, TME]
     category: tissue
     blurb: The purchasable tissue-architecture kit.
   "Hu_Maxpar_Tumor_Infiltrating_Lymphocytes_IMC_Panel (kit)":
+    id: kit-201506
     name: Tumour-infiltrating lymphocytes kit
     aliases: [TIL, IO, immuno-oncology, tumour microenvironment, TME]
     category: lineage
     blurb: TIL phenotyping kit.
   "Hu_Maxpar_Immune_Activation_IMC_Panel (kit)":
+    id: kit-201503
     name: Immune activation kit
     aliases: [activation, functional, immune]
     category: functional
     blurb: Activation-state markers kit.
   Maxpar_IMC_Cell-Segmentation_Kit:
+    id: kit-201500
     name: Cell segmentation kit
     category: scaffolding
     blurb: Membrane / cytoplasm / nucleus stains on Pt 195, 196, 198 for automated cell segmentation.
   "Maxpar_NeuroPhenotyping_IMC_Panel (kit)":
+    id: kit-201337
     name: Neurophenotyping kit
     aliases: [neuro, neuroscience, brain, CNS, neurons, astrocytes, microglia, oligodendrocytes]
     category: disease
     blurb: Neurons, astrocytes, microglia, oligodendrocytes.
   Hu_Neuro_Expansion_IMC_Panel_3_Antibodies:
+    id: kit-9100012
     name: Neuro expansion
     aliases: [neuro, neuroscience, brain, CNS]
     category: disease
   Glioblastoma_IMC_Panel_5_Antibodies:
+    id: kit-9100011
     name: Glioblastoma
     aliases: [GBM, glioma, brain tumour, brain tumor, neuro-oncology, neuro, CNS, cancer]
     category: disease
   SynTau_Mixed_Pathology_IMC_Panel_4_Antibodies:
+    id: kit-9100010
     name: Synuclein / tau mixed pathology
     aliases: [neuro, neurodegeneration, proteinopathy, tau, synuclein, Alzheimer, Parkinson, brain, CNS]
     category: disease
   Proteinopathies_IMC_Panel_5_Antibodies:
+    id: kit-9100009
     name: Proteinopathies
     aliases: [neuro, neurodegeneration, proteinopathy, amyloid, tau, brain, CNS]
     category: disease
   Multiple_Sclerosis_IMC_Panel_3_Antibodies:
+    id: kit-9100008
     name: Multiple sclerosis
     aliases: [MS, demyelination, neuroinflammation, neuro, autoimmune, brain, CNS]
     category: disease
   "Alzheimer's_Disease_IMC_Panel_3_Antibodies":
+    id: kit-9100007
     name: Alzheimer's disease
     aliases: [Alzheimer, amyloid, tau, dementia, neurodegeneration, neuro, brain, CNS]
     category: disease
   "Parkinson's_Disease_IMC_Panel_3_Antibodies":
+    id: kit-9100006
     name: Parkinson's disease
     aliases: [Parkinson, synuclein, neurodegeneration, neuro, brain, CNS]
     category: disease
 
   # ---------------- Suspension ----------------
   "Hu_Maxpar_Direct_Profiling_Assay (current)":
+    id: kit-201334
     name: Direct Immune Profiling Assay (MDIPA)
     aliases: [MDIPA, immune profiling, immunophenotyping, whole blood, deep immune profiling]
     category: assay
     featured: true
     blurb: The 30-marker dry-format immune profiling assay. 37 immune populations from whole blood or PBMC in one tube.
   Hu_Maxpar_Direct_Profiling_Assay:
+    id: kit-201325
     name: Direct Immune Profiling Assay (legacy)
     category: assay
     hidden: true
   Maxpar Direct Basic Activation Expansion Panel:
+    id: kit-201408
     name: MDIPA expansion - basic activation
     aliases: [MDIPA, expansion, activation]
     category: functional
     blurb: Adds activation markers to MDIPA.
   Hu_Maxpar_Direct_Assay_T_Cell_Expansion_2:
+    id: kit-201406
     name: MDIPA expansion - T cell 2
     aliases: [MDIPA, expansion]
     category: lineage
   Hu_Maxpar_Direct_Assay_T_Cell_Expansion_3:
+    id: kit-201407
     name: MDIPA expansion - T cell 3
     aliases: [MDIPA, expansion]
     category: lineage
   Hu_Maxpar_Direct_Assay_Mye_B_Cell_Expansion_1:
+    id: kit-201402
     name: MDIPA expansion - myeloid / B cell 1
     aliases: [MDIPA, expansion, myeloid]
     category: lineage
   Hu_Maxpar_Direct_Assay_Mye_B_Cell_Expansion_2:
+    id: kit-201403
     name: MDIPA expansion - myeloid / B cell 2
     aliases: [MDIPA, expansion, myeloid]
     category: lineage
   Hu_TBMNK_G CyTOF Panel:
+    id: kit-201338
     name: TBMNK + granulocytes
     aliases: [TBNK, TBMNK, immunophenotyping, lymphocyte subsets, immune profiling]
     category: lineage
     featured: true
     blurb: The minimal backbone - T, B, monocytes, NK and granulocytes - in nine markers.
   Hu_Broad Immune Profiling CyTOF Panel:
+    id: kit-201339
     name: Broad immune profiling
     aliases: [immune profiling, immunophenotyping, PBMC, immune]
     category: lineage
     featured: true
     blurb: Twenty-marker backbone covering every major immune lineage and T-cell memory subsets.
   Hu_T cell Profiling_CyTOF Panel:
+    id: kit-201340
     name: T-cell profiling
     aliases: [T-cell, immunophenotyping]
     category: lineage
     featured: true
     blurb: Naive / memory / effector differentiation and helper subsets.
   Hu_Immune Checkpoint Core_CyTOF Panel:
+    id: kit-201341
     name: Immune checkpoint core
     aliases: [IO, immuno-oncology, immunotherapy, checkpoint]
     category: functional
     featured: true
     blurb: PD-1, TIM-3, LAG-3, TIGIT, CTLA-4 and their ligands.
   Hu_Immune Checkpoint Expansion 1_CyTOF Panel:
+    id: kit-201342
     name: Immune checkpoint expansion 1
     aliases: [IO, immuno-oncology, checkpoint]
     category: functional
   Hu_Immune Checkpoint Expansion 2_CyTOF Panel:
+    id: kit-201343
     name: Immune checkpoint expansion 2
     aliases: [IO, immuno-oncology, checkpoint]
     category: functional
   Hu_Cytokine Core_CyTOF Panel:
+    id: kit-201344
     name: Cytokine core
     aliases: [cytokines, ICS, intracellular cytokine staining]
     category: functional
     featured: true
     blurb: Intracellular IFN-γ, TNF, IL-2, IL-17A and IL-4 after stimulation.
   Hu_Cytokine Expansion_CyTOF Panel:
+    id: kit-201346
     name: Cytokine expansion
     aliases: [cytokines, ICS, expansion]
     category: functional
   Hu_Cytotoxic Mediators_CyTOF Panel:
+    id: kit-201345
     name: Cytotoxic mediators
     aliases: [cytotoxicity, granzyme, perforin, degranulation, killing]
     category: functional
     blurb: Granzyme B, perforin and degranulation.
   Hu_T cell Immune Checkpoint & Cytokine_CyTOF Panel:
+    id: kit-201348
     name: T-cell checkpoint and cytokine (40-marker)
     aliases: [IO, immuno-oncology, immunotherapy, checkpoint]
     category: assay
     blurb: SBT's full validated T-cell functional panel.
   Hu_Broad Immune Checkpoint_CyTOF Panel:
+    id: kit-201347
     name: Broad immune checkpoint (34-marker)
     aliases: [IO, immuno-oncology, immunotherapy, checkpoint]
     category: assay
   Hu_T-Cell_Basic_IO:
+    id: kit-201323
     name: T-cell basic IO
     aliases: [IO, immuno-oncology, immunotherapy]
     category: assay
   Hu_T-Cell_Complete_IO:
+    id: kit-201322
     name: T-cell complete IO
     aliases: [IO, immuno-oncology, immunotherapy]
     category: assay
   Hu_T-Cell_Expansion_IO:
+    id: kit-201321
     name: T-cell IO expansion
     aliases: [IO, immuno-oncology, immunotherapy]
     category: functional
   Hu_Regulatory_T:
+    id: kit-201319
     name: Regulatory T cells
     aliases: [Treg, Tregs, suppression]
     category: lineage
     featured: true
     blurb: Treg identification and function (CD25, CD127, FoxP3, CTLA-4, Helios).
   Hu_THelper_Phenotyping:
+    id: kit-201318
     name: T helper phenotyping
     aliases: [T helper, Th1, Th2, Th17, Tfh]
     category: lineage
     blurb: Th1 / Th2 / Th17 / Tfh by chemokine receptors.
   Hu_Mono/Mac_Phenotyping:
+    id: kit-201317
     name: Monocyte / macrophage phenotyping
     aliases: [monocytes, macrophages, myeloid]
     category: lineage
   Hu_AML_Phenotyping:
+    id: kit-201316
     name: AML phenotyping
     aliases: [AML, leukaemia, leukemia, blasts, myeloid malignancy, haematology, hematology, cancer]
     category: disease
   Hu_B_Cell_Phenotyping:
+    id: kit-201314
     name: B-cell phenotyping
     aliases: [B-cell, B cells, humoral]
     category: lineage
     blurb: Naive, memory, transitional and plasmablast B cells.
   Hu_HSPC_Phenotyping_Ex:
+    id: kit-201311
     name: HSPC phenotyping
     aliases: [HSPC, HSC, stem cells, progenitors, CD34, haematopoiesis, hematopoiesis, bone marrow]
     category: lineage
   Hu_PB_Basic:
+    id: kit-201302
     name: Peripheral blood basic
     aliases: [peripheral blood, PBMC, whole blood, immunophenotyping]
     category: lineage
   Hu_PB_Basic_II:
+    id: kit-201315
     name: Peripheral blood basic II
     aliases: [peripheral blood, PBMC, whole blood, immunophenotyping]
     category: lineage
   Hu_PB_Phenotyping:
+    id: kit-201304
     name: Peripheral blood phenotyping
     aliases: [peripheral blood, PBMC, whole blood, immunophenotyping]
     category: lineage
   Hu_T_Cell_Phenotyping:
+    id: kit-201305
     name: T-cell phenotyping
     aliases: [T-cell, immunophenotyping]
     category: lineage
   Hu_T_Cell_Phenotyping_Ex:
+    id: kit-201307
     name: T-cell phenotyping expansion
     aliases: [T-cell, expansion]
     category: lineage
   Hu_ES/iPS:
+    id: kit-201320
     name: ES / iPS pluripotency
     aliases: [pluripotency, iPSC, iPS, ES cells, stem cells, embryonic]
     category: functional
   Hu/Mouse_CellCycle:
+    id: kit-201313
     name: Cell cycle
     aliases: [cell cycle, proliferation, DNA]
     category: functional
     blurb: IdU, cyclin B1, pHistone H3 and pRb for cell-cycle phase.
   Hum/Mouse_Signaling_I:
+    id: kit-201309
     name: Signalling I
     aliases: [signalling, signaling, phospho, pathway, STAT]
     category: functional
     blurb: Phospho-flow core (pSTAT, pERK, pS6, pAKT).
   Hu_Cytokine_I:
+    id: kit-201308
     name: Cytokine I
     aliases: [cytokines, ICS, intracellular cytokine staining]
     category: functional

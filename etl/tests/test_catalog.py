@@ -1,14 +1,9 @@
-import json
-
 import pytest
 
-from pd3_etl import BUILD
-from pd3_etl.names import name_parts, norm_key, split_target
+from pd3_etl.catalog import APPLICATIONS, ASSAY_TYPES, classify
+from pd3_etl.names import name_parts, norm_key, parse_mass, split_target
 
-
-@pytest.fixture(scope="module")
-def cat():
-    return json.loads((BUILD / "catalog.json").read_text(encoding="utf8"))
+# `cat` is a session fixture in conftest.py: catalog.build() run into a tmp path, not the committed artefact.
 
 
 def by_name(cat, name):
@@ -86,3 +81,69 @@ def test_metal_spelling_normalised(cat):
 
 def test_no_unmapped_species(cat):
     assert cat["stats"]["unmapped_species_terms"] == []
+
+
+def test_application_and_assay_are_an_allow_list():
+    assert classify("CyTOF (Cytometry)", APPLICATIONS, "Application", "3145001B") == "suspension"
+    assert classify("IMC (Imaging)", APPLICATIONS, "Application", "3145001B") == "imaging"
+    assert classify("Maxpar", ASSAY_TYPES, "Assay Type", "3145001B") == "maxpar"
+    assert classify("MaxparOnDemand", ASSAY_TYPES, "Assay Type", "3145001B") == "ondemand"
+
+
+def test_unknown_application_raises_naming_value_and_part():
+    with pytest.raises(ValueError) as e:
+        classify("IMC (Imaging v2)", APPLICATIONS, "Application", "3145001B")
+    assert "IMC (Imaging v2)" in str(e.value) and "3145001B" in str(e.value)
+    with pytest.raises(ValueError) as e:
+        classify("MaxparOnDemand Plus", ASSAY_TYPES, "Assay Type", "3111001C")
+    assert "MaxparOnDemand Plus" in str(e.value) and "3111001C" in str(e.value)
+
+
+def test_every_sku_carries_a_classified_application(cat):
+    assert {s["application"] for s in cat["skus"]} == {"suspension", "imaging"}
+    assert {s["assay_type"] for s in cat["skus"]} == {"maxpar", "ondemand"}
+    assert sum(s["application"] == "imaging" for s in cat["skus"]) == 372
+
+
+def test_alias_order_is_a_total_order(cat):
+    """Case-only ties (FOXP3 / Foxp3) must sort reproducibly, not by set iteration order."""
+    for t in cat["targets"]:
+        assert t["aliases"] == sorted(t["aliases"], key=lambda s: (s.lower(), s)), t["id"]
+    foxp3 = by_name(cat, "FoxP3")
+    assert foxp3["aliases"] == ["FOXP3", "Foxp3"]
+
+
+def test_metal_labels_all_parse_to_a_mass(cat):
+    assert cat["stats"]["unparsed_metals"] == []
+    assert all(c["mass"] == parse_mass(c["metal"]) for c in cat["conjugates"])
+
+
+def test_version_is_dated_content_hash(cat):
+    date, _, digest = cat["version"].partition(".")
+    assert len(date.split("-")) == 3 and len(digest) == 8
+    assert cat["sources"]["store_csv"].startswith("sbt-catalog-master-")
+
+
+def test_target_ids_are_ledgered(cat):
+    """Every exposed target id is pinned in data/curated/target-ids.yaml, so a store refresh cannot rename one."""
+    from pd3_etl.catalog import load_target_ledger
+
+    ledger = load_target_ledger()
+    ids = {t["id"] for t in cat["targets"]}
+    assert cat["stats"]["targets_without_ledger_id"] == [], "run `uv run pd3-etl catalog --update-ledger` and commit"
+    assert ids <= set(ledger)
+    # keys are the normalised spelling they pin: a ledger key that is not a normalised key can never match
+    from pd3_etl.names import norm_key
+    assert all(norm_key(k) == k for k in ledger)
+
+
+def test_ledger_pins_root_regardless_of_union_order():
+    from pd3_etl.catalog import TargetRegistry, pin_target_ids
+
+    a, b = TargetRegistry(), TargetRegistry()
+    for r, order in ((a, ["CD3e", "CD3 epsilon"]), (b, ["CD3 epsilon", "CD3e"])):
+        for n in order:
+            r.add(n, "store")
+        r.union(*[r.add(n, "store") for n in order])
+    ia, ib = pin_target_ids(a)[1], pin_target_ids(b)[1]
+    assert ia["cd3e"] == ib["cd3e"] == "cd3e"  # 'cd3e' is in the ledger, so the root is fixed

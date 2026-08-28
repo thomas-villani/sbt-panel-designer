@@ -4,7 +4,7 @@ Engine re-ran 61 SBT kits with every row unlocked (domain = catalogue metals for
 pdv2 weights (pure sum received SO / T), default reserved channels, seed 1. `def` columns use the default soft weights (w_sens 0.2).
 
 * engine better than kit: **45**, equal: **16**, worse: **0** (none)
-* total engine time: 376 ms (6 ms per kit, 3 restarts x 20k iterations)
+* total engine time: 428 ms (7 ms per kit, 3 restarts x 20k iterations)
 
 | Kit | App | Instrument | Rows | Kit SO/T | Kit worst row | Engine SO/T | Engine worst row | Moves | Def SO/T | Def moves |
 |---|---|---|---:|---:|---|---:|---|---:|---:|---:|
@@ -81,7 +81,7 @@ pdv2 weights (pure sum received SO / T), default reserved channels, seed 1. `def
 * CD45 (HI30): 154 -> 89Y
 * CD183/CXCR3 (G025H7): 156 -> 163Dy
 * CD194/CCR4 (L291H4): 158 -> 153Eu
-* CD69 (FN50): 162 -> 113In
+* CD69 (FN50): 162 -> 113Cd
 * CD45RO (UCHL1): 165 -> 149Sm
 * CD278/ICOS (C398.4A): 168 -> 175Lu
 * CD45RA (HI100): 169 -> 150Nd
@@ -94,7 +94,7 @@ pdv2 weights (pure sum received SO / T), default reserved channels, seed 1. `def
 * CD16 (3G8): 148 -> 209Bi
 * CD134/OX40 (ACT35): 150 -> 158Gd
 * CD45 (HI30): 154 -> 196Pt
-* CD69 (FN50): 162 -> 113In
+* CD69 (FN50): 162 -> 113Cd
 * CD45RO (UCHL1): 165 -> 150Nd
 * CD278/ICOS (C398.4A): 168 -> 175Lu
 * CD3ε (UCHT1): 170 -> 141Pr
@@ -245,7 +245,7 @@ pdv2 weights (pure sum received SO / T), default reserved channels, seed 1. `def
 * CD16 (3G8): 148 -> 209Bi
 * CD25/IL2Rα (2A3): 149 -> 169Tm
 * CD45 (HI30): 154 -> 89Y
-* CD69 (FN50): 162 -> 113In
+* CD69 (FN50): 162 -> 113Cd
 * CD45RO (UCHL1): 165 -> 149Sm
 * CD45RA (HI100): 169 -> 153Eu
 * CD3ε (UCHT1): 170 -> 141Pr
@@ -459,7 +459,7 @@ pdv2 weights (pure sum received SO / T), default reserved channels, seed 1. `def
 
 ### MDIPA expansion - T cell 3 (suspension, cytof_xt) - kit 0.00 -> engine 0.00
 * TIGIT (MBSA43): 159 -> 153Eu
-* CD69 (FN50): 162 -> 113In
+* CD69 (FN50): 162 -> 113Cd
 * CD279/PD-1 (EH12.2H7): 165 -> 155Gd
 * CD366/TIM-3 (F38-2E2): 169 -> 159Tb
 * CD278/ICOS (C398.4A): 175 -> 168Er

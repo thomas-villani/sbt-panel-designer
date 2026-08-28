@@ -1,5 +1,5 @@
 /** Bundle loading, indexing, clone defaulting and search. Pure functions over the slim bundles. */
-import type { RowSpec } from "@pd3/engine";
+import { canCarryAntibody, levelFromSignal as engineLevelFromSignal, type ChannelDef, type RowSpec } from "@pd3/engine";
 import type {
   AbundanceLevel, Bundles, Catalog, Conjugate, InstrumentBundle, ModuleMarker, PanelModule, PanelRow, Publications, Setup, Species, Target,
 } from "./types";
@@ -15,7 +15,34 @@ export async function loadBundles(): Promise<Bundles> {
   const [instruments, catalog, mods] = await Promise.all([
     get<InstrumentBundle>("instruments.json"), get<Catalog>("catalog.json"), get<{ modules: PanelModule[] }>("modules.json"),
   ]);
-  return { instruments, catalog, modules: mods.modules };
+  const bundles = { instruments, catalog, modules: mods?.modules };
+  assertBundles(bundles);
+  return bundles;
+}
+
+/**
+ * The bundles are fetched JSON and otherwise trusted blindly; a renamed ETL field would surface as a TypeError deep in
+ * a component. This checks the handful of things everything else assumes and fails with a message that says what to do.
+ */
+export function assertBundles(b: { instruments?: unknown; catalog?: unknown; modules?: unknown }): asserts b is Bundles {
+  const fail = (what: string): never => { throw new Error(`data bundle problem: ${what} (rebuild with \`npm run data\`)`); };
+  const inst = b.instruments as Partial<InstrumentBundle> | undefined;
+  const cat = b.catalog as Partial<Catalog> | undefined;
+  const mods = b.modules as PanelModule[] | undefined;
+  if (!inst) return fail("instruments.json is missing");
+  if (typeof inst.version !== "string" || !Array.isArray(inst.instruments) || !inst.instruments.length) fail("instruments.json has no instruments");
+  if (!inst.reserved?.suspension || !inst.reserved?.imaging || !inst.isotopes) fail("instruments.json is missing reserved roles or isotopes");
+  for (const i of inst.instruments!) if (!i.id || !i.modality || !Array.isArray(i.channels) || !i.channels.length) fail(`instrument ${i?.id ?? "?"} has no channels`);
+  if (!cat) return fail("catalog.json is missing");
+  if (typeof cat.version !== "string" || !Array.isArray(cat.targets) || !cat.targets.length || !Array.isArray(cat.conjugates) || !cat.conjugates.length) fail("catalog.json has no targets/conjugates");
+  const t0 = cat.targets![0], c0 = cat.conjugates![0];
+  if (typeof t0.id !== "string" || !Array.isArray(t0.aliases) || !Array.isArray(t0.applications)) fail("catalog.json target shape changed");
+  if (typeof c0.target_id !== "string" || typeof c0.mass !== "number" || !Array.isArray(c0.skus) || !Array.isArray(c0.reactivity)) fail("catalog.json conjugate shape changed");
+  if (!Array.isArray(mods) || !mods.length) return fail("modules.json has no modules");
+  const m0 = mods[0];
+  if (typeof m0.id !== "string" || !Array.isArray(m0.markers) || !Array.isArray(m0.species) || !m0.application) fail("modules.json module shape changed");
+  const k0 = mods.flatMap((m) => m.markers)[0];
+  if (k0 && (!Array.isArray(k0.applications) || !k0.polarity || !Array.isArray(k0.catalogue_metals))) fail("modules.json marker shape changed");
 }
 
 /** Papers per target: ~1 MB, fetched only when the UI first needs it. Missing file = no badges. */
@@ -38,6 +65,7 @@ export class Index {
   readonly targetsById = new Map<string, Target>();
   readonly conjugatesByTarget = new Map<string, Conjugate[]>();
   readonly modulesById = new Map<string, PanelModule>();
+  readonly modulesBySlug = new Map<string, PanelModule>();
   readonly modulesByTarget = new Map<string, PanelModule[]>();
   private readonly keys: { key: string; target: Target }[] = [];
 
@@ -54,6 +82,7 @@ export class Index {
     }
     for (const m of bundles.modules) {
       this.modulesById.set(m.id, m);
+      this.modulesBySlug.set(m.slug, m);
       for (const k of m.markers) {
         if (!k.target_id) continue;
         const arr = this.modulesByTarget.get(k.target_id) ?? [];
@@ -65,7 +94,23 @@ export class Index {
 
   get instruments() { return this.bundles.instruments; }
 
-  instrument(id: string) { return this.instruments.instruments.find((i) => i.id === id)!; }
+  /** A module by id, or by slug for links / saved panels written before kit ids became stable ledger ids. */
+  module(ref: string): PanelModule | null {
+    return this.modulesById.get(ref) ?? this.modulesBySlug.get(ref) ?? null;
+  }
+
+  /** Translate an id-or-legacy-slug reference to the current id; unknown references pass through unchanged. */
+  moduleId(ref: string): string {
+    return this.module(ref)?.id ?? ref;
+  }
+
+  /** The instrument, or a clear error: setups reach the app validated (lib/url.ts), so a miss here is a programming error. */
+  instrument(id: string) {
+    const inst = this.instrumentOrNull(id);
+    if (!inst) throw new Error(`unknown instrument "${id}"`);
+    return inst;
+  }
+  instrumentOrNull(id: string) { return this.instruments.instruments.find((i) => i.id === id) ?? null; }
 
   /** Catalogue conjugates usable for this target under the current setup (application + species). */
   candidates(targetId: string, setup: Setup): Conjugate[] {
@@ -201,9 +246,9 @@ function speciesOk(reactivity: string[], species: Species): boolean {
   return reactivity.includes(species);
 }
 
+/** Abundance band for a titrated signal: the engine's banding, so the UI and the prior can never disagree. */
 export function levelFromSignal(signal: number | null | undefined): AbundanceLevel | null {
-  if (signal == null) return null;
-  return signal < 60 ? "low" : signal < 150 ? "medium" : signal < 400 ? "high" : "very_high";
+  return signal == null ? null : engineLevelFromSignal(signal);
 }
 
 export const LEVEL_LABEL: Record<AbundanceLevel, string> = { low: "dim", medium: "medium", high: "bright", very_high: "very bright" };
@@ -285,9 +330,21 @@ export function reservedRoles(setup: Setup): string[] {
   return roles;
 }
 
+/** Masses taken by the scaffolding roles switched on in this setup (DNA, viability, barcoding, segmentation), with the role label. */
+export function reservedChannels(idx: Index, setup: Setup): Map<number, string> {
+  const roles = reservedRoles(setup);
+  const m = new Map<number, string>();
+  for (const r of idx.instruments.reserved[setup.modality]) if (roles.includes(r.role)) for (const mass of r.masses) m.set(mass, r.label);
+  return m;
+}
+/** Masses no antibody may use in this setup: reserved roles plus the channels the user keeps empty. */
+export function reservedMasses(idx: Index, setup: Setup): Set<number> {
+  return new Set([...reservedChannels(idx, setup).keys(), ...(setup.blocked ?? [])]);
+}
+
 /** A channel the instrument detects *and* SBT sells a conjugation metal for (or the user opted into): the only kind an antibody can occupy. */
 export function antibodyChannel(c: { mass: number; usable: boolean; antibody?: boolean }, setup?: Pick<Setup, "extraMetals">): boolean {
-  return c.usable && (c.antibody !== false || !!setup?.extraMetals?.includes(c.mass));
+  return canCarryAntibody(c as ChannelDef, setup?.extraMetals); // the engine's rule, so the budget and the optimiser agree
 }
 
 /** The opted-in metal group a mass belongs to, if any (so the UI can caveat it). */

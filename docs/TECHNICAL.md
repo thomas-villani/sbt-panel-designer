@@ -4,7 +4,7 @@ Maxpar Panel Designer v3: a login-optional web tool for designing metal-balanced
 replacing pdv2.standardbio.com. Product spec: [`../SPEC.md`](../SPEC.md). This document is the engineering
 reference: what exists, how the data flows, and the maths the engine implements.
 
-Status (2026-08-24): Phase 0 (data), Phase 1 (engine) and Phase 2 (web UI alpha, GitHub Pages workflow) complete. Next: pdv2 CSV import/export, exclusivity groups in the UI, quote/cart integration after UI sign-off.
+Status (2026-08-27): Phase 0 (data), Phase 1 (engine) and Phase 2 (web UI alpha, GitHub Pages workflow) complete. Next: pdv2 CSV import/export, exclusivity groups in the UI, quote/cart integration after UI sign-off.
 
 ---
 
@@ -22,10 +22,10 @@ etl/                       Python 3.12 (uv) ETL: pd3_etl package + pytest
 engine/                    TypeScript engine (npm, vitest): PO model, optimiser, explanations, kit validation
 tools/                     one-off harvest/inspection scripts used to capture pdv2 (node .mjs, python)
 web/                       Next.js 16 static export (Tailwind, Zustand, engine in a Web Worker) — Phase 2
-.github/workflows/         pages.yml: test engine, build web, deploy to GitHub Pages
+.github/workflows/         ci.yml: etl/engine/web suites + a data/build regeneration gate; pages.yml: tests, build, deploy the demo
 ```
 
-Tests: 30 pytest (etl), 12 vitest (engine), 32 vitest + 5 Playwright (web) - see 3c. All work committed on `master`.
+Tests: 40 pytest (etl), 24 vitest (engine), 64 vitest + 8 Playwright (web) - see 3c. All work committed on `master`.
 
 ---
 
@@ -55,8 +55,11 @@ uv run pd3-etl pubs          # -> data/build/publications.json (needs catalog.js
 uv run pytest
 ```
 Order matters: `modules` resolves kit rows against the catalogue. `python` is not on PATH on the dev machine — always `uv run`.
+Dated inputs are resolved by glob (newest `sbt-catalog-master-*.csv`, `pdv2-conjugate-signal-tolerance-*.csv`,
+`pdv2-product-table-*.csv`); `PD3_STORE_CSV`, `PD3_HARVEST_CSV`, `PD3_PDV2_PRODUCTS_CSV` and `PD3_PUBS_DB` override them.
+Progress goes to stderr through `logging` (`PD3_LOG_LEVEL`, default INFO); the stats summary stays on stdout as JSON.
 
-### 2.3 `instruments.json` (148 KB) — `etl/pd3_etl/instruments.py`
+### 2.3 `instruments.json` — `etl/pd3_etl/instruments.py`
 
 ```
 { version, sources, isotopes{mass: element},
@@ -85,7 +88,7 @@ Order matters: `modules` resolves kit rows against the catalogue. `python` is no
   (default, hard), Ru counterstain.
 * Range classes: `bright_only` < 142, `mid` 142–152, `sweet_spot` 153–176, `heavy` > 176.
 
-### 2.4 `catalog.json` (2.9 MB) — `etl/pd3_etl/catalog.py`, `names.py`
+### 2.4 `catalog.json` — `etl/pd3_etl/catalog.py`, `names.py`
 
 Stats: 1,822 SKUs → 1,146 conjugates → 566 clones → 384 targets; 527 of 774 suspension conjugates carry titrated S/T.
 
@@ -112,9 +115,9 @@ Normalisation rules (`names.py`):
   codes → human+mouse with a `low_confidence` flag. Zero unmapped terms.
 * pdv2 placeholders (signal 100, tolerance 1) are marked `st_source: placeholder` and never treated as titrated.
 
-### 2.5 `modules.json` (464 KB) — `etl/pd3_etl/modules.py`
+### 2.5 `modules.json` — `etl/pd3_etl/modules.py`
 
-118 modules: 62 SBT kits (36 suspension, 26 IMC) + 14 curated (`data/curated/modules/curated-v0.yaml`) + 42 cell-type
+123 modules: 62 SBT kits (36 suspension, 26 IMC) + 19 curated (`data/curated/modules/curated-v0.yaml`) + 42 cell-type
 modules (`data/curated/modules/cell-types.yaml`, category `celltype`: 29 human of which 17 for IMC, 13 mouse; 1-4 defining markers each plus
 lineage negatives marked `negative: true` → `polarity: "neg"`, a `definition` in gating shorthand and search `aliases`).
 Every marker carries `applications` (modalities the target is sold for); the store's `markerPlan` skips recommended markers
@@ -124,7 +127,7 @@ The 34 non-matching rows are listed in `docs/review/kit-rows-not-in-catalogue.cs
 so the BOM must treat MDIPA as a single SKU).
 
 ```
-modules[] { id, slug, name, source sbt_kit|curated, kit{pdv2_kit_id, pdv2_experiment_id, raw_name, ...}|null,
+modules[] { id (stable: kit-<pdv2 kit_id> from kit-overrides.yaml, or the curated id), slug (display/routing), name, source sbt_kit|curated, kit{pdv2_kit_id, pdv2_experiment_id, raw_name, ...}|null,
             application suspension|imaging|both, species[], instruments[], sample_types[], category, blurb, featured, hidden,
             markers[ { target_id, target_name, raw_target, kind antibody|segmentation, role required|recommended|optional,
                        clone, metal, mass, signal, tolerance, st_source titrated|default|kit_pill|curated,
@@ -135,16 +138,17 @@ modules[] { id, slug, name, source sbt_kit|curated, kit{pdv2_kit_id, pdv2_experi
 * Abundance level from titrated signal: `< 60 low`, `< 150 medium`, `< 400 high`, else `very_high`.
   IMC kits carry pdv2's 33/66/100 "pill" → low/medium/high (`st_source: kit_pill`). IMC has **no** titrated data anywhere in pdv2.
 * Kit display metadata (name, category, blurb, featured, hidden) comes from `kit-overrides.yaml`, keyed by raw pdv2 kit name.
+* Stable ids: every kit in `kit-overrides.yaml` carries an `id` (`kit-<pdv2 kit_id>`, disambiguated by hand where pdv2 reuses a kit_id - 201508); the ETL fails on a kit without one. Target ids are pinned by `data/curated/target-ids.yaml` (`catalog.pin_target_ids`): the ledger key wins as the union-find root, a target with no ledger entry gets a provisional id and fails `test_target_ids_are_ledgered` until `uv run pd3-etl catalog --update-ledger` appends it; two ledger keys in one group (an alias merged two targets) is an ETL error. The web resolves legacy slugs via `Index.module()` / `moduleId()` on decode.
 * Kit groups carry no population info; exclusivity groups will be derived from lineage knowledge later.
 * Curated targets not sold by SBT (TOX, Helios, NKG2A/D, HK2, IgA, CD79B) stay in modules with `in_catalogue: false`.
 
 Review sheets: `docs/review/targets-aliases.csv` (every merge), `docs/review/modules.csv`, `docs/review/kit-rows-not-in-catalogue.csv`.
 
-### 2.6 `publications.json` (925 KB) — `etl/pd3_etl/pubs.py`
+### 2.6 `publications.json` — `etl/pd3_etl/pubs.py`
 
 Papers per catalogue target from a local literature database: `biblionautica.sqlite` (OpenAlex-derived; tables `works`
 with title/abstract, `venues`, `work_techniques` tagging each paper cytof / imc / mihc / …). Path from `PD3_PUBS_DB`, default
-Tom's copy under `notes/personal/megalodon/artifacts/`; when the file is absent the command leaves the committed JSON alone
+`data/biblionautica.sqlite`; when the file is absent the command leaves the committed JSON alone
 (CI never needs the DB). Only `cytof` and `imc` papers are scanned (5,437). Matching: whole-word regex over title + abstract
 built from the target name and aliases (`search_terms`: split on `/` unless the tail is numeric, drop bracket qualifiers,
 stoplist for words like Fas / kit). 312 of 384 targets hit; per target the JSON keeps `n`, `by_technique` and the top 12
@@ -264,12 +268,16 @@ uses are released and noted). `evaluate(kitAssignment)` vs `balance()`:
 
 Next.js 16 (App Router, Turbopack) static export, Tailwind 4, Zustand 5. No server: the three bundles are fetched from
 `public/data/` and the engine runs in a Web Worker. `npm run dev` / `npm run build` (both first run `scripts/build-data.mjs`,
-which slims `data/build/*.json` into `public/data/` — 87 + 609 + 281 KB). Output: `web/out/`.
+which slims `data/build/*.json` into `public/data/`). Output: `web/out/`.
 
 ```
 app/            layout + page (renders <Designer/>)
-components/     Designer (stepper + sidebar layout), SetupStep, BuildStep, BalanceStep (+HeatMap), MassStrip, OrderStep,
-                PanelSidebar (rows: abundance pill, metal chip after Balance, clone/lock drawer), ui (Button/Pill/Card/Tile)
+components/     Designer (header stepper + sidebar layout; binds step ids to views), SetupStep, BuildStep, BalanceStep
+                (triage page; WarnCard + Fold, HeatMap, EngineError are its leaf components), MassStrip, SpillTable, OpenChannels,
+                OrderStep, PanelSidebar (rows: abundance pill, metal chip after Balance, clone/lock drawer), ui (Button/Pill/Card/Tile)
+                Convention: step pages and the sidebar read the store; leaf components take *state* through props (result, rows,
+                health) and may bind store *actions* directly, so they render the same in a preview / test with a different result.
+lib/steps.ts    the step registry: order/labels (STEPS), stepEnabled, nextStep (mobile bar), landingStep (restored panels)
 lib/types.ts    slim bundle shapes; PanelRow {id, targetId, name, level, clone, custom, locked, moduleIds}; Setup
 lib/data.ts     loadBundles, loadPublications (lazy), Index (targets/conjugates/modules, normKey search, searchModules
                 for cell types by name/alias, cloneOptions, modulesFor, suggestNext),
@@ -320,10 +328,10 @@ Not yet in the UI: exclusivity groups (engine supports them), pdv2 CSV import/ex
 
 | Layer | Tool | Where | Run |
 |---|---|---|---|
-| ETL | pytest (30) | `etl/tests/` — incl. `test_pubs.py` (term builder + in-memory SQLite build) | `cd etl && uv run pytest` |
-| Engine | vitest (12) | `engine/test/` | `cd engine && npm test` |
-| Web unit | vitest (30) | `web/test/` — data (search, clone defaulting, modules, cell types + searchModules, rowSpec, budget), url, bom, store, saved (fake window/localStorage) | `cd web && npm test` |
-| Web e2e | @playwright/test (4 + 1) | `web/e2e/designer.spec.ts` (project `desktop`, 1400×950) — SPEC 6.4 Priya scenario, suspension backbone, custom-conjugation search, cell-type search + overlap copy + save/draft restore + papers; `web/e2e/mobile.spec.ts` (project `mobile`, iPhone 13 size + touch, `isMobile: false` because Chromium's mobile layout-viewport emulation breaks hit-testing of fixed bars) — bottom-sheet flow through all four steps with no horizontal overflow | `cd web && npm run e2e` (starts `next dev` itself); `--project=mobile` for phones only |
+| ETL | pytest (40) | `etl/tests/` — `conftest.py` runs `catalog.build()` / `modules.build()` into a tmp path (never the committed artefact); `test_pubs.py` is the term builder + an in-memory SQLite build | `cd etl && uv run pytest` |
+| Engine | vitest (24) | `engine/test/` | `cd engine && npm test` |
+| Web unit | vitest (64) | `web/test/` — `data.test.ts` (search, clone defaulting, modules, cell types + searchModules, rowSpec, budget), `url.test.ts`, `bom.test.ts`, `store.test.ts`, `saved.test.ts` (fake window/localStorage), `clones.test.ts`, `health.test.ts` (panel-health headline), `conjugation.test.ts` (custom and opt-in metals) | `cd web && npm test` |
+| Web e2e | @playwright/test (7 + 1) | `web/e2e/designer.spec.ts` (project `desktop`, 1400×950) — SPEC 6.4 Priya scenario, suspension backbone, custom-conjugation search, cell-type search + overlap copy + save/draft restore + papers; `web/e2e/mobile.spec.ts` (project `mobile`, iPhone 13 size + touch, `isMobile: false` because Chromium's mobile layout-viewport emulation breaks hit-testing of fixed bars) — bottom-sheet flow through all four steps with no horizontal overflow | `cd web && npm run e2e` (starts `next dev` itself); `--project=mobile` for phones only |
 | Kit reproduction | script | `engine/scripts/validate-kits.ts` | `cd engine && npm run validate` |
 
 Root `package.json` wraps them: `npm test` (etl + engine + web unit), `npm run e2e`, `npm run typecheck`, `npm run validate`,
@@ -340,7 +348,9 @@ layers incl. Playwright (Chromium) on every push/PR; `pages.yml` deploys the dem
 * **Windows dev box**: `uv run` for all Python; Node 24 / npm 11. Bash heredocs with non-ASCII or heavy quoting are unreliable —
   write such files with the editor tool. pandas import makes ETL commands take > 60 s the first time; use generous timeouts.
 * `pytest | tail` hides the exit code — run `uv run pytest` bare in CI.
-* Never hand-edit `data/build/*`; change `data/curated/*` or the ETL and rebuild. Bundle `version` strings are date-stamped.
+* Never hand-edit `data/build/*`; change `data/curated/*` or the ETL and rebuild. Bundle `version` is `YYYY-MM-DD.<8 hex of a sha256
+  over the input files>` (`instruments.json` keeps its curated YAML version and appends the hash); CI regenerates the bundles and
+  diffs them against the commit, ignoring that one line.
 * Metal labels are normalised to `<mass><Element>` (`145ND` → `145Nd`); the engine keys everything by integer mass.
 * Conjugate ids: `targetId|clone|metal|s` (suspension) or `|i` (imaging). Kit rows link via `conjugate_id` when an exact match
   is sold, else `catalogue_metals` lists what is.

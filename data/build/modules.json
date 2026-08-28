@@ -1,5 +1,5 @@
 {
- "version": "2026-08-25.1",
+ "version": "2026-08-27.3244c944",
  "stats": {
   "modules": 123,
   "sbt_kits": 62,
@@ -18,11 +18,12 @@
    "human-nk: CD159a/NKG2A",
    "human-nk: CD314/NKG2D",
    "metabolism: HK2"
-  ]
+  ],
+  "unparsed_kit_values": []
  },
  "modules": [
   {
-   "id": "neuro-expansion",
+   "id": "kit-9100012",
    "slug": "neuro-expansion",
    "name": "Neuro expansion",
    "source": "sbt_kit",
@@ -138,7 +139,7 @@
    ]
   },
   {
-   "id": "glioblastoma",
+   "id": "kit-9100011",
    "slug": "glioblastoma",
    "name": "Glioblastoma",
    "source": "sbt_kit",
@@ -307,7 +308,7 @@
    ]
   },
   {
-   "id": "synuclein-tau-mixed-pathology",
+   "id": "kit-9100010",
    "slug": "synuclein-tau-mixed-pathology",
    "name": "Synuclein / tau mixed pathology",
    "source": "sbt_kit",
@@ -455,7 +456,7 @@
    ]
   },
   {
-   "id": "proteinopathies",
+   "id": "kit-9100009",
    "slug": "proteinopathies",
    "name": "Proteinopathies",
    "source": "sbt_kit",
@@ -627,7 +628,7 @@
    ]
   },
   {
-   "id": "multiple-sclerosis",
+   "id": "kit-9100008",
    "slug": "multiple-sclerosis",
    "name": "Multiple sclerosis",
    "source": "sbt_kit",
@@ -749,7 +750,7 @@
    ]
   },
   {
-   "id": "alzheimer-s-disease",
+   "id": "kit-9100007",
    "slug": "alzheimer-s-disease",
    "name": "Alzheimer's disease",
    "source": "sbt_kit",
@@ -870,7 +871,7 @@
    ]
   },
   {
-   "id": "parkinson-s-disease",
+   "id": "kit-9100006",
    "slug": "parkinson-s-disease",
    "name": "Parkinson's disease",
    "source": "sbt_kit",
@@ -989,7 +990,7 @@
    ]
   },
   {
-   "id": "cell-signalling",
+   "id": "kit-201522",
    "slug": "cell-signalling",
    "name": "Cell signalling",
    "source": "sbt_kit",
@@ -1203,7 +1204,7 @@
    ]
   },
   {
-   "id": "cell-metabolism",
+   "id": "kit-201521",
    "slug": "cell-metabolism",
    "name": "Cell metabolism",
    "source": "sbt_kit",
@@ -1414,7 +1415,7 @@
    ]
   },
   {
-   "id": "t-cell-exhaustion",
+   "id": "kit-201519",
    "slug": "t-cell-exhaustion",
    "name": "T-cell exhaustion",
    "source": "sbt_kit",
@@ -1578,7 +1579,7 @@
    ]
   },
   {
-   "id": "basic-immune",
+   "id": "kit-201518",
    "slug": "basic-immune",
    "name": "Basic immune",
    "source": "sbt_kit",
@@ -1724,7 +1725,7 @@
    ]
   },
   {
-   "id": "tissue-architecture",
+   "id": "kit-201517",
    "slug": "tissue-architecture",
    "name": "Tissue architecture",
    "source": "sbt_kit",
@@ -1848,7 +1849,7 @@
    ]
   },
   {
-   "id": "immune-cell-expansion",
+   "id": "kit-201516",
    "slug": "immune-cell-expansion",
    "name": "Immune cell expansion",
    "source": "sbt_kit",
@@ -2074,7 +2075,7 @@
    ]
   },
   {
-   "id": "epithelial-mesenchymal",
+   "id": "kit-201515",
    "slug": "epithelial-mesenchymal",
    "name": "Epithelial / mesenchymal",
    "source": "sbt_kit",
@@ -2228,7 +2229,7 @@
    ]
   },
   {
-   "id": "functional-state",
+   "id": "kit-201514",
    "slug": "functional-state",
    "name": "Functional state",
    "source": "sbt_kit",
@@ -2400,7 +2401,7 @@
    ]
   },
   {
-   "id": "myeloid-macrophages",
+   "id": "kit-201513",
    "slug": "myeloid-macrophages",
    "name": "Myeloid / macrophages",
    "source": "sbt_kit",
@@ -2607,7 +2608,7 @@
    ]
   },
   {
-   "id": "lymphoid",
+   "id": "kit-201512",
    "slug": "lymphoid",
    "name": "Lymphoid",
    "source": "sbt_kit",
@@ -2758,7 +2759,7 @@
    ]
   },
   {
-   "id": "stromal",
+   "id": "kit-201511",
    "slug": "stromal",
    "name": "Stromal",
    "source": "sbt_kit",
@@ -2900,7 +2901,7 @@
    ]
   },
   {
-   "id": "immuno-oncology-31-marker-master-panel",
+   "id": "kit-201509",
    "slug": "immuno-oncology-31-marker-master-panel",
    "name": "Immuno-oncology (31-marker master panel)",
    "source": "sbt_kit",
@@ -3795,7 +3796,7 @@
    ]
   },
   {
-   "id": "immuno-oncology-kit-16",
+   "id": "kit-201508",
    "slug": "immuno-oncology-kit-16",
    "name": "Immuno-oncology kit (16)",
    "source": "sbt_kit",
@@ -4271,7 +4272,7 @@
    ]
   },
   {
-   "id": "neuro-oncology-bundle",
+   "id": "kit-201508-neuro-oncology",
    "slug": "neuro-oncology-bundle",
    "name": "Neuro-oncology bundle",
    "source": "sbt_kit",
@@ -4954,7 +4955,7 @@
    ]
   },
   {
-   "id": "tissue-architecture-kit-5",
+   "id": "kit-201507",
    "slug": "tissue-architecture-kit-5",
    "name": "Tissue architecture kit (5)",
    "source": "sbt_kit",
@@ -5129,7 +5130,7 @@
    ]
   },
   {
-   "id": "tumour-infiltrating-lymphocytes-kit",
+   "id": "kit-201506",
    "slug": "tumour-infiltrating-lymphocytes-kit",
    "name": "Tumour-infiltrating lymphocytes kit",
    "source": "sbt_kit",
@@ -5388,7 +5389,7 @@
    ]
   },
   {
-   "id": "immune-activation-kit",
+   "id": "kit-201503",
    "slug": "immune-activation-kit",
    "name": "Immune activation kit",
    "source": "sbt_kit",
@@ -5531,7 +5532,7 @@
    ]
   },
   {
-   "id": "cell-segmentation-kit",
+   "id": "kit-201500",
    "slug": "cell-segmentation-kit",
    "name": "Cell segmentation kit",
    "source": "sbt_kit",
@@ -5625,7 +5626,7 @@
    ]
   },
   {
-   "id": "neurophenotyping-kit",
+   "id": "kit-201337",
    "slug": "neurophenotyping-kit",
    "name": "Neurophenotyping kit",
    "source": "sbt_kit",
@@ -5846,7 +5847,7 @@
    ]
   },
   {
-   "id": "mdipa-expansion-basic-activation",
+   "id": "kit-201408",
    "slug": "mdipa-expansion-basic-activation",
    "name": "MDIPA expansion - basic activation",
    "source": "sbt_kit",
@@ -6045,7 +6046,7 @@
    ]
   },
   {
-   "id": "mdipa-expansion-t-cell-3",
+   "id": "kit-201407",
    "slug": "mdipa-expansion-t-cell-3",
    "name": "MDIPA expansion - T cell 3",
    "source": "sbt_kit",
@@ -6274,7 +6275,7 @@
    ]
   },
   {
-   "id": "mdipa-expansion-t-cell-2",
+   "id": "kit-201406",
    "slug": "mdipa-expansion-t-cell-2",
    "name": "MDIPA expansion - T cell 2",
    "source": "sbt_kit",
@@ -6500,7 +6501,7 @@
    ]
   },
   {
-   "id": "mdipa-expansion-myeloid-b-cell-2",
+   "id": "kit-201403",
    "slug": "mdipa-expansion-myeloid-b-cell-2",
    "name": "MDIPA expansion - myeloid / B cell 2",
    "source": "sbt_kit",
@@ -6719,7 +6720,7 @@
    ]
   },
   {
-   "id": "mdipa-expansion-myeloid-b-cell-1",
+   "id": "kit-201402",
    "slug": "mdipa-expansion-myeloid-b-cell-1",
    "name": "MDIPA expansion - myeloid / B cell 1",
    "source": "sbt_kit",
@@ -6939,7 +6940,7 @@
    ]
   },
   {
-   "id": "t-cell-checkpoint-and-cytokine-40-marker",
+   "id": "kit-201348",
    "slug": "t-cell-checkpoint-and-cytokine-40-marker",
    "name": "T-cell checkpoint and cytokine (40-marker)",
    "source": "sbt_kit",
@@ -8064,7 +8065,7 @@
    ]
   },
   {
-   "id": "broad-immune-checkpoint-34-marker",
+   "id": "kit-201347",
    "slug": "broad-immune-checkpoint-34-marker",
    "name": "Broad immune checkpoint (34-marker)",
    "source": "sbt_kit",
@@ -9028,7 +9029,7 @@
    ]
   },
   {
-   "id": "cytokine-expansion",
+   "id": "kit-201346",
    "slug": "cytokine-expansion",
    "name": "Cytokine expansion",
    "source": "sbt_kit",
@@ -9141,7 +9142,7 @@
    ]
   },
   {
-   "id": "cytotoxic-mediators",
+   "id": "kit-201345",
    "slug": "cytotoxic-mediators",
    "name": "Cytotoxic mediators",
    "source": "sbt_kit",
@@ -9260,7 +9261,7 @@
    ]
   },
   {
-   "id": "cytokine-core",
+   "id": "kit-201344",
    "slug": "cytokine-core",
    "name": "Cytokine core",
    "source": "sbt_kit",
@@ -9433,7 +9434,7 @@
    ]
   },
   {
-   "id": "immune-checkpoint-expansion-2",
+   "id": "kit-201343",
    "slug": "immune-checkpoint-expansion-2",
    "name": "Immune checkpoint expansion 2",
    "source": "sbt_kit",
@@ -9548,7 +9549,7 @@
    ]
   },
   {
-   "id": "immune-checkpoint-expansion-1",
+   "id": "kit-201342",
    "slug": "immune-checkpoint-expansion-1",
    "name": "Immune checkpoint expansion 1",
    "source": "sbt_kit",
@@ -9662,7 +9663,7 @@
    ]
   },
   {
-   "id": "immune-checkpoint-core",
+   "id": "kit-201341",
    "slug": "immune-checkpoint-core",
    "name": "Immune checkpoint core",
    "source": "sbt_kit",
@@ -9945,7 +9946,7 @@
    ]
   },
   {
-   "id": "t-cell-profiling",
+   "id": "kit-201340",
    "slug": "t-cell-profiling",
    "name": "T-cell profiling",
    "source": "sbt_kit",
@@ -10248,7 +10249,7 @@
    ]
   },
   {
-   "id": "broad-immune-profiling",
+   "id": "kit-201339",
    "slug": "broad-immune-profiling",
    "name": "Broad immune profiling",
    "source": "sbt_kit",
@@ -10842,7 +10843,7 @@
    ]
   },
   {
-   "id": "tbmnk-granulocytes",
+   "id": "kit-201338",
    "slug": "tbmnk-granulocytes",
    "name": "TBMNK + granulocytes",
    "source": "sbt_kit",
@@ -11140,7 +11141,7 @@
    ]
   },
   {
-   "id": "direct-immune-profiling-assay-mdipa",
+   "id": "kit-201334",
    "slug": "direct-immune-profiling-assay-mdipa",
    "name": "Direct Immune Profiling Assay (MDIPA)",
    "source": "sbt_kit",
@@ -11970,7 +11971,7 @@
    ]
   },
   {
-   "id": "direct-immune-profiling-assay-legacy",
+   "id": "kit-201325",
    "slug": "direct-immune-profiling-assay-legacy",
    "name": "Direct Immune Profiling Assay (legacy)",
    "source": "sbt_kit",
@@ -12794,7 +12795,7 @@
    ]
   },
   {
-   "id": "t-cell-basic-io",
+   "id": "kit-201323",
    "slug": "t-cell-basic-io",
    "name": "T-cell basic IO",
    "source": "sbt_kit",
@@ -13494,7 +13495,7 @@
    ]
   },
   {
-   "id": "t-cell-complete-io",
+   "id": "kit-201322",
    "slug": "t-cell-complete-io",
    "name": "T-cell complete IO",
    "source": "sbt_kit",
@@ -14446,7 +14447,7 @@
    ]
   },
   {
-   "id": "t-cell-io-expansion",
+   "id": "kit-201321",
    "slug": "t-cell-io-expansion",
    "name": "T-cell IO expansion",
    "source": "sbt_kit",
@@ -14705,7 +14706,7 @@
    ]
   },
   {
-   "id": "es-ips-pluripotency",
+   "id": "kit-201320",
    "slug": "es-ips-pluripotency",
    "name": "ES / iPS pluripotency",
    "source": "sbt_kit",
@@ -14897,7 +14898,7 @@
    ]
   },
   {
-   "id": "regulatory-t-cells",
+   "id": "kit-201319",
    "slug": "regulatory-t-cells",
    "name": "Regulatory T cells",
    "source": "sbt_kit",
@@ -15288,7 +15289,7 @@
    ]
   },
   {
-   "id": "t-helper-phenotyping",
+   "id": "kit-201318",
    "slug": "t-helper-phenotyping",
    "name": "T helper phenotyping",
    "source": "sbt_kit",
@@ -15737,7 +15738,7 @@
    ]
   },
   {
-   "id": "monocyte-macrophage-phenotyping",
+   "id": "kit-201317",
    "slug": "monocyte-macrophage-phenotyping",
    "name": "Monocyte / macrophage phenotyping",
    "source": "sbt_kit",
@@ -16190,7 +16191,7 @@
    ]
   },
   {
-   "id": "aml-phenotyping",
+   "id": "kit-201316",
    "slug": "aml-phenotyping",
    "name": "AML phenotyping",
    "source": "sbt_kit",
@@ -16649,7 +16650,7 @@
    ]
   },
   {
-   "id": "peripheral-blood-basic-ii",
+   "id": "kit-201315",
    "slug": "peripheral-blood-basic-ii",
    "name": "Peripheral blood basic II",
    "source": "sbt_kit",
@@ -16888,7 +16889,7 @@
    ]
   },
   {
-   "id": "b-cell-phenotyping",
+   "id": "kit-201314",
    "slug": "b-cell-phenotyping",
    "name": "B-cell phenotyping",
    "source": "sbt_kit",
@@ -17225,7 +17226,7 @@
    ]
   },
   {
-   "id": "cell-cycle",
+   "id": "kit-201313",
    "slug": "cell-cycle",
    "name": "Cell cycle",
    "source": "sbt_kit",
@@ -17364,7 +17365,7 @@
    ]
   },
   {
-   "id": "hspc-phenotyping",
+   "id": "kit-201311",
    "slug": "hspc-phenotyping",
    "name": "HSPC phenotyping",
    "source": "sbt_kit",
@@ -17581,7 +17582,7 @@
    ]
   },
   {
-   "id": "signalling-i",
+   "id": "kit-201309",
    "slug": "signalling-i",
    "name": "Signalling I",
    "source": "sbt_kit",
@@ -17796,7 +17797,7 @@
    ]
   },
   {
-   "id": "cytokine-i",
+   "id": "kit-201308",
    "slug": "cytokine-i",
    "name": "Cytokine I",
    "source": "sbt_kit",
@@ -18121,7 +18122,7 @@
    ]
   },
   {
-   "id": "t-cell-phenotyping-expansion",
+   "id": "kit-201307",
    "slug": "t-cell-phenotyping-expansion",
    "name": "T-cell phenotyping expansion",
    "source": "sbt_kit",
@@ -18408,7 +18409,7 @@
    ]
   },
   {
-   "id": "t-cell-phenotyping",
+   "id": "kit-201305",
    "slug": "t-cell-phenotyping",
    "name": "T-cell phenotyping",
    "source": "sbt_kit",
@@ -18884,7 +18885,7 @@
    ]
   },
   {
-   "id": "peripheral-blood-phenotyping",
+   "id": "kit-201304",
    "slug": "peripheral-blood-phenotyping",
    "name": "Peripheral blood phenotyping",
    "source": "sbt_kit",
@@ -19361,7 +19362,7 @@
    ]
   },
   {
-   "id": "peripheral-blood-basic",
+   "id": "kit-201302",
    "slug": "peripheral-blood-basic",
    "name": "Peripheral blood basic",
    "source": "sbt_kit",

@@ -6,11 +6,12 @@ import type { Fix, Result } from "@pd3/engine";
 import { Index, channelBudget, defaultInstrument, levelFromSignal, loadPublications, markerPlan, reservedRoles, resolveClones, rowMetals, rowSpec, titratedST } from "./data";
 import { balanceInWorker, initEngine } from "./engine-client";
 import { panelHealth, type Health } from "./health";
-import { clearDraft, deleteSaved, listSaved, loadSaved, readDraft, savePanel, writeDraft, type SavedPanel } from "./saved";
+import { LocalPanelStore, clearDraft, readDraft, writeDraft, type PanelStore, type SavedPanel } from "./saved";
 import type { AbundanceLevel, Bundles, PanelModule, PanelRow, Publications, Setup } from "./types";
-import { decodeState, writeHash, type UrlState } from "./url";
+import { landingStep, type Step } from "./steps";
+import { decodeStateResult, writeHash, type DecodeDrift, type PanelDoc } from "./url";
 
-export type Step = "setup" | "build" | "balance" | "order";
+export type { Step } from "./steps";
 
 export interface FixPreview {
   fix: Fix;
@@ -33,6 +34,17 @@ export interface CloneTrial {
   receivedOverT: number;
 }
 
+/** Where the panel on screen should come from at start-up. The store never reads `window.location` itself. */
+export interface Seed {
+  /** A share-link hash (with or without `#`). Empty = none. */
+  hash?: string;
+  /** A ready document (a landing page, a test). Wins over `hash`. */
+  doc?: PanelDoc;
+  /** Start from these modules on this setup (module landing pages, ROADMAP §6). */
+  moduleIds?: string[];
+  setup?: Partial<Setup>;
+}
+
 interface State {
   idx: Index | null;
   loadError: string | null;
@@ -45,14 +57,16 @@ interface State {
   engineError: string | null;
   notice: string | null; // one-line feedback on the last action (e.g. a fix that was tried and reverted)
   nSamples: number;
-  saved: SavedPanel[]; // localStorage, see lib/saved.ts
+  saved: SavedPanel[]; // from the PanelStore, see lib/saved.ts
+  saving: boolean;
   restoredDraft: boolean; // the panel on screen came from the last session's draft, not a share link
   pubs: Publications | null; // papers per target, loaded on demand
+  pubsState: "idle" | "loading" | "ready" | "error";
 
-  init: (b: Bundles) => void;
-  savePanel: (name: string) => void;
-  loadSavedPanel: (id: string) => void;
-  deleteSavedPanel: (id: string) => void;
+  init: (b: Bundles, seed?: Seed) => void;
+  savePanel: (name: string) => Promise<void>;
+  loadSavedPanel: (id: string) => Promise<void>;
+  deleteSavedPanel: (id: string) => Promise<void>;
   dismissRestored: () => void;
   ensurePubs: () => void;
   setStep: (s: Step) => void;
@@ -75,7 +89,8 @@ interface State {
   commitPreview: (p: FixPreview) => void;
   /** Re-balance with each other catalogue clone for this row, so the card can say which one makes a conflict go away. */
   cloneAlternatives: (rowId: string) => Promise<CloneTrial[]>;
-  acceptWarning: (rowId: string, reason: string) => void;
+  /** Sign off the spill a row receives. An empty reason is refused: the note travels to the Order page and the share link. */
+  acceptWarning: (rowId: string, reason: string) => boolean;
   unacceptWarning: (rowId: string) => void;
   balanceNow: () => Promise<void>;
   dismissNotice: () => void;
@@ -90,22 +105,36 @@ const DEFAULT_SETUP: Setup = {
 
 let timer: ReturnType<typeof setTimeout> | null = null;
 let runSeq = 0; // results from a superseded run are dropped
+let panelStore: PanelStore = new LocalPanelStore();
+/** Swap the persistence backend (a server-backed store once accounts exist). */
+export function setPanelStore(s: PanelStore): void { panelStore = s; }
+
+/** One sentence about what a decoded document lost, or null when nothing did. */
+export function driftNotice(drift: DecodeDrift, idx: Index): string | null {
+  const parts: string[] = [];
+  if (drift.unknownTargets.length) parts.push(`${drift.unknownTargets.length} marker${drift.unknownTargets.length > 1 ? "s are" : " is"} no longer in the catalogue (${drift.unknownTargets.slice(0, 4).join(", ")}${drift.unknownTargets.length > 4 ? ", …" : ""}) and will be treated as custom`);
+  if (drift.resetFields.includes("instrumentId") || drift.resetFields.includes("modality")) parts.push("its instrument is not in this catalogue, so the default was used and pins were released");
+  else if (drift.resetFields.length) parts.push(`some setup choices (${drift.resetFields.join(", ")}) were reset`);
+  if (!parts.length) return null;
+  const when = drift.catalogChanged ? `This panel was made against an older catalogue (now ${idx.bundles.catalog.version}): ` : "";
+  return `${when}${parts.join("; ")}.`;
+}
 
 export const useStore = create<State>((set, get) => {
-  const snapshot = (): UrlState => {
-    const { setup, rows, nSamples, balanced } = get();
-    return { setup, rows, nSamples, balanced };
+  const snapshot = (): PanelDoc => {
+    const { setup, rows, nSamples, balanced, idx } = get();
+    return { setup, rows, nSamples, balanced, ...(idx ? { catalogVersion: idx.bundles.catalog.version } : {}) };
   };
   const persist = () => {
-    const st = snapshot();
+    const doc = snapshot();
     const idx = get().idx ?? undefined;
-    writeHash(st, idx);
-    writeDraft(st, idx);
+    writeHash(doc, idx);
+    writeDraft(doc, idx);
   };
-  const restore = (st: UrlState, extra: Partial<State> = {}) => {
-    set({ setup: st.setup, rows: st.rows, nSamples: st.nSamples, balanced: st.balanced, result: null, notice: null, step: st.rows.length ? (st.balanced ? "balance" : "build") : "setup", ...extra });
+  const restore = (doc: PanelDoc, extra: Partial<State> = {}) => {
+    set({ setup: doc.setup, rows: doc.rows, nSamples: doc.nSamples, balanced: doc.balanced, result: null, notice: null, step: landingStep(doc), ...extra });
     persist();
-    if (st.rows.length) void run();
+    if (doc.rows.length) void run();
   };
   /** Balance now. Metals stay hidden until the user opens Balance, but the health line is live from the first marker. */
   const run = async () => {
@@ -121,9 +150,10 @@ export const useStore = create<State>((set, get) => {
         extraReserved: setup.blocked, extraMetals: setup.extraMetals,
       }, { seed: 1 });
       if (seq === runSeq) {
-        const resolved = resolveClones(idx, get().rows, result.assignment, setup);
-        set({ result, balancing: false, ...(resolved !== get().rows ? { rows: resolved } : {}) });
-        if (resolved !== rows) persist();
+        const current = get().rows;
+        const resolved = resolveClones(idx, current, result.assignment, setup);
+        set({ result, balancing: false, ...(resolved !== current ? { rows: resolved } : {}) });
+        if (resolved !== current) persist();
       }
     } catch (e) {
       if (seq === runSeq) set({ engineError: e instanceof Error ? e.message : String(e), balancing: false });
@@ -175,36 +205,59 @@ export const useStore = create<State>((set, get) => {
     const level = o.level ?? levelFromSignal(st?.signal) ?? "medium";
     return { id: targetId, targetId, name: t.name, level, clone, custom: !clone, locked, moduleIds: o.moduleId ? [o.moduleId] : [], ...(pinned ? { clonePinned: true } : {}) };
   };
+  const refreshSaved = async () => { try { set({ saved: await panelStore.list() }); } catch { set({ saved: [] }); } };
 
   return {
     idx: null, loadError: null, setup: DEFAULT_SETUP, rows: [], step: "setup", balanced: false, balancing: false, result: null,
-    engineError: null, notice: null, nSamples: 20, saved: [], restoredDraft: false, pubs: null,
+    engineError: null, notice: null, nSamples: 20, saved: [], saving: false, restoredDraft: false, pubs: null, pubsState: "idle",
 
-    init: (b) => {
+    init: (b, seed = {}) => {
       const idx = new Index(b);
       initEngine(b.instruments);
-      set({ idx, saved: listSaved() });
-      get().ensurePubs();
-      const fromUrl = typeof window !== "undefined" ? decodeState(window.location.hash, idx) : null;
-      const draft = fromUrl ? null : readDraft(idx);
-      if (fromUrl) restore(fromUrl);
-      else if (draft && draft.rows.length) restore(draft, { restoredDraft: true });
+      set({ idx, notice: null, engineError: null });
+      void refreshSaved();
+      // 1. An explicit document or a share link.
+      let doc: PanelDoc | null = seed.doc ?? null;
+      let notice: string | null = null;
+      if (!doc && seed.hash) {
+        const r = decodeStateResult(seed.hash, idx);
+        if (r.ok) { doc = r.doc; notice = driftNotice(r.drift, idx); }
+        else if (r.reason !== "empty") notice = r.reason === "unsupported_version" ? "This share link was made by a newer version of the designer and could not be read." : "This share link could not be read; it may have been cut short when it was copied.";
+      }
+      if (doc) { restore(doc, { notice }); return; }
+      // 2. A landing page's starting point.
+      if (seed.moduleIds?.length || seed.setup) {
+        const setup = { ...DEFAULT_SETUP, ...seed.setup };
+        set({ setup: seed.setup?.modality && !seed.setup.instrumentId ? { ...setup, instrumentId: defaultInstrument(idx, setup.modality) } : setup, rows: [], balanced: false, step: seed.moduleIds?.length ? "build" : "setup", notice });
+        for (const id of seed.moduleIds ?? []) { const m = idx.module(id); if (m) get().addModule(m); }
+        return;
+      }
+      // 3. Last session's draft.
+      const draft = readDraft(idx);
+      if (draft && draft.rows.length) restore(draft, { restoredDraft: true, notice });
+      else if (notice) set({ notice });
     },
-    savePanel: (name) => {
+    savePanel: async (name) => {
       if (!name.trim()) return;
-      savePanel(name, snapshot());
-      set({ saved: listSaved() });
+      set({ saving: true });
+      try {
+        await panelStore.save(name, snapshot(), get().idx ?? undefined);
+        await refreshSaved();
+      } catch (e) {
+        set({ notice: `The panel was not saved: ${e instanceof Error ? e.message : String(e)}. Copy the share link instead.` });
+      } finally { set({ saving: false }); }
     },
-    loadSavedPanel: (id) => {
-      const st = loadSaved(id, get().idx ?? undefined);
-      if (st) restore(st, { restoredDraft: false });
+    loadSavedPanel: async (id) => {
+      const idx = get().idx ?? undefined;
+      const doc = await panelStore.load(id, idx);
+      if (doc) restore(doc, { restoredDraft: false });
     },
-    deleteSavedPanel: (id) => { deleteSaved(id); set({ saved: listSaved() }); },
+    deleteSavedPanel: async (id) => { await panelStore.delete(id); await refreshSaved(); },
     dismissRestored: () => set({ restoredDraft: false }),
     ensurePubs: () => {
-      if (get().pubs || typeof window === "undefined") return;
-      set({ pubs: { version: null, source: null, stats: {}, targets: {} } }); // placeholder while loading
-      void loadPublications().then((pubs) => set({ pubs }));
+      if (get().pubsState !== "idle" || typeof window === "undefined") return;
+      set({ pubsState: "loading" });
+      void loadPublications().then((pubs) => set({ pubs, pubsState: pubs.version ? "ready" : "error" }));
     },
     setStep: (step) => {
       // Opening Balance is the moment metals become visible; the engine has usually already run.
@@ -213,10 +266,13 @@ export const useStore = create<State>((set, get) => {
     },
     setSetup: (patch) => {
       const { idx, setup, rows } = get();
-      const next = { ...setup, ...patch };
+      const next: Setup = { ...setup, ...patch };
       if (patch.modality && patch.modality !== setup.modality) {
         next.instrumentId = idx ? defaultInstrument(idx, patch.modality) : next.instrumentId;
         next.sampleType = patch.modality === "imaging" ? "ffpe" : "pbmc";
+        // Blocked channels and opted-in metals are choices about one instrument's strip; they do not carry across.
+        next.blocked = [];
+        delete next.extraMetals;
       }
       // Re-resolve clones under the new setup; keep the user's level choices.
       const rerows = idx ? rows.map((r) => {
@@ -278,8 +334,9 @@ export const useStore = create<State>((set, get) => {
     freeClone: (id) => { set({ rows: get().rows.map((r) => (r.id === id ? { ...r, clonePinned: false, custom: false, locked: null } : r)) }); touch(); },
     lockRow: (id, mass) => {
       const { idx, setup } = get();
+      // One row per channel: pinning here releases whoever else was pinned to the same mass (the engine refuses duplicate locks).
       set({ rows: get().rows.map((r) => {
-        if (r.id !== id) return r;
+        if (r.id !== id) return mass != null && r.locked === mass ? { ...r, locked: null } : r;
         // A metal no catalogue vial of this clone covers means the user has (or will make) their own conjugate.
         const custom = mass != null && !!idx && r.targetId != null && !r.custom && !rowMetals(idx, r, setup).includes(mass) ? true : r.custom;
         return { ...r, locked: mass, custom };
@@ -335,7 +392,13 @@ export const useStore = create<State>((set, get) => {
       }
       return out.sort((a, b) => a.receivedOverT - b.receivedOverT || a.score - b.score);
     },
-    acceptWarning: (rowId, reason) => { set({ rows: get().rows.map((r) => (r.id === rowId ? { ...r, accepted: reason.trim() || "accepted" } : r)) }); persist(); },
+    acceptWarning: (rowId, reason) => {
+      const why = reason.trim();
+      if (!why) return false;
+      set({ rows: get().rows.map((r) => (r.id === rowId ? { ...r, accepted: why } : r)) });
+      persist();
+      return true;
+    },
     unacceptWarning: (rowId) => { set({ rows: get().rows.map((r) => (r.id === rowId ? { ...r, accepted: null } : r)) }); persist(); },
     balanceNow: async () => {
       set({ balanced: true });
@@ -347,7 +410,7 @@ export const useStore = create<State>((set, get) => {
     clearPanel: () => {
       if (timer) clearTimeout(timer);
       runSeq++;
-      set({ rows: [], result: null, balanced: false, restoredDraft: false, notice: null, step: "setup" });
+      set({ rows: [], result: null, balanced: false, restoredDraft: false, notice: null, engineError: null, step: "setup" });
       clearDraft();
       // Drop the share hash too: a leftover "#..." from the previous panel read as a file name to SBT's testers.
       if (typeof window !== "undefined" && window.location.hash) window.history.replaceState(null, "", window.location.pathname + window.location.search);

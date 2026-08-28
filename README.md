@@ -3,7 +3,7 @@
 A public, login-optional panel designer for CyTOF (suspension) and IMC (tissue) mass cytometry.
 Describe species, sample, instrument and biology; get back a metal-balanced, orderable panel.
 
-Full specification: [`docs/SPEC.md`](docs/SPEC.md).
+Full specification: [`SPEC.md`](SPEC.md).
 
 See [docs/TECHNICAL.md](docs/TECHNICAL.md) for the engineering reference (data pipeline, bundle formats, engine maths, validation).
 
@@ -15,7 +15,7 @@ See [docs/TECHNICAL.md](docs/TECHNICAL.md) for the engineering reference (data p
 | `etl/` | Python (`uv`) ETL: raw + curated → `data/build/*.json` |
 | `engine/` | TypeScript optimisation engine (PO model, optimiser, explanations) + vitest |
 | `web/` | Next.js app (static export; GitHub Pages for demo, Azure SWA for prod) |
-| `docs/` | Spec, ADRs, validation reports |
+| `docs/` | `TECHNICAL.md` (engineering reference) and `review/` (validation reports, audits) |
 | `tools/` | One-off capture scripts used to harvest pdv2 (not part of the build) |
 
 ## Tests
@@ -33,9 +33,15 @@ cd etl
 uv run pd3-etl instruments      # spillover matrices + sensitivity curves + reserved channels
 uv run pd3-etl catalog          # store CSV + pdv2 S/T harvest -> targets/clones/conjugates/SKUs
 uv run pd3-etl modules          # 62 SBT kits + curated + cell-type modules, resolved against the catalogue
-uv run pd3-etl pubs             # papers per marker from the local literature DB (optional; PD3_PUBS_DB)
+uv run pd3-etl pubs             # papers per marker from the local literature DB (optional; see below)
 uv run pytest
 ```
+
+Dated inputs are picked up by glob (newest `sbt-catalog-master-*.csv`, `pdv2-conjugate-signal-tolerance-*.csv`,
+`pdv2-product-table-*.csv`) and can be overridden with `PD3_STORE_CSV`, `PD3_HARVEST_CSV`, `PD3_PDV2_PRODUCTS_CSV`.
+`pubs` needs the OpenAlex-derived literature database: it looks for `data/biblionautica.sqlite`, or wherever
+`PD3_PUBS_DB` points (`PD3_PUBS_DB=/path/to/biblionautica.sqlite uv run pd3-etl pubs`). When the file is missing the
+command logs a warning and leaves `data/build/publications.json` untouched, so CI never needs it.
 
 ### Engine (TypeScript, `engine/`)
 
