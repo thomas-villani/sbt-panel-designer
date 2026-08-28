@@ -5,13 +5,15 @@
  * plus unary soft terms (sensitivity, flagged channels, caller-supplied per-channel costs).
  * Everything is index-based (rows 0..n-1, channels 0..m-1) so the optimiser's deltas are cheap.
  */
-import type { Mechanism, Problem, RangeClass, Row, Weights } from "./types";
+import { canCarryAntibody } from "./problem";
+import { DIM_SCALE } from "./tuning";
+import type { Mechanism, Problem, RangeClass, ReservedReason, Row, Weights } from "./types";
 import { DEFAULT_WEIGHTS } from "./types";
 
 export const NONE = -1;
 
 export function dimness(tolerance: number): number {
-  return 1 / (1 + tolerance / 10);
+  return 1 / (1 + tolerance / DIM_SCALE);
 }
 
 export function mechanismOf(donorMass: number, recipientMass: number, donorEl: string, recipientEl: string): Mechanism {
@@ -20,6 +22,29 @@ export function mechanismOf(donorMass: number, recipientMass: number, donorEl: s
   if (d === 1 || d === -1) return "adjacent";
   if (donorEl === recipientEl) return "isotope";
   return "other";
+}
+
+/**
+ * The channels an antibody may occupy on this problem: detected, a conjugation metal exists (or the mass was opted
+ * into via `problem.extraMetals`), and not hard-reserved. Sorted ascending. This is the one definition of the
+ * universe - `Model` adds only the masses rows are locked on, which may legitimately sit outside it.
+ */
+export function channelUniverse(problem: Problem): number[] {
+  const reserved = new Set(problem.reserved);
+  const extra = problem.extraMetals;
+  const out: number[] = [];
+  for (const c of problem.instrument.channels) {
+    if (canCarryAntibody(c, extra) && !reserved.has(c.mass)) out.push(c.mass);
+  }
+  return [...new Set(out)].sort((a, b) => a - b);
+}
+
+/** A row whose lock was dropped because an earlier row is pinned to the same mass. */
+export interface DuplicateLock {
+  rowId: string;
+  mass: number;
+  /** the row that keeps the mass */
+  keptBy: string;
 }
 
 export class Model {
@@ -34,6 +59,8 @@ export class Model {
   readonly flaggedCh: Uint8Array;
   /** channels that exist only because a row is locked on a reserved / unusable mass */
   readonly reservedCh: Uint8Array;
+  /** why `reservedCh[c]` is set (null when the channel is a normal antibody channel) */
+  readonly reservedReason: (ReservedReason | null)[] = [];
   readonly massIndex = new Map<number, number>();
   readonly m: number;
   /** effective PO fraction [donorCh][recipientCh] incl. oxide/adjacent weights */
@@ -48,6 +75,8 @@ export class Model {
   readonly unary: Float64Array[]; // per row per channel
   readonly interact: Uint8Array[]; // per row pair
   readonly movable: number[]; // unlocked row indices
+  /** locks dropped as duplicates (see the rule below); reported as `duplicate_lock` warnings */
+  readonly duplicateLocks: DuplicateLock[] = [];
 
   constructor(readonly problem: Problem) {
     this.rows = problem.rows;
@@ -56,12 +85,26 @@ export class Model {
     const reserved = new Set(problem.reserved);
     const flagged = new Set(problem.flagged ?? []);
     const chDefs = new Map(problem.instrument.channels.map((c) => [c.mass, c]));
-    const lockedMasses = new Set(this.rows.map((r) => r.locked).filter((x): x is number => x != null));
 
-    // Channel universe: antibody-capable (detected + a conjugation metal exists), non-reserved channels, plus any mass a row is locked on.
-    const universe = new Set<number>();
-    for (const c of problem.instrument.channels) if (c.usable && c.antibody !== false && !reserved.has(c.mass)) universe.add(c.mass);
-    for (const x of lockedMasses) universe.add(x);
+    // Duplicate-lock rule: two rows pinned to one mass cannot both be placed. The first row in panel order keeps the
+    // pin; every later one is treated as unlocked (free to move inside its own domain) and reported as a duplicate.
+    const lockOwner = new Map<number, number>();
+    const effLocked: (number | null)[] = this.rows.map((r, i) => {
+      const mass = r.locked;
+      if (mass == null) return null;
+      const first = lockOwner.get(mass);
+      if (first == null) {
+        lockOwner.set(mass, i);
+        return mass;
+      }
+      this.duplicateLocks.push({ rowId: r.id, mass, keptBy: this.rows[first].id });
+      return null;
+    });
+
+    // Channel universe: antibody-capable (detected + a conjugation metal or an opted-in mass), non-reserved channels,
+    // plus any mass a row is locked on.
+    const universe = new Set<number>(channelUniverse(problem));
+    for (const mass of lockOwner.keys()) universe.add(mass);
     const sorted = [...universe].sort((a, b) => a - b);
     this.reservedCh = new Uint8Array(sorted.length);
     this.flaggedCh = new Uint8Array(sorted.length);
@@ -73,7 +116,15 @@ export class Model {
       this.relSens.push(def?.rel_sensitivity ?? 0.3);
       this.rangeClass.push(def?.range_class ?? null);
       this.massIndex.set(mass, i);
-      if (!def?.usable || def.antibody === false || reserved.has(mass)) this.reservedCh[i] = 1;
+      const reason: ReservedReason | null = reserved.has(mass)
+        ? "role"
+        : !def || !def.usable
+          ? "undetected"
+          : canCarryAntibody(def, problem.extraMetals)
+            ? null
+            : "blocked";
+      this.reservedReason.push(reason);
+      if (reason) this.reservedCh[i] = 1;
       if (flagged.has(mass)) this.flaggedCh[i] = 1;
     });
     this.m = sorted.length;
@@ -114,8 +165,9 @@ export class Model {
       this.T[i] = row.tolerance;
       const allowed = new Uint8Array(this.m);
       const dom: number[] = [];
-      if (row.locked != null) {
-        const c = this.massIndex.get(row.locked)!;
+      const lock = effLocked[i];
+      if (lock != null) {
+        const c = this.massIndex.get(lock)!;
         this.locked[i] = c;
         allowed[c] = 1;
         dom.push(c);

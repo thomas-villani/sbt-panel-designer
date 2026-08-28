@@ -42,27 +42,52 @@ export interface BuildOptions {
   weights?: Partial<Weights>;
 }
 
-/** A channel the instrument detects and SBT sells a conjugation metal for. */
-export function canCarryAntibody(c: ChannelDef): boolean {
-  return c.usable && c.antibody !== false;
+/**
+ * The single rule for "can an antibody sit on this channel?": the instrument detects it and SBT sells a conjugation
+ * metal for it - or the user opted the mass in (`extraMetals`, e.g. Cd on IMC). `Model`, `buildProblem` and the web
+ * all go through this; nothing else may re-derive it.
+ */
+export function canCarryAntibody(c: ChannelDef, extraMetals?: Iterable<number>): boolean {
+  if (!c.usable) return false;
+  if (c.antibody !== false) return true;
+  if (!extraMetals) return false;
+  for (const m of extraMetals) if (m === c.mass) return true;
+  return false;
 }
 
 export function pickInstrument(bundle: InstrumentBundle, id?: string, modality?: Modality): InstrumentDef {
   if (id) {
     const inst = bundle.instruments.find((i) => i.id === id);
-    if (!inst) throw new Error(`unknown instrument ${id}`);
+    if (!inst) throw new Error(`unknown instrument "${id}" (have: ${bundle.instruments.map((i) => i.id).join(", ")})`);
     return inst;
   }
   const mod = modality ?? "suspension";
-  return bundle.instruments.find((i) => i.modality === mod && i.default_for_modality) ??
-    bundle.instruments.find((i) => i.modality === mod && i.current)!;
+  const inst = bundle.instruments.find((i) => i.modality === mod && i.default_for_modality) ??
+    bundle.instruments.find((i) => i.modality === mod && i.current);
+  if (!inst) {
+    const known = [...new Set(bundle.instruments.map((i) => i.modality))].join(", ");
+    throw new Error(`no current instrument for modality "${mod}" (bundle has: ${known || "none"})`);
+  }
+  return inst;
 }
 
 export function buildProblem(bundle: InstrumentBundle, opts: BuildOptions): Problem {
   const instrument = pickInstrument(bundle, opts.instrumentId, opts.modality);
   const po = bundle.po_matrices[String(instrument.po_matrix)];
   if (!po) throw new Error(`no PO matrix ${instrument.po_matrix} for ${instrument.id}`);
+
+  const dupIds = [...new Set(opts.rows.map((r) => r.id).filter((id, i, all) => all.indexOf(id) !== i))];
+  if (dupIds.length) throw new Error(`duplicate row id(s): ${dupIds.join(", ")}`);
+
   const roles = bundle.reserved[instrument.modality] ?? [];
+  if (opts.reservedRoles) {
+    const unknown = opts.reservedRoles.filter((r) => !roles.some((x) => x.role === r));
+    if (unknown.length) {
+      throw new Error(
+        `unknown reserved role(s) for ${instrument.modality}: ${unknown.join(", ")} (have: ${roles.map((r) => r.role).join(", ")})`,
+      );
+    }
+  }
   const enabled = opts.reservedRoles
     ? roles.filter((r) => opts.reservedRoles!.includes(r.role))
     : roles.filter((r) => r.default);
@@ -70,10 +95,14 @@ export function buildProblem(bundle: InstrumentBundle, opts: BuildOptions): Prob
   const reserved = new Set<number>(opts.extraReserved ?? []);
   const flagged = new Set<number>();
   for (const r of enabled) for (const m of r.masses) (r.hard ? reserved : flagged).add(m);
-  for (const m of release) reserved.delete(m);
+  // A released mass is fully released: still reserved would block it, still flagged would warn about it.
+  for (const m of release) {
+    reserved.delete(m);
+    flagged.delete(m);
+  }
 
   const extra = new Set(opts.extraMetals ?? []);
-  const usable = new Set(instrument.channels.filter((c) => canCarryAntibody(c) || (c.usable && extra.has(c.mass))).map((c) => c.mass));
+  const usable = new Set(instrument.channels.filter((c) => canCarryAntibody(c, extra)).map((c) => c.mass));
   const custom = [...(bundle.conjugation?.[instrument.modality]?.masses ??
     [...X8_MASSES, ...(instrument.modality === "suspension" ? MCP9_MASSES : [])]), ...extra];
   const customMasses = [...new Set(custom)].filter((m) => usable.has(m));
@@ -94,5 +123,12 @@ export function buildProblem(bundle: InstrumentBundle, opts: BuildOptions): Prob
     };
   });
 
-  return { instrument, po, rows, reserved: [...reserved].sort((a, b) => a - b), flagged: [...flagged].sort((a, b) => a - b), weights: opts.weights };
+  return {
+    instrument, po, rows,
+    reserved: [...reserved].sort((a, b) => a - b),
+    flagged: [...flagged].sort((a, b) => a - b),
+    extraMetals: [...extra].sort((a, b) => a - b),
+    weights: opts.weights,
+    bundleVersion: bundle.version,
+  };
 }

@@ -2,6 +2,12 @@
  * SPEC 5.6 validation: re-run every SBT kit through the engine with all rows unlocked and compare the
  * pdv2 objective (sum received SO / T) of SBT's own metal assignment with the engine's.
  * Writes docs/review/kit-validation.md.
+ *
+ * `--check` (npm run validate:check) is the CI gate: it runs the same comparison but writes nothing (the report
+ * carries wall-clock timings, so regenerating it would dirty the tree on every run) and exits 1 when
+ *   - the engine is worse than SBT on any kit, or
+ *   - the kit count / better / equal / worse numbers differ from the header of the committed report.
+ * Fix a failure by understanding the change, then running `npm run validate` and committing the new report.
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -9,6 +15,7 @@ import { fileURLToPath } from "node:url";
 import { DEFAULT_WEIGHTS, PDV2_WEIGHTS, balance, buildProblem, evaluate } from "../src/index";
 import type { InstrumentBundle, Result, RowSpec } from "../src/index";
 
+const CHECK = process.argv.includes("--check");
 const here = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(here, "../..");
 const bundle: InstrumentBundle = JSON.parse(readFileSync(resolve(ROOT, "data/build/instruments.json"), "utf8"));
@@ -91,6 +98,32 @@ for (const r of reports) {
   lines.push(...(r.moved.length ? r.moved.map((m) => `* ${m}`) : ["* no changes"]), "");
 }
 const out = resolve(ROOT, "docs/review/kit-validation.md");
+
+if (CHECK) {
+  const fail = (msg: string) => { console.error(`validate --check FAILED: ${msg}`); process.exit(1); };
+  if (worse.length) fail(`engine worse than SBT on ${worse.length} kit(s): ${worse.map((r) => r.name).join(", ")}`);
+  let committed: string;
+  try {
+    committed = readFileSync(out, "utf8");
+  } catch {
+    fail(`${out} is missing - run \`npm run validate\` and commit it`);
+    process.exit(1);
+  }
+  const counts = /better than kit: \*\*(\d+)\*\*, equal: \*\*(\d+)\*\*, worse: \*\*(\d+)\*\*/.exec(committed);
+  const kits = /re-ran (\d+) SBT kits/.exec(committed);
+  if (!counts || !kits) fail("cannot read the counts from the committed report header");
+  const [wantBetter, wantEqual, wantWorse] = counts!.slice(1).map(Number);
+  const wantKits = Number(kits![1]);
+  if (wantKits !== reports.length || wantBetter !== better || wantEqual !== equal || wantWorse !== worse.length) {
+    fail(
+      `counts moved from the committed report (kits ${wantKits}->${reports.length}, better ${wantBetter}->${better}, ` +
+      `equal ${wantEqual}->${equal}, worse ${wantWorse}->${worse.length}) - re-run \`npm run validate\` and commit`,
+    );
+  }
+  console.log(`validate --check OK: ${reports.length} kits, ${better} better, ${equal} equal, 0 worse (matches ${out})`);
+  process.exit(0);
+}
+
 writeFileSync(out, lines.join("\n"), "utf8");
 console.log(lines.slice(0, 6).join("\n"));
 console.log(`\nwrote ${out}`);

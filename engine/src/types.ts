@@ -100,7 +100,14 @@ export interface Problem {
   reserved: number[];
   /** Soft-reserved masses (EQ beads): allowed but penalised and flagged. */
   flagged?: number[];
+  /**
+   * Masses the user opted into although SBT lists no conjugation metal for them on this modality (Cd on IMC).
+   * The single rule for "can an antibody sit here?" is `canCarryAntibody(channel, problem.extraMetals)`.
+   */
+  extraMetals: number[];
   weights?: Partial<Weights>;
+  /** `InstrumentBundle.version` the problem was built from; undefined for hand-built (synthetic) problems. */
+  bundleVersion?: string;
 }
 
 export interface OptimizerOptions {
@@ -147,12 +154,43 @@ export interface Fix {
   message: string;
 }
 
+export type WarningCode =
+  | "spillover"
+  | "unassigned"
+  | "flagged_channel"
+  | "dim_bright_channel"
+  | "reserved_lock"
+  | "advanced_metal"
+  /** two rows pinned to one mass: the first keeps it, the rest are treated as unlocked */
+  | "duplicate_lock"
+  /** an `evaluate()` assignment a row cannot hold: outside its domain, or a mass another row already took */
+  | "invalid_assignment";
+
+/** Why a channel a row is locked on cannot normally carry an antibody. */
+export type ReservedReason =
+  /** reserved by an enabled role (DNA, viability, barcoding) or blocked by the user */
+  | "role"
+  /** SBT sells no conjugation metal for this mass on this modality and it was not opted into */
+  | "blocked"
+  /** the instrument does not detect this mass at all */
+  | "undetected";
+
+/** A channel in a row's requested domain that it could not take, and who holds it (null = reserved / not a channel). */
+export interface BlockedChannel {
+  mass: number;
+  holderRowId: string | null;
+}
+
 export interface Warning {
   severity: "info" | "warning" | "critical";
   rowId: string;
-  code: "spillover" | "unassigned" | "flagged_channel" | "dim_bright_channel" | "reserved_lock" | "advanced_metal";
+  code: WarningCode;
   message: string;
   fix?: Fix;
+  /** `reserved_lock` only. */
+  reason?: ReservedReason;
+  /** `unassigned` only: every mass the row asked for, and the row holding it. */
+  blockedBy?: BlockedChannel[];
 }
 
 export interface Result {
@@ -163,5 +201,14 @@ export interface Result {
   rows: RowResult[];
   warnings: Warning[];
   unassigned: string[];
-  stats: { greedyScore: number; iterations: number; restarts: number; ms: number };
+  /** `ENGINE_VERSION` of the engine that produced this result. */
+  engineVersion: string;
+  stats: {
+    greedyScore: number;
+    iterations: number;
+    restarts: number;
+    ms: number;
+    /** false = local descent stopped at MAX_DESCENT_PASSES with moves still improving the score */
+    converged: boolean;
+  };
 }

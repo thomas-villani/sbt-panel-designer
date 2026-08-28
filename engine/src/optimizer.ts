@@ -1,5 +1,6 @@
 /** Greedy seed (dimmest first) + augmenting-path repair + simulated annealing + local descent. */
 import { Model, NONE } from "./po-model";
+import { MAX_DESCENT_PASSES, TINY_DOMAIN } from "./tuning";
 import type { OptimizerOptions } from "./types";
 
 export function mulberry32(seed: number): () => number {
@@ -30,8 +31,8 @@ export function greedy(model: Model): Int32Array {
     }
   }
   const order = model.movable.slice().sort((a, b) => {
-    const da = model.domains[a].length <= 2 ? 0 : 1;
-    const db = model.domains[b].length <= 2 ? 0 : 1;
+    const da = model.domains[a].length <= TINY_DOMAIN ? 0 : 1;
+    const db = model.domains[b].length <= TINY_DOMAIN ? 0 : 1;
     if (da !== db) return da - db;
     if (model.T[a] !== model.T[b]) return model.T[a] - model.T[b];
     return a - b;
@@ -78,8 +79,9 @@ export function augment(model: Model, assign: Int32Array): void {
   }
 }
 
-/** Best-improvement local search over relocate + swap moves until no move helps. Returns moves applied. */
-export function descend(model: Model, assign: Int32Array, maxPasses = 500): number {
+/** Best-improvement local search over relocate + swap moves until no move helps. Returns moves applied
+ * (== maxPasses means it ran out of passes with moves still improving: the caller reports that as not converged). */
+export function descend(model: Model, assign: Int32Array, maxPasses = MAX_DESCENT_PASSES): number {
   let improved = 0;
   for (let pass = 0; pass < maxPasses; pass++) {
     const occ = occupancy(model, assign);
@@ -187,6 +189,8 @@ export interface OptimizeOutcome {
   greedyScore: number;
   iterations: number;
   restarts: number;
+  /** false = a local descent stopped at MAX_DESCENT_PASSES with moves still improving the score */
+  converged: boolean;
 }
 
 export function optimize(model: Model, opts: OptimizerOptions = {}): OptimizeOutcome {
@@ -196,16 +200,16 @@ export function optimize(model: Model, opts: OptimizerOptions = {}): OptimizeOut
   const seedAssign = greedy(model);
   const greedyScore = model.totalCost(seedAssign);
   let best: Int32Array = Int32Array.from(seedAssign);
-  descend(model, best);
+  let converged = descend(model, best) < MAX_DESCENT_PASSES;
   let bestScore = model.totalCost(best);
   for (let r = 0; r < restarts; r++) {
     const a = anneal(model, seedAssign, iterations, mulberry32(seed + 7919 * r));
-    descend(model, a);
+    if (descend(model, a) >= MAX_DESCENT_PASSES) converged = false;
     const s = model.totalCost(a);
     if (s < bestScore - 1e-12) {
       bestScore = s;
       best = a;
     }
   }
-  return { assign: best, score: bestScore, greedyScore, iterations, restarts };
+  return { assign: best, score: bestScore, greedyScore, iterations, restarts, converged };
 }
