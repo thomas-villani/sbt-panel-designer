@@ -274,7 +274,8 @@ which slims `data/build/*.json` into `public/data/`). Output: `web/out/`.
 app/            layout + page (renders <Designer/>)
 components/     Designer (header stepper + sidebar layout; binds step ids to views), SetupStep, BuildStep, BalanceStep
                 (triage page; WarnCard + Fold, HeatMap, EngineError are its leaf components), MassStrip, SpillTable, OpenChannels,
-                OrderStep, PanelSidebar (rows: abundance pill, metal chip after Balance, clone/lock drawer), ui (Button/Pill/Card/Tile)
+                OrderStep, PanelSidebar (rows: abundance pill, metal chip after Balance, clone/lock drawer), ui (Button/Pill/Card/Tile),
+                Overlay (useDismiss / useFocusTrap / Popover: the one idiom for anything floating - budget card, mobile sheet)
                 Convention: step pages and the sidebar read the store; leaf components take *state* through props (result, rows,
                 health) and may bind store *actions* directly, so they render the same in a preview / test with a different result.
 lib/steps.ts    the step registry: order/labels (STEPS), stepEnabled, nextStep (mobile bar), landingStep (restored panels)

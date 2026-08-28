@@ -1,6 +1,7 @@
 "use client";
 /** The channel count, with its working shown: antibody channels plus scaffolding, minus every reservation. */
 import { useLayoutEffect, useRef, useState } from "react";
+import { Popover } from "./Overlay";
 import { channelBudgetDetail, reservedRoles } from "@/lib/data";
 import { useStore } from "@/lib/store";
 import { cx } from "./ui";
@@ -32,7 +33,7 @@ function BudgetCard({ onClose }: { onClose: () => void }) {
   const ref = useRef<HTMLDivElement>(null);
   const [flip, setFlip] = useState(false);
   useLayoutEffect(() => {
-    const el = ref.current;
+    const el = ref.current?.parentElement;
     if (el) setFlip(el.getBoundingClientRect().top < 8);
   }, []);
   const b = useBudgetDetail()!;
@@ -44,7 +45,8 @@ function BudgetCard({ onClose }: { onClose: () => void }) {
     ...(b.blocked.length ? [{ n: b.blocked.length, label: "Kept empty on purpose", masses: b.blocked }] : []),
   ];
   return (
-    <div ref={ref} className={cx("absolute right-0 z-30 w-[22rem] max-w-[85vw] rounded-lg border border-slate-200 bg-white p-3 text-left text-xs shadow-xl dark:border-slate-600 dark:bg-slate-900", flip ? "top-full mt-2" : "bottom-full mb-2")} data-testid="budget-card">
+    <Popover label={`${b.instrument} channel budget`} onClose={onClose} testId="budget-card" className={cx("right-0 w-[22rem] max-w-[85vw] p-3 text-xs", flip ? "top-full mt-2" : "bottom-full mb-2")}>
+    <div ref={ref}>
       <div className="mb-2 flex items-start justify-between gap-2">
         <span className="font-semibold">{b.instrument} channel budget</span>
         <button onClick={onClose} className="text-slate-400 hover:text-slate-700" aria-label="close">×</button>
@@ -78,5 +80,6 @@ function BudgetCard({ onClose }: { onClose: () => void }) {
       )}
       <p className="mt-2 text-slate-600 dark:text-slate-400">Cell ID & controls: {reservedRoles(setup).length} role{reservedRoles(setup).length === 1 ? "" : "s"} · change them in Setup.</p>
     </div>
+    </Popover>
   );
 }

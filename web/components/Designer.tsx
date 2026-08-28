@@ -1,11 +1,12 @@
 "use client";
-import { useEffect, useState, type ComponentType } from "react";
+import { useEffect, useRef, useState, type ComponentType } from "react";
 import { loadBundles } from "@/lib/data";
 import { STEPS, nextStep, stepDef, stepEnabled, type Step } from "@/lib/steps";
 import { useStore, useBudget, useHealth, type Seed } from "@/lib/store";
 import { BalanceStep } from "./BalanceStep";
 import { BuildStep } from "./BuildStep";
 import { OrderStep } from "./OrderStep";
+import { useDismiss, useFocusTrap } from "./Overlay";
 import { PanelSidebar } from "./PanelSidebar";
 import { SetupStep } from "./SetupStep";
 import { cx } from "./ui";
@@ -115,11 +116,15 @@ function MobilePanelBar({ open, onToggle }: { open: boolean; onToggle: () => voi
   const budget = useBudget();
   const health = useHealth();
   const next = nextStep(step, { rows, balanced, result });
+  const sheet = useRef<HTMLDivElement>(null);
+  useDismiss(sheet, onToggle, open);
+  useFocusTrap(sheet, open);
 
   return (
     <div className="lg:hidden">
       {open && <div className="fixed inset-0 z-30 bg-slate-900/40" onClick={onToggle} aria-hidden />}
-      <div className={cx("fixed inset-x-0 bottom-0 z-40 flex flex-col border-t border-slate-200 bg-white shadow-[0_-4px_16px_rgba(0,0,0,0.12)] dark:border-slate-700 dark:bg-slate-900", open && "max-h-[80vh] rounded-t-2xl")} data-testid="mobile-panel">
+      <div ref={sheet} role={open ? "dialog" : undefined} aria-modal={open || undefined} aria-label={open ? "Your panel" : undefined} tabIndex={-1}
+        className={cx("fixed inset-x-0 bottom-0 z-40 flex flex-col border-t border-slate-200 bg-white shadow-[0_-4px_16px_rgba(0,0,0,0.12)] outline-none dark:border-slate-700 dark:bg-slate-900", open && "max-h-[80vh] rounded-t-2xl")} data-testid="mobile-panel">
         {/* Two real buttons side by side (a button inside a button is not focusable and breaks screen readers). */}
         <div className="flex w-full items-center gap-3 px-4 py-3">
           <button onClick={onToggle} aria-expanded={open} aria-controls="mobile-panel-sheet"
