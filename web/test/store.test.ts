@@ -185,7 +185,7 @@ describe("kits and the New panel button", () => {
     const s = useStore.getState();
     s.clearPanel();
     s.setSetup({ modality: "suspension" });
-    const mdipa = useStore.getState().idx!.modulesById.get("direct-immune-profiling-assay-mdipa")!;
+    const mdipa = useStore.getState().idx!.modulesBySlug.get("direct-immune-profiling-assay-mdipa")!;
     s.addModule(mdipa);
     const rows = useStore.getState().rows;
     expect(rows).toHaveLength(mdipa.markers.length);

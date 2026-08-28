@@ -39,7 +39,7 @@ def test_imc_kits_use_pill_levels(mods):
 
 
 def test_segmentation_kit_is_non_antibody(mods):
-    seg = next(m for m in mods["modules"] if m["id"] == "cell-segmentation-kit")
+    seg = next(m for m in mods["modules"] if m["slug"] == "cell-segmentation-kit")
     assert all(mk["kind"] == "segmentation" for mk in seg["markers"])
     assert {mk["mass"] for mk in seg["markers"]} == {195, 196, 198}
 
@@ -91,3 +91,16 @@ def test_no_unparsed_kit_values(mods):
 def test_version_is_dated_content_hash(mods):
     date, _, digest = mods["version"].partition(".")
     assert len(date.split("-")) == 3 and len(digest) == 8
+
+
+def test_kit_ids_are_stable_ledger_ids(mods):
+    """Kit module ids come from kit-overrides.yaml (`kit-<pdv2 kit_id>`), never from the display name."""
+    overrides = yaml.safe_load(KIT_OVERRIDES.read_text(encoding="utf8"))["kits"]
+    kits = [m for m in mods["modules"] if m["source"] == "sbt_kit"]
+    assert len(kits) == 62
+    for m in kits:
+        assert m["id"] == overrides[m["kit"]["raw_name"]]["id"]
+        assert m["id"].startswith(f"kit-{m['kit']['pdv2_kit_id']}")
+        assert m["slug"] and m["slug"] != m["id"]
+    # the one pdv2 kit_id shared by two kits is disambiguated by hand
+    assert {m["id"] for m in kits if m["kit"]["pdv2_kit_id"] == 201508} == {"kit-201508", "kit-201508-neuro-oncology"}

@@ -25,6 +25,7 @@ HARVEST_CSV = resolve_input(RAW_PDV2, "pdv2-conjugate-signal-tolerance-*.csv", "
 PDV2_PRODUCTS_CSV = resolve_input(RAW_PDV2, "pdv2-product-table-*.csv", "PD3_PDV2_PRODUCTS_CSV")
 ALIASES_YAML = CURATED / "aliases.yaml"
 SPECIES_YAML = CURATED / "species.yaml"
+TARGET_IDS_YAML = CURATED / "target-ids.yaml"
 
 HREF = re.compile(r'href="([^"]+)"')
 MAXPAR_PN = re.compile(r"^\d{7}[A-Z]$")
@@ -156,6 +157,39 @@ def apply_curated_aliases(reg: TargetRegistry) -> dict[str, str]:
     return canon_names
 
 
+def load_target_ledger() -> dict[str, str]:
+    cfg = yaml.safe_load(TARGET_IDS_YAML.read_text(encoding="utf8")) or {}
+    return {str(k): str(v) for k, v in (cfg.get("ids") or {}).items()}
+
+
+def pin_target_ids(reg: TargetRegistry) -> tuple[dict[str, list[str]], dict[str, str], list[str], list[str]]:
+    """Choose each group's id. The ledger (target-ids.yaml) wins; a group with no ledger key gets a deterministic
+    provisional id and is reported so the ledger can be extended; two ledger keys in one group means two targets
+    were merged by an alias and a human must retire one id.
+    Returns (members by id, key -> id, provisional ids, ledger ids that no longer match any spelling)."""
+    ledger = load_target_ledger()
+    members: dict[str, list[str]] = {}
+    root_of: dict[str, str] = {}
+    new_ids: list[str] = []
+    for keys in reg.members().values():
+        pinned = sorted(k for k in keys if k in ledger)
+        if len(pinned) > 1:
+            raise ValueError(
+                f"{TARGET_IDS_YAML.name}: ids {pinned} now name the same target (spellings {sorted(keys)}); "
+                "keep one id and drop the other from the ledger"
+            )
+        if pinned:
+            tid = pinned[0]
+        else:
+            tid = min(keys, key=lambda k: (len(k), k))
+            new_ids.append(tid)
+        members[tid] = sorted(keys)
+        for k in keys:
+            root_of[k] = tid
+    stale = sorted(set(ledger) - set(members))
+    return members, root_of, sorted(new_ids), stale
+
+
 def choose_display_name(spellings: set[str], preferred: set[str], curated: str | None) -> str:
     """Curated canonical wins; else a store spelling, most informative (CD number + name) first, then shortest."""
     if curated:
@@ -238,8 +272,7 @@ def build() -> dict:
     canon_names = apply_curated_aliases(reg)
 
     # ---- targets ------------------------------------------------------------
-    members = reg.members()
-    root_of = {k: reg.find(k) for k in reg.parent}
+    members, root_of, new_ids, stale_ids = pin_target_ids(reg)
     targets = {}
     for root, keys in members.items():
         spellings = set().union(*(reg.names[k] for k in keys))
@@ -322,13 +355,20 @@ def build() -> dict:
         "unmapped_species_terms": sorted({f[9:] for s in skus for f in s["reactivity_flags"] if f.startswith("unmapped:")}),
         "multi_metal_targets": sum(1 for t in targets_out if t["n_conjugates"] > 1),
         "unparsed_metals": unparsed_metals,
+        # Ledger drift: provisional ids for targets not yet in target-ids.yaml (tests require []), and ledger
+        # entries no spelling maps to any more (informational; retire them when convenient).
+        "targets_without_ledger_id": [t for t in new_ids if t in {x["id"] for x in targets_out}],
+        "stale_ledger_ids": stale_ids,
     }
+    if stats["targets_without_ledger_id"]:
+        log.warning("%d target(s) have no ledger id: %s - run `pd3-etl catalog --update-ledger`",
+                    len(stats["targets_without_ledger_id"]), stats["targets_without_ledger_id"])
     if unparsed_metals:
         log.warning("%d SKU(s) with an unparseable metal label dropped from conjugates", len(unparsed_metals))
     return {
-        "version": build_version([STORE_CSV, HARVEST_CSV, PDV2_PRODUCTS_CSV, ALIASES_YAML, SPECIES_YAML]),
+        "version": build_version([STORE_CSV, HARVEST_CSV, PDV2_PRODUCTS_CSV, ALIASES_YAML, SPECIES_YAML, TARGET_IDS_YAML]),
         "sources": {"store_csv": STORE_CSV.name, "pdv2_harvest": HARVEST_CSV.name, "pdv2_products": PDV2_PRODUCTS_CSV.name,
-                    "aliases": ALIASES_YAML.name, "species": SPECIES_YAML.name},
+                    "aliases": ALIASES_YAML.name, "species": SPECIES_YAML.name, "target_ids": TARGET_IDS_YAML.name},
         "stats": stats,
         "targets": targets_out,
         "clones": sorted(clones.values(), key=lambda c: (c["target_id"], c["clone"])),
@@ -337,8 +377,23 @@ def build() -> dict:
     }
 
 
-def main(out_path: Path | None = None) -> dict:
+def update_ledger(out: dict) -> int:
+    """Append provisional ids to target-ids.yaml (comment header and existing entries untouched)."""
+    new = out["stats"]["targets_without_ledger_id"]
+    if not new:
+        return 0
+    names = {t["id"]: t["name"] for t in out["targets"]}
+    with TARGET_IDS_YAML.open("a", encoding="utf8") as f:
+        for tid in new:
+            f.write(f"  {tid}: {json.dumps(names[tid], ensure_ascii=False)}\n")
+    log.info("%d id(s) appended to %s", len(new), TARGET_IDS_YAML.name)
+    return len(new)
+
+
+def main(out_path: Path | None = None, update: bool = False) -> dict:
     out = build()
+    if update and update_ledger(out):
+        out = build()
     path = out_path or (BUILD / "catalog.json")
     write_json(path, out)
     log.info("catalog %s -> %s", out["version"], path)

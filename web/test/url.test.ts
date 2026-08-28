@@ -134,3 +134,14 @@ describe("url state: setup extras (viability mode, opted-in metals)", () => {
     expect(decodeState(`#${encodeState({ setup: { ...base, viabilityMode: "pt" }, rows: [], nSamples: 1, balanced: false })}`)!.setup.viabilityMode).toBeUndefined();
   });
 });
+
+describe("module references", () => {
+  it("translates legacy kit slugs in old links to the stable kit id", async () => {
+    const idx = index();
+    const mdipa = idx.modulesBySlug.get("direct-immune-profiling-assay-mdipa")!;
+    expect(mdipa.id).toBe("kit-201334");
+    const doc = { setup: CYTOF, nSamples: 20, balanced: false, rows: [{ ...rows[2], moduleIds: [mdipa.slug, mdipa.id, "not-a-module"] }] };
+    const res = decodeStateResult(`#${encodeState(doc, idx)}`, idx);
+    expect(res.ok && res.doc.rows[0].moduleIds).toEqual([mdipa.id, "not-a-module"]);
+  });
+});

@@ -65,6 +65,7 @@ export class Index {
   readonly targetsById = new Map<string, Target>();
   readonly conjugatesByTarget = new Map<string, Conjugate[]>();
   readonly modulesById = new Map<string, PanelModule>();
+  readonly modulesBySlug = new Map<string, PanelModule>();
   readonly modulesByTarget = new Map<string, PanelModule[]>();
   private readonly keys: { key: string; target: Target }[] = [];
 
@@ -81,6 +82,7 @@ export class Index {
     }
     for (const m of bundles.modules) {
       this.modulesById.set(m.id, m);
+      this.modulesBySlug.set(m.slug, m);
       for (const k of m.markers) {
         if (!k.target_id) continue;
         const arr = this.modulesByTarget.get(k.target_id) ?? [];
@@ -91,6 +93,16 @@ export class Index {
   }
 
   get instruments() { return this.bundles.instruments; }
+
+  /** A module by id, or by slug for links / saved panels written before kit ids became stable ledger ids. */
+  module(ref: string): PanelModule | null {
+    return this.modulesById.get(ref) ?? this.modulesBySlug.get(ref) ?? null;
+  }
+
+  /** Translate an id-or-legacy-slug reference to the current id; unknown references pass through unchanged. */
+  moduleId(ref: string): string {
+    return this.module(ref)?.id ?? ref;
+  }
 
   /** The instrument, or a clear error: setups reach the app validated (lib/url.ts), so a miss here is a programming error. */
   instrument(id: string) {

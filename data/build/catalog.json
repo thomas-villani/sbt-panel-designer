@@ -1,11 +1,12 @@
 {
- "version": "2026-08-27.3093ad4a",
+ "version": "2026-08-27.93cdb949",
  "sources": {
   "store_csv": "sbt-catalog-master-2026-07-29.csv",
   "pdv2_harvest": "pdv2-conjugate-signal-tolerance-2026-08-24.csv",
   "pdv2_products": "pdv2-product-table-2026-08-24.csv",
   "aliases": "aliases.yaml",
-  "species": "species.yaml"
+  "species": "species.yaml",
+  "target_ids": "target-ids.yaml"
  },
  "stats": {
   "skus": 1822,
@@ -20,7 +21,9 @@
   "pdv2_name_joins": 2764,
   "unmapped_species_terms": [],
   "multi_metal_targets": 205,
-  "unparsed_metals": []
+  "unparsed_metals": [],
+  "targets_without_ledger_id": [],
+  "stale_ledger_ids": []
  },
  "targets": [
   {

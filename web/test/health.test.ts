@@ -67,7 +67,7 @@ describe("panelHealth", () => {
 
 describe("kit-validated pairs", () => {
   it("spill between two markers of one SBT kit, both on their kit metals, is filed as validated (unlikely), not as a to-do", () => {
-    const mdipa = idx.modulesById.get("direct-immune-profiling-assay-mdipa")!;
+    const mdipa = idx.modulesBySlug.get("direct-immune-profiling-assay-mdipa")!;
     const rows: PanelRow[] = mdipa.markers.filter((k) => k.target_id && k.mass != null).map((k) => ({
       id: k.target_id!, targetId: k.target_id, name: k.target_name, level: k.abundance_level ?? "medium", clone: k.clone, clonePinned: true, custom: false, locked: k.mass, moduleIds: [mdipa.id],
     }));

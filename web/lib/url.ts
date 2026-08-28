@@ -163,9 +163,13 @@ function finish(doc: PanelDoc, idx?: Index): DecodeResult {
   const { setup, resetFields } = validateSetup(doc.setup, idx);
   const unknownTargets = idx ? [...new Set(doc.rows.filter((r) => r.targetId && !idx.targetsById.has(r.targetId)).map((r) => r.targetId!))] : [];
   const catalogChanged = !!(idx && doc.catalogVersion && doc.catalogVersion !== idx.bundles.catalog.version);
-  const rows = resetFields.includes("instrumentId") || resetFields.includes("modality")
-    ? doc.rows.map((r) => ({ ...r, locked: null })) // locks were on another instrument's channels
-    : doc.rows;
+  const releaseLocks = resetFields.includes("instrumentId") || resetFields.includes("modality"); // locks were on another instrument's channels
+  const rows = doc.rows.map((r) => ({
+    ...r,
+    ...(releaseLocks ? { locked: null } : {}),
+    // module references written before kit ids were stable ledger ids are slugs: translate them
+    moduleIds: idx ? [...new Set(r.moduleIds.map((m) => idx.moduleId(m)))] : r.moduleIds,
+  }));
   return { ok: true, doc: { ...doc, setup, rows }, drift: { catalogChanged, unknownTargets, resetFields } };
 }
 

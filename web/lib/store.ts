@@ -228,7 +228,7 @@ export const useStore = create<State>((set, get) => {
       if (seed.moduleIds?.length || seed.setup) {
         const setup = { ...DEFAULT_SETUP, ...seed.setup };
         set({ setup: seed.setup?.modality && !seed.setup.instrumentId ? { ...setup, instrumentId: defaultInstrument(idx, setup.modality) } : setup, rows: [], balanced: false, step: seed.moduleIds?.length ? "build" : "setup", notice });
-        for (const id of seed.moduleIds ?? []) { const m = idx.modulesById.get(id); if (m) get().addModule(m); }
+        for (const id of seed.moduleIds ?? []) { const m = idx.module(id); if (m) get().addModule(m); }
         return;
       }
       // 3. Last session's draft.

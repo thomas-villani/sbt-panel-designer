@@ -16,6 +16,9 @@ def main(argv=None):
         stream=sys.stderr,
     )
     if not argv or argv[0] not in COMMANDS:
-        print("usage: pd3-etl <" + "|".join(COMMANDS) + ">", file=sys.stderr)
+        print("usage: pd3-etl <" + "|".join(COMMANDS) + "> [catalog --update-ledger]", file=sys.stderr)
         sys.exit(2)
+    if argv[0] == "catalog" and "--update-ledger" in argv[1:]:
+        catalog.main(update=True)
+        return
     COMMANDS[argv[0]]()

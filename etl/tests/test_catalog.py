@@ -122,3 +122,28 @@ def test_version_is_dated_content_hash(cat):
     date, _, digest = cat["version"].partition(".")
     assert len(date.split("-")) == 3 and len(digest) == 8
     assert cat["sources"]["store_csv"].startswith("sbt-catalog-master-")
+
+
+def test_target_ids_are_ledgered(cat):
+    """Every exposed target id is pinned in data/curated/target-ids.yaml, so a store refresh cannot rename one."""
+    from pd3_etl.catalog import load_target_ledger
+
+    ledger = load_target_ledger()
+    ids = {t["id"] for t in cat["targets"]}
+    assert cat["stats"]["targets_without_ledger_id"] == [], "run `uv run pd3-etl catalog --update-ledger` and commit"
+    assert ids <= set(ledger)
+    # keys are the normalised spelling they pin: a ledger key that is not a normalised key can never match
+    from pd3_etl.names import norm_key
+    assert all(norm_key(k) == k for k in ledger)
+
+
+def test_ledger_pins_root_regardless_of_union_order():
+    from pd3_etl.catalog import TargetRegistry, pin_target_ids
+
+    a, b = TargetRegistry(), TargetRegistry()
+    for r, order in ((a, ["CD3e", "CD3 epsilon"]), (b, ["CD3 epsilon", "CD3e"])):
+        for n in order:
+            r.add(n, "store")
+        r.union(*[r.add(n, "store") for n in order])
+    ia, ib = pin_target_ids(a)[1], pin_target_ids(b)[1]
+    assert ia["cd3e"] == ib["cd3e"] == "cd3e"  # 'cd3e' is in the ledger, so the root is fixed

@@ -127,7 +127,7 @@ The 34 non-matching rows are listed in `docs/review/kit-rows-not-in-catalogue.cs
 so the BOM must treat MDIPA as a single SKU).
 
 ```
-modules[] { id, slug, name, source sbt_kit|curated, kit{pdv2_kit_id, pdv2_experiment_id, raw_name, ...}|null,
+modules[] { id (stable: kit-<pdv2 kit_id> from kit-overrides.yaml, or the curated id), slug (display/routing), name, source sbt_kit|curated, kit{pdv2_kit_id, pdv2_experiment_id, raw_name, ...}|null,
             application suspension|imaging|both, species[], instruments[], sample_types[], category, blurb, featured, hidden,
             markers[ { target_id, target_name, raw_target, kind antibody|segmentation, role required|recommended|optional,
                        clone, metal, mass, signal, tolerance, st_source titrated|default|kit_pill|curated,
@@ -138,6 +138,7 @@ modules[] { id, slug, name, source sbt_kit|curated, kit{pdv2_kit_id, pdv2_experi
 * Abundance level from titrated signal: `< 60 low`, `< 150 medium`, `< 400 high`, else `very_high`.
   IMC kits carry pdv2's 33/66/100 "pill" → low/medium/high (`st_source: kit_pill`). IMC has **no** titrated data anywhere in pdv2.
 * Kit display metadata (name, category, blurb, featured, hidden) comes from `kit-overrides.yaml`, keyed by raw pdv2 kit name.
+* Stable ids: every kit in `kit-overrides.yaml` carries an `id` (`kit-<pdv2 kit_id>`, disambiguated by hand where pdv2 reuses a kit_id - 201508); the ETL fails on a kit without one. Target ids are pinned by `data/curated/target-ids.yaml` (`catalog.pin_target_ids`): the ledger key wins as the union-find root, a target with no ledger entry gets a provisional id and fails `test_target_ids_are_ledgered` until `uv run pd3-etl catalog --update-ledger` appends it; two ledger keys in one group (an alias merged two targets) is an ETL error. The web resolves legacy slugs via `Index.module()` / `moduleId()` on decode.
 * Kit groups carry no population info; exclusivity groups will be derived from lineage knowledge later.
 * Curated targets not sold by SBT (TOX, Helios, NKG2A/D, HK2, IgA, CD79B) stay in modules with `in_catalogue: false`.
 

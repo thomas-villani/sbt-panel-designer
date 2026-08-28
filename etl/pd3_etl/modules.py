@@ -27,6 +27,7 @@ log = logging.getLogger(__name__)
 
 KIT_OVERRIDES = CURATED / "modules" / "kit-overrides.yaml"
 KIT_CAPTURES = {"api_kit_contents.json": "imaging", "api_kit_contents_susp.json": "suspension"}
+STABLE_KIT_ID = re.compile(r"^kit-\d+(-[a-z0-9-]+)?$")
 
 PDV2_REACTIVITY = {1: "human", 2: "mouse", 3: "rat", 4: "rabbit"}
 PDV2_INSTRUMENT = {1: "helios", 2: "cytof1", 3: "cytof2", 4: "cytof_xt", 5: "hyperion", 6: "hyperion_plus", 7: "hyperion_xti"}
@@ -143,6 +144,11 @@ def load_kits(cat_idx: CatalogIndex) -> tuple[list[dict], list[str], dict[str, l
             meta = kit["meta"]
             ov = overrides.get(raw_name, {})
             name = ov.get("name") or kit_display_name(raw_name)
+            # `id` is the stable identity (ledger in kit-overrides.yaml; share links / saved panels key on it);
+            # `slug` is display/routing only and may change with the name.
+            kit_id = ov.get("id")
+            if not kit_id or not STABLE_KIT_ID.match(str(kit_id)):
+                raise ValueError(f"{KIT_OVERRIDES.name}: kit {raw_name!r} needs a stable `id` (kit-<pdv2 kit_id>[-suffix]), got {kit_id!r}")
             slug = ov.get("slug") or slugify(name)
             if slug in seen_slugs:
                 slug = f"{slug}-{meta['kit_id']}"
@@ -187,7 +193,7 @@ def load_kits(cat_idx: CatalogIndex) -> tuple[list[dict], list[str], dict[str, l
                     "applications": sorted(cat_idx.apps_by_target.get(tid, [])) if tid else [],
                 })
             modules.append({
-                "id": slug, "slug": slug, "name": name, "source": "sbt_kit",
+                "id": kit_id, "slug": slug, "name": name, "source": "sbt_kit",
                 "kit": {"pdv2_kit_id": meta["kit_id"], "pdv2_experiment_id": meta["id"], "raw_name": raw_name,
                         "created": meta.get("created"), "owner_user_id": meta.get("user_id")},
                 "application": application,
