@@ -11,6 +11,10 @@ Audit round (`docs/review/audit-2026-08-27.md`): the Tier 1 bug list, fixed acro
 - Kit modules are identified by a hand-owned `id` in `kit-overrides.yaml` (`kit-<pdv2 kit_id>`); the name-derived `slug` is display/routing only. Old share links and saved panels that reference a slug are translated on decode.
 - Target ids are pinned by `data/curated/target-ids.yaml`: a new spelling or alias can no longer rename a target; new targets fail the ETL until `pd3-etl catalog --update-ledger` lists them.
 
+### Engine surface and flow tests (audit items 4-5)
+- `@pd3/engine` exports only its public API; the model, optimiser phases and explanation builder moved behind `engine/src/internal.ts`.
+- e2e: the over-budget flow (Build warning → ranked drops → panel fits) and the accept-a-spill flow (reason required → Order page → share link → reconsider).
+
 ### Accessibility pass (audit Tier 4)
 - Keyboard: one visible focus ring everywhere; the marker search is a combobox (Arrow keys, Enter, Escape); open channels on the mass strip are buttons; the budget card and the mobile panel sheet are dialogs that close on Escape / outside click and return focus.
 - Not colour alone: must-fix bars carry `!`, worth-checking `~`; every bar, icon button and sidebar row has an accessible name.

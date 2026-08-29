@@ -179,6 +179,10 @@ evaluate(problem, assignment: Record<rowId, mass>): Result            // score +
 (channel, sensitivity, received SO, received/T, contributions in/out with mechanism, reasons[]), `warnings[]`
 (severity, code, message, optional one-click `fix`), `unassigned[]`, `stats`.
 
+Only this surface (plus the types, abundance priors, `massOf`/`channelLabel`, `canCarryAntibody`/`pickInstrument`, `SPILL_WARN`/`SPILL_CRIT`
+and `ENGINE_VERSION`) is exported from `src/index.ts` and covered by `ENGINE_VERSION`. The model, optimiser phases, explanation
+builder and the other tuning constants are reachable from `src/internal.ts` for tests and experiments, and may change freely.
+
 ### 3.2 Model (`src/po-model.ts`)
 
 pdv2 semantics, per instrument PO matrix:

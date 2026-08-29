@@ -4,15 +4,15 @@ import { Model, NONE, channelUniverse } from "./po-model";
 import { optimize } from "./optimizer";
 import type { OptimizerOptions, Problem, Result } from "./types";
 
+// Public surface. Everything the web app, the worker and the validation script need is here; the model, the
+// optimiser phases and the explanation builder are implementation details, importable from "./internal" by tests
+// and experiments only, and free to change without a version bump.
 export * from "./types";
 export * from "./prior";
 export * from "./metals";
 export * from "./problem";
-export * from "./tuning";
+export { SPILL_WARN, SPILL_CRIT } from "./tuning";
 export * from "./version";
-export { Model, NONE, channelUniverse, dimness, mechanismOf, type DuplicateLock } from "./po-model";
-export { greedy, augment, descend, anneal, optimize, mulberry32 } from "./optimizer";
-export { buildResult, bestMoveFor, type ResultNotes } from "./explain";
 
 /** Assign channels to every row of the problem and explain the result. */
 export function balance(problem: Problem, opts: OptimizerOptions = {}): Result {
