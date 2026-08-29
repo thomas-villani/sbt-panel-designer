@@ -5,7 +5,7 @@ const METAL = /\d{2,3}[A-Z][a-z]/; // innerText runs words together, so no \b
 const sidebarRows = (page: Page) => page.locator("aside ul li").filter({ has: page.locator("button") });
 const addModule = async (page: Page, name: string) => {
   const card = page.locator("div.rounded-lg").filter({ has: page.getByText(name, { exact: true }) }).first();
-  await card.getByRole("button", { name: /^Add \d+ markers/ }).click();
+  await card.getByRole("button", { name: /^Add \d+ marker/ }).click();
 };
 const balance = async (page: Page) => {
   await page.getByRole("button", { name: /Balance panel/ }).first().click();
@@ -315,4 +315,83 @@ test("keyboard: search combobox, mass strip buttons, budget popover", async ({ p
   await page.keyboard.press("Escape");
   await expect(card).toHaveCount(0);
   await expect(trigger).toBeFocused();
+});
+
+/** Over budget: Build says so, Balance turns it into one decision (ranked drops / whole sets) and everything else waits. */
+test("over budget: Build warns, Balance offers ranked drops, the panel fits again after them", async ({ page }) => {
+  await page.getByRole("button", { name: /Tissue imaging/ }).click();
+  await page.getByRole("button", { name: /Choose markers/ }).click();
+  for (const m of ["Tissue architecture", "Basic immune", "Lymphoid", "Myeloid / macrophages", "Functional state", "T-cell exhaustion"]) await addModule(page, m);
+  await expect(sidebarRows(page)).toHaveCount(27);
+  await addModule(page, "Neuro-oncology bundle"); // markers the immune sets do not share
+  await addModule(page, "Immuno-oncology (31-marker master panel)"); // and more: now well over 38
+  await expect(page.getByTestId("health")).toContainText(/\d+ over budget/);
+  const over = Number(/(\d+) over budget/.exec(await page.getByTestId("health").innerText())![1]);
+  expect(over).toBeGreaterThan(1);
+  await expect(page.getByTestId("over-budget")).toContainText(`drop ${over} marker`);
+
+  await page.getByRole("button", { name: /Suggest what to drop/ }).click();
+  await expect(page.getByRole("heading", { name: "The panel does not fit yet" })).toBeVisible({ timeout: 30_000 });
+  const blocker = page.getByTestId("blocker");
+  await expect(blocker).toContainText(`drop ${over}`);
+  await expect(page.getByTestId("spill-table")).toHaveCount(0); // provisional: no spill picture while it does not fit
+  await expect(blocker.getByRole("button", { name: "Drop" }).first()).toBeVisible(); // ranked single-marker drops, most expendable first
+
+  // Work the decision down: whole sets when offered, else the most expendable marker, until the panel fits again.
+  const before = await sidebarRows(page).count();
+  for (let i = 0; i < 60 && (await page.getByTestId("blocker").count()); i++) {
+    const set = blocker.getByRole("button", { name: "Remove set" });
+    const shortcut = blocker.getByRole("button", { name: /^Drop the \d+ suggested/ });
+    if (await shortcut.count()) await shortcut.click();
+    else if (await set.count()) await set.first().click();
+    else await blocker.getByRole("button", { name: "Drop", exact: true }).first().click();
+    await page.waitForTimeout(150);
+  }
+  await expect(page.getByTestId("blocker")).toHaveCount(0);
+  expect(await sidebarRows(page).count()).toBeLessThanOrEqual(before - over);
+  await expect(page.getByRole("heading", { name: /Panel is balanced|Panel fits|thing(s)? to fix/ })).toBeVisible({ timeout: 30_000 });
+  await expect(page.getByTestId("health")).not.toContainText("over budget");
+});
+
+/** Accepting a spill needs a reason; the reason travels to the Order page and the share link, and can be reconsidered. */
+test("accept a spillover with a note; it is listed on the Order page and survives the share link", async ({ page }) => {
+  await page.getByRole("button", { name: /Suspension/ }).click();
+  await page.getByRole("button", { name: /Choose markers/ }).click();
+  await addModule(page, "Direct Immune Profiling Assay (MDIPA)"); // kit metals are pinned; its own spill is "validated as a set"
+  await addModule(page, "Regulatory T cells (Treg)"); // one free marker lands next to a kit metal: cross-set spill to sign off
+  await expect(sidebarRows(page)).toHaveCount(31);
+  await balance(page);
+
+  await expect(page.getByRole("heading", { name: "Panel fits" })).toBeVisible();
+  const fold = page.getByRole("button", { name: /^▸ \d+ worth checking/ }); // the fold, not the sidebar health line
+  await fold.click();
+  const card = page.getByTestId("warning").filter({ has: page.getByRole("button", { name: "Accept" }) }).first();
+  const title = (await card.innerText()).split("\n")[1] ?? "";
+  await card.getByRole("button", { name: "Accept" }).click();
+  const form = card.getByTestId("accept-form");
+  await expect(form.getByRole("button", { name: "Accept" })).toBeDisabled(); // no empty reasons
+  await form.getByRole("textbox", { name: "reason" }).fill("different cells: never co-expressed");
+  await form.getByRole("button", { name: "Accept" }).click();
+  await expect(card).toHaveCount(0);
+  const accepted = page.getByTestId("accepted");
+  await expect(accepted).toContainText("1 accepted by you");
+
+  // Order lists it with the note.
+  await page.getByRole("button", { name: /Order \/ export/ }).click();
+  const list = page.getByTestId("accepted-spill");
+  await expect(list).toContainText("never co-expressed");
+  await expect(list).toContainText(/receives \d+ % of its tolerance/);
+
+  // The share link carries it: a fresh load shows the same accepted note.
+  const url = page.url();
+  expect(url).toContain("#~");
+  await page.goto("about:blank");
+  await page.goto(url);
+  await expect(page.getByRole("heading", { name: /Panel is balanced|Panel fits|thing(s)? to fix/ })).toBeVisible({ timeout: 30_000 });
+  await expect(page.getByTestId("accepted")).toContainText("1 accepted by you");
+  await page.getByTestId("accepted").getByRole("button").first().click();
+  await page.getByRole("button", { name: "Reconsider" }).click();
+  await expect(page.getByTestId("accepted")).toHaveCount(0);
+  await page.getByRole("button", { name: /^▸ \d+ worth checking/ }).click(); // back in the fold, with its Accept button
+  await expect(page.getByTestId("warning").filter({ has: page.getByRole("button", { name: "Accept" }) })).toHaveCount(1);
 });

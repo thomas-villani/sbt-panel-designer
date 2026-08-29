@@ -1,9 +1,10 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import {
-  ABUNDANCE_PRIOR, ENGINE_VERSION, Model, PDV2_WEIGHTS, SPILL_CRIT, SPILL_WARN, balance, buildProblem,
-  canCarryAntibody, channelUniverse, evaluate, greedy, massOf, signalTolerance,
+  ABUNDANCE_PRIOR, ENGINE_VERSION, PDV2_WEIGHTS, SPILL_CRIT, SPILL_WARN, balance, buildProblem,
+  canCarryAntibody, evaluate, massOf, signalTolerance,
 } from "../src/index";
+import { Model, channelUniverse, greedy } from "../src/internal";
 import type { ChannelDef, Row } from "../src/index";
 import { loadBundle, syntheticProblem } from "./util";
 
